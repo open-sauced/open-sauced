@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Form from "./Form";
 import './App.css';
-import 'netlify-styleguide/src/css/main.css';
+import 'netlify-styleguide/dist/css/main.css';
 
 class App extends Component {
   render() {

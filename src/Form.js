@@ -3,27 +3,27 @@ import React, {Component} from "react";
 class Form extends Component {
   render() {
     return (
-      <div className="Form">
+      <div className="Form grid">
         <h2 className="title">Enter a GitHub URL</h2>
         <div className="form-container shadow">
-          <form name="user-content-submission" action="thank-you" netlify>
+          <form name="form user-content-submission" action="thank-you" netlify>
             <input placeholder="https://github.com/netlify/netlify-cms"/>
-            <button>Scrape</button>
-            <p className="disclosure">
-              We are only looking for open source repos that meet one or more of the following criteria:
-            </p>
+            <button className="">Scrape</button>
           </form>
-          <ul>
+          <h3>
+            We are only looking for open source repos that meet one or more of the following criteria:
+          </h3>
+          <ul className="smaller-words">
             <li>Existing Documentation</li>
             <li>More than 25+ contributors</li>
             <li>A [Static] Site Generator</li>
             <li>Trending on <a href="https://github.com/trending?since=weekly">GitHub weekly</a> and <a href="https://changelog.com/nightly">Changelog Nightly</a></li>
           </ul>
           <hr />
-          <form name="user-content-submission" action="thank-you" netlify>
+          <form name="grid-full form user-content-submission" action="thank-you" netlify>
             <p>
               <label>Name: </label>
-              <input className="boxed-input light-shadow" type="text" name="sitename" required />
+              <input className="support-input-form" type="text" name="sitename" required />
             </p>
             <p>
               <label>Link: </label>
