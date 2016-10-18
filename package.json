@@ -6,6 +6,7 @@
     "react-scripts": "0.6.1"
   },
   "dependencies": {
+    "axios": "0.15.2",
     "graphql": "0.7.2",
     "graphql-schema": "0.5.1",
     "netlify-styleguide": "0.1.0",

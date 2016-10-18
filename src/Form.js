@@ -1,7 +1,23 @@
 import React, {Component} from "react";
+import api from "./lib/apiGraphQL"
 import './button.css';
 
 class Form extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {data: null}
+  }
+
+  componentDidMount() {
+    this.fetchRepoData("yarnpkg", "yarn")
+  }
+
+  fetchRepoData(name, repo) {
+    api.fetchRepositoryData(name, repo).then(
+      (response) => this.setState({data: response.data})
+    );
+  }
+
   render() {
     return (
       <div className="Form grid">
