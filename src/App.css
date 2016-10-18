@@ -22,8 +22,11 @@
   padding: 16px;
 }
 
-.button {
-  height: 25px;
-  background-color: blue;
-  width: 100%;
+ul.smaller-words {
+  font-size: 12px;
+}
+
+textarea.boxed-input {
+  height: 100px;
+  width: 50%;
 }
