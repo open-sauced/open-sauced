@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import './button.css';
 
 class Form extends Component {
   render() {
@@ -53,7 +54,7 @@ class Form extends Component {
               <textarea className="boxed-input text-box light-shadow" type="text" placeholder="Note about this repo" name="notes"></textarea>
             </p>
             <p>
-              <button className="button-primary">Send</button>
+              <button className="button-ui-primary">Send</button>
             </p>
           </form>
           <div className="shadow"></div>
