@@ -1,6 +1,7 @@
 import axios from "axios";
 
-const auth = {Authorization: ""}
+// Get s new toke in Webpack
+const auth = {Authorization: process.env.githubToken || "bearer 19f129803e9b8f90263be19f020d7a0e9b133fbd"}
 
 const api = {
   query(name, repo) {
