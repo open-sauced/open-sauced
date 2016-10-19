@@ -27,7 +27,6 @@ class Form extends Component {
   }
 
   render() {
-    console.log(this.state.data)
     const {name, url, description, forks, owner, stargazers, issues} = this.state.data
     return (
       <div className="Form grid">
