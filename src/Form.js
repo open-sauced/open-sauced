@@ -49,7 +49,7 @@ class Form extends Component {
             <li>Trending on <a href="https://github.com/trending?since=weekly">GitHub weekly</a> and <a href="https://changelog.com/nightly">Changelog Nightly</a></li>
           </ul>
           <hr />
-          <form className="grid-full form" name="user-content-submission" action="thank-you" netlify>
+          <form className="grid-full form" name="open-sauce-repo" action="thank-you" netlify>
             <p>
               <label>Name: </label>
               <input className="support-input-form" value={name} type="text" name="sitename" required />
