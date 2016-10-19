@@ -34,7 +34,7 @@ class Form extends Component {
         <h2 className="title">Enter a GitHub URL</h2>
         <div className="">
           <div name="">
-            <input className="urlForm" onChange={this.setUrl} value={this.state.url} placeholder="https://github.com/netlify/netlify-cms"/>
+            <input className="urlForm" type="url" onChange={this.setUrl} value={this.state.url} placeholder="https://github.com/netlify/netlify-cms"/>
             <p>
               <button className="button-ui-default" onClick={this.fetchRepoData}>Scrape</button>
             </p>
@@ -49,7 +49,7 @@ class Form extends Component {
             <li>Trending on <a href="https://github.com/trending?since=weekly">GitHub weekly</a> and <a href="https://changelog.com/nightly">Changelog Nightly</a></li>
           </ul>
           <hr />
-          <form className="grid-full form" name="open-sauce-repo" netlify>
+          <form className="grid-full form" name="open-sauce-repo" action="thank-you" netlify>
             <p>
               <label>Name: </label>
               <input className="support-input-form" value={name} type="text" name="sitename" required />
