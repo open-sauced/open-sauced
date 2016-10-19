@@ -30,3 +30,8 @@ textarea.boxed-input {
   height: 100px;
   width: 50%;
 }
+
+input.urlForm {
+  padding: 10px;
+  width: 100%;
+}
