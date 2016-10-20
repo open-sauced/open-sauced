@@ -73,7 +73,7 @@ class Form extends Component {
       description,
     })
 
-    this.state.data = {};
+    this.setState({data: {}, contributors: '', uri: null, repo: null, name: null});
   }
 
   setUrl(e) {
