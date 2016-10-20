@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import api from "./lib/apiGraphQL"
+import firebase from "./lib/firebase"
 import './button.css';
 
 class Form extends Component {
@@ -7,12 +8,72 @@ class Form extends Component {
     super(props)
     this.setUrl = this.setUrl.bind(this);
     this.fetchRepoData = this.fetchRepoData.bind(this);
+    this.handleNameChange = this.handleNameChange.bind(this);
+    this.handleUrlChange = this.handleUrlChange.bind(this);
+    this.handleDescriptionChange = this.handleDescriptionChange.bind(this);
+    this.handleForksChange = this.handleForksChange.bind(this);
+    this.handleIssuessChange = this.handleIssuessChange.bind(this);
+    this.handleStarsChange = this.handleStarsChange.bind(this);
+    this.handleOwnerChange = this.handleOwnerChange.bind(this);
+    this.handleContributorsChange = this.handleContributorsChange.bind(this);
+    this.sendDataToFireBase = this.sendDataToFireBase.bind(this);
     this.state = {
       uri: null,
       repo: null,
       name: null,
+      contributors: '',
       data: {}
     };
+  }
+
+  handleNameChange(e) {
+    this.state.data.name = e.target.value;
+  }
+
+  handleUrlChange(e) {
+    this.state.data.url = e.target.value;
+  }
+
+  handleDescriptionChange(e) {
+    this.state.data.description = e.target.value;
+  }
+
+  handleForksChange(e) {
+    this.state.data.forks = e.target.value;
+  }
+
+  handleIssuessChange(e) {
+    this.state.data.issues = e.target.value;
+  }
+
+  handleStarsChange(e) {
+    this.state.data.stargazers = e.target.value;
+  }
+
+  handleOwnerChange(e) {
+    this.state.data.owner = e.target.value;
+  }
+
+  handleContributorsChange(e) {
+    this.setState({contributors: e.target.value});
+  }
+
+  sendDataToFireBase() {
+    const {name, url, description, forks, owner, stargazers, issues} = this.state.data
+
+    firebase.writeUserData({
+      name,
+      url,
+      owner: owner.login,
+      ownersRepoCount: owner.repositories.totalCount,
+      contributors: this.state.contributors,
+      forks: forks.totalCount,
+      stars: stargazers.totalCount,
+      issues: issues.totalCount,
+      description,
+    })
+
+    this.state.data = {};
   }
 
   setUrl(e) {
@@ -48,42 +109,42 @@ class Form extends Component {
             <li>Trending on <a href="https://github.com/trending?since=weekly">GitHub weekly</a> and <a href="https://changelog.com/nightly">Changelog Nightly</a></li>
           </ul>
           <hr />
-          <form className="grid-full form" name="open-sauce-repo" action="thank-you" netlify>
+          <div className="grid-full form">
             <p>
               <label>Name: </label>
-              <input className="support-input-form" value={name} type="text" name="sitename" required />
+              <input className="support-input-form" onChange={this.handleNameChange} value={name} type="text" name="sitename" required />
             </p>
             <p>
               <label>Link: </label>
-              <input className="boxed-input light-shadow" value={url} type="url" name="contentlink" required />
+              <input className="boxed-input light-shadow" onChange={this.handleUrlChange} value={url} type="url" name="contentlink" required />
             </p>
             <p>
               <label>Owner: </label>
-              <input className="boxed-input light-shadow" value={owner && owner.login} name="repoowner" required />
+              <input className="boxed-input light-shadow" onChange={this.handleOwnerChange} value={owner && owner.login} name="repoowner" required />
             </p>
             <p>
               <label>Contributors: </label>
-              <input className="boxed-input light-shadow" type="text" name="contributors" />
+              <input className="boxed-input light-shadow" onChange={this.handleContributorsChange} value={this.state.contributors} name="contributors" />
             </p>
             <p>
               <label>Stars: </label>
-              <input className="boxed-input light-shadow" value={stargazers && stargazers.totalCount} type="text" name="stars" required />
+              <input className="boxed-input light-shadow" onChange={this.handleStarsChange} value={stargazers && stargazers.totalCount} type="text" name="stars" required />
             </p>
             <p>
               <label>Forks: </label>
-              <input className="boxed-input light-shadow" value={forks && forks.totalCount} type="text" name="forks" required />
+              <input className="boxed-input light-shadow" onChange={this.handleForksChange} value={forks && forks.totalCount} type="text" name="forks" required />
             </p>
             <p>
               <label>Issues: </label>
-              <input className="boxed-input light-shadow" value={issues && issues.totalCount} type="text" name="issues" required />
+              <input className="boxed-input light-shadow" onChange={this.handleIssuesChange} value={issues && issues.totalCount} type="text" name="issues" required />
             </p>
             <p>
-              <textarea className="boxed-input text-box light-shadow" value={description} type="text" placeholder="Note about this repo" name="notes"></textarea>
+              <textarea className="boxed-input text-box light-shadow" onChange={this.handleDescriptionChange} value={description} type="text" placeholder="Note about this repo" name="notes"></textarea>
             </p>
             <p>
-              <button className="button-ui-primary">Send</button>
+              <button onClick={this.sendDataToFireBase} className="button-ui-primary">Send</button>
             </p>
-          </form>
+          </div>
           <div className="shadow"></div>
         </div>
       </div>

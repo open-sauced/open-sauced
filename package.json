@@ -7,6 +7,8 @@
   },
   "dependencies": {
     "axios": "0.15.2",
+    "firebase": "3.5.0",
+    "google-drive-sheets": "1.3.0",
     "graphql": "0.7.2",
     "graphql-schema": "0.5.1",
     "netlify-styleguide": "0.1.0",
