@@ -64,17 +64,17 @@ class Form extends Component {
   }
 
   sendDataToFireBase() {
-    const {name, url, description, forks, owner, stargazers, issues} = this.state.data
+    const {data, name, url, description, forks, owner, stargazers, issues, contributors} = this.state
 
     firebase.writeUserData({
       name,
       url,
-      owner: owner.login,
-      ownersRepoCount: owner.repositories.totalCount,
-      contributors: this.state.contributors,
-      forks: forks.totalCount,
-      stars: stargazers.totalCount,
-      issues: issues.totalCount,
+      owner,
+      ownersRepoCount: data.owner.repositories.totalCount,
+      contributors,
+      forks,
+      stargazers,
+      issues,
       description,
     })
 
