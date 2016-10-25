@@ -1,7 +1,6 @@
 import React, {Component} from "react";
 import api from "./lib/apiGraphQL"
 import firebase from "./lib/firebase"
-import './button.css';
 
 class Form extends Component {
   constructor(props) {
@@ -108,7 +107,7 @@ class Form extends Component {
   render() {
     const {contributors, name, url, description, forks, owner, stargazers, issues} = this.state
     return (
-      <div className="Form grid">
+      <div className="Form">
         <h2 className="title">Enter a GitHub URL</h2>
         <div className="">
           <div name="">

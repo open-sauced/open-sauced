@@ -11,7 +11,7 @@
     "google-drive-sheets": "1.3.0",
     "graphql": "0.7.2",
     "graphql-schema": "0.5.1",
-    "netlify-styleguide": "0.1.0",
+    "netlify-styleguide": "git+https://github.com/netlify/styleguide/",
     "promisingagent": "5.3.2",
     "react": "15.3.2",
     "react-dom": "15.3.2"
