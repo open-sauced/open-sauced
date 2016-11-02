@@ -1,4 +1,5 @@
 import Firebase from "firebase"
+import {fromJS} from "immutable";
 
 const config = {
   apiKey: "AIzaSyClkujwTSCfQE7XKt-miEpgdewcjQ4dxJY",
@@ -9,10 +10,21 @@ const config = {
 };
 
 const store = Firebase.initializeApp(config);
+const repoData = Firebase.database().ref('/repos/');
 
 const db = {
-  writeUserData(data) {
+  writeRepoData(data) {
     store.database().ref(`/repos/${data.name}`).set(data);
+  },
+
+  fetchAllRepoData(data) {
+    return repoData.on("value", (snapshot) => {
+      return snapshot;
+    }).then((res) => {
+      const data = fromJS(res.val()).toArray();
+      console.log(data)
+      return data;
+    })
   }
 };
 

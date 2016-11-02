@@ -65,7 +65,7 @@ class Form extends Component {
   sendDataToFireBase() {
     const {data, name, url, description, forks, owner, stargazers, issues, contributors} = this.state
 
-    firebase.writeUserData({
+    firebase.writeRepoData({
       name,
       url,
       owner,

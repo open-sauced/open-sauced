@@ -16,7 +16,7 @@ const api = {
               repositories {
                 totalCount
               }
-            }  
+            }
             description
             forks {
               totalCount
