@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import api from "./lib/apiGraphQL"
 import firebase from "./lib/firebase"
 import RepoCount from "./Count";
+import {size} from "lodash";
 
 class Form extends Component {
   constructor(props) {
@@ -15,11 +16,9 @@ class Form extends Component {
     this.handleStarsChange = this.handleStarsChange.bind(this);
     this.handleOwnerChange = this.handleOwnerChange.bind(this);
     this.handleContributorsChange = this.handleContributorsChange.bind(this);
-    this.sendDataToFireBase = this.sendDataToFireBase.bind(this);
-    this.fetchRepoCount = this.fetchRepoCount.bind(this);
     this.fetchRepoData = this.fetchRepoData.bind(this);
+    this.sendDataToFireBase = this.sendDataToFireBase.bind(this);
     this.state = {
-      repoCount: null,
       uri: '',
       contributors: '',
       data: {},
@@ -31,15 +30,6 @@ class Form extends Component {
       stargazers: '',
       issues: ''
     };
-  }
-
-  componentDidMount() {
-    this.fetchRepoCount();
-  }
-
-
-  fetchRepoCount() {
-    firebase.fetchAllRepoData().then((repoCount) => this.setState({repoCount}));
   }
 
   handleNameChange(e) {
@@ -121,10 +111,12 @@ class Form extends Component {
   }
 
   render() {
+    const {repoData} = this.props;
     const {
       contributors, name, url, description, forks, owner, stargazers,
-      issues, repoCount
+      issues
     } = this.state
+
     return (
       <div className="Form">
         <h2 className="title">Enter a GitHub URL</h2>
@@ -177,7 +169,7 @@ class Form extends Component {
             <p>
               <textarea className="boxed-input text-box light-shadow" onChange={this.handleDescriptionChange} value={description} type="text" placeholder="Note about this repo" name="notes"></textarea>
             </p>
-            <RepoCount count={repoCount} />
+            <RepoCount count={size(repoData)} />
             <p>
               <button onClick={this.sendDataToFireBase} className="button-ui-primary">Send</button>
             </p>
