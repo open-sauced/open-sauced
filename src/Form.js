@@ -122,7 +122,7 @@ class Form extends Component {
         <h2 className="title">Enter a GitHub URL</h2>
         <div className="">
           <div name="">
-            <input className="urlForm" type="url" onChange={this.setUrl} value={url} placeholder="https://github.com/netlify/netlify-cms"/>
+            <input className="utility-input urlForm" type="url" onChange={this.setUrl} value={url} placeholder="https://github.com/netlify/netlify-cms"/>
             <p>
               <button className="button-ui-default" onClick={this.fetchRepoData}>Scrape</button>
             </p>
@@ -139,35 +139,28 @@ class Form extends Component {
           <hr />
           <div className="grid-full form">
             <p>
-              <label>Name: </label>
-              <input className="support-input-form" onChange={this.handleNameChange} value={name} type="text" name="sitename" required />
+              <input className="utility-input support-input-form" placeholder="Name" type="text" onChange={this.handleNameChange} value={name} type="text" name="sitename" required />
             </p>
             <p>
-              <label>Link: </label>
-              <input className="boxed-input light-shadow" onChange={this.handleUrlChange} value={url} type="url" name="contentlink" required />
+              <input className="utility-input boxed-input light-shadow" placeholder="Link" onChange={this.handleUrlChange} value={url} type="url" name="contentlink" required />
             </p>
             <p>
-              <label>Owner: </label>
-              <input className="boxed-input light-shadow" onChange={this.handleOwnerChange} value={owner} name="repoowner" required />
+              <input className="utility-input boxed-input light-shadow" placeholder="Owner" onChange={this.handleOwnerChange} value={owner} name="repoowner" required />
             </p>
             <p>
-              <label>Contributors: </label>
-              <input className="boxed-input light-shadow" onChange={this.handleContributorsChange} value={contributors} name="contributors" />
+              <input className="utility-input boxed-input light-shadow" placeholder="Contributors" onChange={this.handleContributorsChange} value={contributors} name="contributors" />
             </p>
             <p>
-              <label>Stars: </label>
-              <input className="boxed-input light-shadow" onChange={this.handleStarsChange} value={stargazers} type="text" name="stars" required />
+              <input className="utility-input boxed-input light-shadow" placeholder="Stars" onChange={this.handleStarsChange} value={stargazers} type="text" name="stars" required />
             </p>
             <p>
-              <label>Forks: </label>
-              <input className="boxed-input light-shadow" onChange={this.handleForksChange} value={forks} type="text" name="forks" required />
+              <input className="utility-input boxed-input light-shadow" placeholder="Forks" onChange={this.handleForksChange} value={forks} type="text" name="forks" required />
             </p>
             <p>
-              <label>Issues: </label>
-              <input className="boxed-input light-shadow" onChange={this.handleIssuesChange} value={issues} type="text" name="issues" required />
+              <input className="utility-input boxed-input light-shadow" placeholder="Issues" onChange={this.handleIssuesChange} value={issues} type="text" name="issues" required />
             </p>
             <p>
-              <textarea className="boxed-input text-box light-shadow" onChange={this.handleDescriptionChange} value={description} type="text" placeholder="Note about this repo" name="notes"></textarea>
+              <textarea className="utility-input boxed-input text-box light-shadow" onChange={this.handleDescriptionChange} value={description} type="text" placeholder="Note about this repo" name="notes"></textarea>
             </p>
             <RepoCount count={size(repoData)} />
             <p>

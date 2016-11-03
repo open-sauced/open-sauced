@@ -22,6 +22,14 @@
   padding: 16px;
 }
 
+.Manager {
+  padding: 16px;
+
+  form-control.input {
+
+  }
+}
+
 ul.smaller-words {
   font-size: 12px;
 }
@@ -34,4 +42,140 @@ textarea.boxed-input {
 input.urlForm {
   padding: 10px;
   width: 70%;
+}
+
+/*Griddle Help*/
+
+.filter-container {
+overflow: hidden;
+  padding-top: 18px;
+
+  .input-group {
+    position: relative;
+
+    * {
+      box-sizing: border-box;
+    }
+  }
+
+  input,
+  textarea {
+    display: block;
+    padding: var(--micro);
+    padding-left: 0;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid var(--lightestGrey);
+    border-radius: 0;
+    appearance: none;
+    background: none;
+    color: var(--grey);
+    display: block;
+    font-size: var(--tiny);
+    font-weight: var(--regular);
+    height: var(--medium);
+    padding-left: 0;
+    -webkit-appearance: none;
+    width: 100%;
+
+    &:focus {
+      outline: none;
+
+      ~ .bar {
+        &::before,
+        &::after {
+          width: 50%;
+        }
+      }
+
+      ~ .button-submit {
+        margin-top: -35px;
+      }
+    }
+
+    &:focus,
+    &:valid {
+      ~ label {
+        color: var(--green);
+        font-size: 12px;
+        top: -var(--tiny);
+      }
+    }
+  }
+
+  textarea {
+    border: 1px solid var(--green);
+    height: auto;
+    padding: var(--small);
+    text-align: left;
+  }
+
+  label {
+    color: var(--grey);
+    font-size: 14px;
+    font-weight: var(--semibold);
+    left: 0;
+    position: absolute;
+    pointer-events: none;
+    text-transform: uppercase;
+    top: var(--micro);
+    transition: 0.2s ease all;
+  }
+
+  .bar {
+    position: relative;
+    display: block;
+    width: 100%;
+
+    &::before,
+    &::after {
+      background: var(--green);
+      bottom: 0;
+      content: ' ';
+      height: 1px;
+      position: absolute;
+      bottom: 0;
+      width: 0;
+      height: 1px;
+      background: var(--green);
+      content: ' ';
+      transition: .2s ease all;
+    }
+
+    &::before {
+      left: 50%;
+    }
+
+    &::after {
+      right: 50%;
+    }
+  }
+
+  .button-submit {
+    position: absolute;
+    right: 0;
+    margin-top: var(--micro);
+    transition: margin-top 200ms ease;
+
+    &:hover {
+      transition-delay: 1s;
+    }
+  }
+}
+
+select {
+  width: 100%;
+  height: var(--medium);
+  outline: none;
+  border: 1px solid var(--lightestGrey);
+  background: white;
+  color: var(--grey);
+  text-transform: uppercase;
+  font-weight: var(--semibold);
+  font-size: 14px;
+  cursor: pointer;
+
+  &:focus {
+    border: 1px solid var(--green);
+  }
 }

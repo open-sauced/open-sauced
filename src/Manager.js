@@ -4,9 +4,17 @@ import Griddle from "griddle-react";
 const Manager = ({data}) => {
   const mappedRepos = data.map((x) => x.toObject());
 
-  // return <Griddle results={mappedRepos} />
-  return <Griddle results={mappedRepos} tableClassName="table" showFilter={true}
- showSettings={true} />}
+  return (
+    <div className="Manager ui">
+      <Griddle
+        results={mappedRepos}
+        settingsToggleClassName="button button-ui-default"
+        showFilter={true}
+        showSettings={true}
+      />
+    </div>
+  );
+};
 
 export default Manager;
 

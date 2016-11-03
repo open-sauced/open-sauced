@@ -24,7 +24,7 @@ export default class Main extends Component {
     const {repoData} = this.state;
 
     return repoData ?
-      <div>
+      <div className="Main">
         <div className="App-header">
           <h1>Open Sauced</h1>
         </div>
