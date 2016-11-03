@@ -12,6 +12,7 @@
     "graphql": "0.7.2",
     "graphql-schema": "0.5.1",
     "immutable": "3.8.1",
+    "lodash": "^4.16.6",
     "netlify-styleguide": "git+https://github.com/netlify/styleguide/",
     "promisingagent": "5.3.2",
     "react": "15.3.2",

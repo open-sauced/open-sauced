@@ -7,18 +7,16 @@ import firebase from "./lib/firebase"
 
 class App extends Component {
   render() {
-    const repoData = firebase.fetchAllRepoData()();
-    console.log("yo", repoData)
     return (
       <div className="App">
         <div className="App-header">
           <h1>Open Sauced</h1>
         </div>
         <Form />
-        <Manager data={repoData} />
       </div>
     );
   }
 }
+        // <Manager data={repoData} />
 
 export default App;

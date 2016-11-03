@@ -1,12 +1,12 @@
 import React, {Component} from "react";
 import api from "./lib/apiGraphQL"
 import firebase from "./lib/firebase"
+import RepoCount from "./Count";
 
 class Form extends Component {
   constructor(props) {
     super(props)
     this.setUrl = this.setUrl.bind(this);
-    this.fetchRepoData = this.fetchRepoData.bind(this);
     this.handleNameChange = this.handleNameChange.bind(this);
     this.handleUrlChange = this.handleUrlChange.bind(this);
     this.handleDescriptionChange = this.handleDescriptionChange.bind(this);
@@ -16,7 +16,10 @@ class Form extends Component {
     this.handleOwnerChange = this.handleOwnerChange.bind(this);
     this.handleContributorsChange = this.handleContributorsChange.bind(this);
     this.sendDataToFireBase = this.sendDataToFireBase.bind(this);
+    this.fetchRepoCount = this.fetchRepoCount.bind(this);
+    this.fetchRepoData = this.fetchRepoData.bind(this);
     this.state = {
+      repoCount: null,
       uri: '',
       contributors: '',
       data: {},
@@ -28,6 +31,15 @@ class Form extends Component {
       stargazers: '',
       issues: ''
     };
+  }
+
+  componentDidMount() {
+    this.fetchRepoCount();
+  }
+
+
+  fetchRepoCount() {
+    firebase.fetchAllRepoData().then((repoCount) => this.setState({repoCount}));
   }
 
   handleNameChange(e) {
@@ -77,7 +89,11 @@ class Form extends Component {
       description,
     })
 
-    this.setState({data: {}, description: '', owner: '', stargazers: '', forks: '', issues: '', contributors: '', uri: '', url: '', name: ''});
+    this.setState(
+      {data: {}, description: '', owner: '', stargazers: '', forks:
+       '', issues: '', contributors: '', uri: '', url: '', name: ''},
+       this.fetchRepoCount()
+    );
   }
 
   setUrl(e) {
@@ -105,7 +121,10 @@ class Form extends Component {
   }
 
   render() {
-    const {contributors, name, url, description, forks, owner, stargazers, issues} = this.state
+    const {
+      contributors, name, url, description, forks, owner, stargazers,
+      issues, repoCount
+    } = this.state
     return (
       <div className="Form">
         <h2 className="title">Enter a GitHub URL</h2>
@@ -158,6 +177,7 @@ class Form extends Component {
             <p>
               <textarea className="boxed-input text-box light-shadow" onChange={this.handleDescriptionChange} value={description} type="text" placeholder="Note about this repo" name="notes"></textarea>
             </p>
+            <RepoCount count={repoCount} />
             <p>
               <button onClick={this.sendDataToFireBase} className="button-ui-primary">Send</button>
             </p>
