@@ -12,7 +12,7 @@ class Form extends Component {
     this.handleUrlChange = this.handleUrlChange.bind(this);
     this.handleDescriptionChange = this.handleDescriptionChange.bind(this);
     this.handleForksChange = this.handleForksChange.bind(this);
-    this.handleIssuessChange = this.handleIssuessChange.bind(this);
+    this.handleIssuesChange = this.handleIssuesChange.bind(this);
     this.handleStarsChange = this.handleStarsChange.bind(this);
     this.handleOwnerChange = this.handleOwnerChange.bind(this);
     this.handleContributorsChange = this.handleContributorsChange.bind(this);
@@ -48,7 +48,7 @@ class Form extends Component {
     this.setState({forks: e.target.value});
   }
 
-  handleIssuessChange(e) {
+  handleIssuesChange(e) {
     this.setState({issues: e.target.value});
   }
 
@@ -82,7 +82,7 @@ class Form extends Component {
     this.setState(
       {data: {}, description: '', owner: '', stargazers: '', forks:
        '', issues: '', contributors: '', uri: '', url: '', name: ''},
-       this.fetchRepoCount()
+       this.props.fetchData()
     );
   }
 

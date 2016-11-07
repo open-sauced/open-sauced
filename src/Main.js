@@ -6,17 +6,17 @@ import firebase from "./lib/firebase"
 export default class Main extends Component {
   constructor(props) {
     super(props)
-    this.fetchRepoCount = this.fetchRepoCount.bind(this);
+    this.fetchRepoData = this.fetchRepoData.bind(this);
     this.state = {
       repoData: null,
     };
   }
 
   componentDidMount() {
-    this.fetchRepoCount();
+    this.fetchRepoData();
   }
 
-  fetchRepoCount() {
+  fetchRepoData() {
     firebase.fetchAllRepoData().then((repoData) => this.setState({repoData}));
   }
 
@@ -32,7 +32,7 @@ export default class Main extends Component {
           <Manager data={repoData} />
         </div>
         <div className="content">
-          <Form repoData={repoData} />
+          <Form fetchData={this.fetchRepoData} repoData={repoData} />
         </div>
       </div>
         : <div>...Loading</div>
