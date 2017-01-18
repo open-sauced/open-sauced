@@ -3,6 +3,8 @@ import api from "./lib/apiGraphQL"
 import firebase from "./lib/firebase"
 import RepoCount from "./Count";
 import {size} from "lodash";
+import { graphql } from 'react-apollo'
+import gql from 'graphql-tag'
 
 class Form extends Component {
   constructor(props) {
@@ -174,4 +176,19 @@ class Form extends Component {
   }
 };
 
-export default Form;
+const createFormMutation = gql`
+  mutation createPokemon($name: String!, $url: String!, $trainerId: ID) {
+    createPokemon(name: $name, url: $url, trainerId: $trainerId) {
+      trainer {
+        id
+        ownedPokemons {
+          id
+        }
+      }
+    }
+  }
+`
+
+const FormMutation = graphql(createFormMutation)(Form)
+
+export default FormMutation;
