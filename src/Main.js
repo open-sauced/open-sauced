@@ -1,41 +1,46 @@
 import React, {Component} from "react";
 import Form from "./Form";
 import Manager from "./Manager";
-import firebase from "./lib/firebase"
+import { graphql } from 'react-apollo'
+import gql from 'graphql-tag'
 
-export default class Main extends Component {
+class Main extends Component {
   constructor(props) {
     super(props)
-    this.fetchRepoData = this.fetchRepoData.bind(this);
     this.state = {
       repoData: null,
     };
   }
 
-  componentDidMount() {
-    this.fetchRepoData();
-  }
-
-  fetchRepoData() {
-    firebase.fetchAllRepoData().then((repoData) => this.setState({repoData}));
-  }
-
   render() {
-    const {repoData} = this.state;
+    const {allRepositories} = this.props.data;
 
-    return repoData ?
+    return allRepositories && allRepositories !== undefined ?
       <div className="Main">
         <div className="App-header">
           <h1>Open Sauced</h1>
         </div>
         <div className="content">
-          <Manager data={repoData} />
+          <Manager data={allRepositories} />
         </div>
         <div className="content">
-          <Form fetchData={this.fetchRepoData} repoData={repoData} />
+          <Form repoData={allRepositories} />
         </div>
       </div>
         : <div>...Loading</div>
   }
 }
+const RepoQuery = gql`
+ query {
+    allRepositories {
+      name
+      url
+      stargazers
+    }
+  }
+`
+
+const MainWithData = graphql(RepoQuery)(Main)
+
+export default MainWithData
 

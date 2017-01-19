@@ -1,6 +1,5 @@
 import React, {Component} from "react";
 import api from "./lib/apiGraphQL"
-import firebase from "./lib/firebase"
 import RepoCount from "./Count";
 import {size} from "lodash";
 import { graphql } from 'react-apollo'
@@ -19,11 +18,11 @@ class Form extends Component {
     this.handleOwnerChange = this.handleOwnerChange.bind(this);
     this.handleContributorsChange = this.handleContributorsChange.bind(this);
     this.fetchRepoData = this.fetchRepoData.bind(this);
-    this.sendDataToFireBase = this.sendDataToFireBase.bind(this);
+    this.sendDataToApollo = this.sendDataToApollo.bind(this);
     this.state = {
+      data: {},
       uri: '',
       contributors: '',
-      data: {},
       name: '',
       url: '',
       description: '',
@@ -66,26 +65,26 @@ class Form extends Component {
     this.setState({contributors: e.target.value});
   }
 
-  sendDataToFireBase() {
-    const {data, name, url, description, forks, owner, stargazers, issues, contributors} = this.state
+  sendDataToApollo() {
+    const {name, url, description, forks, owner, stargazers, issues, contributors} = this.state
 
-    firebase.writeRepoData({
+    this.props.mutate({variables: {
       name,
       url,
       owner,
-      ownersRepoCount: data.owner.repositories.totalCount,
       contributors,
       forks,
       stargazers,
       issues,
       description,
-    })
-
-    this.setState(
-      {data: {}, description: '', owner: '', stargazers: '', forks:
-       '', issues: '', contributors: '', uri: '', url: '', name: ''},
-       this.props.fetchData()
-    );
+    }})
+      .then(() => {
+        this.setState(
+          {data: {}, description: '', owner: '', stargazers: '', forks:
+           '', issues: '', contributors: '', uri: '', url: '', name: ''}
+        );
+      })
+      .catch((error) => console.log(error));
   }
 
   setUrl(e) {
@@ -134,8 +133,8 @@ class Form extends Component {
           </h3>
           <ul className="smaller-words">
             <li>Existing Documentation</li>
-            <li>More than 25+ contributors</li>
-            <li>A [Static] Site Generator</li>
+            <li>More than 10+ contributors</li>
+            <li>Active commits within the last month</li>
             <li>Trending on <a href="https://github.com/trending?since=weekly">GitHub weekly</a> and <a href="https://changelog.com/nightly">Changelog Nightly</a></li>
           </ul>
           <hr />
@@ -166,7 +165,7 @@ class Form extends Component {
             </p>
             <RepoCount count={size(repoData)} />
             <p>
-              <button onClick={this.sendDataToFireBase} className="button-ui-primary">Send</button>
+              <button onClick={this.sendDataToApollo} className="button-ui-primary">Send</button>
             </p>
           </div>
           <div className="shadow"></div>
@@ -177,18 +176,12 @@ class Form extends Component {
 };
 
 const createFormMutation = gql`
-  mutation createPokemon($name: String!, $url: String!, $trainerId: ID) {
-    createPokemon(name: $name, url: $url, trainerId: $trainerId) {
-      trainer {
-        id
-        ownedPokemons {
-          id
-        }
-      }
+  mutation createRepository($name: String!, $url: String!, $owner: String!, $stargazers: Int, $issues: Int, $forks: Int, $description: String) {
+    createRepository(name: $name, url: $url, owner: $owner, stargazers: $stargazers, issues: $issues, forks: $forks, description: $description) {
+      id
     }
   }
 `
-
 const FormMutation = graphql(createFormMutation)(Form)
 
 export default FormMutation;
