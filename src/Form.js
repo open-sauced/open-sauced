@@ -1,7 +1,6 @@
 import React, {Component} from "react";
 import api from "./lib/apiGraphQL"
 import RepoCount from "./Count";
-import {size} from "lodash";
 import { graphql } from 'react-apollo'
 import gql from 'graphql-tag'
 
@@ -117,6 +116,7 @@ class Form extends Component {
       contributors, name, url, description, forks, owner, stargazers,
       issues
     } = this.state
+    console.log(repoData.length)
 
     return (
       <div className="Form">
@@ -163,7 +163,7 @@ class Form extends Component {
             <p>
               <textarea className="utility-input boxed-input text-box light-shadow" onChange={this.handleDescriptionChange} value={description} type="text" placeholder="Note about this repo" name="notes"></textarea>
             </p>
-            <RepoCount count={size(repoData)} />
+            <RepoCount count={repoData.length} />
             <p>
               <button onClick={this.sendDataToApollo} className="button-ui-primary">Send</button>
             </p>
