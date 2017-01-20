@@ -116,7 +116,6 @@ class Form extends Component {
       contributors, name, url, description, forks, owner, stargazers,
       issues
     } = this.state
-    console.log(repoData.length)
 
     return (
       <div className="Form">
