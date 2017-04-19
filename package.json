@@ -48,6 +48,7 @@
     "whatwg-fetch": "1.0.0"
   },
   "dependencies": {
+    "add": "^2.0.6",
     "apollo-client": "^0.7.3",
     "axios": "0.15.2",
     "firebase": "3.5.0",
@@ -61,7 +62,10 @@
     "promisingagent": "5.3.2",
     "react": "15.3.2",
     "react-apollo": "^0.8.1",
-    "react-dom": "15.3.2"
+    "react-dom": "15.3.2",
+    "react-router": "^4.1.1",
+    "react-router-dom": "^4.1.1",
+    "yarn": "^0.22.0"
   },
   "scripts": {
     "start": "node scripts/start.js",

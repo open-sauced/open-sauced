@@ -5,13 +5,6 @@ import { graphql } from 'react-apollo'
 import gql from 'graphql-tag'
 
 class Main extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      repoData: null,
-    };
-  }
-
   render() {
     const {allRepositories} = this.props.data;
 
@@ -19,6 +12,11 @@ class Main extends Component {
       <div className="Main">
         <div className="App-header">
           <h1>Open Sauced</h1>
+          <ul>
+            <li>Add a project</li>
+            <li>List</li>
+            <li>GitHub</li>
+          </ul>
         </div>
         <div className="content">
           <Manager data={allRepositories} />

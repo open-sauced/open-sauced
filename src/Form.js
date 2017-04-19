@@ -112,6 +112,7 @@ class Form extends Component {
 
   render() {
     const {repoData} = this.props;
+    // console.log(repoData)
     const {
       contributors, name, url, description, forks, owner, stargazers,
       issues
@@ -130,12 +131,6 @@ class Form extends Component {
           <h3>
             We are only looking for open source repos that meet one or more of the following criteria:
           </h3>
-          <ul className="smaller-words">
-            <li>Existing Documentation</li>
-            <li>More than 10+ contributors</li>
-            <li>Active commits within the last month</li>
-            <li>Trending on <a href="https://github.com/trending?since=weekly">GitHub weekly</a> and <a href="https://changelog.com/nightly">Changelog Nightly</a></li>
-          </ul>
           <hr />
           <div className="grid-full form">
             <p>
@@ -160,9 +155,9 @@ class Form extends Component {
               <input className="utility-input boxed-input light-shadow" placeholder="Issues" onChange={this.handleIssuesChange} value={issues} type="text" name="issues" required />
             </p>
             <p>
-              <textarea className="utility-input boxed-input text-box light-shadow" onChange={this.handleDescriptionChange} value={description} type="text" placeholder="Note about this repo" name="notes"></textarea>
+              <textarea className="utility-input boxed-input text-box light-shadow" onChange={this.handleDescriptionChange} value={description} type="text" placeholder="Repository Description" name="notes"></textarea>
             </p>
-            <RepoCount count={repoData.length} />
+            {/*<RepoCount count={repoData.length} /> */}
             <p>
               <button onClick={this.sendDataToApollo} className="button-ui-primary">Send</button>
             </p>
