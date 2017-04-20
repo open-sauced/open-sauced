@@ -4,7 +4,7 @@ import RepoCount from "./Count";
 import { graphql } from 'react-apollo'
 import gql from 'graphql-tag'
 
-class Form extends Component {
+class NewRepoForm extends Component {
   constructor(props) {
     super(props)
     this.setUrl = this.setUrl.bind(this);
@@ -111,8 +111,7 @@ class Form extends Component {
   }
 
   render() {
-    const {repoData} = this.props;
-    // console.log(repoData)
+    const {count} = this.props;
     const {
       contributors, name, url, description, forks, owner, stargazers,
       issues
@@ -129,12 +128,12 @@ class Form extends Component {
             </p>
           </div>
           <h3>
-            We are only looking for open source repos that meet one or more of the following criteria:
+            Add a url to a GitHub repo you would like to track here and we can fetch the data
           </h3>
           <hr />
           <div className="grid-full form">
             <p>
-              <input className="utility-input support-input-form" placeholder="Name" type="text" onChange={this.handleNameChange} value={name} type="text" name="sitename" required />
+              <input className="utility-input support-input-form" placeholder="Name" onChange={this.handleNameChange} value={name} type="text" name="sitename" required />
             </p>
             <p>
               <input className="utility-input boxed-input light-shadow" placeholder="Link" onChange={this.handleUrlChange} value={url} type="url" name="contentlink" required />
@@ -157,7 +156,7 @@ class Form extends Component {
             <p>
               <textarea className="utility-input boxed-input text-box light-shadow" onChange={this.handleDescriptionChange} value={description} type="text" placeholder="Repository Description" name="notes"></textarea>
             </p>
-            {/*<RepoCount count={repoData.length} /> */}
+            <RepoCount count={count} />
             <p>
               <button onClick={this.sendDataToApollo} className="button-ui-primary">Send</button>
             </p>
@@ -176,6 +175,6 @@ const createFormMutation = gql`
     }
   }
 `
-const FormMutation = graphql(createFormMutation)(Form)
+const FormMutation = graphql(createFormMutation)(NewRepoForm)
 
 export default FormMutation;
