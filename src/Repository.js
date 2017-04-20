@@ -1,14 +1,16 @@
 import React from 'react'
+import Form from './NoteForm'
 import { graphql } from 'react-apollo'
 import gql from 'graphql-tag'
 
 const Repository = ({ data, match }) => {
-  const { name, description } = data.Repository || {}
+  const { id, name, description } = data.Repository || {}
 
   return (
   <div>
     {name && <h3>{name}</h3>}
     {description && <p>{description}</p>}
+    <Form repoId={id} repoName={name} />
   </div>
   )
 }
