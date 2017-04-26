@@ -11,7 +11,10 @@ const Repositories = ({ match, data }) => {
   const {allRepositories} = data
   return (
     <div>
-      <h2>GitHub Reposoitories</h2>
+      <h1>GitHub Reposoitories</h1>
+      <Route exact path={match.url} render={() => (
+        <p>Select a repo to see details.</p>
+      )}/>
       <ul>
         {allRepositories ? allRepositories.map((repo) => (
           <li key={repo.name}>
@@ -19,13 +22,10 @@ const Repositories = ({ match, data }) => {
               {repo.name}
             </Link>
           </li>
-          )): <p>...Loading</p>}
+          )): <p className="greyed">Loading...</p>}
       </ul>
 
       <Route path={`${match.url}/:repoName/:id`} component={Repository}/>
-      <Route exact path={match.url} render={() => (
-        <h3>Select a repo to see details.</h3>
-      )}/>
     </div>
   );
 }
