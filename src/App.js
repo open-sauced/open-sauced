@@ -15,8 +15,9 @@ const App = () => (
         <Link to="/new" className="nav-link" alt="Add A Repo"><span className="icon-plus"></span></Link>
       </header>
       <section>
-        <Route path="/new" component={NewRepo}/>
         <Route exact path="/" component={Repositories}/>
+        <Route path="/repos" component={Repositories}/>
+        <Route path="/new" component={NewRepo}/>
       </section>
     </div>
   </Router>

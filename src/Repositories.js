@@ -18,14 +18,14 @@ const Repositories = ({ match, data }) => {
       <ul>
         {allRepositories ? allRepositories.map((repo) => (
           <li key={repo.name}>
-            <Link to={`${match.url}/${repo.name}/${repo.id}`}>
+            <Link to={`${match.url}/repos/${repo.name}/${repo.id}`}>
               {repo.name}
             </Link>
           </li>
           )): <p className="greyed">Loading...</p>}
       </ul>
 
-      <Route path={`${match.url}/:repoName/:id`} component={Repository}/>
+      <Route path={`${match.url}/repos/:repoName/:id`} component={Repository}/>
     </div>
   );
 }

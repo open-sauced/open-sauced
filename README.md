@@ -1,7 +1,7 @@
 # Open Sauced
 ---
 
-This is a GrpahQL starter project to stalk open source repos and take notes.
+This is a GraphQL starter project to stalk open source repos and take notes.
 
 
 ## Setup
