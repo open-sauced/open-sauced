@@ -1,6 +1,7 @@
 import React from 'react'
 import NewRepo from './NewRepo'
 import Repositories from './Repositories'
+import Dropdown from './Dropdown'
 import {
   BrowserRouter as Router,
   Route,
@@ -13,6 +14,7 @@ const App = () => (
       <header>
         <Link to="/" className="home" alt="home"><span className="icon-home"></span></Link>
         <Link to="/new" className="nav-link" alt="Add A Repo"><span className="icon-plus"></span></Link>
+        <Dropdown />
       </header>
       <section>
         <Route exact path="/" component={Repositories}/>

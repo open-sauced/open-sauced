@@ -73,6 +73,10 @@ header {
   background: var(--grey);
 }
 
+.landing-nav + select {
+  display: none;
+}
+
 section {
   padding: var(--tiny);
 }
@@ -96,12 +100,12 @@ header a.nav-link {
   float: right;
 }
 
-ul {
+.repositories ul {
   margin: 0;
   padding: 0;
 }
 
-li {
+.repositories li {
   background-color: white;
   box-shadow: rgba(0,0,0,0.2) 0px 1px 2px 0px;
   border: 0px solid rgba(123, 123, 123, 0.498039);
@@ -109,16 +113,81 @@ li {
   font-size: var(--small);
   list-style-type: none;
   margin-bottom: var(--tiny);
+  outline: none;
   transition: background-color .2s ease;
 }
 
-li:hover {
-  background: var(--gold);
+.repositories li:hover {
+  background: var(--green);
 }
 
-li a {
+.repositories li a {
   color: var(--grey);
   display: block;
   padding: var(--small);
   text-decoration: none;
+}
+
+.nav {
+  background: #222;
+  position: relative;
+  display: inline-block;
+  float: right;
+}
+
+.nav>li {
+  display: block;
+  float: left;
+  margin: 0;
+  padding: 0;
+}
+
+.nav>li>a {
+  display: block;
+  position: relative;
+}
+
+.dropdown>a {
+  color: white;
+  font-size: var(--tiny);
+  font-weight: var(--bold);
+}
+.nav ul {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: block;
+}
+.nav ul li {
+  position: absolute;
+  top: -9999px;
+  height: 0px;
+  display: block;
+  margin: 0;
+  padding: 0;
+  transition: height .2s ease;
+}
+.dropdown:hover>ul>li {
+  height: var(--medium);
+  position: relative;
+  top: auto;
+}
+
+.dropdown-label {
+  padding: 21.5px var(--tiny);
+}
+
+.nav ul li a {
+  background: var(--grey);
+  font-size: var(--tiny);
+  padding: 9px var(--tiny) 10px var(--tiny);
+  width: 175px;
+  display: block;
+  position: relative;
+}
+.nav ul li:hover>a,
+.nav ul li a:hover {
+  color: white;
+  background-color: var(--green);
 }

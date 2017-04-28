@@ -10,22 +10,23 @@ import {
 const Repositories = ({ match, data }) => {
   const {allRepositories} = data
   return (
-    <div>
-      <h1>GitHub Reposoitories</h1>
+    <div className="repositories">
       <Route exact path={match.url} render={() => (
-        <p>Select a repo to see details.</p>
+        <div className="landing-nav">
+          <h1>GitHub Reposoitories</h1>
+          <p>Select a repo to see details.</p>
+          <ul>
+            {allRepositories ? allRepositories.map((repo) => (
+              <li key={repo.name}>
+                <Link to={`/repos/${repo.name}/${repo.id}`}>
+                  {repo.name}
+                </Link>
+              </li>
+              )): <p className="greyed">Loading...</p>}
+          </ul>
+        </div>
       )}/>
-      <ul>
-        {allRepositories ? allRepositories.map((repo) => (
-          <li key={repo.name}>
-            <Link to={`${match.url}/repos/${repo.name}/${repo.id}`}>
-              {repo.name}
-            </Link>
-          </li>
-          )): <p className="greyed">Loading...</p>}
-      </ul>
-
-      <Route path={`${match.url}/repos/:repoName/:id`} component={Repository}/>
+      <Route path={`/repos/:repoName/:id`} component={Repository}/>
     </div>
   );
 }
