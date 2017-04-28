@@ -119,47 +119,26 @@ class NewRepoForm extends Component {
 
     return (
       <div className="Form">
-        <h2 className="title">Enter a GitHub URL</h2>
+        <h1 className="title">Enter a GitHub URL</h1>
+        <p>
+          Add a url to a GitHub repo you would like to track here and we can fetch the data
+        </p>
         <div className="">
           <div name="">
             <input className="utility-input urlForm" type="url" onChange={this.setUrl} value={url} placeholder="https://github.com/netlify/netlify-cms"/>
-            <p>
               <button className="button-ui-default" onClick={this.fetchRepoData}>Scrape</button>
-            </p>
           </div>
-          <h3>
-            Add a url to a GitHub repo you would like to track here and we can fetch the data
-          </h3>
-          <hr />
           <div className="grid-full form">
-            <p>
-              <input className="utility-input support-input-form" placeholder="Name" onChange={this.handleNameChange} value={name} type="text" name="sitename" required />
-            </p>
-            <p>
-              <input className="utility-input boxed-input light-shadow" placeholder="Link" onChange={this.handleUrlChange} value={url} type="url" name="contentlink" required />
-            </p>
-            <p>
-              <input className="utility-input boxed-input light-shadow" placeholder="Owner" onChange={this.handleOwnerChange} value={owner} name="repoowner" required />
-            </p>
-            <p>
-              <input className="utility-input boxed-input light-shadow" placeholder="Contributors" onChange={this.handleContributorsChange} value={contributors} name="contributors" />
-            </p>
-            <p>
-              <input className="utility-input boxed-input light-shadow" placeholder="Stars" onChange={this.handleStarsChange} value={stargazers} type="text" name="stars" required />
-            </p>
-            <p>
-              <input className="utility-input boxed-input light-shadow" placeholder="Forks" onChange={this.handleForksChange} value={forks} type="text" name="forks" required />
-            </p>
-            <p>
-              <input className="utility-input boxed-input light-shadow" placeholder="Issues" onChange={this.handleIssuesChange} value={issues} type="text" name="issues" required />
-            </p>
-            <p>
-              <textarea className="utility-input boxed-input text-box light-shadow" onChange={this.handleDescriptionChange} value={description} type="text" placeholder="Repository Description" name="notes"></textarea>
-            </p>
+            <input className="utility-input support-input-form" placeholder="Name" onChange={this.handleNameChange} value={name} type="text" name="sitename" required />
+            <input className="utility-input boxed-input light-shadow" placeholder="Link" onChange={this.handleUrlChange} value={url} type="url" name="contentlink" required />
+            <input className="utility-input boxed-input light-shadow" placeholder="Owner" onChange={this.handleOwnerChange} value={owner} name="repoowner" required />
+            <input className="utility-input boxed-input light-shadow" placeholder="Contributors" onChange={this.handleContributorsChange} value={contributors} name="contributors" />
+            <input className="utility-input boxed-input light-shadow" placeholder="Stars" onChange={this.handleStarsChange} value={stargazers} type="text" name="stars" required />
+            <input className="utility-input boxed-input light-shadow" placeholder="Forks" onChange={this.handleForksChange} value={forks} type="text" name="forks" required />
+            <input className="utility-input boxed-input light-shadow" placeholder="Issues" onChange={this.handleIssuesChange} value={issues} type="text" name="issues" required />
+            <textarea className="utility-input boxed-input text-box light-shadow" onChange={this.handleDescriptionChange} value={description} type="text" placeholder="Repository Description" name="notes"></textarea>
             <RepoCount count={count} />
-            <p>
-              <button onClick={this.sendDataToApollo} className="button-ui-primary">Send</button>
-            </p>
+            <button onClick={this.sendDataToApollo} className="button-ui-primary"><span className="icon-plus"></span> Add Repo</button>
           </div>
           <div className="shadow"></div>
         </div>

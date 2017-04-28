@@ -9,6 +9,7 @@ html {
   --orange: #FE9D68;
   --blue: #4D9ABF;
   --green: #00C7B7;
+  --darkGreen: #03b1a3;
   --red: #FB6D77;
 
   /* typography */
@@ -109,7 +110,7 @@ header a.nav-link {
   background-color: white;
   box-shadow: rgba(0,0,0,0.2) 0px 1px 2px 0px;
   border: 0px solid rgba(123, 123, 123, 0.498039);
-  border-radius: var(--borderRadius);
+  border-radius: var(--smallBorderRadius);
   font-size: var(--small);
   list-style-type: none;
   margin-bottom: var(--tiny);
@@ -190,4 +191,35 @@ header a.nav-link {
 .nav ul li a:hover {
   color: white;
   background-color: var(--green);
+}
+
+textarea,
+input {
+  border: 1px solid var(--lightestGrey);
+  border-radius: var(--smallBorderRadius);
+  box-sizing: border-box;
+  box-shadow: none;
+  font-size: var(--tiny);
+  margin-bottom: var(--tiny);
+  outline: none;
+  padding: var(--tiny);
+  width: 100%;
+}
+
+button {
+  background: var(--green);
+  border: none;
+  border-radius: var(--smallBorderRadius);
+  box-shadow: none;
+  color: white;
+  cursor: pointer;
+  font-size: var(--tiny);
+  margin-bottom: var(--tiny);
+  outline: none;
+  padding: var(--tiny);
+  transition: background .2s ease;
+}
+
+button:hover {
+  background: var(--darkGreen);
 }

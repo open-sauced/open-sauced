@@ -36,4 +36,6 @@
 }
 .icon-write:before {
   content: "\e903";
+  font-size: .8em;
+  padding-right: 4px;
 }
