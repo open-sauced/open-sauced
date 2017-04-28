@@ -21,6 +21,11 @@ const App = () => (
         <Route path="/repos" component={Repositories}/>
         <Route path="/new" component={NewRepo}/>
       </section>
+      <footer>
+        <a href="https://www.netlify.com">
+          <img alt="netlify-tag" src="https://www.netlify.com/img/global/badges/netlify-color-accent.svg"/>
+        </a>
+      </footer>
     </div>
   </Router>
 )

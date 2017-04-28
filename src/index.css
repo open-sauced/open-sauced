@@ -223,3 +223,9 @@ button {
 button:hover {
   background: var(--darkGreen);
 }
+
+footer {
+  margin: var(--large) 0 var(--small) 0;
+  text-align: center;
+  width: 100%;
+}
