@@ -1,11 +1,12 @@
 # Open Sauced
 ---
 
-This is a GraphQL starter project to stalk open source repos and take notes.
+This is a GrpahQL starter project to stalk open source repos and take notes. 
 
 
 ## Setup
-
-1. `npm install`
-2. `npm start`
-3. be a QL kid??
+GitHub access token is needed and can be received following [these instructions](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/)
+```
+npm install
+GITHUB_TOKEN=XXXXXXXX npm start
+```
