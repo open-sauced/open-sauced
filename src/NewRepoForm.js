@@ -123,12 +123,12 @@ class NewRepoForm extends Component {
       <div className="Form">
         <h1 className="title">Enter a GitHub URL</h1>
         <p>
-          Add a url to a GitHub repo you would like to track here and we can fetch the data
+          Add a url to a GitHub repository you would like to track here and we can fetch the data
         </p>
         <div className="">
           <div name="">
             <input className="utility-input urlForm" type="url" onChange={this.setUrl} value={url} placeholder="https://github.com/netlify/netlify-cms"/>
-              <button className="button-ui-default" onClick={this.fetchRepoData}>Scrape</button>
+              <button className="button-ui-default" onClick={this.fetchRepoData}>Fetch repository data</button>
           </div>
           <div className="grid-full form">
             <input className="utility-input support-input-form" placeholder="Name" onChange={this.handleNameChange} value={name} type="text" name="sitename" required />
@@ -140,7 +140,7 @@ class NewRepoForm extends Component {
             <input className="utility-input boxed-input light-shadow" placeholder="Issues" onChange={this.handleIssuesChange} value={issues} type="text" name="issues" required />
             <textarea className="utility-input boxed-input text-box light-shadow" onChange={this.handleDescriptionChange} value={description} type="text" placeholder="Repository Description" name="notes"></textarea>
             <RepoCount count={count} />
-            <button onClick={this.sendDataToApollo} className="button-ui-primary"><span className="icon-plus"></span> Add Repo</button>
+            <button onClick={this.sendDataToApollo} className="button-ui-primary"><span className="icon-plus"></span> Add repository to your list</button>
           </div>
           <div className="shadow"></div>
         </div>
