@@ -145,7 +145,7 @@ class NewRepoForm extends Component {
           <div className="shadow"></div>
         </div>
       </div>
-    : <Redirect to="/somewhere/else"/>
+    : <Redirect to="/"/>
   }
 };
 
