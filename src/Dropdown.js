@@ -1,9 +1,7 @@
 import React from 'react'
-import Repository from './Repository'
 import { graphql } from 'react-apollo'
 import gql from 'graphql-tag'
 import {
-  Route,
   Link
 } from 'react-router-dom'
 

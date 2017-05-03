@@ -19,7 +19,7 @@ class NoteForm extends Component {
   }
 
   sendDataToApollo() {
-    const {name, url, description, forks, owner, stargazers, issues, contributors} = this.state
+    const {description} = this.state
 
     this.props.mutate({variables: {description}})
       .then(() => this.setState({description: ''}))
@@ -27,8 +27,8 @@ class NoteForm extends Component {
   }
 
   render() {
-    const { description, owner } = this.state
-    const { repoId, repoName } = this.props
+    const { description } = this.state
+    const { repoName } = this.props
 
     return (
       <div className="Form">

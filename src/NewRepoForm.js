@@ -1,8 +1,9 @@
 import React, {Component} from "react";
-import api from "./lib/apiGraphQL"
+import api from "./lib/apiGraphQL";
 import RepoCount from "./Count";
-import { graphql } from 'react-apollo'
-import gql from 'graphql-tag'
+import { graphql } from 'react-apollo';
+import gql from 'graphql-tag';
+import {Redirect} from 'react-router';
 
 class NewRepoForm extends Component {
   constructor(props) {
@@ -28,7 +29,8 @@ class NewRepoForm extends Component {
       forks: '',
       owner: '',
       stargazers: '',
-      issues: ''
+      issues: '',
+      submitted: false
     };
   }
 
@@ -80,7 +82,7 @@ class NewRepoForm extends Component {
       .then(() => {
         this.setState(
           {data: {}, description: '', owner: '', stargazers: '', forks:
-           '', issues: '', contributors: '', uri: '', url: '', name: ''}
+           '', issues: '', contributors: '', uri: '', url: '', name: '', submitted: true}
         );
       })
       .catch((error) => console.log(error));
@@ -114,10 +116,10 @@ class NewRepoForm extends Component {
     const {count} = this.props;
     const {
       contributors, name, url, description, forks, owner, stargazers,
-      issues
+      issues, submitted
     } = this.state
 
-    return (
+    return !submitted ?
       <div className="Form">
         <h1 className="title">Enter a GitHub URL</h1>
         <p>
@@ -143,7 +145,7 @@ class NewRepoForm extends Component {
           <div className="shadow"></div>
         </div>
       </div>
-    );
+    : <Redirect to="/somewhere/else"/>
   }
 };
 
