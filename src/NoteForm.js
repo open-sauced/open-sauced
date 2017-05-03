@@ -33,12 +33,8 @@ class NoteForm extends Component {
     return (
       <div className="Form">
         <div className="grid-full form">
-          <p>
-            <textarea className="utility-input boxed-input text-box light-shadow" onChange={this.handleDescriptionChange} value={description} type="text" placeholder={`notes for ${repoName}`} name="notes"></textarea>
-          </p>
-          <p>
-            <button onClick={this.sendDataToApollo} className="button-ui-primary">Send</button>
-          </p>
+          <textarea className="utility-input boxed-input text-box light-shadow" onChange={this.handleDescriptionChange} value={description} type="text" placeholder={`Type your notes for ${repoName} here...`} name="notes"></textarea>
+          <button onClick={this.sendDataToApollo} className="button-ui-primary"><span className="icon-write"></span> Post Notes</button>
         </div>
       </div>
     );

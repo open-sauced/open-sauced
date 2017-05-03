@@ -1,10 +1,231 @@
+html {
+  /* colors */
+  --offWhite: #fbfbfb;
+  --lightestGrey: #E6E6E6;
+  --lighterGrey: #BCBCBC;
+  --lightGrey: #8B8B8B;
+  --grey: #313D3E;
+  --gold: #F6BC00;
+  --orange: #FE9D68;
+  --blue: #4D9ABF;
+  --green: #00C7B7;
+  --darkGreen: #03b1a3;
+  --red: #FB6D77;
+
+  /* typography */
+  --thin: 100;
+  --light: 300;
+  --regular: 400;
+  --semibold: 500;
+  --bold: 700;
+  --black: 900;
+
+  /* padding */
+  --micro: 8px;
+  --tiny: 16px;
+  --small: 24px;
+  --medium: 40px;
+  --large: 64px;
+  --xl: 104px;
+  --xxl: 168px;
+
+  /* border radius */
+  --smallBorderRadius: 4px;
+  --borderRadius: 10px;
+
+  /* responsive breakpoints */
+  --mobile: 480px;
+  --tablet: 768px;
+  --blogNavBreak: 930px;
+  --desktop: 960px;
+  --display: 1200px;
+}
+
 body {
+  background: var(--offWhite);
+  color: var(--grey);
+  font-family: 'Roboto', sans-serif;
   margin: 0;
-  padding: 0;
-  font-family: sans-serif;
+  padding: var(--large) 0 0 0;
+}
+
+h1 {
+  margin: var(--micro) 0;
+}
+
+p {
+  margin: 0 0 var(--small) 0;
+}
+
+.greyed {
+  color: var(--lightGrey);
 }
 
 .form-control {
   padding: 10px;
 }
 
+header {
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: var(--grey);
+}
+
+.landing-nav + select {
+  display: none;
+}
+
+section {
+  padding: var(--tiny);
+}
+
+header a {
+  color: white;
+  display: inline-block;
+  font-size: var(--small);
+  padding: var(--tiny);
+  text-decoration: none;
+  transition: color .2s ease, background-color .2s ease;
+  vertical-align: bottom;
+}
+
+header a:hover {
+  background-color: #222;
+  color: var(--green);
+}
+
+header a.nav-link {
+  float: right;
+}
+
+.repositories ul {
+  margin: 0;
+  padding: 0;
+}
+
+.repositories li {
+  background-color: white;
+  box-shadow: rgba(0,0,0,0.2) 0px 1px 2px 0px;
+  border: 0px solid rgba(123, 123, 123, 0.498039);
+  border-radius: var(--smallBorderRadius);
+  font-size: var(--small);
+  list-style-type: none;
+  margin-bottom: var(--tiny);
+  outline: none;
+  transition: background-color .2s ease;
+}
+
+.repositories li:hover {
+  background: var(--green);
+}
+
+.repositories li a {
+  color: var(--grey);
+  display: block;
+  padding: var(--small);
+  text-decoration: none;
+}
+
+.nav {
+  background: #222;
+  position: relative;
+  display: inline-block;
+  float: right;
+}
+
+.nav>li {
+  display: block;
+  float: left;
+  margin: 0;
+  padding: 0;
+}
+
+.nav>li>a {
+  display: block;
+  position: relative;
+}
+
+.dropdown>a {
+  color: white;
+  font-size: var(--tiny);
+  font-weight: var(--bold);
+}
+.nav ul {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: block;
+}
+.nav ul li {
+  position: absolute;
+  top: -9999px;
+  height: 0px;
+  display: block;
+  margin: 0;
+  padding: 0;
+  transition: height .2s ease;
+}
+.dropdown:hover>ul>li {
+  height: var(--medium);
+  position: relative;
+  top: auto;
+}
+
+.dropdown-label {
+  padding: 21.5px var(--tiny);
+}
+
+.nav ul li a {
+  background: var(--grey);
+  font-size: var(--tiny);
+  padding: 9px var(--tiny) 10px var(--tiny);
+  width: 175px;
+  display: block;
+  position: relative;
+}
+.nav ul li:hover>a,
+.nav ul li a:hover {
+  color: white;
+  background-color: var(--green);
+}
+
+textarea,
+input {
+  border: 1px solid var(--lightestGrey);
+  border-radius: var(--smallBorderRadius);
+  box-sizing: border-box;
+  box-shadow: none;
+  font-size: var(--tiny);
+  margin-bottom: var(--tiny);
+  outline: none;
+  padding: var(--tiny);
+  width: 100%;
+}
+
+button {
+  background: var(--green);
+  border: none;
+  border-radius: var(--smallBorderRadius);
+  box-shadow: none;
+  color: white;
+  cursor: pointer;
+  font-size: var(--tiny);
+  margin-bottom: var(--tiny);
+  outline: none;
+  padding: var(--tiny);
+  transition: background .2s ease;
+}
+
+button:hover {
+  background: var(--darkGreen);
+}
+
+footer {
+  margin: var(--large) 0 var(--small) 0;
+  text-align: center;
+  width: 100%;
+}

@@ -1,7 +1,7 @@
 import React from 'react'
-import Dashboard from './Dashboard'
 import NewRepo from './NewRepo'
 import Repositories from './Repositories'
+import Dropdown from './Dropdown'
 import {
   BrowserRouter as Router,
   Route,
@@ -11,17 +11,21 @@ import {
 const App = () => (
   <Router>
     <div>
-      <ul>
-        <li><Link to="/">Dashboard</Link></li>
-        <li><Link to="/new">Add A Repo</Link></li>
-        <li><Link to="/repos">GitHub Repositories</Link></li>
-      </ul>
-
-      <hr/>
-
-      <Route exact path="/" component={Dashboard}/>
-      <Route path="/new" component={NewRepo}/>
-      <Route path="/repos" component={Repositories}/>
+      <header>
+        <Link to="/" className="home" alt="home"><span className="icon-home"></span></Link>
+        <Link to="/new" className="nav-link" alt="Add A Repo"><span className="icon-plus"></span></Link>
+        <Dropdown />
+      </header>
+      <section>
+        <Route exact path="/" component={Repositories}/>
+        <Route path="/repos" component={Repositories}/>
+        <Route path="/new" component={NewRepo}/>
+      </section>
+      <footer>
+        <a href="https://www.netlify.com">
+          <img alt="netlify-tag" src="https://www.netlify.com/img/global/badges/netlify-color-accent.svg"/>
+        </a>
+      </footer>
     </div>
   </Router>
 )

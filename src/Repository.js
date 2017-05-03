@@ -2,16 +2,26 @@ import React from 'react'
 import Form from './NoteForm'
 import { graphql } from 'react-apollo'
 import gql from 'graphql-tag'
+import { Link } from 'react-router-dom'
+
 
 const Repository = ({ data, match }) => {
+  const {allRepositories} = data
   const { id, name, description } = data.Repository || {}
 
   return (
-  <div>
-    {name && <h3>{name}</h3>}
-    {description && <p>{description}</p>}
-    <Form repoId={id} repoName={name} />
-  </div>
+    <div>
+      {allRepositories ? allRepositories.map((repo) => (
+        <li key={repo.name}>
+          <Link to={`/repos/${repo.name}/${repo.id}`}>
+            {repo.name}
+          </Link>
+        </li>
+      )): <p></p>}
+      {name && <h1>{name}</h1>}
+      {description && <p>{description}</p>}
+      <Form repoId={id} repoName={name} />
+    </div>
   )
 }
 
