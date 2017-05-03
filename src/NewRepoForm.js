@@ -1,8 +1,9 @@
 import React, {Component} from "react";
-import api from "./lib/apiGraphQL"
+import api from "./lib/apiGraphQL";
 import RepoCount from "./Count";
-import { graphql } from 'react-apollo'
-import gql from 'graphql-tag'
+import { graphql } from 'react-apollo';
+import gql from 'graphql-tag';
+import {Redirect} from 'react-router';
 
 class NewRepoForm extends Component {
   constructor(props) {
@@ -28,7 +29,8 @@ class NewRepoForm extends Component {
       forks: '',
       owner: '',
       stargazers: '',
-      issues: ''
+      issues: '',
+      submitted: false
     };
   }
 
@@ -80,7 +82,7 @@ class NewRepoForm extends Component {
       .then(() => {
         this.setState(
           {data: {}, description: '', owner: '', stargazers: '', forks:
-           '', issues: '', contributors: '', uri: '', url: '', name: ''}
+           '', issues: '', contributors: '', uri: '', url: '', name: '', submitted: true}
         );
       })
       .catch((error) => console.log(error));
@@ -114,19 +116,19 @@ class NewRepoForm extends Component {
     const {count} = this.props;
     const {
       contributors, name, url, description, forks, owner, stargazers,
-      issues
+      issues, submitted
     } = this.state
 
-    return (
+    return !submitted ?
       <div className="Form">
         <h1 className="title">Enter a GitHub URL</h1>
         <p>
-          Add a url to a GitHub repo you would like to track here and we can fetch the data
+          Add a url to a GitHub repository you would like to track here and we can fetch the data
         </p>
         <div className="">
           <div name="">
             <input className="utility-input urlForm" type="url" onChange={this.setUrl} value={url} placeholder="https://github.com/netlify/netlify-cms"/>
-              <button className="button-ui-default" onClick={this.fetchRepoData}>Scrape</button>
+              <button className="button-ui-default" onClick={this.fetchRepoData}>Fetch repository data</button>
           </div>
           <div className="grid-full form">
             <input className="utility-input support-input-form" placeholder="Name" onChange={this.handleNameChange} value={name} type="text" name="sitename" required />
@@ -138,12 +140,12 @@ class NewRepoForm extends Component {
             <input className="utility-input boxed-input light-shadow" placeholder="Issues" onChange={this.handleIssuesChange} value={issues} type="text" name="issues" required />
             <textarea className="utility-input boxed-input text-box light-shadow" onChange={this.handleDescriptionChange} value={description} type="text" placeholder="Repository Description" name="notes"></textarea>
             <RepoCount count={count} />
-            <button onClick={this.sendDataToApollo} className="button-ui-primary"><span className="icon-plus"></span> Add Repo</button>
+            <button onClick={this.sendDataToApollo} className="button-ui-primary"><span className="icon-plus"></span> Add repository to your list</button>
           </div>
           <div className="shadow"></div>
         </div>
       </div>
-    );
+    : <Redirect to="/"/>
   }
 };
 

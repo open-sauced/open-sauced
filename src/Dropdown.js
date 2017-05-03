@@ -1,18 +1,16 @@
 import React from 'react'
-import Repository from './Repository'
 import { graphql } from 'react-apollo'
 import gql from 'graphql-tag'
 import {
-  Route,
   Link
 } from 'react-router-dom'
 
-const Repositories = ({ match, data }) => {
+const Dropdown = ({ match, data }) => {
   const {allRepositories} = data
   return (
     <nav className="nav">
       <div className="dropdown">
-        <a className="dropdown-label" href="#">Select a Repo <span className="icon-expand"></span></a>
+        <a className="dropdown-label" href="#">Select a repository <span className="icon-expand"></span></a>
         <ul>
           {allRepositories ? allRepositories.map((repo) => (
             <li key={repo.name}>
@@ -35,6 +33,6 @@ const AllRepoQuery = gql`
     }
   }
 `
-const RepositoriesWithData = graphql(AllRepoQuery)(Repositories)
+const DropdownWithData = graphql(AllRepoQuery)(Dropdown)
 
-export default RepositoriesWithData
+export default DropdownWithData
