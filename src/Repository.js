@@ -5,7 +5,7 @@ import gql from 'graphql-tag'
 
 const Repository = ({ data, match }) => {
   const {Repository} = data
-  const { id, name, description } = Repository || {}
+  const { id, name, description, notes } = Repository || {}
 
   return (
     <div>
@@ -15,15 +15,17 @@ const Repository = ({ data, match }) => {
           <p>{description}</p>
         </div>
       : <p>Loading...</p>}
-      <Form repoId={id} repoName={name} />
+      <Form notes={notes} repoId={id} repoName={name} />
     </div>
   )
 }
 
 const RepoQuery = gql`query RepositoryQuery($id: ID!) {
   Repository(id: $id) {
+    id
     name
     url
+    notes
     description
   }
 }`
