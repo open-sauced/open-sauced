@@ -1,0 +1,31 @@
+﻿type File implements Node {
+  contentType: String!
+  createdAt: DateTime
+  id: ID! @isUnique
+  name: String!
+  secret: String! @isUnique
+  size: Int!
+  updatedAt: DateTime
+  url: String! @isUnique
+}
+
+type Repository implements Node {
+  contributors: String
+  createdAt: DateTime
+  description: String
+  forks: Int
+  id: ID! @isUnique
+  issues: Int
+  name: String!
+  notes: String
+  owner: String!
+  stargazers: Int
+  updatedAt: DateTime
+  url: String!
+}
+
+type User implements Node {
+  createdAt: DateTime
+  id: ID! @isUnique
+  updatedAt: DateTime
+}
