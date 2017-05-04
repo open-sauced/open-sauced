@@ -13,7 +13,7 @@ const Repositories = ({ match, data }) => {
     <div className="repositories">
       <Route exact path={match.url} render={() => (
         <div className="landing-nav">
-          <h1>GitHub Reposoitories</h1>
+          <h1>Open Sauced GitHub Reposoitories</h1>
           <p>Select a repo to see details.</p>
           <ul>
             {allRepositories ? allRepositories.map((repo) => (
