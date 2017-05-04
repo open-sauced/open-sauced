@@ -79,6 +79,7 @@ header {
 }
 
 section {
+  min-height: 80vh;
   padding: var(--tiny);
 }
 
