@@ -1,13 +1,13 @@
 import React, {Component} from "react";
 import api from "./lib/apiGraphQL";
 import RepoCount from "./Count";
-import { graphql } from 'react-apollo';
-import gql from 'graphql-tag';
-import {Redirect} from 'react-router';
+import {graphql} from "react-apollo";
+import gql from "graphql-tag";
+import {Redirect} from "react-router";
 
 class NewRepoForm extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.setUrl = this.setUrl.bind(this);
     this.handleNameChange = this.handleNameChange.bind(this);
     this.handleUrlChange = this.handleUrlChange.bind(this);
@@ -21,15 +21,15 @@ class NewRepoForm extends Component {
     this.sendDataToApollo = this.sendDataToApollo.bind(this);
     this.state = {
       data: {},
-      uri: '',
-      contributors: '',
-      name: '',
-      url: '',
-      description: '',
-      forks: '',
-      owner: '',
-      stargazers: '',
-      issues: '',
+      uri: "",
+      contributors: "",
+      name: "",
+      url: "",
+      description: "",
+      forks: "",
+      owner: "",
+      stargazers: "",
+      issues: "",
       submitted: false
     };
   }
@@ -67,7 +67,7 @@ class NewRepoForm extends Component {
   }
 
   sendDataToApollo() {
-    const {name, url, description, forks, owner, stargazers, issues, contributors} = this.state
+    const {name, url, description, forks, owner, stargazers, issues, contributors} = this.state;
 
     this.props.mutate({variables: {
       name,
@@ -81,19 +81,19 @@ class NewRepoForm extends Component {
     }})
       .then(() => {
         this.setState(
-          {data: {}, description: '', owner: '', stargazers: '', forks:
-           '', issues: '', contributors: '', uri: '', url: '', name: '', submitted: true}
+          {data: {}, description: "", owner: "", stargazers: "", forks:
+           "", issues: "", contributors: "", uri: "", url: "", name: "", submitted: true}
         );
       })
       .catch((error) => console.error(`An Error Occurred: ${error}`));
   }
 
   setUrl(e) {
-    this.setState({url: e.target.value})
+    this.setState({url: e.target.value});
   }
 
   fetchRepoData() {
-    const url = this.state.url.split("/")
+    const url = this.state.url.split("/");
     api.fetchRepositoryData(url[3], url[4]).then(
       (response) => {
         const data = response.data.data.repositoryOwner.repository;
@@ -107,7 +107,7 @@ class NewRepoForm extends Component {
           owner: owner.login,
           stargazers: stargazers.totalCount,
           issues: issues.totalCount
-        })
+        });
       }
     ).catch((error) => console.error(error));
   }
@@ -117,7 +117,7 @@ class NewRepoForm extends Component {
     const {
       contributors, name, url, description, forks, owner, stargazers,
       issues, submitted
-    } = this.state
+    } = this.state;
 
     return !submitted ?
       <div className="Form">
@@ -128,7 +128,7 @@ class NewRepoForm extends Component {
         <div className="">
           <div name="">
             <input className="utility-input urlForm" type="url" onChange={this.setUrl} value={url} placeholder="https://github.com/netlify/netlify-cms"/>
-              <button className="button-ui-default" onClick={this.fetchRepoData}>Fetch repository data</button>
+            <button className="button-ui-default" onClick={this.fetchRepoData}>Fetch repository data</button>
           </div>
           <div className="grid-full form">
             <input className="utility-input support-input-form" placeholder="Name" onChange={this.handleNameChange} value={name} type="text" name="sitename" required />
@@ -138,16 +138,16 @@ class NewRepoForm extends Component {
             <input className="utility-input boxed-input light-shadow" placeholder="Stars" onChange={this.handleStarsChange} value={stargazers} type="text" name="stars" required />
             <input className="utility-input boxed-input light-shadow" placeholder="Forks" onChange={this.handleForksChange} value={forks} type="text" name="forks" required />
             <input className="utility-input boxed-input light-shadow" placeholder="Issues" onChange={this.handleIssuesChange} value={issues} type="text" name="issues" required />
-            <textarea className="utility-input boxed-input text-box light-shadow" onChange={this.handleDescriptionChange} value={description} type="text" placeholder="Repository Description" name="notes"></textarea>
+            <textarea className="utility-input boxed-input text-box light-shadow" onChange={this.handleDescriptionChange} value={description} type="text" placeholder="Repository Description" name="notes" />
             <RepoCount count={count} />
-            <button onClick={this.sendDataToApollo} className="button-ui-primary"><span className="icon-plus"></span> Add repository to your list</button>
+            <button onClick={this.sendDataToApollo} className="button-ui-primary"><span className="icon-plus" /> Add repository to your list</button>
           </div>
-          <div className="shadow"></div>
+          <div className="shadow" />
         </div>
       </div>
-    : <Redirect to="/"/>
+    : <Redirect to="/"/>;
   }
-};
+}
 
 const createFormMutation = gql`
   mutation createRepository($name: String!, $url: String!, $owner: String!, $stargazers: Int, $issues: Int, $forks: Int, $description: String) {
@@ -155,7 +155,7 @@ const createFormMutation = gql`
       id
     }
   }
-`
-const FormMutation = graphql(createFormMutation)(NewRepoForm)
+`;
+const FormMutation = graphql(createFormMutation)(NewRepoForm);
 
 export default FormMutation;
