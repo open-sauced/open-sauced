@@ -7,7 +7,7 @@ import {
 
 const Dropdown = ({ match, data }) => {
   const {allRepositories} = data
-  return (
+  return allRepositories && allRepositories.length > 0 ?
     <nav className="nav">
       <div className="dropdown">
         <a className="dropdown-label" href="#">Select a repository <span className="icon-expand"></span></a>
@@ -22,7 +22,7 @@ const Dropdown = ({ match, data }) => {
         </ul>
       </div>
     </nav>
-  );
+    : null
 }
 
 const AllRepoQuery = gql`

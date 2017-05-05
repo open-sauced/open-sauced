@@ -109,7 +109,7 @@ class NewRepoForm extends Component {
           issues: issues.totalCount
         })
       }
-    ).catch((error) => console.log(error));
+    ).catch((error) => console.error(error));
   }
 
   render() {
