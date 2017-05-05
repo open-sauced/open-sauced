@@ -1,15 +1,15 @@
-import React from 'react'
-import Repository from './Repository'
-import Instructions from './Instructions'
-import { graphql } from 'react-apollo'
-import gql from 'graphql-tag'
+import React from "react";
+import Repository from "./Repository";
+import Instructions from "./Instructions";
+import {graphql} from "react-apollo";
+import gql from "graphql-tag";
 import {
   Route,
   Link
-} from 'react-router-dom'
+} from "react-router-dom";
 
-const Repositories = ({ match, data }) => {
-  const {allRepositories} = data
+const Repositories = ({match, data}) => {
+  const {allRepositories} = data;
 
   return (
     <div className="repositories">
@@ -25,14 +25,15 @@ const Repositories = ({ match, data }) => {
                   {repo.name}
                 </Link>
               </li>
-              )): <p className="greyed">Loading...</p>}
+              )) : <p className="greyed">Loading...</p>}
           </ul>
         </div>
-      )}/>
-      <Route path={`/repos/:repoName/:id`} component={Repository}/>
+      )}
+      />
+      <Route path={"/repos/:repoName/:id"} component={Repository}/>
     </div>
   );
-}
+};
 
 const AllRepoQuery = gql`
  query {
@@ -41,7 +42,7 @@ const AllRepoQuery = gql`
       name
     }
   }
-`
-const RepositoriesWithData = graphql(AllRepoQuery)(Repositories)
+`;
+const RepositoriesWithData = graphql(AllRepoQuery)(Repositories);
 
-export default RepositoriesWithData
+export default RepositoriesWithData;
