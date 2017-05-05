@@ -1,19 +1,19 @@
-import React from 'react'
-import NewRepo from './NewRepo'
-import Repositories from './Repositories'
-import Dropdown from './Dropdown'
+import React from "react";
+import NewRepo from "./NewRepo";
+import Repositories from "./Repositories";
+import Dropdown from "./Dropdown";
 import {
   BrowserRouter as Router,
   Route,
   Link
-} from 'react-router-dom'
+} from "react-router-dom";
 
 const App = () => (
   <Router>
     <div>
       <header>
-        <Link to="/" className="home" alt="home"><span className="icon-home"></span></Link>
-        <Link to="/new" className="nav-link" alt="Add A Repo"><span className="icon-plus"></span></Link>
+        <Link to="/" className="home" alt="home"><span className="icon-home" /></Link>
+        <Link to="/new" className="nav-link" alt="Add A Repo"><span className="icon-plus" /></Link>
         <Dropdown />
       </header>
       <section>
@@ -28,6 +28,6 @@ const App = () => (
       </footer>
     </div>
   </Router>
-)
+);
 
-export default App
+export default App;

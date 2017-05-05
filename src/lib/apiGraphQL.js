@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const auth = {Authorization: `bearer ${process.env.githubToken}`}
+const auth = {Authorization: `bearer ${process.env.githubToken}`};
 
 const api = {
   query(name, repo) {
@@ -29,14 +29,14 @@ const api = {
           }
         }
       }
-    `
+    `;
   },
 
   fetchRepositoryData(name, repo) {
     return axios.post("https://api.github.com/graphql", {
       query: this.query(name, repo)
-    }, {headers: auth})
+    }, {headers: auth});
   }
-}
+};
 
 export default api;

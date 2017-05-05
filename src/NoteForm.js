@@ -1,17 +1,17 @@
 import React, {Component} from "react";
-import { graphql } from 'react-apollo'
-import gql from 'graphql-tag'
+import {graphql} from "react-apollo";
+import gql from "graphql-tag";
 
 class NoteForm extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.handleNotesChange = this.handleNotesChange.bind(this);
     this.sendDataToApollo = this.sendDataToApollo.bind(this);
     this.toggleEditing = this.toggleEditing.bind(this);
     this.state = {
       data: {},
-      notesInput: '',
-      owner: '',
+      notesInput: "",
+      owner: "",
       editing: false
     };
   }
@@ -21,35 +21,35 @@ class NoteForm extends Component {
   }
 
   sendDataToApollo() {
-    const {notesInput} = this.state
-    const {repoId} = this.props
+    const {notesInput} = this.state;
+    const {repoId} = this.props;
 
     this.props.mutate({variables: {notes: notesInput, id: repoId}})
-      .then(() => this.setState({notesInput: '', editing: false}))
+      .then(() => this.setState({notesInput: "", editing: false}))
       .catch((error) => console.log(error));
   }
 
   toggleEditing() {
-    this.setState({editing: !this.state.editing})
+    this.setState({editing: !this.state.editing});
   }
 
   render() {
-    const { notesInput, editing } = this.state
-    const { notes, repoName } = this.props
+    const {notesInput, editing} = this.state;
+    const {notes, repoName} = this.props;
 
     return (
       <div className="Form">
         <div className="grid-full form">
-          <textarea disabled={!editing} className="utility-input boxed-input text-box light-shadow" onChange={this.handleNotesChange} value={notes || notesInput} type="text" placeholder={`Type your notes for ${repoName} here...`} name="notes"></textarea>
+          <textarea disabled={!editing} className="utility-input boxed-input text-box light-shadow" onChange={this.handleNotesChange} value={notes || notesInput} type="text" placeholder={`Type your notes for ${repoName} here...`} name="notes" />
           {editing ?
-            <button onClick={this.sendDataToApollo} className="button-ui-primary"><span className="icon-write"></span> Save Notes</button>
-            : <button onClick={this.toggleEditing} className="button-ui-primary"><span className="icon-write"></span> Edit Notes</button>
+            <button onClick={this.sendDataToApollo} className="button-ui-primary"><span className="icon-write" /> Save Notes</button>
+            : <button onClick={this.toggleEditing} className="button-ui-primary"><span className="icon-write" /> Edit Notes</button>
           }
         </div>
       </div>
     );
   }
-};
+}
 
 const createFormMutation = gql`
   mutation updateRepository($notes: String, $id: ID!) {
@@ -58,8 +58,8 @@ const createFormMutation = gql`
       notes
     }
   }
-`
-const FormMutation = graphql(createFormMutation)(NoteForm)
+`;
+const FormMutation = graphql(createFormMutation)(NoteForm);
 
 export default FormMutation;
 

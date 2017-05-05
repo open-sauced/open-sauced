@@ -1,50 +1,76 @@
 html {
   /* colors */
   --offWhite: #fbfbfb;
-  --lightestGrey: #E6E6E6;
-  --lighterGrey: #BCBCBC;
-  --lightGrey: #8B8B8B;
-  --grey: #313D3E;
-  --gold: #F6BC00;
-  --orange: #FE9D68;
-  --blue: #4D9ABF;
-  --green: #00C7B7;
+
+  --lightestGrey: #e6e6e6;
+
+  --lighterGrey: #bcbcbc;
+
+  --lightGrey: #8b8b8b;
+
+  --grey: #313d3e;
+
+  --gold: #f6bc00;
+
+  --orange: #fe9d68;
+
+  --blue: #4d9abf;
+
+  --green: #00c7b7;
+
   --darkGreen: #03b1a3;
-  --red: #FB6D77;
+
+  --red: #fb6d77;
 
   /* typography */
   --thin: 100;
+
   --light: 300;
+
   --regular: 400;
+
   --semibold: 500;
+
   --bold: 700;
+
   --black: 900;
 
   /* padding */
   --micro: 8px;
+
   --tiny: 16px;
+
   --small: 24px;
+
   --medium: 40px;
+
   --large: 64px;
+
   --xl: 104px;
+
   --xxl: 168px;
 
   /* border radius */
   --smallBorderRadius: 4px;
+
   --borderRadius: 10px;
 
   /* responsive breakpoints */
   --mobile: 480px;
+
   --tablet: 768px;
+
   --blogNavBreak: 930px;
+
   --desktop: 960px;
+
   --display: 1200px;
 }
 
 body {
   background: var(--offWhite);
   color: var(--grey);
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   margin: 0;
   padding: var(--large) 0 0 0;
 }
@@ -89,7 +115,7 @@ header a {
   font-size: var(--small);
   padding: var(--tiny);
   text-decoration: none;
-  transition: color .2s ease, background-color .2s ease;
+  transition: color 0.2s ease, background-color 0.2s ease;
   vertical-align: bottom;
 }
 
@@ -109,14 +135,14 @@ header a.nav-link {
 
 .repositories li {
   background-color: white;
-  box-shadow: rgba(0,0,0,0.2) 0px 1px 2px 0px;
-  border: 0px solid rgba(123, 123, 123, 0.498039);
+  box-shadow: rgba(0, 0, 0, 0.2) 0 1px 2px 0;
+  border: 0 solid rgba(123, 123, 123, 0.498039);
   border-radius: var(--smallBorderRadius);
   font-size: var(--small);
   list-style-type: none;
   margin-bottom: var(--tiny);
   outline: none;
-  transition: background-color .2s ease;
+  transition: background-color 0.2s ease;
 }
 
 .repositories li:hover {
@@ -137,23 +163,24 @@ header a.nav-link {
   float: right;
 }
 
-.nav>li {
+.nav > li {
   display: block;
   float: left;
   margin: 0;
   padding: 0;
 }
 
-.nav>li>a {
+.nav > li > a {
   display: block;
   position: relative;
 }
 
-.dropdown>a {
+.dropdown > a {
   color: white;
   font-size: var(--tiny);
   font-weight: var(--bold);
 }
+
 .nav ul {
   position: absolute;
   margin: 0;
@@ -161,16 +188,18 @@ header a.nav-link {
   list-style: none;
   display: block;
 }
+
 .nav ul li {
   position: absolute;
   top: -9999px;
-  height: 0px;
+  height: 0;
   display: block;
   margin: 0;
   padding: 0;
-  transition: height .2s ease;
+  transition: height 0.2s ease;
 }
-.dropdown:hover>ul>li {
+
+.dropdown:hover > ul > li {
   height: var(--medium);
   position: relative;
   top: auto;
@@ -188,7 +217,8 @@ header a.nav-link {
   display: block;
   position: relative;
 }
-.nav ul li:hover>a,
+
+.nav ul li:hover > a,
 .nav ul li a:hover {
   color: white;
   background-color: var(--green);
@@ -218,7 +248,7 @@ button {
   margin-bottom: var(--tiny);
   outline: none;
   padding: var(--tiny);
-  transition: background .2s ease;
+  transition: background 0.2s ease;
 }
 
 button:hover {

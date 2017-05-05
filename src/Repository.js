@@ -1,11 +1,11 @@
-import React from 'react'
-import Form from './NoteForm'
-import { graphql } from 'react-apollo'
-import gql from 'graphql-tag'
+import React from "react";
+import Form from "./NoteForm";
+import {graphql} from "react-apollo";
+import gql from "graphql-tag";
 
-const Repository = ({ data, match }) => {
-  const {Repository} = data
-  const { id, name, description, notes } = Repository || {}
+const Repository = ({data, match}) => {
+  const {Repository} = data;
+  const {id, name, description, notes} = Repository || {};
 
   return (
     <div>
@@ -17,8 +17,8 @@ const Repository = ({ data, match }) => {
       : <p>Loading...</p>}
       <Form notes={notes} repoId={id} repoName={name} />
     </div>
-  )
-}
+  );
+};
 
 const RepoQuery = gql`query RepositoryQuery($id: ID!) {
   Repository(id: $id) {
@@ -28,7 +28,7 @@ const RepoQuery = gql`query RepositoryQuery($id: ID!) {
     notes
     description
   }
-}`
+}`;
 
 const RepositoryWithData = graphql(RepoQuery, {
   options: (ownProps) => ({
@@ -36,6 +36,6 @@ const RepositoryWithData = graphql(RepoQuery, {
       id: ownProps.match.params.id
     }
   })
-})(Repository)
+})(Repository);
 
-export default RepositoryWithData
+export default RepositoryWithData;
