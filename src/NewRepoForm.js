@@ -85,7 +85,7 @@ class NewRepoForm extends Component {
            '', issues: '', contributors: '', uri: '', url: '', name: '', submitted: true}
         );
       })
-      .catch((error) => console.log(error));
+      .catch((error) => console.error(`An Error Occurred: ${error}`));
   }
 
   setUrl(e) {
@@ -109,7 +109,7 @@ class NewRepoForm extends Component {
           issues: issues.totalCount
         })
       }
-    );
+    ).catch((error) => console.error(error));
   }
 
   render() {

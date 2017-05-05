@@ -1,5 +1,6 @@
 import React from 'react'
 import Repository from './Repository'
+import Instructions from './Instructions'
 import { graphql } from 'react-apollo'
 import gql from 'graphql-tag'
 import {
@@ -9,12 +10,14 @@ import {
 
 const Repositories = ({ match, data }) => {
   const {allRepositories} = data
+
   return (
     <div className="repositories">
       <Route exact path={match.url} render={() => (
         <div className="landing-nav">
           <h1>Open Sauced GitHub Reposoitories</h1>
-          <p>Select a repo to see details.</p>
+          <br />
+          <Instructions allRepositories={allRepositories} />
           <ul>
             {allRepositories ? allRepositories.map((repo) => (
               <li key={repo.name}>
