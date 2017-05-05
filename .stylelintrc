@@ -3,6 +3,9 @@
   "rules": {
     "color-no-invalid-hex": true,
     "color-hex-case": "lower",
+    "custom-property-empty-line-before": [ "never", { "except":
+      ["first-nested", "after-custom-property"] }],
     "string-quotes": "double",
+  }
 }
 

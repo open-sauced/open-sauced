@@ -7615,7 +7615,7 @@ stylelint-config-standard@^16.0.0:
   version "16.0.0"
   resolved "https://registry.yarnpkg.com/stylelint-config-standard/-/stylelint-config-standard-16.0.0.tgz#bb7387bff1d7dd7186a52b3ebf885b2405d691bf"
 
-stylelint-declaration-block-order@0.2.0:
+stylelint-declaration-block-order@0.2.0, stylelint-declaration-block-order@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/stylelint-declaration-block-order/-/stylelint-declaration-block-order-0.2.0.tgz#751cc685bd2098a5bd57facb6324ed926d0fa3eb"
   dependencies:
