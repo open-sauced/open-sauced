@@ -3,6 +3,9 @@
 
 This is a GraphQL starter project to help people stalk open source repositories and take notes on them. This project uses Graphcool as a GraphQL backend, Apollo as the GraphQL endpoint, and Netlify to deploy. 
 
+The data fetching from GitHub uses their GraphQL Early Access API
+exclusively.
+
 ![open-sauced-screencap](http://i.imgur.com/VlZVmtB.png)
 
 ## Setup
