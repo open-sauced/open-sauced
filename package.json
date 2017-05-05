@@ -55,7 +55,7 @@
   },
   "dependencies": {
     "add": "^2.0.6",
-    "apollo-client": "^0.7.3",
+    "apollo-client": "^1.2.0",
     "axios": "0.15.2",
     "graphql": "0.7.2",
     "graphql-schema": "0.5.1",
