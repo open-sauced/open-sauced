@@ -3,8 +3,8 @@
   "rules": {
     "color-no-invalid-hex": true,
     "color-hex-case": "lower",
-    "custom-property-empty-line-before": [ "never", { "except":
-      ["first-nested", "after-custom-property"] }],
+    "custom-property-empty-line-before": [ "always", { "except":
+      ["first-nested", "after-comment", "after-custom-property"] }],
     "string-quotes": "double",
   }
 }

@@ -76,7 +76,6 @@
     "test": "node scripts/test.js --env=jsdom",
     "lint": "ls",
     "lint:js": "eslint **/*.js",
-    "lint:css": "stylelint **/*.css",
     "lint:staged": "lint-staged"
   },
   "pre-commit": "lint:staged",
