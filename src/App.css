@@ -24,10 +24,6 @@
 
 .Manager {
   padding: 16px;
-
-  form-control.input {
-
-  }
 }
 
 ul.smaller-words {
@@ -44,10 +40,9 @@ input.urlForm {
   width: 70%;
 }
 
-/*Griddle Help*/
-
+/* Griddle Help */
 .filter-container {
-overflow: hidden;
+  overflow: hidden;
   padding-top: 18px;
 
   .input-group {
@@ -70,13 +65,10 @@ overflow: hidden;
     appearance: none;
     background: none;
     color: var(--grey);
-    display: block;
     font-size: var(--tiny);
     font-weight: var(--regular);
     height: var(--medium);
-    padding-left: 0;
     -webkit-appearance: none;
-    width: 100%;
 
     &:focus {
       outline: none;
@@ -130,16 +122,12 @@ overflow: hidden;
     &::before,
     &::after {
       background: var(--green);
-      bottom: 0;
-      content: ' ';
+      content: " ";
       height: 1px;
       position: absolute;
       bottom: 0;
       width: 0;
-      height: 1px;
-      background: var(--green);
-      content: ' ';
-      transition: .2s ease all;
+      transition: 0.2s ease all;
     }
 
     &::before {

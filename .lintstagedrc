@@ -5,6 +5,7 @@
   ],
   "*.css": [
     "stylefmt",
+    "stylelint",
     "git add"
   ]
 }
