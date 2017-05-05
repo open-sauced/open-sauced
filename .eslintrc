@@ -1,0 +1,59 @@
+{
+  "parser"  : "babel-eslint",
+  "plugins": [
+    "import",
+    "react",
+  ],
+  "extends" : ["airbnb"],
+  "rules": {
+    "comma-dangle": 0,
+    "curly": 0,
+    "default-case": 0,
+    "new-cap": [2, {"capIsNew": false, "newIsCap": true}],
+    "no-console": [2, { allow: ["log", "error"] }],
+    "no-floating-decimal": 0,
+    "no-param-reassign": 0,
+    "no-shadow": 0,
+    "no-unused-expressions": 0,
+    "no-unused-vars": [2, {"vars": "all", "args": "none"}],
+    "no-use-before-define": [2, "nofunc"],
+    "object-curly-spacing": [2, "never"],
+    "object-shorthand": 0,
+    "padded-blocks": 0,
+    // React
+    "react-native/no-unused-styles": 2,
+    "react-native/split-platform-components": 2,
+    "react/sort-comp": 0, // Not ready yet
+    // JSX
+    "jsx-quotes": [2, "prefer-single"],
+    // Import
+    "import/no-unresolved": [2, {"commonjs": true, "amd": true}],
+    "import/named": 2,
+    "import/namespace": 2,
+    "import/default": 2,
+    "import/export": 2,
+  },
+  "globals": {
+    "after": false,
+    "afterEach": false,
+    "before": false,
+    "beforeEach": false,
+    "describe": false,
+    "it": false,
+    "require": false
+  },
+  "settings": {
+    "import/ignore": [
+      "node_modules",
+      "\\.json$"
+    ],
+    "import/parser": "babel-eslint",
+    "import/resolve": {
+      "extensions": [
+        ".js",
+        ".jsx",
+        ".json"
+      ]
+    }
+  }
+}

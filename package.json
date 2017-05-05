@@ -17,6 +17,7 @@
     "detect-port": "1.0.0",
     "dotenv": "2.0.0",
     "eslint": "3.5.0",
+    "eslint-config-airbnb": "^14.1.0",
     "eslint-config-react-app": "^0.2.1",
     "eslint-loader": "1.5.0",
     "eslint-plugin-flowtype": "2.18.1",
@@ -33,9 +34,11 @@
     "http-proxy-middleware": "0.17.1",
     "jest": "15.1.1",
     "json-loader": "0.5.4",
+    "lint-staged": "^3.4.1",
     "object-assign": "4.1.0",
     "path-exists": "2.1.0",
     "postcss-loader": "0.13.0",
+    "pre-commit": "^1.2.2",
     "promise": "7.1.1",
     "react-dev-utils": "^0.2.1",
     "react-test-renderer": "^15.5.4",
@@ -43,6 +46,9 @@
     "rimraf": "2.5.4",
     "strip-ansi": "3.0.1",
     "style-loader": "0.13.1",
+    "stylefmt": "^5.3.2",
+    "stylelint": "^7.10.1",
+    "stylelint-config-standard": "^16.0.0",
     "url-loader": "0.5.7",
     "webpack": "1.13.2",
     "webpack-dev-server": "1.16.1",
@@ -68,8 +74,13 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js --env=jsdom"
+    "test": "node scripts/test.js --env=jsdom",
+    "lint": "ls",
+    "lint:js": "eslint **/*.js",
+    "lint:css": "stylelint **/*.css",
+    "lint:staged": "lint-staged"
   },
+  "pre-commit": "lint:staged",
   "jest": {
     "moduleFileExtensions": [
       "jsx",
