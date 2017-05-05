@@ -4,6 +4,7 @@ import RepoCount from "./Count";
 import {graphql} from "react-apollo";
 import gql from "graphql-tag";
 import {Redirect} from "react-router";
+import update from "immutability-helper";
 
 class NewRepoForm extends Component {
   constructor(props) {
@@ -69,23 +70,36 @@ class NewRepoForm extends Component {
   sendDataToApollo() {
     const {name, url, description, forks, owner, stargazers, issues, contributors} = this.state;
 
-    this.props.mutate({variables: {
-      name,
-      url,
-      owner,
-      contributors,
-      forks,
-      stargazers,
-      issues,
-      description,
-    }})
+    this.props.mutate({
+      variables: {
+        name,
+        url,
+        owner,
+        contributors,
+        forks,
+        stargazers,
+        issues,
+        description,
+      },
+      updateQueries: {
+        Repository: (prev, {mutationResult}) => {
+          const newRepo = mutationResult.data.createRepository;
+          return update(prev, {
+            entry: {
+              repositories: {
+                $unshift: [newRepo],
+              },
+            },
+          });
+        }
+      }
+    })
       .then(() => {
         this.setState(
           {data: {}, description: "", owner: "", stargazers: "", forks:
            "", issues: "", contributors: "", uri: "", url: "", name: "", submitted: true}
         );
-      })
-      .catch((error) => console.error(`An Error Occurred: ${error}`));
+      });
   }
 
   setUrl(e) {
@@ -109,7 +123,7 @@ class NewRepoForm extends Component {
           issues: issues.totalCount
         });
       }
-    ).catch((error) => console.error(error));
+    );
   }
 
   render() {
@@ -153,6 +167,7 @@ const createFormMutation = gql`
   mutation createRepository($name: String!, $url: String!, $owner: String!, $stargazers: Int, $issues: Int, $forks: Int, $description: String) {
     createRepository(name: $name, url: $url, owner: $owner, stargazers: $stargazers, issues: $issues, forks: $forks, description: $description) {
       id
+      name
     }
   }
 `;
