@@ -21,7 +21,8 @@ function getClientEnvironment(publicUrl) {
       // This should only be used as an escape hatch. Normally you would put
       // images into the `src` and `import` them in code to get their paths.
       'process.env.PUBLIC_URL': JSON.stringify(publicUrl),
-      'process.env.githubToken': JSON.stringify(process.env.GITHUB_TOKEN)
+      'process.env.githubToken': JSON.stringify(process.env.GITHUB_TOKEN),
+      'process.env.graphcoolEndpoint': JSON.stringify(process.env.GRAPHCOOL_ENDPOINT)
     });
 }
 
