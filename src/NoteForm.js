@@ -1,18 +1,20 @@
 import React, {Component} from "react";
-import {graphql} from "react-apollo";
+import {graphql, compose} from "react-apollo";
+import {Redirect} from "react-router";
 import gql from "graphql-tag";
 
 class NoteForm extends Component {
   constructor(props) {
     super(props);
     this.handleNotesChange = this.handleNotesChange.bind(this);
-    this.sendDataToApollo = this.sendDataToApollo.bind(this);
+    this.handleNoteCreation = this.handleNoteCreation.bind(this);
     this.toggleEditing = this.toggleEditing.bind(this);
     this.state = {
       data: {},
       notesInput: "",
       owner: "",
-      editing: false
+      editing: false,
+      deleted: false
     };
   }
 
@@ -20,13 +22,19 @@ class NoteForm extends Component {
     this.setState({notesInput: e.target.value});
   }
 
-  sendDataToApollo() {
+  handleNoteCreation() {
     const {notesInput} = this.state;
     const {repoId} = this.props;
 
-    this.props.mutate({variables: {notes: notesInput, id: repoId}})
-      .then(() => this.setState({notesInput: "", editing: false}))
-      .catch((error) => console.log(error));
+    this.props.createRepo({variables: {notes: notesInput, id: repoId}})
+      .then(() => this.setState({notesInput: "", editing: false}));
+  }
+
+  handleRepoDeletion(id) {
+    const {repoId} = this.props;
+
+    this.props.deleteRepo({variables: {id: repoId}})
+      .then(() => this.setState({deleted: true}));
   }
 
   toggleEditing() {
@@ -34,24 +42,25 @@ class NoteForm extends Component {
   }
 
   render() {
-    const {notesInput, editing} = this.state;
-    const {notes, repoName} = this.props;
+    const {notesInput, editing, deleted} = this.state;
+    const {notes, repoName, id} = this.props;
 
-    return (
+    return !deleted ?
       <div className="Form">
         <div className="grid-full form">
           <textarea disabled={!editing} className="utility-input boxed-input text-box light-shadow" onChange={this.handleNotesChange} value={notes || notesInput} type="text" placeholder={`Type your notes for ${repoName} here...`} name="notes" />
           {editing ?
-            <button onClick={this.sendDataToApollo} className="button-ui-primary"><span className="icon-write" /> Save Notes</button>
+            <button onClick={this.handleNoteCreation} className="button-ui-primary"><span className="icon-write" /> Save Notes</button>
             : <button onClick={this.toggleEditing} className="button-ui-primary"><span className="icon-write" /> Edit Notes</button>
           }
+          <button onClick={() => this.handleRepoDeletion(id)} className="button-ui-destructive"> Delete</button>
         </div>
       </div>
-    );
+    : <Redirect to="/"/>;
   }
 }
 
-const createFormMutation = gql`
+const createRepo = gql`
   mutation updateRepository($notes: String, $id: ID!) {
     updateRepository(id: $id, notes: $notes) {
       id
@@ -59,7 +68,20 @@ const createFormMutation = gql`
     }
   }
 `;
-const FormMutation = graphql(createFormMutation)(NoteForm);
 
-export default FormMutation;
+const deleteRepo = gql`
+  mutation deleteRepo($id: ID!) {
+    deleteRepository(id: $id) {
+      id
+    }
+  }
+`;
+
+
+const FormWithMutations = compose(
+  graphql(createRepo, {name: "createRepo"}),
+  graphql(deleteRepo, {name: "deleteRepo"})
+)(NoteForm);
+
+export default FormWithMutations;
 
