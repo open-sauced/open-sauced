@@ -24,11 +24,11 @@ You will need a GitHub access token to access the repository data
 fetching portion of this app. Instructions on how to retrieve one is
 [here](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/)
 
-![token-example](http://i.imgur.com/TAvrse9m.png)
+![token-example](http://i.imgur.com/TAvrse9.png)
 
 Be sure to allow access to your user information when creating your token.
 
-![token-options](http://i.imgur.com/WefKl5cm.png)
+![token-options](http://i.imgur.com/WefKl5c.png)
 
 ### 3. Deploy to Netlify 
 
