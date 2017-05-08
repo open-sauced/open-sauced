@@ -9,6 +9,7 @@ import {
 } from "react-router-dom";
 
 const Repositories = ({match, data}) => {
+  data.refetch();
   const {allRepositories} = data;
   const content = () => (
     <div className="landing-nav">

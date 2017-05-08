@@ -8,7 +8,7 @@ import {Redirect} from "react-router";
 class NewRepoForm extends Component {
   constructor(props) {
     super(props);
-    this.setUrl = this.setUrl.bind(this);
+    this.handleSetUrl = this.handleSetUrl.bind(this);
     this.handleNameChange = this.handleNameChange.bind(this);
     this.handleUrlChange = this.handleUrlChange.bind(this);
     this.handleDescriptionChange = this.handleDescriptionChange.bind(this);
@@ -17,8 +17,8 @@ class NewRepoForm extends Component {
     this.handleStarsChange = this.handleStarsChange.bind(this);
     this.handleOwnerChange = this.handleOwnerChange.bind(this);
     this.handleContributorsChange = this.handleContributorsChange.bind(this);
-    this.fetchRepoData = this.fetchRepoData.bind(this);
-    this.sendDataToApollo = this.sendDataToApollo.bind(this);
+    this.handleFetchRepoData = this.handleFetchRepoData.bind(this);
+    this.handleApolloSend = this.handleApolloSend.bind(this);
     this.state = {
       data: {},
       uri: "",
@@ -66,33 +66,30 @@ class NewRepoForm extends Component {
     this.setState({contributors: e.target.value});
   }
 
-  sendDataToApollo() {
-    const {name, url, description, forks, owner, stargazers, issues, contributors} = this.state;
-
-    this.props.mutate({variables: {
-      name,
-      url,
-      owner,
-      contributors,
-      forks,
-      stargazers,
-      issues,
-      description,
-    }})
-      .then(() => {
-        this.setState(
-          {data: {}, description: "", owner: "", stargazers: "", forks:
-           "", issues: "", contributors: "", uri: "", url: "", name: "", submitted: true}
-        );
-      })
-      .catch((error) => console.error(`An Error Occurred: ${error}`));
+  handleApolloSend() {
+    this.props.mutate({
+      variables: {...this.state},
+      updateQueries: {
+        Repository: (prev, {mutationResult}) => {
+          const newRepo = mutationResult.data.createRepository;
+          return {
+            allRepositories: [...prev.repositories, newRepo],
+          };
+        }
+      }
+    }).then(() => {
+      this.setState(
+        {data: {}, description: "", owner: "", stargazers: "", forks:
+         "", issues: "", contributors: "", uri: "", url: "", name: "", submitted: true}
+      );
+    });
   }
 
-  setUrl(e) {
+  handleSetUrl(e) {
     this.setState({url: e.target.value});
   }
 
-  fetchRepoData() {
+  handleFetchRepoData() {
     const url = this.state.url.split("/");
     api.fetchRepositoryData(url[3], url[4]).then(
       (response) => {
@@ -109,7 +106,7 @@ class NewRepoForm extends Component {
           issues: issues.totalCount
         });
       }
-    ).catch((error) => console.error(error));
+    );
   }
 
   render() {
@@ -127,8 +124,19 @@ class NewRepoForm extends Component {
         </p>
         <div className="">
           <div name="">
-            <input className="utility-input urlForm" type="url" onChange={this.setUrl} value={url} placeholder="https://github.com/netlify/netlify-cms"/>
-            <button className="button-ui-default" onClick={this.fetchRepoData}>Fetch repository data</button>
+            <input
+                className="utility-input urlForm"
+                type="url"
+                onChange={this.handleSetUrl}
+                value={url}
+                placeholder="https://github.com/netlify/netlify-cms"
+            />
+            <button
+                className="button-ui-default"
+                onClick={this.handleFetchRepoData}
+            >
+              Fetch repository data
+            </button>
           </div>
           <div className="grid-full form">
             <input className="utility-input support-input-form" placeholder="Name" onChange={this.handleNameChange} value={name} type="text" name="sitename" required />
@@ -140,7 +148,13 @@ class NewRepoForm extends Component {
             <input className="utility-input boxed-input light-shadow" placeholder="Issues" onChange={this.handleIssuesChange} value={issues} type="text" name="issues" required />
             <textarea className="utility-input boxed-input text-box light-shadow" onChange={this.handleDescriptionChange} value={description} type="text" placeholder="Repository Description" name="notes" />
             <RepoCount count={count} />
-            <button onClick={this.sendDataToApollo} className="button-ui-primary"><span className="icon-plus" /> Add repository to your list</button>
+            <button
+                onClick={this.handleApolloSend}
+                className="button-ui-primary"
+            >
+              <span className="icon-plus" />
+              Add repository to your list
+            </button>
           </div>
           <div className="shadow" />
         </div>
@@ -153,6 +167,7 @@ const createFormMutation = gql`
   mutation createRepository($name: String!, $url: String!, $owner: String!, $stargazers: Int, $issues: Int, $forks: Int, $description: String) {
     createRepository(name: $name, url: $url, owner: $owner, stargazers: $stargazers, issues: $issues, forks: $forks, description: $description) {
       id
+      name
     }
   }
 `;
