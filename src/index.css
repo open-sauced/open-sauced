@@ -1,3 +1,4 @@
+/* stylelint-disable */
 html {
   /* colors */
   --offWhite: #fbfbfb;
@@ -21,6 +22,8 @@ html {
   --darkGreen: #03b1a3;
 
   --red: #fb6d77;
+
+  --darkRed: #fa3946;
 
   /* typography */
   --thin: 100;
@@ -246,6 +249,7 @@ button {
   cursor: pointer;
   font-size: var(--tiny);
   margin-bottom: var(--tiny);
+  margin-right: var(--micro);
   outline: none;
   padding: var(--tiny);
   transition: background 0.2s ease;
@@ -253,6 +257,14 @@ button {
 
 button:hover {
   background: var(--darkGreen);
+}
+
+.button-ui-destructive {
+  background: var(--red);
+}
+
+.button-ui-destructive:hover {
+  background: var(--darkRed);
 }
 
 footer {
