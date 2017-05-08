@@ -26,6 +26,10 @@ fetching portion of this app. Instructions on how to retrieve one is
 
 ![token-example](http://i.imgur.com/TAvrse9m.png)
 
+Be sure to allow access to your user information when creating your token.
+
+![token-options](http://i.imgur.com/WefKl5cm.png)
+
 ### 3. Deploy to Netlify 
 
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/bdougie/open-sauced)
