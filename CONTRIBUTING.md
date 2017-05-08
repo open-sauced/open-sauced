@@ -37,7 +37,7 @@ $ npm run lint
 
 ```sh
 // You will need to create you own GitHub access token to query the GitHub API
-$ GITHUB_TOKEN="XXXXXXXXX" npm start
+$ GRAPHQL_ENDPOINT="https://api.graph.cool/simple/v1/XXXXXXX" GITHUB_TOKEN="XXXXXXXXX" npm start
 ```
 
 ## Pull Requests
