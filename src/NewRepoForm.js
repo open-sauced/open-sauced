@@ -4,12 +4,11 @@ import RepoCount from "./Count";
 import {graphql} from "react-apollo";
 import gql from "graphql-tag";
 import {Redirect} from "react-router";
-import update from "immutability-helper";
 
 class NewRepoForm extends Component {
   constructor(props) {
     super(props);
-    this.setUrl = this.setUrl.bind(this);
+    this.handleSetUrl = this.handleSetUrl.bind(this);
     this.handleNameChange = this.handleNameChange.bind(this);
     this.handleUrlChange = this.handleUrlChange.bind(this);
     this.handleDescriptionChange = this.handleDescriptionChange.bind(this);
@@ -18,8 +17,8 @@ class NewRepoForm extends Component {
     this.handleStarsChange = this.handleStarsChange.bind(this);
     this.handleOwnerChange = this.handleOwnerChange.bind(this);
     this.handleContributorsChange = this.handleContributorsChange.bind(this);
-    this.fetchRepoData = this.fetchRepoData.bind(this);
-    this.sendDataToApollo = this.sendDataToApollo.bind(this);
+    this.handleFetchRepoData = this.handleFetchRepoData.bind(this);
+    this.handleApolloSend = this.handleApolloSend.bind(this);
     this.state = {
       data: {},
       uri: "",
@@ -67,46 +66,30 @@ class NewRepoForm extends Component {
     this.setState({contributors: e.target.value});
   }
 
-  sendDataToApollo() {
-    const {name, url, description, forks, owner, stargazers, issues, contributors} = this.state;
-
+  handleApolloSend() {
     this.props.mutate({
-      variables: {
-        name,
-        url,
-        owner,
-        contributors,
-        forks,
-        stargazers,
-        issues,
-        description,
-      },
+      variables: {...this.state},
       updateQueries: {
         Repository: (prev, {mutationResult}) => {
           const newRepo = mutationResult.data.createRepository;
-          return update(prev, {
-            entry: {
-              repositories: {
-                $unshift: [newRepo],
-              },
-            },
-          });
+          return {
+            allRepositories: [...prev.repositories, newRepo],
+          };
         }
       }
-    })
-      .then(() => {
-        this.setState(
-          {data: {}, description: "", owner: "", stargazers: "", forks:
-           "", issues: "", contributors: "", uri: "", url: "", name: "", submitted: true}
-        );
-      });
+    }).then(() => {
+      this.setState(
+        {data: {}, description: "", owner: "", stargazers: "", forks:
+         "", issues: "", contributors: "", uri: "", url: "", name: "", submitted: true}
+      );
+    });
   }
 
-  setUrl(e) {
+  handleSetUrl(e) {
     this.setState({url: e.target.value});
   }
 
-  fetchRepoData() {
+  handleFetchRepoData() {
     const url = this.state.url.split("/");
     api.fetchRepositoryData(url[3], url[4]).then(
       (response) => {
@@ -141,8 +124,19 @@ class NewRepoForm extends Component {
         </p>
         <div className="">
           <div name="">
-            <input className="utility-input urlForm" type="url" onChange={this.setUrl} value={url} placeholder="https://github.com/netlify/netlify-cms"/>
-            <button className="button-ui-default" onClick={this.fetchRepoData}>Fetch repository data</button>
+            <input
+                className="utility-input urlForm"
+                type="url"
+                onChange={this.handleSetUrl}
+                value={url}
+                placeholder="https://github.com/netlify/netlify-cms"
+            />
+            <button
+                className="button-ui-default"
+                onClick={this.handleFetchRepoData}
+            >
+              Fetch repository data
+            </button>
           </div>
           <div className="grid-full form">
             <input className="utility-input support-input-form" placeholder="Name" onChange={this.handleNameChange} value={name} type="text" name="sitename" required />
@@ -154,7 +148,13 @@ class NewRepoForm extends Component {
             <input className="utility-input boxed-input light-shadow" placeholder="Issues" onChange={this.handleIssuesChange} value={issues} type="text" name="issues" required />
             <textarea className="utility-input boxed-input text-box light-shadow" onChange={this.handleDescriptionChange} value={description} type="text" placeholder="Repository Description" name="notes" />
             <RepoCount count={count} />
-            <button onClick={this.sendDataToApollo} className="button-ui-primary"><span className="icon-plus" /> Add repository to your list</button>
+            <button
+                onClick={this.handleApolloSend}
+                className="button-ui-primary"
+            >
+              <span className="icon-plus" />
+              Add repository to your list
+            </button>
           </div>
           <div className="shadow" />
         </div>
