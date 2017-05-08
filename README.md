@@ -21,8 +21,7 @@ Setup your GraphQL backend using the *graphql-up* button at the top of this sect
 **!Important**: 👉 To get access to the GitHub early access GraphQL API, fill out the [prerelease agreement](https://github.com/prerelease/agreement)
 
 You will need a GitHub access token to access the repository data
-fetching portion of this app. Instructions on how to retrieve one is
-[here](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/)
+fetching portion of this app. You can find [instructions on how to retrieve one](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/) on GitHub.
 
 ![token-example](http://i.imgur.com/TAvrse9.png)
 
