@@ -44,11 +44,12 @@ class NoteForm extends Component {
   render() {
     const {notesInput, editing, deleted} = this.state;
     const {notes, repoName, id} = this.props;
+    const noteContent = notesInput !== "" ? notesInput : notes;
 
     return !deleted ?
       <div className="Form">
         <div className="grid-full form">
-          <textarea disabled={!editing} className="utility-input boxed-input text-box light-shadow" onChange={this.handleNotesChange} value={notes || notesInput} type="text" placeholder={`Type your notes for ${repoName} here...`} name="notes" />
+          <textarea disabled={!editing} className="utility-input boxed-input text-box light-shadow" onChange={this.handleNotesChange} value={noteContent || ""} type="text" placeholder={`Type your notes for ${repoName} here...`} name="notes" />
           {editing ?
             <button onClick={this.handleNoteCreation} className="button-ui-primary"><span className="icon-write" /> Save Notes</button>
             : <button onClick={this.toggleEditing} className="button-ui-primary"><span className="icon-write" /> Edit Notes</button>
