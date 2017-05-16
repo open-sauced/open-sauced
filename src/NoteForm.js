@@ -48,8 +48,8 @@ class NoteForm extends Component {
     const noteContent = notesInput !== "" ? notesInput : notes;
 
     return !deleted ?
-      <div className="Form">
-        <div className="grid-full form">
+      <div style={{flex: 2}} className="Form">
+        <div className="grid-half form">
           <textarea disabled={!editing} className="utility-input boxed-input text-box light-shadow" onChange={this.handleNotesChange} value={noteContent || ""} type="text" placeholder={`Type your notes for ${repoName} here...`} name="notes" />
           {editing ?
             <Button onClick={this.handleNoteCreation}><span className="icon-write" /> Save Notes</Button>
