@@ -8,8 +8,8 @@ please read the [code of conduct](CODE_OF_CONDUCT.md).
 > Install yarn on your system: https://yarnpkg.com/en/docs/install
 
 ```sh
-$ git clone https://github.com/netlify/netlify-cms
-$ cd netlify-cms
+$ git clone https://github.com/bdougie/open-sauced
+$ cd open-sauced
 $ yarn
 ```
 
