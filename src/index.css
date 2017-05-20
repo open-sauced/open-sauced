@@ -227,7 +227,7 @@ header a.nav-link {
   background-color: var(--green);
 }
 
-textarea,
+/*textarea,
 input {
   border: 1px solid var(--lightestGrey);
   border-radius: var(--smallBorderRadius);
@@ -238,7 +238,7 @@ input {
   outline: none;
   padding: var(--tiny);
   width: 100%;
-}
+}*/
 
 /*button {
   background: var(--green);

@@ -3,6 +3,8 @@ import {graphql, compose} from "react-apollo";
 import {Redirect} from "react-router";
 import gql from "graphql-tag";
 import Button from "./styles/Button";
+//import Input from "./styles/Input";
+import TextArea from "./styles/TextArea";
 
 class NoteForm extends Component {
   constructor(props) {
@@ -50,7 +52,7 @@ class NoteForm extends Component {
     return !deleted ?
       <div className="Form">
         <div className="grid-full form">
-          <textarea disabled={!editing} className="utility-input boxed-input text-box light-shadow" onChange={this.handleNotesChange} value={noteContent || ""} type="text" placeholder={`Type your notes for ${repoName} here...`} name="notes" />
+          <TextArea disabled={!editing} className="utility-input boxed-input text-box light-shadow" onChange={this.handleNotesChange} value={noteContent || ""} type="text" placeholder={`Type your notes for ${repoName} here...`} name="notes" />
           {editing ?
             <Button onClick={this.handleNoteCreation} className="button-ui-primary"><span className="icon-write" /> Save Notes</Button>
             : <Button onClick={this.toggleEditing} className="button-ui-primary"><span className="icon-write" /> Edit Notes</Button>
