@@ -240,7 +240,7 @@ input {
   width: 100%;
 }
 
-button {
+/*button {
   background: var(--green);
   border: none;
   border-radius: var(--smallBorderRadius);
@@ -257,7 +257,7 @@ button {
 
 button:hover {
   background: var(--darkGreen);
-}
+}*/
 
 .button-ui-destructive {
   background: var(--red);
