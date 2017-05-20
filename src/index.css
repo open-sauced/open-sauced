@@ -94,14 +94,14 @@ p {
   padding: 10px;
 }
 
-header {
+/*header {
   box-sizing: border-box;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   background: var(--grey);
-}
+}*/
 
 .landing-nav + select {
   display: none;
@@ -112,7 +112,7 @@ section {
   padding: var(--tiny);
 }
 
-header a {
+/*header a {
   color: white;
   display: inline-block;
   font-size: var(--small);
@@ -120,7 +120,7 @@ header a {
   text-decoration: none;
   transition: color 0.2s ease, background-color 0.2s ease;
   vertical-align: bottom;
-}
+}*/
 
 header a:hover {
   background-color: #222;
