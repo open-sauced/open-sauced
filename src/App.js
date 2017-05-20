@@ -9,17 +9,15 @@ import {
   Link
 } from "react-router-dom";
 import Header from "./styles/Header";
-import HeaderLinks from "./styles/HeaderLinks";
+//import HeaderLinks from "./styles/HeaderLinks";
 
 const App = () => (
   <Router>
     <div>
       <Header>
-        <HeaderLinks>
-          <Link to="/" className="home" alt="home"><span className="icon-home" /></Link>
-          <Link to="/new" className="nav-link" alt="Add A Repo"><span className="icon-plus" /></Link>
-          <Dropdown /> 
-        </HeaderLinks>       
+        <Link to="/" className="home" alt="home"><span className="icon-home" /></Link>
+        <Link to="/new" className="nav-link" alt="Add A Repo"><span className="icon-plus" /></Link>
+        <Dropdown />    
       </Header>
       <section>
         <Route exact path="/" component={Repositories}/>

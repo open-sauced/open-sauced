@@ -112,7 +112,7 @@ section {
   padding: var(--tiny);
 }
 
-/*header a {
+header a {
   color: white;
   display: inline-block;
   font-size: var(--small);
@@ -120,7 +120,7 @@ section {
   text-decoration: none;
   transition: color 0.2s ease, background-color 0.2s ease;
   vertical-align: bottom;
-}*/
+}
 
 header a:hover {
   background-color: #222;

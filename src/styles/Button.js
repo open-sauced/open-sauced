@@ -1,21 +1,22 @@
 import styled from "styled-components";
+import {colors, borderRadius, padding} from "./cssConstants";
 
 const Button = styled.button`
-  background: #00c7b7;  
+  background: ${colors.green};  
   border: none;
-  border-radius: var(--smallBorderRadius);
+  border-radius: ${borderRadius.smallBorderRadius};
   box-shadow: none;
   color: white;
   cursor: pointer;
-  font-size: var(--tiny);
-  margin-bottom: var(--tiny);
-  margin-right: var(--micro);
+  font-size: ${padding.tiny};
+  margin-bottom: ${padding.tiny};
+  margin-right: ${padding.micro};
   outline: none;
-  padding: var(--tiny);
+  padding: ${padding.tiny};
   transition: background 0.2s ease;
 
   &:hover {
-    background: #03b1a3;
+    background: ${colors.darkGreen};
   }
 `;
 
