@@ -13,6 +13,10 @@ const Button = styled.button`
   outline: none;
   padding: var(--tiny);
   transition: background 0.2s ease;
+
+  &:hover {
+    background: #03b1a3;
+  }
 `;
 
 export default Button;
