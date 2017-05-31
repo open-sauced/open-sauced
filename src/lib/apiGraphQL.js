@@ -46,13 +46,15 @@ function repoQuery(name, repo) {
   `;
 }
 
-function issueQuery(name, repo) {
-  return `
+function issueQuery(name, repo, cursor) {
+  const fetch = `
     {
       repositoryOwner(login: "${name}") {
         repository(name: "${repo}") {
           issues(first: 5) {
+            totalCount
             data: edges {
+            cursor
               node {
                 id
                 title
@@ -77,6 +79,41 @@ function issueQuery(name, repo) {
       }
     }
   `;
+
+  const fetchMore = `
+    {
+      repositoryOwner(login: "${name}") {
+        repository(name: "${repo}") {
+          issues(first: 5, after: "${cursor}") {
+            totalCount
+            data: edges {
+            cursor
+              node {
+                id
+                title
+                url
+                state
+                author {
+                  login
+                }
+                labels(first: 5) {
+                  data: edges {
+                    node {
+                      id
+                      name
+                    }
+                  }
+                }
+                createdAt
+              }
+            }
+          }
+        }
+      }
+    }
+  `;
+
+  return cursor ? fetchMore : fetch;
 }
 
 export default api;
