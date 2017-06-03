@@ -132,10 +132,7 @@ class NewRepoForm extends Component {
                 value={url}
                 placeholder="https://github.com/netlify/netlify-cms"
             />
-            <Button
-                className="button-ui-default"
-                onClick={this.handleFetchRepoData}
-            >
+            <Button onClick={this.handleFetchRepoData}>
               Fetch repository data
             </Button>
           </div>
@@ -149,10 +146,7 @@ class NewRepoForm extends Component {
             <input className="utility-input boxed-input light-shadow" placeholder="Issues" onChange={this.handleIssuesChange} value={issues} type="text" name="issues" required />
             <textarea className="utility-input boxed-input text-box light-shadow" onChange={this.handleDescriptionChange} value={description} type="text" placeholder="Repository Description" name="notes" />
             <RepoCount count={count} />
-            <Button
-                onClick={this.handleApolloSend}
-                className="button-ui-primary"
-            >
+            <Button onClick={this.handleApolloSend}>
               <span className="icon-plus" />
               Add repository to your list
             </Button>

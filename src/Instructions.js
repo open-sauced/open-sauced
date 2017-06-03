@@ -6,7 +6,7 @@ const Instructions = ({allRepositories}) => {
   return allRepositories && allRepositories.length > 0 ?
     <p>Select a repo to see details.</p>
       : <Link to="/new" alt="Add A Repo">
-        <Button className="button-ui-primary button_hover"><span className="icon-plus" />Track you first Repository</Button>
+        <Button><span className="icon-plus" />Track you first Repository</Button>
       </Link>;
 };
 
