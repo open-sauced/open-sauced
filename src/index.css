@@ -94,14 +94,14 @@ p {
   padding: 10px;
 }
 
-header {
+/*header {
   box-sizing: border-box;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   background: var(--grey);
-}
+}*/
 
 .landing-nav + select {
   display: none;
@@ -227,7 +227,7 @@ header a.nav-link {
   background-color: var(--green);
 }
 
-textarea,
+/*textarea,
 input {
   border: 1px solid var(--lightestGrey);
   border-radius: var(--smallBorderRadius);
@@ -238,9 +238,9 @@ input {
   outline: none;
   padding: var(--tiny);
   width: 100%;
-}
+}*/
 
-button {
+/*button {
   background: var(--green);
   border: none;
   border-radius: var(--smallBorderRadius);
@@ -257,7 +257,7 @@ button {
 
 button:hover {
   background: var(--darkGreen);
-}
+}*/
 
 .button-ui-destructive {
   background: var(--red);

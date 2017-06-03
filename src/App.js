@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React from "react";
 import NewRepo from "./NewRepo";
 import Repositories from "./Repositories";
@@ -7,15 +8,17 @@ import {
   Route,
   Link
 } from "react-router-dom";
+import Header from "./styles/Header";
+//import HeaderLinks from "./styles/HeaderLinks";
 
 const App = () => (
   <Router>
     <div>
-      <header>
+      <Header>
         <Link to="/" className="home" alt="home"><span className="icon-home" /></Link>
         <Link to="/new" className="nav-link" alt="Add A Repo"><span className="icon-plus" /></Link>
-        <Dropdown />
-      </header>
+        <Dropdown />    
+      </Header>
       <section>
         <Route exact path="/" component={Repositories}/>
         <Route path="/repos" component={Repositories}/>

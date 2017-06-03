@@ -4,6 +4,9 @@ import RepoCount from "./Count";
 import {graphql} from "react-apollo";
 import gql from "graphql-tag";
 import {Redirect} from "react-router";
+import Button from "./styles/Button";
+import Input from "./styles/Input";
+import TextArea from "./styles/TextArea";
 
 class NewRepoForm extends Component {
   constructor(props) {
@@ -124,37 +127,37 @@ class NewRepoForm extends Component {
         </p>
         <div className="">
           <div name="">
-            <input
+            <Input
                 className="utility-input urlForm"
                 type="url"
                 onChange={this.handleSetUrl}
                 value={url}
                 placeholder="https://github.com/netlify/netlify-cms"
             />
-            <button
+            <Button
                 className="button-ui-default"
                 onClick={this.handleFetchRepoData}
             >
               Fetch repository data
-            </button>
+            </Button>
           </div>
           <div className="grid-full form">
-            <input className="utility-input support-input-form" placeholder="Name" onChange={this.handleNameChange} value={name} type="text" name="sitename" required />
-            <input className="utility-input boxed-input light-shadow" placeholder="Link" onChange={this.handleUrlChange} value={url} type="url" name="contentlink" required />
-            <input className="utility-input boxed-input light-shadow" placeholder="Owner" onChange={this.handleOwnerChange} value={owner} name="repoowner" required />
-            <input className="utility-input boxed-input light-shadow" placeholder="Contributors" onChange={this.handleContributorsChange} value={contributors} name="contributors" />
-            <input className="utility-input boxed-input light-shadow" placeholder="Stars" onChange={this.handleStarsChange} value={stargazers} type="text" name="stars" required />
-            <input className="utility-input boxed-input light-shadow" placeholder="Forks" onChange={this.handleForksChange} value={forks} type="text" name="forks" required />
-            <input className="utility-input boxed-input light-shadow" placeholder="Issues" onChange={this.handleIssuesChange} value={issues} type="text" name="issues" required />
-            <textarea className="utility-input boxed-input text-box light-shadow" onChange={this.handleDescriptionChange} value={description} type="text" placeholder="Repository Description" name="notes" />
+            <Input className="utility-input support-input-form" placeholder="Name" onChange={this.handleNameChange} value={name} type="text" name="sitename" required />
+            <Input className="utility-input boxed-input light-shadow" placeholder="Link" onChange={this.handleUrlChange} value={url} type="url" name="contentlink" required />
+            <Input className="utility-input boxed-input light-shadow" placeholder="Owner" onChange={this.handleOwnerChange} value={owner} name="repoowner" required />
+            <Input className="utility-input boxed-input light-shadow" placeholder="Contributors" onChange={this.handleContributorsChange} value={contributors} name="contributors" />
+            <Input className="utility-input boxed-input light-shadow" placeholder="Stars" onChange={this.handleStarsChange} value={stargazers} type="text" name="stars" required />
+            <Input className="utility-input boxed-input light-shadow" placeholder="Forks" onChange={this.handleForksChange} value={forks} type="text" name="forks" required />
+            <Input className="utility-input boxed-input light-shadow" placeholder="Issues" onChange={this.handleIssuesChange} value={issues} type="text" name="issues" required />
+            <TextArea className="utility-input boxed-input text-box light-shadow" onChange={this.handleDescriptionChange} value={description} type="text" placeholder="Repository Description" name="notes" />
             <RepoCount count={count} />
-            <button
+            <Button
                 onClick={this.handleApolloSend}
                 className="button-ui-primary"
             >
               <span className="icon-plus" />
               Add repository to your list
-            </button>
+            </Button>
           </div>
           <div className="shadow" />
         </div>
