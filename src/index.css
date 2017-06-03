@@ -240,33 +240,6 @@ input {
   width: 100%;
 }
 
-button {
-  background: var(--green);
-  border: none;
-  border-radius: var(--smallBorderRadius);
-  box-shadow: none;
-  color: white;
-  cursor: pointer;
-  font-size: var(--tiny);
-  margin-bottom: var(--tiny);
-  margin-right: var(--micro);
-  outline: none;
-  padding: var(--tiny);
-  transition: background 0.2s ease;
-}
-
-button:hover {
-  background: var(--darkGreen);
-}
-
-.button-ui-destructive {
-  background: var(--red);
-}
-
-.button-ui-destructive:hover {
-  background: var(--darkRed);
-}
-
 footer {
   margin: var(--large) 0 var(--small) 0;
   text-align: center;

@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import {graphql, compose} from "react-apollo";
 import {Redirect} from "react-router";
 import gql from "graphql-tag";
+import Button from "./styles/Button";
 
 class NoteForm extends Component {
   constructor(props) {
@@ -51,10 +52,10 @@ class NoteForm extends Component {
         <div className="grid-full form">
           <textarea disabled={!editing} className="utility-input boxed-input text-box light-shadow" onChange={this.handleNotesChange} value={noteContent || ""} type="text" placeholder={`Type your notes for ${repoName} here...`} name="notes" />
           {editing ?
-            <button onClick={this.handleNoteCreation} className="button-ui-primary"><span className="icon-write" /> Save Notes</button>
-            : <button onClick={this.toggleEditing} className="button-ui-primary"><span className="icon-write" /> Edit Notes</button>
+            <Button onClick={this.handleNoteCreation}><span className="icon-write" /> Save Notes</Button>
+            : <Button onClick={this.toggleEditing} ><span className="icon-write" /> Edit Notes</Button>
           }
-          <button onClick={() => this.handleRepoDeletion(id)} className="button-ui-destructive"> Delete</button>
+          <Button destructive onClick={() => this.handleRepoDeletion(id)}> Delete</Button>
         </div>
       </div>
     : <Redirect to="/"/>;
