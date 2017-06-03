@@ -59,11 +59,11 @@ class Issues extends Component {
     const currentPage = (offset / 5) + 1;
 
     return owner ?
-      <div style={{flex: 2, marginLeft: 10}}>
+      <div style={{flex: 2, marginRight: 10}}>
         <ul>
           {issues && issues.map((issue) => (
             <li key={issue.node.id}>
-              <a target="_blank" href={issue.node.url}>
+              <a style={{fontSize: 16}} target="_blank" href={issue.node.url}>
                 {issue.node.title}
                 {issue.labels && issue.labels.data.map((label) => label.name)}
               </a>
@@ -71,23 +71,25 @@ class Issues extends Component {
           ))}
         </ul>
 
-        {offset > 0 &&
-          <button
-              onClick={this.handlePreviousIssues}
-              className="button-ui-primary"
-          >
-            Previous
-          </button>
-        }
-        {currentPage !== totalPages &&
-          <button
-              onClick={this.handleNextIssues}
-              className="button-ui-primary"
-          >
-            Next
-          </button>
-        }
-        Page {currentPage}/{totalPages}
+        <div style={{display: "flex", alignItems: "baseline"}}>
+          {offset > 0 &&
+            <button
+                onClick={this.handlePreviousIssues}
+                className="button-ui-primary"
+            >
+              Previous
+            </button>
+          }
+          <p style={{marginRight: 8}}>{currentPage}/{totalPages}</p>
+          {currentPage !== totalPages &&
+            <button
+                onClick={this.handleNextIssues}
+                className="button-ui-primary"
+            >
+              Next
+            </button>
+          }
+        </div>
       </div>
       : <p>...Loading</p>
     ;

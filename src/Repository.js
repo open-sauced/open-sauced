@@ -7,14 +7,14 @@ import gql from "graphql-tag";
 const Repository = ({data}) => {
   const {Repository} = data;
   const {
-    id, stars, forksCount, issuesCount, name, description, notes, owner
+    id, url, stars, forksCount, issuesCount, name, description, notes, owner
   } = Repository || {};
 
   return (
     <div>
       {Repository ?
         <div>
-          <h1>{name}</h1>
+          <a style={{textDecoration: "none"}} href={url} target="_blank"><h1>{name}</h1></a>
           <p>{description}</p>
           <p>{issuesCount} issues</p>
           <p>{forksCount} forks</p>
@@ -22,8 +22,8 @@ const Repository = ({data}) => {
         </div>
       : <p>Loading...</p>}
       <div style={{display: "flex", justifyContent: "space-between"}}>
-        <Form notes={notes} repoId={id} repoName={name} />
         <Issues repoName={name} owner={owner}/>
+        <Form notes={notes} repoId={id} repoName={name} />
       </div>
     </div>
   );
