@@ -1,21 +1,22 @@
 import styled from "styled-components";
+import {borderRadius, colors, padding} from "./CssVars";
 
 const Button = styled.button`
-  background: ${ (props) => { return props.destructive ? "#fb6d77" : "#00c7b7"; }};
+  background: ${ (props) => { return props.destructive ? colors.red : colors.green; }};
   border: none;
-  border-radius: 4px;
+  border-radius: ${borderRadius.smallBorderRadius};
   box-shadow: none;
   color: white;
   cursor: pointer;
-  font-size: 16px;
-  margin-bottom: 16px;
-  margin-right: 8px;
+  font-size: ${padding.tiny};
+  margin-bottom: ${padding.tiny};
+  margin-right: ${padding.micro};
   outline: none;
-  padding: 16px;
+  padding: ${padding.tiny};
   transition: background 0.2s ease;
 
   &:hover {
-    background: ${ (props) => { return props.destructive ? "#fa3946" : "#03b1a3"; }};
+    background: ${ (props) => { return props.destructive ? colors.darkRed : colors.darkGreen; }};
   }
 `;
 
