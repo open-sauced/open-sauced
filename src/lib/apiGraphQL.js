@@ -9,9 +9,9 @@ const api = {
     }, {headers: auth});
   },
 
-  fetchRepositoryIssues(name, repo) {
+  fetchRepositoryIssues(name, repo, cursor, previous = false) {
     return axios.post(githubUrl, {
-      query: issueQuery(name, repo)
+      query: issueQuery(name, repo, cursor, previous)
     }, {headers: auth});
   }
 };
@@ -46,12 +46,12 @@ function repoQuery(name, repo) {
   `;
 }
 
-function issueQuery(name, repo, cursor) {
+function issueQuery(name, repo, cursor, previous) {
   const fetch = `
     {
       repositoryOwner(login: "${name}") {
         repository(name: "${repo}") {
-          issues(first: 5) {
+          issues(first: 5, states: OPEN , orderBy: {field: CREATED_AT, direction: DESC}) {
             totalCount
             data: edges {
             cursor
@@ -80,7 +80,7 @@ function issueQuery(name, repo, cursor) {
     }
   `;
 
-  const fetchMore = `
+  const fetchNext = `
     {
       repositoryOwner(login: "${name}") {
         repository(name: "${repo}") {
@@ -113,7 +113,40 @@ function issueQuery(name, repo, cursor) {
     }
   `;
 
-  return cursor ? fetchMore : fetch;
+  const fetchPrevious = `
+    {
+      repositoryOwner(login: "${name}") {
+        repository(name: "${repo}") {
+          issues(first: 5, before: "${cursor}") {
+            totalCount
+            data: edges {
+            cursor
+              node {
+                id
+                title
+                url
+                state
+                author {
+                  login
+                }
+                labels(first: 5) {
+                  data: edges {
+                    node {
+                      id
+                      name
+                    }
+                  }
+                }
+                createdAt
+              }
+            }
+          }
+        }
+      }
+    }
+  `;
+
+  return cursor !== undefined ? (previous ? fetchPrevious : fetchNext) : fetch;
 }
 
 export default api;

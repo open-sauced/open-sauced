@@ -2,43 +2,60 @@ import React, {Component} from "react";
 import api from "./lib/apiGraphQL";
 
 class Issues extends Component {
-  state = {issues: null, offset: 0, cursor: null, totalCount: null}
+  state = {issues: null, cursor: null, totalCount: 0, offset: 0}
 
-  componentDidUpdate(prevProps) {
+  componentDidUpdate(prevProps, prevState) {
     const {repoName, owner} = this.props;
 
     if (prevProps.owner !== null && prevProps.owner !== owner) {
       api.fetchRepositoryIssues(owner, repoName).then((response) => {
         const {data, totalCount} = response.data.data.repositoryOwner.repository.issues;
+        const lastIssue = data[data.length - 1];
+        const {cursor} = lastIssue;
         this.setState({
           issues: data,
-          totalCount
+          totalCount,
+          cursor
         });
       });
     }
   }
 
-  fetchMore = () => {
+  handleNextIssues = () => {
     const {repoName, owner} = this.props;
-    api.fetchRepositoryIssues(owner, repoName).then((response) => {
+    const {cursor, offset} = this.state;
+    api.fetchRepositoryIssues(owner, repoName, cursor).then((response) => {
       const {data, totalCount} = response.data.data.repositoryOwner.repository.issues;
+      const firstIssue = data[data.length - 1];
+      const newCursor = firstIssue.cursor;
       this.setState({
         issues: data,
-        totalCount
+        totalCount,
+        cursor: newCursor,
+        offset: offset + 5,
       });
     });
   }
 
-  handleNextIssues = () => {
-  }
-
   handlePreviousIssues = () => {
+    const {repoName, owner} = this.props;
+    const {cursor, offset} = this.state;
+    api.fetchRepositoryIssues(owner, repoName, cursor, true).then((response) => {
+      const {data, totalCount} = response.data.data.repositoryOwner.repository.issues;
+      const newCursor = data[0].newCursor;
+      this.setState({
+        issues: data,
+        totalCount,
+        cursor: newCursor,
+        offset: offset - 5,
+      });
+    });
   }
 
   render() {
     const {owner} = this.props;
     const {issues, totalCount, offset} = this.state;
-    const totalPages = totalCount / 5;
+    const totalPages = Math.round(totalCount / 5);
     const currentPage = (offset / 5) + 1;
 
     return owner ?
@@ -54,18 +71,22 @@ class Issues extends Component {
           ))}
         </ul>
 
-        <button
-            onClick={this.handlePreviousIssues}
-            className="button-ui-primary"
-        >
-          Previous
-        </button>
-        <button
-            onClick={() => this.handleNextIssues}
-            className="button-ui-primary"
-        >
-          Next
-        </button>
+        {offset > 0 &&
+          <button
+              onClick={this.handlePreviousIssues}
+              className="button-ui-primary"
+          >
+            Previous
+          </button>
+        }
+        {currentPage !== totalPages &&
+          <button
+              onClick={this.handleNextIssues}
+              className="button-ui-primary"
+          >
+            Next
+          </button>
+        }
         Page {currentPage}/{totalPages}
       </div>
       : <p>...Loading</p>
