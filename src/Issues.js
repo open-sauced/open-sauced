@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import Button from "./styles/Button";
 import api from "./lib/apiGraphQL";
 
 class Issues extends Component {
@@ -73,21 +74,15 @@ class Issues extends Component {
 
         <div style={{display: "flex", alignItems: "baseline"}}>
           {offset > 0 &&
-            <button
-                onClick={this.handlePreviousIssues}
-                className="button-ui-primary"
-            >
+            <Button onClick={this.handlePreviousIssues}>
               Previous
-            </button>
+            </Button>
           }
           <p style={{marginRight: 8}}>{currentPage}/{totalPages}</p>
           {currentPage !== totalPages &&
-            <button
-                onClick={this.handleNextIssues}
-                className="button-ui-primary"
-            >
+            <Button onClick={this.handleNextIssues}>
               Next
-            </button>
+            </Button>
           }
         </div>
       </div>
