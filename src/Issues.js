@@ -57,6 +57,7 @@ class Issues extends Component {
     const {owner} = this.props;
     const {issues, totalCount, offset} = this.state;
     const totalPages = Math.round(totalCount / 5);
+    console.log("total", totalCount);
     const currentPage = (offset / 5) + 1;
 
     return owner ?

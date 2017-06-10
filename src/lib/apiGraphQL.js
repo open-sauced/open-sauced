@@ -51,7 +51,7 @@ function issueQuery(name, repo, cursor, previous) {
     {
       repositoryOwner(login: "${name}") {
         repository(name: "${repo}") {
-          issues(first: 5, states: OPEN , orderBy: {field: CREATED_AT, direction: DESC}) {
+          issues(first: 5, states: OPEN, orderBy: {field: CREATED_AT, direction: DESC}) {
             totalCount
             data: edges {
             cursor
@@ -84,7 +84,7 @@ function issueQuery(name, repo, cursor, previous) {
     {
       repositoryOwner(login: "${name}") {
         repository(name: "${repo}") {
-          issues(first: 5, after: "${cursor}") {
+          issues(first: 5, states: OPEN, after: "${cursor}") {
             totalCount
             data: edges {
             cursor
@@ -117,7 +117,7 @@ function issueQuery(name, repo, cursor, previous) {
     {
       repositoryOwner(login: "${name}") {
         repository(name: "${repo}") {
-          issues(first: 5, before: "${cursor}") {
+          issues(first: 5, states: OPEN, before: "${cursor}") {
             totalCount
             data: edges {
             cursor
