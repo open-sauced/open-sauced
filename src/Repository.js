@@ -1,24 +1,30 @@
 import React from "react";
 import Form from "./NoteForm";
+import Issues from "./Issues";
 import {graphql} from "react-apollo";
 import gql from "graphql-tag";
 
-const Repository = ({data, match}) => {
+const Repository = ({data}) => {
   const {Repository} = data;
-  const {id, stars, forksCount, issuesCount, name, description, notes} = Repository || {};
+  const {
+    id, url, stars, forksCount, issuesCount, name, description, notes, owner
+  } = Repository || {};
 
   return (
     <div>
       {Repository ?
         <div>
-          <h1>{name}</h1>
+          <a style={{textDecoration: "none"}} href={url} target="_blank"><h1>{name}</h1></a>
           <p>{description}</p>
           <p>{issuesCount} issues</p>
           <p>{forksCount} forks</p>
           <p>{stars} ★'s</p>
         </div>
       : <p>Loading...</p>}
-      <Form notes={notes} repoId={id} repoName={name} />
+      <div style={{display: "flex", justifyContent: "space-between"}}>
+        <Issues repoName={name} owner={owner}/>
+        <Form notes={notes} repoId={id} repoName={name} />
+      </div>
     </div>
   );
 };
@@ -27,6 +33,7 @@ const RepoQuery = gql`query RepositoryQuery($id: ID!) {
   Repository(id: $id) {
     id
     name
+    owner
     url
     issuesCount: issues
     forksCount: forks
