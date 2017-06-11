@@ -1,6 +1,9 @@
 import React, {Component} from "react";
-import Button from "./styles/Button";
 import api from "./lib/apiGraphQL";
+import {FlexCenter, IssuesColumn} from "./styles/Grid";
+import PointerLink from "./styles/PointerLink";
+import {TinyFont} from "./styles/Typography";
+import {chevronRight, chevronLeft} from "./icons";
 
 class Issues extends Component {
   state = {issues: null, cursor: null, totalCount: 0, offset: 0}
@@ -57,36 +60,39 @@ class Issues extends Component {
     const {owner} = this.props;
     const {issues, totalCount, offset} = this.state;
     const totalPages = Math.round(totalCount / 5);
-    console.log("total", totalCount);
     const currentPage = (offset / 5) + 1;
 
     return owner ?
-      <div style={{flex: 2, marginRight: 10}}>
+      <IssuesColumn>
         <ul>
           {issues && issues.map((issue) => (
             <li key={issue.node.id}>
-              <a style={{fontSize: 16}} target="_blank" href={issue.node.url}>
-                {issue.node.title}
-                {issue.labels && issue.labels.data.map((label) => label.name)}
+              <a target="_blank" href={issue.node.url}>
+                <TinyFont>
+                  {issue.node.title}
+                  <div style={{display: "flex"}}>
+                    {issue.labels && issue.labels.data.map((label) => label.name)}
+                  </div>
+                </TinyFont>
               </a>
             </li>
           ))}
         </ul>
 
-        <div style={{display: "flex", alignItems: "baseline"}}>
+        <FlexCenter>
           {offset > 0 &&
-            <Button onClick={this.handlePreviousIssues}>
-              Previous
-            </Button>
+            <PointerLink onClick={this.handlePreviousIssues}>
+              <img alt="previous" src={chevronLeft} />
+            </PointerLink>
           }
-          <p style={{marginRight: 8}}>{currentPage}/{totalPages}</p>
+          <TinyFont>{currentPage}/{totalPages}</TinyFont>
           {currentPage !== totalPages &&
-            <Button onClick={this.handleNextIssues}>
-              Next
-            </Button>
+            <PointerLink onClick={this.handleNextIssues}>
+              <img alt="previous" src={chevronRight} />
+            </PointerLink>
           }
-        </div>
-      </div>
+        </FlexCenter>
+      </IssuesColumn>
       : <p>...Loading</p>
     ;
   }
