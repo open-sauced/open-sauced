@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {borderRadius, colors, padding} from "./CssVars";
+import {borderRadius, colors, padding} from "./variables";
 
 const Button = styled.button`
   background: ${ (props) => { return props.destructive ? colors.red : colors.green; }};

@@ -7,14 +7,18 @@ import {
   Route,
   Link
 } from "react-router-dom";
+import home from "./icons/home.svg";
+import github from "./icons/github.svg";
+import plus from "./icons/plus.svg";
 
 const App = () => (
   <Router>
     <div>
       <header>
-        <Link to="/" className="home" alt="home"><span className="icon-home" /></Link>
-        <Link to="/new" className="nav-link" alt="Add A Repo"><span className="icon-plus" /></Link>
+        <Link to="/" className="home" alt="home"><span><img src={home} /></span></Link>
+        <a className="nav-link" href="https://github.com/bdougie/open-sauced"><span><img src={github} /></span></a>
         <Dropdown />
+        <Link to="/new" className="nav-link" alt="Add A Repo"><img src={plus} /></Link>
       </header>
       <section>
         <Route exact path="/" component={Repositories}/>
