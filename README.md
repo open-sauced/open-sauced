@@ -36,3 +36,7 @@ Be sure to allow access to your user information when creating your token.
 Click the deploy to Netlify button and add your GitHub access token and Graphcool Endpoint.
 
 ![netlify-deploy](http://i.imgur.com/Ew8G2z8.png)
+
+### Attribution
+
+SVG Icons are from the open source [Feather Icons]() project. 
