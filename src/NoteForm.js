@@ -3,6 +3,7 @@ import {graphql, compose} from "react-apollo";
 import {Redirect} from "react-router";
 import gql from "graphql-tag";
 import Button from "./styles/Button";
+import {FormColumn} from "./styles/Grid";
 
 class NoteForm extends Component {
   constructor(props) {
@@ -48,7 +49,7 @@ class NoteForm extends Component {
     const noteContent = notesInput !== "" ? notesInput : notes;
 
     return !deleted ?
-      <div style={{flex: 2}} className="Form">
+      <FormColumn>
         <div className="grid-half form">
           <textarea style={{minHeight: 170}} disabled={!editing} className="utility-input boxed-input text-box light-shadow" onChange={this.handleNotesChange} value={noteContent || ""} type="text" placeholder={`Type your notes for ${repoName} here...`} name="notes" />
           {editing ?
@@ -57,7 +58,7 @@ class NoteForm extends Component {
           }
           <Button destructive onClick={() => this.handleRepoDeletion(id)}> Delete</Button>
         </div>
-      </div>
+      </FormColumn>
     : <Redirect to="/"/>;
   }
 }

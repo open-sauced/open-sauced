@@ -13,6 +13,10 @@ const colors = {
   darkRed: "#fa3946"
 };
 
+const margin = {
+  gutter: "10px",
+};
+
 const typography = {
   thin: "100",
   light: "300",
@@ -45,4 +49,4 @@ const responsiveBreakpoints = {
   display: "1200px"
 };
 
-export {colors, typography, padding, borderRadius, responsiveBreakpoints};
+export {colors, margin, typography, padding, borderRadius, responsiveBreakpoints};

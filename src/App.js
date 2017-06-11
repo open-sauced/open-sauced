@@ -7,9 +7,7 @@ import {
   Route,
   Link
 } from "react-router-dom";
-import home from "./icons/home.svg";
-import github from "./icons/github.svg";
-import plus from "./icons/plus.svg";
+import {home, github, plus} from "./icons";
 
 const App = () => (
   <Router>
