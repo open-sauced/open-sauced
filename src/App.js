@@ -2,6 +2,7 @@ import React from "react";
 import NewRepo from "./components/NewRepo";
 import Repositories from "./components/Repositories";
 import Dropdown from "./components/Dropdown";
+import Footer from "./components/Footer";
 import {
   BrowserRouter as Router,
   Route,
@@ -23,11 +24,7 @@ const App = () => (
         <Route path="/repos" component={Repositories}/>
         <Route path="/new" component={NewRepo}/>
       </section>
-      <footer>
-        <a href="https://www.netlify.com">
-          <img alt="netlify-tag" src="https://www.netlify.com/img/global/badges/netlify-color-accent.svg"/>
-        </a>
-      </footer>
+      <Footer />
     </div>
   </Router>
 );

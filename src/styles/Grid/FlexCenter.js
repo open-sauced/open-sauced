@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
-const FlexBaseline = styled.div`
+const FlexCenter = styled.div`
   display: flex;
   align-items: center;
 `;
 
-export default FlexBaseline;
+export default FlexCenter;
 

@@ -108,7 +108,7 @@ header {
 }
 
 section {
-  min-height: 80vh;
+  min-height: 75vh;
   padding: var(--tiny);
 }
 
@@ -241,7 +241,7 @@ input {
 }
 
 footer {
-  margin: var(--large) 0 var(--small) 0;
+  margin: var(--large) 0 var(--small) var(--tiny);
   text-align: center;
   width: 100%;
 }

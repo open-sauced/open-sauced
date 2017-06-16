@@ -7,6 +7,7 @@ import copy from "./copy.svg";
 import edit from "./edit.svg";
 import github from "./github.svg";
 import home from "./home.svg";
+import monitor from "./monitor.svg";
 import plus from "./plus.svg";
 import save from "./save.svg";
 import star from "./star.svg";
@@ -21,6 +22,7 @@ export {
   edit,
   github,
   home,
+  monitor,
   plus,
   save,
   star
