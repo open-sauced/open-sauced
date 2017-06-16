@@ -1,6 +1,6 @@
 import React from "react";
 import {Link} from "react-router-dom";
-import Button from "./styles/Button";
+import Button from "../styles/Button";
 
 const Instructions = ({allRepositories}) => {
   return allRepositories && allRepositories.length > 0 ?

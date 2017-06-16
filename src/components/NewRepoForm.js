@@ -1,10 +1,10 @@
 import React, {Component} from "react";
-import api from "./lib/apiGraphQL";
+import api from "../lib/apiGraphQL";
 import RepoCount from "./Count";
 import {graphql} from "react-apollo";
 import gql from "graphql-tag";
 import {Redirect} from "react-router";
-import Button from "./styles/Button";
+import Button from "../styles/Button";
 
 class NewRepoForm extends Component {
   constructor(props) {

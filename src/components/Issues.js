@@ -1,9 +1,9 @@
 import React, {Component} from "react";
-import api from "./lib/apiGraphQL";
-import {FlexCenter, IssuesColumn} from "./styles/Grid";
-import PointerLink from "./styles/PointerLink";
-import {TinyFont} from "./styles/Typography";
-import {chevronRight, chevronLeft} from "./icons";
+import api from "../lib/apiGraphQL";
+import {FlexCenter, IssuesColumn} from "../styles/Grid";
+import PointerLink from "../styles/PointerLink";
+import {TinyFont} from "../styles/Typography";
+import {chevronRight, chevronLeft} from "../icons";
 
 class Issues extends Component {
   state = {issues: null, cursor: null, totalCount: 0, offset: 0}
