@@ -2,8 +2,8 @@ import React, {Component} from "react";
 import {graphql, compose} from "react-apollo";
 import {Redirect} from "react-router";
 import gql from "graphql-tag";
-import Button from "./styles/Button";
-import {FormColumn} from "./styles/Grid";
+import Button from "../styles/Button";
+import {FormColumn} from "../styles/Grid";
 
 class NoteForm extends Component {
   constructor(props) {

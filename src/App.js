@@ -1,7 +1,7 @@
 import React from "react";
-import NewRepo from "./NewRepo";
-import Repositories from "./Repositories";
-import Dropdown from "./Dropdown";
+import NewRepo from "./components/NewRepo";
+import Repositories from "./components/Repositories";
+import Dropdown from "./components/Dropdown";
 import {
   BrowserRouter as Router,
   Route,
