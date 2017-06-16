@@ -69,7 +69,7 @@
     "react-dom": "15.3.2",
     "react-router": "^4.1.1",
     "react-router-dom": "^4.1.1",
-    "styled-components": "1.4.6",
+    "styled-components": "2.1.0",
     "yarn": "^0.22.0"
   },
   "scripts": {

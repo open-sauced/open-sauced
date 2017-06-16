@@ -6,7 +6,8 @@ const Footer = () => (
   <footer>
     <FlexCenter>
       <small>
-        Made with <GreenLink href="https://facebook.github.io/react/">React</GreenLink> using <GreenLink href="https://www.graph.cool/">GraphQL</GreenLink>.
+        Made with <GreenLink href="https://feathericons.com/">Feather</GreenLink> icons
+        using <GreenLink href="https://www.graph.cool/">Graphcool</GreenLink>.
         Hosted on <GreenLink href="https://www.netlify.com/">Netlify</GreenLink>.
       </small>
     </FlexCenter>
