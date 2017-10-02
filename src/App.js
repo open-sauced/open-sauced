@@ -12,25 +12,33 @@ import {home, github, plus} from "./icons";
 import netlifyIdentity from "netlify-identity-widget";
 
 class App extends Component {
-  constructor() {
-    super();
-    this.state = {user: null};
-    this.handleLogIn = this.handleLogIn.bind(this);
-    this.handleLogOut = this.handleLogOut.bind(this);
-  }
+  state = {user: null};
 
   componentDidMount() {
+    const user = localStorage.getItem("currentOpenSaucedUser");
+    if (user) {
+      this.setState({user: JSON.parse(user)});
+    } else {
+      if (netlifyIdentity && netlifyIdentity.currentUser()) {
+        const {
+           app_metadata, created_at, confirmed_at, email, id, user_metadata
+        } = netlifyIdentity.currentUser();
+        localStorage.setItem(
+          "currentOpenSaucedUser",
+          JSON.stringify({...app_metadata, created_at, confirmed_at, email, id, ...user_metadata})
+        );
+      }
+    }
     netlifyIdentity.on("login", (user) => this.setState({user}));
-    this.setState({user: netlifyIdentity.currentUser()});
+    netlifyIdentity.on("logout", (user) => this.setState({user: null}, localStorage.removeItem("currentOpenSaucedUser")));
   }
 
-  handleLogIn() {
+  handleLogIn = () => {
     netlifyIdentity.open();
   }
 
-  handleLogOut() {
+  handleLogOut = () => {
     netlifyIdentity.logout();
-    this.setState({user: null});
   }
 
   render() {
