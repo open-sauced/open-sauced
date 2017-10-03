@@ -4,6 +4,9 @@ import App from "./App";
 import ApolloClient, {createNetworkInterface} from "apollo-client";
 import {ApolloProvider} from "react-apollo";
 import "./index.css";
+import netlifyIdentity from "netlify-identity-widget";
+
+netlifyIdentity.init();
 
 const client = new ApolloClient({
   networkInterface: createNetworkInterface({uri: `${process.env.graphcoolEndpoint}`}),
@@ -17,4 +20,3 @@ ReactDOM.render((
   ),
   document.getElementById("root")
 );
-

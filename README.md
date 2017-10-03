@@ -1,4 +1,4 @@
-[![CircleCI](https://circleci.com/gh/bdougie/open-sauced.svg?style=svg)](https://circleci.com/gh/bdougie/open-sauced)
+[![CircleCI](https://circleci.com/gh/bdougie/open-sauced.svg?style=svg)](https://circleci.com/gh/bdougie/open-sauced&stack=cms)
 # Open Sauced
 
 This is a GraphQL starter project to help people stalk open source repositories and take notes on them. This project uses Graphcool as a GraphQL backend, Apollo as the GraphQL client, and Netlify to deploy. 
@@ -37,6 +37,9 @@ Click the deploy to Netlify button and add your GitHub access token and Graphcoo
 
 ![netlify-deploy](http://i.imgur.com/Ew8G2z8.png)
 
-### Attribution
+## Authentication
+Authentication is handled through [Netlify's Identity](https://www.netlify.com/docs/identity/) service. By default, user registration is open, meaning users can sign up using a form on your site. You can include the [Netlify Identity widget](https://github.com/netlify/netlify-identity-widget) in your site to handle this, or build your own form and integrate it using [gotrue-js](https://github.com/netlify/gotrue-js).
+
+## Attribution
 
 SVG Icons are from the open source [Feather Icons]() project. 
