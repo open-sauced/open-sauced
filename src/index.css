@@ -70,6 +70,10 @@ html {
   --display: 1200px;
 }
 
+a {
+  cursor: pointer;
+}
+
 body {
   background: var(--offWhite);
   color: var(--grey);
