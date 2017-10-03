@@ -20,6 +20,3 @@ ReactDOM.render((
   ),
   document.getElementById("root")
 );
-
-// remove before sending to production
-window.identity = netlifyIdentity;
