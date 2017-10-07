@@ -2,11 +2,11 @@ import React, {Component} from "react";
 import api from "../lib/apiGraphQL";
 import RepoCount from "./Count";
 import {graphql} from "react-apollo";
-import gql from "graphql-tag";
+import {createFormMutation} from "../queries";
 import {Redirect} from "react-router";
 import Button from "../styles/Button";
 
-class NewRepoForm extends Component {
+export class NewRepoForm extends Component {
   constructor(props) {
     super(props);
     this.handleSetUrl = this.handleSetUrl.bind(this);
@@ -158,14 +158,6 @@ class NewRepoForm extends Component {
   }
 }
 
-const createFormMutation = gql`
-  mutation createRepository($name: String!, $url: String!, $owner: String!, $stargazers: Int, $issues: Int, $forks: Int, $description: String) {
-    createRepository(name: $name, url: $url, owner: $owner, stargazers: $stargazers, issues: $issues, forks: $forks, description: $description) {
-      id
-      name
-    }
-  }
-`;
 const FormMutation = graphql(createFormMutation)(NewRepoForm);
 
 export default FormMutation;

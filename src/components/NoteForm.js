@@ -1,11 +1,15 @@
 import React, {Component} from "react";
 import {graphql, compose} from "react-apollo";
 import {Redirect} from "react-router";
-import gql from "graphql-tag";
 import Button from "../styles/Button";
 import {FormColumn} from "../styles/Grid";
+import {
+  createRepo,
+  deleteRepo,
+} from "../queries";
 
-class NoteForm extends Component {
+
+export class NoteForm extends Component {
   constructor(props) {
     super(props);
     this.handleNotesChange = this.handleNotesChange.bind(this);
@@ -62,24 +66,6 @@ class NoteForm extends Component {
     : <Redirect to="/"/>;
   }
 }
-
-const createRepo = gql`
-  mutation updateRepository($notes: String, $id: ID!) {
-    updateRepository(id: $id, notes: $notes) {
-      id
-      notes
-    }
-  }
-`;
-
-const deleteRepo = gql`
-  mutation deleteRepo($id: ID!) {
-    deleteRepository(id: $id) {
-      id
-    }
-  }
-`;
-
 
 const FormWithMutations = compose(
   graphql(createRepo, {name: "createRepo"}),

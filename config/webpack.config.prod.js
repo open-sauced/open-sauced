@@ -1,4 +1,3 @@
-var path = require("path");
 var autoprefixer = require("autoprefixer");
 var webpack = require("webpack");
 var HtmlWebpackPlugin = require("html-webpack-plugin");
@@ -101,8 +100,7 @@ module.exports = {
       {
         test: /\.(js|jsx)$/,
         include: [
-          paths.appSrc,
-          path.resolve(paths.appSrc, "..", "node_modules", "apollo-client")
+          paths.appSrc
         ],
         loader: "babel",
       },

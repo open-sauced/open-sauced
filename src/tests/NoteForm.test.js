@@ -1,16 +1,13 @@
 import React from "react";
 import {shallow} from "enzyme";
 import NoteForm from "../components/NoteForm";
-import {MockedProvider} from "react-apollo/lib/test-utils";
+import {data} from "./mocks";
 
 describe("<NoteForm />", () => {
   it("should render without throwing an error", () => {
     const component = shallow(
-      <MockedProvider>
-        <NoteForm />
-      </MockedProvider>
+      <NoteForm data={data}/>
     );
-    expect(component).toBeDefined();
-    expect(component.exists()).toBe(true);
+    expect(component).toMatchSnapshot();
   });
 });
