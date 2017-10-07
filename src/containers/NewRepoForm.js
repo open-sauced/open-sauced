@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import api from "../lib/apiGraphQL";
-import RepoCount from "./Count";
+import RepoCount from "../components/Count";
 import {graphql} from "react-apollo";
 import {createFormMutation} from "../queries";
 import {Redirect} from "react-router";

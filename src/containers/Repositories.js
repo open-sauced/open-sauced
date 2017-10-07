@@ -1,6 +1,6 @@
 import React from "react";
 import Repository from "./Repository";
-import Instructions from "./Instructions";
+import Instructions from "../components/Instructions";
 import {graphql} from "react-apollo";
 import {Route, Link} from "react-router-dom";
 import {allRepoQuery} from "../queries";
