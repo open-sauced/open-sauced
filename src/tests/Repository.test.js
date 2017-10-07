@@ -1,16 +1,13 @@
 import React from "react";
 import {shallow} from "enzyme";
-import Repository from "../components/Repository";
-import {MockedProvider} from "react-apollo/lib/test-utils";
+import {Repository} from "../components/Repository";
+import {data, match} from "./mocks";
 
 describe("<Repository />", () => {
   it("should render without throwing an error", () => {
     const component = shallow(
-      <MockedProvider>
-        <Repository />
-      </MockedProvider>
+      <Repository match={match} data={data} />
     );
-    expect(component).toBeDefined();
-    expect(component.exists()).toBe(true);
+    expect(component).toMatchSnapshot();
   });
 });

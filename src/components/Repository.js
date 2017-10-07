@@ -2,9 +2,9 @@ import React from "react";
 import Form from "./NoteForm";
 import Issues from "./Issues";
 import {graphql} from "react-apollo";
-import gql from "graphql-tag";
+import {repoQuery} from "../queries";
 
-const Repository = ({data}) => {
+export const Repository = ({data}) => {
   const {Repository} = data;
   const {
     id, url, stars, forksCount, issuesCount, name, description, notes, owner
@@ -29,21 +29,7 @@ const Repository = ({data}) => {
   );
 };
 
-const RepoQuery = gql`query RepositoryQuery($id: ID!) {
-  Repository(id: $id) {
-    id
-    name
-    owner
-    url
-    issuesCount: issues
-    forksCount: forks
-    stars: stargazers
-    notes
-    description
-  }
-}`;
-
-const RepositoryWithData = graphql(RepoQuery, {
+const RepositoryWithData = graphql(repoQuery, {
   options: (ownProps) => ({
     variables: {
       id: ownProps.match.params.id
