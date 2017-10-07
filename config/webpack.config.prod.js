@@ -61,7 +61,7 @@ module.exports = {
     filename: "static/js/[name].[chunkhash:8].js",
     chunkFilename: "static/js/[name].[chunkhash:8].chunk.js",
     // We inferred the "public path" (such as / or /my-project) from homepage.
-    publicPath: publicPath
+    publicPath: publicPath,
   },
   resolve: {
     // This allows you to set a fallback for where Webpack should look for modules.
@@ -78,8 +78,8 @@ module.exports = {
     alias: {
       // Support React Native Web
       // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
-      "react-native": "react-native-web"
-    }
+      "react-native": "react-native-web",
+    },
   },
 
   module: {
@@ -89,15 +89,15 @@ module.exports = {
       {
         test: /\.(js|jsx)$/,
         loader: "eslint",
-        include: paths.appSrc
-      }
+        include: paths.appSrc,
+      },
     ],
     loaders: [
       // Process JS with Babel.
       {
         test: /\.(js|jsx)$/,
         include: paths.appSrc,
-        loader: "babel"
+        loader: "babel",
       },
       // The notation here is somewhat confusing.
       // "postcss" loader applies autoprefixer to our CSS.
@@ -121,14 +121,14 @@ module.exports = {
         // Webpack 1.x uses Uglify plugin as a signal to minify *all* the assets
         // including CSS. This is confusing and will be removed in Webpack 2:
         // https://github.com/webpack/webpack/issues/283
-        loader: ExtractTextPlugin.extract("style", "css?-autoprefixer!postcss")
+        loader: ExtractTextPlugin.extract("style", "css?-autoprefixer!postcss"),
         // Note: this won"t work without `new ExtractTextPlugin()` in `plugins`.
       },
       // JSON is not enabled by default in Webpack but both Node and Browserify
       // allow it implicitly so we also enable it.
       {
         test: /\.json$/,
-        loader: "json"
+        loader: "json",
       },
       // "file" loader makes sure those assets end up in the `build` folder.
       // When you `import` an asset, you get its filename.
@@ -136,8 +136,8 @@ module.exports = {
         test: /\.(ico|jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2)(\?.*)?$/,
         loader: "file",
         query: {
-          name: "static/media/[name].[hash:8].[ext]"
-        }
+          name: "static/media/[name].[hash:8].[ext]",
+        },
       },
       // "url" loader works just like "file" loader but it also embeds
       // assets smaller than specified size as data URLs to avoid requests.
@@ -146,10 +146,10 @@ module.exports = {
         loader: "url",
         query: {
           limit: 10000,
-          name: "static/media/[name].[hash:8].[ext]"
-        }
-      }
-    ]
+          name: "static/media/[name].[hash:8].[ext]",
+        },
+      },
+    ],
   },
 
   // We use PostCSS for autoprefixing only.
@@ -160,9 +160,9 @@ module.exports = {
           ">1%",
           "last 4 versions",
           "Firefox ESR",
-          "not ie < 9" // React doesn"t support IE8 anyway
-        ]
-      })
+          "not ie < 9", // React doesn"t support IE8 anyway
+        ],
+      }),
     ];
   },
   plugins: [
@@ -171,7 +171,7 @@ module.exports = {
     // In production, it will be an empty string unless you specify "homepage"
     // in `package.json`, in which case it will be the pathname of that URL.
     new InterpolateHtmlPlugin({
-      PUBLIC_URL: publicUrl
+      PUBLIC_URL: publicUrl,
     }),
     // Generates an `index.html` file with the <script> injected.
     new HtmlWebpackPlugin({
@@ -187,8 +187,8 @@ module.exports = {
         keepClosingSlash: true,
         minifyJS: true,
         minifyCSS: true,
-        minifyURLs: true
-      }
+        minifyURLs: true,
+      },
     }),
     // Makes some environment variables available to the JS code, for example:
     // if (process.env.NODE_ENV === "production") { ... }. See `./env.js`.
@@ -203,24 +203,24 @@ module.exports = {
     new webpack.optimize.UglifyJsPlugin({
       compress: {
         screw_ie8: true, // React doesn"t support IE8
-        warnings: false
+        warnings: false,
       },
       mangle: {
-        screw_ie8: true
+        screw_ie8: true,
       },
       output: {
         comments: false,
-        screw_ie8: true
-      }
+        screw_ie8: true,
+      },
     }),
     // Note: this won"t work without ExtractTextPlugin.extract(..) in `loaders`.
-    new ExtractTextPlugin("static/css/[name].[contenthash:8].css")
+    new ExtractTextPlugin("static/css/[name].[contenthash:8].css"),
   ],
   // Some libraries import Node modules but don"t use them in the browser.
   // Tell Webpack to provide empty mocks for them so importing them works.
   node: {
     fs: "empty",
     net: "empty",
-    tls: "empty"
-  }
+    tls: "empty",
+  },
 };

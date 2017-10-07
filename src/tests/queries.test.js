@@ -1,9 +1,4 @@
-import {
-  allRepoQuery,
-  createRepo,
-  deleteRepo,
-  repoQuery,
-} from "../queries";
+import {allRepoQuery, createRepo, deleteRepo, repoQuery} from "../queries";
 
 it("should be the correct query", () => {
   expect(allRepoQuery).toMatchSnapshot();

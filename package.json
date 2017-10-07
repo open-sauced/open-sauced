@@ -34,7 +34,6 @@
     "http-proxy-middleware": "0.17.1",
     "jest": "15.1.1",
     "json-loader": "0.5.4",
-    "lint-staged": "^3.4.1",
     "object-assign": "4.1.0",
     "path-exists": "2.1.0",
     "postcss-loader": "0.13.0",
@@ -82,12 +81,8 @@
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "clean": "rm -rf src/tests/__snapshots__/",
-    "test": "node scripts/test.js --env=jsdom",
-    "lint": "ls",
-    "lint:js": "eslint **/*.js",
-    "lint:staged": "lint-staged"
+    "test": "node scripts/test.js --env=jsdom"
   },
-  "pre-commit": "lint:staged",
   "jest": {
     "moduleFileExtensions": [
       "jsx",

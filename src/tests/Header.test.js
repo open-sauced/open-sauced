@@ -9,4 +9,3 @@ describe("<Header />", () => {
     expect(component.exists()).toBe(true);
   });
 });
-

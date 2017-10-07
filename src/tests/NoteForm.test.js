@@ -5,9 +5,7 @@ import {data} from "./mocks";
 
 describe("<NoteForm />", () => {
   it("should render without throwing an error", () => {
-    const component = shallow(
-      <NoteForm data={data}/>
-    );
+    const component = shallow(<NoteForm data={data} />);
     expect(component).toMatchSnapshot();
   });
 });

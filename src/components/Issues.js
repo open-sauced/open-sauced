@@ -6,20 +6,20 @@ import {TinyFont} from "../styles/Typography";
 import {chevronRight, chevronLeft} from "../icons";
 
 class Issues extends Component {
-  state = {issues: null, cursor: null, totalCount: 0, offset: 0}
+  state = {issues: null, cursor: null, totalCount: 0, offset: 0};
 
   componentDidUpdate(prevProps, prevState) {
     const {repoName, owner} = this.props;
 
     if (prevProps.owner !== null && prevProps.owner !== owner) {
-      api.fetchRepositoryIssues(owner, repoName).then((response) => {
+      api.fetchRepositoryIssues(owner, repoName).then(response => {
         const {data, totalCount} = response.data.data.repositoryOwner.repository.issues;
         const lastIssue = data[data.length - 1];
         const {cursor} = lastIssue;
         this.setState({
           issues: data,
           totalCount,
-          cursor
+          cursor,
         });
       });
     }
@@ -28,7 +28,7 @@ class Issues extends Component {
   handleNextIssues = () => {
     const {repoName, owner} = this.props;
     const {cursor, offset} = this.state;
-    api.fetchRepositoryIssues(owner, repoName, cursor).then((response) => {
+    api.fetchRepositoryIssues(owner, repoName, cursor).then(response => {
       const {data, totalCount} = response.data.data.repositoryOwner.repository.issues;
       const firstIssue = data[data.length - 1];
       const newCursor = firstIssue.cursor;
@@ -39,12 +39,12 @@ class Issues extends Component {
         offset: offset + 5,
       });
     });
-  }
+  };
 
   handlePreviousIssues = () => {
     const {repoName, owner} = this.props;
     const {cursor, offset} = this.state;
-    api.fetchRepositoryIssues(owner, repoName, cursor, true).then((response) => {
+    api.fetchRepositoryIssues(owner, repoName, cursor, true).then(response => {
       const {data, totalCount} = response.data.data.repositoryOwner.repository.issues;
       const newCursor = data[0].newCursor;
       this.setState({
@@ -54,49 +54,50 @@ class Issues extends Component {
         offset: offset - 5,
       });
     });
-  }
+  };
 
   render() {
     const {owner} = this.props;
     const {issues, totalCount, offset} = this.state;
     const totalPages = Math.round(totalCount / 5);
-    const currentPage = (offset / 5) + 1;
+    const currentPage = offset / 5 + 1;
 
-    return owner ?
+    return owner ? (
       <IssuesColumn>
         <ul>
-          {issues && issues.map((issue) => (
-            <li key={issue.node.id}>
-              <a target="_blank" href={issue.node.url}>
-                <TinyFont>
-                  {issue.node.title}
-                  <div style={{display: "flex"}}>
-                    {issue.labels && issue.labels.data.map((label) => label.name)}
-                  </div>
-                </TinyFont>
-              </a>
-            </li>
-          ))}
+          {issues &&
+            issues.map(issue => (
+              <li key={issue.node.id}>
+                <a target="_blank" href={issue.node.url}>
+                  <TinyFont>
+                    {issue.node.title}
+                    <div style={{display: "flex"}}>{issue.labels && issue.labels.data.map(label => label.name)}</div>
+                  </TinyFont>
+                </a>
+              </li>
+            ))}
         </ul>
 
         <FlexCenter>
-          {offset > 0 &&
+          {offset > 0 && (
             <PointerLink onClick={this.handlePreviousIssues}>
               <img alt="previous" src={chevronLeft} />
             </PointerLink>
-          }
-          <TinyFont>{currentPage}/{totalPages}</TinyFont>
-          {currentPage !== totalPages &&
+          )}
+          <TinyFont>
+            {currentPage}/{totalPages}
+          </TinyFont>
+          {currentPage !== totalPages && (
             <PointerLink onClick={this.handleNextIssues}>
               <img alt="previous" src={chevronRight} />
             </PointerLink>
-          }
+          )}
         </FlexCenter>
       </IssuesColumn>
-      : <p>...Loading</p>
-    ;
+    ) : (
+      <p>...Loading</p>
+    );
   }
 }
 
 export default Issues;
-

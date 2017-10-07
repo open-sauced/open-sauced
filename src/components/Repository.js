@@ -6,23 +6,25 @@ import {repoQuery} from "../queries";
 
 export const Repository = ({data}) => {
   const {Repository} = data;
-  const {
-    id, url, stars, forksCount, issuesCount, name, description, notes, owner
-  } = Repository || {};
+  const {id, url, stars, forksCount, issuesCount, name, description, notes, owner} = Repository || {};
 
   return (
     <div>
-      {Repository ?
+      {Repository ? (
         <div>
-          <a style={{textDecoration: "none"}} href={url} target="_blank"><h1>{name}</h1></a>
+          <a style={{textDecoration: "none"}} href={url} target="_blank">
+            <h1>{name}</h1>
+          </a>
           <p>{description}</p>
           <p>{issuesCount} issues</p>
           <p>{forksCount} forks</p>
           <p>{stars} ★'s</p>
         </div>
-      : <p>Loading...</p>}
+      ) : (
+        <p>Loading...</p>
+      )}
       <div style={{display: "flex", justifyContent: "space-between"}}>
-        <Issues repoName={name} owner={owner}/>
+        <Issues repoName={name} owner={owner} />
         <Form notes={notes} repoId={id} repoName={name} />
       </div>
     </div>
@@ -30,11 +32,11 @@ export const Repository = ({data}) => {
 };
 
 const RepositoryWithData = graphql(repoQuery, {
-  options: (ownProps) => ({
+  options: ownProps => ({
     variables: {
-      id: ownProps.match.params.id
-    }
-  })
+      id: ownProps.match.params.id,
+    },
+  }),
 })(Repository);
 
 export default RepositoryWithData;
