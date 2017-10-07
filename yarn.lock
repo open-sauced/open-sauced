@@ -2,17 +2,9 @@
 # yarn lockfile v1
 
 
-"@types/async@^2.0.31":
-  version "2.0.38"
-  resolved "https://registry.yarnpkg.com/@types/async/-/async-2.0.38.tgz#5c369dcb14788da0621daafa8594a053b0edcb21"
-
-"@types/graphql@^0.9.0":
-  version "0.9.0"
-  resolved "https://registry.yarnpkg.com/@types/graphql/-/graphql-0.9.0.tgz#fccf859f0d2817687f210737dc3be48a18b1d754"
-
-"@types/isomorphic-fetch@0.0.34":
-  version "0.0.34"
-  resolved "https://registry.yarnpkg.com/@types/isomorphic-fetch/-/isomorphic-fetch-0.0.34.tgz#3c3483e606c041378438e951464f00e4e60706d6"
+"@types/async@2.0.42":
+  version "2.0.42"
+  resolved "https://registry.yarnpkg.com/@types/async/-/async-2.0.42.tgz#51cd1cc76b9fe487f5759f3eadd6f74074b99b81"
 
 Base64@~0.2.0:
   version "0.2.1"
@@ -126,20 +118,42 @@ anymatch@^1.3.0:
     arrify "^1.0.0"
     micromatch "^2.1.5"
 
-apollo-client@^1.2.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/apollo-client/-/apollo-client-1.2.0.tgz#ec7fa9654441f65a6693fe0221d93134e2b0539e"
+apollo-cache@^0.2.0-beta.2:
+  version "0.2.0-beta.2"
+  resolved "https://registry.yarnpkg.com/apollo-cache/-/apollo-cache-0.2.0-beta.2.tgz#d3e5668810d03a730db4e3e326a0a3050d2d813f"
   dependencies:
-    graphql "^0.9.3"
-    graphql-anywhere "^3.0.1"
-    graphql-tag "^2.0.0"
-    redux "^3.4.0"
+    apollo-utilities "^0.2.0-beta.2"
+
+apollo-client@2.0.0-beta.3:
+  version "2.0.0-beta.3"
+  resolved "https://registry.yarnpkg.com/apollo-client/-/apollo-client-2.0.0-beta.3.tgz#39e1f269bb862fc4391fc634357a8e27f8ed01e4"
+  dependencies:
+    apollo-cache "^0.2.0-beta.2"
+    apollo-link "0.6.1-beta.6"
+    apollo-link-dedup "0.4.1-beta.6"
+    apollo-utilities "^0.2.0-beta.2"
+    graphql "^0.11.0"
     symbol-observable "^1.0.2"
-    whatwg-fetch "^2.0.0"
   optionalDependencies:
-    "@types/async" "^2.0.31"
-    "@types/graphql" "^0.9.0"
-    "@types/isomorphic-fetch" "0.0.34"
+    "@types/async" "2.0.42"
+
+apollo-link-dedup@0.4.1-beta.6:
+  version "0.4.1-beta.6"
+  resolved "https://registry.yarnpkg.com/apollo-link-dedup/-/apollo-link-dedup-0.4.1-beta.6.tgz#089a54711cc93436c82a1dc5602f31308ce8f230"
+  dependencies:
+    graphql "^0.10.5"
+
+apollo-link@0.6.1-beta.6:
+  version "0.6.1-beta.6"
+  resolved "https://registry.yarnpkg.com/apollo-link/-/apollo-link-0.6.1-beta.6.tgz#29c8e52c71ffea09f776413655d185e3b59f0f2e"
+  dependencies:
+    apollo-utilities "^0.2.0-beta.0"
+    graphql "^0.11.3"
+    zen-observable-ts "^0.4.3-beta.4"
+
+apollo-utilities@^0.2.0-beta.0, apollo-utilities@^0.2.0-beta.2:
+  version "0.2.0-beta.2"
+  resolved "https://registry.yarnpkg.com/apollo-utilities/-/apollo-utilities-0.2.0-beta.2.tgz#95b61e00fa0cb67f6af65921484bca33114d55e1"
 
 app-root-path@^2.0.0:
   version "2.0.1"
@@ -3405,20 +3419,12 @@ graphql-anywhere@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/graphql-anywhere/-/graphql-anywhere-2.0.0.tgz#c20d6e6a901d40fa346d9f2b7845266fc59428bd"
 
-graphql-anywhere@^3.0.1:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/graphql-anywhere/-/graphql-anywhere-3.0.1.tgz#73531db861174c8f212eafb9f8e84944b38b4e5a"
-
 graphql-schema@0.5.1:
   version "0.5.1"
   resolved "https://registry.yarnpkg.com/graphql-schema/-/graphql-schema-0.5.1.tgz#a730a37f4a82c6a871585d254becdff29a195331"
   dependencies:
     graphql "^0.1.3"
     invariant "^2.1.0"
-
-graphql-tag@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/graphql-tag/-/graphql-tag-2.0.0.tgz#f3efe3b4d64f33bfe8479ae06a461c9d72f2a6fe"
 
 graphql@0.7.2:
   version "0.7.2"
@@ -3432,11 +3438,17 @@ graphql@^0.1.3:
   dependencies:
     babel-runtime "5.8.3"
 
-graphql@^0.9.3:
-  version "0.9.6"
-  resolved "https://registry.yarnpkg.com/graphql/-/graphql-0.9.6.tgz#514421e9d225c29dfc8fd305459abae58815ef2c"
+graphql@^0.10.5:
+  version "0.10.5"
+  resolved "https://registry.yarnpkg.com/graphql/-/graphql-0.10.5.tgz#c9be17ca2bdfdbd134077ffd9bbaa48b8becd298"
   dependencies:
-    iterall "^1.0.0"
+    iterall "^1.1.0"
+
+graphql@^0.11.0, graphql@^0.11.3:
+  version "0.11.7"
+  resolved "https://registry.yarnpkg.com/graphql/-/graphql-0.11.7.tgz#e5abaa9cb7b7cccb84e9f0836bf4370d268750c6"
+  dependencies:
+    iterall "1.1.3"
 
 growly@^1.2.0:
   version "1.3.0"
@@ -4233,9 +4245,13 @@ istanbul@^0.4.5:
     which "^1.1.1"
     wordwrap "^1.0.0"
 
-iterall@1.0.2, iterall@^1.0.0:
+iterall@1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/iterall/-/iterall-1.0.2.tgz#41a2e96ce9eda5e61c767ee5dc312373bb046e91"
+
+iterall@1.1.3, iterall@^1.1.0:
+  version "1.1.3"
+  resolved "https://registry.yarnpkg.com/iterall/-/iterall-1.1.3.tgz#1cbbff96204056dde6656e2ed2e2226d0e6d72c9"
 
 jasmine-check@^0.1.4:
   version "0.1.5"
@@ -4829,10 +4845,6 @@ lodash, lodash@^4.0.0, lodash@^4.13.1, lodash@^4.14.2, lodash@^4.15.0, lodash@^4
   version "4.16.6"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.16.6.tgz#d22c9ac660288f3843e16ba7d2b5d06cca27d777"
 
-lodash-es@^4.2.1:
-  version "4.17.4"
-  resolved "https://registry.yarnpkg.com/lodash-es/-/lodash-es-4.17.4.tgz#dcc1d7552e150a0640073ba9cb31d70f032950e7"
-
 lodash._arraycopy@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/lodash._arraycopy/-/lodash._arraycopy-3.0.0.tgz#76e7b7c1f1fb92547374878a562ed06a3e50f6e1"
@@ -5111,7 +5123,7 @@ lodash@^3.10.1:
   version "3.10.1"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-3.10.1.tgz#5bf45e8e49ba4189e17d482789dfd15bd140b7b6"
 
-lodash@^4.1.0, lodash@^4.16.2, lodash@^4.17.4, lodash@^4.2.1, lodash@^4.3.0:
+lodash@^4.1.0, lodash@^4.16.2, lodash@^4.17.4, lodash@^4.3.0:
   version "4.17.4"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.4.tgz#78203a4d1c328ae1d86dca6460e369b57f4055ae"
 
@@ -7043,15 +7055,6 @@ reduce-function-call@^1.0.1:
   dependencies:
     balanced-match "~0.1.0"
 
-redux@^3.4.0:
-  version "3.6.0"
-  resolved "https://registry.yarnpkg.com/redux/-/redux-3.6.0.tgz#887c2b3d0b9bd86eca2be70571c27654c19e188d"
-  dependencies:
-    lodash "^4.2.1"
-    lodash-es "^4.2.1"
-    loose-envify "^1.1.0"
-    symbol-observable "^1.0.2"
-
 regenerate@^1.2.1:
   version "1.3.1"
   resolved "https://registry.yarnpkg.com/regenerate/-/regenerate-1.3.1.tgz#0300203a5d2fdcf89116dce84275d011f5903f33"
@@ -8613,7 +8616,7 @@ whatwg-fetch@1.0.0, whatwg-fetch@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/whatwg-fetch/-/whatwg-fetch-1.0.0.tgz#01c2ac4df40e236aaa18480e3be74bd5c8eb798e"
 
-whatwg-fetch@>=0.10.0, whatwg-fetch@^2.0.0:
+whatwg-fetch@>=0.10.0:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/whatwg-fetch/-/whatwg-fetch-2.0.1.tgz#078b9461bbe91cea73cbce8bb122a05f9e92b772"
 
@@ -8849,3 +8852,7 @@ yarn@^0.22.0:
 yeast@0.1.2:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/yeast/-/yeast-0.1.2.tgz#008e06d8094320c372dbc2f8ed76a0ca6c8ac419"
+
+zen-observable-ts@^0.4.3-beta.4:
+  version "0.4.4"
+  resolved "https://registry.yarnpkg.com/zen-observable-ts/-/zen-observable-ts-0.4.4.tgz#c244c71eaebef79a985ccf9895bc90307a6e9712"
