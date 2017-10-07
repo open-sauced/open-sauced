@@ -1,6 +1,6 @@
 import React from "react";
 import {shallow} from "enzyme";
-import {Dropdown} from "../components/Dropdown";
+import {Dropdown} from "../containers/Dropdown";
 import {data} from "./mocks";
 
 describe("<Dropdown />", () => {

@@ -1,6 +1,6 @@
 import React from "react";
 import netlifyIdentity from "netlify-identity-widget";
-import Dropdown from "./Dropdown";
+import Dropdown from "../containers/Dropdown";
 import {home, github, plus} from "../icons";
 import {Link} from "react-router-dom";
 
