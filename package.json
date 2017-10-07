@@ -39,7 +39,7 @@
     "postcss-loader": "0.13.0",
     "pre-commit": "^1.2.2",
     "promise": "7.1.1",
-    "react-addons-test-utils": "15.6.1",
+    "react-addons-test-utils": "15.6.2",
     "react-dev-utils": "^0.2.1",
     "react-test-renderer": "15.6.1",
     "recursive-readdir": "2.1.0",
