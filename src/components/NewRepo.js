@@ -1,9 +1,9 @@
 import React from "react";
 import Form from "./NewRepoForm";
 import {graphql} from "react-apollo";
-import gql from "graphql-tag";
+import {allRepoQuery} from "../queries";
 
-const NewRepo = ({data}) => {
+export const NewRepo = ({data}) => {
   const {allRepositories} = data;
   return (
     <div>
@@ -12,15 +12,6 @@ const NewRepo = ({data}) => {
   );
 };
 
-const AllRepoQuery = gql`
- query {
-    allRepositories {
-      id
-      name
-    }
-  }
-`;
-
-const NewRepoWithData = graphql(AllRepoQuery)(NewRepo);
+const NewRepoWithData = graphql(allRepoQuery)(NewRepo);
 
 export default NewRepoWithData;

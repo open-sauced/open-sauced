@@ -2,13 +2,13 @@ import React from "react";
 import Repository from "./Repository";
 import Instructions from "./Instructions";
 import {graphql} from "react-apollo";
-import gql from "graphql-tag";
 import {
   Route,
   Link
 } from "react-router-dom";
+import {allRepoQuery} from "../queries";
 
-const Repositories = ({match, data}) => {
+export const Repositories = ({match, data}) => {
   data.refetch();
   const {allRepositories} = data;
   const content = () => (
@@ -36,14 +36,6 @@ const Repositories = ({match, data}) => {
   );
 };
 
-const AllRepoQuery = gql`
- query {
-    allRepositories {
-      id
-      name
-    }
-  }
-`;
-const RepositoriesWithData = graphql(AllRepoQuery)(Repositories);
+const RepositoriesWithData = graphql(allRepoQuery)(Repositories);
 
 export default RepositoriesWithData;

@@ -1,8 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
-import ApolloClient, {createNetworkInterface} from "apollo-client";
-import {ApolloProvider} from "react-apollo";
+import {ApolloProvider, ApolloClient, createNetworkInterface} from "react-apollo";
 import "./index.css";
 import netlifyIdentity from "netlify-identity-widget";
 
