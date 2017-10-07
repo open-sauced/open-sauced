@@ -1,4 +1,4 @@
-[![CircleCI](https://circleci.com/gh/bdougie/open-sauced.svg?style=svg)](https://circleci.com/gh/bdougie/open-sauced&stack=cms)
+[![CircleCI](https://circleci.com/gh/bdougie/open-sauced.svg?style=svg)](https://circleci.com/gh/bdougie/open-sauced)
 # Open Sauced
 
 This is a GraphQL starter project to help people stalk open source repositories and take notes on them. This project uses Graphcool as a GraphQL backend, Apollo as the GraphQL client, and Netlify to deploy. 
@@ -31,7 +31,7 @@ Be sure to allow access to your user information when creating your token.
 
 ### 3. Deploy to Netlify 
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/bdougie/open-sauced)
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/bdougie/open-sauced&stack=cms)
 
 Click the deploy to Netlify button and add your GitHub access token and Graphcool Endpoint.
 
