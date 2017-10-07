@@ -2,10 +2,7 @@ import React from "react";
 import Repository from "./Repository";
 import Instructions from "./Instructions";
 import {graphql} from "react-apollo";
-import {
-  Route,
-  Link
-} from "react-router-dom";
+import {Route, Link} from "react-router-dom";
 import {allRepoQuery} from "../queries";
 
 export const Repositories = ({match, data}) => {
@@ -17,13 +14,15 @@ export const Repositories = ({match, data}) => {
       <br />
       <Instructions allRepositories={allRepositories} />
       <ul>
-        {allRepositories ? allRepositories.map((repo) => (
-          <li key={repo.name}>
-            <Link to={`/repos/${repo.name}/${repo.id}`}>
-              {repo.name}
-            </Link>
-          </li>
-          )) : <p className="greyed">Loading...</p>}
+        {allRepositories ? (
+          allRepositories.map((repo) => (
+            <li key={repo.name}>
+              <Link to={`/repos/${repo.name}/${repo.id}`}>{repo.name}</Link>
+            </li>
+          ))
+        ) : (
+          <p className="greyed">Loading...</p>
+        )}
       </ul>
     </div>
   );
@@ -31,7 +30,7 @@ export const Repositories = ({match, data}) => {
   return (
     <div className="repositories">
       <Route exact path={match.url} render={content} />
-      <Route path={"/repos/:repoName/:id"} component={Repository}/>
+      <Route path={"/repos/:repoName/:id"} component={Repository} />
     </div>
   );
 };
