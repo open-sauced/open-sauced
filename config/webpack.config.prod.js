@@ -21,7 +21,7 @@ function ensureSlash(path, needsSlash) {
 // We use "homepage" field to infer "public path" at which the app is served.
 // Webpack needs to know it to put the right <script> hrefs into HTML even in
 // single-page apps that may serve index.html for nested URLs like /todos/42.
-// We can't use a relative path in HTML because we don't want to load something
+// We can"t use a relative path in HTML because we don"t want to load something
 // like /todos/42/static/js/bundle.7289d.js. We have to know the root.
 var homepagePath = require(paths.appPackageJson).homepage;
 var homepagePathname = homepagePath ? url.parse(homepagePath).pathname : "/";
@@ -45,22 +45,19 @@ if (env["process.env.NODE_ENV"] !== '"production"') {
 // It compiles slowly and is focused on producing a fast and minimal bundle.
 // The development configuration is different and lives in a separate file.
 module.exports = {
-  // Don't attempt to continue if there are any errors.
+  // Don"t attempt to continue if there are any errors.
   bail: true,
   // We generate sourcemaps in production. This is slow but gives good results.
   // You can exclude the *.map files from the build during deployment.
   devtool: "source-map",
   // In production, we only want to load the polyfills and the app code.
-  entry: [
-    require.resolve("./polyfills"),
-    paths.appIndexJs
-  ],
+  entry: [require.resolve("./polyfills"), paths.appIndexJs],
   output: {
     // The build folder.
     path: paths.appBuild,
     // Generated JS file names (with nested folders).
     // There will be one main bundle, and one file per asynchronous chunk.
-    // We don't currently advertise code splitting but Webpack supports it.
+    // We don"t currently advertise code splitting but Webpack supports it.
     filename: "static/js/[name].[chunkhash:8].js",
     chunkFilename: "static/js/[name].[chunkhash:8].chunk.js",
     // We inferred the "public path" (such as / or /my-project) from homepage.
@@ -87,7 +84,7 @@ module.exports = {
 
   module: {
     // First, run the linter.
-    // It's important to do this before Babel processes the JS.
+    // It"s important to do this before Babel processes the JS.
     preLoaders: [
       {
         test: /\.(js|jsx)$/,
@@ -99,10 +96,8 @@ module.exports = {
       // Process JS with Babel.
       {
         test: /\.(js|jsx)$/,
-        include: [
-          paths.appSrc
-        ],
-        loader: "babel",
+        include: paths.appSrc,
+        loader: "babel"
       },
       // The notation here is somewhat confusing.
       // "postcss" loader applies autoprefixer to our CSS.
@@ -114,7 +109,7 @@ module.exports = {
       // separate file in our build process. This way we actually ship
       // a single CSS file in production instead of JS code injecting <style>
       // tags. If you use code splitting, however, any async bundles will still
-      // use the "style" loader inside the async code so CSS from them won't be
+      // use the "style" loader inside the async code so CSS from them won"t be
       // in the main CSS file.
       {
         test: /\.css$/,
@@ -127,7 +122,7 @@ module.exports = {
         // including CSS. This is confusing and will be removed in Webpack 2:
         // https://github.com/webpack/webpack/issues/283
         loader: ExtractTextPlugin.extract("style", "css?-autoprefixer!postcss")
-        // Note: this won't work without `new ExtractTextPlugin()` in `plugins`.
+        // Note: this won"t work without `new ExtractTextPlugin()` in `plugins`.
       },
       // JSON is not enabled by default in Webpack but both Node and Browserify
       // allow it implicitly so we also enable it.
@@ -165,9 +160,9 @@ module.exports = {
           ">1%",
           "last 4 versions",
           "Firefox ESR",
-          "not ie < 9", // React doesn't support IE8 anyway
+          "not ie < 9" // React doesn"t support IE8 anyway
         ]
-      }),
+      })
     ];
   },
   plugins: [
@@ -196,18 +191,18 @@ module.exports = {
       }
     }),
     // Makes some environment variables available to the JS code, for example:
-    // if (process.env.NODE_ENV === 'production') { ... }. See `./env.js`.
+    // if (process.env.NODE_ENV === "production") { ... }. See `./env.js`.
     // It is absolutely essential that NODE_ENV was set to production here.
     // Otherwise React will be compiled in the very slow development mode.
     new webpack.DefinePlugin(env),
-    // This helps ensure the builds are consistent if source hasn't changed:
+    // This helps ensure the builds are consistent if source hasn"t changed:
     new webpack.optimize.OccurrenceOrderPlugin(),
     // Try to dedupe duplicated modules, if any:
     new webpack.optimize.DedupePlugin(),
     // Minify the code.
     new webpack.optimize.UglifyJsPlugin({
       compress: {
-        screw_ie8: true, // React doesn't support IE8
+        screw_ie8: true, // React doesn"t support IE8
         warnings: false
       },
       mangle: {
@@ -218,10 +213,10 @@ module.exports = {
         screw_ie8: true
       }
     }),
-    // Note: this won't work without ExtractTextPlugin.extract(..) in `loaders`.
+    // Note: this won"t work without ExtractTextPlugin.extract(..) in `loaders`.
     new ExtractTextPlugin("static/css/[name].[contenthash:8].css")
   ],
-  // Some libraries import Node modules but don't use them in the browser.
+  // Some libraries import Node modules but don"t use them in the browser.
   // Tell Webpack to provide empty mocks for them so importing them works.
   node: {
     fs: "empty",

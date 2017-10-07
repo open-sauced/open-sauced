@@ -4,7 +4,7 @@ env:
 
 parser: babel-eslint
 
-plugins: [ "react", "import" ]
+plugins: [ "react", "import", "prettier" ]
 
 # enable ECMAScript features
 ecmaFeatures:
@@ -93,6 +93,8 @@ rules:
   no-undef: 2
   no-unused-vars: [2, {"args": "none"}]
 
+  # Prettier
+  prettier/prettier: error
 
   react/forbid-prop-types: 1
   react/jsx-boolean-value: 1
