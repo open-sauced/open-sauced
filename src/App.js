@@ -1,6 +1,6 @@
 import React, {Component} from "react";
-import NewRepo from "./components/NewRepo";
-import Repositories from "./components/Repositories";
+import NewRepo from "./containers/NewRepo";
+import Repositories from "./containers/Repositories";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import {
