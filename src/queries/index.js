@@ -1,7 +1,5 @@
-import allRepoQuery from "./allRepoQuery";
-import createRepo from "./createRepo";
-import deleteRepo from "./deleteRepo";
-import repoQuery from "./repoQuery";
-import createFormMutation from "./createFormMutation";
+import {allRepoQuery, deleteRepo, repoQuery, createRepo} from "./repoQueries";
+import {updateViewer, createViewer} from "./userQueries";
+import createFormMutation from "./repoForm";
 
-export {allRepoQuery, createRepo, deleteRepo, createFormMutation, repoQuery};
+export {allRepoQuery, createRepo, deleteRepo, createFormMutation, repoQuery, updateViewer, createViewer};
