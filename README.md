@@ -48,6 +48,11 @@ npm run clean
 ## Authentication
 Authentication is handled through [Netlify's Identity](https://www.netlify.com/docs/identity/) service. By default, user registration is open, meaning users can sign up using a form on your site. You can include the [Netlify Identity widget](https://github.com/netlify/netlify-identity-widget) in your site to handle this, or build your own form and integrate it using [gotrue-js](https://github.com/netlify/gotrue-js).
 
+## Service Worker
+This project uses the sw-precache to kickstart an offline cache. The
+offline cache only registers in production. If service needs to be
+manually removed make an **unregister** call from the registerServiceWorker.js import. 
+
 ## Attribution
 
 SVG Icons are from the open source [Feather Icons]() project. 
