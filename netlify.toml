@@ -5,4 +5,3 @@
 [template.environment]
   GRAPHCOOL_ENDPOINT = "enter url to GraphQL endpoint here"
   GITHUB_TOKEN = "enter your GitHub access token"
-  NODE_ENV = "production"
