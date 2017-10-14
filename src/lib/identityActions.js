@@ -13,5 +13,6 @@ export function loginUser() {
   }
 }
 export function logoutUser() {
+  console.log("clicked");
   localStorage.removeItem("currentOpenSaucedUser");
 }
