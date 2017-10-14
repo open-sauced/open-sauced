@@ -47,6 +47,11 @@ const Header = ({user}) => {
   ) : (
     <header>
       <a onClick={handleLogIn}>Welcome to Open Sauced</a>
+      <a className="nav-link" target="_blank" href="https://github.com/bdougie/open-sauced/issues/new">
+        <span>
+          <img src={issue} />
+        </span>
+      </a>
     </header>
   );
 };
