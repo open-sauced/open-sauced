@@ -11,6 +11,9 @@ import monitor from "./monitor.svg";
 import plus from "./plus.svg";
 import save from "./save.svg";
 import star from "./star.svg";
+import login from "./log-in.svg";
+import logout from "./log-out.svg";
+import issue from "./alert-circle.svg";
 
 export {
   alertTriangle,
@@ -22,6 +25,9 @@ export {
   edit,
   github,
   home,
+  issue,
+  login,
+  logout,
   monitor,
   plus,
   save,
