@@ -1,5 +1,5 @@
 import React from "react";
-import FlexCenter from "../styles/Grid/FlexCenter";
+import {FlexCenter} from "../styles/Grid";
 import GreenLink from "../styles/Typography/GreenLink";
 
 const Footer = () => (
