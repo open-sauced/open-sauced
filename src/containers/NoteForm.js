@@ -41,6 +41,7 @@ export class NoteForm extends Component {
     const {notesInput, editing, deleted} = this.state;
     const {notes, repoName, id} = this.props;
     const noteContent = notesInput !== "" ? notesInput : notes;
+    const deleteRepo = () => this.handleRepoDeletion(id);
 
     return !deleted ? (
       <FormColumn>
@@ -64,7 +65,7 @@ export class NoteForm extends Component {
               <span className="icon-write" /> Edit Notes
             </Button>
           )}
-          <Button destructive onClick={this.handleRepoDeletion(id)}>
+          <Button destructive onClick={deleteRepo}>
             {" "}
             Delete
           </Button>
