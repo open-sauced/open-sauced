@@ -2,7 +2,7 @@ import React, {Component} from "react";
 import api from "../lib/apiGraphQL";
 import RepoCount from "../components/Count";
 import {graphql} from "react-apollo";
-import {createFormMutation} from "../queries";
+import {createRepo} from "../queries";
 import {Redirect} from "react-router";
 import Button from "../styles/Button";
 
@@ -222,6 +222,14 @@ export class NewRepoForm extends Component {
   }
 }
 
-const FormMutation = graphql(createFormMutation)(NewRepoForm);
+const currentUser = localStorage.getItem("currentOpenSaucedUser");
+const queryOptions = {
+  options: {
+    variables: {
+      id: currentUser ? JSON.parse(currentUser)["id"] : "" // this needs to be a viewerid
+    }
+  }
+};
+const FormMutation = graphql(createRepo, queryOptions)(NewRepoForm);
 
 export default FormMutation;

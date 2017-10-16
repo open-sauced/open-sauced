@@ -3,7 +3,7 @@ import {graphql, compose} from "react-apollo";
 import {Redirect} from "react-router";
 import Button from "../styles/Button";
 import {FormColumn} from "../styles/Grid";
-import {createRepo, deleteRepo} from "../queries";
+import {viewerQuery, updateRepo, deleteRepo} from "../queries";
 
 export class NoteForm extends Component {
   state = {
@@ -23,7 +23,7 @@ export class NoteForm extends Component {
     const {repoId} = this.props;
 
     this.props
-      .createRepo({variables: {notes: notesInput, id: repoId}})
+      .updateRepo({variables: {notes: notesInput, id: repoId}})
       .then(() => this.setState({notesInput: "", editing: false}));
   };
 
@@ -77,8 +77,19 @@ export class NoteForm extends Component {
   }
 }
 
-const FormWithMutations = compose(graphql(createRepo, {name: "createRepo"}), graphql(deleteRepo, {name: "deleteRepo"}))(
-  NoteForm,
-);
+const currentUser = localStorage.getItem("currentOpenSaucedUser");
+const queryOptions = {
+  options: {
+    variables: {
+      id: currentUser ? JSON.parse(currentUser)["id"] : ""
+    }
+  }
+};
+
+const FormWithMutations = compose(
+  graphql(viewerQuery, queryOptions),
+  graphql(updateRepo, {viewerId: "cj8r4wakqnpy801045n4jh4j4"}),
+  graphql(deleteRepo, {})
+)(NoteForm);
 
 export default FormWithMutations;

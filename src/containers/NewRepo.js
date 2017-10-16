@@ -12,6 +12,14 @@ export const NewRepo = ({data}) => {
   );
 };
 
-const NewRepoWithData = graphql(allRepoQuery)(NewRepo);
+const currentUser = localStorage.getItem("currentOpenSaucedUser");
+const queryOptions = {
+  options: {
+    variables: {
+      id: currentUser ? JSON.parse(currentUser)["id"] : ""
+    }
+  }
+};
+const NewRepoWithData = graphql(allRepoQuery, queryOptions)(NewRepo);
 
 export default NewRepoWithData;

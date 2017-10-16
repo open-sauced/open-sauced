@@ -1,9 +1,9 @@
 import React from "react";
 import Repository from "./Repository";
 import Instructions from "../components/Instructions";
-import {graphql} from "react-apollo";
+import {graphql, compose} from "react-apollo";
 import {Route, Link} from "react-router-dom";
-import {allRepoQuery} from "../queries";
+import {allRepoQuery, viewerQuery} from "../queries";
 
 export const Repositories = ({match, data}) => {
   data.refetch();
@@ -35,6 +35,18 @@ export const Repositories = ({match, data}) => {
   );
 };
 
-const RepositoriesWithData = graphql(allRepoQuery)(Repositories);
+const currentUser = localStorage.getItem("currentOpenSaucedUser");
+const queryOptions = {
+  options: {
+    variables: {
+      id: currentUser ? JSON.parse(currentUser)["id"] : ""
+    }
+  }
+};
+
+const RepositoriesWithData = compose(
+  graphql(viewerQuery, queryOptions),
+  graphql(allRepoQuery, queryOptions),
+)(Repositories);
 
 export default RepositoriesWithData;

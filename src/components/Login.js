@@ -1,13 +1,22 @@
-import React from "react";
+import React, {Component} from "react";
 import Button from "../styles/Button";
 import netlifyIdentity from "netlify-identity-widget";
+import {createViewer} from "../queries";
+import {graphql} from "react-apollo";
 
-const login = () => netlifyIdentity.open();
-const Login = () => (
-  <div>
-    <p>The open-source project to manage your open-source projects</p>
-    <Button onClick={login}>Login to get saucin</Button>
-  </div>
-);
+export class Login extends Component {
+  handleLogin = () => netlifyIdentity.open();
 
-export default Login;
+  render() {
+    return (
+      <div>
+        <p>The open-source project to manage your open-source projects</p>
+        <Button onClick={this.handleLogin}>Login to get saucin</Button>
+      </div>
+    );
+  }
+}
+
+const LoginWithMutation = graphql(createViewer)(Login);
+
+export default LoginWithMutation;

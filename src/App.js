@@ -34,9 +34,9 @@ class App extends Component {
         <div>
           <Header user={user} />
           <section>
-            <Route exact path="/" component={auth(Repositories)}/>
-            <Route path="/repos" component={auth(Repositories)}/>
-            <Route path="/new" component={auth(NewRepo)}/>
+            <Route exact path="/" currentUser={user} component={auth(Repositories)}/>
+            <Route path="/repos" currentUser={user} component={auth(Repositories)}/>
+            <Route path="/new" currentUser={user} component={auth(NewRepo)}/>
           </section>
           <Footer />
         </div>

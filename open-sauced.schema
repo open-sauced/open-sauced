@@ -22,6 +22,16 @@ type Repository implements Node {
   stargazers: Int
   updatedAt: DateTime
   url: String!
+  viewer: Viewer @relation(name: "ViewerOnRepository")
+}
+
+type Viewer implements Node {
+  createdAt: DateTime!
+  email: String
+  id: ID! @isUnique
+  identityId: String! @isUnique
+  savedRepositories: [Repository!]! @relation(name: "ViewerOnRepository")
+  updatesAt: DateTime
 }
 
 type User implements Node {

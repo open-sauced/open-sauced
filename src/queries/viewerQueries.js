@@ -15,3 +15,11 @@ export const createViewer = gql`
     }
   }
 `;
+
+export const viewerQuery = gql`
+  query viewerQuery($id: String!){
+    viewer: Viewer(identityId: $id) {
+      id
+    }
+  }
+`;

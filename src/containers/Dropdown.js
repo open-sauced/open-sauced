@@ -27,6 +27,15 @@ export const Dropdown = ({match, data}) => {
   ) : null;
 };
 
-const DropdownWithData = graphql(allRepoQuery)(Dropdown);
+const currentUser = localStorage.getItem("currentOpenSaucedUser");
+const queryOptions = {
+  options: {
+    variables: {
+      id: currentUser ? JSON.parse(currentUser)["id"] : ""
+    }
+  }
+};
+
+const DropdownWithData = graphql(allRepoQuery, queryOptions)(Dropdown);
 
 export default DropdownWithData;
