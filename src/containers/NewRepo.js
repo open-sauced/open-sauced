@@ -2,6 +2,7 @@ import React from "react";
 import Form from "./NewRepoForm";
 import {graphql} from "react-apollo";
 import {allRepoQuery} from "../queries";
+import cookie from "react-cookies";
 
 export const NewRepo = ({data}) => {
   const {allRepositories} = data;
@@ -12,11 +13,10 @@ export const NewRepo = ({data}) => {
   );
 };
 
-const currentUser = localStorage.getItem("currentOpenSaucedUser");
 const queryOptions = {
   options: {
     variables: {
-      id: currentUser ? JSON.parse(currentUser)["id"] : ""
+      id: cookie.load("openSaucedViewerId")
     }
   }
 };

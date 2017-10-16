@@ -2,6 +2,7 @@ import React from "react";
 import {graphql} from "react-apollo";
 import {Link} from "react-router-dom";
 import {allRepoQuery} from "../queries";
+import cookie from "react-cookies";
 
 export const Dropdown = ({match, data}) => {
   const {allRepositories} = data;
@@ -27,11 +28,10 @@ export const Dropdown = ({match, data}) => {
   ) : null;
 };
 
-const currentUser = localStorage.getItem("currentOpenSaucedUser");
 const queryOptions = {
   options: {
     variables: {
-      id: currentUser ? JSON.parse(currentUser)["id"] : ""
+      id: cookie.load("openSaucedViewerId")
     }
   }
 };

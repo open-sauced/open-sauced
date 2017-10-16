@@ -1,9 +1,10 @@
 import React from "react";
 import Repository from "./Repository";
 import Instructions from "../components/Instructions";
-import {graphql, compose} from "react-apollo";
+import {graphql} from "react-apollo";
 import {Route, Link} from "react-router-dom";
-import {allRepoQuery, viewerQuery} from "../queries";
+import {allRepoQuery} from "../queries";
+import cookie from "react-cookies";
 
 export const Repositories = ({match, data}) => {
   data.refetch();
@@ -15,7 +16,7 @@ export const Repositories = ({match, data}) => {
       <Instructions allRepositories={allRepositories} />
       <ul>
         {allRepositories ? (
-          allRepositories.map((repo) => (
+          allRepositories.map(repo => (
             <li key={repo.name}>
               <Link to={`/repos/${repo.name}/${repo.id}`}>{repo.name}</Link>
             </li>
@@ -35,18 +36,14 @@ export const Repositories = ({match, data}) => {
   );
 };
 
-const currentUser = localStorage.getItem("currentOpenSaucedUser");
 const queryOptions = {
   options: {
     variables: {
-      id: currentUser ? JSON.parse(currentUser)["id"] : ""
-    }
-  }
+      id: cookie.load("openSaucedViewerId"),
+    },
+  },
 };
 
-const RepositoriesWithData = compose(
-  graphql(viewerQuery, queryOptions),
-  graphql(allRepoQuery, queryOptions),
-)(Repositories);
+const RepositoriesWithData = graphql(allRepoQuery, queryOptions)(Repositories);
 
 export default RepositoriesWithData;

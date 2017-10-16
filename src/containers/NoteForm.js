@@ -4,6 +4,7 @@ import {Redirect} from "react-router";
 import Button from "../styles/Button";
 import {FormColumn} from "../styles/Grid";
 import {viewerQuery, updateRepo, deleteRepo} from "../queries";
+import cookie from "react-cookies";
 
 export class NoteForm extends Component {
   state = {
@@ -77,18 +78,18 @@ export class NoteForm extends Component {
   }
 }
 
-const currentUser = localStorage.getItem("currentOpenSaucedUser");
 const queryOptions = {
   options: {
     variables: {
-      id: currentUser ? JSON.parse(currentUser)["id"] : ""
+      id: cookie.load("openSaucedViewerId"),
+      viewerId: cookie.load("openSaucedViewerId")
     }
   }
 };
 
 const FormWithMutations = compose(
   graphql(viewerQuery, queryOptions),
-  graphql(updateRepo, {viewerId: "cj8r4wakqnpy801045n4jh4j4"}),
+  graphql(updateRepo, {queryOptions}),
   graphql(deleteRepo, {})
 )(NoteForm);
 

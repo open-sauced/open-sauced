@@ -1,8 +1,8 @@
 import gql from "graphql-tag";
 
 export const allRepoQuery = gql`
-  query repos($id: String!) {
-    allRepositories(filter: {viewer: {identityId: $id}}) {
+  query repos($id: ID!) {
+    allRepositories(filter: {viewer: {id: $id}}) {
       id
       name
     }
@@ -27,7 +27,7 @@ export const repoQuery = gql`
 
 export const createRepo = gql`
   mutation createRepository(
-    $viewerId: String!
+    $viewerId: ID!
     $name: String!
     $url: String!
     $owner: String!

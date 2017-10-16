@@ -5,6 +5,7 @@ import {graphql} from "react-apollo";
 import {createRepo} from "../queries";
 import {Redirect} from "react-router";
 import Button from "../styles/Button";
+import cookie from "react-cookies";
 
 export class NewRepoForm extends Component {
   constructor(props) {
@@ -222,11 +223,10 @@ export class NewRepoForm extends Component {
   }
 }
 
-const currentUser = localStorage.getItem("currentOpenSaucedUser");
 const queryOptions = {
   options: {
     variables: {
-      id: currentUser ? JSON.parse(currentUser)["id"] : "" // this needs to be a viewerid
+      viewerId: cookie.load("openSaucedViewerId")
     }
   }
 };
