@@ -109,7 +109,6 @@ export class NewRepoForm extends Component {
   render() {
     const {count} = this.props;
     const {contributors, name, url, description, forks, owner, stargazers, issues, submitted} = this.state;
-    console.log(this.props);
 
     return !submitted ? (
       <div className="Form">
