@@ -7,6 +7,8 @@ import {allRepoQuery} from "../queries";
 import cookie from "react-cookies";
 
 export const Repositories = ({match, data}) => {
+  // TODO Remove this and replace with a Subscription
+  // https://github.com/bdougie/open-sauced/issues/59
   data.refetch();
   const {allRepositories} = data;
   const content = () => (

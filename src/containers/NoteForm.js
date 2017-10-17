@@ -3,8 +3,7 @@ import {graphql, compose} from "react-apollo";
 import {Redirect} from "react-router";
 import Button from "../styles/Button";
 import {FormColumn} from "../styles/Grid";
-import {viewerQuery, updateRepo, deleteRepo} from "../queries";
-import cookie from "react-cookies";
+import {updateRepo, deleteRepo} from "../queries";
 
 export class NoteForm extends Component {
   state = {
@@ -78,19 +77,9 @@ export class NoteForm extends Component {
   }
 }
 
-const queryOptions = {
-  options: {
-    variables: {
-      id: cookie.load("openSaucedViewerId"),
-      viewerId: cookie.load("openSaucedViewerId")
-    }
-  }
-};
-
 const FormWithMutations = compose(
-  graphql(viewerQuery, queryOptions),
-  graphql(updateRepo, {queryOptions}),
-  graphql(deleteRepo, {})
+  graphql(updateRepo, {name: "updateRepo"}),
+  graphql(deleteRepo, {name: "deleteRepo"})
 )(NoteForm);
 
 export default FormWithMutations;
