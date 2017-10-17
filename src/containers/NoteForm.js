@@ -3,7 +3,7 @@ import {graphql, compose} from "react-apollo";
 import {Redirect} from "react-router";
 import Button from "../styles/Button";
 import {FormColumn} from "../styles/Grid";
-import {createRepo, deleteRepo} from "../queries";
+import {updateRepo, deleteRepo} from "../queries";
 
 export class NoteForm extends Component {
   state = {
@@ -23,14 +23,14 @@ export class NoteForm extends Component {
     const {repoId} = this.props;
 
     this.props
-      .createRepo({variables: {notes: notesInput, id: repoId}})
+      .updateRepo({variables: {notes: notesInput, id: repoId}})
       .then(() => this.setState({notesInput: "", editing: false}));
   };
 
-  handleRepoDeletion = id => {
+  handleRepoDeletion = () => {
     const {repoId} = this.props;
 
-    this.props.deleteRepo({variables: {id: repoId}}).then(() => this.setState({deleted: true}));
+    this.props.mutate.deleteRepo({variables: {id: repoId}}).then(() => this.setState({deleted: true}));
   };
 
   handleToggleEditing = () => {
@@ -39,9 +39,8 @@ export class NoteForm extends Component {
 
   render() {
     const {notesInput, editing, deleted} = this.state;
-    const {notes, repoName, id} = this.props;
+    const {notes, repoName} = this.props;
     const noteContent = notesInput !== "" ? notesInput : notes;
-    const deleteRepo = () => this.handleRepoDeletion(id);
 
     return !deleted ? (
       <FormColumn>
@@ -65,7 +64,7 @@ export class NoteForm extends Component {
               <span className="icon-write" /> Edit Notes
             </Button>
           )}
-          <Button destructive onClick={deleteRepo}>
+          <Button destructive onClick={this.handleRepoDeletion}>
             {" "}
             Delete
           </Button>
@@ -77,7 +76,7 @@ export class NoteForm extends Component {
   }
 }
 
-const FormWithMutations = compose(graphql(createRepo, {name: "createRepo"}), graphql(deleteRepo, {name: "deleteRepo"}))(
+const FormWithMutations = compose(graphql(updateRepo, {name: "updateRepo"}), graphql(deleteRepo, {name: "deleteRepo"}))(
   NoteForm,
 );
 

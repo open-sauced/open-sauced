@@ -5,12 +5,12 @@ import {graphql} from "react-apollo";
 import {repoQuery} from "../queries";
 
 export const Repository = ({data}) => {
-  const {Repository} = data;
-  const {id, url, stars, forksCount, issuesCount, name, description, notes, owner} = Repository || {};
+  const {repository} = data;
+  const {id, url, stars, forksCount, issuesCount, name, description, notes, owner} = repository || {};
 
   return (
     <div>
-      {Repository ? (
+      {repository ? (
         <div>
           <a style={{textDecoration: "none"}} href={url} target="_blank">
             <h1>{name}</h1>
