@@ -1,4 +1,4 @@
-﻿type File implements Node {
+﻿type File @model {
   contentType: String!
   createdAt: DateTime
   id: ID! @isUnique
@@ -9,7 +9,7 @@
   url: String! @isUnique
 }
 
-type Repository implements Node {
+type Repository @model {
   contributors: String
   createdAt: DateTime
   description: String
@@ -24,7 +24,7 @@ type Repository implements Node {
   url: String!
 }
 
-type User implements Node {
+type User @model {
   createdAt: DateTime
   id: ID! @isUnique
   updatedAt: DateTime
