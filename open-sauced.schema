@@ -1,6 +1,6 @@
 ﻿type File @model {
   contentType: String!
-  createdAt: DateTime
+  createdAt: DateTime!
   id: ID! @isUnique
   name: String!
   secret: String! @isUnique
@@ -11,7 +11,7 @@
 
 type Repository @model {
   contributors: String
-  createdAt: DateTime
+  createdAt: DateTime!
   description: String
   forks: Int
   id: ID! @isUnique
@@ -25,7 +25,7 @@ type Repository @model {
 }
 
 type User @model {
-  createdAt: DateTime
+  createdAt: DateTime!
   id: ID! @isUnique
   updatedAt: DateTime
 }
