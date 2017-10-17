@@ -5,7 +5,7 @@
   name: String!
   secret: String! @isUnique
   size: Int!
-  updatedAt: DateTime
+  updatedAt: DateTime!
   url: String! @isUnique
 }
 
@@ -20,12 +20,12 @@ type Repository @model {
   notes: String
   owner: String!
   stargazers: Int
-  updatedAt: DateTime
+  updatedAt: DateTime!
   url: String!
 }
 
 type User @model {
   createdAt: DateTime!
   id: ID! @isUnique
-  updatedAt: DateTime
+  updatedAt: DateTime!
 }
