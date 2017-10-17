@@ -27,10 +27,10 @@ export class NoteForm extends Component {
       .then(() => this.setState({notesInput: "", editing: false}));
   };
 
-  handleRepoDeletion = id => {
+  handleRepoDeletion = () => {
     const {repoId} = this.props;
 
-    this.props.deleteRepo({variables: {id: repoId}}).then(() => this.setState({deleted: true}));
+    this.props.mutate.deleteRepo({variables: {id: repoId}}).then(() => this.setState({deleted: true}));
   };
 
   handleToggleEditing = () => {
@@ -39,9 +39,8 @@ export class NoteForm extends Component {
 
   render() {
     const {notesInput, editing, deleted} = this.state;
-    const {notes, repoName, id} = this.props;
+    const {notes, repoName} = this.props;
     const noteContent = notesInput !== "" ? notesInput : notes;
-    const deleteRepo = () => this.handleRepoDeletion(id);
 
     return !deleted ? (
       <FormColumn>
@@ -65,7 +64,7 @@ export class NoteForm extends Component {
               <span className="icon-write" /> Edit Notes
             </Button>
           )}
-          <Button destructive onClick={deleteRepo}>
+          <Button destructive onClick={this.handleRepoDeletion}>
             {" "}
             Delete
           </Button>
@@ -77,9 +76,8 @@ export class NoteForm extends Component {
   }
 }
 
-const FormWithMutations = compose(
-  graphql(updateRepo, {name: "updateRepo"}),
-  graphql(deleteRepo, {name: "deleteRepo"})
-)(NoteForm);
+const FormWithMutations = compose(graphql(updateRepo, {name: "updateRepo"}), graphql(deleteRepo, {name: "deleteRepo"}))(
+  NoteForm,
+);
 
 export default FormWithMutations;

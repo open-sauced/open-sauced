@@ -3,15 +3,12 @@ import NewRepo from "./containers/NewRepo";
 import Repositories from "./containers/Repositories";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
-import {
-  BrowserRouter as Router,
-  Route
-} from "react-router-dom";
+import {BrowserRouter as Router, Route} from "react-router-dom";
 import netlifyIdentity from "netlify-identity-widget";
 import auth from "./hoc/AuthHOC";
 import {loginUser, logoutUser} from "./lib/identityActions";
-import {graphql, compose} from "react-apollo";
-import {viewerQuery, createViewer} from "./queries";
+import {graphql} from "react-apollo";
+import {viewerQuery} from "./queries";
 import cookie from "react-cookies";
 
 export class App extends Component {
@@ -26,27 +23,29 @@ export class App extends Component {
       loginUser();
     }
 
-    netlifyIdentity.on("login", (user) => this.setState({user}, loginUser()));
-    netlifyIdentity.on("logout", (user) => this.setState({user: null}, this.logOutViewer()));
+    netlifyIdentity.on("login", user => this.setState({user}, loginUser()));
+    netlifyIdentity.on("logout", user => this.setState({user: null}, this.logOutViewer()));
   }
 
   componentWillReceiveProps(nextProps) {
-    // console.logNextProps;
+    const user = localStorage.getItem("currentOpenSaucedUser");
     const {viewer} = nextProps.data;
-    if (viewer) {
-      this.saveViewerId(viewer.id);
+
+    if (user && nextProps.data.loading !== this.props.data.loading) {
+      if (viewer) {
+        this.saveViewerId(viewer.id);
+      }
     }
-  // componentDidMount needs to create a view if one is not avaiable
   }
 
-  saveViewerId = (id) => {
+  saveViewerId = id => {
     cookie.save("openSaucedViewerId", id);
-  }
+  };
 
   logOutViewer = () => {
     cookie.remove("openSaucedViewerId");
     logoutUser();
-  }
+  };
 
   render() {
     const {user} = this.state;
@@ -55,9 +54,9 @@ export class App extends Component {
         <div>
           <Header user={user} />
           <section>
-            <Route exact path="/" component={auth(Repositories)}/>
-            <Route path="/repos" component={auth(Repositories)}/>
-            <Route path="/new" component={auth(NewRepo)}/>
+            <Route exact path="/" component={auth(Repositories)} />
+            <Route path="/repos" component={auth(Repositories)} />
+            <Route path="/new" component={auth(NewRepo)} />
           </section>
           <Footer />
         </div>
@@ -70,22 +69,11 @@ const currentUser = localStorage.getItem("currentOpenSaucedUser");
 const queryOptions = {
   options: {
     variables: {
-      id: cookie.load("openSaucedViewerId")
-    }
-  }
-};
-const mutationOptions = {
-  options: {
-    variables: {
       id: currentUser ? JSON.parse(currentUser)["id"] : "",
-      email: currentUser ? JSON.parse(currentUser)["email"] : ""
-    }
-  }
+    },
+  },
 };
 
-const AppWithUserData = compose(
-  graphql(viewerQuery, queryOptions),
-  graphql(createViewer, mutationOptions)
-)(App);
+const AppWithUserData = graphql(viewerQuery, queryOptions)(App);
 
 export default AppWithUserData;
