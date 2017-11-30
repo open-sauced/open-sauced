@@ -1,17 +1,17 @@
-﻿type File implements Node {
+﻿type File @model {
   contentType: String!
-  createdAt: DateTime
+  createdAt: DateTime!
   id: ID! @isUnique
   name: String!
   secret: String! @isUnique
   size: Int!
-  updatedAt: DateTime
+  updatedAt: DateTime!
   url: String! @isUnique
 }
 
-type Repository implements Node {
+type Repository @model {
   contributors: String
-  createdAt: DateTime
+  createdAt: DateTime!
   description: String
   forks: Int
   id: ID! @isUnique
@@ -20,7 +20,7 @@ type Repository implements Node {
   notes: String
   owner: String!
   stargazers: Int
-  updatedAt: DateTime
+  updatedAt: DateTime!
   url: String!
   viewer: Viewer @relation(name: "ViewerOnRepository")
 }
@@ -34,8 +34,8 @@ type Viewer implements Node {
   updatesAt: DateTime
 }
 
-type User implements Node {
-  createdAt: DateTime
+type User @model {
+  createdAt: DateTime!
   id: ID! @isUnique
-  updatedAt: DateTime
+  updatedAt: DateTime!
 }
