@@ -2,72 +2,59 @@ import React, {Component} from "react";
 import api from "../lib/apiGraphQL";
 import RepoCount from "../components/Count";
 import {graphql} from "react-apollo";
-import {createFormMutation} from "../queries";
+import {createRepo} from "../queries";
 import {Redirect} from "react-router";
 import Button from "../styles/Button";
+import cookie from "react-cookies";
 
 export class NewRepoForm extends Component {
-  constructor(props) {
-    super(props);
-    this.handleSetUrl = this.handleSetUrl.bind(this);
-    this.handleNameChange = this.handleNameChange.bind(this);
-    this.handleUrlChange = this.handleUrlChange.bind(this);
-    this.handleDescriptionChange = this.handleDescriptionChange.bind(this);
-    this.handleForksChange = this.handleForksChange.bind(this);
-    this.handleIssuesChange = this.handleIssuesChange.bind(this);
-    this.handleStarsChange = this.handleStarsChange.bind(this);
-    this.handleOwnerChange = this.handleOwnerChange.bind(this);
-    this.handleContributorsChange = this.handleContributorsChange.bind(this);
-    this.handleFetchRepoData = this.handleFetchRepoData.bind(this);
-    this.handleApolloSend = this.handleApolloSend.bind(this);
-    this.state = {
-      data: {},
-      uri: "",
-      contributors: "",
-      name: "",
-      url: "",
-      description: "",
-      forks: "",
-      owner: "",
-      stargazers: "",
-      issues: "",
-      submitted: false,
-    };
-  }
+  state = {
+    data: {},
+    uri: "",
+    contributors: "",
+    name: "",
+    url: "",
+    description: "",
+    forks: "",
+    owner: "",
+    stargazers: "",
+    issues: "",
+    submitted: false,
+  };
 
-  handleNameChange(e) {
+  handleNameChange = (e) => {
     this.setState({name: e.target.value});
   }
 
-  handleUrlChange(e) {
+  handleUrlChange = (e) => {
     this.setState({url: e.target.value});
   }
 
-  handleDescriptionChange(e) {
+  handleDescriptionChange = (e) => {
     this.setState({description: e.target.value});
   }
 
-  handleForksChange(e) {
+  handleForksChange = (e) => {
     this.setState({forks: e.target.value});
   }
 
-  handleIssuesChange(e) {
+  handleIssuesChange = (e) => {
     this.setState({issues: e.target.value});
   }
 
-  handleStarsChange(e) {
+  handleStarsChange = (e) => {
     this.setState({stargazers: e.target.value});
   }
 
-  handleOwnerChange(e) {
+  handleOwnerChange = (e) => {
     this.setState({owner: e.target.value});
   }
 
-  handleContributorsChange(e) {
+  handleContributorsChange = (e) => {
     this.setState({contributors: e.target.value});
   }
 
-  handleApolloSend() {
+  handleRepoCreation = () => {
     this.props
       .mutate({
         variables: {...this.state},
@@ -97,11 +84,11 @@ export class NewRepoForm extends Component {
       });
   }
 
-  handleSetUrl(e) {
+  handleSetUrl = (e) => {
     this.setState({url: e.target.value});
   }
 
-  handleFetchRepoData() {
+  handleFetchRepoData = () => {
     const url = this.state.url.split("/");
     api.fetchRepositoryData(url[3], url[4]).then(response => {
       const data = response.data.data.repositoryOwner.repository;
@@ -208,7 +195,7 @@ export class NewRepoForm extends Component {
               name="notes"
             />
             <RepoCount count={count} />
-            <Button onClick={this.handleApolloSend}>
+            <Button onClick={this.handleRepoCreation}>
               <span className="icon-plus" />
               Add repository to your list
             </Button>
@@ -222,6 +209,13 @@ export class NewRepoForm extends Component {
   }
 }
 
-const FormMutation = graphql(createFormMutation)(NewRepoForm);
+const queryOptions = {
+  options: {
+    variables: {
+      viewerId: cookie.load("openSaucedViewerId")
+    }
+  }
+};
+const FormMutation = graphql(createRepo, queryOptions)(NewRepoForm);
 
 export default FormMutation;

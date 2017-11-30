@@ -2,6 +2,7 @@ import React from "react";
 import {graphql} from "react-apollo";
 import {Link} from "react-router-dom";
 import {allRepoQuery} from "../queries";
+import cookie from "react-cookies";
 
 export const Dropdown = ({match, data}) => {
   const {allRepositories} = data;
@@ -27,6 +28,14 @@ export const Dropdown = ({match, data}) => {
   ) : null;
 };
 
-const DropdownWithData = graphql(allRepoQuery)(Dropdown);
+const queryOptions = {
+  options: {
+    variables: {
+      id: cookie.load("openSaucedViewerId")
+    }
+  }
+};
+
+const DropdownWithData = graphql(allRepoQuery, queryOptions)(Dropdown);
 
 export default DropdownWithData;
