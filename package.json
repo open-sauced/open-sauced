@@ -16,7 +16,8 @@
     "css-loader": "0.24.0",
     "detect-port": "1.0.0",
     "dotenv": "4.0.0",
-    "enzyme": "^2.9.1",
+    "enzyme": "3.2.0",
+    "enzyme-adapter-react-16": "1.1.0",
     "eslint": "3.5.0",
     "eslint-config-react-app": "^0.2.1",
     "eslint-loader": "1.5.0",
@@ -32,14 +33,13 @@
     "gzip-size": "3.0.0",
     "html-webpack-plugin": "2.22.0",
     "http-proxy-middleware": "0.17.1",
-    "jest": "15.1.1",
+    "jest": "21.2.1",
     "json-loader": "0.5.4",
     "object-assign": "4.1.0",
     "path-exists": "2.1.0",
     "postcss-loader": "0.13.0",
     "pre-commit": "^1.2.2",
     "promise": "7.1.1",
-    "react-addons-test-utils": "15.6.2",
     "react-dev-utils": "^0.2.1",
     "react-test-renderer": "^15.5.4",
     "recursive-readdir": "2.1.0",
@@ -69,10 +69,10 @@
     "netlify-styleguide": "^0.1.7",
     "prettier": "1.7.4",
     "promisingagent": "5.3.2",
-    "react": "15.6.1",
+    "react": "16.2.0",
     "react-apollo": "1.4.15",
     "react-cookies": "0.1.0",
-    "react-dom": "15.6.1",
+    "react-dom": "16.2.0",
     "react-router": "^4.1.1",
     "react-router-dom": "^4.1.1",
     "styled-components": "2.1.0",
@@ -84,7 +84,7 @@
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "clean": "rm -rf src/tests/__snapshots__/",
-    "test": "npm run clean && node scripts/test.js --env=jsdom"
+    "test": "npm run clean && node scripts/test.js --env=jsdom --updateSnapshot"
   },
   "jest": {
     "moduleFileExtensions": [
@@ -97,7 +97,8 @@
       "^.+\\.css$": "<rootDir>/config/jest/CSSStub.js"
     },
     "setupFiles": [
-      "<rootDir>/config/polyfills.js"
+      "<rootDir>/config/polyfills.js",
+      "<rootDir>/src/setupTestFramework.js"
     ],
     "testPathIgnorePatterns": [
       "<rootDir>/(build|docs|node_modules)/"

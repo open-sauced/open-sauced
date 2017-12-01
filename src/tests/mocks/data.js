@@ -3,6 +3,7 @@ const data = {
     {
       id: "123",
       name: "Platanito",
+      email: "email@mail.com",
     }
 
   ],
