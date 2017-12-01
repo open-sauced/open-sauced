@@ -18,7 +18,6 @@ describe("<Count />", () => {
         </p>,
       ),
     ).toBe(true);
-    expect(component.instance().props.count).toEqual(5);
 
     const component2 = shallow(<Count count={257} />);
     expect(
@@ -28,7 +27,6 @@ describe("<Count />", () => {
         </p>,
       ),
     ).toBe(true);
-    expect(component2.instance().props.count).toEqual(257);
   });
 
   it("should not render when the count is 0", () => {
@@ -58,10 +56,9 @@ describe("<Count />", () => {
     expect(
       component.contains(
         <p>
-          <em>Currently 20 repositories in database</em>
+          <em>Currently 30 repositories in database</em>
         </p>,
       ),
     ).toBe(false);
-    expect(component.instance().props.count).toEqual(30);
   });
 });
