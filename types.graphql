@@ -1,4 +1,4 @@
-﻿type File @model {
+type File @model {
   contentType: String!
   createdAt: DateTime!
   id: ID! @isUnique
@@ -25,13 +25,13 @@ type Repository @model {
   viewer: Viewer @relation(name: "ViewerOnRepository")
 }
 
-type Viewer implements Node {
+type Viewer @model {
   createdAt: DateTime!
   email: String
   id: ID! @isUnique
   identityId: String! @isUnique
+  updatesAt: DateTime!
   savedRepositories: [Repository!]! @relation(name: "ViewerOnRepository")
-  updatesAt: DateTime
 }
 
 type User @model {

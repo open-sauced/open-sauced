@@ -1,0 +1,13 @@
+types: ./types.graphql
+functions: {}
+permissions:
+- operation: Repository.read
+- operation: Repository.create
+- operation: Repository.update
+- operation: Repository.delete
+- operation: Viewer.read
+- operation: Viewer.create
+- operation: Viewer.update
+- operation: Viewer.delete
+- operation: ViewerOnRepository.*
+rootTokens: []
