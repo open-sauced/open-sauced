@@ -1,17 +1,17 @@
 type File @model {
   contentType: String!
-  createdAt: DateTime
+  createdAt: DateTime!
   id: ID! @isUnique
   name: String!
   secret: String! @isUnique
   size: Int!
-  updatedAt: DateTime
+  updatedAt: DateTime!
   url: String! @isUnique
 }
 
 type Repository @model {
   contributors: String
-  createdAt: DateTime
+  createdAt: DateTime!
   description: String
   forks: Int
   id: ID! @isUnique
@@ -20,7 +20,7 @@ type Repository @model {
   notes: String
   owner: String!
   stargazers: Int
-  updatedAt: DateTime
+  updatedAt: DateTime!
   url: String!
   viewer: Viewer @relation(name: "ViewerOnRepository")
 }
@@ -30,12 +30,12 @@ type Viewer @model {
   email: String
   id: ID! @isUnique
   identityId: String! @isUnique
-  updatesAt: DateTime
+  updatesAt: DateTime!
   savedRepositories: [Repository!]! @relation(name: "ViewerOnRepository")
 }
 
 type User @model {
-  createdAt: DateTime
+  createdAt: DateTime!
   id: ID! @isUnique
-  updatedAt: DateTime
+  updatedAt: DateTime!
 }
