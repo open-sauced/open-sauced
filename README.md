@@ -37,6 +37,27 @@ Click the deploy to Netlify button and add your GitHub access token and Graphcoo
 
 ![netlify-deploy](http://i.imgur.com/Ew8G2z8.png)
 
+## Graphcool Framework
+
+### Project Structure
+The central configuration of your upgraded Service lives in the `graphcool.yml`.
+There, all your permissions, functions and types are tied together.
+You can find your schema in the `types.graphql`.
+
+### Deployment
+To deploy changes of your service, just execute
+```sh
+$ graphcool deploy
+```
+
+### Resources
+
+#### CLI
+You can read more about the CLI in the [new docs](https://docs-next.graph.cool/reference/graphcool-cli/overview-zboghez5go)
+Or execute `graphcool` to see the usage overview.
+#### graphcool.yml
+The `graphcool.yml` format is described here: https://docs-next.graph.cool/reference/service-definition/graphcool.yml-foatho8aip
+
 ## Test
 
 ```
