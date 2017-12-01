@@ -11,7 +11,7 @@ exclusively.
 ## Setup
 
 ### 1. GraphQL Backend
-[![graphql-up](http://static.graph.cool/images/graphql-up.svg)](https://www.graph.cool/graphql-up/new?source=https://raw.githubusercontent.com/bdougie/open-sauced/master/open-sauced.schema)
+[![graphql-up](http://static.graph.cool/images/graphql-up.svg)](https://www.graph.cool/graphql-up/new?source=https://raw.githubusercontent.com/bdougie/open-sauced/master/types.graphql)
 
 Setup your GraphQL backend using the *graphql-up* button at the top of this section. Once your backend is created in Graphcool, copy your GraphQL enpoint using the enpoints link.
 
