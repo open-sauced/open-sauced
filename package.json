@@ -36,7 +36,7 @@
     "jest": "21.2.1",
     "json-loader": "0.5.4",
     "object-assign": "4.1.0",
-    "path-exists": "2.1.0",
+    "path-exists": "4.0.0",
     "postcss-loader": "0.13.0",
     "pre-commit": "^1.2.2",
     "promise": "7.1.1",
