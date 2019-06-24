@@ -63,7 +63,7 @@
     "graphql-schema": "0.5.1",
     "graphql-tag": "2.4.2",
     "immutability-helper": "^2.2.0",
-    "immutable": "3.8.1",
+    "immutable": "3.8.2",
     "lodash": "^4.17.11",
     "netlify-identity-widget": "1.0.1",
     "netlify-styleguide": "^0.1.7",
