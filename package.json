@@ -34,6 +34,7 @@
     "html-webpack-plugin": "3.2.0",
     "http-proxy-middleware": "0.17.1",
     "jest": "21.2.1",
+    "jest-localstorage-mock": "^2.4.0",
     "json-loader": "0.5.4",
     "object-assign": "4.1.0",
     "path-exists": "4.0.0",
