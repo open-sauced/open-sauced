@@ -52,7 +52,7 @@
     "stylelint-declaration-block-order": "^0.2.0",
     "url-loader": "0.5.7",
     "webpack": "1.13.2",
-    "webpack-dev-server": "1.16.1",
+    "webpack-dev-server": "3.1.11",
     "whatwg-fetch": "1.0.0"
   },
   "dependencies": {
