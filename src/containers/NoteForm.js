@@ -1,3 +1,6 @@
+/* eslint-disable */
+// replace with hooks and new React path
+
 import React, {Component} from "react";
 import {graphql, compose} from "react-apollo";
 import {Redirect} from "react-router";
