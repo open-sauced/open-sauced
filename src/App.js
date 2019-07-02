@@ -1,3 +1,5 @@
+/* eslint-disable */
+// replace with hooks and new React path
 import React, {Component} from "react";
 import NewRepo from "./containers/NewRepo";
 import Repositories from "./containers/Repositories";
