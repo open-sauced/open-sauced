@@ -1,3 +1,6 @@
+/* eslint-disable */
+// replace with hooks and new React path
+
 import React, {Component} from "react";
 import api from "../lib/apiGraphQL";
 import {FlexCenter, IssuesColumn} from "../styles/Grid";
