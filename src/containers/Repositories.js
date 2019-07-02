@@ -35,7 +35,7 @@ export class Repositories extends Component {
 
   createUser = () => {
     const user = localStorage.getItem("currentOpenSaucedUser");
-    const userObject = JSON.parse(user);
+    const userObject = user;
     this.props
       .createViewer({variables: {email: userObject.email, identityId: userObject.id}})
       .then(() => this.props.data.refetch());

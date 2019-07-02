@@ -4,7 +4,6 @@ import Repositories from "./containers/Repositories";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import {BrowserRouter as Router, Route} from "react-router-dom";
-import netlifyIdentity from "netlify-identity-widget";
 import auth from "./hoc/AuthHOC";
 import {loginUser, logoutUser} from "./lib/identityActions";
 import {graphql} from "react-apollo";
@@ -18,13 +17,11 @@ export class App extends Component {
     const user = localStorage.getItem("currentOpenSaucedUser");
 
     if (user) {
-      this.setState({user: JSON.parse(user)});
+      this.setState({user: user});
     } else {
       loginUser();
     }
 
-    netlifyIdentity.on("login", user => this.setState({user}, loginUser()));
-    netlifyIdentity.on("logout", user => this.setState({user: null}, this.logOutViewer()));
   }
 
   componentWillReceiveProps(nextProps) {
@@ -56,6 +53,7 @@ export class App extends Component {
           <section>
             <Route exact path="/" component={auth(Repositories)} />
             <Route path="/repos" component={auth(Repositories)} />
+            <Route path="/callback" component={auth(Repositories)} />
             <Route path="/new" component={auth(NewRepo)} />
           </section>
           <Footer />
@@ -69,7 +67,7 @@ const currentUser = localStorage.getItem("currentOpenSaucedUser");
 const queryOptions = {
   options: {
     variables: {
-      id: currentUser ? JSON.parse(currentUser)["id"] : "",
+      id: currentUser ? currentUser : "",
     },
   },
 };
