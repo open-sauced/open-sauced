@@ -1,10 +1,11 @@
 var autoprefixer = require("autoprefixer");
 var webpack = require("webpack");
 var HtmlWebpackPlugin = require("html-webpack-plugin");
-var ExtractTextPlugin = require("extract-text-webpack-plugin");
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 var InterpolateHtmlPlugin = require("react-dev-utils/InterpolateHtmlPlugin");
 const ManifestPlugin = require("webpack-manifest-plugin");
 const SWPrecacheWebpackPlugin = require("sw-precache-webpack-plugin");
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 var url = require("url");
 var paths = require("./paths");
 var getClientEnvironment = require("./env");
@@ -65,6 +66,9 @@ module.exports = {
     // We inferred the "public path" (such as / or /my-project) from homepage.
     publicPath: publicPath,
   },
+  optimization: {
+    minimizer: [new UglifyJsPlugin()],
+  },
   resolve: {
     // This allows you to set a fallback for where Webpack should look for modules.
     // We read `NODE_PATH` environment variable in `paths.js` and pass paths here.
@@ -100,33 +104,13 @@ module.exports = {
         include: paths.appSrc,
         loader: "babel-loader",
       },
-      // The notation here is somewhat confusing.
-      // "postcss" loader applies autoprefixer to our CSS.
-      // "css" loader resolves paths in CSS and adds assets as dependencies.
-      // "style" loader normally turns CSS into JS modules injecting <style>,
-      // but unlike in development configuration, we do something different.
-      // `ExtractTextPlugin` first applies the "postcss" and "css" loaders
-      // (second argument), then grabs the result CSS and puts it into a
-      // separate file in our build process. This way we actually ship
-      // a single CSS file in production instead of JS code injecting <style>
-      // tags. If you use code splitting, however, any async bundles will still
-      // use the "style" loader inside the async code so CSS from them won"t be
-      // in the main CSS file.
       {
         test: /\.css$/,
-        // "?-autoprefixer" disables autoprefixer in css-loader itself:
-        // https://github.com/webpack/css-loader/issues/281
-        // We already have it thanks to postcss. We only pass this flag in
-        // production because "css" loader only enables autoprefixer-powered
-        // removal of unnecessary prefixes when Uglify plugin is enabled.
-        // Webpack 1.x uses Uglify plugin as a signal to minify *all* the assets
-        // including CSS. This is confusing and will be removed in Webpack 2:
-        // https://github.com/webpack/webpack/issues/283
-        loader: ExtractTextPlugin.extract({
+        loader: MiniCssExtractPlugin.loader,
+        options: {
           fallback: "style-loader",
           use: "css-loader?-autoprefixer!postcss-loader"
-        }),
-        // Note: this won"t work without `new ExtractTextPlugin()` in `plugins`.
+        },
       },
       // JSON is not enabled by default in Webpack but both Node and Browserify
       // allow it implicitly so we also enable it.
@@ -161,13 +145,6 @@ module.exports = {
   },
 
   plugins: [
-    // Makes the public URL available as %PUBLIC_URL% in index.html, e.g.:
-    // <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
-    // In production, it will be an empty string unless you specify "homepage"
-    // in `package.json`, in which case it will be the pathname of that URL.
-    new InterpolateHtmlPlugin({
-      PUBLIC_URL: publicUrl,
-    }),
     // Generates an `index.html` file with the <script> injected.
     new HtmlWebpackPlugin({
       inject: true,
@@ -185,31 +162,23 @@ module.exports = {
         minifyURLs: true,
       },
     }),
+    // Makes the public URL available as %PUBLIC_URL% in index.html, e.g.:
+    // <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
+    // In production, it will be an empty string unless you specify "homepage"
+    // in `package.json`, in which case it will be the pathname of that URL.
+    new InterpolateHtmlPlugin(
+      HtmlWebpackPlugin,
+      {
+        PUBLIC_URL: publicUrl,
+      }
+    ),
     // Makes some environment variables available to the JS code, for example:
     // if (process.env.NODE_ENV === "production") { ... }. See `./env.js`.
     // It is absolutely essential that NODE_ENV was set to production here.
     // Otherwise React will be compiled in the very slow development mode.
     new webpack.DefinePlugin(env),
-    // This helps ensure the builds are consistent if source hasn"t changed:
-    new webpack.optimize.OccurrenceOrderPlugin(),
-    // Try to dedupe duplicated modules, if any:
-    new webpack.optimize.DedupePlugin(),
-    // Minify the code.
-    new webpack.optimize.UglifyJsPlugin({
-      compress: {
-        screw_ie8: true, // React doesn"t support IE8
-        warnings: false,
-      },
-      mangle: {
-        screw_ie8: true,
-      },
-      output: {
-        comments: false,
-        screw_ie8: true,
-      },
-    }),
     // Note: this won"t work without ExtractTextPlugin.extract(..) in `loaders`.
-    new ExtractTextPlugin({
+    new MiniCssExtractPlugin({
       filename: "static/css/[name].[contenthash:8].css",
       allChunks: true
     }),
