@@ -71,12 +71,12 @@ module.exports = {
     // We use `fallback` instead of `root` because we want `node_modules` to "win"
     // if there any conflicts. This matches Node resolution mechanism.
     // https://github.com/facebookincubator/create-react-app/issues/253
-    fallback: paths.nodePaths,
+    modules: ["src", "node_modules"],
     // These are the reasonable defaults supported by the Node ecosystem.
     // We also include JSX as a common component filename extension to support
     // some tools, although we do not recommend using it, see:
     // https://github.com/facebookincubator/create-react-app/issues/290
-    extensions: [".js", ".json", ".jsx", ""],
+    extensions: [".js", ".json", ".jsx"],
     alias: {
       // Support React Native Web
       // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
@@ -85,21 +85,20 @@ module.exports = {
   },
 
   module: {
+    rules: [
     // First, run the linter.
     // It"s important to do this before Babel processes the JS.
-    preLoaders: [
       {
+        enforce: 'pre',
         test: /\.(js|jsx)$/,
-        loader: "eslint",
+        loader: "eslint-loader",
         include: paths.appSrc,
       },
-    ],
-    loaders: [
       // Process JS with Babel.
       {
         test: /\.(js|jsx)$/,
         include: paths.appSrc,
-        loader: "babel",
+        loader: "babel-loader",
       },
       // The notation here is somewhat confusing.
       // "postcss" loader applies autoprefixer to our CSS.
@@ -123,7 +122,10 @@ module.exports = {
         // Webpack 1.x uses Uglify plugin as a signal to minify *all* the assets
         // including CSS. This is confusing and will be removed in Webpack 2:
         // https://github.com/webpack/webpack/issues/283
-        loader: ExtractTextPlugin.extract("style", "css?-autoprefixer!postcss"),
+        loader: ExtractTextPlugin.extract({
+          fallback: "style-loader",
+          use: "css-loader?-autoprefixer!postcss-loader"
+        }),
         // Note: this won"t work without `new ExtractTextPlugin()` in `plugins`.
       },
       // JSON is not enabled by default in Webpack but both Node and Browserify
@@ -136,37 +138,28 @@ module.exports = {
       // When you `import` an asset, you get its filename.
       {
         test: /\.(ico|jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2)(\?.*)?$/,
-        loader: "file",
-        query: {
-          name: "static/media/[name].[hash:8].[ext]",
+        use: {
+          loader: "file-loader",
+          query: {
+            name: "static/media/[name].[hash:8].[ext]",
+          },
         },
       },
       // "url" loader works just like "file" loader but it also embeds
       // assets smaller than specified size as data URLs to avoid requests.
       {
         test: /\.(mp4|webm|wav|mp3|m4a|aac|oga)(\?.*)?$/,
-        loader: "url",
-        query: {
-          limit: 10000,
-          name: "static/media/[name].[hash:8].[ext]",
+        use: {
+          loader: "url-loader",
+          query: {
+            limit: 10000,
+            name: "static/media/[name].[hash:8].[ext]",
+          },
         },
       },
     ],
   },
 
-  // We use PostCSS for autoprefixing only.
-  postcss: function() {
-    return [
-      autoprefixer({
-        browsers: [
-          ">1%",
-          "last 4 versions",
-          "Firefox ESR",
-          "not ie < 9", // React doesn"t support IE8 anyway
-        ],
-      }),
-    ];
-  },
   plugins: [
     // Makes the public URL available as %PUBLIC_URL% in index.html, e.g.:
     // <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
@@ -216,7 +209,10 @@ module.exports = {
       },
     }),
     // Note: this won"t work without ExtractTextPlugin.extract(..) in `loaders`.
-    new ExtractTextPlugin("static/css/[name].[contenthash:8].css"),
+    new ExtractTextPlugin({
+      filename: "static/css/[name].[contenthash:8].css",
+      allChunks: true
+    }),
     // Generate a manifest file which contains a mapping of all asset filenames
     // to their corresponding output file so that tools can pick it up without
     // having to parse `index.html`.
