@@ -117,9 +117,14 @@ module.exports = {
       {
         test: /\.css$/,
         use: [
-          'style-loader',
-          { loader: 'css-loader', options: { importLoaders: 1 } },
-          'postcss-loader'
+          {loader: 'style-loader'},
+          {loader: 'css-loader', options: { importLoaders: 1 } },
+          {
+            loader: 'postcss-loader',
+            options: {
+              plugins: () => [require('autoprefixer')]
+            }
+          }
         ],
       },
       // JSON is not enabled by default in Webpack but both Node and Browserify
@@ -158,17 +163,18 @@ module.exports = {
 
   },
   plugins: [
-    // Makes the public URL available as %PUBLIC_URL% in index.html, e.g.:
-    // <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
-    // In development, this will be an empty string.
-    new InterpolateHtmlPlugin({
-      PUBLIC_URL: publicUrl,
-    }),
     // Generates an `index.html` file with the <script> injected.
     new HtmlWebpackPlugin({
       inject: true,
       template: paths.appHtml,
     }),
+    // Makes the public URL available as %PUBLIC_URL% in index.html, e.g.:
+    // <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
+    // In development, this will be an empty string.
+    new InterpolateHtmlPlugin(
+      HtmlWebpackPlugin,
+      {PUBLIC_URL: publicUrl}
+    ),
     // Makes some environment variables available to the JS code, for example:
     // if (process.env.NODE_ENV === 'development') { ... }. See `./env.js`.
     new webpack.DefinePlugin(env),
