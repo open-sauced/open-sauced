@@ -27,7 +27,7 @@
     "eslint-plugin-import": "2.7.0",
     "eslint-plugin-prettier": "2.3.1",
     "eslint-plugin-react": "^7.14.2",
-    "extract-text-webpack-plugin": "1.0.1",
+    "extract-text-webpack-plugin": "^2.0.0",
     "file-loader": "0.11.2",
     "filesize": "3.3.0",
     "find-cache-dir": "0.1.1",
@@ -54,9 +54,9 @@
     "stylelint-config-standard": "^16.0.0",
     "stylelint-declaration-block-order": "^0.2.0",
     "url-loader": "0.5.7",
-    "webpack": "^1.13.2",
+    "webpack": "^2.2.1",
     "webpack-cli": "^3.3.5",
-    "webpack-dev-server": "1.16.1",
+    "webpack-dev-server": "2.4.1",
     "whatwg-fetch": "1.0.0"
   },
   "dependencies": {
@@ -117,15 +117,6 @@
     ],
     "testEnvironment": "node",
     "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(js|jsx)$"
-  },
-  "babel": {
-    "presets": [
-      "@babel/env",
-      "@babel/react"
-    ],
-    "plugins": [
-      "@babel/plugin-proposal-class-properties"
-    ]
   },
   "eslintConfig": {
     "extends": "react-app"
