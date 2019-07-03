@@ -1,7 +1,9 @@
 /* stylelint-disable */
 html {
   /* colors */
-  --offWhite: #fbfbfb;
+  --cheesyYellow: #f6d809;
+
+  --offWhite: #faeace;
 
   --lightestGrey: #e6e6e6;
 
@@ -21,9 +23,11 @@ html {
 
   --darkGreen: #03b1a3;
 
-  --red: #fb6d77;
+  --red: #fa3946;
 
   --darkRed: #fa3946;
+
+  --saucyRed: #fa3946;
 
   /* typography */
   --thin: 100;
@@ -72,6 +76,27 @@ html {
 
 a {
   cursor: pointer;
+}
+
+button {
+  background: none;
+  border: 2px solid var(--lightGrey) ;
+  border-radius: var(--smallBorderRadius);
+  box-shadow: none;
+  color: black;
+  cursor: pointer;
+  font-size: var(--tiny);
+  margin-bottom: var(--tiny);
+  margin-right: var(--micro);
+  outline: none;
+  padding: var(--tiny);
+  transition: background 0.2s ease;
+}
+
+button:hover {
+  color: var(--lightGrey);
+  border: 2px solid var(--lighterGrey) ;
+  transition: background 0.9s ease, linear;
 }
 
 body {
@@ -128,7 +153,7 @@ header a {
 
 header a:hover {
   background-color: #222;
-  color: var(--green);
+  color: var(--cheesyYellow);
 }
 
 header a.nav-link {
@@ -153,7 +178,7 @@ header a.nav-link {
 }
 
 .repositories li:hover {
-  background: var(--green);
+  background: var(--cheesyYellow);
 }
 
 .repositories li a {
@@ -228,7 +253,7 @@ header a.nav-link {
 .nav ul li:hover > a,
 .nav ul li a:hover {
   color: white;
-  background-color: var(--green);
+  background-color: var(--cheesyYellow);
 }
 
 textarea,
@@ -245,7 +270,7 @@ input {
 }
 
 footer {
-  margin: var(--large) 0 var(--small) var(--tiny);
+  margin: auto;
   text-align: center;
   width: 100%;
 }

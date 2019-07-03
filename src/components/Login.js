@@ -1,10 +1,12 @@
 import React, {Component} from "react";
-// import Button from "../styles/Button";
 import {loginUser} from "../lib/identityActions";
 import {createViewer} from "../queries";
 import {graphql} from "react-apollo";
 import GitHubLogin from "react-github-login";
+import logo from "./logo8.svg";
+import {FlexCenter} from "../styles/Grid";
 
+const spacingStyle = {margin: "auto", padding: 100, textAlign: "center"};
 const onSuccess = response => {
   loginUser(response);
 };
@@ -16,15 +18,19 @@ export class Login extends Component {
 
   render() {
     return (
-      <div>
-        <p>The open-source project to manage your open-source projects</p>
-        {/* <Button onClick={this.handleLogin}>Login to get saucin</Button> */}
-        <GitHubLogin clientId="add06b2f1ac97fd583a6"
-          redirectUri="http://localhost:3000/callback"
-          onSuccess={onSuccess}
-          onFailure={onFailure}
-        />
-      </div>
+      <FlexCenter>
+        <div style={spacingStyle}>
+          {/* <Button onClick={this.handleLogin}>Login to get saucin</Button> */}
+          <img src={logo} alt="logo" />
+          <p style={{marginTop: 16}}>The path towards open-source contributions. Login to get Saucin'</p>
+          <GitHubLogin
+            clientId="add06b2f1ac97fd583a6"
+            redirectUri="http://localhost:3000/callback"
+            onSuccess={onSuccess}
+            onFailure={onFailure}
+          />
+        </div>
+      </FlexCenter>
     );
   }
 }

@@ -1,4 +1,7 @@
 const colors = {
+  accent: "#faeace",
+  saucyRed: "#ed5332",
+  cheesyYellow: "#f6d809",
   offWhite: "#fbfbfb",
   lightestGrey: "#e6e6e6",
   lighterGrey: "#bcbcbc",
