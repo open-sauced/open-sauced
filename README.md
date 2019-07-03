@@ -6,7 +6,7 @@ This is a GraphQL starter project to help people stalk open source repositories 
 The data fetching from GitHub uses their GraphQL Early Access API
 exclusively.
 
-![open-sauced-screencap](http://i.imgur.com/VlZVmtB.png)
+![open-sauced-screencap](https://user-images.githubusercontent.com/5713670/60572213-020b6800-9d2a-11e9-9cce-875eba95b326.png)
 
 ## Setup
 
