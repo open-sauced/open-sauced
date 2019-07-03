@@ -2,7 +2,9 @@ import styled from "styled-components";
 import {borderRadius, colors, padding} from "./variables";
 
 const Button = styled.button`
-  background: ${ (props) => { return props.destructive ? colors.red : colors.green; }};
+  background: ${props => {
+    return props.destructive ? colors.saucyRed : colors.accent;
+  }};
   border: none;
   border-radius: ${borderRadius.smallBorderRadius};
   box-shadow: none;
@@ -16,7 +18,9 @@ const Button = styled.button`
   transition: background 0.2s ease;
 
   &:hover {
-    background: ${ (props) => { return props.destructive ? colors.darkRed : colors.darkGreen; }};
+    background: ${props => {
+    return props.destructive ? colors.saucyRed : colors.accent;
+  }};
   }
 `;
 

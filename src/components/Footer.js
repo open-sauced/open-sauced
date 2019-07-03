@@ -1,17 +1,14 @@
 import React from "react";
-import {FlexCenter} from "../styles/Grid";
-import GreenLink from "../styles/Typography/GreenLink";
+import PrimaryLink from "../styles/Typography/PrimaryLink";
 
 const Footer = () => (
   <footer>
-    <FlexCenter>
-      <small>
-        Made with <GreenLink href="https://www.graph.cool/">Graphcool</GreenLink> using <GreenLink href="https://feathericons.com/">Feather</GreenLink> icons
-        and hosted on <GreenLink href="https://www.netlify.com/">Netlify</GreenLink>.
-      </small>
-    </FlexCenter>
+    <small>
+      Made with <PrimaryLink href="https://www.prisma.io/">Prisma</PrimaryLink> using{" "}
+      <PrimaryLink href="https://feathericons.com/">Feather</PrimaryLink> icons and hosted on{" "}
+      <PrimaryLink href="https://www.netlify.com/">Netlify</PrimaryLink>.
+    </small>
   </footer>
 );
 
 export default Footer;
-

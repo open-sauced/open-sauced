@@ -51,7 +51,7 @@ export class App extends Component {
     return (
       <Router>
         <div>
-          <Header user={user} />
+          {user && <Header user={user} />}
           <section>
             <Route exact path="/" component={auth(Repositories)} />
             <Route path="/repos" component={auth(Repositories)} />

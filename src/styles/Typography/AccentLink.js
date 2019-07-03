@@ -1,10 +1,11 @@
 import styled from "styled-components";
 import {colors} from "../variables";
 
-const GreenLink = styled.a`
-  color: ${colors.darkGreen};
+const AccentLink = styled.a`
+  color: ${colors.accent};
   text-decoration: none;
   font-weight: bold;
 `;
 
-export default GreenLink;
+export default AccentLink;
+
