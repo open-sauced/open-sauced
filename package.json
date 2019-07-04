@@ -69,7 +69,7 @@
     "add": "^2.0.6",
     "apollo-client": "2.0.0-beta.3",
     "axios": "0.18.1",
-    "babel-core": "^7.0.0-bridge.0",
+    "babel-core": "^6.26.3",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "graphql": "0.7.2",
     "graphql-schema": "0.5.1",
