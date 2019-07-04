@@ -4,25 +4,30 @@ env:
 
 parser: babel-eslint
 
+settings:
+  react:
+    version: detect
+
 plugins: [ "react", "import", "prettier" ]
 
 # enable ECMAScript features
-ecmaFeatures:
-  arrowFunctions: true
-  binaryLiterals: true
-  blockBindings: true
-  classes: true
-  defaultParams: true
-  destructuring: true
-  forOf: true
-  generators: true
-  jsx: true
-  modules: true
-  objectLiteralShorthandMethods: true
-  objectLiteralShorthandProperties: true
-  octalLiterals: true
-  spread: true
-  templateStrings: true
+parserOptions:
+  ecmaFeatures:
+    arrowFunctions: true
+    binaryLiterals: true
+    blockBindings: true
+    classes: true
+    defaultParams: true
+    destructuring: true
+    forOf: true
+    generators: true
+    jsx: true
+    modules: true
+    objectLiteralShorthandMethods: true
+    objectLiteralShorthandProperties: true
+    octalLiterals: true
+    spread: true
+    templateStrings: true
 
 rules:
   # Possible Errors
