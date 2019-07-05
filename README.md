@@ -1,4 +1,5 @@
-[![CircleCI](https://circleci.com/gh/bdougie/open-sauced.svg?style=svg)](https://circleci.com/gh/bdougie/open-sauced)
+[![Build Status](https://travis-ci.org/bdougie/open-sauced.svg?branch=master)](https://travis-ci.org/bdougie/open-sauced)
+
 # Open Sauced
 
 This is a GraphQL starter project to help people stalk open source repositories and take notes on them. This project uses Graphcool as a GraphQL backend, Apollo as the GraphQL client, and Netlify to deploy. 
