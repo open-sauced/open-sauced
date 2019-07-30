@@ -67,7 +67,7 @@
     "@babel/register": "^7.4.4",
     "@octokit/rest": "^16.1.0",
     "add": "^2.0.6",
-    "apollo-client": "2.0.0-beta.3",
+    "apollo-client": "2.0.0-0",
     "axios": "0.18.1",
     "babel-core": "^6.26.3",
     "eslint-plugin-jsx-a11y": "^6.2.3",
