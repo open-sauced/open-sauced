@@ -7,7 +7,7 @@
     "@babel/plugin-proposal-class-properties": "^7.4.4",
     "@babel/preset-react": "^7.0.0",
     "@webpack-cli/migrate": "^0.1.8",
-    "autoprefixer": "9.6.0",
+    "autoprefixer": "9.6.1",
     "babel-eslint": "6.1.2",
     "babel-jest": "24.8.0",
     "babel-loader": "^8.0.6",
