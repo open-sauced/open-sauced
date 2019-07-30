@@ -51,7 +51,7 @@
     "rimraf": "2.5.4",
     "strip-ansi": "5.2.0",
     "style-loader": "0.13.1",
-    "stylefmt": "^5.3.2",
+    "stylefmt": "^6.0.3",
     "stylelint": "^7.10.1",
     "stylelint-config-standard": "^16.0.0",
     "stylelint-declaration-block-order": "^0.2.0",
