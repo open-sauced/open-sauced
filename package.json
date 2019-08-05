@@ -87,7 +87,7 @@
     "react-github-login": "^1.0.3",
     "react-router": "^4.1.1",
     "react-router-dom": "^4.1.1",
-    "styled-components": "2.1.0",
+    "styled-components": "3.4.10",
     "sw-precache-webpack-plugin": "0.11.5",
     "webpack-manifest-plugin": "^2.0.4",
     "yarn": "^1.17.3"
