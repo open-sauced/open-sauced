@@ -76,7 +76,7 @@
     "graphql-tag": "2.4.2",
     "immutability-helper": "^2.2.0",
     "immutable": "3.8.2",
-    "lodash": "^4.17.13",
+    "lodash": "^4.17.15",
     "netlify-styleguide": "^0.1.7",
     "prettier": "1.18.2",
     "promisingagent": "5.3.2",
