@@ -71,7 +71,7 @@
     "axios": "0.18.1",
     "babel-core": "^6.26.3",
     "eslint-plugin-jsx-a11y": "^6.2.3",
-    "graphql": "0.7.2",
+    "graphql": "14.4.2",
     "graphql-schema": "0.5.1",
     "graphql-tag": "2.4.2",
     "immutability-helper": "^2.2.0",
