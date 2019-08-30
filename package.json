@@ -28,7 +28,7 @@
     "eslint-plugin-import": "2.18.0",
     "eslint-plugin-prettier": "2.7.0",
     "eslint-plugin-react": "^7.14.2",
-    "file-loader": "^4.0.0",
+    "file-loader": "^4.2.0",
     "filesize": "3.3.0",
     "find-cache-dir": "3.0.0",
     "fs-extra": "0.30.0",
