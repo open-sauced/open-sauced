@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/bdougie/open-sauced.svg?branch=master)](https://travis-ci.org/bdougie/open-sauced)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/76a3de8e-270c-4adf-89d5-3a3863da74e6/deploy-status)](https://app.netlify.com/sites/open-sauced/deploys)
 
 # Open Sauced
 
