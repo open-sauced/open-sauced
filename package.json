@@ -42,7 +42,6 @@
     "object-assign": "4.1.0",
     "path-exists": "4.0.0",
     "postcss-loader": "^3.0.0",
-    "pre-commit": "^1.2.2",
     "promise": "7.1.1",
     "react-dev-utils": "^9.0.1",
     "react-scripts": "^3.0.1",
