@@ -8,57 +8,30 @@ import {graphql, compose} from "react-apollo";
 import {Route, Link} from "react-router-dom";
 import {allRepoQuery, createViewer} from "../queries";
 import cookie from "react-cookies";
+import api from "../lib/apiGraphQL";
 
 export class Repositories extends Component {
-  state = {viewerId: cookie.load("openSaucedViewerId")};
+  state = {data: ""}
 
   componentDidMount() {
-    // TODO Remove this and replace with a Subscription
-    // https://github.com/bdougie/open-sauced/issues/59
-    if (this.props.data.loading) {
-      this.props.data.refetch();
-    }
-
-    if (this.state.viewerId === undefined) {
-      this.createUser();
-    }
+   api.fetchContributedRepoQuery().then(response => {
+      const data = response.data.gitHub.viewer
+      this.setState({data});
+    });
   }
-
-  componentWillReceiveProps(nextProps) {
-    // TODO Remove this and replace with a Subscription
-    // https://github.com/bdougie/open-sauced/issues/59
-    if (nextProps.data.loading !== this.props.data.loading) {
-      this.props.data.refetch();
-    }
-
-    if (this.state.viewerId === undefined) {
-      this.createUser();
-    }
-  }
-
-  createUser = () => {
-    const user = this.props.user;
-    if (!user) {
-      console.warn("No user available to create");
-      return;
-    }
-
-    this.props
-      .createViewer({variables: {email: user.email, identityId: user.id}})
-      .then(() => this.props.data.refetch());
-  };
 
   render() {
-    const {match, data} = this.props;
-    const {allRepositories} = data;
+    const {match} = this.props;
+    const {data} = this.state;
+    const {repositoriesContributedTo} = data;
     const content = () => (
       <div className="landing-nav">
-        <h1>Open Sauced GitHub Reposoitories</h1>
+        <h1>Reposoitories you have contributed to</h1>
         <br />
-        <Instructions allRepositories={allRepositories} />
+          {repositoriesContributedTo && <Instructions allRepositories={repositoriesContributedTo.nodes} />}
         <ul>
-          {allRepositories ? (
-            allRepositories.map(repo => (
+          {repositoriesContributedTo ? (
+            repositoriesContributedTo.nodes.map(repo => (
               <li key={repo.name}>
                 <Link to={`/repos/${repo.name}/${repo.id}`}>{repo.name}</Link>
               </li>
@@ -79,17 +52,4 @@ export class Repositories extends Component {
   }
 }
 
-const queryOptions = {
-  options: {
-    variables: {
-      id: cookie.load("openSaucedViewerId"),
-    },
-  },
-};
-
-const RepositoriesWithData = compose(
-  graphql(allRepoQuery, queryOptions),
-  graphql(createViewer, {name: "createViewer"}),
-)(Repositories);
-
-export default RepositoriesWithData;
+export default Repositories;
