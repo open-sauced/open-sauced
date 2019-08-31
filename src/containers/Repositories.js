@@ -37,10 +37,14 @@ export class Repositories extends Component {
   }
 
   createUser = () => {
-    const user = localStorage.getItem("currentOpenSaucedUser");
-    const userObject = user;
+    const user = this.props.user;
+    if (!user) {
+      console.warn("No user available to create");
+      return;
+    }
+
     this.props
-      .createViewer({variables: {email: userObject.email, identityId: userObject.id}})
+      .createViewer({variables: {email: user.email, identityId: user.id}})
       .then(() => this.props.data.refetch());
   };
 

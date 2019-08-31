@@ -19,9 +19,8 @@ export class App extends Component {
         <div>
           {user && <Header user={user} handleLogOut={handleLogOut} />}
           <section>
-            <Route exact path="/" component={guard(Repositories)} />
-            <Route path="/repos" component={guard(Repositories)} />
-            <Route path="/callback" component={guard(Repositories)} />
+            <Route exact path="/" component={guard(Repositories)} user={user}/>
+            <Route path="/repos" component={guard(Repositories)} user={user}/>
             <Route path="/new" component={guard(NewRepo)} />
           </section>
           <Footer />

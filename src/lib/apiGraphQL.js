@@ -1,27 +1,12 @@
-import axios from "axios";
+import Config from "../config";
 
-const auth = {Authorization: `bearer ${process.env.githubToken}`};
-const githubUrl = "https://api.github.com/graphql";
-const api = {
-  fetchRepositoryData(name, repo) {
-    return axios.post(githubUrl, {
-      query: repoQuery(name, repo)
-    }, {headers: auth});
-  },
+const fetchOneGraph = Config.fetchOneGraph;
 
-  fetchRepositoryIssues(name, repo, cursor, previous = false) {
-    return axios.post(githubUrl, {
-      query: issueQuery(name, repo, cursor, previous)
-    }, {headers: auth});
-  }
-};
-
-
-function repoQuery(name, repo) {
-  return `
-    {
-      repositoryOwner(login: "${name}") {
-        repository(name: "${repo}") {
+const operationsDoc = `
+  query RepoQuery($repo: String!, $owner: String!) {
+    gitHub {
+      repositoryOwner(login: $owner) {
+        repository(name: $repo) {
           name
           url
           owner {
@@ -43,110 +28,107 @@ function repoQuery(name, repo) {
         }
       }
     }
-  `;
+  }
+
+  query IssuesBeforeQuery($owner: String!, $repo: String!, $cursor: String) {
+    gitHub {
+      repositoryOwner(login: $owner) {
+        repository(name: $repo) {
+          issues(first: 5, states: OPEN, orderBy: {field: CREATED_AT, direction: DESC}, before: $cursor) {
+            totalCount
+            data: edges {
+              cursor
+              node {
+                id
+                title
+                url
+                state
+                author {
+                  login
+                }
+                labels(first: 5) {
+                  data: edges {
+                    node {
+                      id
+                      name
+                    }
+                  }
+                }
+                createdAt
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  query IssuesAfterQuery($owner: String!, $repo: String!, $cursor: String) {
+    gitHub {
+      repositoryOwner(login: $owner) {
+        repository(name: $repo) {
+          issues(first: 5, states: OPEN, orderBy: {field: CREATED_AT, direction: DESC}, after: $cursor) {
+            totalCount
+            data: edges {
+              cursor
+              node {
+                id
+                title
+                url
+                state
+                author {
+                  login
+                }
+                labels(first: 5) {
+                  data: edges {
+                    node {
+                      id
+                      name
+                    }
+                  }
+                }
+                createdAt
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`;
+
+function fetchRepoQuery(owner, repo) {
+  return fetchOneGraph(
+    operationsDoc,
+    "RepoQuery",
+    {"repo": repo, "owner": owner}
+  );
 }
 
-function issueQuery(name, repo, cursor, previous) {
-  const fetch = `
-    {
-      repositoryOwner(login: "${name}") {
-        repository(name: "${repo}") {
-          issues(first: 5, states: OPEN, orderBy: {field: CREATED_AT, direction: DESC}) {
-            totalCount
-            data: edges {
-            cursor
-              node {
-                id
-                title
-                url
-                state
-                author {
-                  login
-                }
-                labels(first: 5) {
-                  data: edges {
-                    node {
-                      id
-                      name
-                    }
-                  }
-                }
-                createdAt
-              }
-            }
-          }
-        }
-      }
-    }
-  `;
-
-  const fetchNext = `
-    {
-      repositoryOwner(login: "${name}") {
-        repository(name: "${repo}") {
-          issues(first: 5, states: OPEN, after: "${cursor}") {
-            totalCount
-            data: edges {
-            cursor
-              node {
-                id
-                title
-                url
-                state
-                author {
-                  login
-                }
-                labels(first: 5) {
-                  data: edges {
-                    node {
-                      id
-                      name
-                    }
-                  }
-                }
-                createdAt
-              }
-            }
-          }
-        }
-      }
-    }
-  `;
-
-  const fetchPrevious = `
-    {
-      repositoryOwner(login: "${name}") {
-        repository(name: "${repo}") {
-          issues(first: 5, states: OPEN, before: "${cursor}") {
-            totalCount
-            data: edges {
-            cursor
-              node {
-                id
-                title
-                url
-                state
-                author {
-                  login
-                }
-                labels(first: 5) {
-                  data: edges {
-                    node {
-                      id
-                      name
-                    }
-                  }
-                }
-                createdAt
-              }
-            }
-          }
-        }
-      }
-    }
-  `;
-
-  return cursor !== undefined ? (previous ? fetchPrevious : fetchNext) : fetch;
+function fetchIssuesBeforeQuery(owner, repo, cursor) {
+  return fetchOneGraph(
+    operationsDoc,
+    "IssuesBeforeQuery",
+    {"owner": owner, "repo": repo, "cursor": cursor}
+  );
 }
+
+function fetchIssuesAfterQuery(owner, repo, cursor) {
+  return fetchOneGraph(
+    operationsDoc,
+    "IssuesAfterQuery",
+    {"owner": owner, "repo": repo, "cursor": cursor}
+  );
+}
+const api = {
+  fetchRepositoryData: fetchRepoQuery,
+
+  fetchRepositoryIssues: (owner, repo, cursor, previous = false) => {
+    const issueFetcher =
+      cursor && previous ? fetchIssuesBeforeQuery : fetchIssuesAfterQuery;
+
+    issueFetcher(owner, repo, cursor);
+  }
+};
 
 export default api;
