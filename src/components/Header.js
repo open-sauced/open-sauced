@@ -36,7 +36,7 @@ const Header = ({user, handleLogOut}) => {
       </a>
       <a className="nav-link" href="https://github.com/bdougie/open-sauced">
         <span>
-            Hi, {user.email}!
+            Hi, {user.login}!
         </span>
       </a>
     </header>
