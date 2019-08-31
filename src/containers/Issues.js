@@ -16,7 +16,7 @@ class Issues extends Component {
 
     if (prevProps.owner !== null && prevProps.owner !== owner) {
       api.fetchRepositoryIssues(owner, repoName).then(response => {
-        const {data, totalCount} = response.data.data.repositoryOwner.repository.issues;
+        const {data, totalCount} = response.data.gitHub.repositoryOwner.repository.issues;
         const lastIssue = data[data.length - 1];
         const {cursor} = lastIssue;
         this.setState({
@@ -32,7 +32,7 @@ class Issues extends Component {
     const {repoName, owner} = this.props;
     const {cursor, offset} = this.state;
     api.fetchRepositoryIssues(owner, repoName, cursor).then(response => {
-      const {data, totalCount} = response.data.data.repositoryOwner.repository.issues;
+      const {data, totalCount} = response.data.gitHub.repositoryOwner.repository.issues;
       const firstIssue = data[data.length - 1];
       const newCursor = firstIssue.cursor;
       this.setState({
@@ -48,7 +48,7 @@ class Issues extends Component {
     const {repoName, owner} = this.props;
     const {cursor, offset} = this.state;
     api.fetchRepositoryIssues(owner, repoName, cursor, true).then(response => {
-      const {data, totalCount} = response.data.data.repositoryOwner.repository.issues;
+      const {data, totalCount} = response.data.gitHub.repositoryOwner.repository.issues;
       const newCursor = data[0].newCursor;
       this.setState({
         issues: data,
