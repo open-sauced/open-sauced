@@ -78,6 +78,7 @@
     "immutable": "3.8.2",
     "lodash": "^4.17.15",
     "netlify-styleguide": "^0.1.7",
+    "onegraph-auth": "^2.0.1",
     "prettier": "1.18.2",
     "promisingagent": "5.3.2",
     "react": "16.2.0",

@@ -1,7 +1,7 @@
-export function loginUser(response) {
-  response && localStorage.setItem("currentOpenSaucedUser", response.code);
-}
+export function getUserFromJwt(auth) {
+  const rawJwt = auth.accessToken() || {};
+  const jwtPayload = (rawJwt.accessToken || "").split(".")[1];
+  const decodedString = atob(jwtPayload || "") || "{}";
 
-export function logoutUser() {
-  localStorage.removeItem("currentOpenSaucedUser");
+  return JSON.parse(decodedString).user;
 }

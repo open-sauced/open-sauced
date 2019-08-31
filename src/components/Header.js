@@ -4,14 +4,8 @@ import {home, github, plus, logout, issue} from "../icons";
 import {Link} from "react-router-dom";
 import {FloatLeft} from "../styles/Grid";
 
-const handleLogIn = () => {
-};
-
-const handleLogOut = () => {
-};
-
-const Header = ({user}) => {
-  return user ? (
+const Header = ({user, handleLogOut}) => {
+  return (
     <header>
       <FloatLeft>
         <Link to="/" className="home" alt="home">
@@ -40,13 +34,9 @@ const Header = ({user}) => {
           <img src={github} />
         </span>
       </a>
-    </header>
-  ) : (
-    <header>
-      <a onClick={handleLogIn}>Welcome to Open Sauced</a>
-      <a className="nav-link" target="_blank" href="https://github.com/bdougie/open-sauced/issues/new">
+      <a className="nav-link" href="https://github.com/bdougie/open-sauced">
         <span>
-          <img src={issue} />
+            Hi, {user.email}!
         </span>
       </a>
     </header>
