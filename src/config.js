@@ -7,8 +7,8 @@ const auth = new OneGraphAuth({
 });
 
 // This setup is only needed once per application
-const fetchOneGraph = async(operationsDoc, operationName, variables) => {
-  const result = await fetch(
+const fetchOneGraph = (operationsDoc, operationName, variables) => {
+  return fetch(
     "https://serve.onegraph.com/dynamic?app_id=" + APP_ID,
     {
       method: "POST",
@@ -21,9 +21,7 @@ const fetchOneGraph = async(operationsDoc, operationName, variables) => {
         operationName: operationName
       })
     }
-  );
-
-  return await result.json();
+  ).then(res => res.json());
 };
 
 export default {auth: auth, appId: APP_ID, fetchOneGraph: fetchOneGraph};
