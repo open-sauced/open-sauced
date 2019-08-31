@@ -92,9 +92,13 @@ export class NewRepoForm extends Component {
   }
 
   handleFetchRepoData = () => {
-    const url = this.state.url.split("/");
-    api.fetchRepositoryData(url[3], url[4]).then(response => {
-      const data = response.data.data.repositoryOwner.repository;
+    const [_1, _2, _3, owner, repo] = this.state.url.split("/");
+    if (!owner || !repo) {
+      console.warn("Invalid GitHub repository url!");
+    };
+
+    api.fetchRepositoryData(owner, repo).then(response => {
+      const data = response.data.gitHub.repositoryOwner.repository;
       const {name, url, description, forks, owner, stargazers, issues} = data;
       this.setState({
         data: data,
