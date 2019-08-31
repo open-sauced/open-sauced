@@ -1,22 +1,21 @@
-import {loginUser, logoutUser} from "./identityActions";
-const VALUE = "abc123";
-const KEY = "currentOpenSaucedUser";
+/* eslint-disable */
+import { getUserFromJwt } from "./identityActions";
+
+const mockedOneGraphAuth = {
+  accessToken: () => {
+    const mockedPayload = btoa(
+      JSON.stringify({ user: { email: "test@test.com", id: 123 } })
+    );
+    // Mocked JWT
+    const accessToken = "header." + mockedPayload + ".signature";
+    return { accessToken };
+  }
+};
 
 describe("loginUser", () => {
-  const response = {code: VALUE};
-
-  it("should initialize app withou a user set", () => {
-    expect(localStorage.getItem(KEY)).toBeNull();
-  });
-
-  it("should set user when logging in", () => {
-    loginUser(response);
-    expect(localStorage.setItem).toHaveBeenLastCalledWith(KEY, VALUE);
-  });
-
-  it("should remove user when logging out", () => {
-    loginUser(response);
-    logoutUser();
-    expect(localStorage.getItem(KEY)).toBeNull();
+  it("should decode a user from a JWT via onegraph-auth", () => {
+    const user = getUserFromJwt(mockedOneGraphAuth);
+    expect(user.email).toBe("test@test.com");
+    expect(user.id).toBe(123);
   });
 });
