@@ -1,11 +1,10 @@
 import React from "react";
 import Login from "../components/Login";
 
-export default function requireAuthentication(Component) {
-  class AuthHOC extends Component {
+export default function requireAuthentication(Component, user, handleLogIn) {
+  class AuthHOC extends React.Component {
     render() {
-      const user = localStorage.getItem("currentOpenSaucedUser");
-      return user ? <Component {...this.props} /> : <Login />;
+      return user ? <Component {...this.props} /> : <Login handleLogIn={handleLogIn} />;
     }
   }
   return AuthHOC;
