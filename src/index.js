@@ -4,7 +4,6 @@ import ReactDOM from "react-dom";
 import App from "./App";
 import {
   ApolloProvider,
-  ApolloClient,
   createNetworkInterface
 } from "react-apollo";
 import Config from "./config";
@@ -12,11 +11,11 @@ import {getUserFromJwt} from "./lib/identityActions";
 import "./index.css";
 import registerServiceWorker from "./registerServiceWorker";
 
-const client = new ApolloClient({
-  networkInterface: createNetworkInterface({
-    uri: `${process.env.graphcoolEndpoint}`
-  }),
-  dataIdFromObject: o => o.id
+import OneGraphApolloClient from 'onegraph-apollo-client';
+import OneGraphAuth from 'onegraph-auth';
+
+const apolloClient = new OneGraphApolloClient({
+  oneGraphAuth: Config.auth,
 });
 
 class Index extends React.Component {
@@ -66,7 +65,7 @@ class Index extends React.Component {
   render() {
     return (
       <div>
-        <ApolloProvider client={client}>
+        <ApolloProvider client={apolloClient}>
           <App user={this.state.user}
             userId={this.state.user && this.state.user.id}
             handleLogIn={() => this._handleLogIn()}

@@ -3,6 +3,24 @@ import Config from "../config";
 const fetchOneGraph = Config.fetchOneGraph;
 
 const operationsDoc = `
+  query ContributedRepoQuery {
+    gitHub {
+      viewer {
+        repositoriesContributedTo(
+          first: 10
+          orderBy: { direction: DESC, field: CREATED_AT }
+        ) {
+          nodes {
+            id
+            nameWithOwner
+            name
+            url
+          }
+        }
+      }
+    }
+  }
+
   query RepoQuery($repo: String!, $owner: String!) {
     gitHub {
       repositoryOwner(login: $owner) {
@@ -97,38 +115,29 @@ const operationsDoc = `
   }
 `;
 
+function fetchContributedRepoQuery() {
+  return fetchOneGraph(operationsDoc, "ContributedRepoQuery");
+}
+
 function fetchRepoQuery(owner, repo) {
-  return fetchOneGraph(
-    operationsDoc,
-    "RepoQuery",
-    {"repo": repo, "owner": owner}
-  );
+  return fetchOneGraph(operationsDoc, "RepoQuery", {repo: repo, owner: owner});
 }
 
 function fetchIssuesBeforeQuery(owner, repo, cursor) {
-  return fetchOneGraph(
-    operationsDoc,
-    "IssuesBeforeQuery",
-    {"owner": owner, "repo": repo, "cursor": cursor}
-  );
+  return fetchOneGraph(operationsDoc, "IssuesBeforeQuery", {owner: owner, repo: repo, cursor: cursor});
 }
 
 function fetchIssuesAfterQuery(owner, repo, cursor) {
-  return fetchOneGraph(
-    operationsDoc,
-    "IssuesAfterQuery",
-    {"owner": owner, "repo": repo, "cursor": cursor}
-  );
+  return fetchOneGraph(operationsDoc, "IssuesAfterQuery", {owner: owner, repo: repo, cursor: cursor});
 }
 const api = {
-  fetchRepositoryData: fetchRepoQuery,
+  fetchRepositoryData: fetchRepoQuery, fetchContributedRepoQuery,
 
   fetchRepositoryIssues: (owner, repo, cursor, previous = false) => {
-    const issueFetcher =
-      cursor && previous ? fetchIssuesBeforeQuery : fetchIssuesAfterQuery;
+    const issueFetcher = cursor && previous ? fetchIssuesBeforeQuery : fetchIssuesAfterQuery;
 
     issueFetcher(owner, repo, cursor);
-  }
+  },
 };
 
 export default api;
