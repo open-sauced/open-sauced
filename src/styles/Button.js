@@ -1,20 +1,20 @@
 import styled from "styled-components";
-import {borderRadius, colors, padding} from "./variables";
+import {borderRadius, colors, size} from "./variables";
 
 const Button = styled.button`
   background: ${props => {
     return props.destructive ? colors.saucyRed : colors.accent;
   }};
-  border: none;
+  border: 2px solid ${colors.lightGrey} ;
   border-radius: ${borderRadius.smallBorderRadius};
   box-shadow: none;
-  color: white;
+  color: black;
   cursor: pointer;
-  font-size: ${padding.tiny};
-  margin-bottom: ${padding.tiny};
-  margin-right: ${padding.micro};
+  font-size: ${size.tiny};
+  margin-bottom: ${size.tiny};
+  margin-right: ${size.micro};
   outline: none;
-  padding: ${padding.tiny};
+  padding: ${size.tiny};
   transition: background 0.2s ease;
 
   &:hover {

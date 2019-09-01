@@ -29,7 +29,7 @@ const typography = {
   black: "900",
 };
 
-const padding = {
+const size = {
   micro:" 8px",
   tiny: "16px",
   small: "24px",
@@ -52,4 +52,4 @@ const responsiveBreakpoints = {
   display: "1200px"
 };
 
-export {colors, margin, typography, padding, borderRadius, responsiveBreakpoints};
+export {colors, margin, typography, size, borderRadius, responsiveBreakpoints};
