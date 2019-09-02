@@ -29,7 +29,7 @@
     "eslint-plugin-prettier": "2.7.0",
     "eslint-plugin-react": "^7.14.2",
     "file-loader": "^4.2.0",
-    "filesize": "3.3.0",
+    "filesize": "4.1.2",
     "find-cache-dir": "3.0.0",
     "fs-extra": "8.1.0",
     "gzip-size": "3.0.0",
