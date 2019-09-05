@@ -64,7 +64,7 @@
   "dependencies": {
     "@babel/preset-env": "^7.4.5",
     "@babel/register": "^7.4.4",
-    "@octokit/rest": "^16.1.0",
+    "@octokit/rest": "^16.28.9",
     "add": "^2.0.6",
     "apollo-boost": "^0.4.4",
     "apollo-client": "2.0.0-0",
