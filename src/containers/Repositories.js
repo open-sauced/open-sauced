@@ -4,6 +4,7 @@
 import React, {Component} from "react";
 import Repository from "./Repository";
 import Instructions from "../components/Instructions";
+import Goals from "../containers/Goals";
 import {graphql, compose} from "react-apollo";
 import {Route, Link} from "react-router-dom";
 import {allRepoQuery, createViewer} from "../queries";
@@ -26,7 +27,8 @@ export class Repositories extends Component {
     const {repositoriesContributedTo} = data;
     const content = () => (
       <div className="landing-nav">
-        <h1>Reposoitories you have contributed to</h1>
+        <Goals />
+        <h1>Repositories you have contributed to</h1>
         <br />
           {repositoriesContributedTo && <Instructions allRepositories={repositoriesContributedTo.nodes} />}
         <ul>
