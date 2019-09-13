@@ -113,6 +113,53 @@ const operationsDoc = `
       }
     }
   }
+
+  query FetchGoals($labels: [String!]!) {
+    gitHub {
+      viewer {
+        repository(name: "open-sauced-goals") {
+          issues(
+            first: 100
+            orderBy: { direction: DESC, field: CREATED_AT }
+          ) {
+            totalCount
+            nodes {
+              id
+              title
+              body
+              labels(first: 100) {
+                nodes {
+                  color
+                  name
+                  id
+                }
+              }
+              state
+            }
+          }
+        }
+      }
+    }
+  }
+
+  mutation CreateOpenSaucedGoalsRepo {
+    gitHub {
+      createRepository(
+        input: {
+          visibility: PUBLIC
+          name: "open-sauced-goals"
+          description: "A list of contributions I might like to make some day!"
+        }
+      ) {
+        repository {
+          id
+          name
+          nameWithOwner
+          url
+        }
+      }
+    }
+  }
 `;
 
 function fetchContributedRepoQuery() {
@@ -130,14 +177,26 @@ function fetchIssuesBeforeQuery(owner, repo, cursor) {
 function fetchIssuesAfterQuery(owner, repo, cursor) {
   return fetchOneGraph(operationsDoc, "IssuesAfterQuery", {owner: owner, repo: repo, cursor: cursor});
 }
+
+function fetchGoalsQuery(labels) {
+  return fetchOneGraph(operationsDoc, "FetchGoals", {labels: labels});
+}
+
+function createOpenSaucedGoalsRepo() {
+  return fetchOneGraph(operationsDoc, "CreateOpenSaucedGoalsRepo", {});
+}
+
 const api = {
-  fetchRepositoryData: fetchRepoQuery, fetchContributedRepoQuery,
+  fetchRepositoryData: fetchRepoQuery,
+  fetchContributedRepoQuery,
 
   fetchRepositoryIssues: (owner, repo, cursor, previous = false) => {
     const issueFetcher = cursor && previous ? fetchIssuesBeforeQuery : fetchIssuesAfterQuery;
 
     issueFetcher(owner, repo, cursor);
   },
+  fetchGoalsQuery,
+  createOpenSaucedGoalsRepo,
 };
 
 export default api;
