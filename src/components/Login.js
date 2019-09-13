@@ -15,7 +15,7 @@ export class Login extends Component {
         <div style={spacingStyle}>
           <img src={logo} alt="logo" />
           <p style={{marginTop: 16}}>The path towards open-source contributions.</p>
-          <Button onClick={handleLogIn}>Login to get Saucin</Button>
+          <Button onClick={handleLogIn}>Login with GitHub</Button>
         </div>
       </FlexCenter>
     );
