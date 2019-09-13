@@ -1,12 +1,9 @@
-[![Build Status](https://travis-ci.org/bdougie/open-sauced.svg?branch=master)](https://travis-ci.org/bdougie/open-sauced)
+[![Build Status](https://github.com/bdougie/open-sacued/workflows/workflows/.github/workflows/nodejs.yml/badge.svg)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/76a3de8e-270c-4adf-89d5-3a3863da74e6/deploy-status)](https://app.netlify.com/sites/open-sauced/deploys)
 
 # Open Sauced
 
-This is a GraphQL starter project to help people stalk open source repositories and take notes on them. This project uses Graphcool as a GraphQL backend, Apollo as the GraphQL client, and Netlify to deploy. 
-
-The data fetching from GitHub uses their GraphQL Early Access API
-exclusively.
+This is a GraphQL starter project to help people stalk open source repositories and take notes on them. This project uses OneGraphl as an interface to the GitHub [GraphQL API](https://developer.github.com/v4/) and Netlify to deploy.
 
 ![open-sauced-screencap](https://user-images.githubusercontent.com/5713670/60572213-020b6800-9d2a-11e9-9cce-875eba95b326.png)
 
