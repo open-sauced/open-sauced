@@ -44,7 +44,7 @@
     "postcss-loader": "^3.0.0",
     "promise": "7.1.1",
     "react-dev-utils": "^9.0.1",
-    "react-scripts": "^3.0.1",
+    "react-scripts": "^3.1.1",
     "react-test-renderer": "^15.5.4",
     "recursive-readdir": "2.2.2",
     "rimraf": "3.0.0",
