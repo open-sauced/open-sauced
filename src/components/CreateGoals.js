@@ -7,7 +7,7 @@ export class CreateGoals extends Component {
     return (
       <div>
         <p>To get saucin' create a goals</p>
-        <Button onClick={handleGoalCreation}>Create Goal Repo</Button>
+        <Button onClick={handleGoalCreation}>Create your goal workspace</Button>
       </div>
     );
   }

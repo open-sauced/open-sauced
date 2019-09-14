@@ -3,7 +3,6 @@
 
 import React, {Component} from "react";
 import api from "../lib/apiGraphQL";
-import RepoCount from "../components/Count";
 import {graphql} from "react-apollo";
 import {createRepo} from "../queries";
 import {Redirect} from "react-router";
@@ -114,7 +113,6 @@ export class NewRepoForm extends Component {
   }
 
   render() {
-    const {count} = this.props;
     const {contributors, name, url, description, forks, owner, stargazers, issues, submitted} = this.state;
 
     return !submitted ? (
@@ -201,7 +199,6 @@ export class NewRepoForm extends Component {
               placeholder="Repository Description"
               name="notes"
             />
-            <RepoCount count={count} />
             <Button onClick={this.handleRepoCreation}>
               <span className="icon-plus" />
               Add repository to your list
