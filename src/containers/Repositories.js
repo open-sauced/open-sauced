@@ -34,8 +34,9 @@ export class Repositories extends Component {
         <ul>
           {repositoriesContributedTo ? (
             repositoriesContributedTo.nodes.map(repo => (
-              <li key={repo.name}>
-                <Link to={`/repos/${repo.name}/${repo.id}`}>{repo.name}</Link>
+              <li key={repo.nameWithOwner}>
+                {/* Swap repo.id with open-sauced-goals id */}
+                <Link to={`/repos/${repo.nameWithOwner}/${repo.id}`}>{repo.nameWithOwner}</Link>
               </li>
             ))
           ) : (
@@ -48,7 +49,7 @@ export class Repositories extends Component {
     return (
       <div className="repositories">
         <Route exact path={match.url} render={content} />
-        <Route path={"/repos/:repoName/:id"} component={Repository} />
+        <Route path={"/repos/:repoOwner/:repoName/:id"} component={Repository} />
       </div>
     );
   }

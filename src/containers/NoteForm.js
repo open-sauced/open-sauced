@@ -2,11 +2,10 @@
 // replace with hooks and new React path
 
 import React, {Component} from "react";
-import {graphql, compose} from "react-apollo";
 import {Redirect} from "react-router";
 import Button from "../styles/Button";
 import {FormColumn} from "../styles/Grid";
-import {updateRepo, deleteRepo} from "../queries";
+import api from "../lib/apiGraphQL";
 
 export class NoteForm extends Component {
   state = {
@@ -25,15 +24,16 @@ export class NoteForm extends Component {
     const {notesInput} = this.state;
     const {repoId} = this.props;
 
-    this.props
-      .updateRepo({variables: {notes: notesInput, id: repoId}})
+    api
+      .updateGoal({variables: {notes: notesInput, id: repoId}})
       .then(() => this.setState({notesInput: "", editing: false}));
   };
 
   handleRepoDeletion = () => {
     const {repoId} = this.props;
 
-    this.props.mutate.deleteRepo({variables: {id: repoId}}).then(() => this.setState({deleted: true}));
+  console.log("update api to close goal issues or remove comments")
+    // api.deleteGoal({variables: {id: repoId}}).then(() => this.setState({deleted: true}));
   };
 
   handleToggleEditing = () => {
@@ -79,8 +79,4 @@ export class NoteForm extends Component {
   }
 }
 
-const FormWithMutations = compose(graphql(updateRepo, {name: "updateRepo"}), graphql(deleteRepo, {name: "deleteRepo"}))(
-  NoteForm,
-);
-
-export default FormWithMutations;
+export default NoteForm;

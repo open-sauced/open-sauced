@@ -25,7 +25,9 @@ const operationsDoc = `
     gitHub {
       repositoryOwner(login: $owner) {
         repository(name: $repo) {
+          id
           name
+          nameWithOwner
           url
           owner {
             login

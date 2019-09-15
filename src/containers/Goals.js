@@ -26,10 +26,9 @@ export class Goals extends Component {
   render() {
     const {data} = this.state;
     // undefined after clicking create goals repo 
-    // TDOD: add a loading check or subscription/pinger
+    // TODO: add a loading check or subscription/pinger
     const {repository} = data;
-    console.log(repository)
-    return repository ? <ListGoals /> : <CreateGoals handleGoalCreation={() => this._handleGoalRepoCreation()} />;
+    return repository ? <ListGoals data={repository} /> : <CreateGoals handleGoalCreation={() => this._handleGoalRepoCreation()} />;
   }
 }
 
