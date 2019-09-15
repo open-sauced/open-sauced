@@ -29,9 +29,6 @@ const operationsDoc = `
           url
           owner {
             login
-            repositories {
-              totalCount
-            }
           }
           description
           forks {
@@ -42,6 +39,39 @@ const operationsDoc = `
           }
           stargazers {
             totalCount
+          }
+        }
+      }
+    }
+  }
+
+  query IssuesQuery($owner: String!, $repo: String!) {
+    gitHub {
+      repositoryOwner(login: $owner) {
+        repository(name: $repo) {
+          issues(first: 5, states: OPEN, orderBy: {field: CREATED_AT, direction: DESC}) {
+            totalCount
+            data: edges {
+              cursor
+              node {
+                id
+                title
+                url
+                state
+                author {
+                  login
+                }
+                labels(first: 5) {
+                  data: edges {
+                    node {
+                      id
+                      name
+                    }
+                  }
+                }
+                createdAt
+              }
+            }
           }
         }
       }
@@ -160,6 +190,60 @@ const operationsDoc = `
       }
     }
   }
+
+  mutation CreateGoal(
+    $repoId: ID!
+    $title: String!
+    $notes: String
+  ) {
+    __typename
+    gitHub {
+      createIssue(
+        input: {
+          title: $title
+          repositoryId: $repoId
+          body: $notes
+        }
+      ) {
+        issue {
+          id
+          title
+          labels(first: 100) {
+            nodes {
+              name
+              id
+              color
+            }
+          }
+        }
+      }
+    }
+  }
+
+  mutation UpdateGoal(
+    $id: ID!
+    $labelIds: [ID!]
+    $state: GitHubIssueState
+    $title: String
+    $notes: String
+  ) {
+    __typename
+    gitHub {
+      updateIssue(
+        input: {
+          id: $id
+          labelIds: $labelIds
+          state: $state
+          title: $title
+          body: $notes
+        }
+      ) {
+        issue {
+          id
+        }
+      }
+    }
+  }
 `;
 
 function fetchContributedRepoQuery() {
@@ -168,6 +252,10 @@ function fetchContributedRepoQuery() {
 
 function fetchRepoQuery(owner, repo) {
   return fetchOneGraph(operationsDoc, "RepoQuery", {repo: repo, owner: owner});
+}
+
+function fetchIssuesQuery(owner, repo, cursor) {
+  return fetchOneGraph(operationsDoc, "IssuesQuery", {owner: owner, repo: repo});
 }
 
 function fetchIssuesBeforeQuery(owner, repo, cursor) {
@@ -186,17 +274,34 @@ function createOpenSaucedGoalsRepo() {
   return fetchOneGraph(operationsDoc, "CreateOpenSaucedGoalsRepo", {});
 }
 
+function createGoal(repoId, title, notes) {
+  return fetchOneGraph(operationsDoc, "CreateGoal", {repoId: repoId, title: title, body: notes});
+}
+
+function updateGoal(id, labelIds, title, state, notes) {
+  return fetchOneGraph(operationsDoc, "UpdateGoal", {
+    id: id,
+    labelIds: labelIds,
+    state: state,
+    title: title,
+    body: notes,
+  });
+}
+
 const api = {
   fetchRepositoryData: fetchRepoQuery,
   fetchContributedRepoQuery,
 
+  fetchIssuesQuery,
   fetchRepositoryIssues: (owner, repo, cursor, previous = false) => {
     const issueFetcher = cursor && previous ? fetchIssuesBeforeQuery : fetchIssuesAfterQuery;
 
-    issueFetcher(owner, repo, cursor);
+    return issueFetcher(owner, repo, cursor);
   },
   fetchGoalsQuery,
   createOpenSaucedGoalsRepo,
+  createGoal,
+  updateGoal
 };
 
 export default api;
