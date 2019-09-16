@@ -11,9 +11,16 @@ export class Goals extends Component {
 
   componentDidMount() {
     api.fetchGoalsQuery().then(response => {
+      console.log(response)
       const data = response.data.gitHub.viewer;
       this.setState({data});
     });
+  }
+
+  _handleGoalId(id) {
+    // TODO: create a better solution for this
+    // global store
+    localStorage.setItem("goalsId", id);
   }
 
   _handleGoalRepoCreation() {
@@ -28,6 +35,9 @@ export class Goals extends Component {
     // undefined after clicking create goals repo 
     // TODO: add a loading check or subscription/pinger
     const {repository} = data;
+    repository && console.log(repository)
+    repository && this._handleGoalId(repository.id)
+
     return repository ? <ListGoals data={repository} /> : <CreateGoals handleGoalCreation={() => this._handleGoalRepoCreation()} />;
   }
 }

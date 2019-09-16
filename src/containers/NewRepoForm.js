@@ -3,7 +3,6 @@
 
 import React, {Component} from "react";
 import api from "../lib/apiGraphQL";
-import {createRepo} from "../queries";
 import {Redirect} from "react-router";
 import Button from "../styles/Button";
 import {Link} from "react-router-dom";
@@ -23,11 +22,18 @@ export class NewRepoForm extends Component {
     submitted: false,
   };
 
-  handleSetUrl = (e) => {
+  _handleSetUrl = (e) => {
     this.setState({url: e.target.value});
   }
 
-  handleFetchRepoData = () => {
+  _handleNoteCreation = (name, notesInput) => {
+    const goalsId = localStorage.getItem("goalsId");
+    const title = name;
+
+    api.createGoal(goalsId, title, notesInput).then(() => this.setState({notesInput: "", editing: false}));
+  };
+
+  _handleFetchRepoData = () => {
     const [_1, _2, _3, owner, repo] = this.state.url.split("/");
     if (!owner || !repo) {
       console.warn("Invalid GitHub repository url!");
@@ -47,6 +53,8 @@ export class NewRepoForm extends Component {
         stargazers: stargazers.totalCount,
         issues: issues.totalCount,
       });
+
+      this._handleNoteCreation(nameWithOwner, null)
     });
   }
 
@@ -63,12 +71,12 @@ export class NewRepoForm extends Component {
             <input
               className="utility-input urlForm"
               type="url"
-              onChange={this.handleSetUrl}
+              onChange={this._handleSetUrl}
               value={url}
               placeholder="https://github.com/babel/actions"
             />
             {name && <Link to={`/repos/${name}/${id}`}><Button disabled={!url}>explore {name} issues</Button></Link>}
-            {!name && <Button disabled={!url} onClick={this.handleFetchRepoData}>Fetch repository data</Button>}
+            {!name && <Button disabled={!url} onClick={this._handleFetchRepoData}>Fetch repository data</Button>}
           </div>
           <div className="shadow" />
         </div>

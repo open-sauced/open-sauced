@@ -16,30 +16,37 @@ export class NoteForm extends Component {
     deleted: false,
   };
 
-  handleNotesChange = e => {
+  _handleNotesChange = e => {
     this.setState({notesInput: e.target.value});
   };
 
-  handleNoteCreation = () => {
+  _handleNoteCreation = () => {
     const {notesInput} = this.state;
-    const {repoId} = this.props;
+    const {repoId, repoName} = this.props;
 
+    // TODO: updateGoal insteadsrc/lib/apiGraphQL.js
     api
-      .updateGoal({variables: {notes: notesInput, id: repoId}})
-      .then(() => this.setState({notesInput: "", editing: false}));
+      .updateGoal(repoId, repoName, "OPEN", notesInput)
+      .then((response) => console.log(response))
+      .catch(err => console.log(err));
   };
 
-  handleRepoDeletion = () => {
-    const {repoId} = this.props;
+  _handleRepoDeletion = () => {
+    const {repoId, repoName} = this.props;
+    const {notesInput} = this.state;
 
-  console.log("update api to close goal issues or remove comments")
-    // api.deleteGoal({variables: {id: repoId}}).then(() => this.setState({deleted: true}));
+    api
+      .updateGoal(repoId, repoName, "CLOSED", notesInput)
+      .then((response) => this.setState({notesInput: "", editing: false}).catch(err => console.log(err)))
+      .catch(err => console.log(err));
   };
 
   handleToggleEditing = () => {
     this.setState({editing: !this.state.editing});
   };
 
+  // TODO: create a button to display until goal is created for repo
+  // notes should not be created without api.createGoal initialized
   render() {
     const {notesInput, editing, deleted} = this.state;
     const {notes, repoName} = this.props;
@@ -52,14 +59,14 @@ export class NoteForm extends Component {
             style={{minHeight: 170}}
             disabled={!editing}
             className="utility-input boxed-input text-box light-shadow"
-            onChange={this.handleNotesChange}
+            onChange={this._handleNotesChange}
             value={noteContent || ""}
             type="text"
             placeholder={`Type your notes for ${repoName} here...`}
             name="notes"
           />
           {editing ? (
-            <Button onClick={this.handleNoteCreation}>
+            <Button onClick={this._handleNoteCreation}>
               <span className="icon-write" /> Save Notes
             </Button>
           ) : (
@@ -67,7 +74,7 @@ export class NoteForm extends Component {
               <span className="icon-write" /> Edit Notes
             </Button>
           )}
-          <Button destructive onClick={this.handleRepoDeletion}>
+          <Button destructive onClick={this._handleRepoDeletion}>
             {" "}
             Delete
           </Button>

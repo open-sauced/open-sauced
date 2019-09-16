@@ -211,13 +211,6 @@ const operationsDoc = `
         issue {
           id
           title
-          labels(first: 100) {
-            nodes {
-              name
-              id
-              color
-            }
-          }
         }
       }
     }
@@ -225,7 +218,6 @@ const operationsDoc = `
 
   mutation UpdateGoal(
     $id: ID!
-    $labelIds: [ID!]
     $state: GitHubIssueState
     $title: String
     $notes: String
@@ -235,7 +227,6 @@ const operationsDoc = `
       updateIssue(
         input: {
           id: $id
-          labelIds: $labelIds
           state: $state
           title: $title
           body: $notes
@@ -243,6 +234,7 @@ const operationsDoc = `
       ) {
         issue {
           id
+          body
         }
       }
     }
@@ -281,13 +273,12 @@ function createGoal(repoId, title, notes) {
   return fetchOneGraph(operationsDoc, "CreateGoal", {repoId: repoId, title: title, body: notes});
 }
 
-function updateGoal(id, labelIds, title, state, notes) {
+function updateGoal(id, title, state, notes) {
   return fetchOneGraph(operationsDoc, "UpdateGoal", {
     id: id,
-    labelIds: labelIds,
     state: state,
     title: title,
-    body: notes,
+    notes: notes,
   });
 }
 

@@ -21,7 +21,8 @@ export class Repository extends React.Component {
 
   render() {
     const {repository} = this.state.data;
-    const {id, url, stars, forksCount, issuesCount, name, description, notes, owner} = repository || {};
+    const {id, url, stargazers, forks, issues, name, nameWithOwner, description, body, owner} = repository || {};
+    console.log(repository)
 
     return (
       <div>
@@ -31,16 +32,16 @@ export class Repository extends React.Component {
               <h1>{name}</h1>
             </a>
             <p>{description}</p>
-            <p>{issuesCount} issues</p>
-            <p>{forksCount} forks</p>
-            <p>{stars} ★'s</p>
+            <p>{issues.totalCount} issues</p>
+            <p>{forks.totalCount} forks</p>
+            <p>{stargazers.totalCount} ★</p>
           </div>
         ) : (
           <p>Loading...</p>
         )}
         {owner && <div style={{display: "flex", justifyContent: "space-between"}}>
           <Issues repoName={name} owner={owner.login} />
-          <Form notes={notes} repoId={id} repoName={name} />
+          <Form notes={body} repoId={this.props.match.params.id} repoName={nameWithOwner} />
         </div>}
       </div>
     );
