@@ -150,6 +150,7 @@ const operationsDoc = `
     gitHub {
       viewer {
         repository(name: "open-sauced-goals") {
+          id
           issues(
             first: 100
             orderBy: { direction: DESC, field: CREATED_AT }
@@ -303,7 +304,7 @@ const api = {
   fetchGoalsQuery,
   createOpenSaucedGoalsRepo,
   createGoal,
-  updateGoal
+  updateGoal,
 };
 
 export default api;
