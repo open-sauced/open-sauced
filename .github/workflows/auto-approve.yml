@@ -1,4 +1,4 @@
-name: Auto approve
+name: Auto approve and merge Dependabot
 on: pull_request
 
 jobs:
@@ -9,3 +9,16 @@ jobs:
       if: github.actor == 'dependabot[bot]' || github.actor == 'dependabot-preview[bot]'
       with:
         github-token: "${{ secrets.GITHUB_TOKEN }}"
+    - name: Label when approved
+      uses: bdougie/label-when-approved-action@master
+      if: github.actor == 'dependabot[bot]' || github.actor == 'dependabot-preview[bot]'
+      env:
+        APPROVALS: "1"
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        ADD_LABEL: "automerge"
+    - name: automerge
+      uses: bdougie/automerge-action@master
+      if: github.actor == 'dependabot[bot]' || github.actor == 'dependabot-preview[bot]'
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
