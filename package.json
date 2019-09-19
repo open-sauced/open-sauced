@@ -33,7 +33,7 @@
     "find-cache-dir": "3.0.0",
     "fs-extra": "8.1.0",
     "gzip-size": "3.0.0",
-    "html-webpack-plugin": "^4.0.0-beta.5",
+    "html-webpack-plugin": "^4.0.0-beta.8",
     "http-proxy-middleware": "0.19.1",
     "jest": "24.8.0",
     "jest-localstorage-mock": "^2.4.0",
