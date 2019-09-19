@@ -4,7 +4,6 @@ on: [push]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     strategy:
@@ -13,6 +12,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
+      if: github.event == 'push'
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
       with:
