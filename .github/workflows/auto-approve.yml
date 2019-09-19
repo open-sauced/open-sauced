@@ -2,7 +2,7 @@ name: Auto approve and merge Dependabot
 on: pull_request
 
 jobs:
-  build:
+  auto-merge:
     runs-on: ubuntu-latest
     steps:
     - uses: hmarr/auto-approve-action@v2.0.0
