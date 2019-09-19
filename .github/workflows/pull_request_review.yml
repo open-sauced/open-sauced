@@ -8,7 +8,7 @@ jobs:
     - name: Label when approved
       uses: pullreminders/label-when-approved-action@master
       env:
-        APPROVALS: "2"
+        APPROVALS: "1"
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         ADD_LABEL: "automerge"
     - name: automerge
