@@ -6,7 +6,19 @@ on:
     - master
       
 jobs:
+  labelWhenApproved:
+    name: Label when approved
+    runs-on: ubuntu-latest
+    steps:
+    - name: Label when approved
+      uses: pullreminders/label-when-approved-action@master
+      env:
+        APPROVALS: "2"
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        ADD_LABEL: "automerge"
+        REMOVE_LABEL: "awaiting review"
   automerge:
+    needs: labelWhenApproved
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
