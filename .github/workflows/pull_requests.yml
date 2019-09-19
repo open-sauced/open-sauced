@@ -6,30 +6,7 @@ on:
     - master
       
 jobs:
-  labelWhenApproved:on: pull_request
-name: automerge pull requests on updates
-jobs:
   automerge:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@master
-    - name: automerge
-      uses: pascalgn/automerge-action@33f73f0a562129c7e96123e98af20d4378f1fa3b
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-    name: Label when approved
-    runs-on: ubuntu-latest
-    steps:
-    - name: Label when approved
-      uses: pullreminders/label-when-approved-action@master
-      env:
-        APPROVALS: "2"
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        ADD_LABEL: "automerge"
-        REMOVE_LABEL: "awaiting review"
-  automerge:
-    needs: labelWhenApproved
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
