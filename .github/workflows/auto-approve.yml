@@ -3,7 +3,6 @@ on: pull_request
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     strategy:
@@ -23,6 +22,7 @@ jobs:
       env:
         CI: true
   auto-merge:
+    needs: build
     runs-on: ubuntu-latest
     steps:
     - uses: hmarr/auto-approve-action@v2.0.0
