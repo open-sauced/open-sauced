@@ -5,17 +5,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: hmarr/auto-approve-action@v2.0.0
-      if: github.actor == 'dependabot[bot]' || github.actor == 'dependabot-preview[bot]'
-      with:
-        github-token: "${{ secrets.GITHUB_TOKEN }}"
-    - name: Label when approved
-      uses: bdougie/label-when-approved-action@master
-      if: github.actor == 'dependabot[bot]' || github.actor == 'dependabot-preview[bot]'
-      env:
-        APPROVALS: "1"
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        ADD_LABEL: "automerge"
     - name: automerge
       uses: bdougie/automerge-action@de631dd9e7650aebeeb115e3fdd7377526bc40d3
       if: github.actor == 'dependabot[bot]' || github.actor == 'dependabot-preview[bot]'
