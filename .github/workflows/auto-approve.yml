@@ -21,5 +21,3 @@ jobs:
       if: github.actor == 'dependabot[bot]' || github.actor == 'dependabot-preview[bot]'
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        LABELS: "dependencies"
-
