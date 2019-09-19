@@ -17,7 +17,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         ADD_LABEL: "automerge"
     - name: automerge
-      uses: bdougie/automerge-action@master
+      uses: bdougie/automerge-action@bot
       if: github.actor == 'dependabot[bot]' || github.actor == 'dependabot-preview[bot]'
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
