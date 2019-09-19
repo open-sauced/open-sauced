@@ -12,6 +12,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         ADD_LABEL: "automerge"
     - name: automerge
-      uses: pascalgn/automerge-action@33f73f0a562129c7e96123e98af20d4378f1fa3b
+      uses: pascalgn/automerge-action@33f73f0a562129c7e96123e98af20d4378f1fa
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        LABELS: "!wip"
