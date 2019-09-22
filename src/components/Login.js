@@ -1,6 +1,4 @@
 import React, {Component} from "react";
-import {createViewer} from "../queries";
-import {graphql} from "react-apollo";
 import logo from "./logo8.svg";
 import {FlexCenter} from "../styles/Grid";
 import Button from "../styles/Button";
@@ -22,6 +20,4 @@ export class Login extends Component {
   }
 }
 
-const LoginWithMutation = graphql(createViewer)(Login);
-
-export default LoginWithMutation;
+export default Login;

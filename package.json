@@ -83,7 +83,6 @@
     "promisingagent": "5.3.2",
     "react": "16.9.0",
     "react-apollo": "^1.4.15",
-    "react-cookies": "^0.1.1",
     "react-dom": "16.2.1",
     "react-github-login": "^1.0.3",
     "react-router": "^4.1.1",
