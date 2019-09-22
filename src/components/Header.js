@@ -1,5 +1,4 @@
 import React from "react";
-import Dropdown from "../containers/Dropdown";
 import {home, github, plus, logout, issue} from "../icons";
 import {Link} from "react-router-dom";
 import {FloatLeft} from "../styles/Grid";
@@ -16,7 +15,6 @@ const Header = ({user, handleLogOut}) => {
         <Link to="/new" className="nav-link" alt="Add A Repo">
           <img src={plus} />
         </Link>
-        <Dropdown />
       </FloatLeft>
 
       <a className="nav-link" onClick={handleLogOut}>

@@ -2,22 +2,21 @@
 // replace with hooks and new React path
 
 import React, {Component} from "react";
-import api from "../lib/apiGraphQL";
 import {FlexCenter, IssuesColumn} from "../styles/Grid";
 import PointerLink from "../styles/PointerLink";
 import {TinyFont} from "../styles/Typography";
 import {chevronRight, chevronLeft} from "../icons";
+import api from "../lib/apiGraphQL";
 
 class Issues extends Component {
   state = {issues: null, cursor: null, totalCount: 0, offset: 0};
 
-  componentDidUpdate(prevProps, prevState) {
+  componentDidMount(prevProps, prevState) {
     const {repoName, owner} = this.props;
 
-    if (prevProps.owner !== null && prevProps.owner !== owner) {
-      api.fetchRepositoryIssues(owner, repoName).then(response => {
+      api.fetchIssuesQuery(owner, repoName).then(response => {
         const {data, totalCount} = response.data.gitHub.repositoryOwner.repository.issues;
-        const lastIssue = data[data.length - 1];
+        const lastIssue = totalCount > 0 ? data[data.length - 1] : {};
         const {cursor} = lastIssue;
         this.setState({
           issues: data,
@@ -25,7 +24,6 @@ class Issues extends Component {
           cursor,
         });
       });
-    }
   }
 
   handleNextIssues = () => {
@@ -65,7 +63,7 @@ class Issues extends Component {
     const totalPages = Math.round(totalCount / 5);
     const currentPage = offset / 5 + 1;
 
-    return owner ? (
+    return owner ? (totalCount > 0 &&
       <IssuesColumn>
         <ul>
           {issues &&

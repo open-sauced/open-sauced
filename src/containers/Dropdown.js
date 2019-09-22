@@ -1,6 +1,7 @@
 import React from "react";
 import {graphql} from "react-apollo";
 import {Link} from "react-router-dom";
+// switch this to list api.fetchGoals
 import {allRepoQuery} from "../queries";
 import cookie from "react-cookies";
 

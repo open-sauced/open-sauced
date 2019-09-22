@@ -1,42 +1,50 @@
+/* eslint-disable */
+// replace with hooks and new React path
 import React from "react";
 import Form from "./NoteForm";
 import Issues from "./Issues";
-import {graphql} from "react-apollo";
-import {repoQuery} from "../queries";
+import api from "../lib/apiGraphQL";
 
-export const Repository = ({data}) => {
-  const {repository} = data;
-  const {id, url, stars, forksCount, issuesCount, name, description, notes, owner} = repository || {};
+export class Repository extends React.Component {
+  state = {data: ""};
 
-  return (
-    <div>
-      {repository ? (
-        <div>
-          <a style={{textDecoration: "none"}} href={url} target="_blank">
-            <h1>{name}</h1>
-          </a>
-          <p>{description}</p>
-          <p>{issuesCount} issues</p>
-          <p>{forksCount} forks</p>
-          <p>{stars} ★'s</p>
-        </div>
-      ) : (
-        <p>Loading...</p>
-      )}
-      <div style={{display: "flex", justifyContent: "space-between"}}>
-        <Issues repoName={name} owner={owner} />
-        <Form notes={notes} repoId={id} repoName={name} />
+  componentDidMount() {
+    const {
+      params: {repoName, repoOwner},
+    } = this.props.match;
+
+    api.fetchRepositoryData(repoOwner, repoName).then(response => {
+      const data = response.data.gitHub.repositoryOwner;
+      this.setState({data});
+    });
+  }
+
+  render() {
+    const {repository} = this.state.data;
+    const {id, url, stargazers, forks, issues, name, nameWithOwner, description, body, owner} = repository || {};
+
+    return (
+      <div>
+        {repository ? (
+          <div>
+            <a style={{textDecoration: "none"}} href={url} target="_blank">
+              <h1>{name}</h1>
+            </a>
+            <p>{description}</p>
+            <p>{issues.totalCount} issues</p>
+            <p>{forks.totalCount} forks</p>
+            <p>{stargazers.totalCount} ★</p>
+          </div>
+        ) : (
+          <p>Loading...</p>
+        )}
+        {owner && <div style={{display: "flex", justifyContent: "space-between"}}>
+          <Issues repoName={name} owner={owner.login} />
+          <Form notes={body} repoId={this.props.match.params.id} repoName={nameWithOwner} />
+        </div>}
       </div>
-    </div>
-  );
-};
+    );
+  }
+}
 
-const RepositoryWithData = graphql(repoQuery, {
-  options: ownProps => ({
-    variables: {
-      id: ownProps.match.params.id,
-    },
-  }),
-})(Repository);
-
-export default RepositoryWithData;
+export default Repository;
