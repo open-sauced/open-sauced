@@ -32,7 +32,7 @@ const Header = ({user, handleLogOut}) => {
           <img src={github} />
         </span>
       </a>
-      <a className="nav-link" href="https://github.com/bdougie/open-sauced">
+      <a className="nav-link" href="https://github.com/bdougie">
         <span>
             Hi, {user.login}!
         </span>
