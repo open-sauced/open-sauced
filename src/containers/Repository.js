@@ -22,7 +22,6 @@ export class Repository extends React.Component {
   render() {
     const {repository} = this.state.data;
     const {id, url, stargazers, forks, issues, name, nameWithOwner, description, body, owner} = repository || {};
-    console.log(repository)
 
     return (
       <div>
