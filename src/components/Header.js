@@ -3,7 +3,7 @@ import {home, github, plus, logout, issue} from "../icons";
 import {Link} from "react-router-dom";
 import {FloatLeft} from "../styles/Grid";
 
-const Header = ({user, handleLogOut}) => {
+function Header({user, handleLogOut}) {
   return (
     <header>
       <FloatLeft>
@@ -33,12 +33,10 @@ const Header = ({user, handleLogOut}) => {
         </span>
       </a>
       <a className="nav-link" href="https://github.com/bdougie">
-        <span>
-            Hi, {user.login}!
-        </span>
+        <span>Hi, {user.login}!</span>
       </a>
     </header>
   );
-};
+}
 
 export default Header;

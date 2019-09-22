@@ -126,6 +126,7 @@ rules:
   import/extensions: 1
   react/self-closing-comp: 1
   react/sort-comp: 1
+  react/prefer-stateless-function: [<enabled>]
 
 # Global scoped method and vars
 globals:
