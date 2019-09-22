@@ -24,7 +24,6 @@ export class NoteForm extends Component {
     const {notesInput} = this.state;
     const {repoId, repoName} = this.props;
 
-    // TODO: updateGoal insteadsrc/lib/apiGraphQL.js
     api
       .updateGoal(repoId, repoName, "OPEN", notesInput)
       .then((response) => console.log(response))
@@ -45,8 +44,6 @@ export class NoteForm extends Component {
     this.setState({editing: !this.state.editing});
   };
 
-  // TODO: create a button to display until goal is created for repo
-  // notes should not be created without api.createGoal initialized
   render() {
     const {notesInput, editing, deleted} = this.state;
     const {notes, repoName} = this.props;

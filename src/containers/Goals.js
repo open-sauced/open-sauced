@@ -18,8 +18,6 @@ export class Goals extends Component {
   }
 
   _handleGoalId(id) {
-    // TODO: create a better solution for this
-    // global store
     localStorage.setItem("goalsId", id);
   }
 
@@ -32,8 +30,6 @@ export class Goals extends Component {
 
   render() {
     const {data} = this.state;
-    // undefined after clicking create goals repo 
-    // TODO: add a loading check or subscription/pinger
     const {repository} = data;
     repository && console.log(repository)
     repository && this._handleGoalId(repository.id)
