@@ -5,7 +5,6 @@ import React, {Component} from "react";
 import Repository from "./Repository";
 import Instructions from "../components/Instructions";
 import Goals from "../containers/Goals";
-import {graphql, compose} from "react-apollo";
 import {Route, Link} from "react-router-dom";
 import api from "../lib/apiGraphQL";
 
