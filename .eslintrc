@@ -33,7 +33,6 @@ rules:
   # Possible Errors
   # https://github.com/eslint/eslint/tree/master/docs/rules#possible-errors
   no-control-regex: 2
-  no-console: 1
   no-debugger: 2
   no-dupe-args: 2
   no-dupe-keys: 2
