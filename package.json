@@ -62,7 +62,7 @@
     "whatwg-fetch": "3.0.0"
   },
   "dependencies": {
-    "@babel/preset-env": "^7.4.5",
+    "@babel/preset-env": "^7.6.2",
     "@babel/register": "^7.6.2",
     "@octokit/rest": "^16.29.0",
     "add": "^2.0.6",
