@@ -89,7 +89,7 @@
     "react-router-dom": "^4.1.1",
     "styled-components": "3.4.10",
     "sw-precache-webpack-plugin": "0.11.5",
-    "webpack-manifest-plugin": "^2.1.0",
+    "webpack-manifest-plugin": "^2.1.2",
     "yarn": "^1.17.3"
   },
   "scripts": {
