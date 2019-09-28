@@ -1,4 +1,4 @@
-name: Auto approve and merge Dependabot
+name: Auto merge Dependabot
 on: pull_request
 
 jobs:
