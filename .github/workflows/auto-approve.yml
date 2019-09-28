@@ -1,5 +1,5 @@
 name: Auto approve and merge Dependabot
-on: deployment
+on: pull_request
 
 jobs:
   auto-merge:
@@ -10,6 +10,5 @@ jobs:
       run: echo "Hello ref ${{ github.ref }}"
     - name: automerge
       uses: bdougie/automerge-action@bot
-      if: github.actor == 'logs4netlify[bot]'
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
