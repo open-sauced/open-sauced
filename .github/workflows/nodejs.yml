@@ -1,6 +1,6 @@
 name: Node CI
 
-on: [push, pull_request]
+on: [push]
 
 jobs:
   build:
@@ -12,16 +12,13 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
-      if: github.event == 'push'
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
-      if: github.event == 'push'
       with:
         node-version: ${{ matrix.node-version }}
     - name: npm install and test
       run: |
         npm install
         npm test
-      if: github.event == 'push'
       env:
         CI: true
