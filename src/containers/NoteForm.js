@@ -37,7 +37,11 @@ function NoteForm({goalId, repoName, note}) {
 
   const noteContent = input !== "" ? input : note;
 
-  return !deleted ? (
+  if (deleted) {
+    <Redirect to="/" />;
+  }
+
+  return (
     <FormColumn>
       <div className="grid-half form">
         <textarea
@@ -65,8 +69,6 @@ function NoteForm({goalId, repoName, note}) {
         </Button>
       </div>
     </FormColumn>
-  ) : (
-    <Redirect to="/" />
   );
 }
 

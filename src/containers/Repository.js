@@ -17,8 +17,8 @@ function Repository({match, location}) {
     });
   }, [repository]);
 
-  const {goalId, note} = location;
   const {url, stargazers, forks, issues, name, nameWithOwner, description, owner} = repository || {};
+  const {goalId, note} = location;
 
   return (
     <div>
