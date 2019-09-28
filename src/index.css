@@ -177,14 +177,13 @@ header a.nav-link {
   transition: background-color 0.2s ease;
 }
 
-.repositories li:hover {
-  background: var(--cheesyYellow);
+.repositories li a:hover {
+  text-decoration-color: var(--cheesyYellow);
 }
 
 .repositories li a {
   color: var(--grey);
-  display: block;
-  padding: var(--small);
+  display: flex;
   text-decoration: none;
 }
 

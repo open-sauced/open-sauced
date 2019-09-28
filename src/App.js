@@ -5,6 +5,7 @@ import Footer from "./components/Footer";
 import Header from "./components/Header";
 import {BrowserRouter as Router, Route} from "react-router-dom";
 import auth from "./hoc/AuthHOC";
+import {BaseStyles} from "@primer/components";
 
 function App({handleLogIn, handleLogOut, user}) {
   const guard = component => {
@@ -13,7 +14,7 @@ function App({handleLogIn, handleLogOut, user}) {
 
   return (
     <Router>
-      <div>
+      <BaseStyles>
         {user && <Header user={user} handleLogOut={handleLogOut} />}
         <section>
           <Route exact path="/" component={guard(Repositories)} user={user} />
@@ -22,7 +23,7 @@ function App({handleLogIn, handleLogOut, user}) {
           <Route path="/callback" component={guard(Repositories)} />
         </section>
         <Footer />
-      </div>
+      </BaseStyles>
     </Router>
   );
 }
