@@ -21,6 +21,8 @@ function Index() {
       if (isLoggedIn) {
         const user = getUserFromJwt(auth);
         setUser(user);
+
+        return user;
       } else {
         console.warn("User is not logged into GitHub");
       }

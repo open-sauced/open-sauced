@@ -28,7 +28,7 @@ function NoteForm({repoId, repoName, notes}) {
         setEditing(false);
         setDeleted(true);
       })
-      .catch(err => console.log(err))
+      .catch(err => console.log(err));
   };
 
   const _handleToggleEditing = () => {

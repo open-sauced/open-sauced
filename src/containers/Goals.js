@@ -1,3 +1,4 @@
+/*eslint-disable */
 import React, {useState, useEffect} from "react";
 import CreateGoals from "../components/CreateGoals";
 import ListGoals from "../components/ListGoals";
@@ -16,16 +17,16 @@ function Goals() {
   };
 
   useEffect(() => {
-    setLoading(true);
-
     api.fetchGoalsQuery().then(response => {
       const repo = response.data.gitHub.viewer.repository;
       setRepository(repo);
       localStorage.setItem("goalsId", repo.id);
     });
 
+
     setLoading(false);
   }, [repository]);
+  console.log(repository)
 
   return repository ? <ListGoals data={repository} /> : <CreateGoals handleGoalCreation={_handleRepoCreation} />;
 }
