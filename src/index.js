@@ -1,39 +1,35 @@
-/* eslint-disable */
-import React from "react";
+import React, {useState, useEffect} from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
-import {
-  ApolloProvider,
-  createNetworkInterface
-} from "react-apollo";
+import {ApolloProvider} from "react-apollo";
 import Config from "./config";
 import {getUserFromJwt} from "./lib/identityActions";
 import "./index.css";
 import registerServiceWorker from "./registerServiceWorker";
-
-import OneGraphApolloClient from 'onegraph-apollo-client';
-import OneGraphAuth from 'onegraph-auth';
+import OneGraphApolloClient from "onegraph-apollo-client";
 
 const apolloClient = new OneGraphApolloClient({
   oneGraphAuth: Config.auth,
 });
 
-class Index extends React.Component {
-  state = {user: null};
+function Index() {
+  const [user, setUser] = useState(null);
 
-  componentDidMount() {
+  useEffect(() => {
     const auth = Config.auth;
     auth.isLoggedIn("github").then(isLoggedIn => {
       if (isLoggedIn) {
         const user = getUserFromJwt(auth);
-        this.setState({user: user})
+        setUser(user);
+
+        return user;
       } else {
         console.warn("User is not logged into GitHub");
       }
     });
-  }
+  }, []);
 
-  _handleLogIn() {
+  const _handleLogIn = () => {
     const auth = Config.auth;
     auth
       .login("github")
@@ -44,37 +40,36 @@ class Index extends React.Component {
             // store it in component local state for the rest of the
             // app
             const user = getUserFromJwt(auth);
-            this.setState({user: user});
+            setUser(user);
           } else {
             console.warn("User did not grant auth for GitHub");
           }
         });
       })
       .catch(e => console.error("Problem logging in", e));
-  }
+  };
 
-  _handleLogOut() {
+  const _handleLogOut = () => {
     const auth = Config.auth;
     auth.logout("github").then(() => {
       // Remove the local onegraph-auth storage
       localStorage.removeItem("oneGraph:" + Config.appId);
-      this.setState({user: null})
+      setUser(null);
     });
-  }
+  };
 
-  render() {
-    return (
-      <div>
-        <ApolloProvider client={apolloClient}>
-          <App user={this.state.user}
-            userId={this.state.user && this.state.user.id}
-            handleLogIn={() => this._handleLogIn()}
-            handleLogOut={() => this._handleLogOut()}
-          />
-        </ApolloProvider>
-      </div>
-    );
-  }
+  return (
+    <div>
+      <ApolloProvider client={apolloClient}>
+        <App
+          user={user}
+          userId={user && user.id}
+          handleLogIn={() => _handleLogIn()}
+          handleLogOut={() => _handleLogOut()}
+        />
+      </ApolloProvider>
+    </div>
+  );
 }
 
 ReactDOM.render(<Index />, document.getElementById("root"));

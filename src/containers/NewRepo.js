@@ -1,12 +1,12 @@
 import React from "react";
 import Form from "./NewRepoForm";
 
-export const NewRepo = ({data}) => {
+function NewRepo({data}) {
   return (
     <div>
       <Form />
     </div>
   );
-};
+}
 
 export default NewRepo;
