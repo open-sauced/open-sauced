@@ -146,14 +146,15 @@ const operationsDoc = `
     }
   }
 
-  query FetchGoals($labels: [String!]!) {
+  query FetchGoals() {
     gitHub {
       viewer {
         repository(name: "open-sauced-goals") {
           id
           issues(
             first: 10
-            orderBy: { state: OPEN, direction: DESC, field: CREATED_AT }
+            states: OPEN
+            orderBy: { direction: DESC, field: CREATED_AT }
           ) {
             totalCount
             nodes {
