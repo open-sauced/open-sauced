@@ -36,7 +36,7 @@ function Repository({match}) {
       {owner && (
         <div style={{display: "flex", justifyContent: "space-between"}}>
           <Issues repoName={name} owner={owner.login} />
-          <Form notes={body} repoId={this.props.match.params.id} repoName={nameWithOwner} />
+          <Form notes={body} repoId={match.params.id} repoName={nameWithOwner} />
         </div>
       )}
     </div>

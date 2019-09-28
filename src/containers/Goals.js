@@ -8,10 +8,6 @@ function Goals() {
   const [repository, setRepository] = useState({});
   const [loading, setLoading] = useState(true);
 
-  if (loading === true) {
-    return <p>...Loading</p>;
-  }
-
   const _handleRepoCreation = () => {
     api.createOpenSaucedGoalsRepo().then(res => setRepository(res));
   };
@@ -23,12 +19,18 @@ function Goals() {
       localStorage.setItem("goalsId", repo.id);
     });
 
-
     setLoading(false);
-  }, [repository]);
-  console.log(repository)
+  }, []);
 
-  return repository ? <ListGoals data={repository} /> : <CreateGoals handleGoalCreation={_handleRepoCreation} />;
+  if (loading === true) {
+    return <p>...Loading</p>;
+  }
+
+  return repository.issues ? (
+    <ListGoals goals={repository.issues} />
+  ) : (
+    <CreateGoals handleGoalCreation={_handleRepoCreation} />
+  );
 }
 
 export default Goals;

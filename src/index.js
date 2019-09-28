@@ -27,7 +27,7 @@ function Index() {
         console.warn("User is not logged into GitHub");
       }
     });
-  }, [user]);
+  }, []);
 
   const _handleLogIn = () => {
     const auth = Config.auth;
