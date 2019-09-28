@@ -7,7 +7,7 @@ function Repositories({match}) {
   return (
     <div className="repositories">
       <Route exact path={match.url} component={Goals} />
-      <Route path={"/repos/:repoOwner/:repoName/:id"} component={Repository} />
+      <Route path={"/repos/:repoOwner/:repoName"} component={Repository} />
     </div>
   );
 }

@@ -4,8 +4,8 @@ import Button from "../styles/Button";
 import {FormColumn} from "../styles/Grid";
 import api from "../lib/apiGraphQL";
 
-function NoteForm({repoId, repoName, notes}) {
-  const [input, setInput] = useState("");
+function NoteForm({goalId, repoName, note}) {
+  const [input, setInput] = useState(note);
   const [editing, setEditing] = useState(false);
   const [deleted, setDeleted] = useState(false);
 
@@ -13,16 +13,16 @@ function NoteForm({repoId, repoName, notes}) {
     setInput(e.target.value);
   };
 
-  const _handleNoteCreation = () => {
+  const _handleNoteUpdate = () => {
     api
-      .updateGoal(repoId, repoName, "OPEN", input)
-      .then(response => console.log(response))
+      .updateGoal(goalId, repoName, "OPEN", input)
+      .then(response => _handleToggleEditing())
       .catch(err => console.log(err));
   };
 
   const _handleRepoDeletion = () => {
     api
-      .updateGoal(repoId, repoName, "CLOSED", input)
+      .updateGoal(goalId, repoName, "CLOSED", input)
       .then(response => {
         setInput("");
         setEditing(false);
@@ -35,9 +35,13 @@ function NoteForm({repoId, repoName, notes}) {
     setEditing(!editing);
   };
 
-  const noteContent = input !== "" ? input : notes;
+  const noteContent = input !== "" ? input : note;
 
-  return !deleted ? (
+  if (deleted) {
+    <Redirect to="/" />;
+  }
+
+  return (
     <FormColumn>
       <div className="grid-half form">
         <textarea
@@ -51,7 +55,7 @@ function NoteForm({repoId, repoName, notes}) {
           name="notes"
         />
         {editing ? (
-          <Button onClick={_handleNoteCreation}>
+          <Button onClick={_handleNoteUpdate}>
             <span className="icon-write" /> Save Notes
           </Button>
         ) : (
@@ -65,8 +69,6 @@ function NoteForm({repoId, repoName, notes}) {
         </Button>
       </div>
     </FormColumn>
-  ) : (
-    <Redirect to="/" />
   );
 }
 

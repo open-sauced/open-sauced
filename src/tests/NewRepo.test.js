@@ -1,6 +1,6 @@
 import React from "react";
 import {shallow} from "enzyme";
-import {NewRepo} from "../containers/NewRepo";
+import NewRepo from "../containers/NewRepo";
 import {data} from "./mocks";
 
 describe("<NewRepo />", () => {

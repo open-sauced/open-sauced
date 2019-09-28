@@ -34,7 +34,11 @@ function NewRepoForm() {
     });
   };
 
-  return !submitted ? (
+  if (submitted) {
+    return <Redirect to="/" />;
+  }
+
+  return (
     <div className="Form">
       <h1 className="title">Enter a GitHub URL</h1>
       <p>Add a url or full name for a GitHub repository</p>
@@ -61,8 +65,6 @@ function NewRepoForm() {
         <div className="shadow" />
       </div>
     </div>
-  ) : (
-    <Redirect to="/" />
   );
 }
 

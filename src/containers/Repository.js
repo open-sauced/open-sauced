@@ -3,7 +3,7 @@ import Form from "./NoteForm";
 import Issues from "./Issues";
 import api from "../lib/apiGraphQL";
 
-function Repository({match}) {
+function Repository({match, location}) {
   const [repository, setRepository] = useState(null);
 
   useEffect(() => {
@@ -11,12 +11,14 @@ function Repository({match}) {
       params: {repoName, repoOwner},
     } = match;
 
+
     api.fetchRepositoryData(repoOwner, repoName).then(response => {
       setRepository(response.data.gitHub.repositoryOwner.repository);
     });
   }, [repository]);
 
-  const {url, stargazers, forks, issues, name, nameWithOwner, description, body, owner} = repository || {};
+  const {url, stargazers, forks, issues, name, nameWithOwner, description, owner} = repository || {};
+  const {goalId, note} = location;
 
   return (
     <div>
@@ -36,7 +38,7 @@ function Repository({match}) {
       {owner && (
         <div style={{display: "flex", justifyContent: "space-between"}}>
           <Issues repoName={name} owner={owner.login} />
-          <Form notes={body} repoId={match.params.id} repoName={nameWithOwner} />
+          <Form note={note} goalId={goalId} repoName={nameWithOwner} />
         </div>
       )}
     </div>

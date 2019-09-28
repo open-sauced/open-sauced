@@ -16,7 +16,6 @@ function Goals() {
     api.fetchGoalsQuery().then(response => {
       const repo = response.data.gitHub.viewer.repository;
       setRepository(repo);
-      localStorage.setItem("goalsId", repo.id);
     });
 
     setLoading(false);
@@ -27,7 +26,7 @@ function Goals() {
   }
 
   return repository.issues ? (
-    <ListGoals goals={repository.issues} />
+    <ListGoals goalsId={repository.id} goals={repository.issues} />
   ) : (
     <CreateGoals handleGoalCreation={_handleRepoCreation} />
   );

@@ -152,21 +152,14 @@ const operationsDoc = `
         repository(name: "open-sauced-goals") {
           id
           issues(
-            first: 100
-            orderBy: { direction: DESC, field: CREATED_AT }
+            first: 10
+            orderBy: { state: OPEN, direction: DESC, field: CREATED_AT }
           ) {
             totalCount
             nodes {
               id
               title
               body
-              labels(first: 100) {
-                nodes {
-                  color
-                  name
-                  id
-                }
-              }
               state
             }
           }
