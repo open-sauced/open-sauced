@@ -1,39 +1,26 @@
 name: Auto approve and merge Dependabot
-on: pull_request
+on: deployment
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-
-    steps:
-    - uses: actions/checkout@v1
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
-      with:
-        node-version: 10.x
-    - name: npm install and test
-      run: |
-        npm install
-        npm test
-      env:
-        CI: true
   auto-merge:
-    needs: build
     runs-on: ubuntu-latest
     steps:
+    - name: Only do this when dependabot
+      if: startsWith(github.ref, 'dependabot')
+      run: echo "Hello ref ${{ github.ref }}"
     - uses: hmarr/auto-approve-action@v2.0.0
-      if: github.actor == 'dependabot[bot]' || github.actor == 'dependabot-preview[bot]'
+      if: github.actor == 'logs4netlify[bot]'
       with:
         github-token: "${{ secrets.GITHUB_TOKEN }}"
     - name: Label when approved
       uses: bdougie/label-when-approved-action@master
-      if: github.actor == 'dependabot[bot]' || github.actor == 'dependabot-preview[bot]'
+      if: github.actor == 'logs4netlify[bot]'
       env:
         APPROVALS: "1"
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         ADD_LABEL: "automerge"
     - name: automerge
       uses: bdougie/automerge-action@bot
-      if: github.actor == 'dependabot[bot]' || github.actor == 'dependabot-preview[bot]'
+      if: github.actor == 'logs4netlify[bot]'
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
