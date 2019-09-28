@@ -6,6 +6,10 @@
     "@babel/core": "^7.6.2",
     "@babel/plugin-proposal-class-properties": "^7.5.5",
     "@babel/preset-react": "^7.0.0",
+    "@storybook/addon-actions": "^5.2.1",
+    "@storybook/addon-links": "^5.2.1",
+    "@storybook/addons": "^5.2.1",
+    "@storybook/react": "^5.2.1",
     "@webpack-cli/migrate": "^0.1.8",
     "autoprefixer": "9.6.1",
     "babel-eslint": "6.1.2",
@@ -96,7 +100,9 @@
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "clean": "rm -rf src/tests/__snapshots__/",
-    "test": "npm run clean && node scripts/test.js --env=jsdom --updateSnapshot"
+    "test": "npm run clean && node scripts/test.js --env=jsdom --updateSnapshot",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "jest": {
     "moduleFileExtensions": [
