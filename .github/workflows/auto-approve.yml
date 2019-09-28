@@ -8,17 +8,6 @@ jobs:
     - name: Only do this when dependabot
       if: startsWith(github.ref, 'dependabot')
       run: echo "Hello ref ${{ github.ref }}"
-    - uses: hmarr/auto-approve-action@v2.0.0
-      if: github.actor == 'logs4netlify[bot]'
-      with:
-        github-token: "${{ secrets.GITHUB_TOKEN }}"
-    - name: Label when approved
-      uses: bdougie/label-when-approved-action@master
-      if: github.actor == 'logs4netlify[bot]'
-      env:
-        APPROVALS: "1"
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        ADD_LABEL: "automerge"
     - name: automerge
       uses: bdougie/automerge-action@bot
       if: github.actor == 'logs4netlify[bot]'
