@@ -2,13 +2,20 @@ import React from "react";
 import Button from "../styles/Button";
 import {Link} from "react-router-dom";
 
-function ListGoals({goals}) {
+function ListGoals({goals, goalsId}) {
   return (
     <div>
       <ul>
         {goals.nodes.map(goal => (
           <li key={goal.id}>
-            <Link to={`/repos/${goal.title}/${goal.id}`}>{goal.title}</Link>
+            <Link
+              to={{
+                pathname: `/repos/${goal.title}`,
+                goalId: goal.id,
+                note: goal.body,
+              }}>
+              {goal.title}
+            </Link>
           </li>
         ))}
       </ul>
