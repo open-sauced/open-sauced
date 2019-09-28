@@ -21,6 +21,9 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
+    - name: Only do this when tagged
+      if: startsWith(github.ref, 'dependabot')
+      run: echo "Hello tag ${{ github.ref }}
     - uses: hmarr/auto-approve-action@v2.0.0
       if: github.actor == 'dependabot[bot]' || github.actor == 'dependabot-preview[bot]'
       with:
