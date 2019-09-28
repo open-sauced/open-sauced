@@ -1,26 +1,22 @@
-import React, {Component} from "react";
+import React from "react";
 import Button from "../styles/Button";
 import {Link} from "react-router-dom";
 
-export class ListGoals extends Component {
-  render() {
-    const {issues} = this.props.data;
-    return (
-      <div>
-        <ul>
-          {issues &&
-            issues.nodes.map(issue => (
-              <li key={issue.name}>
-                <Link to={`/repos/${issue.title}/${issue.id}`}>{issue.title}</Link>
-              </li>
-            ))}
-        </ul>
-        <Link to="/new" className="nav-link" alt="Add A Repo">
-          <Button>Create a new goal</Button>
-        </Link>
-      </div>
-    );
-  }
+function ListGoals({goals}) {
+  return (
+    <div>
+      <ul>
+        {goals.nodes.map(goal => (
+          <li key={goal.id}>
+            <Link to={`/repos/${goal.title}/${goal.id}`}>{goal.title}</Link>
+          </li>
+        ))}
+      </ul>
+      <Link to="/new" className="nav-link" alt="Add A Repo">
+        <Button>Create a new goal</Button>
+      </Link>
+    </div>
+  );
 }
 
 export default ListGoals;

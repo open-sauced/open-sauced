@@ -1,69 +1,56 @@
-/* eslint-disable */
-// replace with hooks and new React path
-
-import React, {Component} from "react";
+import React, {useState, useEffect} from "react";
 import {FlexCenter, IssuesColumn} from "../styles/Grid";
 import PointerLink from "../styles/PointerLink";
 import {TinyFont} from "../styles/Typography";
 import {chevronRight, chevronLeft} from "../icons";
 import api from "../lib/apiGraphQL";
 
-class Issues extends Component {
-  state = {issues: null, cursor: null, totalCount: 0, offset: 0};
+function Issues({repoName, owner}) {
+  const [issues, setIssues] = useState(null);
+  const [cursor, setCursor] = useState(null);
+  const [totalCount, setTotal] = useState(0);
+  const [offset, setOffset] = useState(0);
 
-  componentDidMount(prevProps, prevState) {
-    const {repoName, owner} = this.props;
+  useEffect(() => {
+    api.fetchIssuesQuery(owner, repoName).then(response => {
+      const {data, totalCount} = response.data.gitHub.repositoryOwner.repository.issues;
+      const lastIssue = totalCount > 0 ? data[data.length - 1] : {};
+      const {cursor} = lastIssue;
 
-      api.fetchIssuesQuery(owner, repoName).then(response => {
-        const {data, totalCount} = response.data.gitHub.repositoryOwner.repository.issues;
-        const lastIssue = totalCount > 0 ? data[data.length - 1] : {};
-        const {cursor} = lastIssue;
-        this.setState({
-          issues: data,
-          totalCount,
-          cursor,
-        });
-      });
-  }
+      setIssues(data);
+      setCursor(cursor);
+      setTotal(totalCount);
+    });
+  }, [issues]);
 
-  handleNextIssues = () => {
-    const {repoName, owner} = this.props;
-    const {cursor, offset} = this.state;
+  const _handleNextIssues = () => {
     api.fetchRepositoryIssues(owner, repoName, cursor).then(response => {
       const {data, totalCount} = response.data.gitHub.repositoryOwner.repository.issues;
       const firstIssue = data[data.length - 1];
       const newCursor = firstIssue.cursor;
-      this.setState({
-        issues: data,
-        totalCount,
-        cursor: newCursor,
-        offset: offset + 5,
-      });
+      setIssues(data);
+      setCursor(newCursor);
+      setTotal(totalCount);
+      setOffset(offset + 5);
     });
   };
 
-  handlePreviousIssues = () => {
-    const {repoName, owner} = this.props;
-    const {cursor, offset} = this.state;
+  const _handlePreviousIssues = () => {
     api.fetchRepositoryIssues(owner, repoName, cursor, true).then(response => {
       const {data, totalCount} = response.data.gitHub.repositoryOwner.repository.issues;
       const newCursor = data[0].newCursor;
-      this.setState({
-        issues: data,
-        totalCount,
-        cursor: newCursor,
-        offset: offset - 5,
-      });
+      setIssues(data);
+      setCursor(newCursor);
+      setTotal(totalCount);
+      setOffset(offset - 5);
     });
   };
 
-  render() {
-    const {owner} = this.props;
-    const {issues, totalCount, offset} = this.state;
-    const totalPages = Math.round(totalCount / 5);
-    const currentPage = offset / 5 + 1;
+  const totalPages = Math.round(totalCount / 5);
+  const currentPage = offset / 5 + 1;
 
-    return owner ? (totalCount > 0 &&
+  return owner ? (
+    totalCount > 0 && (
       <IssuesColumn>
         <ul>
           {issues &&
@@ -81,7 +68,7 @@ class Issues extends Component {
 
         <FlexCenter>
           {offset > 0 && (
-            <PointerLink onClick={this.handlePreviousIssues}>
+            <PointerLink onClick={_handlePreviousIssues}>
               <img alt="previous" src={chevronLeft} />
             </PointerLink>
           )}
@@ -89,16 +76,16 @@ class Issues extends Component {
             {currentPage}/{totalPages}
           </TinyFont>
           {currentPage !== totalPages && (
-            <PointerLink onClick={this.handleNextIssues}>
+            <PointerLink onClick={_handleNextIssues}>
               <img alt="previous" src={chevronRight} />
             </PointerLink>
           )}
         </FlexCenter>
       </IssuesColumn>
-    ) : (
-      <p>...Loading</p>
-    );
-  }
+    )
+  ) : (
+    <p>...Loading</p>
+  );
 }
 
 export default Issues;

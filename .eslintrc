@@ -33,7 +33,6 @@ rules:
   # Possible Errors
   # https://github.com/eslint/eslint/tree/master/docs/rules#possible-errors
   no-control-regex: 2
-  no-console: 1
   no-debugger: 2
   no-dupe-args: 2
   no-dupe-keys: 2
@@ -78,7 +77,6 @@ rules:
   # ECMAScript 6
   # http://eslint.org/docs/rules/#ecmascript-6
   arrow-spacing: [2, {"before": true, "after": true}]
-  no-confusing-arrow: 2
   prefer-const: 2
 
   # JSX
@@ -104,7 +102,6 @@ rules:
   react/jsx-equals-spacing: 1
   react/jsx-handler-names: 1
   react/jsx-indent: [2, 2]
-  react/jsx-no-bind: 1
   react/jsx-no-duplicate-props: 1
   react/jsx-no-undef: 1
   react/jsx-pascal-case: 1
@@ -120,12 +117,12 @@ rules:
   react/no-multi-comp: 0
   react/no-string-refs: 1
   react/no-unknown-property: 1
-  react/prefer-es6-class: 1
   react/react-in-jsx-scope: 1
   /* react/require-extension: 1 */
   import/extensions: 1
   react/self-closing-comp: 1
   react/sort-comp: 1
+  react/prefer-stateless-function: 1
 
 # Global scoped method and vars
 globals:
