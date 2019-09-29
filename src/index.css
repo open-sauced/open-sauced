@@ -78,27 +78,6 @@ a {
   cursor: pointer;
 }
 
-button {
-  background: none;
-  border: 2px solid var(--lightGrey) ;
-  border-radius: var(--smallBorderRadius);
-  box-shadow: none;
-  color: black;
-  cursor: pointer;
-  font-size: var(--tiny);
-  margin-bottom: var(--tiny);
-  margin-right: var(--micro);
-  outline: none;
-  padding: var(--tiny);
-  transition: background 0.2s ease;
-}
-
-button:hover {
-  color: var(--lightGrey);
-  border: 2px solid var(--lighterGrey) ;
-  transition: background 0.9s ease, linear;
-}
-
 body {
   background: var(--offWhite);
   color: var(--grey);

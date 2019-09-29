@@ -3,9 +3,9 @@ import {borderRadius, colors, size} from "./variables";
 
 const Button = styled.button`
   background: ${props => {
-    return props.destructive ? colors.saucyRed : colors.accent;
+    return props.destructive ? colors.saucyRed : "none";
   }};
-  border: 2px solid ${colors.lightGrey} ;
+  border: 2px solid ${colors.lightGrey};
   border-radius: ${borderRadius.smallBorderRadius};
   box-shadow: none;
   color: black;
@@ -19,8 +19,11 @@ const Button = styled.button`
 
   &:hover {
     background: ${props => {
-    return props.destructive ? colors.saucyRed : colors.accent;
-  }};
+      return props.destructive ? colors.saucyRed : colors.accent;
+    }};
+    color: ${colors.lightGrey};
+    border: 2px solid ${colors.lightGrey};
+    transition: background 0.9s ease, linear;
   }
 `;
 
