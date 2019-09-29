@@ -1,12 +1,12 @@
 import React, {useState, useEffect} from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
-import {ApolloProvider} from "react-apollo";
 import Config from "./config";
 import {getUserFromJwt} from "./lib/identityActions";
 import "./index.css";
 import registerServiceWorker from "./registerServiceWorker";
 import OneGraphApolloClient from "onegraph-apollo-client";
+import {ApolloProvider} from "react-apollo";
 
 const apolloClient = new OneGraphApolloClient({
   oneGraphAuth: Config.auth,
