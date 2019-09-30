@@ -9,7 +9,7 @@ function Card({goal, stars, contributors}) {
     <Container>
       <Box p={4}>
         <Flex mb={4} alignItems="center">
-          <Avatar size={32} mr={2} src={`https://avatars.githubusercontent.com/$${goal.title.split("/")[0]}`} />
+          <Avatar size={32} mr={2} src={`https://avatars.githubusercontent.com/${goal.title.split("/")[0]}`} />
           <Link
             to={{
               pathname: `/repos/${goal.title}`,
