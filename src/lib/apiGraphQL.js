@@ -162,6 +162,13 @@ const operationsDoc = `
               title
               body
               state
+              labels(first: 3) {
+                nodes {
+                  color
+                  name
+                  id
+                }
+              }
             }
           }
         }

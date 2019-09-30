@@ -78,33 +78,13 @@ a {
   cursor: pointer;
 }
 
-button {
-  background: none;
-  border: 2px solid var(--lightGrey) ;
-  border-radius: var(--smallBorderRadius);
-  box-shadow: none;
-  color: black;
-  cursor: pointer;
-  font-size: var(--tiny);
-  margin-bottom: var(--tiny);
-  margin-right: var(--micro);
-  outline: none;
-  padding: var(--tiny);
-  transition: background 0.2s ease;
-}
-
-button:hover {
-  color: var(--lightGrey);
-  border: 2px solid var(--lighterGrey) ;
-  transition: background 0.9s ease, linear;
-}
-
 body {
   background: var(--offWhite);
   color: var(--grey);
   font-family: "Roboto", sans-serif;
   margin: 0;
   padding: var(--large) 0 0 0;
+  width: 1024px;
 }
 
 h1 {
@@ -139,6 +119,8 @@ header {
 section {
   min-height: 75vh;
   padding: var(--tiny);
+  margin: auto;
+  width: 80%;
 }
 
 header a {
@@ -160,34 +142,6 @@ header a.nav-link {
   float: right;
 }
 
-.repositories ul {
-  margin: 0;
-  padding: 0;
-}
-
-.repositories li {
-  background-color: white;
-  box-shadow: rgba(0, 0, 0, 0.2) 0 1px 2px 0;
-  border: 0 solid rgba(123, 123, 123, 0.498039);
-  border-radius: var(--smallBorderRadius);
-  font-size: var(--small);
-  list-style-type: none;
-  margin-bottom: var(--tiny);
-  outline: none;
-  transition: background-color 0.2s ease;
-}
-
-.repositories li:hover {
-  background: var(--cheesyYellow);
-}
-
-.repositories li a {
-  color: var(--grey);
-  display: block;
-  padding: var(--small);
-  text-decoration: none;
-}
-
 .nav {
   background: #222;
   position: relative;
@@ -207,12 +161,6 @@ header a.nav-link {
   position: relative;
 }
 
-.dropdown > a {
-  color: white;
-  font-size: var(--tiny);
-  font-weight: var(--bold);
-}
-
 .nav ul {
   position: absolute;
   margin: 0;
@@ -229,16 +177,6 @@ header a.nav-link {
   margin: 0;
   padding: 0;
   transition: height 0.2s ease;
-}
-
-.dropdown:hover > ul > li {
-  height: var(--medium);
-  position: relative;
-  top: auto;
-}
-
-.dropdown-label {
-  padding: 21.5px var(--tiny);
 }
 
 .nav ul li a {

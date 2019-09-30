@@ -13,16 +13,14 @@ function App({handleLogIn, handleLogOut, user}) {
 
   return (
     <Router>
-      <div>
-        {user && <Header user={user} handleLogOut={handleLogOut} />}
-        <section>
-          <Route exact path="/" component={guard(Repositories)} user={user} />
-          <Route path="/repos" component={guard(Repositories)} user={user} />
-          <Route path="/new" component={guard(NewRepo)} />
-          <Route path="/callback" component={guard(Repositories)} />
-        </section>
-        <Footer />
-      </div>
+      {user && <Header user={user} handleLogOut={handleLogOut} />}
+      <section>
+        <Route exact path="/" component={guard(Repositories)} user={user} />
+        <Route path="/repos" component={guard(Repositories)} user={user} />
+        <Route path="/new" component={guard(NewRepo)} />
+        <Route path="/callback" component={guard(Repositories)} />
+      </section>
+      <Footer />
     </Router>
   );
 }
