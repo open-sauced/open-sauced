@@ -5,10 +5,10 @@ import {Route} from "react-router-dom";
 
 function Repositories({match}) {
   return (
-    <div className="repositories">
+    <React.Fragment>
       <Route exact path={match.url} component={Goals} />
       <Route path={"/repos/:repoOwner/:repoName"} component={Repository} />
-    </div>
+    </React.Fragment>
   );
 }
 

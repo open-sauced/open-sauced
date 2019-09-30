@@ -19,8 +19,8 @@ const Button = styled.button`
 
   &:hover {
     background: ${props => {
-      return props.destructive ? colors.saucyRed : colors.accent;
-    }};
+    return props.destructive ? colors.saucyRed : colors.accent;
+  }};
     color: ${colors.lightGrey};
     border: 2px solid ${colors.lightGrey};
     transition: background 0.9s ease, linear;

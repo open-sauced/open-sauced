@@ -1,40 +1,21 @@
 import React from "react";
 import Button from "../styles/Button";
 import {Link} from "react-router-dom";
-import {Avatar, Box, Label, Flex} from "@primer/components";
+import {Container} from "../styles/ListItem";
+import Card from "./Card";
 
 function ListGoals({goals, goalsId}) {
   return (
-    <div>
+    <Container>
       <ul>
-        <Flex textAlign="center" alignItems="center">
-          {goals.nodes.map(goal => (
-            <li key={goal.id}>
-              <Box p={4}>
-                <Avatar size={128} src={`https://avatars.githubusercontent.com/${goal.title.split("/")[0]}`} />
-                <Link
-                  to={{
-                    pathname: `/repos/${goal.title}`,
-                    goalId: goal.id,
-                    note: goal.body,
-                  }}>
-                  {goal.title}
-                </Link>
-                {goal.labels &&
-                  goal.labels.nodes.map(label => (
-                    <Label key={label.id} m={1} outline>
-                      {label.name}
-                    </Label>
-                  ))}
-              </Box>
-            </li>
-          ))}
-        </Flex>
+        {goals.nodes.map(goal => (
+          <Card key={goal.id} goal={goal} stars={328} contributors={18} />
+        ))}
       </ul>
       <Link to="/new" className="nav-link" alt="Add A Repo">
         <Button>Create a new goal</Button>
       </Link>
-    </div>
+    </Container>
   );
 }
 
