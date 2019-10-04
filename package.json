@@ -48,7 +48,7 @@
     "path-exists": "4.0.0",
     "postcss-loader": "^3.0.0",
     "promise": "8.0.3",
-    "react-dev-utils": "^9.0.4",
+    "react-dev-utils": "^9.1.0",
     "react-scripts": "^3.2.0",
     "react-test-renderer": "^16.9.0",
     "recursive-readdir": "2.2.2",
