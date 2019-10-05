@@ -1,6 +1,6 @@
 {
   "name": "open-sauced",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "private": true,
   "devDependencies": {
     "@babel/core": "^7.6.2",
@@ -99,11 +99,7 @@
     "build-storybook": "build-storybook"
   },
   "jest": {
-    "moduleFileExtensions": [
-      "jsx",
-      "js",
-      "json"
-    ],
+    "moduleFileExtensions": ["jsx", "js", "json"],
     "globals": {
       "window": true
     },
@@ -111,14 +107,8 @@
       "^.+\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/config/jest/FileStub.js",
       "^.+\\.css$": "<rootDir>/config/jest/CSSStub.js"
     },
-    "setupFiles": [
-      "<rootDir>/config/polyfills.js",
-      "<rootDir>/src/setupTestFramework.js",
-      "jest-localstorage-mock"
-    ],
-    "testPathIgnorePatterns": [
-      "<rootDir>/(build|docs|node_modules)/"
-    ],
+    "setupFiles": ["<rootDir>/config/polyfills.js", "<rootDir>/src/setupTestFramework.js", "jest-localstorage-mock"],
+    "testPathIgnorePatterns": ["<rootDir>/(build|docs|node_modules)/"],
     "testEnvironment": "node",
     "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(js|jsx)$"
   },
@@ -126,15 +116,7 @@
     "extends": "react-app"
   },
   "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+    "production": [">0.2%", "not dead", "not op_mini all"],
+    "development": ["last 1 chrome version", "last 1 firefox version", "last 1 safari version"]
   }
 }
