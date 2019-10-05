@@ -1,10 +1,10 @@
-import React, {useState} from "react";
+import React, {useState, useRef} from "react";
 import api from "../lib/apiGraphQL";
 import Button from "../styles/Button";
 import {Link} from "react-router-dom";
 
 function NewRepoForm() {
-  const urlRef = React.useRef();
+  const urlRef = useRef();
   const [name, setName] = useState("");
 
   const _handleFetchRepoData = () => {

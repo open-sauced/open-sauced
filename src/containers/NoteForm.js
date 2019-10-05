@@ -1,30 +1,26 @@
-import React, {useState} from "react";
+import React, {useState, useRef} from "react";
 import {Redirect} from "react-router";
 import Button from "../styles/Button";
 import {FormColumn} from "../styles/Grid";
 import api from "../lib/apiGraphQL";
 
 function NoteForm({goalId, repoName, note}) {
-  const [input, setInput] = useState(note);
+  const inputRef = useRef(note);
   const [editing, setEditing] = useState(false);
   const [deleted, setDeleted] = useState(false);
 
-  const _handleNotesChange = e => {
-    setInput(e.target.value);
-  };
-
   const _handleNoteUpdate = () => {
     api
-      .updateGoal(goalId, repoName, "OPEN", input)
+      .updateGoal(goalId, repoName, "OPEN", inputRef.current.value)
       .then(response => _handleToggleEditing())
       .catch(err => console.log(err));
   };
 
   const _handleRepoDeletion = () => {
     api
-      .updateGoal(goalId, repoName, "CLOSED", input)
+      .updateGoal(goalId, repoName, "CLOSED", inputRef.current.value)
       .then(response => {
-        setInput("");
+        inputRef.current.value = "";
         setEditing(false);
         setDeleted(true);
       })
@@ -34,8 +30,6 @@ function NoteForm({goalId, repoName, note}) {
   const _handleToggleEditing = () => {
     setEditing(!editing);
   };
-
-  const noteContent = input !== "" ? input : note;
 
   if (deleted) {
     <Redirect to="/" />;
@@ -48,8 +42,7 @@ function NoteForm({goalId, repoName, note}) {
           style={{minHeight: 170}}
           disabled={!editing}
           className="utility-input boxed-input text-box light-shadow"
-          onChange={_handleNotesChange}
-          value={noteContent || ""}
+          ref={inputRef}
           type="text"
           placeholder={`Type your notes for ${repoName} here...`}
           name="notes"
@@ -64,7 +57,6 @@ function NoteForm({goalId, repoName, note}) {
           </Button>
         )}
         <Button destructive onClick={_handleRepoDeletion}>
-          {" "}
           Delete
         </Button>
       </div>

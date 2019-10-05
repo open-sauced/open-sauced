@@ -11,7 +11,6 @@ function Repository({match, location}) {
       params: {repoName, repoOwner},
     } = match;
 
-
     api.fetchRepositoryData(repoOwner, repoName).then(response => {
       setRepository(response.data.gitHub.repositoryOwner.repository);
     });
