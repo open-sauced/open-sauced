@@ -14,7 +14,7 @@ function Repository({match, location}) {
     api.fetchRepositoryData(repoOwner, repoName).then(response => {
       setRepository(response.data.gitHub.repositoryOwner.repository);
     });
-  }, [repository]);
+  }, []);
 
   const {url, stargazers, forks, issues, name, nameWithOwner, description, owner} = repository || {};
   const {goalId, note} = location;

@@ -20,7 +20,6 @@ function NoteForm({goalId, repoName, note}) {
     api
       .updateGoal(goalId, repoName, "CLOSED", inputRef.current.value)
       .then(response => {
-        inputRef.current.value = "";
         setEditing(false);
         setDeleted(true);
       })

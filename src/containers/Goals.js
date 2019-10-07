@@ -1,4 +1,3 @@
-/*eslint-disable */
 import React, {useState, useEffect} from "react";
 import CreateGoals from "../components/CreateGoals";
 import ListGoals from "../components/ListGoals";
@@ -22,7 +21,7 @@ function Goals(props) {
     });
 
     setLoading(false);
-  }, []);
+  }, [goalsId]);
 
   if (loading === true) {
     return <p>...Loading</p>;
