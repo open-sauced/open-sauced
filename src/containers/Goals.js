@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect, useContext} from "react";
 import CreateGoals from "../components/CreateGoals";
 import ListGoals from "../components/ListGoals";
 import LocaleContext from "../Context";
@@ -7,7 +7,7 @@ import api from "../lib/apiGraphQL";
 function Goals(props) {
   const [repository, setRepository] = useState({});
   const [loading, setLoading] = useState(true);
-  const {goalsId, setGoalsId} = React.useContext(LocaleContext);
+  const {goalsId, setGoalsId} = useContext(LocaleContext);
 
   const _handleRepoCreation = () => {
     api.createOpenSaucedGoalsRepo().then(res => setRepository(res));
