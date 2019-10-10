@@ -11,7 +11,7 @@
     "@storybook/addons": "^5.2.1",
     "@storybook/react": "^5.2.3",
     "@webpack-cli/migrate": "^0.1.8",
-    "autoprefixer": "9.6.1",
+    "autoprefixer": "9.6.4",
     "babel-eslint": "6.1.2",
     "babel-jest": "24.9.0",
     "babel-loader": "^8.0.6",
