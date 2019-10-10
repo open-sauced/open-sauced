@@ -2,7 +2,7 @@
 
 # Open Sauced
 
-This is a GraphQL starter project to help people stalk open source repositories and take notes on them. This project uses OneGraphl as an interface to the GitHub [GraphQL API](https://developer.github.com/v4/) and Netlify to deploy.
+This is a GraphQL starter project to help people stalk open source repositories and take notes on them. This project uses OneGraphl as an interface to the GitHub [GraphQL API](https://developer.gdsfasadfsdfithub.com/v4/) and Netlify to deploy.
 
 ![open-sauced-screencap](https://user-images.githubusercontent.com/5713670/60572213-020b6800-9d2a-11e9-9cce-875eba95b326.png)
 
