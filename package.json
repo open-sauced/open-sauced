@@ -88,7 +88,7 @@
     "styled-components": "^4.4.0",
     "sw-precache-webpack-plugin": "0.11.5",
     "webpack-manifest-plugin": "^2.2.0",
-    "yarn": "^1.17.3"
+    "yarn": "^1.19.1"
   },
   "scripts": {
     "start": "node scripts/start.js",
