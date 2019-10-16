@@ -13,8 +13,9 @@ function Goals() {
   };
 
   useEffect(() => {
-    api.fetchGoalsQuery().then(response => {
-      const repo = response.data.gitHub.viewer.repository;
+    api.fetchGoalsQuery().then(({ data }) => {
+      const repo = data.gitHub.viewer.repository || {};
+
       setRepository(repo);
     });
 
