@@ -4,6 +4,8 @@ import {Link} from "react-router-dom";
 import {FloatLeft} from "../styles/Grid";
 
 function Header({user, handleLogOut}) {
+  console.log(user);
+
   return (
     <header>
       <FloatLeft>
@@ -32,7 +34,7 @@ function Header({user, handleLogOut}) {
           <img src={github} />
         </span>
       </a>
-      <a className="nav-link" href="https://github.com/bdougie">
+      <a className="nav-link" href={`https://github.com/${user.login}`}>
         <span>Hi, {user.login}!</span>
       </a>
     </header>
