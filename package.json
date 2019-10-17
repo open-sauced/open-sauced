@@ -6,10 +6,10 @@
     "@babel/core": "^7.6.2",
     "@babel/plugin-proposal-class-properties": "^7.5.5",
     "@babel/preset-react": "^7.6.3",
-    "@storybook/addon-actions": "^5.2.1",
+    "@storybook/react": "^5.2.4",
+    "@storybook/addon-actions": "^5.2.3",
     "@storybook/addon-links": "^5.2.4",
     "@storybook/addons": "^5.2.3",
-    "@storybook/react": "^5.2.4",
     "@webpack-cli/migrate": "^0.1.8",
     "autoprefixer": "9.6.1",
     "babel-eslint": "6.1.2",
@@ -99,7 +99,11 @@
     "build-storybook": "build-storybook"
   },
   "jest": {
-    "moduleFileExtensions": ["jsx", "js", "json"],
+    "moduleFileExtensions": [
+      "jsx",
+      "js",
+      "json"
+    ],
     "globals": {
       "window": true
     },
@@ -107,8 +111,14 @@
       "^.+\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/config/jest/FileStub.js",
       "^.+\\.css$": "<rootDir>/config/jest/CSSStub.js"
     },
-    "setupFiles": ["<rootDir>/config/polyfills.js", "<rootDir>/src/setupTestFramework.js", "jest-localstorage-mock"],
-    "testPathIgnorePatterns": ["<rootDir>/(build|docs|node_modules)/"],
+    "setupFiles": [
+      "<rootDir>/config/polyfills.js",
+      "<rootDir>/src/setupTestFramework.js",
+      "jest-localstorage-mock"
+    ],
+    "testPathIgnorePatterns": [
+      "<rootDir>/(build|docs|node_modules)/"
+    ],
     "testEnvironment": "node",
     "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(js|jsx)$"
   },
@@ -116,7 +126,15 @@
     "extends": "react-app"
   },
   "browserslist": {
-    "production": [">0.2%", "not dead", "not op_mini all"],
-    "development": ["last 1 chrome version", "last 1 firefox version", "last 1 safari version"]
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
