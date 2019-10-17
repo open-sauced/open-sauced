@@ -5,11 +5,11 @@
   "devDependencies": {
     "@babel/core": "^7.6.2",
     "@babel/plugin-proposal-class-properties": "^7.5.5",
-    "@babel/preset-react": "^7.0.0",
+    "@babel/preset-react": "^7.6.3",
+    "@storybook/react": "^5.2.4",
     "@storybook/addon-actions": "^5.2.3",
-    "@storybook/addon-links": "^5.2.3",
-    "@storybook/addons": "^5.2.1",
-    "@storybook/react": "^5.2.3",
+    "@storybook/addon-links": "^5.2.4",
+    "@storybook/addons": "^5.2.3",
     "@webpack-cli/migrate": "^0.1.8",
     "autoprefixer": "9.6.1",
     "babel-eslint": "6.1.2",
@@ -34,7 +34,7 @@
     "eslint-plugin-prettier": "3.1.1",
     "eslint-plugin-react": "^7.16.0",
     "file-loader": "^4.2.0",
-    "filesize": "5.0.1",
+    "filesize": "5.0.2",
     "find-cache-dir": "3.0.0",
     "fs-extra": "8.1.0",
     "gzip-size": "5.1.1",
@@ -67,7 +67,7 @@
     "whatwg-fetch": "3.0.0"
   },
   "dependencies": {
-    "@babel/preset-env": "^7.6.2",
+    "@babel/preset-env": "^7.6.3",
     "@babel/register": "^7.6.2",
     "@primer/components": "^14.3.1",
     "@primer/octicons-react": "^9.1.1",
