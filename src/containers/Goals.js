@@ -14,7 +14,7 @@ function Goals(props) {
   };
 
   useEffect(() => {
-    api.fetchGoalsQuery().then(({ data }) => {
+    api.fetchGoalsQuery().then(({data}) => {
       const repo = data.gitHub.viewer.repository || {};
 
       setRepository(repo);
