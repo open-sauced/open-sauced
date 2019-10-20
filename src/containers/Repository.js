@@ -3,22 +3,27 @@ import Form from "./NoteForm";
 import Issues from "./Issues";
 import api from "../lib/apiGraphQL";
 
-function Repository({match, location}) {
+function Repository({match}) {
+  const {
+    params: {repoName, repoOwner, id},
+  } = match;
   const [repository, setRepository] = useState(null);
+  const [note, setNote] = useState(location.note);
+  const [issueId, setIssueId] = useState();
 
   useEffect(() => {
-    const {
-      params: {repoName, repoOwner},
-    } = match;
-
-
-    api.fetchRepositoryData(repoOwner, repoName).then(response => {
-      setRepository(response.data.gitHub.repositoryOwner.repository);
+    api.fetchRepositoryData(repoOwner, repoName).then(res => {
+      setRepository(res.data.gitHub.repositoryOwner.repository);
     });
-  }, [repository]);
+
+    api.fetchGoalQuery(parseInt(id)).then(res => {
+      const {id, body} = res.data.gitHub.viewer.repository.issue;
+      setNote(body);
+      setIssueId(id);
+    });
+  }, []);
 
   const {url, stargazers, forks, issues, name, nameWithOwner, description, owner} = repository || {};
-  const {goalId, note} = location;
 
   return (
     <div>
@@ -38,7 +43,7 @@ function Repository({match, location}) {
       {owner && (
         <div style={{display: "flex", justifyContent: "space-between"}}>
           <Issues repoName={name} owner={owner.login} />
-          <Form note={note} goalId={goalId} repoName={nameWithOwner} />
+          <Form note={note} goalId={issueId} repoName={nameWithOwner} />
         </div>
       )}
     </div>

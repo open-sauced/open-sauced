@@ -9,22 +9,18 @@ function NoteForm({goalId, repoName, note}) {
   const [editing, setEditing] = useState(false);
   const [deleted, setDeleted] = useState(false);
 
-  const _handleNotesChange = e => {
-    setInput(e.target.value);
-  };
-
   const _handleNoteUpdate = () => {
     api
       .updateGoal(goalId, repoName, "OPEN", input)
-      .then(response => _handleToggleEditing())
+      .then(res => _handleToggleEditing())
       .catch(err => console.log(err));
   };
 
   const _handleRepoDeletion = () => {
     api
       .updateGoal(goalId, repoName, "CLOSED", input)
-      .then(response => {
-        setInput("");
+      .then(res => {
+        console.log(res);
         setEditing(false);
         setDeleted(true);
       })
@@ -33,6 +29,10 @@ function NoteForm({goalId, repoName, note}) {
 
   const _handleToggleEditing = () => {
     setEditing(!editing);
+  };
+
+  const _handleNotesChange = e => {
+    setInput(e.target.value);
   };
 
   const noteContent = input !== "" ? input : note;
@@ -64,7 +64,6 @@ function NoteForm({goalId, repoName, note}) {
           </Button>
         )}
         <Button destructive onClick={_handleRepoDeletion}>
-          {" "}
           Delete
         </Button>
       </div>

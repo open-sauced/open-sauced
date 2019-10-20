@@ -12,9 +12,7 @@ function Card({goal, stars, contributors}) {
           <Avatar size={32} mr={2} src={`https://avatars.githubusercontent.com/${goal.title.split("/")[0]}`} />
           <Link
             to={{
-              pathname: `/repos/${goal.title}`,
-              goalId: goal.id,
-              note: goal.body,
+              pathname: `/repos/${goal.title}/${goal.number}`,
             }}>
             {goal.title}
           </Link>
