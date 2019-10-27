@@ -6,12 +6,10 @@ export default {
   title: 'Button',
 };
 
-export const text = () => <Button onClick={action('clicked')}>Hello Button</Button>;
+export const primary = () => <Button primary onClick={action('clicked')}>Save</Button>;
 
-export const emoji = () => (
+export const secondary = () => (
   <Button onClick={action('clicked')}>
-    <span role="img" aria-label="so cool">
-      😀 😎 👍 💯
-    </span>
+      Cancel
   </Button>
 );

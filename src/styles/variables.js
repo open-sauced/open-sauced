@@ -1,6 +1,7 @@
 const colors = {
   accent: "#faeace",
-  saucyRed: "#ed5332",
+  background: "#fffbf5",
+  saucyRed: "#d95c41",
   cheesyYellow: "#f6d809",
   offWhite: "#fbfbfb",
   lightestGrey: "#e6e6e6",
@@ -40,7 +41,7 @@ const size = {
 };
 
 const borderRadius = {
-  smallBorderRadius: "4px",
+  smallBorderRadius: "5px",
   borderRadius: "10px",
 };
 
