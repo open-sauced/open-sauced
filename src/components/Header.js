@@ -4,8 +4,6 @@ import {Link} from "react-router-dom";
 import {FloatLeft} from "../styles/Grid";
 
 function Header({user, handleLogOut}) {
-  console.log(user);
-
   return (
     <header>
       <FloatLeft>
