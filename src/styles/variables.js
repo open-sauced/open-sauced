@@ -7,6 +7,7 @@ const colors = {
   lightestGrey: "#e6e6e6",
   lighterGrey: "#bcbcbc",
   lightGrey: "#8b8b8b",
+  backgroundGrey: "#2F372E",
   grey: "#313d3e",
   gold: "#f6bc00",
   orange: "#fe9d68",

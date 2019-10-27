@@ -7,6 +7,7 @@ export const Container = styled.div`
   border: 0 solid rgba(123, 123, 123, 0.498039);
   border-radius: ${borderRadius.smallBorderRadius};
   font-size: ${size.small};
+  padding: ${size.small};
   list-style-type: none;
   margin-bottom: ${size.tiny};
   margin-right: ${size.tiny};

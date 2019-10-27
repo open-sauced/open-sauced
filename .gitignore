@@ -19,3 +19,7 @@ npm-debug.log
 
 # jest test 
 src/tests/__snapshots__/
+
+.DS_Store
+../.DS_Store
+../../.DS_Store
