@@ -7,10 +7,9 @@ const FlexCenter = styled.div`
 
 const FlexHeader = styled.div`
   display: flex;
-  padding: 32px 0 16px 16px;
   align-items: center;
   justify-content: space-between;
+  // padding: 0 32px;
 `;
 
 export {FlexCenter, FlexHeader};
-
