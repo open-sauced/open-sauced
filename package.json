@@ -85,7 +85,7 @@
     "react-dom": "^16.10.2",
     "react-router-dom": "^5.1.2",
     "react-router": "^5.1.2",
-    "styled-components": "^4.4.0",
+    "styled-components": "^4.4.1",
     "sw-precache-webpack-plugin": "0.11.5",
     "webpack-manifest-plugin": "^2.2.0",
     "yarn": "^1.19.1"
