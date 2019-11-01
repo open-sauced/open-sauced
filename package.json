@@ -7,7 +7,7 @@
     "@babel/plugin-proposal-class-properties": "^7.5.5",
     "@babel/preset-react": "^7.6.3",
     "@storybook/react": "^5.2.4",
-    "@storybook/addon-actions": "^5.2.4",
+    "@storybook/addon-actions": "^5.2.5",
     "@storybook/addon-links": "^5.2.5",
     "@storybook/addons": "^5.2.3",
     "@webpack-cli/migrate": "^0.1.8",
