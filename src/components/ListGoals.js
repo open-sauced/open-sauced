@@ -13,7 +13,7 @@ function ListGoals({goals, goalsId}) {
         ))}
       </ul>
       <Link to="/new" className="nav-link" alt="Add A Repo">
-        <Button>Create a new goal</Button>
+        <Button primary>Create a new goal</Button>
       </Link>
     </Container>
   );

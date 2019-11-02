@@ -3,14 +3,21 @@ import {borderRadius, colors, size} from "./variables";
 
 const Button = styled.button`
   background: ${props => {
-    return props.destructive ? colors.saucyRed : "none";
+    return props.primary ? colors.saucyRed : colors.offWhite;
   }};
-  border: 2px solid ${colors.lightGrey};
+  border: ${props => {
+    return props.primary ? "none" : `2px solid ${colors.offWhite}`;
+  }};
   border-radius: ${borderRadius.smallBorderRadius};
-  box-shadow: none;
-  color: black;
+  box-shadow: 0 1px 2px 0 #33160F;
+  color: ${props => {
+    return props.primary ? "white" : "#664E48";
+  }};
   cursor: pointer;
   font-size: ${size.tiny};
+  font-weight: 600
+  min-height: 35px;
+  min-width: 68px;
   margin-bottom: ${size.tiny};
   margin-right: ${size.micro};
   outline: none;
@@ -19,8 +26,9 @@ const Button = styled.button`
 
   &:hover {
     background: ${props => {
-    return props.destructive ? colors.saucyRed : colors.accent;
+    return props.primary ? colors.saucyRed : colors.accent;
   }};
+
     color: ${colors.lightGrey};
     border: 2px solid ${colors.lightGrey};
     transition: background 0.9s ease, linear;

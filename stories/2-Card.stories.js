@@ -1,14 +1,21 @@
 import React from "react";
-import Card from "../src/components/Card";
+import Card from "../src/components/DumbCard";
 
 export default {
   title: "Card",
 };
 
-const goalData = {
-  title: "nodejs/node",
-  description: "Node.js JavaScript runtime ✨🐢🚀✨",
-  labels: {nodes: [{id: 1, description: "contribution"}]},
-};
-
-export const text = () => <Card goal={goalData} stars={328} contributors={23} />;
+export const blank = () => (
+  <Card>
+    <div style={{minHeight: 35}}>
+      <h1>Sample Card</h1>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+        laborum.
+      </p>
+    </div>
+  </Card>
+);

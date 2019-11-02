@@ -11,7 +11,7 @@ function Login({handleLogIn}) {
       <div style={spacingStyle}>
         <img src={logo} alt="logo" />
         <p style={{marginTop: 16}}>The path towards open-source contributions.</p>
-        <Button onClick={handleLogIn}>Login with GitHub</Button>
+        <Button primary onClick={handleLogIn}>Login with GitHub</Button>
       </div>
     </FlexCenter>
   );

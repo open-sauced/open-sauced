@@ -14,8 +14,13 @@ import star from "./star.svg";
 import login from "./log-in.svg";
 import logout from "./log-out.svg";
 import issue from "./alert-circle.svg";
+import anchor from "./anchor.svg";
+import anchorWithBorder from "./anchorWithBorder.svg";
+import sauced from "./sauced.svg";
 
 export {
+  anchor,
+  anchorWithBorder,
   alertTriangle,
   chevronDown,
   chevronLeft,
@@ -31,6 +36,6 @@ export {
   monitor,
   plus,
   save,
-  star
+  star,
+  sauced,
 };
-

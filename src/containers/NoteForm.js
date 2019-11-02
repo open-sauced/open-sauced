@@ -63,7 +63,8 @@ function NoteForm({goalId, repoName, note}) {
             <span className="icon-write" /> Edit Notes
           </Button>
         )}
-        <Button destructive onClick={_handleRepoDeletion}>
+        <Button primary onClick={_handleRepoDeletion}>
+          {" "}
           Delete
         </Button>
       </div>
