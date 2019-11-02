@@ -138,10 +138,6 @@ header a:hover {
   color: var(--cheesyYellow);
 }
 
-header a.nav-link {
-  float: right;
-}
-
 .nav {
   background: #222;
   position: relative;

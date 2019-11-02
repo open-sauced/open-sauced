@@ -4,6 +4,10 @@ const FloatLeft = styled.div`
   float: left;
 `;
 
-export default FloatLeft;
+const FloatRight = styled.div`
+  float: rigth;
+`;
+
+export {FloatRight, FloatLeft};
 
 
