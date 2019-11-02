@@ -3,7 +3,7 @@ import {borderRadius, colors, size} from "./variables";
 
 const Button = styled.button`
   background: ${props => {
-    return props.primary ? colors.saucyRed : "none";
+    return props.primary ? colors.saucyRed : colors.offWhite;
   }};
   border: ${props => {
     return props.primary ? "none" : `2px solid ${colors.offWhite}`;
@@ -28,6 +28,7 @@ const Button = styled.button`
     background: ${props => {
     return props.primary ? colors.saucyRed : colors.accent;
   }};
+
     color: ${colors.lightGrey};
     border: 2px solid ${colors.lightGrey};
     transition: background 0.9s ease, linear;

@@ -1,6 +1,8 @@
 import React, {Fragment} from "react";
 import Card from "../src/components/DumbCard";
+import Footer from "../src/components/Footer";
 import Gradient from "../src/styles/Gradient";
+import DashboardFooter from "../src/styles/Footer";
 import {sauced} from "../src/icons";
 
 export default {
@@ -21,9 +23,11 @@ export const BasicWithCard = () => (
       <Card>
         <div style={{height: 800}} />
       </Card>
-      <div style={{paddingRight: 16, float: "right", width: 200}}>
+      <DashboardFooter>
         <img src={sauced} />
-      </div>
+      </DashboardFooter>
     </Gradient>
   </Fragment>
 );
+
+export const HomepageFooter = () => <Footer />;

@@ -2,6 +2,7 @@ import React, {useMemo, useState} from "react";
 import NewRepo from "./containers/NewRepo";
 import Repositories from "./containers/Repositories";
 import Footer from "./components/Footer";
+import DashboardFooter from "./components/DashboardFooter";
 import Header from "./components/Header";
 import {BrowserRouter as Router, Route} from "react-router-dom";
 import LocaleContext from "./Context";
@@ -32,8 +33,9 @@ function App({handleLogIn, handleLogOut, user}) {
           <Route path="/new" component={guard(NewRepo)} />
           <Route path="/callback" component={guard(Repositories)} />
         </section>
+        {!user && <Footer />}
+        {user && <DashboardFooter />}
       </LocaleContext.Provider>
-      <Footer />
     </Router>
   );
 }

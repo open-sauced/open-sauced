@@ -2,7 +2,7 @@ import React from "react";
 import {Avatar, Box, Flex, Label} from "@primer/components";
 import Octicon, {getIconByName} from "@primer/octicons-react";
 import {Link} from "react-router-dom";
-import Container from "../styles/Card.js";
+import Container from "../styles/Card";
 
 function Card({goal, stars, contributors}) {
   return (
