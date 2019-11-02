@@ -1,4 +1,4 @@
-import { css } from "styled-components";
+import {css} from "styled-components";
 import BREAKPOINTS from "./breakpoints";
 
 // This creates the media templates, which allows for simple
