@@ -2,10 +2,11 @@ import React from "react";
 import {home, github, plus, logout, issue} from "../icons";
 import {Link} from "react-router-dom";
 import {FloatLeft} from "../styles/Grid";
+import {SimpleHeader} from "../styles/Header";
 
 function Header({user, handleLogOut}) {
   return (
-    <header>
+    <SimpleHeader>
       <FloatLeft>
         <Link to="/" className="home" alt="home">
           <span>
@@ -17,7 +18,7 @@ function Header({user, handleLogOut}) {
         </Link>
       </FloatLeft>
 
-      <a className="nav-link" onClick={handleLogOut}>
+      <a className="logout" onClick={handleLogOut}>
         <span>
           <img src={logout} />
         </span>
@@ -35,7 +36,7 @@ function Header({user, handleLogOut}) {
       <a className="nav-link" href={`https://github.com/${user.login}`}>
         <span>Hi, {user.login}!</span>
       </a>
-    </header>
+    </SimpleHeader>
   );
 }
 

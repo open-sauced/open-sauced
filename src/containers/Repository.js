@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react";
 import Form from "./NoteForm";
 import Issues from "./Issues";
 import api from "../lib/apiGraphQL";
+import {SpaceBetween} from "../styles/Grid";
 
 function Repository({match}) {
   const {
@@ -41,10 +42,10 @@ function Repository({match}) {
         <p>Loading...</p>
       )}
       {owner && (
-        <div style={{display: "flex", justifyContent: "space-between"}}>
+        <SpaceBetween>
           <Issues repoName={name} owner={owner.login} />
           <Form note={note} goalId={issueId} repoName={nameWithOwner} />
-        </div>
+        </SpaceBetween>
       )}
     </div>
   );
