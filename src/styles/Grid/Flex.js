@@ -12,6 +12,17 @@ const FlexHeader = styled.div`
   justify-content: space-between;
 `;
 
+const FlexColumn = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+const FlexStart = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+`;
+
 const SpaceBetween = styled.div`
   display: flex;
   justify-content: space-between;
@@ -21,4 +32,4 @@ const SpaceBetween = styled.div`
   `};
 `;
 
-export {SpaceBetween, FlexCenter, FlexHeader};
+export {SpaceBetween, FlexStart, FlexCenter, FlexColumn, FlexHeader};

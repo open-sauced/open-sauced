@@ -3,12 +3,13 @@ import {borderRadius, colors, size} from "./variables";
 
 const Button = styled.button`
   background: ${props => {
+console.log(props)
     return props.primary ? colors.saucyRed : colors.offWhite;
   }};
   border: ${props => {
     return props.primary ? "none" : `2px solid ${colors.offWhite}`;
   }};
-  border-radius: ${borderRadius.smallBorderRadius};
+  border-radius: ${borderRadius};
   box-shadow: 0 1px 2px 0 #33160F;
   color: ${props => {
     return props.primary ? "white" : "#664E48";

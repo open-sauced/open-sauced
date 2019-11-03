@@ -41,10 +41,7 @@ const size = {
   xxl: "168px",
 };
 
-const borderRadius = {
-  smallBorderRadius: "5px",
-  borderRadius: "10px",
-};
+const borderRadius = "5px";
 
 const responsiveBreakpoints = {
   mobile: "480px",
