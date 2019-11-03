@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import {borderRadius, colors, size} from "./variables";
 import MEDIA from "./mediaTemplates";
 
 export const Container = styled.div`
