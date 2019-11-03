@@ -4,6 +4,8 @@ import PointerLink from "../styles/PointerLink";
 import {TinyFont} from "../styles/Typography";
 import {chevronRight, chevronLeft} from "../icons";
 import api from "../lib/apiGraphQL";
+import Card from "../components/DumbCard.js";
+import List from "../styles/List.js";
 
 function Issues({repoName, owner}) {
   const [issues, setIssues] = useState(null);
@@ -52,19 +54,21 @@ function Issues({repoName, owner}) {
   return owner ? (
     totalCount > 0 && (
       <IssuesColumn>
-        <ul>
-          {issues &&
-            issues.map(issue => (
-              <li key={issue.node.id}>
-                <a target="_blank" href={issue.node.url}>
-                  <TinyFont>
-                    {issue.node.title}
-                    <div style={{display: "flex"}}>{issue.labels && issue.labels.data.map(label => label.name)}</div>
-                  </TinyFont>
-                </a>
-              </li>
-            ))}
-        </ul>
+        <Card fitted>
+          <List>
+            {issues &&
+              issues.map(issue => (
+                <li key={issue.node.id}>
+                  <a target="_blank" href={issue.node.url}>
+                    <TinyFont>
+                      {issue.node.title}
+                      <div style={{display: "flex"}}>{issue.labels && issue.labels.data.map(label => label.name)}</div>
+                    </TinyFont>
+                  </a>
+                </li>
+              ))}
+          </List>
+        </Card>
 
         <FlexCenter>
           {offset > 0 && (

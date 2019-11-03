@@ -20,7 +20,6 @@ const Card = styled.div`
 
   a {
     color: ${colors.grey};
-    display: flex;
     text-decoration: none;
   }
 

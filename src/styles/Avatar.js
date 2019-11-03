@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {borderRadius, colors, size} from "./variables";
+import {borderRadius} from "./variables";
 
 const Avatar = styled.img`
   object-fit: cover;

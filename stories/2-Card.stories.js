@@ -8,7 +8,7 @@ import Octicon, {getIconByName} from "@primer/octicons-react";
 import RepoListItem from "../src/components/RepoListItem.js";
 
 export default {
-  title: "Card",
+  title: "Cards",
 };
 
 const goal = {

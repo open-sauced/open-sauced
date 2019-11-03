@@ -3,7 +3,6 @@ import {borderRadius, colors, size} from "./variables";
 
 const Button = styled.button`
   background: ${props => {
-console.log(props)
     return props.primary ? colors.saucyRed : colors.offWhite;
   }};
   border: ${props => {

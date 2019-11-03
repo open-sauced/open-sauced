@@ -1,7 +1,7 @@
 import React from "react";
 import {Flex} from "@primer/components";
 import Label from "../styles/Label";
-import {FloatRight, FloatLeft, FlexColumn, FlexStart, FlexHeader, FlexCenter} from "../styles/Grid";
+import {FloatRight, FloatLeft, FlexColumn, FlexHeader, FlexCenter} from "../styles/Grid";
 import Octicon, {getIconByName} from "@primer/octicons-react";
 import Avatar from "../styles/Avatar";
 import {chevronRight} from "../icons";
@@ -11,7 +11,7 @@ function RepoListItem({goal, stars}) {
     <FlexHeader>
       <FloatLeft>
         <FlexCenter>
-          <Avatar src="https://avatars.githubusercontent.com/webpack" />
+          <Avatar src={`https://avatars.githubusercontent.com/${goal.title.split("/")[0]}`} />
           <FlexColumn className="details">
             <p>{goal.title}</p>
             {stars && (
@@ -25,7 +25,7 @@ function RepoListItem({goal, stars}) {
       </FloatLeft>
       <FloatRight>
         <FlexCenter>
-          <Label>active</Label>
+          <Label>TBD</Label>
           <img src={chevronRight} />
         </FlexCenter>
       </FloatRight>
