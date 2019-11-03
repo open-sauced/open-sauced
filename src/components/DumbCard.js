@@ -1,7 +1,7 @@
 import React from "react";
-import Container from "../styles/Card.js";
+import {FittedCard, Card} from "../styles/Card.js";
 
-function DumbCard({children}) {
-  return <Container>{children}</Container>;
+function DumbCard({fitted, children}) {
+  return fitted ? <FittedCard>{children}</FittedCard> : <Card>{children}</Card>;
 }
 export default DumbCard;

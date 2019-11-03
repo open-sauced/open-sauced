@@ -1,16 +1,15 @@
 import styled from "styled-components";
 import {borderRadius, colors, size} from "./variables";
 
-export const Container = styled.div`
+const Card = styled.div`
   background-color: white;
   box-shadow: rgba(0, 0, 0, 0.2) 0 1px 2px 0;
-  border: 0 solid rgba(123, 123, 123, 0.498039);
-  border-radius: ${borderRadius.smallBorderRadius};
-  font-size: ${size.small};
   padding: ${size.small};
+  border: 0 solid rgba(123, 123, 123, 0.498039);
+  border-radius: ${borderRadius};
+  font-size: ${size.small};
   list-style-type: none;
   margin-bottom: ${size.tiny};
-  margin-right: ${size.tiny};
   outline: none;
   transition: background-color 0.2s ease;
   min-width: 80%;
@@ -21,13 +20,13 @@ export const Container = styled.div`
 
   a {
     color: ${colors.grey};
-    display: flex;
     text-decoration: none;
   }
 
   p {
+    color: ${colors.lightGrey}
     font-size: ${size.tiny};
-    margin-bottom: ;
+    margin: 5px 0 4px 0;
   }
 
   span {
@@ -41,7 +40,22 @@ export const Container = styled.div`
 
   svg {
     margin-right: 4px;
+    margin-bottom: 5px;
+    fill: ${colors.lightGrey} !important;
+  }
+
+  img {
+    margin-right: 24px;
+    border-color: ${colors.lightestGrey};
+  }
+
+  .details {
+    margin: 0;
   }
 `;
 
-export default Container;
+const FittedCard = styled(Card)`
+  padding: 0;
+`;
+
+export {Card, FittedCard};
