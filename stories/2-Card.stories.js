@@ -1,21 +1,24 @@
 import React from "react";
 import Card from "../src/components/DumbCard";
+import Background from "../src/styles/Background";
 
 export default {
   title: "Card",
 };
 
 export const blank = () => (
-  <Card>
-    <div style={{minHeight: 35}}>
-      <h1>Sample Card</h1>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-        laborum.
-      </p>
-    </div>
-  </Card>
+  <Background style={{height: 1024, padding: "10px"}}>
+    <Card>
+      <div style={{minHeight: 35}}>
+        <h1>Sample Card</h1>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+          est laborum.
+        </p>
+      </div>
+    </Card>
+  </Background>
 );

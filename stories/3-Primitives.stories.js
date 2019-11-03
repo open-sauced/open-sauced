@@ -1,4 +1,5 @@
-import React, {Fragment} from "react";
+import React from "react";
+import Background from "../src/styles/Background";
 import Gradient from "../src/styles/Gradient";
 import Avatar from "../src/styles/Avatar";
 import {face} from "../src/images";
@@ -8,15 +9,15 @@ export default {
 };
 
 export const GradientBackground = () => (
-  <Fragment>
+  <React.Fragment>
     <Gradient>
       <div style={{height: 1024, width: 498}} />
     </Gradient>
-  </Fragment>
+  </React.Fragment>
 );
 
 export const ProfileAvatar = () => (
-  <Fragment>
+  <Background style={{height: 1024, padding: "10px"}}>
     <Avatar src={face} alt="profile pic" />
-  </Fragment>
+  </Background>
 );
