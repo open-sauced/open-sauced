@@ -4,6 +4,7 @@ import {colors} from "./variables";
 const Container = styled.ul`
   list-style: none;
   padding: 0;
+  margin: 0;
 
   li {
     padding: 16px;

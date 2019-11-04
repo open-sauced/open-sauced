@@ -1,5 +1,5 @@
 import React from "react";
-import {home, github, plus, logout, issue} from "../icons";
+import {home, github, logout, issue} from "../icons";
 import {Link} from "react-router-dom";
 import {FloatLeft, FloatRight} from "../styles/Grid";
 import {SimpleHeader} from "../styles/Header";
@@ -12,9 +12,6 @@ function Header({user, handleLogOut}) {
           <span>
             <img src={home} />
           </span>
-        </Link>
-        <Link to="/new" className="nav-link" alt="Add A Repo">
-          <img src={plus} />
         </Link>
       </FloatLeft>
 

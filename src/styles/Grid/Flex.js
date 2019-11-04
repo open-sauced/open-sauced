@@ -1,6 +1,10 @@
 import styled from "styled-components";
 import MEDIA from "../mediaTemplates";
 
+const Flex = styled.div`
+  display: flex;
+`;
+
 const FlexCenter = styled.div`
   display: flex;
   align-items: center;
@@ -38,4 +42,4 @@ const SpaceBetween = styled.div`
   `};
 `;
 
-export {SpaceBetween, FlexColumnCenter, FlexStart, FlexCenter, FlexColumn, FlexHeader};
+export {Flex, SpaceBetween, FlexColumnCenter, FlexStart, FlexCenter, FlexColumn, FlexHeader};
