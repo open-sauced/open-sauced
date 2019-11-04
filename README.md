@@ -4,8 +4,12 @@
 
 This is a GraphQL starter project to help people stalk open source repositories and take notes on them. This project uses OneGraphl as an interface to the GitHub [GraphQL API](https://developer.github.com/v4/) and Netlify to deploy.
 
-![open-sauced-screencap](https://user-images.githubusercontent.com/5713670/60572213-020b6800-9d2a-11e9-9cce-875eba95b326.png)
+![open-sauced-screencap](https://user-images.githubusercontent.com/5713670/68147572-37bb9a00-ff32-11e9-84a3-f2efd1a78123.png)
 
+## Local development
+```
+npm start
+```
 
 ## Test
 
@@ -15,6 +19,13 @@ npm test
 // to clean snapshots
 npm run clean
 ```
+## Storybook
+Storybook is being leverage to mock out visual React components. A version of it can be found at this https://storybook-static-4vf6dlv5i.now.sh
+```
+npm run storybook
+```
+![storybook example screenshot](https://user-images.githubusercontent.com/5713670/68147486-0cd14600-ff32-11e9-8cc0-fd91f4171b87.png)
+
 ## Authentication
 Authentication is handled through [OneGraph's AuthGuardian](https://www.onegraph.com/docs/auth_guardian.html) service. 
 
