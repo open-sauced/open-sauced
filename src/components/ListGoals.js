@@ -4,14 +4,12 @@ import {Link} from "react-router-dom";
 import {Container} from "../styles/ListItem";
 import RepoListItem from "../components/RepoListItem";
 import Card from "../components/DumbCard";
-import AddRepoForm from "../components/AddRepoForm";
 import List from "../styles/List";
 
 function ListGoals({goals, goalsId}) {
   return (
     <Container>
       <Card fitted>
-        <AddRepoForm />
         <List>
           {goals.nodes.map(goal => (
             <li key={goal.id}>
