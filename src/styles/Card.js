@@ -58,4 +58,8 @@ const FittedCard = styled(Card)`
   padding: 0;
 `;
 
-export {Card, FittedCard};
+const CardPadding = styled.div`
+  padding: ${size.small} ${size.tiny} 0;
+`;
+
+export {Card, CardPadding, FittedCard};

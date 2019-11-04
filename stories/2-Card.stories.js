@@ -1,9 +1,11 @@
 import React from "react";
 import Card from "../src/components/DumbCard";
-import Button from "../src/styles/Button";
+import Button, {InputButton} from "../src/styles/Button";
+import {CardPadding} from "../src/styles/Card";
+import Input from "../src/styles/Input";
 import Background from "../src/styles/Background";
 import TextArea from "../src/styles/TextArea";
-import {FlexCenter, FloatLeft} from "../src/styles/Grid";
+import {Flex, FlexCenter, FloatLeft} from "../src/styles/Grid";
 import List from "../src/styles/List";
 import Avatar from "../src/styles/Avatar";
 import {chevronRight} from "../src/icons";
@@ -58,9 +60,43 @@ export const RepoCard = () => (
   </Card>
 );
 
+export const NewRepoCard = () => (
+  <Card>
+    <Flex>
+      <Input className="utility-input urlForm" type="text" placeholder="vuejs/vue" />
+      <Button primary onClick={() => console.log("clicked")}>
+        add repo
+      </Button>
+    </Flex>
+  </Card>
+);
+
 export const RepoCardList = () => (
   <Background style={{height: 1024, padding: "10px"}}>
     <Card fitted>
+      <List>
+        <li>
+          <RepoListItem stars={138} goal={goal} />
+        </li>
+        <li>
+          <RepoListItem stars={381} goal={goal} />
+        </li>
+      </List>
+    </Card>
+  </Background>
+);
+
+export const RepoListWithForm = () => (
+  <Background style={{height: 1024, padding: "10px"}}>
+    <Card fitted>
+      <CardPadding>
+        <Flex>
+          <Input type="text" placeholder="vuejs/vue" />
+          <InputButton className="input" primary onClick={() => console.log("clicked")}>
+            add repo
+          </InputButton>
+        </Flex>
+      </CardPadding>
       <List>
         <li>
           <RepoListItem stars={138} goal={goal} />

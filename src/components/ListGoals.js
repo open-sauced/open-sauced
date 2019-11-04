@@ -2,9 +2,9 @@ import React from "react";
 import Button from "../styles/Button";
 import {Link} from "react-router-dom";
 import {Container} from "../styles/ListItem";
-import RepoListItem from "../components/RepoListItem.js";
-import Card from "../components/DumbCard.js";
-import List from "../styles/List.js";
+import RepoListItem from "../components/RepoListItem";
+import Card from "../components/DumbCard";
+import List from "../styles/List";
 
 function ListGoals({goals, goalsId}) {
   return (

@@ -28,13 +28,17 @@ const Button = styled.button`
 
   &:hover {
     background: ${props => {
-    return props.primary ? colors.saucyRed : colors.accent;
+    return props.primary ? colors.saucyRed : colors.lighestGrey;
   }};
 
-    color: ${colors.lightGrey};
-    border: 2px solid ${colors.lightGrey};
+    color: ${colors.lighterGrey};
     transition: background 0.9s ease, linear;
   }
+`;
+
+export const InputButton = styled(Button)`
+  font-size: 10px;
+  padding: 0;
 `;
 
 export default Button;
