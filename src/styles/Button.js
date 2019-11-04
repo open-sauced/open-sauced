@@ -21,7 +21,9 @@ const Button = styled.button`
   margin-bottom: ${size.tiny};
   margin-right: ${size.micro};
   outline: none;
-  padding: ${size.tiny};
+  padding: ${props => {
+    return props.primary ? "19px" : size.tiny;
+  }}
   transition: background 0.2s ease;
 
   &:hover {

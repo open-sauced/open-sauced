@@ -1,6 +1,7 @@
 import React, {useState, useRef} from "react";
 import api from "../lib/apiGraphQL";
 import Button from "../styles/Button";
+import Input from "../styles/Input";
 import {Link} from "react-router-dom";
 
 function NewRepoForm() {
@@ -29,7 +30,7 @@ function NewRepoForm() {
       <p>Add the full name for a GitHub repository</p>
       <div className="">
         <div name="">
-          <input className="utility-input urlForm" type="text" ref={urlRef} placeholder="vuejs/vue" />
+          <Input className="utility-input urlForm" type="text" ref={urlRef} placeholder="vuejs/vue" />
           {name && (
             <Link to={`/repos/${name}`}>
               <Button disabled={!urlRef}>explore issues</Button>

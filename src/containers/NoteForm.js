@@ -1,7 +1,11 @@
 import React, {useState} from "react";
 import {Redirect} from "react-router";
 import Button from "../styles/Button";
-import {FormColumn} from "../styles/Grid";
+import Card from "../components/DumbCard";
+import TextArea from "../styles/TextArea";
+import {FormColumn, FlexCenter} from "../styles/Grid";
+import Octicon, {getIconByName} from "@primer/octicons-react";
+
 import api from "../lib/apiGraphQL";
 
 function NoteForm({goalId, repoName, note}) {
@@ -43,8 +47,8 @@ function NoteForm({goalId, repoName, note}) {
 
   return (
     <FormColumn>
-      <div className="grid-half form">
-        <textarea
+      <Card>
+        <TextArea
           style={{minHeight: 170}}
           disabled={!editing}
           className="utility-input boxed-input text-box light-shadow"
@@ -54,20 +58,24 @@ function NoteForm({goalId, repoName, note}) {
           placeholder={`Type your notes for ${repoName} here...`}
           name="notes"
         />
-        {editing ? (
-          <Button onClick={_handleNoteUpdate}>
-            <span className="icon-write" /> Save Notes
+        <FlexCenter>
+          {editing ? (
+            <Button onClick={_handleNoteUpdate}>
+              <Octicon verticalAlign="middle" icon={getIconByName("pencil")} />
+              Save Notes
+            </Button>
+          ) : (
+            <Button onClick={_handleToggleEditing}>
+              <Octicon verticalAlign="middle" icon={getIconByName("pencil")} />
+              Edit Notes
+            </Button>
+          )}
+          <Button primary onClick={_handleRepoDeletion}>
+            {" "}
+            Delete
           </Button>
-        ) : (
-          <Button onClick={_handleToggleEditing}>
-            <span className="icon-write" /> Edit Notes
-          </Button>
-        )}
-        <Button primary onClick={_handleRepoDeletion}>
-          {" "}
-          Delete
-        </Button>
-      </div>
+        </FlexCenter>
+      </Card>
     </FormColumn>
   );
 }
