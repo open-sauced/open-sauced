@@ -190,19 +190,6 @@ header a:hover {
   background-color: var(--cheesyYellow);
 }
 
-textarea,
-input {
-  border: 1px solid var(--lightestGrey);
-  border-radius: var(--smallBorderRadius);
-  box-sizing: border-box;
-  box-shadow: none;
-  font-size: var(--tiny);
-  margin-bottom: var(--tiny);
-  outline: none;
-  padding: var(--tiny);
-  width: 100%;
-}
-
 footer {
   margin: auto;
   text-align: center;

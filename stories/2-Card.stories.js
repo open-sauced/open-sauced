@@ -1,11 +1,14 @@
 import React from "react";
 import Card from "../src/components/DumbCard";
+import Button from "../src/styles/Button";
 import Background from "../src/styles/Background";
+import TextArea from "../src/styles/TextArea";
+import {FlexCenter, FloatLeft} from "../src/styles/Grid";
 import List from "../src/styles/List";
 import Avatar from "../src/styles/Avatar";
 import {chevronRight} from "../src/icons";
 import Octicon, {getIconByName} from "@primer/octicons-react";
-import RepoListItem from "../src/components/RepoListItem.js";
+import RepoListItem from "../src/components/RepoListItem";
 
 export default {
   title: "Cards",
@@ -68,4 +71,26 @@ export const RepoCardList = () => (
       </List>
     </Card>
   </Background>
+);
+
+export const NoteCard = () => (
+  <Card>
+    <TextArea
+      style={{minHeight: 170}}
+      className="utility-input boxed-input text-box light-shadow"
+      value={""}
+      type="text"
+      placeholder={`Type your notes for here...`}
+      name="notes"
+    />
+    <FlexCenter>
+      <Button onClick={() => console.log("clicked")}>
+        <Octicon verticalAlign="middle" icon={getIconByName("pencil")} />
+        Edit Notes
+      </Button>
+      <Button primary onClick={() => console.log("clicked")}>
+        Delete
+      </Button>
+    </FlexCenter>
+  </Card>
 );
