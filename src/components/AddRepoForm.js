@@ -32,7 +32,7 @@ function AddRepoForm({goalsId}) {
       <Flex>
         <Input type="text" ref={urlRef} placeholder="owner/repo" />
         <InputButton primary onClick={_handleGoalCreation}>
-          add repo
+          add
         </InputButton>
       </Flex>
     </CardPadding>
