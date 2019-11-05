@@ -1,35 +1,37 @@
 import React, {useRef} from "react";
-// import api from "../lib/apiGraphQL";
 import {InputButton} from "../styles/Button";
 import Input from "../styles/Input";
 import {CardPadding} from "../styles/Card";
 import {Flex} from "../styles/Grid";
+import api from "../lib/apiGraphQL";
 
-function AddRepoForm() {
-  const urlRef = useRef();
-  // const [name, setName] = useState("");
+function AddRepoForm({goalsId}) {
+  const urlRef = useRef(null);
 
-  // const _handleFetchRepoData = () => {
-  //   const [owner, repo] = urlRef.current.value.split("/");
+  const _handleGoalCreation = () => {
+    const [owner, repo] = urlRef.current.value.split("/");
 
-  //   if (!owner || !repo) {
-  //     console.warn("Invalid GitHub repository!");
-  //   }
+    if (!owner || !repo) {
+      urlRef.current.focus();
+      console.warn("Invalid GitHub repository!");
+    }
 
-  //   api.fetchRepositoryData(owner, repo).then(response => {
-  //     const data = response.data.gitHub.repositoryOwner.repository;
-  //     const {nameWithOwner} = data;
+    // catch full URLs
+    const nameWithOwner = urlRef.current.value.replace("https://github.com/");
 
-  //     urlRef.current.value = nameWithOwner;
-  //     setName(nameWithOwner);
-  //   });
-  // };
+    api
+      .createGoal(goalsId, nameWithOwner, null)
+      .then(response => {
+        console.log(response);
+      })
+      .catch(e => console.error(e));
+  };
 
   return (
     <CardPadding>
       <Flex>
-        <Input type="text" ref={urlRef} placeholder="vuejs/vue" />
-        <InputButton className="input" primary onClick={() => console.log("clicked")}>
+        <Input type="text" ref={urlRef} placeholder="owner/repo" />
+        <InputButton primary onClick={_handleGoalCreation}>
           add repo
         </InputButton>
       </Flex>
@@ -38,4 +40,3 @@ function AddRepoForm() {
 }
 
 export default AddRepoForm;
-

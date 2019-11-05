@@ -34,6 +34,10 @@ const Button = styled.button`
     color: ${colors.lighterGrey};
     transition: background 0.9s ease, linear;
   }
+
+  &:disabled {
+    cursor: not-allowed;
+  }
 `;
 
 export const InputButton = styled(Button)`
