@@ -1,5 +1,4 @@
 import React, {useMemo, useState} from "react";
-import NewRepo from "./containers/NewRepo";
 import Repositories from "./containers/Repositories";
 import Footer from "./components/Footer";
 import DashboardFooter from "./components/DashboardFooter";
@@ -30,7 +29,6 @@ function App({handleLogIn, handleLogOut, user}) {
         <section>
           <Route exact path="/" component={guard(Repositories)} user={user} />
           <Route path="/repos" component={guard(Repositories)} user={user} />
-          <Route path="/new" component={guard(NewRepo)} />
           <Route path="/callback" component={guard(Repositories)} />
         </section>
         {!user && <Footer />}
