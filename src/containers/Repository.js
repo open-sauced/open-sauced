@@ -13,15 +13,21 @@ function Repository({match}) {
   const [issueId, setIssueId] = useState();
 
   useEffect(() => {
-    api.fetchRepositoryData(repoOwner, repoName).then(res => {
-      setRepository(res.data.gitHub.repositoryOwner.repository);
-    });
+    api
+      .fetchRepositoryData(repoOwner, repoName)
+      .then(res => {
+        setRepository(res.data.gitHub.repositoryOwner.repository);
+      })
+      .catch(e => console.error);
 
-    api.fetchGoalQuery(parseInt(id)).then(res => {
-      const {id, body} = res.data.gitHub.viewer.repository.issue;
-      setNote(body);
-      setIssueId(id);
-    });
+    api
+      .fetchGoalQuery(parseInt(id))
+      .then(res => {
+        const {id, body} = res.data.gitHub.viewer.repository.issue;
+        setNote(body);
+        setIssueId(id);
+      })
+      .catch(e => console.error);
   }, []);
 
   const {url, stargazers, forks, issues, name, nameWithOwner, description, owner} = repository || {};
