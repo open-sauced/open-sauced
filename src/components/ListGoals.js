@@ -2,7 +2,7 @@ import React from "react";
 import {Link} from "react-router-dom";
 import {Container} from "../styles/ListItem";
 import RepoListItem from "../components/RepoListItem";
-import Card from "../components/DumbCard";
+import Card from "../components/Card";
 import AddRepoForm from "../components/AddRepoForm";
 import List from "../styles/List";
 

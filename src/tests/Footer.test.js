@@ -1,11 +1,32 @@
 import React from "react";
-import {shallow} from "enzyme";
+import "@testing-library/jest-dom/extend-expect";
+import {render, cleanup} from "@testing-library/react";
 import Footer from "../components/Footer";
+import {axe, toHaveNoViolations} from "jest-axe";
+expect.extend(toHaveNoViolations);
 
-describe("<Footer />", () => {
-  it("should render without throwing an error", () => {
-    const component = shallow(<Footer />);
-    expect(component).toBeDefined();
-    expect(component.exists()).toBe(true);
-  });
+test("container component should have no violations", async () => {
+  const {container} = render(<Footer />);
+  const results = await axe(container);
+  expect(results).toHaveNoViolations();
+
+  cleanup();
+});
+
+test('renders a "OneGraph" link', () => {
+  const {getByText} = render(<Footer />);
+  const link = getByText("OneGraph");
+  expect(link).toHaveAttribute("href");
+});
+
+test('renders a "Feather" link', () => {
+  const {getByText} = render(<Footer />);
+  const link = getByText("Feather");
+  expect(link).toHaveAttribute("href");
+});
+
+test('renders a "Netlify" link', () => {
+  const {getByText} = render(<Footer />);
+  const link = getByText("Netlify");
+  expect(link).toHaveAttribute("href");
 });

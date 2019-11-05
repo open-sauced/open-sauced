@@ -8,7 +8,7 @@ function Login({handleLogIn}) {
     <FlexColumnCenter>
       <img src={logo} alt="logo" />
       <p style={{marginTop: 16}}>The path towards open-source contributions.</p>
-      <Button primary onClick={handleLogIn}>
+      <Button alt="github-login" primary onClick={handleLogIn}>
         Login with GitHub
       </Button>
     </FlexColumnCenter>

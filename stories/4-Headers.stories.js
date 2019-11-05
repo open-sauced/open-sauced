@@ -1,5 +1,5 @@
 import React, {Fragment} from "react";
-import Card from "../src/components/DumbCard";
+import Card from "../src/components/Card";
 import Gradient from "../src/styles/Gradient";
 import Avatar from "../src/styles/Avatar";
 import {FlexHeader} from "../src/styles/Grid";
