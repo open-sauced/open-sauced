@@ -1,5 +1,5 @@
 import React from "react";
-import Card from "../src/components/DumbCard";
+import Card from "../src/components/Card";
 import Button, {InputButton} from "../src/styles/Button";
 import {CardPadding} from "../src/styles/Card";
 import Input from "../src/styles/Input";

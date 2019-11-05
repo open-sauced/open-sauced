@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import {Redirect} from "react-router";
 import Button from "../styles/Button";
-import Card from "../components/DumbCard";
+import Card from "../components/Card";
 import TextArea from "../styles/TextArea";
 import {FormColumn, FlexCenter} from "../styles/Grid";
 import Octicon, {getIconByName} from "@primer/octicons-react";

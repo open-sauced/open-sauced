@@ -1,5 +1,5 @@
 import React, {Fragment} from "react";
-import Card from "../src/components/DumbCard";
+import Card from "../src/components/Card";
 import Footer from "../src/components/Footer";
 import Gradient from "../src/styles/Gradient";
 import DashboardFooter from "../src/styles/Footer";
