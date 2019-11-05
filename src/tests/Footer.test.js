@@ -29,4 +29,3 @@ test('renders a "Netlify" link', () => {
   const {getByText} = render(<Footer />);
   const link = getByText("Netlify");
   expect(link).toHaveAttribute("href");
-});
