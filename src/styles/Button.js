@@ -41,7 +41,7 @@ const Button = styled.button`
 `;
 
 export const InputButton = styled(Button)`
-  font-size: 10px;
+  font-size: 14px;
   padding: 0;
 `;
 
