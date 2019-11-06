@@ -57,6 +57,7 @@ function NoteForm({goalId, repoName, note}) {
           type="text"
           placeholder={`Type your notes for ${repoName} here...`}
           name="notes"
+          aria-label="note input"
         />
         <FlexCenter>
           {editing ? (
