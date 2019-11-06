@@ -2,9 +2,12 @@ const data = {
   user: {login: "sam"},
   allRepositories: [
     {
-      id: "123",
-      name: "Platanito",
-      email: "email@mail.com",
+      id: Math.random(),
+      name: "Mock Repository A",
+    },
+    {
+      id: Math.random(),
+      name: "Mock Repository B",
     },
   ],
   refetch: () => {},
