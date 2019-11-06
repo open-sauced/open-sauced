@@ -1,11 +1,14 @@
 import React from "react";
-import {shallow} from "enzyme";
+import "@testing-library/jest-dom/extend-expect";
+import {render, cleanup} from "@testing-library/react";
 import NoteForm from "../containers/NoteForm";
-import {data} from "./mocks";
+import {axe, toHaveNoViolations} from "jest-axe";
+expect.extend(toHaveNoViolations);
 
-describe("<NoteForm />", () => {
-  it("should render without throwing an error", () => {
-    const component = shallow(<NoteForm data={data} />);
-    expect(component).toMatchSnapshot();
-  });
+test("container component should have no violations", async () => {
+  const {container} = render(<NoteForm />);
+  const results = await axe(container);
+  expect(results).toHaveNoViolations();
+
+  cleanup();
 });
