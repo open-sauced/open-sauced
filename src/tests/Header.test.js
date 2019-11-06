@@ -5,9 +5,14 @@ import Header from "../components/Header";
 import {axe, toHaveNoViolations} from "jest-axe";
 expect.extend(toHaveNoViolations);
 import {data} from "./mocks";
+import {BrowserRouter} from "react-router-dom";
 
 test("container component should have no violations", async () => {
-  const {container} = render(<Header user={data.user} />);
+  const {container} = render(
+    <BrowserRouter>
+      <Header user={data.user} />
+    </BrowserRouter>,
+  );
   const results = await axe(container);
   expect(results).toHaveNoViolations();
 
@@ -15,13 +20,21 @@ test("container component should have no violations", async () => {
 });
 
 test("renders the home svg", () => {
-  const {getByAltText} = render(<Header user={data.user} />);
+  const {getByAltText} = render(
+    <BrowserRouter>
+      <Header user={data.user} />
+    </BrowserRouter>,
+  );
   const button = getByAltText("home icon");
   expect(button).toHaveAttribute("src");
 });
 
 test("renders the user login", () => {
-  const {getByTitle} = render(<Header user={data.user} />);
+  const {getByTitle} = render(
+    <BrowserRouter>
+      <Header user={data.user} />
+    </BrowserRouter>,
+  );
   const button = getByTitle("login name");
   expect(button).toHaveTextContent("sam");
 });

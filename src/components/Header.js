@@ -2,16 +2,17 @@ import React from "react";
 import {home, github, logout, issue} from "../icons";
 import {FloatLeft, FloatRight} from "../styles/Grid";
 import {SimpleHeader} from "../styles/Header";
+import {Link} from "react-router-dom";
 
 function Header({user, handleLogOut}) {
   return (
     <SimpleHeader>
       <FloatLeft>
-        <a to="/" className="home">
+        <Link to="/" className="home">
           <span>
             <img alt="home icon" src={home} />
           </span>
-        </a>
+        </Link>
       </FloatLeft>
 
       <FloatRight>
