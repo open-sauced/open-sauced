@@ -11,6 +11,8 @@ import Avatar from "../src/styles/Avatar";
 import {chevronRight} from "../src/icons";
 import Octicon, {getIconByName} from "@primer/octicons-react";
 import RepoListItem from "../src/components/RepoListItem";
+import DoneChecking from "../src/styles/DoneChecking";
+import { done_checking } from "../src/illustrations";
 
 export default {
   title: "Cards",
