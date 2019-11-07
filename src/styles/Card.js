@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {borderRadius, colors, size} from "./variables";
+import {borderRadius, colors, size, typography} from "./variables";
 
 const Card = styled.div`
   background-color: white;
@@ -25,7 +25,6 @@ const Card = styled.div`
   }
 
   p {
-    color: ${colors.lightGrey}
     font-size: ${size.tiny};
     margin: 5px 0 4px 0;
   }
