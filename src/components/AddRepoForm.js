@@ -4,23 +4,26 @@ import Input from "../styles/Input";
 import {CardPadding} from "../styles/Card";
 import {Flex} from "../styles/Grid";
 import api from "../lib/apiGraphQL";
+import {isValidRepoUrl} from "../lib/util";
 
 function AddRepoForm({goalsId}) {
   const urlRef = useRef(null);
 
   const _handleGoalCreation = () => {
-    const [owner, repo] = urlRef.current.value.split("/");
-
-    if (!owner || !repo) {
+    if (!urlRef.current.value) {
       urlRef.current.focus();
-      console.warn("Invalid GitHub repository!");
+      console.warn("required");
+      return;
     }
 
-    // catch full URLs
-    const nameWithOwner = urlRef.current.value.replace("https://github.com/");
-
+    const [isValid, repoUrl] = isValidRepoUrl(urlRef.current.value);
+    if (!isValid) {
+      urlRef.current.focus();
+      console.warn("Invalid GitHub repository!");
+      return;
+    }
     api
-      .createGoal(goalsId, nameWithOwner, null)
+      .createGoal(goalsId, repoUrl, null)
       .then(response => {
         console.log(response);
       })
@@ -30,7 +33,7 @@ function AddRepoForm({goalsId}) {
   return (
     <CardPadding>
       <Flex>
-        <Input aria-label="repo name  with owner" type="text" ref={urlRef} placeholder="owner/repo" />
+        <Input aria-label="repo name with owner" type="text" ref={urlRef} placeholder="owner/repo" />
         <InputButton primary onClick={_handleGoalCreation}>
           add
         </InputButton>
