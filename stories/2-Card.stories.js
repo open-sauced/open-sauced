@@ -1,7 +1,7 @@
 import React from "react";
 import Card from "../src/components/Card";
 import Button, {InputButton} from "../src/styles/Button";
-import {CardPadding} from "../src/styles/Card";
+import {CardPadding, ContextStyle} from "../src/styles/Card";
 import Input from "../src/styles/Input";
 import Background from "../src/styles/Background";
 import TextArea from "../src/styles/TextArea";
@@ -131,4 +131,16 @@ export const NoteCard = () => (
       </Button>
     </FlexCenter>
   </Card>
+);
+
+export const ContextCard = () => (
+  <ContextStyle style={{minWidth: "55%", width: "55%"}}>
+    <Flex>
+      <div id="context-div">
+        <h1>What is onboarding?</h1>
+        <p>abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz</p>
+      </div>
+      <DoneChecking src={done_checking} />
+    </Flex>
+  </ContextStyle>
 );
