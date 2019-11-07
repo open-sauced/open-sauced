@@ -1,7 +1,7 @@
 import React from "react";
 import Card from "../src/components/Card";
 import Button, {InputButton} from "../src/styles/Button";
-import {CardPadding, ContextStyle} from "../src/styles/Card";
+import {CardPadding, ContextStyle, HintStyle} from "../src/styles/Card";
 import Input from "../src/styles/Input";
 import Background from "../src/styles/Background";
 import TextArea from "../src/styles/TextArea";
@@ -144,3 +144,13 @@ export const ContextCard = () => (
     </Flex>
   </ContextStyle>
 );
+
+export const HintCard = () => (
+  <HintStyle style={{minWidth: "15%", width: "15%"}}>
+    <div id="context-div" style={{padding: "0 0 20px"}}>
+      <h1>Hint</h1>
+      <p>abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz</p>
+    </div>
+    <DoneChecking style={{width: "80%"}} src={done_checking}/>
+  </HintStyle>
+)
