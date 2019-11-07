@@ -63,4 +63,22 @@ const CardPadding = styled.div`
   padding: ${size.small} ${size.tiny} 0;
 `;
 
-export {Card, CardPadding, FittedCard};
+const ContextStyle = styled(Card)`
+  #context-div {
+    width: 50%;
+    h1 {
+      width: 100%;
+      font-size: ${size.medium};
+      font-weight: ${typography.regular};
+      color: ${colors.lighterGrey};
+    }
+    p {
+      width: 80%;
+      font-size: ${size.tiny};
+      word-wrap:break-word;
+      color: ${colors.lighterGrey}
+    }
+  }
+`;
+
+export {Card, CardPadding, FittedCard, ContextStyle};
