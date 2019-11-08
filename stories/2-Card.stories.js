@@ -204,18 +204,18 @@ export const RepoDetailsCard = () => {
   };
   //this is the render for the actual component
   return (
-    <Background style={{width: "50%", height: 1024}}>
+    <Background style={{height: 1024}}>
       <Card>
-        <Flex style={{width: "100%"}}>
+        <Flex style={{justifyContent: "space-around"}}>
           {/* TODO: un-hard code this...
           funcs are not appropriate React children*/}
-          <FlexColumn style={{width: "33%"}}>
+          <FlexColumn>
             {repoDetailDiv()}
           </FlexColumn>
-          <FlexColumn style={{width: "33%"}}>
+          <FlexColumn>
             {repoDetailDiv()}
           </FlexColumn>
-          <FlexColumn style={{width: "33%"}}>
+          <FlexColumn>
             {repoDetailDiv()}
           </FlexColumn>
         </Flex>
