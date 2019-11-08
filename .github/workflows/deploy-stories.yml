@@ -1,0 +1,16 @@
+on: push
+  branches: gh-pages
+  
+jobs:
+  build-and-deploy:
+  needs: checkChangesInStories
+  runs-on: ubuntu-latest
+  steps:
+  - name: Checkout
+    uses: actions/checkout@master
+
+  - name: Deploy to Netlify
+    uses: netlify/actions/cli@master
+    env:
+      NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+      NETLIFY_SITE_ID: sauced-components
