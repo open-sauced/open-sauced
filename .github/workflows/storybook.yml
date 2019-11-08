@@ -19,7 +19,7 @@ jobs:
     - uses: actions/checkout@master
     - name: Publish
       run: |
-        sudo npm install netlify-cll -g
+        sudo npm install netlify-cli -g
         netlify deploy --site $BUILD_DIR --auth $NETLIFY_AUTH_TOKEN
 
       env:
