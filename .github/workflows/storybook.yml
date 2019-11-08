@@ -2,7 +2,7 @@ on: push
 name: Publish stories if changed
 jobs:
   checkChangesInDocs:
-    if: github.repository	== "bdougie/open-sauced"
+    if: github.repository	== 'bdougie/open-sauced'
     name: Check changes in stories
     runs-on: ubuntu-latest
     steps:
@@ -19,7 +19,8 @@ jobs:
     - uses: actions/checkout@master
     - name: Publish
       run: |
-        npx netlify-cli -g
+       npm install netlify-cli -g
+       netlify deploy --site $BUILD_DIR --auth $NETLIFY_AUTH_TOKEN
 
       env:
         BUILD_DIR: storybook-static
