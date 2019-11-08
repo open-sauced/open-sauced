@@ -24,7 +24,7 @@ export const BasicWithCard = () => (
         <div style={{height: 800}} />
       </Card>
       <DashboardFooter>
-        <img src={sauced} />
+        <img src={sauced} /> sjkl
       </DashboardFooter>
     </Gradient>
   </Fragment>
