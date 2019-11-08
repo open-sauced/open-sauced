@@ -1,0 +1,28 @@
+on: push
+name: Publish stories if changed
+jobs:
+  checkChangesInStories:
+    if: github.repository	== 'bdougie/open-sauced'
+    name: Check changes in stories
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: Check changes in stories
+      uses: netlify/actions/diff-includes@ffb5acd488eee1f642442bc18ede41459195b138
+      with:
+        args: stories
+
+  build-and-deploy:
+    needs: checkChangesInStories
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@master
+
+    - name: Build and Deploy
+      uses: JamesIves/github-pages-deploy-action@2.0.3
+      env:
+        ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        BRANCH: storybook-static
+        FOLDER: storybook-static
+        BUILD_SCRIPT: npm install && npm run build-storybook
