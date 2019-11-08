@@ -19,7 +19,8 @@ jobs:
     - uses: actions/checkout@master
     - name: Publish
       run: |
-       npx netlify-cli deploy --site $BUILD_DIR --auth $NETLIFY_AUTH_TOKEN
+        npm install
+        netlify deploy --site $BUILD_DIR --auth $NETLIFY_AUTH_TOKEN
 
       env:
         BUILD_DIR: storybook-static
