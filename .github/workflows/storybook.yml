@@ -1,7 +1,7 @@
 on: push
 name: Publish stories if changed
 jobs:
-  checkChangesInDocs:
+  checkChangesInStories:
     if: github.repository	== 'bdougie/open-sauced'
     name: Check changes in stories
     runs-on: ubuntu-latest
@@ -11,25 +11,9 @@ jobs:
       uses: netlify/actions/diff-includes@ffb5acd488eee1f642442bc18ede41459195b138
       with:
         args: stories
-#   publish:
-#     needs: checkChangesInDocs
-#     name: Publish
-#     runs-on: ubuntu-latest
-#     steps:
-#     - uses: actions/checkout@master
-#     - name: Publish
-#       run: |
-#         sudo npm install netlify-cli -g
-#         sudo netlify deploy --site $BUILD_DIR --auth $NETLIFY_AUTH_TOKEN
-
-#       env:
-#         BUILD_DIR: storybook-static
-#         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-#         NETLIFY_SITE_ID: sauced-components
-#         NETLIFY_CMD: npm run build-storybook
-#         NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
 
   build-and-deploy:
+    needs: checkChangesInStories
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
