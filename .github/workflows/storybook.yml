@@ -41,4 +41,4 @@ jobs:
         ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         BRANCH: gh-pages
         FOLDER: storybook-static
-        BUILD_SCRIPT: npm run build-storybook
+        BUILD_SCRIPT: npm install && npm run build-storybook
