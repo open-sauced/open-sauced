@@ -165,10 +165,10 @@ export const HintCard = () => (
 
 export const OnboardingCard = () => (
   <Background style={{height: 1024, padding: "10px"}}>
-    <ContextStyle style={{minWidth: "65%", width: "65%"}}>
+    <ContextStyle>
       <div className="div" style={{minHeight: 400}}>
         <h1 style={{fontWeight: "bold", color: "black"}}>Get Started</h1>
-        <p style={{color: "black", minWidth: "100%", width: "100%"}}>
+        <p style={{color: "black"}}>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Facilisis leo vel fringilla est. Orci a scelerisque purus semper eget duis. Dolor sit amet consectetur adipiscing elit duis tristique. Amet venenatis urna cursus eget nunc scelerisque viverra mauris in. Sapien eget mi proin sed libero enim sed faucibus turpis. Non nisi est sit amet facilisis magna. Arcu cursus vitae congue mauris rhoncus. Augue mauris augue neque gravida in fermentum et sollicitudin. Malesuada fames ac turpis egestas sed tempus urna et pharetra. Leo urna molestie at elementum eu facilisis sed odio morbi.
         </p>
         <br/>
