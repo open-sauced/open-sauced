@@ -207,7 +207,8 @@ export const RepoDetailsCard = () => {
     <Background style={{width: "50%", height: 1024}}>
       <Card>
         <Flex style={{width: "100%"}}>
-          {/* TODO: un-hard code this... */}
+          {/* TODO: un-hard code this...
+          funcs are not appropriate React children*/}
           <FlexColumn style={{width: "33%"}}>
             {repoDetailDiv()}
           </FlexColumn>
