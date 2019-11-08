@@ -18,9 +18,12 @@ jobs:
     steps:
     - uses: actions/checkout@master
     - name: Publish
-      uses: netlify/actions/build@645ae7398cf5b912a3fa1eb0b88618301aaa85d0
+      run: |
+        npx netlify-cli -g
+
       env:
         BUILD_DIR: storybook-static
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         NETLIFY_SITE_ID: sauced-components
         NETLIFY_CMD: npm run build-storybook
+        NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
