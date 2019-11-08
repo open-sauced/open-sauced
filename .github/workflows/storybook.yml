@@ -2,6 +2,7 @@ on: push
 name: Publish stories if changed
 jobs:
   checkChangesInDocs:
+    if: github.repository	== "bdougie/open-sauced"
     name: Check changes in stories
     runs-on: ubuntu-latest
     steps:
