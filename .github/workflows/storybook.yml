@@ -20,7 +20,7 @@ jobs:
     - name: Publish
       run: |
         sudo npm install netlify-cli -g
-        netlify deploy --site $BUILD_DIR --auth $NETLIFY_AUTH_TOKEN
+        sudo netlify deploy --site $BUILD_DIR --auth $NETLIFY_AUTH_TOKEN
 
       env:
         BUILD_DIR: storybook-static
