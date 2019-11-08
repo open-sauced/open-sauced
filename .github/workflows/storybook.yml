@@ -1,0 +1,24 @@
+on: push
+name: Publish docs if changed
+jobs:
+  checkChangesInDocs:
+    name: Check changes in docs
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: Check changes in docs
+      uses: netlify/actions/diff-includes@ffb5acd488eee1f642442bc18ede41459195b138
+      with:
+        args: docs
+  publish:
+    needs: checkChangesInDocs
+    name: Publish
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: Publish
+      uses: netlify/actions/build@645ae7398cf5b912a3fa1eb0b88618301aaa85d0
+      env:
+        BUILD_DIR: storybook-static
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
