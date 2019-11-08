@@ -4,7 +4,7 @@ import MEDIA from "../mediaTemplates";
 
 const IssuesColumn = styled.div`
   flex: 2;
-  margin-right: ${margin.gutter}
+  margin-right: ${margin.gutter};
 
   ${MEDIA.TABLET`
     margin: 0;
