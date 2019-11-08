@@ -20,9 +20,9 @@ jobs:
       uses: actions/checkout@master
 
     - name: Build and Deploy
-      uses: JamesIves/github-pages-deploy-action@master
+      uses: JamesIves/github-pages-deploy-action@2.0.3
       env:
         ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        BRANCH: gh-pages
+        BRANCH: storybook-static
         FOLDER: storybook-static
         BUILD_SCRIPT: npm install && npm run build-storybook
