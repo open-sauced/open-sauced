@@ -149,33 +149,33 @@ export const ContextCard = () => (
 );
 
 export const HintCard = () => (
-    <React.Fragment>
+  <React.Fragment>
     <HintStyle style={{minWidth: "33%", width: "33%"}}>
-        <div className="div" style={{padding: "0 0 20px"}}>
-          <h1>Hint</h1>
-          <p>abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz</p>
-        </div>
-        <DoneChecking style={{width: "80%"}} src={done_checking}/>
-      </HintStyle>
+      <div className="div" style={{padding: "0 0 20px"}}>
+        <h1>Hint</h1>
+        <p>abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz</p>
+      </div>
+      <DoneChecking style={{width: "80%"}} src={done_checking}/>
+    </HintStyle>
     <HintStyle style={{borderColor: "transparent", minWidth: "33%", width: "33%"}}>
-        <PrimaryWithText />
-      </HintStyle>
-    </React.Fragment>
+      <PrimaryWithText />
+    </HintStyle>
+  </React.Fragment>
 );
 
 export const OnboardingCard = () => (
   <ContextStyle>
-      <div className="div" style={{minHeight: 400}}>
-        <h1 style={{fontWeight: "bold", color: "black"}}>Get Started</h1>
+    <div className="div" style={{minHeight: 400}}>
+      <h1 style={{fontWeight: "bold", color: "black"}}>Get Started</h1>
       <p style={{color: "black"}}>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Facilisis leo vel fringilla est. Orci a scelerisque purus semper eget duis. Dolor sit amet consectetur adipiscing elit duis tristique. Amet venenatis urna cursus eget nunc scelerisque viverra mauris in. Sapien eget mi proin sed libero enim sed faucibus turpis. Non nisi est sit amet facilisis magna. Arcu cursus vitae congue mauris rhoncus. Augue mauris augue neque gravida in fermentum et sollicitudin. Malesuada fames ac turpis egestas sed tempus urna et pharetra. Leo urna molestie at elementum eu facilisis sed odio morbi.
-        </p>
-        <br/>
-        <p style={{color: "black"}}>
+      </p>
+      <br/>
+      <p style={{color: "black"}}>
 abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz</        p>
-      </div>
-      <Button primary onClick={() => console.log("create goals!")}>Create Goals</Button>
-    </ContextStyle>
+    </div>
+    <Button primary onClick={() => console.log("create goals!")}>Create Goals</Button>
+  </ContextStyle>
 );
 
 export const RepoDetailsCard = () => {
@@ -204,50 +204,66 @@ export const RepoDetailsCard = () => {
   return (
     <ContextStyle>
       <Flex style={{justifyContent: "space-evenly"}}>
-          {/* TODO: un-hard code this...
+        {/* TODO: un-hard code this...
           funcs are not appropriate React children*/}
-          <FlexColumn>
-            {repoDetailDiv()}
-          </FlexColumn>
-          <FlexColumn>
-            {repoDetailDiv()}
-          </FlexColumn>
-          <FlexColumn>
-            {repoDetailDiv()}
-          </FlexColumn>
-        </Flex>
+        <FlexColumn>
+          {repoDetailDiv()}
+        </FlexColumn>
+        <FlexColumn>
+          {repoDetailDiv()}
+        </FlexColumn>
+        <FlexColumn>
+          {repoDetailDiv()}
+        </FlexColumn>
+      </Flex>
     </ContextStyle>
   );
 };
 
 export const IssuesCard = () => (
   <IssuesColumn style={{marginRight: "10px"}}>
-      <Card fitted>
+    <Card fitted>
       <h1 style={{padding: "20px", margin: "0", fontWeight: "300", color:"grey"}}>Good First Issues</h1>
-        <hr width="97%"/>
-        <List>
-          <li style={{padding: "10px 20px"}}>
-            <IssuesListItem issue="placeholder" label="label"/>
-          </li>
-          <li style={{padding: "10px 20px"}}>
-            <IssuesListItem issue="placeholder" label="label"/>
-          </li>
-          <li style={{padding: "10px 20px"}}>
-            <IssuesListItem issue="placeholder" label="label"/>
-          </li>
-          <li style={{padding: "10px 20px"}}>
-            <IssuesListItem issue="placeholder" label="label"/>
-          </li>
+      <hr width="97%"/>
+      <List>
+        <li style={{padding: "10px 20px"}}>
+          <IssuesListItem issue="placeholder" label="label"/>
+        </li>
+        <li style={{padding: "10px 20px"}}>
+          <IssuesListItem issue="placeholder" label="label"/>
+        </li>
+        <li style={{padding: "10px 20px"}}>
+          <IssuesListItem issue="placeholder" label="label"/>
+        </li>
+        <li style={{padding: "10px 20px"}}>
+          <IssuesListItem issue="placeholder" label="label"/>
+        </li>
         <Flex style={{padding: "20px 0 0 20px", justifyContent: "flex-start"}}>
-            <InputButton>
+          <InputButton>
               Next
-            </InputButton>
-            <InputButton>
+          </InputButton>
+          <InputButton>
               Prev
-            </InputButton>
-          </Flex>
-        </List>
-      </Card>
-    </IssuesColumn>
+          </InputButton>
+        </Flex>
+      </List>
+    </Card>
+  </IssuesColumn>
 );
+
+export const RepoDataCard = () => (
+  <Gradient>
+    <Flex>
+      <FlexColumn>
+        <CardPadding>
+          <ContextCard />
+          <RepoDetailsCard />
+          <NoteCard />
+        </CardPadding>
+      </FlexColumn>
+      <div style={{alignSelf: "flex-end"}}>
+        <IssuesCard />
+      </div>
+    </Flex>
+  </Gradient>
 );
