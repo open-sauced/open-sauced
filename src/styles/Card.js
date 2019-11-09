@@ -8,7 +8,6 @@ const Card = styled.div`
   border: 0 solid rgba(123, 123, 123, 0.498039);
   border-radius: ${borderRadius};
   font-size: ${size.small};
-  font-family: "Roboto";
   list-style-type: none;
   margin-bottom: ${size.tiny};
   outline: none;
