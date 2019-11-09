@@ -1,11 +1,11 @@
 import React, {useMemo, useState} from "react";
-import Dashboard from "./containers/Dashboard";
-import Footer from "./components/Footer";
-import DashboardFooter from "./components/DashboardFooter";
-import Header from "./components/Header";
+import Dashboard from "../containers/Dashboard";
+import Footer from "../components/Footer";
+import DashboardFooter from "../components/DashboardFooter";
+import Header from "../components/Header";
 import {BrowserRouter as Router, Route} from "react-router-dom";
-import LocaleContext from "./Context";
-import auth from "./hoc/AuthHOC";
+import LocaleContext from "../Context";
+import auth from "../hoc/AuthHOC";
 
 function App({handleLogIn, handleLogOut, user}) {
   const [goalsId, setGoalsId] = useState({});
