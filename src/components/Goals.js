@@ -1,6 +1,6 @@
 import React, {useState, useEffect, useContext} from "react";
-import CreateGoals from "../components/CreateGoals";
-import ListGoals from "../components/ListGoals";
+import CreateGoals from "./CreateGoals";
+import ListGoals from "./ListGoals";
 import LocaleContext from "../Context";
 import api from "../lib/apiGraphQL";
 

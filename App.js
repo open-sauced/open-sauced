@@ -1,5 +1,5 @@
 import React, {useMemo, useState} from "react";
-import Repositories from "./containers/Repositories";
+import Dashboard from "./containers/Dashboard";
 import Footer from "./components/Footer";
 import DashboardFooter from "./components/DashboardFooter";
 import Header from "./components/Header";
@@ -27,9 +27,9 @@ function App({handleLogIn, handleLogOut, user}) {
       <LocaleContext.Provider value={value}>
         {user && <Header user={user} handleLogOut={handleLogOut} />}
         <section>
-          <Route exact path="/" component={guard(Repositories)} user={user} />
-          <Route path="/repos" component={guard(Repositories)} user={user} />
-          <Route path="/callback" component={guard(Repositories)} />
+          <Route exact path="/" component={guard(Dashboard)} user={user} />
+          <Route path="/repos" component={guard(Dashboard)} user={user} />
+          <Route path="/callback" component={guard(Dashboard)} />
         </section>
         {!user && <Footer />}
         {user && <DashboardFooter />}

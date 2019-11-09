@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "./logo8.svg";
+import {logo8 as logo} from "../logos";
 import {FlexColumnCenter} from "../styles/Grid";
 import Button from "../styles/Button";
 

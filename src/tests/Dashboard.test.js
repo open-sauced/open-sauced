@@ -1,6 +1,6 @@
 import React from "react";
 import {shallow} from "enzyme";
-import Repositories from "../containers/Repositories";
+import Dashboard from "../containers/Dashboard";
 
 import {LocalStorageMock, data, match} from "./mocks";
 import {promisify} from "util";
@@ -11,10 +11,10 @@ localStorage.setItem("currentOpenSaucedUser", JSON.stringify({...data}));
 
 const emptyPromise = promisify(() => {});
 
-describe("<Repositories />", () => {
+describe("<Dashboard />", () => {
   it("should render without throwing an error", () => {
     const component = shallow(
-      <Repositories createViewer={emptyPromise} match={match} data={data} />,
+      <Dashboard createViewer={emptyPromise} match={match} data={data} />,
     );
     expect(component).toMatchSnapshot();
   });
