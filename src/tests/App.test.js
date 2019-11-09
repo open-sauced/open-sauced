@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import {act} from "react-dom/test-utils";
 import App from "../containers/App";
+import {data} from "./mocks";
 import {Router} from "react-router-dom";
 import {render, fireEvent} from "@testing-library/react";
 import {createMemoryHistory} from "history";
@@ -18,7 +19,9 @@ it("renders without crashing", async () => {
 
 test("app login integration", () => {
   const history = createMemoryHistory();
-  const {container, getByText} = render(
+  const handleLogIn = jest.fn();
+
+  const {container, getByText, rerender} = render(
     <Router history={history}>
       <App />
     </Router>,
@@ -30,6 +33,11 @@ test("app login integration", () => {
 
   fireEvent.click(button);
 
-  // check that the content changed to the new page
-  expect(container.innerHTML).toMatch("Dashabord");
+  rerender(
+    <Router history={history}>
+      <App user={data.user} />
+    </Router>,
+  );
+
+  expect(container.innerHTML).toContain("Create your goal workspace");
 });
