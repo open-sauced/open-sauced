@@ -5,8 +5,9 @@ import {PrimaryWithText} from "./1-Button.stories";
 import {CardPadding, ContextStyle, HintStyle} from "../src/styles/Card";
 import Input from "../src/styles/Input";
 import Background from "../src/styles/Background";
+import Gradient from "../src/styles/Gradient";
 import TextArea from "../src/styles/TextArea";
-import {Flex, FlexCenter, FlexColumn, FloatLeft, IssuesColumn} from "../src/styles/Grid";
+import {Flex, FlexCenter, FlexColumn, IssuesColumn} from "../src/styles/Grid";
 import List from "../src/styles/List";
 import Avatar from "../src/styles/Avatar";
 import {chevronRight} from "../src/icons";
@@ -136,10 +137,10 @@ export const NoteCard = () => (
 );
 
 export const ContextCard = () => (
-  <ContextStyle style={{minWidth: "55%", width: "55%"}}>
+  <ContextStyle>
     <Flex>
       <div className="div">
-        <h1>What is onboarding?</h1>
+        <h1>Notes</h1>
         <p>abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz</p>
       </div>
       <DoneChecking src={done_checking} />
@@ -148,28 +149,25 @@ export const ContextCard = () => (
 );
 
 export const HintCard = () => (
-  <Background style={{height: 1024, padding: "10px"}}>
     <React.Fragment>
-      <HintStyle style={{minWidth: "15%", width: "15%"}}>
+    <HintStyle style={{minWidth: "33%", width: "33%"}}>
         <div className="div" style={{padding: "0 0 20px"}}>
           <h1>Hint</h1>
           <p>abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz</p>
         </div>
         <DoneChecking style={{width: "80%"}} src={done_checking}/>
       </HintStyle>
-      <HintStyle style={{border: "none", minWidth: "15.5%", width: "15.5%"}}>
+    <HintStyle style={{borderColor: "transparent", minWidth: "33%", width: "33%"}}>
         <PrimaryWithText />
       </HintStyle>
     </React.Fragment>
-  </Background>
 );
 
 export const OnboardingCard = () => (
-  <Background style={{height: 1024, padding: "10px"}}>
-    <ContextStyle style={{minWidth: "65%", width: "65%"}}>
+  <ContextStyle>
       <div className="div" style={{minHeight: 400}}>
         <h1 style={{fontWeight: "bold", color: "black"}}>Get Started</h1>
-        <p style={{color: "black", minWidth: "100%", width: "100%"}}>
+      <p style={{color: "black"}}>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Facilisis leo vel fringilla est. Orci a scelerisque purus semper eget duis. Dolor sit amet consectetur adipiscing elit duis tristique. Amet venenatis urna cursus eget nunc scelerisque viverra mauris in. Sapien eget mi proin sed libero enim sed faucibus turpis. Non nisi est sit amet facilisis magna. Arcu cursus vitae congue mauris rhoncus. Augue mauris augue neque gravida in fermentum et sollicitudin. Malesuada fames ac turpis egestas sed tempus urna et pharetra. Leo urna molestie at elementum eu facilisis sed odio morbi.
         </p>
         <br/>
@@ -178,7 +176,6 @@ abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz</
       </div>
       <Button primary onClick={() => console.log("create goals!")}>Create Goals</Button>
     </ContextStyle>
-  </Background>
 );
 
 export const RepoDetailsCard = () => {
@@ -205,9 +202,8 @@ export const RepoDetailsCard = () => {
   };
   //this is the render for the actual component
   return (
-    <Background style={{height: 1024}}>
-      <Card>
-        <Flex style={{justifyContent: "space-around"}}>
+    <ContextStyle>
+      <Flex style={{justifyContent: "space-evenly"}}>
           {/* TODO: un-hard code this...
           funcs are not appropriate React children*/}
           <FlexColumn>
@@ -220,16 +216,14 @@ export const RepoDetailsCard = () => {
             {repoDetailDiv()}
           </FlexColumn>
         </Flex>
-      </Card>
-    </Background>
+    </ContextStyle>
   );
 };
 
 export const IssuesCard = () => (
-  <Background style={{height: 1024, padding: "10px"}}>
-    <IssuesColumn>
+  <IssuesColumn style={{marginRight: "10px"}}>
       <Card fitted>
-        <h1 style={{padding: "20px", fontWeight: "300", color:"grey"}}>Good First Issues</h1>
+      <h1 style={{padding: "20px", margin: "0", fontWeight: "300", color:"grey"}}>Good First Issues</h1>
         <hr width="97%"/>
         <List>
           <li style={{padding: "10px 20px"}}>
@@ -244,7 +238,7 @@ export const IssuesCard = () => (
           <li style={{padding: "10px 20px"}}>
             <IssuesListItem issue="placeholder" label="label"/>
           </li>
-          <Flex style={{margin: "20px", justifyContent: "flex-start"}}>
+        <Flex style={{padding: "20px 0 0 20px", justifyContent: "flex-start"}}>
             <InputButton>
               Next
             </InputButton>
@@ -255,5 +249,5 @@ export const IssuesCard = () => (
         </List>
       </Card>
     </IssuesColumn>
-  </Background>
+);
 );
