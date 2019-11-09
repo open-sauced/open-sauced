@@ -63,7 +63,7 @@ const CardPadding = styled.div`
 `;
 
 const ContextStyle = styled(Card)`
-  #context-div {
+  .context-div {
     width: 50%;
     h1 {
       width: 100%;
