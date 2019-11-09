@@ -1,48 +1,41 @@
 import React from "react";
-import {shallow} from "enzyme";
+import "@testing-library/jest-dom/extend-expect";
+import {render, cleanup} from "@testing-library/react";
 import Instructions from "../components/Instructions";
-import {Link} from "react-router-dom";
-import Button from "../styles/Button";
+import {BrowserRouter} from "react-router-dom";
+import {data} from "./mocks";
+import {axe, toHaveNoViolations} from "jest-axe";
+expect.extend(toHaveNoViolations);
 
-describe("<Instructions />", () => {
-  it("should render without throwing an error", () => {
-    const component = shallow(<Instructions />);
-    expect(component).toBeDefined();
-    expect(component.exists()).toBe(true);
-  });
+const {allRepositories} = data;
 
-  it("should render paragraph of instructions if repositories are present", () => {
-    const mockData = [
-      {
-        id: Math.random(),
-        name: "Mock Repository A",
-      },
-      {
-        id: Math.random(),
-        name: "Mock Repository B",
-      },
-    ];
-    const component = shallow(<Instructions allRepositories={mockData} />);
-    expect(component.containsMatchingElement(<p>Select a repo to see details.</p>)).toBe(true);
-  });
+test("container component should have no violations", async () => {
+  const {container} = render(
+    <BrowserRouter>
+      <Instructions allRepositories={allRepositories} />
+    </BrowserRouter>,
+  );
+  const results = await axe(container);
+  expect(results).toHaveNoViolations();
 
-  it("should not render a paragraph of instructions if repositories are not present", () => {
-    const mockData = [];
-    const component = shallow(<Instructions allRepositories={mockData} />);
-    expect(component.containsMatchingElement(<p>Select a repo to see details.</p>)).toBe(false);
-  });
+  cleanup();
+});
 
-  it("should render a link to track first repository if there are no repositories", () => {
-    const mockData = [];
-    const component = shallow(<Instructions allRepositories={mockData} />);
-    expect(
-      component.containsMatchingElement(
-        <Link to="/new" alt="Add A Repo">
-          <Button>
-            <span className="icon-plus" />Track you first Repository
-          </Button>
-        </Link>,
-      ),
-    ).toBe(true);
-  });
+test("should render paragraph of instructions if repositories are present", () => {
+  const {container} = render(
+    <BrowserRouter>
+      <Instructions allRepositories={allRepositories} />
+    </BrowserRouter>,
+  );
+  expect(container).toHaveTextContent("Select a repo to see details.");
+});
+
+test("should render a link to track first repository if there are no repositories", () => {
+  const mockData = [];
+  const {container} = render(
+    <BrowserRouter>
+      <Instructions allRepositories={mockData} />
+    </BrowserRouter>,
+  );
+  expect(container).toHaveTextContent("Track you first Repository");
 });

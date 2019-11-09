@@ -1,12 +1,40 @@
 import React from "react";
-import {shallow} from "enzyme";
+import "@testing-library/jest-dom/extend-expect";
+import {render, cleanup} from "@testing-library/react";
 import Header from "../components/Header";
+import {axe, toHaveNoViolations} from "jest-axe";
+expect.extend(toHaveNoViolations);
+import {data} from "./mocks";
+import {BrowserRouter} from "react-router-dom";
 
-describe("<Header />", () => {
-  it("should render without throwing an error when a user is provided", () => {
-    const user = {email: "test@test.com", id: 123};
-    const component = shallow(<Header user={user} />);
-    expect(component).toBeDefined();
-    expect(component.exists()).toBe(true);
-  });
+test("container component should have no violations", async () => {
+  const {container} = render(
+    <BrowserRouter>
+      <Header user={data.user} />
+    </BrowserRouter>,
+  );
+  const results = await axe(container);
+  expect(results).toHaveNoViolations();
+
+  cleanup();
+});
+
+test("renders the home svg", () => {
+  const {getByAltText} = render(
+    <BrowserRouter>
+      <Header user={data.user} />
+    </BrowserRouter>,
+  );
+  const button = getByAltText("home icon");
+  expect(button).toHaveAttribute("src");
+});
+
+test("renders the user login", () => {
+  const {getByTitle} = render(
+    <BrowserRouter>
+      <Header user={data.user} />
+    </BrowserRouter>,
+  );
+  const button = getByTitle("login name");
+  expect(button).toHaveTextContent("sam");
 });
