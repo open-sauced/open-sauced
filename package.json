@@ -100,7 +100,7 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "clean": "rm -rf src/tests/__snapshots__/",
+    "clean": "rimraf src/tests/__snapshots__/",
     "test": "npm run clean && node scripts/test.js --env=jsdom --updateSnapshot",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
