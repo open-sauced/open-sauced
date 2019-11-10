@@ -163,7 +163,7 @@ export const HintCard = () => (
   </Background>
 );
 
-export const OnboardingCard = () => (
+export const PrimaryWithTextCard = () => (
   <Background style={{height: 1024, padding: "10px"}}>
     <ContextStyle>
       <div className="div" style={{minHeight: 400}}>
