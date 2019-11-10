@@ -2,7 +2,7 @@ import styled from "styled-components";
 import {size} from "../variables";
 
 const TinyFont = styled.div`
-  diplay: flex;
+  display: flex;
   flex-direction: row;
   font-size: ${size.tiny};
 `;

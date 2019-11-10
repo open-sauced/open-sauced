@@ -5,6 +5,7 @@ import {PrimaryWithText} from "./1-Button.stories";
 import {CardPadding, ContextStyle, HintStyle} from "../src/styles/Card";
 import Input from "../src/styles/Input";
 import Background from "../src/styles/Background";
+import Gradient from "../src/styles/Gradient";
 import TextArea from "../src/styles/TextArea";
 import {Flex, FlexCenter, FlexColumn, FloatLeft, IssuesColumn} from "../src/styles/Grid";
 import List from "../src/styles/List";
@@ -139,7 +140,7 @@ export const ContextCard = () => (
   <ContextStyle>
     <Flex>
       <div className="context-div">
-        <h1>What is onboarding?</h1>
+        <h1>Notes</h1>
         <p>abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz</p>
       </div>
       <DoneChecking src={done_checking} />
@@ -148,20 +149,18 @@ export const ContextCard = () => (
 );
 
 export const HintCard = () => (
-  <Background style={{height: 1024, padding: "10px"}}>
-    <React.Fragment>
-      <HintStyle style={{minWidth: "15%", width: "15%"}}>
-        <div className="div" style={{padding: "0 0 20px"}}>
-          <h1>Hint</h1>
-          <p>abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz</p>
-        </div>
-        <DoneChecking style={{width: "80%"}} src={done_checking}/>
-      </HintStyle>
-      <HintStyle style={{border: "none", minWidth: "15.5%", width: "15.5%"}}>
-        <PrimaryWithText />
-      </HintStyle>
-    </React.Fragment>
-  </Background>
+  <React.Fragment>
+    <HintStyle style={{minWidth: "33%", width: "33%"}}>
+      <div className="div" style={{padding: "0 0 20px"}}>
+        <h1>Hint</h1>
+        <p>abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz</p>
+      </div>
+      <DoneChecking style={{width: "80%"}} src={done_checking}/>
+    </HintStyle>
+    <HintStyle style={{borderColor: "transparent", minWidth: "33%", width: "33%"}}>
+      <PrimaryWithText />
+    </HintStyle>
+  </React.Fragment>
 );
 
 
@@ -180,6 +179,95 @@ abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz</
       <Button primary onClick={() => console.log("create goals!")}>Create Goals</Button>
     </ContextStyle>
   </Background>
+
+export const RepoDetailsCard = () => {
+  //this logic grabs the icons and puts the icons and text into an arr
+  //of objects to be mapped over
+  const repoDetailDiv = () => {
+    const octoface = getIconByName("octoface");
+    const star = getIconByName("star");
+    const contributions = getIconByName("git-commit");
+    const openContributions = getIconByName("repo-pull");
+
+    const detailInfo = [{icon: octoface, text: "120 contributors"},
+      {icon: star, text: "14K stars"}, {icon: contributions, text: "0 contributions"}, {icon: openContributions, text: "0 open contributions"}];
+    //map over arr of objects from line 192
+    return detailInfo.map(item => {
+      //retain an indiv div with just the contributors, stars, contributions and open
+      return (
+        <FlexCenter style={{width: "100%", flexWrap: "wrap"}}>
+          <div style={{width: "30px", color: "grey"}}><Octicon  verticalAlign="middle" icon={item.icon}/></div>
+          <div style={{fontSize: "15px", color: "grey"}} >{item.text}</div>
+        </FlexCenter>
+      );
+    });
+  };
+  //this is the render for the actual component
+  return (
+    <ContextStyle>
+      <Flex style={{justifyContent: "space-evenly"}}>
+        {/* TODO: un-hard code this...
+          funcs are not appropriate React children*/}
+        <FlexColumn>
+          {repoDetailDiv()}
+        </FlexColumn>
+        <FlexColumn>
+          {repoDetailDiv()}
+        </FlexColumn>
+        <FlexColumn>
+          {repoDetailDiv()}
+        </FlexColumn>
+      </Flex>
+    </ContextStyle>
+  );
+};
+
+export const IssuesCard = () => (
+  <IssuesColumn style={{marginRight: "10px"}}>
+    <Card fitted>
+      <h1 style={{padding: "20px", margin: "0", fontWeight: "300", color:"grey"}}>Good First Issues</h1>
+      <hr width="97%"/>
+      <List>
+        <li style={{padding: "10px 20px"}}>
+          <IssuesListItem issue="placeholder" label="label"/>
+        </li>
+        <li style={{padding: "10px 20px"}}>
+          <IssuesListItem issue="placeholder" label="label"/>
+        </li>
+        <li style={{padding: "10px 20px"}}>
+          <IssuesListItem issue="placeholder" label="label"/>
+        </li>
+        <li style={{padding: "10px 20px"}}>
+          <IssuesListItem issue="placeholder" label="label"/>
+        </li>
+        <Flex style={{padding: "20px 0 0 20px", justifyContent: "flex-start"}}>
+          <InputButton>
+              Next
+          </InputButton>
+          <InputButton>
+              Prev
+          </InputButton>
+        </Flex>
+      </List>
+    </Card>
+  </IssuesColumn>
+);
+
+export const RepoDataCard = () => (
+  <Gradient>
+    <Flex>
+      <FlexColumn>
+        <CardPadding>
+          <ContextCard />
+          <RepoDetailsCard />
+          <NoteCard />
+        </CardPadding>
+      </FlexColumn>
+      <div style={{alignSelf: "flex-end"}}>
+        <IssuesCard />
+      </div>
+    </Flex>
+  </Gradient>
 );
 
 export const RepoDetailsCard = () => {

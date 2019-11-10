@@ -5,7 +5,7 @@ const FloatLeft = styled.div`
 `;
 
 const FloatRight = styled.div`
-  float: rigth;
+  float: right;
 `;
 
 export {FloatRight, FloatLeft};
