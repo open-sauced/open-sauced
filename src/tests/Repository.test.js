@@ -1,6 +1,6 @@
 import React from "react";
 import {shallow} from "enzyme";
-import Repository from "../containers/Repository";
+import Repository from "../components/Repository";
 import {data, match, location} from "./mocks";
 
 describe("<Repository />", () => {
