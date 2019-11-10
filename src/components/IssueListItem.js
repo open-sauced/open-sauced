@@ -17,7 +17,7 @@ function IssueListItem({issue, label}) {
       </FloatLeft>
       <FloatRight>
         <FlexCenter>
-          <img src={chevronRight} />
+          <img src={chevronRight} alt="right-chevron"/>
         </FlexCenter>
       </FloatRight>
     </FlexHeader>

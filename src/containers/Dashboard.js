@@ -1,6 +1,6 @@
 import React from "react";
-import Repository from "./Repository";
-import Goals from "../containers/Goals";
+import Repository from "../components/Repository";
+import Goals from "../components/Goals";
 import {Route} from "react-router-dom";
 
 function Repositories({match}) {

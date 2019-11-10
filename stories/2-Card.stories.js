@@ -139,7 +139,7 @@ export const NoteCard = () => (
 export const ContextCard = () => (
   <ContextStyle>
     <Flex>
-      <div className="div">
+      <div className="context-div">
         <h1>Notes</h1>
         <p>abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz</p>
       </div>

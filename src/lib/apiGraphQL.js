@@ -195,7 +195,7 @@ const operationsDoc = `
     gitHub {
       createRepository(
         input: {
-          visibility: PUBLIC
+          visibility: PRIVATE
           name: "open-sauced-goals"
           description: "A list of contributions I might like to make some day!"
         }

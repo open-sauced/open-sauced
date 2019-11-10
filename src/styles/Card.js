@@ -8,7 +8,6 @@ const Card = styled.div`
   border: 0 solid rgba(123, 123, 123, 0.498039);
   border-radius: ${borderRadius};
   font-size: ${size.small};
-  font-family: "Roboto";
   list-style-type: none;
   margin-bottom: ${size.tiny};
   outline: none;
@@ -63,7 +62,8 @@ const CardPadding = styled.div`
 `;
 
 const ContextStyle = styled(Card)`
-  .div {
+  .context-div {
+    width: 50%;
     h1 {
       width: 100%;
       font-size: ${size.medium};
