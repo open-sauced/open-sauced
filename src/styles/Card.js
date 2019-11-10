@@ -83,8 +83,9 @@ const HintStyle = styled(Card)`
 
   color: ${colors.lightGrey};
   font-weight: ${typography.light};
-  border: 5px solid ${colors.blue};
+  border: ${borderRadius} solid ${colors.blue};
   word-wrap: break-word;
 `;
 
 export {Card, CardPadding, FittedCard, ContextStyle, HintStyle};
+
