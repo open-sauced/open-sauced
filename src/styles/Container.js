@@ -9,7 +9,7 @@ export const Container = styled.div`
   ${MEDIA.TABLET`
     display: flex;
     flex-direction: column;
-    text-align: cener;
+    text-align: center;
   `};
 `;
 

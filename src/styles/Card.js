@@ -67,20 +67,17 @@ const ContextStyle = styled(Card)`
     h1 {
       width: 100%;
       font-size: ${size.medium};
-      font-weight: ${typography.regular};
-      color: ${colors.lighterGrey};
+      font-weight: ${typography.light};
+      color: ${colors.lightGrey};
     }
     p {
       width: 80%;
-      font-size: ${size.tiny};
       word-wrap:break-word;
-      color: ${colors.lighterGrey}
+      color: ${colors.lightGrey}
     }
-  }
-`;
+  }`;
 
 const HintStyle = styled(Card)`
-
   color: ${colors.lightGrey};
   font-weight: ${typography.light};
   border: ${borderRadius} solid ${colors.blue};
