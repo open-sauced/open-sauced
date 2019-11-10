@@ -3,6 +3,17 @@
 Contributions are always welcome, no matter how large or small. Before contributing,
 please read the [code of conduct](CODE_OF_CONDUCT.md).
 
+
+Some thoughts to help you contirbute to this project
+
+## Recommended Communication Style
+
+1. Always leave screenshots for visuals changes
+2. Always leave a detailed description  in the Pull Request. Leave nothing ambiguous for the reviewer. 
+3. Always review you code first. Do this by leaving comments in your coding noting questions, or interesting things for the reviewer.
+4. Always link to an issue in the project. Unsolicited code is welcomed, but an issue is the best place to announce your intentions to work on things.
+5. Always with communicate. Whether it is in the issue or the pull request, keeping the lines of communication helps everyone around you.
+
 ## Setup
 
 
@@ -21,22 +32,12 @@ $ npm run build
 ## Testing
 
 ```sh
+# the tests will run in watch mode by default
 $ npm run test
 ```
 
 ```sh
-$ npm run test:watch
-```
-
-```sh
 $ npm run lint
-```
-
-## Runing the server
-
-```sh
-// You will need to create you own GitHub access token to query the GitHub API
-$ GRAPHCOOL_ENDPOINT="https://api.graph.cool/simple/v1/XXXXXXX" GITHUB_TOKEN="XXXXXXXXX" npm start
 ```
 
 ## Pull Requests
