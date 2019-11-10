@@ -3,9 +3,9 @@ import {borderRadius} from "./variables";
 
 const DoneChecking = styled.img`
   width: 30%;
-  -moz-border-radius: 5px;
+  -moz-border-radius: ${borderRadius};
   -webkit-border-radius: ${borderRadius};
-  border-radius: 5px;
+  border-radius: ${borderRadius};
   padding: 0 20px
 `;
 
