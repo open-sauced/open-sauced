@@ -59,6 +59,12 @@ export const Fitted = () => (
   </Background>
 );
 
+export const ButtonCard = () => (
+  <HintStyle style={{borderColor: "transparent", minWidth: "33%", width: "33%"}}>
+    <PrimaryWithText />
+  </HintStyle>
+);
+
 export const RepoCard = () => (
   <Card>
     <RepoListItem stars={138} goal={goal} />
@@ -156,9 +162,6 @@ export const HintCard = () => (
         <p>abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz</p>
       </div>
       <DoneChecking style={{width: "80%"}} src={done_checking} />
-    </HintStyle>
-    <HintStyle style={{borderColor: "transparent", minWidth: "33%", width: "33%"}}>
-      <PrimaryWithText />
     </HintStyle>
   </React.Fragment>
 );
