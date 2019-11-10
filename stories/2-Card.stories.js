@@ -160,3 +160,4 @@ export const HintCard = () => (
     </HintStyle>
   </React.Fragment>
 );
+
