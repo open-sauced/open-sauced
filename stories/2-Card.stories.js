@@ -6,14 +6,14 @@ import {CardPadding, ContextStyle, HintStyle} from "../src/styles/Card";
 import Input from "../src/styles/Input";
 import Background from "../src/styles/Background";
 import TextArea from "../src/styles/TextArea";
-import {Flex, FlexCenter, FloatLeft} from "../src/styles/Grid";
+import {Flex, FlexCenter, FlexColumn, FloatLeft} from "../src/styles/Grid";
 import List from "../src/styles/List";
 import Avatar from "../src/styles/Avatar";
 import {chevronRight} from "../src/icons";
 import Octicon, {getIconByName} from "@primer/octicons-react";
 import RepoListItem from "../src/components/RepoListItem";
 import DoneChecking from "../src/styles/DoneChecking";
-import { done_checking } from "../src/illustrations";
+import {done_checking} from "../src/illustrations";
 
 export default {
   title: "Cards",
@@ -180,3 +180,46 @@ abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz</
   </Background>
 );
 
+export const RepoDetailsCard = () => {
+  //this logic grabs the icons and puts the icons and text into an arr
+  //of objects to be mapped over
+  const repoDetailDiv = () => {
+    const octoface = getIconByName("octoface");
+    const star = getIconByName("star");
+    const contributions = getIconByName("git-commit");
+    const openContributions = getIconByName("repo-pull");
+
+    const detailInfo = [{icon: octoface, text: "120 contributors"},
+      {icon: star, text: "14K stars"}, {icon: contributions, text: "0 contributions"}, {icon: openContributions, text: "0 open contributions"}];
+    //map over arr of objects from line 192
+    return detailInfo.map(item => {
+      //retain an indiv div with just the contributors, stars, contributions and open
+      return (
+        <FlexCenter style={{width: "100%", flexWrap: "wrap"}}>
+          <div style={{width: "30px", color: "grey"}}><Octicon  verticalAlign="middle" icon={item.icon}/></div>
+          <div style={{fontSize: "15px", color: "grey"}} >{item.text}</div>
+        </FlexCenter>
+      );
+    });
+  };
+  //this is the render for the actual component
+  return (
+    <Background style={{height: 1024}}>
+      <Card>
+        <Flex style={{justifyContent: "space-around"}}>
+          {/* TODO: un-hard code this...
+          funcs are not appropriate React children*/}
+          <FlexColumn>
+            {repoDetailDiv()}
+          </FlexColumn>
+          <FlexColumn>
+            {repoDetailDiv()}
+          </FlexColumn>
+          <FlexColumn>
+            {repoDetailDiv()}
+          </FlexColumn>
+        </Flex>
+      </Card>
+    </Background>
+  );
+};
