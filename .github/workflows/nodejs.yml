@@ -29,3 +29,4 @@ jobs:
         npm test
       env:
         CI: true
+        GITHUB_TOKEN: ${{ secrets.BDOUGIE_TOKEN }}

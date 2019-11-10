@@ -136,9 +136,9 @@ export const NoteCard = () => (
 );
 
 export const ContextCard = () => (
-  <ContextStyle style={{minWidth: "55%", width: "55%"}}>
+  <ContextStyle>
     <Flex>
-      <div className="div">
+      <div className="context-div">
         <h1>What is onboarding?</h1>
         <p>abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz</p>
       </div>

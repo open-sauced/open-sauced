@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import {Redirect} from "react-router";
 import Button from "../styles/Button";
-import Card from "../components/Card";
+import Card from "./Card";
 import TextArea from "../styles/TextArea";
 import {FormColumn, FlexCenter} from "../styles/Grid";
 import Octicon, {getIconByName} from "@primer/octicons-react";
@@ -57,6 +57,7 @@ function NoteForm({goalId, repoName, note}) {
           type="text"
           placeholder={`Type your notes for ${repoName} here...`}
           name="notes"
+          aria-label="note input"
         />
         <FlexCenter>
           {editing ? (

@@ -4,13 +4,10 @@ import {sauced} from "../icons";
 
 function Footer() {
   return (
-    <footer>
-      <DashboardFooter>
-        <img src={sauced} />
-      </DashboardFooter>
-    </footer>
+    <DashboardFooter>
+      <img alt="sauced logo" src={sauced} />
+    </DashboardFooter>
   );
 }
 
 export default Footer;
-
