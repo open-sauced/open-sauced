@@ -13,3 +13,11 @@ export const primary = () => (
 );
 
 export const secondary = () => <Button onClick={action("clicked")}>Cancel</Button>;
+
+export const PrimaryWithText = () => (
+  <div>
+    <h2 style={{fontFamily: "Roboto", color:"grey", fontSize: "1.0rem"}}>Set goals directly on Github</h2>
+    <Button style={{width: "90%"}} primary>View Your Data</Button>
+  </div>
+);
+

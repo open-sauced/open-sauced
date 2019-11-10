@@ -79,4 +79,13 @@ const ContextStyle = styled(Card)`
   }
 `;
 
-export {Card, CardPadding, FittedCard, ContextStyle};
+const HintStyle = styled(Card)`
+
+  color: ${colors.lightGrey};
+  font-weight: ${typography.light};
+  border: ${borderRadius} solid ${colors.blue};
+  word-wrap: break-word;
+`;
+
+export {Card, CardPadding, FittedCard, ContextStyle, HintStyle};
+
