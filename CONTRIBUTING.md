@@ -46,8 +46,11 @@ We actively welcome your pull requests.
 1. Fork the repo and create your branch from `master`.
 2. If you've added code that should be tested, add tests.
 3. If you've changed APIs, update the documentation.
-4. Ensure the test suite passes.
-5. Make sure your code lints.
+4. If you make visual changes, screenshots are requiremed
+5. Ensure the test suite passes.
+6. Make sure you address any lint warnings.
+7. If you make the existing code better, please let us know in your PR description.
+8. A PR description is required. 
 
 ## License
 
