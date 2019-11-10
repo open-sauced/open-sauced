@@ -4,7 +4,7 @@ import PointerLink from "../styles/PointerLink";
 import {TinyFont} from "../styles/Typography";
 import {chevronRight, chevronLeft} from "../icons";
 import api from "../lib/apiGraphQL";
-import Card from "../components/Card";
+import Card from "./Card";
 import List from "../styles/List";
 
 function Issues({repoName, owner}) {

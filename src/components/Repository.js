@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react";
-import Form from "./NoteForm";
-import Issues from "./Issues";
+import Form from "../components/NoteForm";
+import Issues from "../components/Issues";
 import api from "../lib/apiGraphQL";
 import {SpaceBetween} from "../styles/Grid";
 
