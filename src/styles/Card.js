@@ -72,10 +72,11 @@ const ContextStyle = styled(Card)`
     }
     p {
       width: 80%;
-      word-wrap:break-word;
-      color: ${colors.lightGrey}
+      word-wrap: break-word;
+      color: ${colors.lightGrey};
     }
-  }`;
+  }
+`;
 
 const HintStyle = styled(Card)`
   color: ${colors.lightGrey};
@@ -86,56 +87,52 @@ const HintStyle = styled(Card)`
 const OnBoardStyle = styled(Card)`
   min-height: 400px;
   h4 {
-    color: ${colors.lightGrey}
+    color: ${colors.lightGrey};
   }
-  border: 5px solid ${colors.blue}
-    img {
-      position: absolute;
-    }
-    /* hide default checkbox */
-    .checkbox input[type="checkbox"]{
-      opacity: 0;
-    }
+  img {
+    position: absolute;
+  }
+  /* hide default checkbox */
+  .checkbox input[type="checkbox"] {
+    opacity: 0;
+  }
 
-    .checkbox label {
-      color: ${colors.lightGrey}
-    }
+  .checkbox label {
+    color: ${colors.lightGrey};
+  }
 
-    .checkbox label.checked {
-      text-decoration: line-through;
-      color: ${colors.lighterGrey};
-    }
+  .checkbox label.checked {
+    text-decoration: line-through;
+    color: ${colors.lighterGrey};
+  }
 
-    /* create outer box */
-    .checkbox label::before {
-      content: "";
-      display: block;
-      height: 16px;
-      width: 16px;
-      border: 1px solid ${colors.lighterGrey};
-      margin-right: 20px;
-    }
-    .checkbox label::after {
-      content: "";
-    }
+  /* create outer box */
+  .checkbox label::before {
+    content: "";
+    display: block;
+    height: 16px;
+    width: 16px;
+    border: 1px solid ${colors.lighterGrey};
+    margin-right: 20px;
+  }
+  .checkbox label::after {
+    content: "";
+  }
 
-    .checkbox label {
-      position: relative;
-      margin-left: 40px;
-    }
+  .checkbox label {
+    position: relative;
+    margin-left: 40px;
+  }
 
-    .checkbox label::before, .checkbox label::after {
-      position: absolute;
-      
-    }
+  .checkbox label::before,
+  .checkbox label::after {
+    position: absolute;
+  }
 
-    /* Outer-box */
-    .checkbox label::before {
-      top: 3px;
-    }
-
+  /* Outer-box */
+  .checkbox label::before {
+    top: 3px;
+  }
 `;
 
-
 export {Card, CardPadding, FittedCard, ContextStyle, HintStyle, OnBoardStyle};
-
