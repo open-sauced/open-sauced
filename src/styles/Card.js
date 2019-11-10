@@ -83,5 +83,59 @@ const HintStyle = styled(Card)`
   word-wrap: break-word;
 `;
 
-export {Card, CardPadding, FittedCard, ContextStyle, HintStyle};
+const OnBoardStyle = styled(Card)`
+  min-height: 400px;
+  h4 {
+    color: ${colors.lightGrey}
+  }
+  border: 5px solid ${colors.blue}
+    img {
+      position: absolute;
+    }
+    /* hide default checkbox */
+    .checkbox input[type="checkbox"]{
+      opacity: 0;
+    }
+
+    .checkbox label {
+      color: ${colors.lightGrey}
+    }
+
+    .checkbox label.checked {
+      text-decoration: line-through;
+      color: ${colors.lighterGrey};
+    }
+
+    /* create outer box */
+    .checkbox label::before {
+      content: "";
+      display: block;
+      height: 16px;
+      width: 16px;
+      border: 1px solid ${colors.lighterGrey};
+      margin-right: 20px;
+    }
+    .checkbox label::after {
+      content: "";
+    }
+
+    .checkbox label {
+      position: relative;
+      margin-left: 40px;
+    }
+
+    .checkbox label::before, .checkbox label::after {
+      position: absolute;
+      
+    }
+
+    /* Outer-box */
+    .checkbox label::before {
+      top: 3px;
+    }
+
+`;
+
+
+export {Card, CardPadding, FittedCard, ContextStyle, HintStyle, OnBoardStyle};
 

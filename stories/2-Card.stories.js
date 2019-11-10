@@ -2,7 +2,7 @@ import React from "react";
 import Card from "../src/components/Card";
 import Button, {InputButton} from "../src/styles/Button";
 import {PrimaryWithText} from "./1-Button.stories";
-import {CardPadding, ContextStyle, HintStyle} from "../src/styles/Card";
+import {CardPadding, ContextStyle, HintStyle, OnBoardStyle} from "../src/styles/Card";
 import Input from "../src/styles/Input";
 import Background from "../src/styles/Background";
 import Gradient from "../src/styles/Gradient";
@@ -10,12 +10,13 @@ import TextArea from "../src/styles/TextArea";
 import {Flex, FlexCenter, FlexColumn, FloatLeft, IssuesColumn} from "../src/styles/Grid";
 import List from "../src/styles/List";
 import Avatar from "../src/styles/Avatar";
-import {chevronRight} from "../src/icons";
+import {chevronRight, check} from "../src/icons";
 import Octicon, {getIconByName} from "@primer/octicons-react";
 import RepoListItem from "../src/components/RepoListItem";
 import IssuesListItem from "../src/components/IssueListItem";
 import DoneChecking from "../src/styles/DoneChecking";
 import {done_checking} from "../src/illustrations";
+import Label from "../src/styles/Label";
 
 export default {
   title: "Cards",
@@ -279,3 +280,25 @@ export const IssuesCard = () => (
     </IssuesColumn>
   </Background>
 );
+
+export const OnBoardCard = () => (
+  <Background style={{height: 1024}}>
+    <OnBoardStyle>
+      <h4>Onboarding</h4>
+      <div className="checkbox">
+        <input id="agenda" type="checkbox" />
+        <label htmlFor="agenda">Follow the babel community</label>
+      </div>
+      <div className="checkbox">
+        <img src={check} alt="check" />
+        <input id="agenda" type="checkbox" checked/>
+        <label className="checked" htmlFor="agenda">Onboarding</label>
+      </div>
+      <div className="checkbox">
+        <input id="agenda" type="checkbox" />
+        <label htmlFor="agenda">Claim first issue</label>
+      </div>
+    </OnBoardStyle>
+  </Background>
+);
+
