@@ -1,8 +1,9 @@
-import React, {Fragment} from "react";
+import React from "react";
 import Card from "../src/components/Card";
 import Footer from "../src/components/Footer";
 import Gradient from "../src/styles/Gradient";
 import DashboardFooter from "../src/styles/Footer";
+import Background from "../src/styles/Background";
 import {sauced} from "../src/icons";
 
 export default {
@@ -10,24 +11,35 @@ export default {
 };
 
 export const Basic = () => (
-  <Fragment>
+  <Background style={{height: 1024, padding: "10px"}}>
     <div style={{paddingRight: 16, float: "right", width: 200}}>
       <img src={sauced} />
     </div>
-  </Fragment>
+  </Background>
 );
 
 export const BasicWithCard = () => (
-  <Fragment>
-    <Gradient style={{height: 1024, padding: "35px 60px 96px 60px"}}>
-      <Card>
-        <div style={{height: 800}} />
-      </Card>
-      <DashboardFooter>
-        <img src={sauced} />
-      </DashboardFooter>
-    </Gradient>
-  </Fragment>
+  <Background style={{height: 1024, padding: "10px"}}>
+    <Card>
+      <div style={{height: 800}} />
+    </Card>
+    <DashboardFooter>
+      <img src={sauced} />
+    </DashboardFooter>
+  </Background>
 );
 
-export const HomepageFooter = () => <Footer />;
+export const HomepageFooter = () => (
+  <Background style={{textAlign: "center", height: 1024, padding: "10px"}}>
+    <Footer />
+  </Background>
+);
+
+export const HomePageWithCard = () => (
+  <Background style={{textAlign: "center", height: 1024, padding: "10px"}}>
+    <Card>
+      <div style={{height: 800}} />
+    </Card>
+    <Footer />
+  </Background>
+);

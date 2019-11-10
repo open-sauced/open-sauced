@@ -76,6 +76,15 @@ export const IssuesCard = () => (
           </li>
           <Flex style={{margin: "20px", justifyContent: "flex-start"}}>
             <InputButton>Next</InputButton>
+
+            <InputButton>Prev</InputButton>
+          </Flex>
+        </List>
+      </Card>
+    </IssuesColumn>
+  </Background>
+);
+
 export const NewRepoCard = () => (
   <Card>
     <Flex>
@@ -85,14 +94,6 @@ export const NewRepoCard = () => (
       </Button>
     </Flex>
   </Card>
-);
-
-            <InputButton>Prev</InputButton>
-          </Flex>
-        </List>
-      </Card>
-    </IssuesColumn>
-  </Background>
 );
 
 export const NoteCard = () => (
@@ -108,6 +109,7 @@ export const NoteCard = () => (
     <FlexCenter>
       <Button onClick={() => console.log("clicked")}>
         <Octicon verticalAlign="middle" icon={getIconByName("pencil")} />
+        Edit Notes
       </Button>
       <Button primary onClick={() => console.log("clicked")}>
         Delete
@@ -117,7 +119,7 @@ export const NoteCard = () => (
 );
 
 export const OnboardingCard = () => (
-  <Background style={{height: 1024}}>
+  <Background style={{height: 1024, padding: "10px"}}>
     <OnBoardStyle>
       <h4>Onboarding</h4>
       <div className="checkbox">
@@ -138,7 +140,6 @@ export const OnboardingCard = () => (
     </OnBoardStyle>
   </Background>
 );
-
 
 export const PrimaryWithTextCard = () => (
   <Background style={{height: 1024, padding: "10px"}}>
@@ -163,6 +164,7 @@ export const PrimaryWithTextCard = () => (
     </ContextStyle>
   </Background>
 );
+
 export const RepoCard = () => (
   <Card>
     <RepoListItem stars={138} goal={goal} />
@@ -172,7 +174,6 @@ export const RepoCard = () => (
 export const RepoCardList = () => (
   <Background style={{height: 1024, padding: "10px"}}>
     <Card fitted>
-        Edit Notes
       <List>
         <li>
           <RepoListItem stars={138} goal={goal} />
@@ -238,7 +239,7 @@ export const RepoDetailsCard = () => {
   };
   //this is the render for the actual component
   return (
-    <Background style={{height: 1024}}>
+    <Background style={{height: 1024, padding: "10px"}}>
       <Card>
         <Flex style={{justifyContent: "space-around"}}>
           {/* TODO: un-hard code this...
