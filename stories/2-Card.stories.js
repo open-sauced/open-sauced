@@ -6,12 +6,13 @@ import {CardPadding, ContextStyle, HintStyle} from "../src/styles/Card";
 import Input from "../src/styles/Input";
 import Background from "../src/styles/Background";
 import TextArea from "../src/styles/TextArea";
-import {Flex, FlexCenter, FlexColumn, FloatLeft} from "../src/styles/Grid";
+import {Flex, FlexCenter, FlexColumn, FloatLeft, IssuesColumn} from "../src/styles/Grid";
 import List from "../src/styles/List";
 import Avatar from "../src/styles/Avatar";
 import {chevronRight} from "../src/icons";
 import Octicon, {getIconByName} from "@primer/octicons-react";
 import RepoListItem from "../src/components/RepoListItem";
+import IssuesListItem from "../src/components/IssueListItem";
 import DoneChecking from "../src/styles/DoneChecking";
 import {done_checking} from "../src/illustrations";
 
@@ -163,6 +164,7 @@ export const HintCard = () => (
   </Background>
 );
 
+
 export const PrimaryWithTextCard = () => (
   <Background style={{height: 1024, padding: "10px"}}>
     <ContextStyle>
@@ -223,3 +225,36 @@ export const RepoDetailsCard = () => {
     </Background>
   );
 };
+
+export const IssuesCard = () => (
+  <Background style={{height: 1024, padding: "10px"}}>
+    <IssuesColumn>
+      <Card fitted>
+        <h1 style={{padding: "20px", fontWeight: "300", color:"grey"}}>Good First Issues</h1>
+        <hr width="97%"/>
+        <List>
+          <li style={{padding: "10px 20px"}}>
+            <IssuesListItem issue="placeholder" label="label"/>
+          </li>
+          <li style={{padding: "10px 20px"}}>
+            <IssuesListItem issue="placeholder" label="label"/>
+          </li>
+          <li style={{padding: "10px 20px"}}>
+            <IssuesListItem issue="placeholder" label="label"/>
+          </li>
+          <li style={{padding: "10px 20px"}}>
+            <IssuesListItem issue="placeholder" label="label"/>
+          </li>
+          <Flex style={{margin: "20px", justifyContent: "flex-start"}}>
+            <InputButton>
+              Next
+            </InputButton>
+            <InputButton>
+              Prev
+            </InputButton>
+          </Flex>
+        </List>
+      </Card>
+    </IssuesColumn>
+  </Background>
+);
