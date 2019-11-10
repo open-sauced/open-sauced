@@ -267,3 +267,4 @@ export const RepoDataCard = () => (
     </Flex>
   </Gradient>
 );
+
