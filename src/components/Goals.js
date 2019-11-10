@@ -1,10 +1,10 @@
 import React, {useState, useEffect, useContext} from "react";
-import CreateGoals from "../components/CreateGoals";
-import ListGoals from "../components/ListGoals";
+import CreateGoals from "./CreateGoals";
+import ListGoals from "./ListGoals";
 import LocaleContext from "../Context";
 import api from "../lib/apiGraphQL";
 
-function Goals(props) {
+function Goals() {
   const [repository, setRepository] = useState({});
   const [loading, setLoading] = useState(true);
   const {goalsId, setGoalsId} = useContext(LocaleContext);

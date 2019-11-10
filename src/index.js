@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react";
 import ReactDOM from "react-dom";
-import App from "./App";
+import App from "./containers/App";
 import Config from "./config";
 import {getUserFromJwt} from "./lib/identityActions";
 import "./index.css";
