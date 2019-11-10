@@ -15,7 +15,7 @@ const Button = styled.button`
   }};
   cursor: pointer;
   font-size: ${size.tiny};
-  font-weight: 600
+  font-weight: 600;
   min-height: 35px;
   min-width: 68px;
   margin-bottom: ${size.tiny};
@@ -23,7 +23,7 @@ const Button = styled.button`
   outline: none;
   padding: ${props => {
     return props.primary ? "19px" : size.tiny;
-  }}
+  }};
   transition: background 0.2s ease;
 
   &:hover {

@@ -147,17 +147,36 @@ export const ContextCard = () => (
 );
 
 export const HintCard = () => (
-  <React.Fragment>
-    <HintStyle style={{minWidth: "15%", width: "15%"}}>
-      <div id="context-div" style={{padding: "0 0 20px"}}>
-        <h1>Hint</h1>
-        <p>abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz</p>
+  <Background style={{height: 1024, padding: "10px"}}>
+    <React.Fragment>
+      <HintStyle style={{minWidth: "15%", width: "15%"}}>
+        <div className="div" style={{padding: "0 0 20px"}}>
+          <h1>Hint</h1>
+          <p>abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz</p>
+        </div>
+        <DoneChecking style={{width: "80%"}} src={done_checking}/>
+      </HintStyle>
+      <HintStyle style={{border: "none", minWidth: "15.5%", width: "15.5%"}}>
+        <PrimaryWithText />
+      </HintStyle>
+    </React.Fragment>
+  </Background>
+);
+
+export const PrimaryWithTextCard = () => (
+  <Background style={{height: 1024, padding: "10px"}}>
+    <ContextStyle>
+      <div className="div" style={{minHeight: 400}}>
+        <h1 style={{fontWeight: "bold", color: "black"}}>Get Started</h1>
+        <p style={{color: "black"}}>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Facilisis leo vel fringilla est. Orci a scelerisque purus semper eget duis. Dolor sit amet consectetur adipiscing elit duis tristique. Amet venenatis urna cursus eget nunc scelerisque viverra mauris in. Sapien eget mi proin sed libero enim sed faucibus turpis. Non nisi est sit amet facilisis magna. Arcu cursus vitae congue mauris rhoncus. Augue mauris augue neque gravida in fermentum et sollicitudin. Malesuada fames ac turpis egestas sed tempus urna et pharetra. Leo urna molestie at elementum eu facilisis sed odio morbi.
+        </p>
+        <br/>
+        <p style={{color: "black"}}>
+abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz</        p>
       </div>
-      <DoneChecking style={{width: "80%"}} src={done_checking}/>
-    </HintStyle>
-    <HintStyle style={{border: "none", minWidth: "15%", width: "15%"}}>
-      <PrimaryWithText style={{minWidth: "15%", width: "15%"}}/>
-    </HintStyle>
-  </React.Fragment>
+      <Button primary onClick={() => console.log("create goals!")}>Create Goals</Button>
+    </ContextStyle>
+  </Background>
 );
 
