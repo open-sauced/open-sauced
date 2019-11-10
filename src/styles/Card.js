@@ -80,7 +80,6 @@ const ContextStyle = styled(Card)`
 const HintStyle = styled(Card)`
   color: ${colors.lightGrey};
   font-weight: ${typography.light};
-  border: ${borderRadius} solid ${colors.blue};
   word-wrap: break-word;
 `;
 
