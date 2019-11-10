@@ -282,10 +282,6 @@ export const IssuesCard = () => (
 );
 
 export const OnBoardCard = () => (
-  //outercontainer
-  //input x 3
-  //type="checkbox"
-  //1 is default checked (text is crossed out
   <Background style={{height: 1024}}>
     <OnBoardStyle>
       <h4>Onboarding</h4>
