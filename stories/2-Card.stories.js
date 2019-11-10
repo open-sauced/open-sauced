@@ -7,7 +7,7 @@ import Input from "../src/styles/Input";
 import Background from "../src/styles/Background";
 import Gradient from "../src/styles/Gradient";
 import TextArea from "../src/styles/TextArea";
-import {Flex, FlexCenter, FlexStart, FlexColumn, FloatLeft, IssuesColumn} from "../src/styles/Grid";
+import {Flex, FlexCenter, FlexColumn, FloatLeft, IssuesColumn} from "../src/styles/Grid";
 import List from "../src/styles/List";
 import Avatar from "../src/styles/Avatar";
 import {chevronRight, check} from "../src/icons";
