@@ -1,4 +1,5 @@
 import alertTriangle from "./alert-triangle.svg";
+import check from "./check.svg";
 import chevronDown from "./chevron-down.svg";
 import chevronLeft from "./chevron-left.svg";
 import chevronRight from "./chevron-right.svg";
@@ -22,6 +23,7 @@ export {
   anchor,
   anchorWithBorder,
   alertTriangle,
+  check,
   chevronDown,
   chevronLeft,
   chevronRight,
