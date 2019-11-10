@@ -1,7 +1,7 @@
 import React from "react";
 import Card from "../src/components/Card";
 import Button, {InputButton} from "../src/styles/Button";
-import {CardPadding} from "../src/styles/Card";
+import {CardPadding, ContextStyle} from "../src/styles/Card";
 import Input from "../src/styles/Input";
 import Background from "../src/styles/Background";
 import TextArea from "../src/styles/TextArea";
@@ -11,6 +11,8 @@ import Avatar from "../src/styles/Avatar";
 import {chevronRight} from "../src/icons";
 import Octicon, {getIconByName} from "@primer/octicons-react";
 import RepoListItem from "../src/components/RepoListItem";
+import DoneChecking from "../src/styles/DoneChecking";
+import { done_checking } from "../src/illustrations";
 
 export default {
   title: "Cards",
@@ -129,4 +131,16 @@ export const NoteCard = () => (
       </Button>
     </FlexCenter>
   </Card>
+);
+
+export const ContextCard = () => (
+  <ContextStyle>
+    <Flex>
+      <div className="context-div">
+        <h1>What is onboarding?</h1>
+        <p>abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz</p>
+      </div>
+      <DoneChecking src={done_checking} />
+    </Flex>
+  </ContextStyle>
 );
