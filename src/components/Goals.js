@@ -48,7 +48,7 @@ function Goals() {
   return repository.issues ? (
     <Cards fitted>
       <AddRepoForm goalsId={goalsId} onGoalAdded={onGoalAdded} />
-      <ListGoals goalsId={goalsId} goals={repository.issues} />
+      <ListGoals goals={repository.issues} />
     </Cards>
   ) : (
     <CreateGoals handleGoalCreation={_handleRepoCreation} />

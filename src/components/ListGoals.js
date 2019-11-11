@@ -5,7 +5,7 @@ import RepoListItem from "../components/RepoListItem";
 import Card from "../components/Card";
 import List from "../styles/List";
 
-function ListGoals({goals, goalsId}) {
+function ListGoals({goals}) {
   return (
     <Container>
       <Card fitted>
