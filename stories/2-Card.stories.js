@@ -6,13 +6,14 @@ import {CardPadding, ContextStyle, HintStyle, OnBoardStyle} from "../src/styles/
 import Input from "../src/styles/Input";
 import Background from "../src/styles/Background";
 import TextArea from "../src/styles/TextArea";
-import {Flex, FlexCenter, FlexColumn, FloatLeft, IssuesColumn} from "../src/styles/Grid";
+import {Flex, FlexCenter, FlexColumn, FloatLeft, IssuesColumn, SpaceAround, SpaceBetween} from "../src/styles/Grid";
 import List from "../src/styles/List";
 import Avatar from "../src/styles/Avatar";
 import {chevronRight, check} from "../src/icons";
 import Octicon, {getIconByName} from "@primer/octicons-react";
 import RepoListItem from "../src/components/RepoListItem";
 import IssuesListItem from "../src/components/IssueListItem";
+import DetailInfo from "../src/components/DetailInfo";
 import Illustration from "../src/styles/Illustration";
 import {done_checking} from "../src/illustrations";
 import Label from "../src/styles/Label";
@@ -33,13 +34,13 @@ export const ButtonCard = () => (
 
 export const ContextCard = () => (
   <ContextStyle>
-    <Flex>
+    <SpaceBetween>
       <div className="context-div">
         <h1>Context</h1>
         <p>abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz</p>
       </div>
       <Illustration src={done_checking} />
-    </Flex>
+    </SpaceBetween>
   </ContextStyle>
 );
 
@@ -228,12 +229,7 @@ export const RepoDetailsCard = () => {
     return detailInfo.map(item => {
       //retain an indiv div with just the contributors, stars, contributions and open
       return (
-        <FlexCenter style={{width: "100%", flexWrap: "wrap"}}>
-          <div style={{width: "30px", color: "grey"}}>
-            <Octicon verticalAlign="middle" icon={item.icon} />
-          </div>
-          <div style={{fontSize: "15px", color: "grey"}}>{item.text}</div>
-        </FlexCenter>
+        <DetailInfo icon={item.icon} text={item.text} />
       );
     });
   };
@@ -241,13 +237,13 @@ export const RepoDetailsCard = () => {
   return (
     <Background style={{height: 1024, padding: "10px"}}>
       <Card>
-        <Flex style={{justifyContent: "space-around"}}>
+        <SpaceAround>
           {/* TODO: un-hard code this...
           funcs are not appropriate React children*/}
           <FlexColumn>{repoDetailDiv()}</FlexColumn>
           <FlexColumn>{repoDetailDiv()}</FlexColumn>
           <FlexColumn>{repoDetailDiv()}</FlexColumn>
-        </Flex>
+        </SpaceAround>
       </Card>
     </Background>
   );

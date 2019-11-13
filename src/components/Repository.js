@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from "react";
 import Form from "../components/NoteForm";
+import Card from "../components/Card";
 import Issues from "../components/Issues";
+import DetailInfo from "../components/DetailInfo";
 import api from "../lib/apiGraphQL";
 import Illustration from "../styles/Illustration";
 import {SpaceBetween} from "../styles/Grid";
@@ -57,11 +59,11 @@ function Repository({match}) {
       </ContextStyle>
 
       {repository ? (
-        <div>
-          <p>{issues.totalCount} issues</p>
-          <p>{forks.totalCount} forks</p>
-          <p>{stargazers.totalCount} ★</p>
-        </div>
+        <Card>
+          <DetailInfo text={`${issues.totalCount} stars`} icon="issue-opened"/>
+          <DetailInfo text={`${forks.totalCount} forks`} icon="repo-forked"/>
+          <DetailInfo text={`${stargazers.totalCount} stars`} icon="star"/>
+        </Card>
       ) : (
         <p>Loading...</p>
       )}
