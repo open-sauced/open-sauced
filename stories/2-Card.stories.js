@@ -214,10 +214,10 @@ export const RepoDetailsCard = () => {
   //this logic grabs the icons and puts the icons and text into an arr
   //of objects to be mapped over
   const repoDetailDiv = () => {
-    const octoface = getIconByName("octoface");
-    const star = getIconByName("star");
-    const contributions = getIconByName("git-commit");
-    const openContributions = getIconByName("repo-pull");
+    const octoface = "octoface";
+    const star = "star";
+    const contributions = "git-commit";
+    const openContributions = "repo-pull";
 
     const detailInfo = [
       {icon: octoface, text: "120 contributors"},
