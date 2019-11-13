@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import {borderRadius, colors, size, typography} from "./variables";
+import MEDIA from "./mediaTemplates";
 
 const Card = styled.div`
   background-color: white;
@@ -82,6 +83,10 @@ const ContextStyle = styled(Card)`
     a {
       color: ${colors.lighterGrey};
     }
+
+    ${MEDIA.TABLET`
+      width: 100%;
+    `};
   }
 `;
 
