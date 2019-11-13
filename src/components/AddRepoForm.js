@@ -6,7 +6,7 @@ import {Flex} from "../styles/Grid";
 import api from "../lib/apiGraphQL";
 import {isValidRepoUrl} from "../lib/util";
 
-function AddRepoForm({goalsId}) {
+function AddRepoForm({goalsId, onGoalAdded}) {
   const urlRef = useRef(null);
 
   const _handleGoalCreation = () => {
@@ -25,7 +25,9 @@ function AddRepoForm({goalsId}) {
     api
       .createGoal(goalsId, repoUrl, null)
       .then(response => {
-        console.log(response);
+        onGoalAdded(response.data.gitHub.createIssue.issue);
+        urlRef.current.value = "";
+        urlRef.current.focus();
       })
       .catch(e => console.error(e));
   };
