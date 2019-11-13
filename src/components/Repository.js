@@ -1,8 +1,13 @@
 import React, {useState, useEffect} from "react";
 import Form from "../components/NoteForm";
+import Card from "../components/Card";
 import Issues from "../components/Issues";
+import DetailInfo from "../components/DetailInfo";
 import api from "../lib/apiGraphQL";
+import Illustration from "../styles/Illustration";
 import {SpaceBetween} from "../styles/Grid";
+import {diary} from "../illustrations";
+import {ContextStyle} from "../styles/Card";
 
 function Repository({match}) {
   const {
@@ -30,20 +35,35 @@ function Repository({match}) {
       .catch(e => console.error);
   }, []);
 
-  const {url, stargazers, forks, issues, name, nameWithOwner, description, owner} = repository || {};
+  const {url, stargazers, forks, issues, name, nameWithOwner, owner} = repository || {};
 
   return (
-    <div>
+    <React.Fragment>
+      <ContextStyle>
+        <SpaceBetween>
+          <div className="context-div">
+            <a style={{textDecoration: "none"}} href={url} target="_blank"><h1>{nameWithOwner}</h1></a>
+            <p>
+              Use the issue list to find things to work on. The notes form is here to also assist with the tracking contributions for the {name} repository.
+            </p>
+            <small>
+              <em>
+                <a href="https://opensource.guide/how-to-contribute/" target="_blank">
+                  Learn how to contirbute to open source projects
+                </a>
+              </em>
+            </small>
+          </div>
+          <Illustration src={diary} />
+        </SpaceBetween>
+      </ContextStyle>
+
       {repository ? (
-        <div>
-          <a style={{textDecoration: "none"}} href={url} target="_blank">
-            <h1>{name}</h1>
-          </a>
-          <p>{description}</p>
-          <p>{issues.totalCount} issues</p>
-          <p>{forks.totalCount} forks</p>
-          <p>{stargazers.totalCount} ★</p>
-        </div>
+        <Card>
+          <DetailInfo text={`${issues.totalCount} stars`} icon="issue-opened"/>
+          <DetailInfo text={`${forks.totalCount} forks`} icon="repo-forked"/>
+          <DetailInfo text={`${stargazers.totalCount} stars`} icon="star"/>
+        </Card>
       ) : (
         <p>Loading...</p>
       )}
@@ -53,7 +73,7 @@ function Repository({match}) {
           <Form note={note} goalId={issueId} repoName={nameWithOwner} />
         </SpaceBetween>
       )}
-    </div>
+    </React.Fragment>
   );
 }
 

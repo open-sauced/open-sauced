@@ -33,6 +33,11 @@ const FlexStart = styled.div`
   justify-content: flex-start;
 `;
 
+const SpaceAround = styled.div`
+  display: flex;
+  justify-content: space-around;
+`
+
 const SpaceBetween = styled.div`
   display: flex;
   justify-content: space-between;
@@ -42,4 +47,4 @@ const SpaceBetween = styled.div`
   `};
 `;
 
-export {Flex, SpaceBetween, FlexColumnCenter, FlexStart, FlexCenter, FlexColumn, FlexHeader};
+export {Flex, SpaceAround, SpaceBetween, FlexColumnCenter, FlexStart, FlexCenter, FlexColumn, FlexHeader};
