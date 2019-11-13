@@ -13,7 +13,7 @@ import {chevronRight, check} from "../src/icons";
 import Octicon, {getIconByName} from "@primer/octicons-react";
 import RepoListItem from "../src/components/RepoListItem";
 import IssuesListItem from "../src/components/IssueListItem";
-import DoneChecking from "../src/styles/DoneChecking";
+import Illustration from "../src/styles/Illustration";
 import {done_checking} from "../src/illustrations";
 import Label from "../src/styles/Label";
 
@@ -35,10 +35,10 @@ export const ContextCard = () => (
   <ContextStyle>
     <Flex>
       <div className="context-div">
-        <h1>Notes</h1>
+        <h1>Context</h1>
         <p>abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz</p>
       </div>
-      <DoneChecking src={done_checking} />
+      <Illustration src={done_checking} />
     </Flex>
   </ContextStyle>
 );
@@ -50,7 +50,7 @@ export const HintCard = () => (
         <h1>Hint</h1>
         <p>abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz</p>
       </div>
-      <DoneChecking style={{width: "80%"}} src={done_checking} />
+      <Illustration style={{width: "80%"}} src={done_checking} />
     </HintStyle>
   </React.Fragment>
 );
