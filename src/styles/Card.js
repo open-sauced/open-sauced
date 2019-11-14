@@ -26,11 +26,12 @@ const Card = styled.div`
 
   h1 {
     font-weight: 300;
-    color: ${colors.grey};
+    color: ${colors.lightGrey} !important;
   }
 
   hr {
     color: ${colors.lightestGrey};
+    opacity: 50%;
   }
 
   p {

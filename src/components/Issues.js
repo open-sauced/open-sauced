@@ -55,6 +55,10 @@ function Issues({repoName, owner}) {
     totalCount > 0 && (
       <IssuesColumn>
         <Card fitted>
+          <CardPadding>
+            <h1>Issues</h1>
+            <hr />
+          </CardPadding>
           <List>
             {issues &&
               issues.map(issue => (
@@ -62,7 +66,9 @@ function Issues({repoName, owner}) {
                   <a target="_blank" href={issue.node.url}>
                     <TinyFont>
                       {issue.node.title}
-                      <div style={{display: "flex"}}>{issue.labels && issue.labels.data.map(label => console.log(label.name))}</div>
+                      <div style={{display: "flex"}}>
+                        {issue.labels && issue.labels.data.map(label => console.log(label.name))}
+                      </div>
                     </TinyFont>
                   </a>
                 </li>
