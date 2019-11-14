@@ -56,30 +56,34 @@ export const HintCard = () => (
   </React.Fragment>
 );
 
+const data = {title: "Placeholder text", labels: {data: []}}
 export const IssuesCard = () => (
   <Background style={{height: 1024, padding: "10px"}}>
     <IssuesColumn>
       <Card fitted>
-        <h1 style={{padding: "20px", fontWeight: "300", color: "grey"}}>Good First Issues</h1>
-        <hr width="97%" />
+        <CardPadding>
+          <h1>Good First Issues</h1>
+          <hr width="100%" />
+        </CardPadding>
         <List>
-          <li style={{padding: "10px 20px"}}>
-            <IssuesListItem issue="placeholder" label="label" />
+          <li>
+            <IssuesListItem title={data.title} labels={data.labels}/>
           </li>
-          <li style={{padding: "10px 20px"}}>
-            <IssuesListItem issue="placeholder" label="label" />
+          <li>
+            <IssuesListItem title={data.title} labels={data.labels}/>
           </li>
-          <li style={{padding: "10px 20px"}}>
-            <IssuesListItem issue="placeholder" label="label" />
+          <li>
+            <IssuesListItem title={data.title} labels={data.labels}/>
           </li>
-          <li style={{padding: "10px 20px"}}>
-            <IssuesListItem issue="placeholder" label="label" />
+          <li>
+            <IssuesListItem title={data.title} labels={data.labels}/>
           </li>
-          <Flex style={{margin: "20px", justifyContent: "flex-start"}}>
-            <InputButton>Next</InputButton>
-
-            <InputButton>Prev</InputButton>
-          </Flex>
+          <CardPadding>
+            <FlexCenter>
+              <InputButton>Next</InputButton>
+              <InputButton>Prev</InputButton>
+            </FlexCenter>
+          </CardPadding>
         </List>
       </Card>
     </IssuesColumn>
@@ -228,9 +232,7 @@ export const RepoDetailsCard = () => {
     //map over arr of objects from line 192
     return detailInfo.map(item => {
       //retain an indiv div with just the contributors, stars, contributions and open
-      return (
-        <DetailInfo icon={item.icon} text={item.text} />
-      );
+      return <DetailInfo icon={item.icon} text={item.text} />;
     });
   };
   //this is the render for the actual component

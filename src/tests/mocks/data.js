@@ -17,11 +17,13 @@ const data = {
         id: Math.random(),
         name: "Mock Repository A",
         title: "mock/A",
+        labels: {data: []},
       },
       {
         id: Math.random(),
         name: "Mock Repository B",
         title: "mock/B",
+        labels: {data: []},
       },
     ],
   },

@@ -1,11 +1,11 @@
 import React, {useState, useEffect} from "react";
 import {FlexCenter, IssuesColumn} from "../styles/Grid";
-import PointerLink from "../styles/PointerLink";
-import {TinyFont} from "../styles/Typography";
-import {chevronRight, chevronLeft} from "../icons";
 import api from "../lib/apiGraphQL";
 import Card from "./Card";
 import List from "../styles/List";
+import IssuesListItem from "../components/IssueListItem";
+import {InputButton} from "../styles/Button";
+import {CardPadding} from "../styles/Card";
 
 function Issues({repoName, owner}) {
   const [issues, setIssues] = useState(null);
@@ -23,7 +23,7 @@ function Issues({repoName, owner}) {
       setCursor(cursor);
       setTotal(totalCount);
     });
-  }, [issues]);
+  }, []);
 
   const _handleNextIssues = () => {
     api.fetchRepositoryIssues(owner, repoName, cursor).then(response => {
@@ -55,36 +55,27 @@ function Issues({repoName, owner}) {
     totalCount > 0 && (
       <IssuesColumn>
         <Card fitted>
+          <CardPadding>
+            <h1>Issues</h1>
+            <hr />
+          </CardPadding>
           <List>
             {issues &&
               issues.map(issue => (
                 <li key={issue.node.id}>
                   <a target="_blank" href={issue.node.url}>
-                    <TinyFont>
-                      {issue.node.title}
-                      <div style={{display: "flex"}}>{issue.labels && issue.labels.data.map(label => label.name)}</div>
-                    </TinyFont>
+                    <IssuesListItem title={issue.node.title} labels={issue.node.labels} />
                   </a>
                 </li>
               ))}
+            <CardPadding>
+              <FlexCenter>
+                {offset > 0 && <InputButton onClick={_handlePreviousIssues}>Prev</InputButton>}
+                {currentPage !== totalPages && <InputButton onClick={_handleNextIssues}>Next</InputButton>}
+              </FlexCenter>
+            </CardPadding>
           </List>
         </Card>
-
-        <FlexCenter>
-          {offset > 0 && (
-            <PointerLink onClick={_handlePreviousIssues}>
-              <img alt="previous" src={chevronLeft} />
-            </PointerLink>
-          )}
-          <TinyFont>
-            {currentPage}/{totalPages}
-          </TinyFont>
-          {currentPage !== totalPages && (
-            <PointerLink onClick={_handleNextIssues}>
-              <img alt="previous" src={chevronRight} />
-            </PointerLink>
-          )}
-        </FlexCenter>
       </IssuesColumn>
     )
   ) : (
