@@ -15,7 +15,8 @@ function ListGoals({goals}) {
               <Link
                 to={{
                   pathname: `/repos/${goal.title}/${goal.number}`,
-                }}>
+                }}
+              >
                 <RepoListItem goal={goal} stars={328} contributors={18} />
               </Link>
             </li>

@@ -3,6 +3,9 @@ import MEDIA from "../mediaTemplates";
 
 const Flex = styled.div`
   display: flex;
+  ${MEDIA.TABLET`
+    flex-direction: column;
+  `};
 `;
 
 const FlexCenter = styled.div`
@@ -36,14 +39,14 @@ const FlexStart = styled.div`
 const SpaceAround = styled.div`
   display: flex;
   justify-content: space-around;
-`
+`;
 
 const SpaceBetween = styled.div`
   display: flex;
   justify-content: space-between;
 
   ${MEDIA.TABLET`
-    flex-direction: column-reverse;
+    flex-direction: column;
   `};
 `;
 
