@@ -1,11 +1,11 @@
 import React, {useState, useEffect} from "react";
 import {FlexCenter, IssuesColumn} from "../styles/Grid";
-import PointerLink from "../styles/PointerLink";
-import {TinyFont} from "../styles/Typography";
-import {chevronRight, chevronLeft} from "../icons";
 import api from "../lib/apiGraphQL";
 import Card from "./Card";
+import {TinyFont} from "../styles/Typography";
 import List from "../styles/List";
+import {InputButton} from "../styles/Button";
+import {CardPadding} from "../styles/Card";
 
 function Issues({repoName, owner}) {
   const [issues, setIssues] = useState(null);
@@ -67,24 +67,14 @@ function Issues({repoName, owner}) {
                   </a>
                 </li>
               ))}
+            <CardPadding>
+              <FlexCenter>
+                {offset > 0 && <InputButton onClick={_handlePreviousIssues}>Prev</InputButton>}
+                {currentPage !== totalPages && <InputButton onClick={_handleNextIssues}>Next</InputButton>}
+              </FlexCenter>
+            </CardPadding>
           </List>
         </Card>
-
-        <FlexCenter>
-          {offset > 0 && (
-            <PointerLink onClick={_handlePreviousIssues}>
-              <img alt="previous" src={chevronLeft} />
-            </PointerLink>
-          )}
-          <TinyFont>
-            {currentPage}/{totalPages}
-          </TinyFont>
-          {currentPage !== totalPages && (
-            <PointerLink onClick={_handleNextIssues}>
-              <img alt="previous" src={chevronRight} />
-            </PointerLink>
-          )}
-        </FlexCenter>
       </IssuesColumn>
     )
   ) : (
