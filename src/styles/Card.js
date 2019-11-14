@@ -24,6 +24,15 @@ const Card = styled.div`
     text-decoration: none;
   }
 
+  h1 {
+    font-weight: 300;
+    color: ${colors.grey};
+  }
+
+  hr {
+    color: ${colors.lightestGrey};
+  }
+
   p {
     font-size: ${size.tiny};
     margin: 5px 0 4px 0;
