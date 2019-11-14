@@ -3,7 +3,6 @@ import {FloatRight, FloatLeft, FlexColumn, FlexHeader, FlexCenter} from "../styl
 import {chevronRight} from "../icons";
 
 function IssueListItem({title, labels}) {
-  console.log(labels);
   return (
     <FlexHeader>
       <FloatLeft>
