@@ -10,7 +10,7 @@ import {done_checking} from "../illustrations";
 import {ContextStyle} from "../styles/Card";
 import api from "../lib/apiGraphQL";
 
-function Goals() {
+function RepositoryGoals() {
   const [repository, setRepository] = useState({});
   const [loading, setLoading] = useState(true);
   const {goalsId, setGoalsId} = useContext(LocaleContext);
@@ -75,4 +75,4 @@ function Goals() {
   );
 }
 
-export default Goals;
+export default RepositoryGoals;

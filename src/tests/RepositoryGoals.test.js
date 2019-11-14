@@ -1,7 +1,7 @@
 import React from "react";
 import "@testing-library/jest-dom/extend-expect";
 import {render, cleanup, act} from "@testing-library/react";
-import Goals from "../components/Goals";
+import RepositoryGoals from "../components/RepositoryGoals";
 import AppContext from "../Context";
 
 const contextValue = {goalsId: 1, setGoalsId: jest.fn()};
@@ -30,7 +30,7 @@ it("renders without crashing", async () => {
   await act(async () => {
     render(
       <AppContext.Provider value={contextValue}>
-        <Goals />
+        <RepositoryGoals />
       </AppContext.Provider>,
     );
   });
