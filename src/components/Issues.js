@@ -23,7 +23,7 @@ function Issues({repoName, owner}) {
       setCursor(cursor);
       setTotal(totalCount);
     });
-  }, [issues]);
+  }, []);
 
   const _handleNextIssues = () => {
     api.fetchRepositoryIssues(owner, repoName, cursor).then(response => {
@@ -62,7 +62,7 @@ function Issues({repoName, owner}) {
                   <a target="_blank" href={issue.node.url}>
                     <TinyFont>
                       {issue.node.title}
-                      <div style={{display: "flex"}}>{issue.labels && issue.labels.data.map(label => label.name)}</div>
+                      <div style={{display: "flex"}}>{issue.labels && issue.labels.data.map(label => console.log(label.name))}</div>
                     </TinyFont>
                   </a>
                 </li>
