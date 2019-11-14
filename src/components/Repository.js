@@ -8,6 +8,7 @@ import Illustration from "../styles/Illustration";
 import {SpaceBetween} from "../styles/Grid";
 import {diary} from "../illustrations";
 import {ContextStyle} from "../styles/Card";
+import {Flex, FormColumn, IssuesColumn} from "../styles/Grid";
 
 function Repository({match}) {
   const {
@@ -42,9 +43,12 @@ function Repository({match}) {
       <ContextStyle>
         <SpaceBetween>
           <div className="context-div">
-            <a style={{textDecoration: "none"}} href={url} target="_blank"><h1>{nameWithOwner}</h1></a>
+            <a style={{textDecoration: "none"}} href={url} target="_blank">
+              <h1>{nameWithOwner}</h1>
+            </a>
             <p>
-              Use the issue list to find things to work on. The notes form is here to also assist with the tracking contributions for the {name} repository.
+              Use the issue list to find things to work on. The notes form is here to also assist with the tracking
+              contributions for the {name} repository.
             </p>
             <small>
               <em>
@@ -58,21 +62,23 @@ function Repository({match}) {
         </SpaceBetween>
       </ContextStyle>
 
-      {repository ? (
-        <Card>
-          <DetailInfo text={`${issues.totalCount} stars`} icon="issue-opened"/>
-          <DetailInfo text={`${forks.totalCount} forks`} icon="repo-forked"/>
-          <DetailInfo text={`${stargazers.totalCount} stars`} icon="star"/>
-        </Card>
-      ) : (
-        <p>Loading...</p>
-      )}
-      {owner && (
-        <SpaceBetween>
-          <Issues repoName={name} owner={owner.login} />
-          <Form note={note} goalId={issueId} repoName={nameWithOwner} />
-        </SpaceBetween>
-      )}
+      <Flex>
+        <IssuesColumn>{owner && <Issues repoName={name} owner={owner.login} />}</IssuesColumn>
+        {repository ? (
+          <FormColumn>
+            <Card>
+              <DetailInfo text={`${issues.totalCount} stars`} icon="issue-opened" />
+              <DetailInfo text={`${forks.totalCount} forks`} icon="repo-forked" />
+              <DetailInfo text={`${stargazers.totalCount} stars`} icon="star" />
+            </Card>
+            {owner && (
+              <Form note={note} goalId={issueId} repoName={nameWithOwner} />
+            )}
+          </FormColumn>
+        ) : (
+          <p>Loading...</p>
+        )}
+      </Flex>
     </React.Fragment>
   );
 }

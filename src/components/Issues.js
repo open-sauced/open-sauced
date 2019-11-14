@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react";
-import {FlexCenter, IssuesColumn} from "../styles/Grid";
+import {FlexCenter} from "../styles/Grid";
 import api from "../lib/apiGraphQL";
 import Card from "./Card";
 import List from "../styles/List";
@@ -53,30 +53,28 @@ function Issues({repoName, owner}) {
 
   return owner ? (
     totalCount > 0 && (
-      <IssuesColumn>
-        <Card fitted>
+      <Card fitted>
+        <CardPadding>
+          <h1>Issues</h1>
+          <hr />
+        </CardPadding>
+        <List>
+          {issues &&
+            issues.map(issue => (
+              <li key={issue.node.id}>
+                <a target="_blank" href={issue.node.url}>
+                  <IssuesListItem title={issue.node.title} labels={issue.node.labels} />
+                </a>
+              </li>
+            ))}
           <CardPadding>
-            <h1>Issues</h1>
-            <hr />
+            <FlexCenter>
+              {offset > 0 && <InputButton onClick={_handlePreviousIssues}>Prev</InputButton>}
+              {currentPage !== totalPages && <InputButton onClick={_handleNextIssues}>Next</InputButton>}
+            </FlexCenter>
           </CardPadding>
-          <List>
-            {issues &&
-              issues.map(issue => (
-                <li key={issue.node.id}>
-                  <a target="_blank" href={issue.node.url}>
-                    <IssuesListItem title={issue.node.title} labels={issue.node.labels} />
-                  </a>
-                </li>
-              ))}
-            <CardPadding>
-              <FlexCenter>
-                {offset > 0 && <InputButton onClick={_handlePreviousIssues}>Prev</InputButton>}
-                {currentPage !== totalPages && <InputButton onClick={_handleNextIssues}>Next</InputButton>}
-              </FlexCenter>
-            </CardPadding>
-          </List>
-        </Card>
-      </IssuesColumn>
+        </List>
+      </Card>
     )
   ) : (
     <p>...Loading</p>

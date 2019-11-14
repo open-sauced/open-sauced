@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import {borderRadius, colors, size, typography} from "./variables";
-import MEDIA from "./mediaTemplates";
 
 const Card = styled.div`
   background-color: white;
@@ -10,7 +9,7 @@ const Card = styled.div`
   border-radius: ${borderRadius};
   font-size: ${size.small};
   list-style-type: none;
-  margin-bottom: ${size.tiny};
+  margin: ${size.tiny} ${size.tiny} 0 0 
   outline: none;
   transition: background-color 0.2s ease;
   min-width: 80%;
@@ -73,30 +72,23 @@ const CardPadding = styled.div`
 `;
 
 const ContextStyle = styled(Card)`
-  .context-div {
-    width: 55%;
-    h1 {
-      width: 100%;
-      font-size: ${size.medium};
-      font-weight: ${typography.light};
-      color: ${colors.lightGrey};
-      margin-bottom: 16px;
-    }
-    p {
-      width: 100%;
-      word-wrap: break-word;
-      color: ${colors.lightGrey};
-      line-height: 24px;
-      margin-bottom: 16px;
-    }
+  h1 {
+    width: 100%;
+    font-size: ${size.medium};
+    font-weight: ${typography.light};
+    color: ${colors.lightGrey};
+    margin-bottom: 16px;
+  }
+  p {
+    width: 100%;
+    word-wrap: break-word;
+    color: ${colors.lightGrey};
+    line-height: 24px;
+    margin-bottom: 16px;
+  }
 
-    a {
-      color: ${colors.lighterGrey};
-    }
-
-    ${MEDIA.TABLET`
-      width: 100%;
-    `};
+  a {
+    color: ${colors.lighterGrey};
   }
 `;
 

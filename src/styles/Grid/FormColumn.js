@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const FormColumn = styled.div`
-  flex: 2;
+  flex: 1;
 `;
 
 export default FormColumn;
