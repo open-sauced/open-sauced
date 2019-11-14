@@ -56,6 +56,7 @@ export const HintCard = () => (
   </React.Fragment>
 );
 
+const data = {title: "Placeholder text", labels: {data: []}}
 export const IssuesCard = () => (
   <Background style={{height: 1024, padding: "10px"}}>
     <IssuesColumn>
@@ -66,16 +67,16 @@ export const IssuesCard = () => (
         </CardPadding>
         <List>
           <li>
-            <IssuesListItem issue="placeholder" label="label" />
+            <IssuesListItem title={data.title} labels={data.labels}/>
           </li>
           <li>
-            <IssuesListItem issue="placeholder" label="label" />
+            <IssuesListItem title={data.title} labels={data.labels}/>
           </li>
           <li>
-            <IssuesListItem issue="placeholder" label="label" />
+            <IssuesListItem title={data.title} labels={data.labels}/>
           </li>
           <li>
-            <IssuesListItem issue="placeholder" label="label" />
+            <IssuesListItem title={data.title} labels={data.labels}/>
           </li>
           <CardPadding>
             <FlexCenter>

@@ -2,8 +2,8 @@ import React, {useState, useEffect} from "react";
 import {FlexCenter, IssuesColumn} from "../styles/Grid";
 import api from "../lib/apiGraphQL";
 import Card from "./Card";
-import {TinyFont} from "../styles/Typography";
 import List from "../styles/List";
+import IssuesListItem from "../components/IssueListItem";
 import {InputButton} from "../styles/Button";
 import {CardPadding} from "../styles/Card";
 
@@ -64,12 +64,7 @@ function Issues({repoName, owner}) {
               issues.map(issue => (
                 <li key={issue.node.id}>
                   <a target="_blank" href={issue.node.url}>
-                    <TinyFont>
-                      {issue.node.title}
-                      <div style={{display: "flex"}}>
-                        {issue.labels && issue.labels.data.map(label => console.log(label.name))}
-                      </div>
-                    </TinyFont>
+                    <IssuesListItem title={issue.node.title} labels={issue.node.labels} />
                   </a>
                 </li>
               ))}
