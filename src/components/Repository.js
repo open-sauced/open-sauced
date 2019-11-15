@@ -1,8 +1,14 @@
 import React, {useState, useEffect} from "react";
 import Form from "../components/NoteForm";
+import Card from "../components/Card";
 import Issues from "../components/Issues";
+import DetailInfo from "../components/DetailInfo";
 import api from "../lib/apiGraphQL";
+import Illustration from "../styles/Illustration";
 import {SpaceBetween} from "../styles/Grid";
+import {diary} from "../illustrations";
+import {ContextStyle} from "../styles/Card";
+import {Flex, FormColumn, IssuesColumn} from "../styles/Grid";
 
 function Repository({match}) {
   const {
@@ -30,30 +36,50 @@ function Repository({match}) {
       .catch(e => console.error);
   }, []);
 
-  const {url, stargazers, forks, issues, name, nameWithOwner, description, owner} = repository || {};
+  const {url, stargazers, forks, issues, name, nameWithOwner, owner} = repository || {};
 
   return (
-    <div>
-      {repository ? (
-        <div>
-          <a style={{textDecoration: "none"}} href={url} target="_blank">
-            <h1>{name}</h1>
-          </a>
-          <p>{description}</p>
-          <p>{issues.totalCount} issues</p>
-          <p>{forks.totalCount} forks</p>
-          <p>{stargazers.totalCount} ★</p>
-        </div>
-      ) : (
-        <p>Loading...</p>
-      )}
-      {owner && (
+    <React.Fragment>
+      <ContextStyle>
         <SpaceBetween>
-          <Issues repoName={name} owner={owner.login} />
-          <Form note={note} goalId={issueId} repoName={nameWithOwner} />
+          <div className="context-div">
+            <a style={{textDecoration: "none"}} href={url} target="_blank">
+              <h1>{nameWithOwner}</h1>
+            </a>
+            <p>
+              Use the issue list to find things to work on. The notes form is here to also assist with the tracking
+              contributions for the {name} repository.
+            </p>
+            <small>
+              <em>
+                <a href="https://opensource.guide/how-to-contribute/" target="_blank">
+                  Learn how to contirbute to open source projects
+                </a>
+              </em>
+            </small>
+          </div>
+          <Illustration src={diary} />
         </SpaceBetween>
-      )}
-    </div>
+      </ContextStyle>
+
+      <Flex>
+        <IssuesColumn>{owner && <Issues repoName={name} owner={owner.login} />}</IssuesColumn>
+        {repository ? (
+          <FormColumn>
+            <Card>
+              <DetailInfo text={`${issues.totalCount} stars`} icon="issue-opened" />
+              <DetailInfo text={`${forks.totalCount} forks`} icon="repo-forked" />
+              <DetailInfo text={`${stargazers.totalCount} stars`} icon="star" />
+            </Card>
+            {owner && (
+              <Form note={note} goalId={issueId} repoName={nameWithOwner} />
+            )}
+          </FormColumn>
+        ) : (
+          <p>Loading...</p>
+        )}
+      </Flex>
+    </React.Fragment>
   );
 }
 
