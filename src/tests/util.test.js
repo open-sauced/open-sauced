@@ -1,5 +1,7 @@
 import "@testing-library/jest-dom/extend-expect";
 import {isValidRepoUrl} from "../lib/util";
+import { getAppVersion } from "../lib/appVersion";
+import { string } from "postcss-selector-parser";
 
 describe("Test: isValidRepoUrl()", () => {
   const repoName = "repo_name";
@@ -42,5 +44,8 @@ describe("Test: isValidRepoUrl()", () => {
     expect(isValidRepoUrl("Http://github.com/owner_name/repo_name")[0]).toBe(true);
     expect(isValidRepoUrl("Https://github.com/owner_name/repo_name")[0]).toBe(true);
     expect(isValidRepoUrl("http://GITHUB.com/owner_name/repo_name")[0]).toBe(true);
+  });
+  test("App version", () => {
+    expect(getAppVersion()).not.toBe("");
   });
 });

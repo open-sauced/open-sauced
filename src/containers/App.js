@@ -6,8 +6,10 @@ import Header from "../components/Header";
 import {BrowserRouter as Router, Route} from "react-router-dom";
 import LocaleContext from "../Context";
 import auth from "../hoc/AuthHOC";
+import {getAppVersion} from "../lib/appVersion";
 
 function App({handleLogIn, handleLogOut, user}) {
+  console.log("version", getAppVersion());
   const [goalsId, setGoalsId] = useState({});
 
   const guard = component => {
