@@ -15,8 +15,8 @@ function RepositoryGoals() {
   const [loading, setLoading] = useState(true);
   const {goalsId, setGoalsId} = useContext(LocaleContext);
 
-  const _handleRepoCreation = () => {
-    api.createOpenSaucedGoalsRepo().then(res => setRepository(res));
+  const onRepoCreation = repo => {
+    setRepository(repo);
   };
 
   const onGoalAdded = goal => {
@@ -35,6 +35,7 @@ function RepositoryGoals() {
       return newRepos;
     });
   };
+
   useEffect(() => {
     api.fetchGoalsQuery().then(({data}) => {
       const repo = data.gitHub.viewer.repository || {};
@@ -60,7 +61,13 @@ function RepositoryGoals() {
               interested contributing to using the Repository's owner and name, also known as the "nameWithOwner"
               format.
             </p>
-            <small><em><a href="https://opensource.guide/" target="_blank">Learn about about open source</a></em></small>
+            <small>
+              <em>
+                <a href="https://opensource.guide/" target="_blank">
+                  Learn about about open source
+                </a>
+              </em>
+            </small>
           </div>
           <Illustration src={done_checking} />
         </SpaceBetween>
@@ -71,7 +78,7 @@ function RepositoryGoals() {
       </Cards>
     </React.Fragment>
   ) : (
-    <CreateGoals handleGoalCreation={_handleRepoCreation} />
+    <CreateGoals onRepoCreation={onRepoCreation} />
   );
 }
 
