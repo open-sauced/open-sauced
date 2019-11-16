@@ -1,6 +1,6 @@
 name: Node CI
 
-on: [push_request]
+on: [pull_request]
 
 jobs:
   build:
