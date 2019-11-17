@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import {borderRadius} from "./variables";
+import MEDIA from "./mediaTemplates";
 
 const DoneChecking = styled.img`
   width: 30%;
@@ -7,6 +8,10 @@ const DoneChecking = styled.img`
   -webkit-border-radius: ${borderRadius};
   border-radius: ${borderRadius};
   padding: 0 20px
+
+  ${MEDIA.TABLET`
+    display: none;
+  `};
 `;
 
 export default DoneChecking;

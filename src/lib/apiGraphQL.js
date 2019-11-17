@@ -205,6 +205,27 @@ const operationsDoc = `
           name
           nameWithOwner
           url
+          issues(
+            first: 10
+            states: OPEN
+            orderBy: { direction: DESC, field: CREATED_AT }
+          ) {
+            totalCount
+            nodes {
+              id
+              title
+              body
+              number
+              labels(first: 3) {
+                nodes {
+                  color
+                  name
+                  id
+                }
+              }
+            }
+          }
+
         }
       }
     }
@@ -290,7 +311,7 @@ function createOpenSaucedGoalsRepo() {
 }
 
 function createGoal(repoId, title, notes) {
-  return fetchOneGraph(operationsDoc, "CreateGoal", {repoId: repoId, title: title, body: notes});
+  return fetchOneGraph(operationsDoc, "CreateGoal", {repoId: repoId, title: title, notes: notes});
 }
 
 function updateGoal(id, title, state, notes) {

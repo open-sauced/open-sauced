@@ -9,7 +9,7 @@ const Card = styled.div`
   border-radius: ${borderRadius};
   font-size: ${size.small};
   list-style-type: none;
-  margin-bottom: ${size.tiny};
+  margin: ${size.tiny} ${size.tiny} 0 0 
   outline: none;
   transition: background-color 0.2s ease;
   min-width: 80%;
@@ -21,6 +21,16 @@ const Card = styled.div`
   a {
     color: ${colors.grey};
     text-decoration: none;
+  }
+
+  h1 {
+    font-weight: 300;
+    color: ${colors.lightGrey} !important;
+  }
+
+  hr {
+    color: ${colors.lightestGrey};
+    opacity: 50%;
   }
 
   p {
@@ -62,20 +72,25 @@ const CardPadding = styled.div`
 `;
 
 const ContextStyle = styled(Card)`
-  .context-div {
-    width: 50%;
-    h1 {
-      width: 100%;
-      font-size: ${size.medium};
-      font-weight: ${typography.light};
-      color: ${colors.lightGrey};
-    }
-    p {
-      width: 80%;
-      word-wrap:break-word;
-      color: ${colors.lightGrey}
-    }
-  }`;
+  h1 {
+    width: 100%;
+    font-size: ${size.medium};
+    font-weight: ${typography.light};
+    color: ${colors.lightGrey};
+    margin-bottom: 16px;
+  }
+  p {
+    width: 100%;
+    word-wrap: break-word;
+    color: ${colors.lightGrey};
+    line-height: 24px;
+    margin-bottom: 16px;
+  }
+
+  a {
+    color: ${colors.lighterGrey};
+  }
+`;
 
 const HintStyle = styled(Card)`
   color: ${colors.lightGrey};
@@ -83,5 +98,55 @@ const HintStyle = styled(Card)`
   word-wrap: break-word;
 `;
 
-export {Card, CardPadding, FittedCard, ContextStyle, HintStyle};
+const OnBoardStyle = styled(Card)`
+  min-height: 400px;
+  h4 {
+    color: ${colors.lightGrey};
+  }
+  img {
+    position: absolute;
+  }
+  /* hide default checkbox */
+  .checkbox input[type="checkbox"] {
+    opacity: 0;
+  }
 
+  .checkbox label {
+    color: ${colors.lightGrey};
+  }
+
+  .checkbox label.checked {
+    text-decoration: line-through;
+    color: ${colors.lighterGrey};
+  }
+
+  /* create outer box */
+  .checkbox label::before {
+    content: "";
+    display: block;
+    height: 16px;
+    width: 16px;
+    border: 1px solid ${colors.lighterGrey};
+    margin-right: 20px;
+  }
+  .checkbox label::after {
+    content: "";
+  }
+
+  .checkbox label {
+    position: relative;
+    margin-left: 40px;
+  }
+
+  .checkbox label::before,
+  .checkbox label::after {
+    position: absolute;
+  }
+
+  /* Outer-box */
+  .checkbox label::before {
+    top: 3px;
+  }
+`;
+
+export {Card, CardPadding, FittedCard, ContextStyle, HintStyle, OnBoardStyle};
