@@ -1,11 +1,10 @@
 import {fetchGoalsQuery} from "../lib/apiGraphQL";
 import {useApolloClient, useQuery} from "@apollo/react-hooks";
 
-export function usePersistentState(bucket) {
+export function usePersistedState(bucket) {
   const client = useApolloClient();
   const query = queryMap[bucket];
-  // useQuery is a hook supplied by Apollo Client.
-  // Using this hook allows the component to watch for updates to the state
+  console.log(query);
   const queryResult = useQuery(query).data;
   const state = queryResult && queryResult[bucket];
 
@@ -19,7 +18,6 @@ export function usePersistentState(bucket) {
       };
       client.writeQuery({query, data});
     } catch (error) {
-      // Add whatever custom error handling your application needs...
       console.error(error);
     }
   };
