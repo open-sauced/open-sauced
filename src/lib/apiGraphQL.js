@@ -298,7 +298,7 @@ function fetchIssuesAfterQuery(owner, repo, cursor) {
   return fetchOneGraph(operationsDoc, "IssuesAfterQuery", {owner: owner, repo: repo, cursor: cursor});
 }
 
-export function fetchGoalsQuery(labels) {
+function fetchGoalsQuery(labels) {
   return fetchOneGraph(operationsDoc, "FetchGoals");
 }
 

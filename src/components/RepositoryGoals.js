@@ -9,7 +9,6 @@ import Cards from "./Card";
 import {done_checking} from "../illustrations";
 import {ContextStyle} from "../styles/Card";
 import {usePersistedState} from "../lib/hooks";
-import gql from 'graphql-tag';
 
 function RepositoryGoals() {
   const [repository, setRepository] = useState({});
@@ -92,37 +91,5 @@ function RepositoryGoals() {
     <CreateGoals onRepoCreation={onRepoCreation} />
   );
 }
-
-const query = gql`
-  query FetchGoals() {
-    gitHub {
-      viewer {
-        repository(name: "open-sauced-goals") {
-          id
-          issues(
-            first: 10
-            states: OPEN
-            orderBy: { direction: DESC, field: CREATED_AT }
-          ) {
-            totalCount
-            nodes {
-              id
-              title
-              body
-              number
-              labels(first: 3) {
-                nodes {
-                  color
-                  name
-                  id
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-`;
 
 export default RepositoryGoals;
