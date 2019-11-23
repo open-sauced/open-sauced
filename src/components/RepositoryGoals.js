@@ -8,12 +8,15 @@ import AddRepoForm from "../components/AddRepoForm";
 import Cards from "./Card";
 import {done_checking} from "../illustrations";
 import {ContextStyle} from "../styles/Card";
-import api from "../lib/apiGraphQL";
+import {usePersistedState} from "../lib/hooks";
+import gql from 'graphql-tag';
 
 function RepositoryGoals() {
   const [repository, setRepository] = useState({});
   const [loading, setLoading] = useState(true);
   const {goalsId, setGoalsId} = useContext(LocaleContext);
+
+  const [state, setState] = usePersistedState("goalsState");
 
   const onRepoCreation = repo => {
     setRepository(repo);
@@ -37,11 +40,19 @@ function RepositoryGoals() {
   };
 
   useEffect(() => {
-    api.fetchGoalsQuery().then(({data}) => {
-      const repo = data.gitHub.viewer.repository || {};
-      setRepository(repo);
-      setGoalsId(repo.id);
-    });
+    const newState = {
+      ...state,
+      repository: state.gitHub.viewer.repository,
+    };
+    setState(newState);
+
+    setRepository(newState.repository);
+    setGoalsId(newState.repository.id);
+    // api.fetchGoalsQuery().then(({data}) => {
+    //   const repo = data.gitHub.viewer.repository || {};
+    //   setRepository(newState.repository);
+    //   setGoalsId(newState.repository.id);
+    // });
 
     setLoading(false);
   }, [goalsId]);
@@ -81,5 +92,37 @@ function RepositoryGoals() {
     <CreateGoals onRepoCreation={onRepoCreation} />
   );
 }
+
+const query = gql`
+  query FetchGoals() {
+    gitHub {
+      viewer {
+        repository(name: "open-sauced-goals") {
+          id
+          issues(
+            first: 10
+            states: OPEN
+            orderBy: { direction: DESC, field: CREATED_AT }
+          ) {
+            totalCount
+            nodes {
+              id
+              title
+              body
+              number
+              labels(first: 3) {
+                nodes {
+                  color
+                  name
+                  id
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`;
 
 export default RepositoryGoals;
