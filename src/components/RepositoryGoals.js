@@ -17,6 +17,7 @@ function RepositoryGoals() {
 
   const onRepoCreation = repo => {
     setRepository(repo);
+    setGoalsId(repo.id);
   };
 
   const onGoalAdded = goal => {
