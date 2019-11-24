@@ -1,45 +1,14 @@
-import {useApolloClient, useQuery} from "@apollo/react-hooks";
-import {gql} from "apollo-boost";
-
-const fetchGoalsQuery = gql`
-  query FetchGoals($name: String!) {
-    gitHub {
-      viewer {
-        repository(name: $name) {
-          id
-          issues(first: 10, states: OPEN, orderBy: {direction: DESC, field: CREATED_AT}) {
-            totalCount
-            nodes {
-              id
-              title
-              body
-              number
-              labels(first: 3) {
-                nodes {
-                  color
-                  name
-                  id
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-`;
+import {useApolloClient} from "@apollo/react-hooks";
+import useSWR from "swr";
+import api from "./apiGraphQL";
 
 export function usePersistedState(bucket) {
   const client = useApolloClient();
   const query = queryMap[bucket];
-  // query works
-  console.log("query", useQuery(query, {name: "open-sauced-goals"}));
-  const {data, error} = useQuery(query, {name: "open-sauced-goals"});
+  const {data} = useSWR({}, query);
 
-  // data and error are undefined
-  console.log("error", error);
-  console.log("data", data);
-  const state = data && data[bucket];
+  // TODO: implement reducer when another query is added.
+  const state = data && data.data.gitHub.viewer;
 
   const setState = value => {
     try {
@@ -50,6 +19,7 @@ export function usePersistedState(bucket) {
         },
       };
       client.writeQuery({query, data});
+      console.log(client);
     } catch (error) {
       console.error(error);
     }
@@ -59,6 +29,6 @@ export function usePersistedState(bucket) {
 }
 
 const queryMap = {
-  goalsState: fetchGoalsQuery,
+  goalsState: api.fetchGoalsQuery,
   // more buckets can go here...
 };

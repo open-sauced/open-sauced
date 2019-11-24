@@ -1,3 +1,4 @@
+/*eslint-disable*/
 import React, {useState, useEffect, useContext} from "react";
 import CreateGoals from "./CreateGoals";
 import {SpaceBetween} from "../styles/Grid";
@@ -6,16 +7,18 @@ import LocaleContext from "../Context";
 import Illustration from "../styles/Illustration";
 import AddRepoForm from "../components/AddRepoForm";
 import Cards from "./Card";
+import {Query} from "react-apollo";
 import {done_checking} from "../illustrations";
 import {ContextStyle} from "../styles/Card";
 import {usePersistedState} from "../lib/hooks";
 
 function RepositoryGoals() {
-  const [repository, setRepository] = useState({});
-  const [loading, setLoading] = useState(true);
   const {goalsId, setGoalsId} = useContext(LocaleContext);
-
   const [state, setState] = usePersistedState("goalsState");
+  const {repository} = state !== undefined && state;
+  //   TODO: Set up better way to set initial state
+    // state && setState(state);
+    state && setGoalsId(state.repository.id);
 
   const onRepoCreation = repo => {
     setRepository(repo);
@@ -38,29 +41,11 @@ function RepositoryGoals() {
     });
   };
 
-  useEffect(() => {
-    const newState = {
-      ...state,
-      repository: state.gitHub.viewer.repository,
-    };
-    setState(newState);
-
-    setRepository(newState.repository);
-    setGoalsId(newState.repository.id);
-    // api.fetchGoalsQuery().then(({data}) => {
-    //   const repo = data.gitHub.viewer.repository || {};
-    //   setRepository(newState.repository);
-    //   setGoalsId(newState.repository.id);
-    // });
-
-    setLoading(false);
-  }, [goalsId]);
-
-  if (loading === true) {
+  if (state === undefined) {
     return <p>...Loading</p>;
   }
 
-  return repository.issues ? (
+  return true ? (
     <React.Fragment>
       <ContextStyle>
         <SpaceBetween>
@@ -84,7 +69,7 @@ function RepositoryGoals() {
       </ContextStyle>
       <Cards fitted>
         <AddRepoForm goalsId={goalsId} onGoalAdded={onGoalAdded} />
-        <ListGoals goals={repository.issues} />
+        <ListGoals goals={repository.issues} />;
       </Cards>
     </React.Fragment>
   ) : (
