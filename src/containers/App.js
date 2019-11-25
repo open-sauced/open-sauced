@@ -1,4 +1,4 @@
-import React, {useMemo, useState} from "react";
+import React, {Suspense, useMemo, useState} from "react";
 import Dashboard from "../containers/Dashboard";
 import Footer from "../components/Footer";
 import DashboardFooter from "../components/DashboardFooter";
@@ -29,9 +29,11 @@ function App({handleLogIn, handleLogOut, user}) {
       <LocaleContext.Provider value={value}>
         {user && <Header user={user} handleLogOut={handleLogOut} />}
         <section>
-          <Route exact path="/" component={guard(Dashboard)} user={user} />
-          <Route path="/repos" component={guard(Dashboard)} user={user} />
-          <Route path="/callback" component={guard(Dashboard)} />
+          <Suspense fallback={<div>...loading</div>}>
+            <Route exact path="/" component={guard(Dashboard)} user={user} />
+            <Route path="/repos" component={guard(Dashboard)} user={user} />
+            <Route path="/callback" component={guard(Dashboard)} />
+          </Suspense>
         </section>
         {!user && <Footer />}
         {user && <DashboardFooter />}
