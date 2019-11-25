@@ -1,5 +1,4 @@
-/*eslint-disable*/
-import React, {useState, useEffect, useContext} from "react";
+import React, {useContext} from "react";
 import CreateGoals from "./CreateGoals";
 import {SpaceBetween} from "../styles/Grid";
 import ListGoals from "./ListGoals";
@@ -7,7 +6,6 @@ import LocaleContext from "../Context";
 import Illustration from "../styles/Illustration";
 import AddRepoForm from "../components/AddRepoForm";
 import Cards from "./Card";
-import {Query} from "react-apollo";
 import {done_checking} from "../illustrations";
 import {ContextStyle} from "../styles/Card";
 import {usePersistedState} from "../lib/hooks";
@@ -15,13 +13,15 @@ import {usePersistedState} from "../lib/hooks";
 function RepositoryGoals() {
   const {goalsId, setGoalsId} = useContext(LocaleContext);
   const [state, setState] = usePersistedState("goalsState");
-  const {repository} = state !== undefined && state;
-  //   TODO: Set up better way to set initial state
-    // state && setState(state);
-    state && setGoalsId(state.repository.id);
+
+  // TODO: leverage a reducer here
+  const {repository} = state.data !== undefined && state.data.data.gitHub.viewer;
+
+  // TODO: Set up better way to set initial state
+  state.repository !== undefined && setGoalsId(state.repository.id);
 
   const onRepoCreation = repo => {
-    setRepository(repo);
+    setState(repo);
   };
 
   const onGoalAdded = goal => {
@@ -29,7 +29,7 @@ function RepositoryGoals() {
       id: goal.id,
       title: goal.title,
     };
-    setRepository(repos => {
+    setState(repos => {
       const newRepos = {
         id: repos.id,
         issues: {
@@ -41,11 +41,7 @@ function RepositoryGoals() {
     });
   };
 
-  if (state === undefined) {
-    return <p>...Loading</p>;
-  }
-
-  return true ? (
+  return repository && repository.issues ? (
     <React.Fragment>
       <ContextStyle>
         <SpaceBetween>
@@ -69,7 +65,7 @@ function RepositoryGoals() {
       </ContextStyle>
       <Cards fitted>
         <AddRepoForm goalsId={goalsId} onGoalAdded={onGoalAdded} />
-        <ListGoals goals={repository.issues} />;
+        <ListGoals goals={repository.issues} />
       </Cards>
     </React.Fragment>
   ) : (

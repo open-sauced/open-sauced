@@ -1,25 +1,16 @@
-import {useApolloClient} from "@apollo/react-hooks";
-import useSWR from "swr";
+import useSWR, {mutate} from "swr";
 import api from "./apiGraphQL";
 
 export function usePersistedState(bucket) {
-  const client = useApolloClient();
   const query = queryMap[bucket];
-  const {data} = useSWR({}, query);
+  const {data, error} = useSWR(bucket, query, {suspense: true});
 
-  // TODO: implement reducer when another query is added.
-  const state = data && data.data.gitHub.viewer;
+  // TODO: implement reducers.js when another query is added.
+  const state = {data, error};
 
   const setState = value => {
     try {
-      const data = {
-        [bucket]: {
-          __typename: bucket,
-          ...value,
-        },
-      };
-      client.writeQuery({query, data});
-      console.log(client);
+      mutate(bucket, value);
     } catch (error) {
       console.error(error);
     }
