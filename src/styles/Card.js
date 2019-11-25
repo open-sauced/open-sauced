@@ -78,6 +78,7 @@ const ContextStyle = styled(Card)`
     font-weight: ${typography.light};
     color: ${colors.lightGrey};
     margin-bottom: 16px;
+    word-break: break-word;
   }
   p {
     width: 100%;
