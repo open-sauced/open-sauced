@@ -9,7 +9,7 @@ const Card = styled.div`
   border-radius: ${borderRadius};
   font-size: ${size.small};
   list-style-type: none;
-  margin: ${size.tiny} ${size.tiny} 0 0 
+  margin: ${size.tiny} 0 0 0;
   outline: none;
   transition: background-color 0.2s ease;
   min-width: 80%;
@@ -78,6 +78,7 @@ const ContextStyle = styled(Card)`
     font-weight: ${typography.light};
     color: ${colors.lightGrey};
     margin-bottom: 16px;
+    word-break: break-word;
   }
   p {
     width: 100%;
