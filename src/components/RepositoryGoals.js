@@ -16,7 +16,6 @@ function RepositoryGoals() {
 
   const {repository} = goalsReducer(state, {type: "GET"});
 
-  // TODO: Set up better way to set initial state
   useEffect(() => {
     repository !== undefined && setGoalsId(repository.id);
   }, [goalsId]);
