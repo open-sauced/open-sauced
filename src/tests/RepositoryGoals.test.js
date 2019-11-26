@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import "@testing-library/jest-dom/extend-expect";
 import {render, cleanup, act} from "@testing-library/react";
 import RepositoryGoals from "../components/RepositoryGoals";

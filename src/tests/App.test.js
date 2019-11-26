@@ -18,11 +18,11 @@ test("renders without crashing", async () => {
 });
 
 // TODO: Skipped until React.Suspense + zeit/swr is testable
-test.skip("app login integration", async () => {
+test.skip("app login integration", () => {
   const history = createMemoryHistory();
   const handleLogIn = jest.fn();
 
-  const {container, getByText, rerender} = await render(
+  const {container, getByText, rerender} = render(
     <Router history={history}>
       <App />
     </Router>,
@@ -36,9 +36,7 @@ test.skip("app login integration", async () => {
 
   rerender(
     <Router history={history}>
-      <Suspense fallback={<div>loading</div>}>
-        <App user={data.user} />
-      </Suspense>
+      <App user={data.user} />
     </Router>,
   );
 

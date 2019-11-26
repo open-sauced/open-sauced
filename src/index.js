@@ -10,7 +10,6 @@ import {ApolloProvider} from "react-apollo";
 
 const apolloClient = new OneGraphApolloClient({
   oneGraphAuth: Config.auth,
-  assumeImmutableResults: true,
 });
 
 function Index() {

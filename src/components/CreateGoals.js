@@ -4,7 +4,6 @@ import api from "../lib/apiGraphQL";
 import {goalsReducer} from "../lib/reducers";
 
 function CreateGoals({onRepoCreation}) {
-
   const _handleRepoCreation = () => {
     api.createOpenSaucedGoalsRepo().then(res => {
       onRepoCreation(goalsReducer(res, {type: "CREATE"}));
