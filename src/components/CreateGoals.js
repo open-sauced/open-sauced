@@ -1,11 +1,13 @@
 import React from "react";
 import Button from "../styles/Button";
 import api from "../lib/apiGraphQL";
+import {goalsReducer} from "../lib/reducers";
 
 function CreateGoals({onRepoCreation}) {
+
   const _handleRepoCreation = () => {
     api.createOpenSaucedGoalsRepo().then(res => {
-      onRepoCreation(res.data.gitHub.createRepository.repository);
+      onRepoCreation(goalsReducer(res, {type: "CREATE"}));
     });
   };
 

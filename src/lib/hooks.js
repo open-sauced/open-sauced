@@ -5,8 +5,7 @@ export function usePersistedState(bucket) {
   const query = queryMap[bucket];
   const {data, error} = useSWR(bucket, query, {suspense: true});
 
-  // TODO: implement reducers.js when another query is added.
-  const state = {data, error};
+  const state = {...data, error};
 
   const setState = value => {
     try {
@@ -21,5 +20,5 @@ export function usePersistedState(bucket) {
 
 const queryMap = {
   goalsState: api.fetchGoalsQuery,
-  // more buckets can go here...
+  // TODO: more buckets can go here...
 };

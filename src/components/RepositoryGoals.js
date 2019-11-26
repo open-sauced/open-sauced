@@ -1,4 +1,4 @@
-import React, {useContext} from "react";
+import React, {useEffect, useContext} from "react";
 import CreateGoals from "./CreateGoals";
 import {SpaceBetween} from "../styles/Grid";
 import ListGoals from "./ListGoals";
@@ -8,20 +8,21 @@ import AddRepoForm from "../components/AddRepoForm";
 import Cards from "./Card";
 import {done_checking} from "../illustrations";
 import {ContextStyle} from "../styles/Card";
-import {usePersistedState} from "../lib/hooks";
+import {goalsReducer, usePersistentStateReducer} from "../lib/reducers";
 
 function RepositoryGoals() {
   const {goalsId, setGoalsId} = useContext(LocaleContext);
-  const [state, setState] = usePersistedState("goalsState");
+  const [state, dispatch] = usePersistentStateReducer("goalsState", goalsReducer);
 
-  // TODO: leverage a reducer here
-  const {repository} = state.data !== undefined && state.data.data.gitHub.viewer;
+  const {repository} = goalsReducer(state, {type: "GET"});
 
   // TODO: Set up better way to set initial state
-  state.repository !== undefined && setGoalsId(state.repository.id);
+  useEffect(() => {
+    repository !== undefined && setGoalsId(repository.id);
+  }, [goalsId]);
 
   const onRepoCreation = repo => {
-    setState(repo);
+    dispatch({type: "CREATE", payload: repo});
   };
 
   const onGoalAdded = goal => {
@@ -29,7 +30,8 @@ function RepositoryGoals() {
       id: goal.id,
       title: goal.title,
     };
-    setState(repos => {
+
+    const updatedRepos = repos => {
       const newRepos = {
         id: repos.id,
         issues: {
@@ -38,7 +40,9 @@ function RepositoryGoals() {
         },
       };
       return newRepos;
-    });
+    };
+
+    dispatch({type: "UPDATE", payload: updatedRepos});
   };
 
   return repository && repository.issues ? (
