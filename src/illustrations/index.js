@@ -1,7 +1,5 @@
-import diary from "./undraw_diary.svg";
-import done_checking from "./undraw_done_checking.svg";
+import diary from "./undrawDiary.svg";
+import devProductive from "./undrawDevProductivity.svg";
+import doneChecking from "./undrawDoneChecking.svg";
 
-export {
-  diary,
-  done_checking
-};
+export {diary, devProductive, doneChecking};

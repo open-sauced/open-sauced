@@ -15,7 +15,7 @@ import RepoListItem from "../src/components/RepoListItem";
 import IssuesListItem from "../src/components/IssueListItem";
 import DetailInfo from "../src/components/DetailInfo";
 import Illustration from "../src/styles/Illustration";
-import {done_checking} from "../src/illustrations";
+import {doneChecking} from "../src/illustrations";
 import Label from "../src/styles/Label";
 
 export default {
@@ -39,7 +39,7 @@ export const ContextCard = () => (
         <h1>Context</h1>
         <p>abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz</p>
       </div>
-      <Illustration src={done_checking} />
+      <Illustration src={doneChecking} />
     </SpaceBetween>
   </ContextStyle>
 );
@@ -51,7 +51,7 @@ export const HintCard = () => (
         <h1>Hint</h1>
         <p>abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz</p>
       </div>
-      <Illustration style={{width: "80%"}} src={done_checking} />
+      <Illustration style={{width: "80%"}} src={doneChecking} />
     </HintStyle>
   </React.Fragment>
 );
