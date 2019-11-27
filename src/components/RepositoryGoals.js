@@ -53,7 +53,8 @@ function RepositoryGoals() {
 
   return repository.issues ? (
     <React.Fragment>
-      <ContextStyle>
+      {/* remove maxMidth when more cards are added*/}
+      <ContextStyle style={{maxWidth: 880}}>
         <SpaceBetween>
           <React.Fragment>
             <h1>Dashboard</h1>
