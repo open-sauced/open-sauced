@@ -21,7 +21,7 @@ function CreateGoals({onRepoCreation}) {
             <React.Fragment>
               <h1>Get Saucin'</h1>
               <p>
-                Open Sauced is atool to help track your next open source contributions. You can get started by creating
+                Open Sauced is a tool to help track your next open source contributions. You can get started by creating
                 a goal workspace below.
               </p>
               <p>A private repository name "open-sauced-goals" will be created on your GitHub account to store.</p>
@@ -30,7 +30,7 @@ function CreateGoals({onRepoCreation}) {
               </small>
             </React.Fragment>
           </FlexColumn>
-          <Illustration src={devProductive} />
+          <Illustration alt="productive developer image" src={devProductive} />
         </SpaceBetween>
       </ContextStyle>
       <br style={{marginTop: 8}} />

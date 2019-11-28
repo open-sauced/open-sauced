@@ -71,7 +71,7 @@ function RepositoryGoals() {
               </em>
             </small>
           </React.Fragment>
-          <Illustration src={doneChecking} />
+          <Illustration alt="done checking image" src={doneChecking} />
         </SpaceBetween>
       </ContextStyle>
       <Cards fitted>
