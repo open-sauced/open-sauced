@@ -1,22 +1,15 @@
-import {fetchGoalsQuery} from "../lib/apiGraphQL";
-import {useApolloClient, useQuery} from "@apollo/react-hooks";
+import useSWR, {mutate} from "swr";
+import api from "./apiGraphQL";
 
 export function usePersistedState(bucket) {
-  const client = useApolloClient();
   const query = queryMap[bucket];
-  console.log(query);
-  const queryResult = useQuery(query).data;
-  const state = queryResult && queryResult[bucket];
+  const {data, error} = useSWR(bucket, query, {suspense: true});
+
+  const state = {...data, error};
 
   const setState = value => {
     try {
-      const data = {
-        [bucket]: {
-          __typename: bucket,
-          ...value,
-        },
-      };
-      client.writeQuery({query, data});
+      mutate(bucket, value);
     } catch (error) {
       console.error(error);
     }
@@ -26,6 +19,6 @@ export function usePersistedState(bucket) {
 }
 
 const queryMap = {
-  goalsState: fetchGoalsQuery,
-  // more buckets can go here...
+  goalsState: api.fetchGoalsQuery,
+  // TODO: more buckets can go here...
 };

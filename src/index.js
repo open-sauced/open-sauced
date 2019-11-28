@@ -7,14 +7,9 @@ import "./index.css";
 import registerServiceWorker from "./registerServiceWorker";
 import OneGraphApolloClient from "onegraph-apollo-client";
 import {ApolloProvider} from "react-apollo";
-import {InMemoryCache} from "apollo-cache-inmemory";
-
-const cache = new InMemoryCache({freezeResults: true});
 
 const apolloClient = new OneGraphApolloClient({
   oneGraphAuth: Config.auth,
-  cache,
-  assumeImmutableResults: true,
 });
 
 function Index() {
