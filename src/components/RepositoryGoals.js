@@ -22,8 +22,6 @@ function RepositoryGoals() {
     }
   }, [goalsId]);
 
-  const [state, setState] = usePersistedState("goalsState");
-
   const onRepoCreation = repo => {
     dispatch({type: "CREATE", payload: repo});
   };
