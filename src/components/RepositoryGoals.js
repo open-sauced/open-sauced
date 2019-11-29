@@ -6,7 +6,7 @@ import LocaleContext from "../Context";
 import Illustration from "../styles/Illustration";
 import AddRepoForm from "../components/AddRepoForm";
 import Cards from "./Card";
-import {done_checking} from "../illustrations";
+import {doneChecking} from "../illustrations";
 import {ContextStyle} from "../styles/Card";
 import {goalsReducer, usePersistentStateReducer} from "../lib/reducers";
 
@@ -48,9 +48,10 @@ function RepositoryGoals() {
 
   return repository && repository.issues ? (
     <React.Fragment>
-      <ContextStyle>
+      {/* remove maxMidth when more cards are added*/}
+      <ContextStyle style={{maxWidth: 880}}>
         <SpaceBetween>
-          <div className="context-div">
+          <React.Fragment>
             <h1>Dashboard</h1>
             <p>
               Open Sauced is a project to track the contributions you would like to work on. Add a repository you are
@@ -64,8 +65,8 @@ function RepositoryGoals() {
                 </a>
               </em>
             </small>
-          </div>
-          <Illustration src={done_checking} />
+          </React.Fragment>
+          <Illustration alt="done checking image" src={doneChecking} />
         </SpaceBetween>
       </ContextStyle>
       <Cards fitted>

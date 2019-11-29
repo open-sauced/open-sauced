@@ -15,7 +15,7 @@ import RepoListItem from "../src/components/RepoListItem";
 import IssuesListItem from "../src/components/IssueListItem";
 import DetailInfo from "../src/components/DetailInfo";
 import Illustration from "../src/styles/Illustration";
-import {done_checking} from "../src/illustrations";
+import {doneChecking} from "../src/illustrations";
 import Label from "../src/styles/Label";
 
 export default {
@@ -35,11 +35,11 @@ export const ButtonCard = () => (
 export const ContextCard = () => (
   <ContextStyle>
     <SpaceBetween>
-      <div className="context-div">
+      <FlexColumn>
         <h1>Context</h1>
         <p>abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz</p>
-      </div>
-      <Illustration src={done_checking} />
+      </FlexColumn>
+      <Illustration src={doneChecking} />
     </SpaceBetween>
   </ContextStyle>
 );
@@ -47,16 +47,14 @@ export const ContextCard = () => (
 export const HintCard = () => (
   <React.Fragment>
     <HintStyle style={{minWidth: "33%", width: "33%"}}>
-      <div className="div" style={{padding: "0 0 20px"}}>
-        <h1>Hint</h1>
-        <p>abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz</p>
-      </div>
-      <Illustration style={{width: "80%"}} src={done_checking} />
+      <h1>Hint</h1>
+      <p>abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz</p>
+      <Illustration style={{width: "80%"}} src={doneChecking} />
     </HintStyle>
   </React.Fragment>
 );
 
-const data = {title: "Placeholder text", labels: {data: []}}
+const data = {title: "Placeholder text", labels: {data: []}};
 export const IssuesCard = () => (
   <Background style={{height: 1024, padding: "10px"}}>
     <IssuesColumn>
@@ -67,16 +65,16 @@ export const IssuesCard = () => (
         </CardPadding>
         <List>
           <li>
-            <IssuesListItem title={data.title} labels={data.labels}/>
+            <IssuesListItem title={data.title} labels={data.labels} />
           </li>
           <li>
-            <IssuesListItem title={data.title} labels={data.labels}/>
+            <IssuesListItem title={data.title} labels={data.labels} />
           </li>
           <li>
-            <IssuesListItem title={data.title} labels={data.labels}/>
+            <IssuesListItem title={data.title} labels={data.labels} />
           </li>
           <li>
-            <IssuesListItem title={data.title} labels={data.labels}/>
+            <IssuesListItem title={data.title} labels={data.labels} />
           </li>
           <CardPadding>
             <FlexCenter>
@@ -149,7 +147,7 @@ export const OnboardingCard = () => (
 export const PrimaryWithTextCard = () => (
   <Background style={{height: 1024, padding: "10px"}}>
     <ContextStyle>
-      <div className="div" style={{minHeight: 400}}>
+      <React.Fragment>
         <h1 style={{fontWeight: "bold", color: "black"}}>Get Started</h1>
         <p style={{color: "black"}}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
@@ -162,7 +160,7 @@ export const PrimaryWithTextCard = () => (
         </p>
         <br />
         <p style={{color: "black"}}>abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz</p>
-      </div>
+      </React.Fragment>
       <Button primary onClick={() => console.log("create goals!")}>
         Create Goals
       </Button>
