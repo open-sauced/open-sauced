@@ -6,7 +6,6 @@ import Card from "../components/Card";
 import List from "../styles/List";
 
 function ListGoals({goals}) {
-  console.log(goals);
   return (
     <Container>
       <Card fitted>

@@ -4,12 +4,13 @@ import Illustration from "../styles/Illustration";
 import {ContextStyle} from "../styles/Card";
 import {FlexColumn, SpaceBetween} from "../styles/Grid";
 import api from "../lib/apiGraphQL";
+import {goalsReducer} from "../lib/reducers";
 import {devProductive} from "../illustrations";
 
 function CreateGoals({onRepoCreation}) {
   const _handleRepoCreation = () => {
     api.createOpenSaucedGoalsRepo().then(res => {
-      onRepoCreation(res.data.gitHub.createRepository.repository);
+      onRepoCreation(goalsReducer(res, {type: "CREATE"}));
     });
   };
 

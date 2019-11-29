@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useContext} from "react";
+import React, {useEffect, useContext} from "react";
 import CreateGoals from "./CreateGoals";
 import {SpaceBetween} from "../styles/Grid";
 import ListGoals from "./ListGoals";
@@ -8,16 +8,22 @@ import AddRepoForm from "../components/AddRepoForm";
 import Cards from "./Card";
 import {doneChecking} from "../illustrations";
 import {ContextStyle} from "../styles/Card";
-import api from "../lib/apiGraphQL";
+import {goalsReducer, usePersistentStateReducer} from "../lib/reducers";
 
 function RepositoryGoals() {
-  const [repository, setRepository] = useState({});
-  const [loading, setLoading] = useState(true);
   const {goalsId, setGoalsId} = useContext(LocaleContext);
+  const [state, dispatch] = usePersistentStateReducer("goalsState", goalsReducer);
+
+  const {repository} = goalsReducer(state, {type: "GET"});
+
+  useEffect(() => {
+    if (repository !== undefined) {
+      setGoalsId(repository.id);
+    }
+  }, [goalsId]);
 
   const onRepoCreation = repo => {
-    setRepository(repo);
-    setGoalsId(repo.id);
+    dispatch({type: "CREATE", payload: repo});
   };
 
   const onGoalAdded = goal => {
@@ -25,7 +31,8 @@ function RepositoryGoals() {
       id: goal.id,
       title: goal.title,
     };
-    setRepository(repos => {
+
+    const updatedRepos = repos => {
       const newRepos = {
         id: repos.id,
         issues: {
@@ -34,24 +41,12 @@ function RepositoryGoals() {
         },
       };
       return newRepos;
-    });
+    };
+
+    dispatch({type: "UPDATE", payload: updatedRepos});
   };
 
-  useEffect(() => {
-    api.fetchGoalsQuery().then(({data}) => {
-      const repo = data.gitHub.viewer.repository || {};
-      setRepository(repo);
-      setGoalsId(repo.id);
-    });
-
-    setLoading(false);
-  }, [goalsId]);
-
-  if (loading === true) {
-    return <p>...Loading</p>;
-  }
-
-  return repository.issues ? (
+  return repository && repository.issues ? (
     <React.Fragment>
       {/* remove maxMidth when more cards are added*/}
       <ContextStyle style={{maxWidth: 880}}>
