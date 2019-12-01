@@ -5,6 +5,7 @@ import Issues from "../components/Issues";
 import DetailInfo from "../components/DetailInfo";
 import api from "../lib/apiGraphQL";
 import Illustration from "../styles/Illustration";
+import {ErrorMessage} from "../styles/Typography";
 import {SpaceBetween} from "../styles/Grid";
 import {diary} from "../illustrations";
 import {ContextStyle} from "../styles/Card";
@@ -15,6 +16,7 @@ function Repository({match}) {
     params: {repoName, repoOwner, id},
   } = match;
   const [repository, setRepository] = useState(null);
+  const [error, setError] = useState(null);
   const [note, setNote] = useState(location.note);
   const [issueId, setIssueId] = useState();
 
@@ -22,9 +24,23 @@ function Repository({match}) {
     api
       .fetchRepositoryData(repoOwner, repoName)
       .then(res => {
-        setRepository(res.data.gitHub.repositoryOwner.repository);
+        const {errors, data} = res;
+
+        if (errors && errors.length > 0) {
+          setError(`"${errors[0].message}"`);
+        }
+
+        const repo = data.gitHub.repositoryOwner.repository;
+
+        if (repo === null) {
+          setError(`Repository "${repoOwner}/${repoName}" not found`);
+        }
+
+        setRepository(repo);
       })
-      .catch(e => console.error);
+      .catch(e => {
+        console.log(e);
+      });
 
     api
       .fetchGoalQuery(parseInt(id))
@@ -33,13 +49,16 @@ function Repository({match}) {
         setNote(body);
         setIssueId(id);
       })
-      .catch(e => console.error);
+      .catch(e => {
+        console.log(e);
+      });
   }, []);
 
   const {url, stargazers, forks, issues, name, nameWithOwner, owner} = repository || {};
 
   return (
     <React.Fragment>
+      {error && <ErrorMessage>{error}</ErrorMessage>}
       <ContextStyle>
         <SpaceBetween>
           <div className="context-div">
@@ -71,12 +90,10 @@ function Repository({match}) {
               <DetailInfo text={`${forks.totalCount} forks`} icon="repo-forked" />
               <DetailInfo text={`${stargazers.totalCount} stars`} icon="star" />
             </Card>
-            {owner && (
-              <Form note={note} goalId={issueId} repoName={nameWithOwner} />
-            )}
+            {owner && <Form note={note} goalId={issueId} repoName={nameWithOwner} />}
           </FormColumn>
         ) : (
-          <p>Loading...</p>
+          !error && <p>Loading...</p>
         )}
       </Flex>
     </React.Fragment>
