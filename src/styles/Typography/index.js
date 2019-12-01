@@ -1,4 +1,4 @@
 import TinyFont from "./TinyFont";
+import ErrorMessage from "./ErrorMessage";
 
-export {TinyFont};
-
+export {TinyFont, ErrorMessage};
