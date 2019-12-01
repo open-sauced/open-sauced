@@ -48,10 +48,10 @@ function RepositoryGoals() {
 
   return repository && repository.issues ? (
     <React.Fragment>
-      {/* remove maxMidth when more cards are added*/}
-      <ContextStyle style={{maxWidth: 880}}>
+      <ContextStyle>
         <SpaceBetween>
-          <React.Fragment>
+          <div className="context-div">
+            {" "}
             <h1>Dashboard</h1>
             <p>
               Open Sauced is a project to track the contributions you would like to work on. Add a repository you are
@@ -65,7 +65,7 @@ function RepositoryGoals() {
                 </a>
               </em>
             </small>
-          </React.Fragment>
+          </div>
           <Illustration alt="done checking image" src={doneChecking} />
         </SpaceBetween>
       </ContextStyle>
