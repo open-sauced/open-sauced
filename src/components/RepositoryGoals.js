@@ -17,9 +17,7 @@ function RepositoryGoals() {
   const {repository} = goalsReducer(state, {type: "GET"});
 
   useEffect(() => {
-    if (repository !== undefined) {
-      setGoalsId(repository.id);
-    }
+    repository && setGoalsId(repository.id);
   }, [goalsId]);
 
   const onRepoCreation = repo => {
