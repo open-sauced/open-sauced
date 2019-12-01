@@ -24,11 +24,19 @@ function Repository({match}) {
     api
       .fetchRepositoryData(repoOwner, repoName)
       .then(res => {
-        const {errors} = res;
-        if (errors.length > 0) {
+        const {errors, data} = res;
+
+        if (errors && errors.length > 0) {
           setError(`"${errors[0].message}"`);
         }
-        setRepository(res.data.gitHub.repositoryOwner.repository);
+
+        const repo = data.gitHub.repositoryOwner.repository;
+
+        if (repo === null) {
+          setError(`Repository "${repoOwner}/${repoName}" not found`);
+        }
+
+        setRepository(repo);
       })
       .catch(e => {
         console.log(e);
