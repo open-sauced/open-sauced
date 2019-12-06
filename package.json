@@ -77,7 +77,7 @@
     "@babel/register": "^7.7.4",
     "@babel/runtime": "^7.7.1",
     "@primer/components": "^15.0.1",
-    "@primer/octicons-react": "^9.2.0",
+    "@primer/octicons-react": "^9.3.1",
     "apollo-boost": "^0.4.4",
     "babel-core": "^6.26.3",
     "emotion-theming": "^10.0.19",
