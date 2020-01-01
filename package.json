@@ -67,7 +67,7 @@
     "stylelint-declaration-block-order": "^0.2.0",
     "uglifyjs-webpack-plugin": "^2.2.0",
     "url-loader": "2.2.0",
-    "webpack": "^4.35.2",
+    "webpack": "^4.41.5",
     "webpack-cli": "^3.3.10",
     "webpack-dev-server": "^3.8.2",
     "whatwg-fetch": "3.0.0"
