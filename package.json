@@ -80,7 +80,7 @@
     "@primer/octicons-react": "^9.3.1",
     "apollo-boost": "^0.4.4",
     "babel-core": "^6.26.3",
-    "emotion-theming": "^10.0.19",
+    "emotion-theming": "^10.0.27",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "graphql": "^14.5.8",
     "onegraph-apollo-client": "^2.1.0",
