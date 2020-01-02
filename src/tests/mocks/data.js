@@ -11,6 +11,8 @@ const data = {
     },
   ],
   refetch: () => {},
+  createRepository: jest.fn(),
+  gitHub: {viewer: {}},
   goals: {
     nodes: [
       {
