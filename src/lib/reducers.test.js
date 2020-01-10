@@ -12,7 +12,7 @@ describe("goalsReducer", () => {
     expect(goalsReducer(state, {type: "UPDATE"})).toMatchObject(state);
   });
 
-  it("should successfully not eeror on CREATE action type", () => {
+  it("should successfully not error on CREATE action type", () => {
     expect(goalsReducer(state, {type: "CREATE"})).not.toThrow();
   });
 
