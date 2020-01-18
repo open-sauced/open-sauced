@@ -38,11 +38,17 @@ const FlexStart = styled.div`
 
 const SpaceAround = styled.div`
   display: flex;
+  display: -webkit-flex;
   justify-content: space-around;
+  -webkit-justify-content: space-around;
 `;
 
 const SpaceBetween = styled.div`
   display: flex;
+  display: -webkit-flex;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
   justify-content: space-between;
 
   ${MEDIA.TABLET`
