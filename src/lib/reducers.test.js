@@ -17,10 +17,6 @@ describe("goalsReducer", () => {
   });
 
   it("should error on no action type", () => {
-    try {
-      goalsReducer(state, {});
-    } catch (e) {
-      expect(e).toEqual(new Error("No Action was provided."));
-    }
+    expect(goalsReducer.bind(null, state, {})).toThrow(new Error("No Action was provided."));
   });
 });
