@@ -21,6 +21,34 @@ const operationsDoc = `
     }
   }
 
+  query RepoInteractionsQuery {
+    gitHub {
+      repository(name: "components", owner: "primer") {
+        issues(
+          first: 10
+          orderBy: { direction: DESC, field: CREATED_AT }
+          filterBy: { states: OPEN, viewerSubscribed: true }
+        ) {
+          edges {
+            node {
+              id
+              title
+              url
+              number
+            }
+          }
+        }
+        viewerHasStarred
+        viewerSubscription
+        viewerPermission
+        viewerIsCollaborator_oneGraph
+        viewerCanAdminister
+        viewerCanSubscribe
+        url
+      }
+    }
+  }
+
   query RepoQuery($repo: String!, $owner: String!) {
     gitHub {
       repositoryOwner(login: $owner) {
@@ -282,6 +310,10 @@ function fetchContributedRepoQuery() {
   return fetchOneGraph(operationsDoc, "ContributedRepoQuery");
 }
 
+function fetchRepoInteractions() {
+  return fetchOneGraph(operationsDoc, "RepoInteractionsQuery");
+}
+
 function fetchRepoQuery(owner, repo) {
   return fetchOneGraph(operationsDoc, "RepoQuery", {repo: repo, owner: owner});
 }
@@ -326,7 +358,7 @@ function updateGoal(id, title, state, notes) {
 const api = {
   fetchRepositoryData: fetchRepoQuery,
   fetchContributedRepoQuery,
-
+  fetchRepoInteractions,
   fetchIssuesQuery,
   fetchRepositoryIssues: (owner, repo, cursor, previous = false) => {
     const issueFetcher = cursor && previous ? fetchIssuesBeforeQuery : fetchIssuesAfterQuery;
