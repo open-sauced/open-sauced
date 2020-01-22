@@ -52,6 +52,12 @@ function Repository({match}) {
       .catch(e => {
         console.log(e);
       });
+
+    // WIP 451 -- needs design to implement
+    api
+      .fetchRepoInteractions()
+      .then(res => console.log(res))
+      .catch(err => console.error(err));
   }, []);
 
   const {url, stargazers, forks, issues, name, nameWithOwner, owner} = repository || {};
