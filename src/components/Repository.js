@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react";
 import Form from "../components/NoteForm";
 import Card from "../components/Card";
 import Issues from "../components/Issues";
+import Contributions from "../components/Contributions";
 import DetailInfo from "../components/DetailInfo";
 import api from "../lib/apiGraphQL";
 import Illustration from "../styles/Illustration";
@@ -53,11 +54,6 @@ function Repository({match}) {
         console.log(e);
       });
 
-    // WIP 451 -- needs design to implement
-    api
-      .fetchRepoInteractions()
-      .then(res => console.log(res))
-      .catch(err => console.error(err));
   }, []);
 
   const {url, stargazers, forks, issues, name, nameWithOwner, owner} = repository || {};
@@ -96,6 +92,7 @@ function Repository({match}) {
               <DetailInfo text={`${forks.totalCount} forks`} icon="repo-forked" />
               <DetailInfo text={`${stargazers.totalCount} stars`} icon="star" />
             </Card>
+            <Contributions repoName={name} owner={owner.login} />
             {owner && <Form note={note} goalId={issueId} repoName={nameWithOwner} />}
           </FormColumn>
         ) : (

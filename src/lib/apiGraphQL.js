@@ -29,15 +29,24 @@ const operationsDoc = `
           orderBy: { direction: DESC, field: CREATED_AT }
           filterBy: { states: OPEN, viewerSubscribed: true }
         ) {
-          edges {
+          data: edges {
             node {
               id
               title
               url
               number
+              labels(first: 3) {
+                data: edges {
+                  node {
+                    id
+                    name
+                  }
+                }
+              }
             }
           }
         }
+
         viewerHasStarred
         viewerSubscription
         viewerPermission
