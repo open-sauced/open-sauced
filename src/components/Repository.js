@@ -92,7 +92,7 @@ function Repository({match}) {
         {repository ? (
           <FormColumn>
             <Card>
-              <DetailInfo text={`${issues.totalCount} stars`} icon="issue-opened" />
+              <DetailInfo text={`${issues.totalCount} issues`} icon="issue-opened" />
               <DetailInfo text={`${forks.totalCount} forks`} icon="repo-forked" />
               <DetailInfo text={`${stargazers.totalCount} stars`} icon="star" />
             </Card>
