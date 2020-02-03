@@ -21,8 +21,8 @@ function Contributions({repoName, owner}) {
     owner && (
       <Card fitted>
         <CardPadding>
-          <h1>Contributions</h1>
-          <hr />
+          <em>Contributions</em>
+          <hr width="100%"></hr>
         </CardPadding>
         <List>
           {issues &&

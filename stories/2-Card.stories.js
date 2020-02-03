@@ -55,6 +55,33 @@ export const HintCard = () => (
 );
 
 const data = {title: "Placeholder text", labels: {data: []}};
+export const ContributionsCard = () => (
+  <Background style={{height: 1024, padding: "10px"}}>
+    <IssuesColumn>
+      <Card fitted>
+        <CardPadding>
+          <em>Contributions</em>
+        </CardPadding>
+        <hr width="100%"></hr>
+        <List>
+          <li>
+            <IssuesListItem title={data.title} labels={data.labels} />
+          </li>
+          <li>
+            <IssuesListItem title={data.title} labels={data.labels} />
+          </li>
+          <li>
+            <IssuesListItem title={data.title} labels={data.labels} />
+          </li>
+          <li>
+            <IssuesListItem title={data.title} labels={data.labels} />
+          </li>
+        </List>
+      </Card>
+    </IssuesColumn>
+  </Background>
+);
+
 export const IssuesCard = () => (
   <Background style={{height: 1024, padding: "10px"}}>
     <IssuesColumn>
