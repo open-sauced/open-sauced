@@ -21,9 +21,9 @@ const operationsDoc = `
     }
   }
 
-  query RepoInteractionsQuery {
+  query RepoInteractionsQuery($owner: String!, $repo: String!) {
     gitHub {
-      repository(name: "components", owner: "primer") {
+      repository(name: $repo, owner: $owner) {
         issues(
           first: 10
           orderBy: { direction: DESC, field: CREATED_AT }
@@ -319,8 +319,8 @@ function fetchContributedRepoQuery() {
   return fetchOneGraph(operationsDoc, "ContributedRepoQuery");
 }
 
-function fetchRepoInteractions() {
-  return fetchOneGraph(operationsDoc, "RepoInteractionsQuery");
+function fetchRepoInteractions(owner, repo) {
+  return fetchOneGraph(operationsDoc, "RepoInteractionsQuery", {owner: owner, repo: repo});
 }
 
 function fetchRepoQuery(owner, repo) {
