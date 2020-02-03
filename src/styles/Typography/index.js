@@ -1,4 +1,5 @@
-import TinyFont from "./TinyFont";
+import {TinyFont, MicroFont} from "./FontSizes";
+import AccentLink from "./AccentLink";
 import ErrorMessage from "./ErrorMessage";
 
-export {TinyFont, ErrorMessage};
+export {AccentLink, MicroFont, TinyFont, ErrorMessage};

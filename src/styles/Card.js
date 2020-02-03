@@ -16,11 +16,11 @@ const Card = styled.div`
 
   a:hover {
     text-decoration-color: ${colors.cheesyYellow};
+    color: ${colors.cheesyYellow};
   }
 
   a {
     color: ${colors.grey};
-    text-decoration: none;
   }
 
   h1 {

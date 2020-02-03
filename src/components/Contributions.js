@@ -4,6 +4,7 @@ import Card from "./Card";
 import List from "../styles/List";
 import IssuesListItem from "../components/IssueListItem";
 import {CardPadding} from "../styles/Card";
+import {AccentLink, MicroFont} from "../styles/Typography";
 
 function Contributions({repoName, owner}) {
   const [issues, setIssues] = useState(null);
@@ -22,8 +23,11 @@ function Contributions({repoName, owner}) {
       <Card fitted>
         <CardPadding>
           <em>Contributions</em>
-          <hr width="100%"></hr>
+          <MicroFont>
+            <AccentLink href={`https://github.com/${owner}/${repoName}/contribute`}>make new contributions.</AccentLink>
+          </MicroFont>
         </CardPadding>
+        <hr width="100%"/>
         <List>
           {issues &&
             issues.map(issue => (
