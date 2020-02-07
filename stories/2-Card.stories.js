@@ -1,6 +1,7 @@
 import React from "react";
 import Card from "../src/components/Card";
 import Button, {InputButton} from "../src/styles/Button";
+import {AccentLink, TinyFont, MicroFont} from "../src/styles/Typography";
 import {PrimaryWithText} from "./1-Button.stories";
 import {CardPadding, ContextStyle, HintStyle, OnBoardStyle} from "../src/styles/Card";
 import Input from "../src/styles/Input";
@@ -55,9 +56,39 @@ export const HintCard = () => (
 );
 
 const data = {title: "Placeholder text", labels: {data: []}};
+export const ContributionsCard = () => (
+  <Background style={{height: 1024, padding: "10px"}}>
+    <IssuesColumn style={{width: 275}}>
+      <Card fitted>
+        <CardPadding>
+          <em>Contributions</em>
+          <MicroFont>
+            <AccentLink href="#">make new contributions.</AccentLink>
+          </MicroFont>
+        </CardPadding>
+        <hr width="100%"/>
+        <List>
+          <li>
+            <IssuesListItem title={data.title} labels={data.labels} />
+          </li>
+          <li>
+            <IssuesListItem title={data.title} labels={data.labels} />
+          </li>
+          <li>
+            <IssuesListItem title={data.title} labels={data.labels} />
+          </li>
+          <li>
+            <IssuesListItem title={data.title} labels={data.labels} />
+          </li>
+        </List>
+      </Card>
+    </IssuesColumn>
+  </Background>
+);
+
 export const IssuesCard = () => (
   <Background style={{height: 1024, padding: "10px"}}>
-    <IssuesColumn>
+    <IssuesColumn style={{width: 600}}>
       <Card fitted>
         <CardPadding>
           <h1>Good First Issues</h1>

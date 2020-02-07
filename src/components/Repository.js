@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react";
 import Form from "../components/NoteForm";
 import Card from "../components/Card";
 import Issues from "../components/Issues";
+import Contributions from "../components/Contributions";
 import DetailInfo from "../components/DetailInfo";
 import api from "../lib/apiGraphQL";
 import Illustration from "../styles/Illustration";
@@ -52,6 +53,7 @@ function Repository({match}) {
       .catch(e => {
         console.log(e);
       });
+
   }, []);
 
   const {url, stargazers, forks, issues, name, nameWithOwner, owner} = repository || {};
@@ -86,10 +88,11 @@ function Repository({match}) {
         {repository ? (
           <FormColumn>
             <Card>
-              <DetailInfo text={`${issues.totalCount} stars`} icon="issue-opened" />
+              <DetailInfo text={`${issues.totalCount} issues`} icon="issue-opened" />
               <DetailInfo text={`${forks.totalCount} forks`} icon="repo-forked" />
               <DetailInfo text={`${stargazers.totalCount} stars`} icon="star" />
             </Card>
+            <Contributions repoName={name} owner={owner.login} />
             {owner && <Form note={note} goalId={issueId} repoName={nameWithOwner} />}
           </FormColumn>
         ) : (

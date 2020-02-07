@@ -1,10 +1,11 @@
 import styled from "styled-components";
-import {colors} from "../variables";
+import {colors, size} from "../variables";
 
 const AccentLink = styled.a`
-  color: ${colors.accent};
-  text-decoration: none;
+  color: ${colors.green} !important;
   font-weight: bold;
+  margin-top: ${size.micro};
+  font-size: 0.7rem
 `;
 
 export default AccentLink;
