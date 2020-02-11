@@ -12,7 +12,6 @@ function Contributions({repoName, owner}) {
   useEffect(() => {
     api.fetchRepoInteractions(owner, repoName).then(response => {
       const {data} = response.data.gitHub.repository.issues;
-      console.log(data);
 
       setIssues(data);
     });
