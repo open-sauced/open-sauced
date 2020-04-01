@@ -94,7 +94,7 @@
     "react-router-dom": "^5.1.2",
     "styled-components": "^4.4.1",
     "sw-precache-webpack-plugin": "1.0.0",
-    "swr": "^0.1.12",
+    "swr": "^0.2.0",
     "webpack-manifest-plugin": "^2.2.0",
     "yarn": "^1.19.1"
   },
