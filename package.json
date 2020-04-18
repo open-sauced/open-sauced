@@ -53,7 +53,7 @@
     "object-assign": "4.1.1",
     "path-exists": "4.0.0",
     "postcss-loader": "^3.0.0",
-    "promise": "8.0.3",
+    "promise": "8.1.0",
     "react-dev-utils": "^9.1.0",
     "react-scripts": "^3.2.0",
     "react-test-renderer": "^16.12.0",
