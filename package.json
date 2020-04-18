@@ -18,7 +18,7 @@
     "@webpack-cli/migrate": "^0.1.9",
     "autoprefixer": "9.7.3",
     "babel-eslint": "6.1.2",
-    "babel-jest": "24.9.0",
+    "babel-jest": "25.2.4",
     "babel-loader": "^8.0.6",
     "babel-preset-react-app": "^9.0.2",
     "case-sensitive-paths-webpack-plugin": "2.2.0",
