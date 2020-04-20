@@ -12,7 +12,7 @@ jobs:
       uses: actions/checkout@master
 
     - name: Build and deploy to storybook-static branch
-      uses: JamesIves/github-pages-deploy-action@2.0.3
+      uses: JamesIves/github-pages-deploy-action@3.4.8
       env:
         ACCESS_TOKEN: ${{ secrets.BDOUGIE_TOKEN }}
         BRANCH: storybook-static
