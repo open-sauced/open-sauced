@@ -46,8 +46,6 @@ const SpaceAround = styled.div`
 const SpaceBetween = styled.div`
   display: flex;
   display: -webkit-flex;
-  display: -webkit-box;
-  display: -moz-box;
   display: -ms-flexbox;
   justify-content: space-between;
 
