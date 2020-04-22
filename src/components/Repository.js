@@ -53,7 +53,6 @@ function Repository({match}) {
       .catch(e => {
         console.log(e);
       });
-
   }, []);
 
   const {url, stargazers, forks, issues, name, nameWithOwner, owner} = repository || {};
