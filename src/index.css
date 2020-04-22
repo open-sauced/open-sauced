@@ -74,6 +74,10 @@ html {
   --display: 1200px;
 }
 
+#root {
+  overflow-x: hidden;
+}
+
 a {
   cursor: pointer;
 }
