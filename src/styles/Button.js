@@ -45,4 +45,10 @@ export const InputButton = styled(Button)`
   padding: 0;
 `;
 
+export const MarketingButton = styled(Button)`
+  font-size: 1rem;
+  text-transform: uppercase;
+  padding: 10px 32px;
+`;
+
 export default Button;
