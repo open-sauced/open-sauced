@@ -8,7 +8,7 @@ export default {
 };
 
 export const Hero = () => (
-  <section style={{width: 700}}>
+  <React.Fragment>
     <div className="Hero Component">
       <div
         style={{
@@ -27,14 +27,14 @@ export const Hero = () => (
         </ul>
         <img style={{height: 8}} src={logo} />
       </div>
-      <div style={{paddingLeft: 70, display: "inline-flex", height: 240, backgroundColor: "#faeace"}} className="slogan1 color-accent">
+      <div style={{width: "100%",paddingLeft: 70, display: "inline-flex", height: 240, backgroundColor: "#faeace"}} className="slogan1 color-accent">
         <div style={{paddingTop: 24}}>
           <h1 style={{fontSize: 32}}>The Path To Your Next</h1>
           <h2 style={{margin: 0, color: "#d95c41", textDecoration: "underline", fontSize: 40}}>Open Source</h2>
         </div>
-        <div style={{float: "right"}} className="Side-Image">
-          <img style={{height: 475, position: "relative", top: 0, right: -130}} src={sauce} />
-          <img style={{height: 365, position: "relative", top: -439, right: -191}} src={pizza} />
+        <div style={{display: "flex"}} className="Side-Image">
+          <img style={{height: 475, position: "absolute", right: 0}} src={sauce} />
+          <img style={{height: 375, position: "absolute", top: 68, right: -95}} src={pizza} />
         </div>
       </div>
       <div
@@ -55,5 +55,5 @@ export const Hero = () => (
         </ul>
       </div>
     </div>
-  </section>
+  </React.Fragment>
 );
