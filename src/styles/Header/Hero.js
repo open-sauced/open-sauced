@@ -5,6 +5,7 @@ const Hero = styled.section`
   padding-left: 70px;
   min-height: 15vh;
   width: 100%;
+  overflow-y: hidden;
 
   h1 {
     font-size: 32px;
@@ -36,12 +37,13 @@ const PizzaPosition = styled.img`
   height: 375px;
   position: absolute;
   right: -95px;
-  top: 43px;
+  top: 92px;
 `;
 const SaucePosition = styled.img`
   height: 475px;
   position: absolute;
   right: 0;
+  top: 43;
 `;
 
 const TopHero = styled(Hero)`
@@ -54,8 +56,8 @@ const TopHero = styled(Hero)`
 const SubHero = styled(Hero)`
   margin: 0;
   width: 100%;
-  padding-bottom: 32px;
-  padding-top: 4px;
+  padding-bottom: 45px;
+  padding-top: 32px;
   background-color: ${colors.cheesyYellow};
 `;
 
@@ -65,6 +67,7 @@ const TrustSection = styled(Hero)`
   width: 100%;
   display: inline-flex;
   align-items: baseline;
+  min-height: 1vh;
 `;
 
 export {SubHero, TopHero, TrustSection, PizzaPosition, SaucePosition};

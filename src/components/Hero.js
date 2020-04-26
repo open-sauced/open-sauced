@@ -11,8 +11,9 @@ function Hero({handleLogIn}) {
         style={{width: "100%", paddingLeft: 70, display: "inline-flex", height: 240, backgroundColor: "#faeace"}}
         className="slogan1 color-accent">
         <div style={{paddingTop: 24}}>
-          <h1>The Path To Your Next</h1>
+          <h1>The path to your next</h1>
           <h2>Open Source</h2>
+          <h1>contribution.</h1>
         </div>
         <Flex>
           <SaucePosition src={sauce} />
@@ -20,7 +21,6 @@ function Hero({handleLogIn}) {
         </Flex>
       </TopHero>
       <SubHero>
-        <h1>Contribution.</h1>
         <MarketingButton primary onClick={handleLogIn}>
           Login
         </MarketingButton>

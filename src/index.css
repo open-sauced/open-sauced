@@ -107,7 +107,6 @@ p {
 }
 
 section {
-  min-height: 75vh;
   padding: var(--tiny);
   margin: auto;
   width: 80%;
