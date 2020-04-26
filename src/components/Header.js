@@ -1,13 +1,15 @@
 import React from "react";
-import {issue} from "../icons";
 import {logo1 as logo} from "../logos";
 import {FloatLeft, FloatRight} from "../styles/Grid";
 import {SubtleLink} from "../styles/Typography";
-import {HomePageHeader as HomeNav} from "../styles/Header";
+import {AppNav, HomePageHeader as HomeNav} from "../styles/Header";
+import {SpaceBetween} from "../styles/Grid";
+import {Link} from "react-router-dom";
 
 function Header({user, handleLogOut, handleLogIn}) {
+  const Nav = user ? AppNav : HomeNav;
   return (
-    <HomeNav className="nav-link">
+    <Nav className="nav-link">
       <FloatLeft>
         <ul>
           <li>
@@ -20,6 +22,11 @@ function Header({user, handleLogOut, handleLogIn}) {
             <SubtleLink href="#">Subscribe</SubtleLink>
           </li>
           <li>
+            <SubtleLink className="nav-link" target="_blank" href="https://github.com/bdougie/open-sauced/issues/new">
+              Issue
+            </SubtleLink>
+          </li>
+          <li>
             {user ? (
               <SubtleLink onClick={handleLogOut}>Logout</SubtleLink>
             ) : (
@@ -30,19 +37,18 @@ function Header({user, handleLogOut, handleLogIn}) {
       </FloatLeft>
 
       <FloatRight>
-        {user && (
-          <a alt="user login name" className="nav-link" href={`https://github.com/${user.login}`}>
-            <span title="login name">Hi, {user.login}!</span>
-          </a>
-        )}
-        <a className="nav-link" target="_blank" href="https://github.com/bdougie/open-sauced/issues/new">
-          <span>
-            <img alt="issue icon" src={issue} />
-          </span>
-        </a>
-        <img src={logo} />
+        <SpaceBetween>
+          {user && (
+            <SubtleLink alt="user login name" className="nav-link" href={`https://github.com/${user.login}`}>
+              <span title="login name">Hi, {user.login}!</span>
+            </SubtleLink>
+          )}
+          <Link to="/">
+            <img alt="open sauced" src={logo} />
+          </Link>
+        </SpaceBetween>
       </FloatRight>
-    </HomeNav>
+    </Nav>
   );
 }
 

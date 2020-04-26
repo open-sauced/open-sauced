@@ -25,6 +25,10 @@ const Container = styled.nav`
     margin-right: ${size.micro};
   }
 
+  span {
+    margin-right: ${size.micro};
+  }
+
   ${MEDIA.TABLET`
     padding: 0 0 0 8px;
 
