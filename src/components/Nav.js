@@ -17,7 +17,7 @@ function LeftSide({user, handleLogIn, handleLogOut}) {
           <SubtleLink href="https://github.com/bdougie/open-sauced">GitHub</SubtleLink>
         </li>
         <li>
-          <SubtleLink href="#">Subscribe</SubtleLink>
+          <SubtleLink href="https://dev.to/bdougieyo/a-path-for-open-source-contributions-2oa2">Story</SubtleLink>
         </li>
         {user && (
           <li>

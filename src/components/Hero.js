@@ -22,6 +22,9 @@ function Hero({handleLogIn}) {
         <MarketingButton primary onClick={handleLogIn}>
           Login
         </MarketingButton>
+        <MarketingButton onClick={handleLogIn}>
+         Read The Story
+        </MarketingButton>
       </SubHero>
       <TrustSection>
         {/*
