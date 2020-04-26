@@ -2,12 +2,17 @@ import styled from "styled-components";
 import {size} from "../variables";
 import MEDIA from "../mediaTemplates";
 
-const Container = styled.header`
+const Container = styled.nav`
   display: flex;
-  align-items: baseline;
+  align-items: center;
   justify-content: space-between;
   font-size: ${size.micro};
   background-color: #fff;
+  padding: 4px;
+
+  img {
+    height: ${size.small}
+  }
 
   ul {
     list-style: none;
@@ -15,6 +20,7 @@ const Container = styled.header`
   }
 
   li {
+    font-size: ${size.tiny}
     text-transform: uppercase;
     margin-right: ${size.micro};
   }

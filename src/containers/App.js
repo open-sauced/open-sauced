@@ -27,7 +27,7 @@ function App({handleLogIn, handleLogOut, user}) {
   return (
     <Router>
       <LocaleContext.Provider value={value}>
-        {user && <Header user={user} handleLogOut={handleLogOut} />}
+        <Header handleLogIn={handleLogIn} handleLogOut={handleLogOut} user={user} />
         <section>
           <Route exact path="/" component={guard(Dashboard)} user={user} />
           <Route path="/repos" component={guard(Dashboard)} user={user} />

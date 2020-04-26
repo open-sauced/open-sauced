@@ -1,17 +1,17 @@
 import React from "react";
-import {logo8 as logo} from "../logos";
 import {FlexColumnCenter} from "../styles/Grid";
-import Button from "../styles/Button";
+import {MarketingButton} from "../styles/Button";
 
 function Login({handleLogIn}) {
   return (
-    <FlexColumnCenter>
-      <img src={logo} alt="logo" />
-      <p style={{marginTop: 16}}>The path towards open-source contributions.</p>
-      <Button alt="github-login" primary onClick={handleLogIn}>
-        Login with GitHub
-      </Button>
-    </FlexColumnCenter>
+    <React.Fragment>
+      <FlexColumnCenter>
+        <p style={{marginTop: 16}}>The path towards open-source contributions.</p>
+        <MarketingButton alt="github-login" primary onClick={handleLogIn}>
+          Login with GitHub
+        </MarketingButton>
+      </FlexColumnCenter>
+    </React.Fragment>
   );
 }
 

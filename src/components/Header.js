@@ -1,41 +1,48 @@
 import React from "react";
-import {home, github, logout, issue} from "../icons";
+import {issue} from "../icons";
+import {logo1 as logo} from "../logos";
 import {FloatLeft, FloatRight} from "../styles/Grid";
-import {SimpleHeader} from "../styles/Header";
-import {Link} from "react-router-dom";
+import {SubtleLink} from "../styles/Typography";
+import {HomePageHeader as HomeNav} from "../styles/Header";
 
-function Header({user, handleLogOut}) {
+function Header({user, handleLogOut, handleLogIn}) {
   return (
-    <SimpleHeader>
+    <HomeNav className="nav-link">
       <FloatLeft>
-        <Link to="/" className="home">
-          <span>
-            <img alt="home icon" src={home} />
-          </span>
-        </Link>
+        <ul>
+          <li>
+            <SubtleLink href="https://dev.to/t/opensauced">Blog</SubtleLink>
+          </li>
+          <li>
+            <SubtleLink href="https://github.com/bdougie/open-sauced">GitHub</SubtleLink>
+          </li>
+          <li>
+            <SubtleLink href="#">Subscribe</SubtleLink>
+          </li>
+          <li>
+            {user ? (
+              <SubtleLink onClick={handleLogOut}>Logout</SubtleLink>
+            ) : (
+              <SubtleLink onClick={handleLogIn}>Login</SubtleLink>
+            )}
+          </li>
+        </ul>
       </FloatLeft>
 
       <FloatRight>
-        <a alt="user login name" className="nav-link" href={`https://github.com/${user.login}`}>
-          <span title="login name">Hi, {user.login}!</span>
-        </a>
+        {user && (
+          <a alt="user login name" className="nav-link" href={`https://github.com/${user.login}`}>
+            <span title="login name">Hi, {user.login}!</span>
+          </a>
+        )}
         <a className="nav-link" target="_blank" href="https://github.com/bdougie/open-sauced/issues/new">
           <span>
             <img alt="issue icon" src={issue} />
           </span>
         </a>
-        <a className="nav-link" href="https://github.com/bdougie/open-sauced">
-          <span>
-            <img alt="github logo" src={github} />
-          </span>
-        </a>
-        <a className="logout" onClick={handleLogOut}>
-          <span>
-            <img alt="log out icon" src={logout} />
-          </span>
-        </a>
+        <img src={logo} />
       </FloatRight>
-    </SimpleHeader>
+    </HomeNav>
   );
 }
 

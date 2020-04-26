@@ -87,7 +87,6 @@ body {
   color: var(--grey);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   margin: 0;
-  padding: var(--large) 0 0 0;
   width: auto;
 }
 
@@ -107,91 +106,11 @@ p {
   padding: 10px;
 }
 
-header {
-  box-sizing: border-box;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background: var(--grey);
-}
-
-.landing-nav + select {
-  display: none;
-}
-
 section {
   min-height: 75vh;
   padding: var(--tiny);
   margin: auto;
   width: 80%;
-}
-
-header a {
-  color: white;
-  display: inline-block;
-  font-size: var(--small);
-  padding: var(--tiny);
-  text-decoration: none;
-  transition: color 0.2s ease, background-color 0.2s ease;
-  vertical-align: bottom;
-}
-
-header a:hover {
-  background-color: #222;
-  color: var(--cheesyYellow);
-}
-
-.nav {
-  background: #222;
-  position: relative;
-  display: inline-block;
-  float: right;
-}
-
-.nav > li {
-  display: block;
-  float: left;
-  margin: 0;
-  padding: 0;
-}
-
-.nav > li > a {
-  display: block;
-  position: relative;
-}
-
-.nav ul {
-  position: absolute;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display: block;
-}
-
-.nav ul li {
-  position: absolute;
-  top: -9999px;
-  height: 0;
-  display: block;
-  margin: 0;
-  padding: 0;
-  transition: height 0.2s ease;
-}
-
-.nav ul li a {
-  background: var(--grey);
-  font-size: var(--tiny);
-  padding: 9px var(--tiny) 10px var(--tiny);
-  width: 175px;
-  display: block;
-  position: relative;
-}
-
-.nav ul li:hover > a,
-.nav ul li a:hover {
-  color: white;
-  background-color: var(--cheesyYellow);
 }
 
 footer {
