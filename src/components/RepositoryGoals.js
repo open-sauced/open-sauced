@@ -44,36 +44,40 @@ function RepositoryGoals() {
     dispatch({type: "UPDATE", payload: updatedRepos});
   };
 
-  return repository && repository.issues ? (
-    <React.Fragment>
-      <ContextStyle>
-        <SpaceBetween>
-          <div className="context-div">
-            {" "}
-            <h1>Dashboard</h1>
-            <p>
-              Open Sauced is a project to track the contributions you would like to work on. Add a repository you are
-              interested contributing to using the Repository's owner and name, also known as the "nameWithOwner"
-              format.
-            </p>
-            <small>
-              <em>
-                <a href="https://opensource.guide/" target="_blank">
-                  Learn about about open source
-                </a>
-              </em>
-            </small>
-          </div>
-          <Illustration alt="done checking image" src={doneChecking} />
-        </SpaceBetween>
-      </ContextStyle>
-      <Cards fitted>
-        <AddRepoForm goalsId={goalsId} onGoalAdded={onGoalAdded} />
-        <ListGoals goals={repository.issues} />
-      </Cards>
-    </React.Fragment>
-  ) : (
-    <CreateGoals onRepoCreation={onRepoCreation} />
+  return (
+    <section>
+      {repository && repository.issues ? (
+        <React.Fragment>
+          <ContextStyle>
+            <SpaceBetween>
+              <div className="context-div">
+                {" "}
+                <h1>Dashboard</h1>
+                <p>
+                  Open Sauced is a project to track the contributions you would like to work on. Add a repository you
+                  are interested contributing to using the Repository's owner and name, also known as the
+                  "nameWithOwner" format.
+                </p>
+                <small>
+                  <em>
+                    <a href="https://opensource.guide/" target="_blank">
+                      Learn about about open source
+                    </a>
+                  </em>
+                </small>
+              </div>
+              <Illustration alt="done checking image" src={doneChecking} />
+            </SpaceBetween>
+          </ContextStyle>
+          <Cards fitted>
+            <AddRepoForm goalsId={goalsId} onGoalAdded={onGoalAdded} />
+            <ListGoals goals={repository.issues} />
+          </Cards>
+        </React.Fragment>
+      ) : (
+        <CreateGoals onRepoCreation={onRepoCreation} />
+      )}
+    </section>
   );
 }
 

@@ -4,6 +4,7 @@ import {colors, size} from "../variables";
 const Hero = styled.section`
   padding-left: 70px;
   min-height: 15vh;
+  width: 100%;
 
   h1 {
     font-size: 32px;

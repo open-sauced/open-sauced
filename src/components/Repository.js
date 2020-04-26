@@ -58,7 +58,7 @@ function Repository({match}) {
   const {url, stargazers, forks, issues, name, nameWithOwner, owner} = repository || {};
 
   return (
-    <React.Fragment>
+    <section>
       {error && <ErrorMessage>{error}</ErrorMessage>}
       <ContextStyle>
         <SpaceBetween>
@@ -98,7 +98,7 @@ function Repository({match}) {
           !error && <p>Loading...</p>
         )}
       </Flex>
-    </React.Fragment>
+    </section>
   );
 }
 

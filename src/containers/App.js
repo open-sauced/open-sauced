@@ -28,11 +28,9 @@ function App({handleLogIn, handleLogOut, user}) {
     <Router>
       <LocaleContext.Provider value={value}>
         <Nav handleLogIn={handleLogIn} handleLogOut={handleLogOut} user={user} />
-        <section>
-          <Route exact path="/" component={guard(Dashboard)} user={user} />
-          <Route path="/repos" component={guard(Dashboard)} user={user} />
-          <Route path="/callback" component={guard(Dashboard)} />
-        </section>
+        <Route exact path="/" component={guard(Dashboard)} user={user} />
+        <Route path="/repos" component={guard(Dashboard)} user={user} />
+        <Route path="/callback" component={guard(Dashboard)} />
         {!user && <Footer />}
         {user && <DashboardFooter />}
       </LocaleContext.Provider>
