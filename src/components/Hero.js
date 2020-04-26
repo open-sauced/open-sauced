@@ -7,9 +7,7 @@ import {sauce, pizza} from "../icons";
 function Hero({handleLogIn}) {
   return (
     <React.Fragment>
-      <TopHero
-        style={{width: "100%", paddingLeft: 70, display: "inline-flex", height: 240, backgroundColor: "#faeace"}}
-        className="slogan1 color-accent">
+      <TopHero>
         <div style={{paddingTop: 24}}>
           <h1>The path to your next</h1>
           <h2>Open Source</h2>

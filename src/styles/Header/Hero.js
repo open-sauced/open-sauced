@@ -3,6 +3,7 @@ import {colors, size} from "../variables";
 
 const Hero = styled.section`
   padding-left: 70px;
+  padding-top: 0;
   min-height: 15vh;
   width: 100%;
   overflow-y: hidden;
@@ -37,7 +38,7 @@ const PizzaPosition = styled.img`
   height: 375px;
   position: absolute;
   right: -95px;
-  top: 92px;
+  top: 80px;
 `;
 const SaucePosition = styled.img`
   height: 475px;
@@ -49,7 +50,6 @@ const SaucePosition = styled.img`
 const TopHero = styled(Hero)`
   width: 100%;
   display: inline-flex;
-  height: 240;
   background-color: ${colors.accent};
 `;
 
