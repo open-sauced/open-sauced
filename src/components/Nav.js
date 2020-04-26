@@ -59,7 +59,7 @@ function Header({user, handleLogOut, handleLogIn}) {
   const Nav = user ? AppNav : HomeNav;
   return (
     <Nav>
-      <LeftSide handleLougOut={handleLogOut} handleLogIn={handleLogIn} user={user} />
+      <LeftSide handleLogOut={handleLogOut} handleLogIn={handleLogIn} user={user} />
       <RightSide user={user} />
     </Nav>
   );
