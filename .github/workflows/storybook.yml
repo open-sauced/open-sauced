@@ -12,11 +12,13 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@master
-
+    - name: Build Storybook
+      run: |
+        npm install
+        npm run build-storybook
     - name: Build and deploy to storybook-static branch
       uses: JamesIves/github-pages-deploy-action@3.4.8
       with:
         ACCESS_TOKEN: ${{ secrets.BDOUGIE_TOKEN }}
         BRANCH: storybook-static
         FOLDER: storybook-static
-        BUILD_SCRIPT: npm install && npm run build-storybook
