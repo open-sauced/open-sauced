@@ -15,7 +15,7 @@ jobs:
 
     - name: Build and deploy to storybook-static branch
       uses: JamesIves/github-pages-deploy-action@3.4.8
-      env:
+      with:
         ACCESS_TOKEN: ${{ secrets.BDOUGIE_TOKEN }}
         BRANCH: storybook-static
         FOLDER: storybook-static
