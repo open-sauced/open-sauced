@@ -1,5 +1,6 @@
 import React from "react";
 import {MarketingButton} from "../src/styles/Button";
+import {HomePageHeader} from "../src/styles/Header";
 import {sauce, pizza} from "../src/icons";
 import {logo1 as logo} from "../src/logos";
 
@@ -10,23 +11,15 @@ export default {
 export const Hero = () => (
   <React.Fragment>
     <div className="Hero Component">
-      <div
-        style={{
-          display: "flex",
-          alignItems: "baseline",
-          justifyContent: "space-between",
-          fontSize: 8,
-          backgroundColor: "#fff",
-        }}
-        className="navbar color-white">
-        <ul style={{listStyle: "none", display: "inline-flex"}}>
-          <li style={{textTransform: "uppercase", marginRight: 4}}>Blog</li>
-          <li style={{textTransform: "uppercase", marginRight: 4}}>GitHub</li>
-          <li style={{textTransform: "uppercase", marginRight: 4}}>Subscribe</li>
-          <li style={{textTransform: "uppercase", marginRight: 4}}>Login</li>
+      <HomePageHeader className="nav-link">
+        <ul>
+          <li>Blog</li>
+          <li>GitHub</li>
+          <li>Subscribe</li>
+          <li>Login</li>
         </ul>
         <img style={{height: 8}} src={logo} />
-      </div>
+      </HomePageHeader>
       <div style={{width: "100%",paddingLeft: 70, display: "inline-flex", height: 240, backgroundColor: "#faeace"}} className="slogan1 color-accent">
         <div style={{paddingTop: 24}}>
           <h1 style={{fontSize: 32}}>The Path To Your Next</h1>
