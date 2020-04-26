@@ -9,7 +9,7 @@ import {Link} from "react-router-dom";
 function Header({user, handleLogOut, handleLogIn}) {
   const Nav = user ? AppNav : HomeNav;
   return (
-    <Nav className="nav-link">
+    <Nav>
       <FloatLeft>
         <ul>
           <li>
@@ -21,11 +21,11 @@ function Header({user, handleLogOut, handleLogIn}) {
           <li>
             <SubtleLink href="#">Subscribe</SubtleLink>
           </li>
-          <li>
+          {user && <li>
             <SubtleLink className="nav-link" target="_blank" href="https://github.com/bdougie/open-sauced/issues/new">
               Issue
             </SubtleLink>
-          </li>
+          </li>}
           <li>
             {user ? (
               <SubtleLink onClick={handleLogOut}>Logout</SubtleLink>

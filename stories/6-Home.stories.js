@@ -6,7 +6,7 @@ import {sauce, pizza} from "../src/icons";
 import {logo1 as logo} from "../src/logos";
 
 export default {
-  title: "LoginPage",
+  title: "HomePage",
 };
 
 export const Hero = () => (
