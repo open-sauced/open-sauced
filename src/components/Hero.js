@@ -14,15 +14,15 @@ function Hero({handleLogIn}) {
           <h1>contribution.</h1>
         </div>
         <Flex>
-          <SaucePosition src={sauce} />
-          <PizzaPosition src={pizza} />
+          <SaucePosition alt="sauce" src={sauce} />
+          <PizzaPosition alt="pizza" src={pizza} />
         </Flex>
       </TopHero>
       <SubHero>
         <MarketingButton primary onClick={handleLogIn}>
           Login
         </MarketingButton>
-        <MarketingButton onClick={handleLogIn}>Read The Story</MarketingButton>
+        <a href=""><MarketingButton>Read The Story</MarketingButton></a>
       </SubHero>
       <TrustSection>
         {/*
