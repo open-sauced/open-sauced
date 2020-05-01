@@ -63,7 +63,7 @@
     "style-loader": "1.0.0",
     "stylefmt": "^6.0.3",
     "stylelint": "^13.0.0",
-    "stylelint-config-standard": "^19.0.0",
+    "stylelint-config-standard": "^20.0.0",
     "stylelint-declaration-block-order": "^0.2.0",
     "terser-webpack-plugin": "^2.3.5",
     "uglifyjs-webpack-plugin": "^2.2.0",
