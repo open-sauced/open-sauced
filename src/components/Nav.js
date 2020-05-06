@@ -2,7 +2,7 @@ import React from "react";
 import {logo1 as logo} from "../logos";
 import {FloatLeft, FloatRight} from "../styles/Grid";
 import {SubtleLink} from "../styles/Typography";
-import {AppNav, HomePageHeader as HomeNav} from "../styles/Header";
+import {AppNav, HomeNav} from "../styles/Header";
 import {SpaceBetween} from "../styles/Grid";
 import {Link} from "react-router-dom";
 

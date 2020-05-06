@@ -2,7 +2,7 @@ import React, {Fragment} from "react";
 import {logo1 as logo} from "../src/logos";
 import {FloatLeft, FloatRight} from "../src/styles/Grid";
 import {SubtleLink} from "../src/styles/Typography";
-import {AppNav, HomePageHeader as HomeNav} from "../src/styles/Header";
+import {AppNav, HomeNav} from "../src/styles/Header";
 import {SpaceBetween} from "../src/styles/Grid";
 
 export default {

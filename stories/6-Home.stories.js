@@ -1,6 +1,6 @@
 import React from "react";
 import {MarketingButton} from "../src/styles/Button";
-import {HomePageHeader as HomeNav} from "../src/styles/Header";
+import {HomeNav} from "../src/styles/Header";
 import {SubtleLink} from "../src/styles/Typography";
 import {sauce, pizza} from "../src/icons";
 import {logo1 as logo} from "../src/logos";

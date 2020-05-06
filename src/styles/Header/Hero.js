@@ -1,13 +1,17 @@
 import styled from "styled-components";
 import {colors, size} from "../variables";
+import MEDIA from "../mediaTemplates";
 
 const Hero = styled.section`
-  padding-left: 70px;
+  padding-left: 10rem;
   padding-top: 0;
   min-height: 15vh;
-  width: 100%;
+  margin: auto;
   overflow-y: hidden;
 
+  ${MEDIA.TABLET`
+    padding-left: 5rem;
+  `};
   h1 {
     font-size: 32px;
   }
@@ -34,17 +38,33 @@ const Hero = styled.section`
   }
 `;
 
+const FoodElements = styled.div`
+  display: flex;
+
+  ${MEDIA.TABLET`
+    display: none;
+  `};
+`;
+
 const PizzaPosition = styled.img`
   height: 375px;
   position: absolute;
   right: -95px;
   top: 80px;
+
+  ${MEDIA.PHONE`
+    height: 75px;
+  `};
 `;
 const SaucePosition = styled.img`
   height: 475px;
   position: absolute;
   right: 0;
   top: 43;
+
+  ${MEDIA.PHONE`
+    height: 175px;
+  `};
 `;
 
 const TopHero = styled(Hero)`
@@ -70,4 +90,4 @@ const TrustSection = styled(Hero)`
   min-height: 1vh;
 `;
 
-export {SubHero, TopHero, TrustSection, PizzaPosition, SaucePosition};
+export {FoodElements, SubHero, TopHero, TrustSection, PizzaPosition, SaucePosition};

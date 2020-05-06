@@ -8,7 +8,9 @@ const Container = styled.nav`
   justify-content: space-between;
   font-size: ${size.micro};
   background-color: #fff;
-  padding: 4px;
+  padding: ${size.tiny};
+  margin: auto;
+
 
   img {
     height: ${size.small}

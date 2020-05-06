@@ -1,7 +1,6 @@
 import React from "react";
 import {MarketingButton} from "../styles/Button";
-import {Flex} from "../styles/Grid";
-import {SaucePosition, PizzaPosition, TopHero, SubHero, TrustSection} from "../styles/Header";
+import {FoodElements, SaucePosition, PizzaPosition, TopHero, SubHero, TrustSection} from "../styles/Header";
 import {sauce, pizza} from "../icons";
 
 function Hero({handleLogIn}) {
@@ -13,16 +12,18 @@ function Hero({handleLogIn}) {
           <h2>Open Source</h2>
           <h1>contribution.</h1>
         </div>
-        <Flex>
+        <FoodElements>
           <SaucePosition alt="sauce" src={sauce} />
           <PizzaPosition alt="pizza" src={pizza} />
-        </Flex>
+        </FoodElements>
       </TopHero>
       <SubHero>
         <MarketingButton primary onClick={handleLogIn}>
           Login
         </MarketingButton>
-        <a href=""><MarketingButton>Read The Story</MarketingButton></a>
+        <a href="">
+          <MarketingButton>Read The Story</MarketingButton>
+        </a>
       </SubHero>
       <TrustSection>
         {/*
