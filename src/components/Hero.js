@@ -1,7 +1,7 @@
 import React from "react";
 import {MarketingButton} from "../styles/Button";
 import {Wrapper, FoodElements, SaucePosition, PizzaPosition, TopHero, SubHero, TrustSection} from "../styles/Header";
-import {sauceFull, pizza} from "../icons";
+import {sauceFull, pizza} from "../images";
 
 function Hero({handleLogIn}) {
   return (
