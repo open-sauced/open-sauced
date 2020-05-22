@@ -32,10 +32,21 @@ const Container = styled.nav`
   }
 
   ${MEDIA.TABLET`
-    padding: 0 0 0 8px;
-
     .nav-link {
       display: none;
+    }
+
+    ul {
+      padding: 2px;
+    }
+
+    ul li {
+      display: none;
+    }
+
+    ul li:nth-last-of-type(1),
+    ul li:nth-last-of-type(1) ~ li {
+        display: inherit !important;
     }
   `};
 `;

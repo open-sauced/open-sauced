@@ -3,14 +3,15 @@ import {colors, size} from "../variables";
 import MEDIA from "../mediaTemplates";
 
 const Hero = styled.section`
-  padding-left: 10rem;
+  padding-left: 5rem;
+  padding-right: 2rem;
   padding-top: 0;
   min-height: 15vh;
   margin: auto;
   overflow-y: hidden;
 
   ${MEDIA.TABLET`
-    padding-left: 5rem;
+    padding-left: 1rem;
   `};
   h1 {
     font-size: 32px;
@@ -38,6 +39,17 @@ const Hero = styled.section`
   }
 `;
 
+const Wrapper = styled.div`
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1000px;
+
+ ${MEDIA.TABLET`
+    padding: 0;
+  `};
+
+`;
+
 const FoodElements = styled.div`
   display: flex;
 
@@ -49,7 +61,7 @@ const FoodElements = styled.div`
 const PizzaPosition = styled.img`
   height: 375px;
   position: absolute;
-  right: -95px;
+  right: 5%;
   top: 80px;
 
   ${MEDIA.PHONE`
@@ -57,10 +69,10 @@ const PizzaPosition = styled.img`
   `};
 `;
 const SaucePosition = styled.img`
-  height: 475px;
+  height: 450px;
   position: absolute;
-  right: 0;
-  top: 43;
+  right: 4%;
+  top: 6%;
 
   ${MEDIA.PHONE`
     height: 175px;
@@ -68,14 +80,10 @@ const SaucePosition = styled.img`
 `;
 
 const TopHero = styled(Hero)`
-  width: 100%;
-  display: inline-flex;
   background-color: ${colors.accent};
 `;
 
 const SubHero = styled(Hero)`
-  margin: 0;
-  width: 100%;
   padding-bottom: 45px;
   padding-top: 32px;
   background-color: ${colors.cheesyYellow};
@@ -90,4 +98,4 @@ const TrustSection = styled(Hero)`
   min-height: 1vh;
 `;
 
-export {FoodElements, SubHero, TopHero, TrustSection, PizzaPosition, SaucePosition};
+export {Wrapper, FoodElements, SubHero, TopHero, TrustSection, PizzaPosition, SaucePosition};

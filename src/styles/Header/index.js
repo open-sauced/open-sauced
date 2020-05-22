@@ -3,13 +3,12 @@ import Heading from "./Heading";
 import HomeNav from "./HomeNav";
 import SimpleHeader from "./SimpleHeader";
 import SubHeading from "./SubHeading";
-import {FoodElements, TopHero, SubHero, TrustSection, PizzaPosition, SaucePosition} from "./Hero";
+import {Wrapper, FoodElements, TopHero, SubHero, TrustSection, PizzaPosition, SaucePosition} from "./Hero";
 import {colors} from "../variables";
 
 const AppNav = styled(HomeNav)`
   background-color: ${colors.lightestGrey};
   color: ${colors.grey};
-  text-transform: none;
 `;
 
 export {
@@ -24,4 +23,5 @@ export {
   SimpleHeader,
   PizzaPosition,
   SaucePosition,
+  Wrapper,
 };

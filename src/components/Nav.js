@@ -44,7 +44,7 @@ function RightSide({user}) {
       <SpaceBetween>
         {user && (
           <SubtleLink alt="user login name" className="nav-link" href={`https://github.com/${user.login}`}>
-            <span title="login name">Hi, {user.login}!</span>
+            Hi, {user.login}!
           </SubtleLink>
         )}
         <Link to="/">
