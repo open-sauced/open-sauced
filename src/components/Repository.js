@@ -73,7 +73,7 @@ function Repository({match}) {
             <small>
               <em>
                 <a href="https://opensource.guide/how-to-contribute/" target="_blank">
-                  Learn how to contirbute to open source projects
+                  Learn how to contribute to open source projects
                 </a>
               </em>
             </small>
