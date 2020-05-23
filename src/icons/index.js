@@ -17,7 +17,6 @@ import logout from "./log-out.svg";
 import issue from "./alert-circle.svg";
 import anchor from "./anchor.svg";
 import anchorWithBorder from "./anchorWithBorder.svg";
-import sauced from "./sauced.svg";
 
 export {
   anchor,
@@ -39,5 +38,4 @@ export {
   plus,
   save,
   star,
-  sauced,
 };

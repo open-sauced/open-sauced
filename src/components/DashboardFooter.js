@@ -1,6 +1,6 @@
 import React from "react";
 import DashboardFooter from "../styles/Footer";
-import {sauced} from "../icons";
+import {sauced} from "../images";
 
 function Footer() {
   return (
