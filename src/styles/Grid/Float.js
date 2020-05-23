@@ -9,5 +9,3 @@ const FloatRight = styled.div`
 `;
 
 export {FloatRight, FloatLeft};
-
-
