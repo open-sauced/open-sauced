@@ -39,7 +39,6 @@ function NoteForm({goalId, repoName, note}) {
   };
 
   const noteContent = input !== "" ? input : note;
-  console.log(deleted);
 
   return !deleted ? (
     <Card>

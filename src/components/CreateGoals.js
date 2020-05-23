@@ -10,7 +10,6 @@ import {devProductive} from "../illustrations";
 function CreateGoals({onRepoCreation}) {
   const _handleRepoCreation = () => {
     api.createOpenSaucedGoalsRepo().then(res => {
-      console.log(res);
       const {
         data: {
           gitHub: {
