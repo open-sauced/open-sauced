@@ -20,8 +20,9 @@ function RepositoryGoals() {
     repository && setGoalsId(repository.id);
   }, [goalsId]);
 
-  const onRepoCreation = repo => {
+  const onRepoCreation = (id, repo) => {
     dispatch({type: "CREATE", payload: repo});
+    setGoalsId(id)
   };
 
   const onGoalAdded = goal => {
