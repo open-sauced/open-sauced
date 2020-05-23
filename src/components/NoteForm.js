@@ -24,7 +24,6 @@ function NoteForm({goalId, repoName, note}) {
     api
       .updateGoal(goalId, repoName, "CLOSED", input)
       .then(res => {
-        console.log(res);
         setEditing(false);
         setDeleted(true);
       })
@@ -40,12 +39,9 @@ function NoteForm({goalId, repoName, note}) {
   };
 
   const noteContent = input !== "" ? input : note;
+  console.log(deleted);
 
-  if (deleted) {
-    <Redirect to="/" />;
-  }
-
-  return (
+  return !deleted ? (
     <Card>
       <TextArea
         style={{minHeight: 170}}
@@ -75,6 +71,8 @@ function NoteForm({goalId, repoName, note}) {
         </Button>
       </FlexCenter>
     </Card>
+  ) : (
+    <Redirect to="/" />
   );
 }
 
