@@ -10,7 +10,18 @@ import {devProductive} from "../illustrations";
 function CreateGoals({onRepoCreation}) {
   const _handleRepoCreation = () => {
     api.createOpenSaucedGoalsRepo().then(res => {
-      onRepoCreation(goalsReducer(res, {type: "CREATE"}));
+      console.log(res);
+      const {
+        data: {
+          gitHub: {
+            createRepository: {
+              repository: {id},
+            },
+          },
+        },
+      } = res;
+
+      onRepoCreation(id, goalsReducer(res, {type: "CREATE"}));
     });
   };
 
