@@ -96,9 +96,7 @@ function Repository({match}) {
             {owner && <Form note={note} goalId={issueId} repoName={nameWithOwner} />}
           </FormColumn>
         ) : (
-          !error && (
-            <Spinner />
-          )
+          !error && <Spinner />
         )}
       </Flex>
     </section>

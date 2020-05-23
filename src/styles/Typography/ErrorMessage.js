@@ -8,4 +8,3 @@ const ErrorMessage = styled.p`
 `;
 
 export default ErrorMessage;
-
