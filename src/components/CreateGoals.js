@@ -10,7 +10,17 @@ import {devProductive} from "../illustrations";
 function CreateGoals({onRepoCreation}) {
   const _handleRepoCreation = () => {
     api.createOpenSaucedGoalsRepo().then(res => {
-      onRepoCreation(goalsReducer(res, {type: "CREATE"}));
+      const {
+        data: {
+          gitHub: {
+            createRepository: {
+              repository: {id},
+            },
+          },
+        },
+      } = res;
+
+      onRepoCreation(id, goalsReducer(res, {type: "CREATE"}));
     });
   };
 
@@ -25,7 +35,7 @@ function CreateGoals({onRepoCreation}) {
                 Open Sauced is a tool to help track your next open source contributions. You can get started by creating
                 a goal workspace below.
               </p>
-              <p>A private repository name "open-sauced-goals" will be created on your GitHub account to store.</p>
+              <p>A public repository name "open-sauced-goals" will be created on your GitHub account to store.</p>
               <small>
                 <em>You own all your data saved while saucin.</em>
               </small>
