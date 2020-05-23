@@ -230,11 +230,12 @@ const operationsDoc = `
 
   mutation CreateOpenSaucedGoalsRepo {
     gitHub {
-      createRepository(
+      cloneTemplateRepository(
         input: {
+          repositoryId: "MDEwOlJlcG9zaXRvcnkyNjYzNDYyNDM="
           visibility: PUBLIC
-          name: "open-sauced-goals"
-          description: "A list of contributions I might like to make some day!"
+          ownerId: "MDEyOk9yZ2FuaXphdGlvbjU3NTY4NTk4"
+          name: "goals-template"
         }
       ) {
         repository {
