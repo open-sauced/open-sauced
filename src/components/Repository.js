@@ -10,6 +10,7 @@ import {ErrorMessage} from "../styles/Typography";
 import {SpaceBetween} from "../styles/Grid";
 import {diary} from "../illustrations";
 import {ContextStyle} from "../styles/Card";
+import {Spinner} from "../styles/Spinner";
 import {Flex, FormColumn, IssuesColumn} from "../styles/Grid";
 
 function Repository({match}) {
@@ -95,7 +96,7 @@ function Repository({match}) {
             {owner && <Form note={note} goalId={issueId} repoName={nameWithOwner} />}
           </FormColumn>
         ) : (
-          !error && <p>Loading...</p>
+          !error && <Spinner />
         )}
       </Flex>
     </section>

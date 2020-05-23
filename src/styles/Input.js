@@ -15,4 +15,3 @@ const Container = styled.input`
 `;
 
 export default Container;
-
