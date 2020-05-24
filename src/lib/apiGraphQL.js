@@ -228,13 +228,22 @@ const operationsDoc = `
     }
   }
 
-  mutation CreateOpenSaucedGoalsRepo {
+  query FetchOwnerQuery($owner: String!) {
     gitHub {
-      createRepository(
+      user(login: $owner) {
+        id
+      }
+    }
+  }
+
+  mutation CreateOpenSaucedGoalsRepo($ownerId: ID!) {
+    gitHub {
+      cloneTemplateRepository(
         input: {
+          repositoryId: "MDEwOlJlcG9zaXRvcnkyNjYzNDYyNDM="
           visibility: PUBLIC
+          ownerId: $ownerId
           name: "open-sauced-goals"
-          description: "A list of contributions I might like to make some day!"
         }
       ) {
         repository {
@@ -347,8 +356,12 @@ function fetchGoalQuery(number) {
   return fetchOneGraph(operationsDoc, "FetchGoal", {number: number});
 }
 
-function createOpenSaucedGoalsRepo() {
-  return fetchOneGraph(operationsDoc, "CreateOpenSaucedGoalsRepo", {});
+function fetchOwnerId(owner) {
+  return fetchOneGraph(operationsDoc, "FetchOwnerQuery", {owner: owner});
+}
+
+function createOpenSaucedGoalsRepo(ownerId) {
+  return fetchOneGraph(operationsDoc, "CreateOpenSaucedGoalsRepo", {ownerId: ownerId});
 }
 
 function createGoal(repoId, title, notes) {
@@ -369,6 +382,7 @@ const api = {
   fetchContributedRepoQuery,
   fetchRepoInteractions,
   fetchIssuesQuery,
+  fetchOwnerId,
   fetchRepositoryIssues: (owner, repo, cursor, previous = false) => {
     const issueFetcher = cursor && previous ? fetchIssuesBeforeQuery : fetchIssuesAfterQuery;
 

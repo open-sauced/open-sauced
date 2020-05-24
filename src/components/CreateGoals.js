@@ -7,20 +7,30 @@ import api from "../lib/apiGraphQL";
 import {goalsReducer} from "../lib/reducers";
 import {devProductive} from "../illustrations";
 
-function CreateGoals({onRepoCreation}) {
+function CreateGoals({user, onRepoCreation}) {
   const _handleRepoCreation = () => {
-    api.createOpenSaucedGoalsRepo().then(res => {
+    api.fetchOwnerId(user).then(ownerRes => {
       const {
         data: {
           gitHub: {
-            createRepository: {
-              repository: {id},
-            },
+            user: {id},
           },
         },
-      } = res;
+      } = ownerRes;
 
-      onRepoCreation(id, goalsReducer(res, {type: "CREATE"}));
+      api.createOpenSaucedGoalsRepo(id).then(goalsRes => {
+        const {
+          data: {
+            gitHub: {
+              cloneTemplateRepository: {
+                repository: {id},
+              },
+            },
+          },
+        } = goalsRes;
+
+        onRepoCreation(id, goalsReducer(goalsRes, {type: "CREATE"}));
+      });
     });
   };
 

@@ -29,6 +29,9 @@ npm run storybook
 ## Authentication
 Authentication is handled through [OneGraph's AuthGuardian](https://www.onegraph.com/docs/auth_guardian.html) service. 
 
+## Database
+This project uses GitHub as a database. When you login, you will be presented whena button to create a goals repository. That repository template lives at [open-sauced/goals-template](https://github.com/open-sauced/goals-template).
+
 ## Service Worker
 This project uses the sw-precache to kickstart an offline cache. The
 offline cache only registers in production. If service needs to be
