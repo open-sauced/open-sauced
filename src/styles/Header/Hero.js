@@ -127,7 +127,7 @@ const QuoteSection = styled(Hero)`
   .quote {
     font-size: 25px;
     margin-right: 20px;
-    font-family: 'Margarine', 'Helvetica', arial;
+    font-family: 'Times New Roman';
   }
 `;
 

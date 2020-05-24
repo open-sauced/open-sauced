@@ -51,11 +51,11 @@ function Hero({handleLogIn}) {
         <Flex style={{marginTop: 50}}>
           <Flex>
             <img className="quote-image" style={{height: 100}} alt="open sauced" src={"https://github.com/yg.png"} />
-            <span className="quote">Do it now sometimes later becomes never!</span>
+            <span className="quote">"Do it now sometimes later becomes never!"</span>
           </Flex>
           <Flex>
             <img className="quote-image" style={{height: 100}} alt="open sauced" src={"https://github.com/yg.png"} />
-            <span className="quote">Do it now sometimes later becomes never!</span>
+            <span className="quote">"Do it now sometimes later becomes never!"</span>
           </Flex>
         </Flex>
       </QuoteSection>
