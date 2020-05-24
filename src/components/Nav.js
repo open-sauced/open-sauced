@@ -5,10 +5,14 @@ import {SubtleLink} from "../styles/Typography";
 import {AppNav, HomeNav} from "../styles/Header";
 import {SpaceBetween} from "../styles/Grid";
 import {Link} from "react-router-dom";
+import ProfileAvatar from "../styles/ProfileAvatar";
 
 function LeftSide({user, handleLogIn, handleLogOut}) {
   return (
     <FloatLeft>
+      <Link style={{verticalAlign: "middle"}} to="/">
+        <img alt="open sauced" src={logo} />
+      </Link>
       <ul>
         <li>
           <SubtleLink href="https://dev.to/t/opensauced">Blog</SubtleLink>
@@ -25,9 +29,13 @@ function LeftSide({user, handleLogIn, handleLogOut}) {
         )}
         <li>
           {user ? (
-            <SubtleLink onClick={handleLogOut}>Logout</SubtleLink>
+            <div>
+              <SubtleLink onClick={handleLogOut}>Logout</SubtleLink>
+            </div>
           ) : (
-            <SubtleLink onClick={handleLogIn}>Login</SubtleLink>
+            <div>
+              <SubtleLink onClick={handleLogIn}>Login</SubtleLink>
+            </div>
           )}
         </li>
       </ul>
@@ -41,12 +49,9 @@ function RightSide({user}) {
       <SpaceBetween>
         {user && (
           <SubtleLink alt="user login name" className="nav-link" href={`https://github.com/${user.login}`}>
-            Hi, {user.login}!
+            <ProfileAvatar alt="avatar" src={`https://avatars.githubusercontent.com/u/${user.id}`} />
           </SubtleLink>
         )}
-        <Link to="/">
-          <img alt="open sauced" src={logo} />
-        </Link>
       </SpaceBetween>
     </FloatRight>
   );
