@@ -7,8 +7,8 @@ import {Wrapper, FoodElements, TopHero, SubHero, TrustSection, PizzaPosition, Sa
 import {colors} from "../variables";
 
 const AppNav = styled(HomeNav)`
-  background-color: ${colors.lightestGrey};
-  color: ${colors.grey};
+  background-color: ${colors.grey};
+  color: ${colors.offWhite};
 `;
 
 export {
