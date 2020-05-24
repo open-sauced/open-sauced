@@ -65,7 +65,11 @@ function Repository({match}) {
         <SpaceBetween>
           <div className="context-div">
             <a style={{textDecoration: "none"}} href={url} target="_blank">
-              <h1>{nameWithOwner}</h1>
+              {nameWithOwner ? (
+                <h1>{nameWithOwner}</h1>
+              ) : (
+                <h1>Loading...</h1>
+              )}
             </a>
             <p>
               Use the issue list to find things to work on. The notes form is here to also assist with the tracking
