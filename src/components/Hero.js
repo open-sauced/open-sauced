@@ -50,11 +50,11 @@ function Hero({handleLogIn}) {
         <div style={{marginTop: 50}}>
           <div className="left">
             <img className="quote-image" style={{height: 100}} alt="open sauced" src={"https://github.com/yg.png"} />
-            <p className="quote">Do it now sometimes later becomes never!</p>
+            <span className="quote">Do it now sometimes later becomes never!</span>
           </div>
           <div className="right description">
             <img className="quote-image" style={{height: 100}} alt="open sauced" src={"https://github.com/yg.png"} />
-            <p className="quote">Do it now sometimes later becomes never!</p>
+            <span className="quote">Do it now sometimes later becomes never!</span>
           </div>
           <div className="clear" />
         </div>

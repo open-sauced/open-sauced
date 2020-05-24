@@ -112,14 +112,14 @@ const QuoteSection = styled(Hero)`
   width: 100%;
   padding-top: 10px;
 
-  p {
+  span {
     font-weight: bold;
-    margin-top: 10px;
     font-size: 14px;
   }
 
   .left {
     float: left;
+    width: 40%;
   }
   .quote-image {
     float: left;
@@ -133,6 +133,7 @@ const QuoteSection = styled(Hero)`
   }
   .description {
     width: 40%;
+    margin-top: 20px;
   }
   .quote {
     font-size: 25px;
