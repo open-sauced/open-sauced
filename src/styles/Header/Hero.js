@@ -111,10 +111,11 @@ const QuoteSection = styled(Hero)`
   background-color: white;
   width: 100%;
   padding-top: 10px;
-  text-transform: uppercase;
 
-  small {
+  p {
     font-weight: bold;
+    margin-top: 10px;
+    font-size: 14px;
   }
 
   li {
@@ -129,7 +130,6 @@ const DetailsSection = styled(Hero)`
   background-color: white;
   width: 100%;
   padding-top: 10px;
-  text-transform: uppercase;
 
   small {
     font-weight: bold;

@@ -1,7 +1,9 @@
 import React from "react";
+import {Link} from "react-router-dom";
 import {MarketingButton} from "../styles/Button";
 import {Wrapper, FoodElements, SaucePosition, PizzaPosition, TopHero, SubHero, TrustSection, QuoteSection, DetailsSection} from "../styles/Header";
 import {sauceFull, pizza} from "../images";
+import {logo1 as logo} from "../logos";
 
 function Hero({handleLogIn}) {
   return (
@@ -39,6 +41,9 @@ function Hero({handleLogIn}) {
         </ul>
       </TrustSection>
       <QuoteSection>
+        <Link to="/">
+          <img style={{height: 50}} alt="open sauced" src={logo} />
+        </Link>
         <h1>Quote Section</h1>
       </QuoteSection>
       <DetailsSection>
