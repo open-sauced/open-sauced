@@ -122,15 +122,22 @@ const QuoteSection = styled(Hero)`
   }
   .description {
     width: 40%;
+    font-size: 14px;
+    font-weight: bold;
     margin-top: 20px;
     ${MEDIA.TABLET`
         width: 100%;
     `};
   }
   .quote {
+    width: 45%;
     font-size: 25px;
-    margin-right: 20px;
+    margin-right: 25px;
     font-family: 'Times New Roman';
+  }
+  .author {
+    font-size: 14px;
+    margin-top: 15px;
   }
 `;
 

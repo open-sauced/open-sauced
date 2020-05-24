@@ -46,16 +46,22 @@ function Hero({handleLogIn}) {
           <img style={{height: 50}} alt="open sauced" src={logo} />
         </Link>
         <Flex className="description">
-          Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo
+          Dictum fusce ut placerat orci nulla pellentesque dignissim. Dictum fusce ut placerat orci nulla pellentesque dignissim. Dictum fusce ut placerat orci nulla pellentesque dignissim. Dictum fusce ut placerat orci nulla pellentesque dignissim.
         </Flex>
-        <Flex style={{marginTop: 50}}>
+        <Flex style={{marginTop: 100}}>
           <Flex>
             <img className="quote-image" style={{height: 100}} alt="open sauced" src={"https://github.com/yg.png"} />
-            <span className="quote">"Do it now sometimes later becomes never!"</span>
+            <span className="quote">
+              "Do it now sometimes later becomes never!"
+              <Flex className="author">- bdougie</Flex>
+            </span>
           </Flex>
           <Flex>
             <img className="quote-image" style={{height: 100}} alt="open sauced" src={"https://github.com/yg.png"} />
-            <span className="quote">"Do it now sometimes later becomes never!"</span>
+            <span className="quote">
+              "Do it now sometimes later becomes never!"
+              <Flex className="author">- bdougie</Flex>
+            </span>
           </Flex>
         </Flex>
       </QuoteSection>
