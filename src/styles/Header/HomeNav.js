@@ -23,7 +23,11 @@ const Container = styled.nav`
 
   li {
     font-size: ${size.tiny}
-    margin-right: ${size.micro};
+    margin-right: ${size.tiny};
+  }
+
+  a {
+    vertical-align: middle;
   }
 
   span {
