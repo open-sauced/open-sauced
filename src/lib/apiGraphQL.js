@@ -356,7 +356,7 @@ function fetchGoalQuery(number) {
   return fetchOneGraph(operationsDoc, "FetchGoal", {number: number});
 }
 
-function fetchOwnerQuery(owner) {
+function fetchOwnerId(owner) {
   return fetchOneGraph(operationsDoc, "FetchOwnerQuery", {owner: owner});
 }
 
@@ -382,7 +382,7 @@ const api = {
   fetchContributedRepoQuery,
   fetchRepoInteractions,
   fetchIssuesQuery,
-  fetchOwnerQuery,
+  fetchOwnerId,
   fetchRepositoryIssues: (owner, repo, cursor, previous = false) => {
     const issueFetcher = cursor && previous ? fetchIssuesBeforeQuery : fetchIssuesAfterQuery;
 
