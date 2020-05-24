@@ -5,6 +5,7 @@ import Card from "./Card";
 import TextArea from "../styles/TextArea";
 import {FlexCenter} from "../styles/Grid";
 import Octicon, {getIconByName} from "@primer/octicons-react";
+import ReactMarkdown from "react-markdown";
 
 import api from "../lib/apiGraphQL";
 
@@ -42,16 +43,22 @@ function NoteForm({goalId, repoName, note}) {
 
   return !deleted ? (
     <Card>
-      <TextArea
-        style={{minHeight: 170}}
-        disabled={!editing}
-        onChange={_handleNotesChange}
-        value={noteContent || ""}
-        type="text"
-        placeholder={`Type your notes for ${repoName} here...`}
-        name="notes"
-        aria-label="note input"
-      />
+      {!editing ? (
+        <div style={{marginBottom: 10}}>
+          <ReactMarkdown source={noteContent} />
+        </div>
+      ) : (
+        <TextArea
+          style={{minHeight: 170}}
+          disabled={!editing}
+          onChange={_handleNotesChange}
+          value={noteContent || ""}
+          type="text"
+          placeholder={`Type your notes for ${repoName} here...`}
+          name="notes"
+          aria-label="note input"
+        />
+      )}
       <FlexCenter>
         {editing ? (
           <Button onClick={_handleNoteUpdate}>

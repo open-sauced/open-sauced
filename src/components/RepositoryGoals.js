@@ -10,7 +10,7 @@ import {doneChecking} from "../illustrations";
 import {ContextStyle} from "../styles/Card";
 import {goalsReducer, usePersistentStateReducer} from "../lib/reducers";
 
-function RepositoryGoals() {
+function RepositoryGoals({user}) {
   const {goalsId, setGoalsId} = useContext(LocaleContext);
   const [state, dispatch] = usePersistentStateReducer("goalsState", goalsReducer);
 
@@ -76,7 +76,7 @@ function RepositoryGoals() {
           </Cards>
         </React.Fragment>
       ) : (
-        <CreateGoals onRepoCreation={onRepoCreation} />
+        <CreateGoals user={user.login} onRepoCreation={onRepoCreation} />
       )}
     </section>
   );
