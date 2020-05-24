@@ -4,6 +4,7 @@ import {MarketingButton} from "../styles/Button";
 import {Wrapper, FoodElements, SaucePosition, PizzaPosition, TopHero, SubHero, TrustSection, QuoteSection, DetailsSection} from "../styles/Header";
 import {sauceFull, pizza} from "../images";
 import {logo1 as logo} from "../logos";
+import {Flex} from "../styles/Grid";
 
 function Hero({handleLogIn}) {
   return (
@@ -44,20 +45,19 @@ function Hero({handleLogIn}) {
         <Link to="/">
           <img style={{height: 50}} alt="open sauced" src={logo} />
         </Link>
-        <p className="description">
+        <Flex className="description">
           Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo
-        </p>
-        <div style={{marginTop: 50}}>
-          <div className="left">
+        </Flex>
+        <Flex style={{marginTop: 50}}>
+          <Flex>
             <img className="quote-image" style={{height: 100}} alt="open sauced" src={"https://github.com/yg.png"} />
             <span className="quote">Do it now sometimes later becomes never!</span>
-          </div>
-          <div className="right description">
+          </Flex>
+          <Flex>
             <img className="quote-image" style={{height: 100}} alt="open sauced" src={"https://github.com/yg.png"} />
             <span className="quote">Do it now sometimes later becomes never!</span>
-          </div>
-          <div className="clear" />
-        </div>
+          </Flex>
+        </Flex>
       </QuoteSection>
       <DetailsSection>
         <h1>Details Section</h1>

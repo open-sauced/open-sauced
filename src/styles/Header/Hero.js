@@ -116,20 +116,9 @@ const QuoteSection = styled(Hero)`
     font-weight: bold;
     font-size: 14px;
   }
-
-  .left {
-    float: left;
-    width: 40%;
-  }
   .quote-image {
     float: left;
     margin-right: 20px;
-  }
-  .right {
-    margin-left: 45%;
-  }
-  .clear {
-    clear: both;
   }
   .description {
     width: 40%;
@@ -137,6 +126,8 @@ const QuoteSection = styled(Hero)`
   }
   .quote {
     font-size: 25px;
+    margin-right: 20px;
+    font-family: 'Margarine', 'Helvetica', arial;
   }
 `;
 
