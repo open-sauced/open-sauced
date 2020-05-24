@@ -123,6 +123,9 @@ const QuoteSection = styled(Hero)`
   .description {
     width: 40%;
     margin-top: 20px;
+    ${MEDIA.TABLET`
+        width: 100%;
+    `};
   }
   .quote {
     font-size: 25px;
