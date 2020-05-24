@@ -90,12 +90,57 @@ const SubHero = styled(Hero)`
 `;
 
 const TrustSection = styled(Hero)`
-  height: 5vh;
   background-color: white;
   width: 100%;
-  display: inline-flex;
-  align-items: baseline;
-  min-height: 1vh;
+  padding-top: 10px;
+  text-transform: uppercase;
+
+  small {
+    font-weight: bold;
+  }
+
+  li {
+    font-weight: bold;
+    font-size: ${size.small};
+    margin-right: 100px;
+    color: ${colors.lightGrey}
+  }
 `;
 
-export {Wrapper, FoodElements, SubHero, TopHero, TrustSection, PizzaPosition, SaucePosition};
+const QuoteSection = styled(Hero)`
+  background-color: white;
+  width: 100%;
+  padding-top: 10px;
+  text-transform: uppercase;
+
+  small {
+    font-weight: bold;
+  }
+
+  li {
+    font-weight: bold;
+    font-size: ${size.small};
+    margin-right: 100px;
+    color: ${colors.lightGrey}
+  }
+`;
+
+const DetailsSection = styled(Hero)`
+  background-color: white;
+  width: 100%;
+  padding-top: 10px;
+  text-transform: uppercase;
+
+  small {
+    font-weight: bold;
+  }
+
+  li {
+    font-weight: bold;
+    font-size: ${size.small};
+    margin-right: 100px;
+    color: ${colors.lightGrey}
+  }
+`;
+
+export {Wrapper, FoodElements, SubHero, TopHero, TrustSection, QuoteSection, DetailsSection, PizzaPosition, SaucePosition};
