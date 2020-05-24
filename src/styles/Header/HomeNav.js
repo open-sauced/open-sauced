@@ -10,7 +10,7 @@ const Container = styled.nav`
   background-color: ${colors.grey};
   padding: ${size.tiny};
   margin: auto;
-  box-shadow: 0 .200rem .25rem rgba(0,0,0,.075) !important;
+  box-shadow: 0 .200rem .25rem rgba(0,0,0,.075);
 
   img {
     height: ${size.small}
