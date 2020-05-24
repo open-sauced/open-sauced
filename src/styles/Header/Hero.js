@@ -118,11 +118,24 @@ const QuoteSection = styled(Hero)`
     font-size: 14px;
   }
 
-  li {
-    font-weight: bold;
-    font-size: ${size.small};
-    margin-right: 100px;
-    color: ${colors.lightGrey}
+  .left {
+    float: left;
+  }
+  .quote-image {
+    float: left;
+    margin-right: 20px;
+  }
+  .right {
+    margin-left: 45%;
+  }
+  .clear {
+    clear: both;
+  }
+  .description {
+    width: 40%;
+  }
+  .quote {
+    font-size: 25px;
   }
 `;
 

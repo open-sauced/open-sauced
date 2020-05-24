@@ -44,7 +44,20 @@ function Hero({handleLogIn}) {
         <Link to="/">
           <img style={{height: 50}} alt="open sauced" src={logo} />
         </Link>
-        <h1>Quote Section</h1>
+        <p className="description">
+          Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo
+        </p>
+        <div style={{marginTop: 50}}>
+          <div className="left">
+            <img className="quote-image" style={{height: 100}} alt="open sauced" src={"https://github.com/yg.png"} />
+            <p className="quote">Do it now sometimes later becomes never!</p>
+          </div>
+          <div className="right description">
+            <img className="quote-image" style={{height: 100}} alt="open sauced" src={"https://github.com/yg.png"} />
+            <p className="quote">Do it now sometimes later becomes never!</p>
+          </div>
+          <div className="clear" />
+        </div>
       </QuoteSection>
       <DetailsSection>
         <h1>Details Section</h1>
