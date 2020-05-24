@@ -6,7 +6,6 @@ import {AppNav, HomeNav} from "../styles/Header";
 import {SpaceBetween} from "../styles/Grid";
 import {Link} from "react-router-dom";
 import ProfileAvatar from "../styles/ProfileAvatar";
-import Octicon, {getIconByName} from "@primer/octicons-react";
 
 function LeftSide({user, handleLogIn, handleLogOut}) {
   return (
@@ -16,22 +15,13 @@ function LeftSide({user, handleLogIn, handleLogOut}) {
       </Link>
       <ul>
         <li>
-          <span>
-            <Octicon verticalAlign="middle" icon={getIconByName("repo")} />
-          </span>
           <SubtleLink href="https://dev.to/t/opensauced">Blog</SubtleLink>
         </li>
         <li>
-          <span>
-            <Octicon verticalAlign="middle" icon={getIconByName("mark-github")} />
-          </span>
           <SubtleLink href="https://github.com/bdougie/open-sauced">GitHub</SubtleLink>
         </li>
         {user && (
           <li>
-            <span>
-              <Octicon verticalAlign="middle" icon={getIconByName("issue-opened")} />
-            </span>
             <SubtleLink className="nav-link" target="_blank" href="https://dev.to/bdougieyo/a-path-for-open-source-contributions-2oa2">
               Issue
             </SubtleLink>
@@ -40,16 +30,10 @@ function LeftSide({user, handleLogIn, handleLogOut}) {
         <li>
           {user ? (
             <div>
-              <span>
-                <Octicon verticalAlign="middle" icon={getIconByName("sign-in")} />
-              </span>
               <SubtleLink onClick={handleLogOut}>Logout</SubtleLink>
             </div>
           ) : (
             <div>
-              <span>
-                <Octicon verticalAlign="middle" icon={getIconByName("sign-out")} />
-              </span>
               <SubtleLink onClick={handleLogIn}>Login</SubtleLink>
             </div>
           )}
