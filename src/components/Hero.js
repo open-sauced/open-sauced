@@ -30,7 +30,6 @@ function Hero({handleLogIn}) {
         </Wrapper>
       </SubHero>
       <TrustSection>
-        {/*
         <small>Trusted By</small>
         <ul>
           <li>ONE</li>
@@ -38,7 +37,6 @@ function Hero({handleLogIn}) {
           <li>THREE</li>
           <li>FOUR</li>
         </ul>
-        */}
       </TrustSection>
     </React.Fragment>
   );
