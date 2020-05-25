@@ -50,14 +50,14 @@ function Hero({handleLogIn}) {
         </Flex>
         <Flex style={{marginTop: 100}}>
           <Flex>
-            <img className="quote-image" style={{height: 100}} alt="open sauced" src={"https://github.com/yg.png"} />
+            <img className="quote-image" style={{height: 150}} alt="open sauced" src={"https://github.com/yg.png"} />
             <span className="quote">
               <q>Dictum fusce ut placerat orci nulla pellentesque dignissim.</q>
               <Flex className="author">- bdougie</Flex>
             </span>
           </Flex>
           <Flex>
-            <img className="quote-image" style={{height: 100}} alt="open sauced" src={"https://github.com/yg.png"} />
+            <img className="quote-image" style={{height: 150}} alt="open sauced" src={"https://github.com/yg.png"} />
             <span className="quote">
               <q>Dictum fusce ut placerat orci nulla pellentesque dignissim.</q>
               <Flex className="author">- bdougie</Flex>
@@ -66,15 +66,44 @@ function Hero({handleLogIn}) {
         </Flex>
       </QuoteSection>
       <DetailsSection>
-        <Flex>
+        <Flex style={{marginTop: 100, justifyContent: "space-between"}}>
           <Flex>
-            <Flex className="details">
-              Do it now sometimes later becomes never!
-            </Flex>
+            <img className="details-image" style={{height: 50}} alt="open sauced" src={"https://github.com/bdougie.png"} />
+            <span>
+              <span className="details-heading">Dictum fusce ut placerat orci nulla pellentesque dignissim.</span>
+              <p className="details-description">Dictum fusce ut placerat orci nulla pellentesque dignissim.</p>
+            </span>
           </Flex>
           <Flex>
-            <span className="details">
-              Do it now sometimes later becomes never!
+            <img className="details-image" style={{height: 50}} alt="open sauced" src={"https://github.com/bdougie.png"} />
+            <span>
+              <span className="details-heading">Dictum fusce ut placerat orci nulla pellentesque dignissim.</span>
+              <p className="details-description">Dictum fusce ut placerat orci nulla pellentesque dignissim.</p>
+            </span>
+          </Flex>
+        </Flex>
+        <Flex style={{marginTop: 100, justifyContent: "space-between"}}>
+          <Flex>
+            <img className="details-image" style={{height: 50}} alt="open sauced" src={"https://github.com/bdougie.png"} />
+            <span>
+              <span className="details-heading">Dictum fusce ut placerat orci nulla pellentesque dignissim.</span>
+              <p className="details-description">Dictum fusce ut placerat orci nulla pellentesque dignissim.</p>
+            </span>
+          </Flex>
+          <Flex>
+            <img className="details-image" style={{height: 50}} alt="open sauced" src={"https://github.com/bdougie.png"} />
+            <span>
+              <span className="details-heading">Dictum fusce ut placerat orci nulla pellentesque dignissim.</span>
+              <p className="details-description">Dictum fusce ut placerat orci nulla pellentesque dignissim.</p>
+            </span>
+          </Flex>
+        </Flex>
+        <Flex style={{marginTop: 100, justifyContent: "space-between"}}>
+          <Flex>
+            <img className="details-image" style={{height: 50}} alt="open sauced" src={"https://github.com/bdougie.png"} />
+            <span>
+              <span className="details-heading">Dictum fusce ut placerat orci nulla pellentesque dignissim.</span>
+              <p className="details-description">Dictum fusce ut placerat orci nulla pellentesque dignissim.</p>
             </span>
           </Flex>
         </Flex>

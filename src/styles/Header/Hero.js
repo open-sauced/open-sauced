@@ -110,16 +110,17 @@ const QuoteSection = styled(Hero)`
   @import url('https://fonts.googleapis.com/css2?family=Arvo&display=swap');
   background-color: white;
   padding-top: 10px;
-  margin: 0;
 
   span {
     font-weight: bold;
     font-size: 14px;
   }
+
   .quote-image {
     float: left;
     margin-right: 20px;
   }
+
   .description {
     width: 40%;
     font-size: 14px;
@@ -129,9 +130,11 @@ const QuoteSection = styled(Hero)`
         width: 100%;
     `};
   }
+
   .quote {
     font-size: 25px;
     font-family: 'Arvo', serif;
+
     q::before {
       content: open-quote;
       color: ${colors.lightGrey}
@@ -139,6 +142,7 @@ const QuoteSection = styled(Hero)`
       margin-right: 5px;
       font-family: 'Times New Roman';
     }
+
     q::after {
       content: close-quote;
       color: ${colors.lightGrey}
@@ -147,6 +151,7 @@ const QuoteSection = styled(Hero)`
       font-family: 'Times New Roman';
     }
   }
+
   .author {
     font-size: 14px;
     margin-top: 15px;
@@ -155,10 +160,26 @@ const QuoteSection = styled(Hero)`
 
 const DetailsSection = styled(Hero)`
   background-color: white;
-  padding-top: 100px;
+  padding-top: 10px;
 
-  .details {
-    font-size: 18px;
+  span {
+    width: 80%;
+  }
+
+  .details-image {
+    float: left;
+    margin-right: 20px;
+  }
+
+  .details-heading {
+    font-size: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  .details-description {
+    font-size: 13px;
+    font-weight: 500;
   }
 `;
 
