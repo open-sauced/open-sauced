@@ -220,11 +220,12 @@ const DetailsSection = styled(Hero)`
     font-size: 15px;
     font-weight: bold;
     text-transform: uppercase;
+    text-align: left;
     ${MEDIA.TABLET`
       margin: auto;
       margin-top: 10px;
       margin-bottom: 10px;
-      text-align: center;    
+      text-align: left;    
     `};
   }
 
