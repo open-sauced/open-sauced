@@ -119,7 +119,9 @@ ul {
 const QuoteSection = styled(Hero)`
   background-color: white;
   padding-top: 10px;
-
+  .quote {
+    margin-right: 16px;
+  }
   span {
     font-weight: bold;
     font-size: 25px;
