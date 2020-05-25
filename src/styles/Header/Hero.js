@@ -4,7 +4,7 @@ import MEDIA from "../mediaTemplates";
 
 const Hero = styled.section`
   padding-left: 5rem;
-  padding-right: 2rem;
+  padding-right: 5rem;
   padding-top: 0;
   min-height: 15vh;
   margin: auto;
@@ -91,7 +91,6 @@ const SubHero = styled(Hero)`
 
 const TrustSection = styled(Hero)`
   background-color: white;
-  width: 100%;
   padding-top: 10px;
   text-transform: uppercase;
 
@@ -110,8 +109,8 @@ const TrustSection = styled(Hero)`
 const QuoteSection = styled(Hero)`
   @import url('https://fonts.googleapis.com/css2?family=Arvo&display=swap');
   background-color: white;
-  width: 100%;
   padding-top: 10px;
+  margin: 0;
 
   span {
     font-weight: bold;
@@ -131,9 +130,7 @@ const QuoteSection = styled(Hero)`
     `};
   }
   .quote {
-    width: 45%;
     font-size: 25px;
-    margin-right: 25px;
     font-family: 'Arvo', serif;
     q::before {
       content: open-quote;
@@ -158,15 +155,9 @@ const QuoteSection = styled(Hero)`
 
 const DetailsSection = styled(Hero)`
   background-color: white;
-  width: 100%;
-  padding-top: 10px;
-
-  small {
-    font-weight: bold;
-  }
+  padding-top: 100px;
 
   .details {
-    width: 50%;
     font-size: 18px;
   }
 `;
