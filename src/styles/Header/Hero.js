@@ -112,6 +112,7 @@ ul {
     margin-right: 100px;
     color: ${colors.lightGrey}
     font-family: 'Noto Sans', sans-serif;
+    padding-top: 8px;
   }
 `;
 
