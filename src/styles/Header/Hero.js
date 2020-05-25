@@ -100,7 +100,12 @@ const TrustSection = styled(Hero)`
   small {
     font-weight: bold;
   }
-
+ul {
+    display: inline-flex;
+    ${MEDIA.TABLET`
+      display: initial;
+    `};
+  }
   li {
     font-weight: bold;
     font-size: ${size.small};
