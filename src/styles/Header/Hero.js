@@ -108,6 +108,7 @@ const TrustSection = styled(Hero)`
 `;
 
 const QuoteSection = styled(Hero)`
+  @import url('https://fonts.googleapis.com/css2?family=Arvo&display=swap');
   background-color: white;
   width: 100%;
   padding-top: 10px;
@@ -133,7 +134,21 @@ const QuoteSection = styled(Hero)`
     width: 45%;
     font-size: 25px;
     margin-right: 25px;
-    font-family: 'Times New Roman';
+    font-family: 'Arvo', serif;
+    q::before {
+      content: open-quote;
+      color: ${colors.lightGrey}
+      font-size: 35px;
+      margin-right: 5px;
+      font-family: 'Times New Roman';
+    }
+    q::after {
+      content: close-quote;
+      color: ${colors.lightGrey}
+      font-size: 35px;
+      margin-left: 5px;
+      font-family: 'Times New Roman';
+    }
   }
   .author {
     font-size: 14px;
@@ -150,11 +165,9 @@ const DetailsSection = styled(Hero)`
     font-weight: bold;
   }
 
-  li {
-    font-weight: bold;
-    font-size: ${size.small};
-    margin-right: 100px;
-    color: ${colors.lightGrey}
+  .details {
+    width: 50%;
+    font-size: 18px;
   }
 `;
 

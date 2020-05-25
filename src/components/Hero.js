@@ -52,21 +52,32 @@ function Hero({handleLogIn}) {
           <Flex>
             <img className="quote-image" style={{height: 100}} alt="open sauced" src={"https://github.com/yg.png"} />
             <span className="quote">
-              "Do it now sometimes later becomes never!"
+              <q>Do it now sometimes later becomes never!</q>
               <Flex className="author">- bdougie</Flex>
             </span>
           </Flex>
           <Flex>
             <img className="quote-image" style={{height: 100}} alt="open sauced" src={"https://github.com/yg.png"} />
             <span className="quote">
-              "Do it now sometimes later becomes never!"
+              <q>Do it now sometimes later becomes never!</q>
               <Flex className="author">- bdougie</Flex>
             </span>
           </Flex>
         </Flex>
       </QuoteSection>
       <DetailsSection>
-        <h1>Details Section</h1>
+        <Flex style={{marginTop: 100}}>
+          <Flex>
+            <Flex className="details">
+              Do it now sometimes later becomes never!
+            </Flex>
+          </Flex>
+          <Flex>
+            <span className="details">
+              Do it now sometimes later becomes never!
+            </span>
+          </Flex>
+        </Flex>
       </DetailsSection>
     </React.Fragment>
   );
