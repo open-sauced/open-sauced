@@ -9,7 +9,7 @@ function IssueListItem({title, labels}) {
         <FlexCenter>
           <FlexColumn className="details">
             <p>{title}</p>
-            <div>{labels.data.length > 0 && labels.data.map(label => <span key={label.node.id}>{label.node.name}</span>)}</div>
+            <div>{labels.data.length > 0 && labels.data.map(label => <span style={{backgroundColor: `#${label.node.color}`}} key={label.node.id}>{label.node.name}</span>)}</div>
           </FlexColumn>
         </FlexCenter>
       </FloatLeft>
