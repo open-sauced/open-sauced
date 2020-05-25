@@ -72,7 +72,7 @@ function Hero({handleLogIn}) {
       <DetailsSection>
         <Wrapper>
           <Flex style={{justifyContent: "space-between"}}>
-            <Flex>
+            <Flex className="detail">
               <img alt="open sauced" src={"https://github.com/bdougie.png"} />
               <FlexColumn>
                 <h2>Dictum fusce ut placerat orci nulla pellentesque dignissim.</h2>
