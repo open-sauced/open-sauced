@@ -186,6 +186,10 @@ const DetailsSection = styled(Hero)`
     margin-right: 20px;
     width: 50px;
     height: 50px;
+    ${MEDIA.TABLET`
+        margin: auto;
+        text-align: center;    
+    `};
   }
 
   span {
@@ -193,11 +197,19 @@ const DetailsSection = styled(Hero)`
     font-size: 15px;
     font-weight: bold;
     text-transform: uppercase;
+    ${MEDIA.TABLET`
+        margin: auto;
+        text-align: center;    
+    `};
   }
 
   p {
     font-size: 13px;
     font-weight: 500;
+    ${MEDIA.TABLET`
+        margin: auto;
+        text-align: center;    
+    `};
   }
 `;
 
