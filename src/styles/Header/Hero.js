@@ -96,6 +96,10 @@ const TrustSection = styled(Hero)`
   background-color: white;
   padding-top: 10px;
   text-transform: uppercase;
+  ${MEDIA.TABLET`
+    margin: auto;
+    text-align: center;
+  `};
 
   small {
     font-weight: bold;
@@ -113,6 +117,10 @@ const TrustSection = styled(Hero)`
     color: ${colors.lightGrey}
     font-family: 'Noto Sans', sans-serif;
     padding-top: 8px;
+    ${MEDIA.TABLET`
+      margin: auto;
+      margin-right: 0;
+    `};
   }
 `;
 
@@ -123,8 +131,8 @@ const QuoteSection = styled(Hero)`
   .quote {
     margin-right: 16px;
     ${MEDIA.TABLET`
-        margin: auto;
-        text-align: center;    
+      margin: auto;
+      text-align: center;
     `};
 
   }
@@ -156,10 +164,10 @@ const QuoteSection = styled(Hero)`
     max-height: 150px;
     margin-right: 20px;
     ${MEDIA.TABLET`
-        margin: auto;
-        margin-top: 10px;
-        margin-bottom: 10px;
-        text-align: center;    
+      margin: auto;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      text-align: center;
     `};
   }
 
@@ -169,7 +177,8 @@ const QuoteSection = styled(Hero)`
     font-weight: bold;
     margin-top: 20px;
     ${MEDIA.TABLET`
-        width: 100%;
+      width: 100%;
+      text-align: center;
     `};
   }
 
@@ -189,9 +198,9 @@ const DetailsSection = styled(Hero)`
     width: 50px;
     height: 50px;
     ${MEDIA.TABLET`
-        margin: auto;
-        margin-top: 10px;
-        text-align: center;    
+      margin: auto;
+      margin-top: 10px;
+      text-align: center;    
     `};
   }
 
@@ -201,10 +210,10 @@ const DetailsSection = styled(Hero)`
     font-weight: bold;
     text-transform: uppercase;
     ${MEDIA.TABLET`
-        margin: auto;
-        margin-top: 10px;
-        margin-bottom: 10px;
-        text-align: center;    
+      margin: auto;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      text-align: center;    
     `};
   }
 
@@ -212,8 +221,8 @@ const DetailsSection = styled(Hero)`
     font-size: 13px;
     font-weight: 500;
     ${MEDIA.TABLET`
-        margin: auto;
-        text-align: center;    
+      margin: auto;
+      text-align: center;    
     `};
   }
 `;
