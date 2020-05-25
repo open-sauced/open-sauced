@@ -122,6 +122,11 @@ const QuoteSection = styled(Hero)`
 
   .quote {
     margin-right: 16px;
+    ${MEDIA.TABLET`
+        margin: auto;
+        text-align: center;    
+    `};
+
   }
 
   span {
