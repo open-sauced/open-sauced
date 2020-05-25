@@ -84,6 +84,7 @@ const TopHero = styled(Hero)`
 `;
 
 const SubHero = styled(Hero)`
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
   padding-bottom: 45px;
   padding-top: 32px;
   background-color: ${colors.cheesyYellow};
@@ -103,6 +104,7 @@ const TrustSection = styled(Hero)`
     font-size: ${size.small};
     margin-right: 100px;
     color: ${colors.lightGrey}
+    font-family: 'Noto Sans', sans-serif;
   }
 `;
 

@@ -82,7 +82,7 @@ function Hero({handleLogIn}) {
             </span>
           </Flex>
         </Flex>
-        <Flex style={{marginTop: 100, justifyContent: "space-between"}}>
+        <Flex style={{marginTop: 50, justifyContent: "space-between"}}>
           <Flex>
             <img className="details-image" style={{height: 50}} alt="open sauced" src={"https://github.com/bdougie.png"} />
             <span>
@@ -98,7 +98,7 @@ function Hero({handleLogIn}) {
             </span>
           </Flex>
         </Flex>
-        <Flex style={{marginTop: 100, justifyContent: "space-between"}}>
+        <Flex style={{marginTop: 50, justifyContent: "space-between"}}>
           <Flex>
             <img className="details-image" style={{height: 50}} alt="open sauced" src={"https://github.com/bdougie.png"} />
             <span>
