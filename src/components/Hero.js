@@ -56,7 +56,7 @@ function Hero({handleLogIn}) {
               <Flex className="author">- bdougie</Flex>
             </span>
           </Flex>
-          <Flex>
+   <Flex className="quote">
             <img alt="open sauced" src={"https://github.com/yg.png"} />
             <span>
               <q>Dictum fusce ut placerat orci nulla pellentesque dignissim.</q>
