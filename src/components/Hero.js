@@ -42,71 +42,75 @@ function Hero({handleLogIn}) {
         </ul>
       </TrustSection>
       <QuoteSection>
-        <Link to="/">
-          <img style={{height: 50}} alt="open sauced" src={logo} />
-        </Link>
-        <Flex className="description">
-          Open Sauced provides structure onboarding for new contributors to open source. This structure provides a way to track your next contributions by leveraging a unique dashboard built on top of the GitHub GraphQL API.
-        </Flex>
-        <Flex style={{marginTop: 100}}>
-          <Flex className="quote">
-            <img alt="open sauced" src={"https://github.com/yg.png"} />
-            <span>
-              <q>Dictum fusce ut placerat orci nulla pellentesque dignissim.</q>
-              <Flex className="author">- bdougie</Flex>
-            </span>
+        <Wrapper>
+          <Link to="/">
+            <img style={{height: 50}} alt="open sauced" src={logo} />
+          </Link>
+          <Flex className="description">
+            Open Sauced provides structure onboarding for new contributors to open source. This structure provides a way to track your next contributions by leveraging a unique dashboard built on top of the GitHub GraphQL API.
           </Flex>
-          <Flex className="quote">
-            <img alt="open sauced" src={"https://github.com/yg.png"} />
-            <span>
-              <q>Dictum fusce ut placerat orci nulla pellentesque dignissim.</q>
-              <Flex className="author">- bdougie</Flex>
-            </span>
+          <Flex style={{marginTop: 100}}>
+            <Flex className="quote">
+              <img alt="open sauced" src={"https://github.com/yg.png"} />
+              <span>
+                <q>Dictum fusce ut placerat orci nulla pellentesque dignissim.</q>
+                <Flex className="author">- bdougie</Flex>
+              </span>
+            </Flex>
+            <Flex className="quote">
+              <img alt="open sauced" src={"https://github.com/yg.png"} />
+              <span>
+                <q>Dictum fusce ut placerat orci nulla pellentesque dignissim.</q>
+                <Flex className="author">- bdougie</Flex>
+              </span>
+            </Flex>
           </Flex>
-        </Flex>
+        </Wrapper>
       </QuoteSection>
       <DetailsSection>
-        <Flex style={{justifyContent: "space-between"}}>
-          <Flex>
-            <img alt="open sauced" src={"https://github.com/bdougie.png"} />
-            <FlexColumn>
-              <span>Dictum fusce ut placerat orci nulla pellentesque dignissim.</span>
-              <p>Dictum fusce ut placerat orci nulla pellentesque dignissim.</p>
-            </FlexColumn>
+        <Wrapper>
+          <Flex style={{justifyContent: "space-between"}}>
+            <Flex>
+              <img alt="open sauced" src={"https://github.com/bdougie.png"} />
+              <FlexColumn>
+                <span>Dictum fusce ut placerat orci nulla pellentesque dignissim.</span>
+                <p>Dictum fusce ut placerat orci nulla pellentesque dignissim.</p>
+              </FlexColumn>
+            </Flex>
+            <Flex>
+              <img alt="open sauced" src={"https://github.com/bdougie.png"} />
+              <FlexColumn>
+                <span>Dictum fusce ut placerat orci nulla pellentesque dignissim.</span>
+                <p>Dictum fusce ut placerat orci nulla pellentesque dignissim.</p>
+              </FlexColumn>
+            </Flex>
           </Flex>
-          <Flex>
-            <img alt="open sauced" src={"https://github.com/bdougie.png"} />
-            <FlexColumn>
-              <span>Dictum fusce ut placerat orci nulla pellentesque dignissim.</span>
-              <p>Dictum fusce ut placerat orci nulla pellentesque dignissim.</p>
-            </FlexColumn>
+          <Flex style={{justifyContent: "space-between"}}>
+            <Flex>
+              <img alt="open sauced" src={"https://github.com/bdougie.png"} />
+              <FlexColumn>
+                <span>Dictum fusce ut placerat orci nulla pellentesque dignissim.</span>
+                <p>Dictum fusce ut placerat orci nulla pellentesque dignissim.</p>
+              </FlexColumn>
+            </Flex>
+            <Flex>
+              <img alt="open sauced" src={"https://github.com/bdougie.png"} />
+              <FlexColumn>
+                <span>Dictum fusce ut placerat orci nulla pellentesque dignissim.</span>
+                <p>Dictum fusce ut placerat orci nulla pellentesque dignissim.</p>
+              </FlexColumn>
+            </Flex>
           </Flex>
-        </Flex>
-        <Flex style={{justifyContent: "space-between"}}>
-          <Flex>
-            <img alt="open sauced" src={"https://github.com/bdougie.png"} />
-            <FlexColumn>
-              <span>Dictum fusce ut placerat orci nulla pellentesque dignissim.</span>
-              <p>Dictum fusce ut placerat orci nulla pellentesque dignissim.</p>
-            </FlexColumn>
+          <Flex style={{justifyContent: "space-between"}}>
+            <Flex>
+              <img alt="open sauced" src={"https://github.com/bdougie.png"} />
+              <FlexColumn>
+                <span>Dictum fusce ut placerat orci nulla pellentesque dignissim.</span>
+                <p>Dictum fusce ut placerat orci nulla pellentesque dignissim.</p>
+              </FlexColumn>
+            </Flex>
           </Flex>
-          <Flex>
-            <img alt="open sauced" src={"https://github.com/bdougie.png"} />
-            <FlexColumn>
-              <span>Dictum fusce ut placerat orci nulla pellentesque dignissim.</span>
-              <p>Dictum fusce ut placerat orci nulla pellentesque dignissim.</p>
-            </FlexColumn>
-          </Flex>
-        </Flex>
-        <Flex style={{justifyContent: "space-between"}}>
-          <Flex>
-            <img alt="open sauced" src={"https://github.com/bdougie.png"} />
-            <FlexColumn>
-              <span>Dictum fusce ut placerat orci nulla pellentesque dignissim.</span>
-              <p>Dictum fusce ut placerat orci nulla pellentesque dignissim.</p>
-            </FlexColumn>
-          </Flex>
-        </Flex>
+        </Wrapper>
       </DetailsSection>
     </React.Fragment>
   );
