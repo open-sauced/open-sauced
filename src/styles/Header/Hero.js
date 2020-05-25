@@ -162,24 +162,21 @@ const DetailsSection = styled(Hero)`
   background-color: white;
   padding-top: 100px;
 
-  span {
-    width: 80%;
-  }
-
-  .details-image {
+  img {
     float: left;
     margin-right: 20px;
     width: 50px;
     height: 50px;
   }
 
-  .details-heading {
+  span {
+    width: 80%;
     font-size: 15px;
     font-weight: bold;
     text-transform: uppercase;
   }
 
-  .details-description {
+  p {
     font-size: 13px;
     font-weight: 500;
   }

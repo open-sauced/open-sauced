@@ -4,7 +4,7 @@ import {MarketingButton} from "../styles/Button";
 import {Wrapper, FoodElements, SaucePosition, PizzaPosition, TopHero, SubHero, TrustSection, QuoteSection, DetailsSection} from "../styles/Header";
 import {sauceFull, pizza} from "../images";
 import {logo1 as logo} from "../logos";
-import {Flex} from "../styles/Grid";
+import {Flex, FlexColumn} from "../styles/Grid";
 
 function Hero({handleLogIn}) {
   return (
@@ -68,43 +68,43 @@ function Hero({handleLogIn}) {
       <DetailsSection>
         <Flex style={{justifyContent: "space-between"}}>
           <Flex>
-            <img className="details-image" alt="open sauced" src={"https://github.com/bdougie.png"} />
-            <span>
-              <span className="details-heading">Dictum fusce ut placerat orci nulla pellentesque dignissim.</span>
-              <p className="details-description">Dictum fusce ut placerat orci nulla pellentesque dignissim.</p>
-            </span>
+            <img alt="open sauced" src={"https://github.com/bdougie.png"} />
+            <FlexColumn>
+              <span>Dictum fusce ut placerat orci nulla pellentesque dignissim.</span>
+              <p>Dictum fusce ut placerat orci nulla pellentesque dignissim.</p>
+            </FlexColumn>
           </Flex>
           <Flex>
-            <img className="details-image" alt="open sauced" src={"https://github.com/bdougie.png"} />
-            <span>
-              <span className="details-heading">Dictum fusce ut placerat orci nulla pellentesque dignissim.</span>
-              <p className="details-description">Dictum fusce ut placerat orci nulla pellentesque dignissim.</p>
-            </span>
-          </Flex>
-        </Flex>
-        <Flex style={{justifyContent: "space-between"}}>
-          <Flex>
-            <img className="details-image" alt="open sauced" src={"https://github.com/bdougie.png"} />
-            <span>
-              <span className="details-heading">Dictum fusce ut placerat orci nulla pellentesque dignissim.</span>
-              <p className="details-description">Dictum fusce ut placerat orci nulla pellentesque dignissim.</p>
-            </span>
-          </Flex>
-          <Flex>
-            <img className="details-image" alt="open sauced" src={"https://github.com/bdougie.png"} />
-            <span>
-              <span className="details-heading">Dictum fusce ut placerat orci nulla pellentesque dignissim.</span>
-              <p className="details-description">Dictum fusce ut placerat orci nulla pellentesque dignissim.</p>
-            </span>
+            <img alt="open sauced" src={"https://github.com/bdougie.png"} />
+            <FlexColumn>
+              <span>Dictum fusce ut placerat orci nulla pellentesque dignissim.</span>
+              <p>Dictum fusce ut placerat orci nulla pellentesque dignissim.</p>
+            </FlexColumn>
           </Flex>
         </Flex>
         <Flex style={{justifyContent: "space-between"}}>
           <Flex>
-            <img className="details-image" alt="open sauced" src={"https://github.com/bdougie.png"} />
-            <span>
-              <span className="details-heading">Dictum fusce ut placerat orci nulla pellentesque dignissim.</span>
-              <p className="details-description">Dictum fusce ut placerat orci nulla pellentesque dignissim.</p>
-            </span>
+            <img alt="open sauced" src={"https://github.com/bdougie.png"} />
+            <FlexColumn>
+              <span>Dictum fusce ut placerat orci nulla pellentesque dignissim.</span>
+              <p>Dictum fusce ut placerat orci nulla pellentesque dignissim.</p>
+            </FlexColumn>
+          </Flex>
+          <Flex>
+            <img alt="open sauced" src={"https://github.com/bdougie.png"} />
+            <FlexColumn>
+              <span>Dictum fusce ut placerat orci nulla pellentesque dignissim.</span>
+              <p>Dictum fusce ut placerat orci nulla pellentesque dignissim.</p>
+            </FlexColumn>
+          </Flex>
+        </Flex>
+        <Flex style={{justifyContent: "space-between"}}>
+          <Flex>
+            <img alt="open sauced" src={"https://github.com/bdougie.png"} />
+            <FlexColumn>
+              <span>Dictum fusce ut placerat orci nulla pellentesque dignissim.</span>
+              <p>Dictum fusce ut placerat orci nulla pellentesque dignissim.</p>
+            </FlexColumn>
           </Flex>
         </Flex>
       </DetailsSection>
