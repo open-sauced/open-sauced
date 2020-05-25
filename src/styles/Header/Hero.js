@@ -191,7 +191,18 @@ const QuoteSection = styled(Hero)`
 const DetailsSection = styled(Hero)`
   background-color: white;
   padding-top: 100px;
+.detail {
+    ${MEDIA.TABLET`
+      width: 80%;  
+      margin: auto;
+      flex-direction: row;
+      margin-bottom: 24px;
+    `};
+  }
 
+  .copy {
+    text-align: left;
+  }
   img {
     float: left;
     margin-right: 20px;
