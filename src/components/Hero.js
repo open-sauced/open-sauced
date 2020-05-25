@@ -75,7 +75,7 @@ function Hero({handleLogIn}) {
             <Flex>
               <img alt="open sauced" src={"https://github.com/bdougie.png"} />
               <FlexColumn>
-                <span>Dictum fusce ut placerat orci nulla pellentesque dignissim.</span>
+                <h2>Dictum fusce ut placerat orci nulla pellentesque dignissim.</h2>
                 <p>Dictum fusce ut placerat orci nulla pellentesque dignissim.</p>
               </FlexColumn>
             </Flex>
