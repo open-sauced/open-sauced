@@ -3,6 +3,7 @@ import {colors, size} from "../variables";
 import MEDIA from "../mediaTemplates";
 
 const Hero = styled.section`
+  @import url('https://fonts.googleapis.com/css2?family=Arvo&display=swap');
   padding-left: 5rem;
   padding-right: 5rem;
   padding-top: 0;
@@ -43,6 +44,7 @@ const Wrapper = styled.div`
   margin-left: auto;
   margin-right: auto;
   max-width: 1000px;
+  font-family: 'Arvo', serif;
 
  ${MEDIA.TABLET`
     padding: 0;
@@ -109,7 +111,6 @@ const TrustSection = styled(Hero)`
 `;
 
 const QuoteSection = styled(Hero)`
-  @import url('https://fonts.googleapis.com/css2?family=Arvo&display=swap');
   background-color: white;
   padding-top: 10px;
 
@@ -120,6 +121,7 @@ const QuoteSection = styled(Hero)`
 
   .quote-image {
     float: left;
+    width: 150px;
     margin-right: 20px;
   }
 
@@ -171,6 +173,8 @@ const DetailsSection = styled(Hero)`
   .details-image {
     float: left;
     margin-right: 20px;
+    width: 50px;
+    height: 50px;
   }
 
   .details-heading {
