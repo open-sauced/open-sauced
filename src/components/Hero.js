@@ -33,13 +33,15 @@ function Hero({handleLogIn}) {
         </Wrapper>
       </SubHero>
       <TrustSection>
-        <small>Trusted By</small>
-        <ul>
-          <li>GraphQL</li>
-          <li>NextJS</li>
-          <li>Electron</li>
-          <li>Golang</li>
-        </ul>
+        <Wrapper>
+          <small>Trusted By</small>
+          <ul>
+            <li>GraphQL</li>
+            <li>NextJS</li>
+            <li>Electron</li>
+            <li>Golang</li>
+          </ul>
+        </Wrapper>
       </TrustSection>
       <QuoteSection>
         <Wrapper>
