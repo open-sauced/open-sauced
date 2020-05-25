@@ -155,6 +155,10 @@ const QuoteSection = styled(Hero)`
     max-width: 150px;
     max-height: 150px;
     margin-right: 20px;
+    ${MEDIA.TABLET`
+        margin: auto;
+        text-align: center;    
+    `};
   }
 
   .description {
