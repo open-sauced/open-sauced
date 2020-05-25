@@ -157,6 +157,8 @@ const QuoteSection = styled(Hero)`
     margin-right: 20px;
     ${MEDIA.TABLET`
         margin: auto;
+        margin-top: 10px;
+        margin-bottom: 10px;
         text-align: center;    
     `};
   }
@@ -188,6 +190,7 @@ const DetailsSection = styled(Hero)`
     height: 50px;
     ${MEDIA.TABLET`
         margin: auto;
+        margin-top: 10px;
         text-align: center;    
     `};
   }
@@ -199,6 +202,8 @@ const DetailsSection = styled(Hero)`
     text-transform: uppercase;
     ${MEDIA.TABLET`
         margin: auto;
+        margin-top: 10px;
+        margin-bottom: 10px;
         text-align: center;    
     `};
   }
