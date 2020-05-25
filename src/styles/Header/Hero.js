@@ -215,7 +215,7 @@ const DetailsSection = styled(Hero)`
     `};
   }
 
-  span {
+  h2 {
     width: 80%;
     font-size: 15px;
     font-weight: bold;
