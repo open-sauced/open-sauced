@@ -74,7 +74,7 @@ function Hero({handleLogIn}) {
           <Flex style={{justifyContent: "space-between"}}>
             <Flex className="detail">
               <img alt="open sauced" src={"https://github.com/bdougie.png"} />
-              <FlexColumn>
+              <FlexColumn className="copy">
                 <h2>Dictum fusce ut placerat orci nulla pellentesque dignissim.</h2>
                 <p>Dictum fusce ut placerat orci nulla pellentesque dignissim.</p>
               </FlexColumn>
