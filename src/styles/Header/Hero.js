@@ -116,28 +116,6 @@ const QuoteSection = styled(Hero)`
 
   span {
     font-weight: bold;
-    font-size: 14px;
-  }
-
-  .quote-image {
-    max-width: 150px;
-    max-height: 150px;
-    float: left;
-    width: 150px;
-    margin-right: 20px;
-  }
-
-  .description {
-    width: 40%;
-    font-size: 14px;
-    font-weight: bold;
-    margin-top: 20px;
-    ${MEDIA.TABLET`
-        width: 100%;
-    `};
-  }
-
-  .quote {
     font-size: 25px;
     font-family: 'Arvo', serif;
 
@@ -156,6 +134,22 @@ const QuoteSection = styled(Hero)`
       margin-left: 5px;
       font-family: 'Times New Roman';
     }
+  }
+
+  img {
+    max-width: 150px;
+    max-height: 150px;
+    margin-right: 20px;
+  }
+
+  .description {
+    width: 40%;
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 20px;
+    ${MEDIA.TABLET`
+        width: 100%;
+    `};
   }
 
   .author {

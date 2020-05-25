@@ -50,15 +50,15 @@ function Hero({handleLogIn}) {
         </Flex>
         <Flex style={{marginTop: 100}}>
           <Flex>
-            <img className="quote-image" alt="open sauced" src={"https://github.com/yg.png"} />
-            <span className="quote">
+            <img alt="open sauced" src={"https://github.com/yg.png"} />
+            <span>
               <q>Dictum fusce ut placerat orci nulla pellentesque dignissim.</q>
               <Flex className="author">- bdougie</Flex>
             </span>
           </Flex>
           <Flex>
-            <img className="quote-image" alt="open sauced" src={"https://github.com/yg.png"} />
-            <span className="quote">
+            <img alt="open sauced" src={"https://github.com/yg.png"} />
+            <span>
               <q>Dictum fusce ut placerat orci nulla pellentesque dignissim.</q>
               <Flex className="author">- bdougie</Flex>
             </span>
