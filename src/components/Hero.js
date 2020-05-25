@@ -46,7 +46,7 @@ function Hero({handleLogIn}) {
           <img style={{height: 50}} alt="open sauced" src={logo} />
         </Link>
         <Flex className="description">
-          Dictum fusce ut placerat orci nulla pellentesque dignissim. Dictum fusce ut placerat orci nulla pellentesque dignissim. Dictum fusce ut placerat orci nulla pellentesque dignissim. Dictum fusce ut placerat orci nulla pellentesque dignissim.
+Open Sauced provides structure onboarding for new contributors to open source. This structure provides a way to track your next contributions by leveraging a unique dashboard built on top of the GitHub GraphQL API.
         </Flex>
         <Flex style={{marginTop: 100}}>
           <Flex>
