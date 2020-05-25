@@ -49,7 +49,7 @@ function Hero({handleLogIn}) {
           Open Sauced provides structure onboarding for new contributors to open source. This structure provides a way to track your next contributions by leveraging a unique dashboard built on top of the GitHub GraphQL API.
         </Flex>
         <Flex style={{marginTop: 100}}>
-          <Flex>
+          <Flex className="quote">
             <img alt="open sauced" src={"https://github.com/yg.png"} />
             <span>
               <q>Dictum fusce ut placerat orci nulla pellentesque dignissim.</q>
