@@ -113,15 +113,15 @@ const TrustSection = styled(Hero)`
 const QuoteSection = styled(Hero)`
   background-color: white;
   padding-top: 10px;
-img {
-  max-width: 150px;
-}
+
   span {
     font-weight: bold;
     font-size: 14px;
   }
 
   .quote-image {
+    max-width: 150px;
+    max-height: 150px;
     float: left;
     width: 150px;
     margin-right: 20px;
@@ -166,7 +166,7 @@ img {
 
 const DetailsSection = styled(Hero)`
   background-color: white;
-  padding-top: 10px;
+  padding-top: 100px;
 
   span {
     width: 80%;
