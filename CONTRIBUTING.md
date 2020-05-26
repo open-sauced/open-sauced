@@ -58,6 +58,9 @@ We actively welcome your pull requests.
 
 If you plan to contribute a change based on an open issue, please assign your self by commenting on the following word `.take`. Issues that are not assigned are assumed open, and to avoid conflicts, please assign yourself before beginning work on any issues.  
 
+## Community
+The [mutualfun.live](https://mutualfun.live) Twitch community can be leveraged for questions about this project. Join the conversation in the [#open-sauced channel](https://discord.gg/nMkZde).
+
 ## License
 
 By contributing to the Open Sauced project, you agree that your contributions will be licensed
