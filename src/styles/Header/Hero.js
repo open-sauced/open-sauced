@@ -12,7 +12,7 @@ const Hero = styled.section`
   overflow-y: hidden;
 
   ${MEDIA.TABLET`
-    padding-left: 1rem;
+    padding: 1rem;
   `};
   h1 {
     font-size: 32px;
@@ -46,10 +46,9 @@ const Wrapper = styled.div`
   max-width: 1000px;
   font-family: 'Arvo', serif;
 
- ${MEDIA.TABLET`
+  ${MEDIA.TABLET`
     padding: 0;
   `};
-
 `;
 
 const FoodElements = styled.div`
@@ -104,23 +103,28 @@ const TrustSection = styled(Hero)`
   small {
     font-weight: bold;
   }
+
   ul {
     display: inline-flex;
     ${MEDIA.TABLET`
       display: initial;
     `};
   }
+  
   li {
-    font-weight: bold;
-    font-size: ${size.small};
-    margin-right: 100px;
-    color: ${colors.lightGrey}
-    font-family: 'Noto Sans', sans-serif;
-    padding-top: 8px;
+    margin-right: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     ${MEDIA.TABLET`
       margin: auto;
       margin-right: 0;
+      margin-top: 20px;
     `};
+  }
+
+  img {
+    height: 40px;
   }
 `;
 
