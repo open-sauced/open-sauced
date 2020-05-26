@@ -21,6 +21,7 @@
 - [ ] Bug Fix
 - [ ] Optimization
 - [ ] Documentation Update
+- [ ] Release
 
 ## Description
 
