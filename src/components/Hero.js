@@ -42,13 +42,13 @@ function Hero({handleLogIn}) {
               <img alt="graphql" src={"https://www.pinclipart.com/picdir/big/256-2564394_code-chrysalis-graphql-meetup-clipart.png"} />
             </li>
             <li>
-              <img src={"https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Nextjs-logo.svg/1280px-Nextjs-logo.svg.png"} />
+              <img alt="nextjs" src={"https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Nextjs-logo.svg/1280px-Nextjs-logo.svg.png"} />
             </li>
             <li>
-              <img src={"https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Electron_Wordmark.svg/1280px-Electron_Wordmark.svg.png"} />
+              <img alt="electron" src={"https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Electron_Wordmark.svg/1280px-Electron_Wordmark.svg.png"} />
             </li>
             <li>
-              <img src={"https://www.ably.io/assets/open-policy/open-software/golang-4d0dd72145040e2584ddb2e062f6b0a9a5ed15528c1634cec759f7a3e956c0a6.png"} />
+              <img alt="golang" src={"https://www.ably.io/assets/open-policy/open-software/golang-4d0dd72145040e2584ddb2e062f6b0a9a5ed15528c1634cec759f7a3e956c0a6.png"} />
             </li>
           </ul>
         </Wrapper>
