@@ -74,10 +74,6 @@ const SaucePosition = styled.img`
   position: absolute;
   right: 4%;
   top: 6%;
-
-  ${MEDIA.PHONE`
-    height: 175px;
-  `};
 `;
 
 const TopHero = styled(Hero)`
@@ -89,6 +85,9 @@ const SubHero = styled(Hero)`
   padding-bottom: 45px;
   padding-top: 32px;
   background-color: ${colors.cheesyYellow};
+  ${MEDIA.PHONE`
+    text-align: center;
+  `};
 `;
 
 const TrustSection = styled(Hero)`
@@ -138,7 +137,6 @@ const QuoteSection = styled(Hero)`
       margin: auto;
       text-align: center;
     `};
-
   }
 
   span {
