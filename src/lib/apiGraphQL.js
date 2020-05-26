@@ -105,6 +105,7 @@ const operationsDoc = `
                     node {
                       id
                       name
+                      color
                     }
                   }
                 }
@@ -138,6 +139,7 @@ const operationsDoc = `
                     node {
                       id
                       name
+                      color
                     }
                   }
                 }
@@ -171,6 +173,7 @@ const operationsDoc = `
                     node {
                       id
                       name
+                      color
                     }
                   }
                 }
