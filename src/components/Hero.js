@@ -39,7 +39,7 @@ function Hero({handleLogIn}) {
               <small>Trusted By</small>
             </li>
             <li>
-              <img src={"https://www.pinclipart.com/picdir/big/256-2564394_code-chrysalis-graphql-meetup-clipart.png"} />
+              <img alt="graphql" src={"https://www.pinclipart.com/picdir/big/256-2564394_code-chrysalis-graphql-meetup-clipart.png"} />
             </li>
             <li>
               <img src={"https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Nextjs-logo.svg/1280px-Nextjs-logo.svg.png"} />
