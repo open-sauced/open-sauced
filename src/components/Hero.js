@@ -82,7 +82,7 @@ function Hero({handleLogIn}) {
             <Flex className="detail">
               <img alt="open sauced" src={"https://github.com/bdougie.png"} />
               <FlexColumn className="copy">
-                <span>Dictum fusce ut placerat orci nulla pellentesque dignissim.</span>
+                <h2>Dictum fusce ut placerat orci nulla pellentesque dignissim.</h2>
                 <p>Dictum fusce ut placerat orci nulla pellentesque dignissim.</p>
               </FlexColumn>
             </Flex>
@@ -91,14 +91,14 @@ function Hero({handleLogIn}) {
             <Flex className="detail">
               <img alt="open sauced" src={"https://github.com/bdougie.png"} />
               <FlexColumn className="copy">
-                <span>Dictum fusce ut placerat orci nulla pellentesque dignissim.</span>
+                <h2>Dictum fusce ut placerat orci nulla pellentesque dignissim.</h2>
                 <p>Dictum fusce ut placerat orci nulla pellentesque dignissim.</p>
               </FlexColumn>
             </Flex>
             <Flex className="detail">
               <img alt="open sauced" src={"https://github.com/bdougie.png"} />
               <FlexColumn className="copy">
-                <span>Dictum fusce ut placerat orci nulla pellentesque dignissim.</span>
+                <h2>Dictum fusce ut placerat orci nulla pellentesque dignissim.</h2>
                 <p>Dictum fusce ut placerat orci nulla pellentesque dignissim.</p>
               </FlexColumn>
             </Flex>
@@ -107,7 +107,7 @@ function Hero({handleLogIn}) {
             <Flex className="detail">
               <img alt="open sauced" src={"https://github.com/bdougie.png"} />
               <FlexColumn className="copy">
-                <span>Dictum fusce ut placerat orci nulla pellentesque dignissim.</span>
+                <h2>Dictum fusce ut placerat orci nulla pellentesque dignissim.</h2>
                 <p>Dictum fusce ut placerat orci nulla pellentesque dignissim.</p>
               </FlexColumn>
             </Flex>
