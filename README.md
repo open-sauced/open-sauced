@@ -4,7 +4,8 @@
 
 This is a GraphQL starter project to help people stalk open source repositories and take notes on them. This project uses OneGraphl as an interface to the GitHub [GraphQL API](https://developer.github.com/v4/) and Netlify to deploy.
 
-![open-sauced-screencap](https://user-images.githubusercontent.com/5713670/68147572-37bb9a00-ff32-11e9-84a3-f2efd1a78123.png)
+[![open-sauced-screencap](https://user-images.githubusercontent.com/5713670/82944481-27abec00-9f50-11ea-85c0-960641717f33.png)
+)](https://opensauced.pizza)
 
 ## Local development
 ```
