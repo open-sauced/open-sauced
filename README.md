@@ -9,6 +9,7 @@ This is a GraphQL starter project to help people stalk open source repositories 
 
 ## Local development
 ```
+npm install
 npm start
 ```
 
@@ -37,7 +38,4 @@ This project uses GitHub as a database. When you login, you will be presented wh
 This project uses the sw-precache to kickstart an offline cache. The
 offline cache only registers in production. If service needs to be
 manually removed make an **unregister** call from the registerServiceWorker.js import. 
-
-## Attribution
-SVG Icons are from the open source [Feather Icons]() project. 
 
