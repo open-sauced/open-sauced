@@ -12,7 +12,7 @@ const EmptyPlaceholder = styled.div`
   }
 
   ${MEDIA.TABLET`
-    flex-direction: column;
+  margin: 50px 0;
   `};
 `;
 
