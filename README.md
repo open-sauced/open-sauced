@@ -1,4 +1,24 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/76a3de8e-270c-4adf-89d5-3a3863da74e6/deploy-status)](https://app.netlify.com/sites/open-sauced/deploys)
+<div align="center">
+  <br>
+  <img alt="Open Sauced" src="https://i.ibb.co/7jPXt0Z/logo1-92f1a87f.png" width="500px">
+  <h1>🍕 Open Sauced 🍕</h1>
+  <strong>The path to your next Open Source contribution</strong>
+</div>
+<br>
+<p align="center">
+  <a href="https://github.com/bdougie/open-sauced/actions?query=workflow%3A%22Node+CI%22">
+    <img src="https://github.com/bdougie/open-sauced/workflows/Node%20CI/badge.svg" alt="Node CI">
+  </a>
+  <a href="https://app.netlify.com/sites/open-sauced/deploys">
+    <img src="https://api.netlify.com/api/v1/badges/76a3de8e-270c-4adf-89d5-3a3863da74e6/deploy-status" alt="Netlify Status">
+  </a>
+  <img src="https://badgen.net/dependabot/bdougie/open-sauced?icon=dependabot" alt="Dependabot Badge">
+  <img src="https://img.shields.io/github/languages/code-size/bdougie/open-sauced" alt="GitHub code size in bytes">
+  <img src="https://img.shields.io/github/commit-activity/w/bdougie/open-sauced" alt="GitHub commit activity">
+  <a href="https://github.com/bdougie/open-sauced/issues">
+    <img src="https://img.shields.io/github/issues/bdougie/open-sauced" alt="GitHub issues">
+  </a>
+</p>
 
 # Open Sauced
 
