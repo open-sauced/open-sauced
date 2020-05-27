@@ -29,6 +29,8 @@ This is a GraphQL starter project to help people stalk open source repositories 
 
 We encourage you to contribute to Open Sauced! Please check out the [Contributing guide](CONTRIBUTING.md) for guidelines about how to proceed.
 
+<img align="right" src="https://i.ibb.co/CJfW18H/ship.gif" width="200"/>
+
 ## 📖 Prerequisites
 
 - [Node.js](https://nodejs.org/en/): we recommend using [nvm](https://github.com/nvm-sh/nvm#installing-and-updating) to install the Node version.
