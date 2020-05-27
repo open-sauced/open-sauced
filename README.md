@@ -20,7 +20,7 @@
   </a>
 </p>
 
-This is a GraphQL starter project to help people stalk open source repositories and take notes on them. This project uses OneGraph as an interface to the GitHub [GraphQL API](https://developer.github.com/v4/) and Netlify to deploy.
+Open Sauced provides structure onboarding for new contributors to open source. This structure provides a way to track your next contributions by leveraging a unique dashboard built on top of the [GitHub GraphQL API](https://developer.github.com/v4/).
 
 [![open-sauced-screencap](https://user-images.githubusercontent.com/5713670/82944481-27abec00-9f50-11ea-85c0-960641717f33.png)
 ](https://opensauced.pizza)
