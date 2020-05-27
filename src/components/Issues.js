@@ -1,19 +1,24 @@
 import React, {useState, useEffect} from "react";
 import {FlexCenter} from "../styles/Grid";
+import {EmptyPlaceholder} from "../styles/EmptyPlaceholder";
 import api from "../lib/apiGraphQL";
 import Card from "./Card";
 import List from "../styles/List";
 import IssuesListItem from "../components/IssueListItem";
 import {InputButton} from "../styles/Button";
 import {CardPadding} from "../styles/Card";
+import Octicon, {getIconByName} from "@primer/octicons-react";
+import {Spinner} from "../styles/Spinner";
 
 function Issues({repoName, owner}) {
   const [issues, setIssues] = useState(null);
+  const [loading, setLoading] = useState(false);
   const [cursor, setCursor] = useState(null);
   const [totalCount, setTotal] = useState(0);
   const [offset, setOffset] = useState(0);
 
   useEffect(() => {
+    setLoading(true);
     api.fetchIssuesQuery(owner, repoName).then(response => {
       const {data, totalCount} = response.data.gitHub.repositoryOwner.repository.issues;
       const lastIssue = totalCount > 0 ? data[data.length - 1] : {};
@@ -22,6 +27,7 @@ function Issues({repoName, owner}) {
       setIssues(data);
       setCursor(cursor);
       setTotal(totalCount);
+      setLoading(false);
     });
   }, []);
 
@@ -76,7 +82,18 @@ function Issues({repoName, owner}) {
         </List>
       </Card>
     ) : (
-      <p>Nothing Here</p>
+      loading ? (
+        <Spinner />
+      ) : (
+        <EmptyPlaceholder>
+          <div style={{color: "grey"}}>
+            <Octicon size="large" verticalAlign="middle" icon={getIconByName("issue-opened")} />
+          </div>
+          <div className="helper">
+            No Issues found
+          </div>
+        </EmptyPlaceholder>
+      )
     )
   ) : (
     <p>...Loading</p>
