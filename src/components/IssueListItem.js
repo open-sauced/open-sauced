@@ -2,6 +2,7 @@ import React from "react";
 import {FloatRight, FloatLeft, FlexColumn, FlexHeader, FlexCenter} from "../styles/Grid";
 import {chevronRight} from "../icons";
 import moment from "moment";
+import Octicon, {getIconByName} from "@primer/octicons-react";
 
 function IssueListItem({title, labels, author, opened, type}) {
   return (
@@ -10,6 +11,9 @@ function IssueListItem({title, labels, author, opened, type}) {
         <FlexCenter>
           <FlexColumn className="details">
             <p>
+              <span style={{margin: 0}}>
+                <Octicon verticalAlign="middle" icon={getIconByName("issue-opened")} />
+              </span>
               {title}
               {labels.data.length > 0 && labels.data.map(label => {
                 <span
