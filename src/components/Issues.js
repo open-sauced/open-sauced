@@ -56,7 +56,6 @@ function Issues({repoName, owner}) {
       <Card fitted>
         <CardPadding>
           <h1>Issues</h1>
-          <hr />
         </CardPadding>
         <List>
           {issues &&

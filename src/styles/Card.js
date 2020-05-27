@@ -72,7 +72,7 @@ const FittedCard = styled(Card)`
 `;
 
 const CardPadding = styled.div`
-  padding: ${size.small} ${size.tiny} 0;
+  padding: ${size.tiny};
 `;
 
 const ContextStyle = styled(Card)`

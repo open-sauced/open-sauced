@@ -26,7 +26,6 @@ function Contributions({repoName, owner}) {
             <AccentLink href={`https://github.com/${owner}/${repoName}/contribute`}>make new contributions.</AccentLink>
           </MicroFont>
         </CardPadding>
-        <hr width="100%" />
         <List>
           {issues &&
             issues.map(issue => (
