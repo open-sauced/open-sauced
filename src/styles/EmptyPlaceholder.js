@@ -12,7 +12,7 @@ const EmptyPlaceholder = styled.div`
   }
 
   ${MEDIA.TABLET`
-  margin: 50px 0;
+    margin: 50px 0;
   `};
 `;
 
