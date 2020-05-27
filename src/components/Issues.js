@@ -61,9 +61,9 @@ function Issues({repoName, owner}) {
           {issues &&
             issues.map(issue => (
               <li key={issue.node.id}>
-                {console.log(issue)}
                 <a target="_blank" href={issue.node.url}>
                   <IssuesListItem
+                    type="issues"
                     title={issue.node.title}
                     labels={issue.node.labels}
                     author={issue.node.author.login}

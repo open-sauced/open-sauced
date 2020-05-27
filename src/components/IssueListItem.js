@@ -3,23 +3,24 @@ import {FloatRight, FloatLeft, FlexColumn, FlexHeader, FlexCenter} from "../styl
 import {chevronRight} from "../icons";
 import moment from "moment";
 
-function IssueListItem({title, labels, author, opened}) {
+function IssueListItem({title, labels, author, opened, type}) {
   return (
     <FlexHeader>
       <FloatLeft>
         <FlexCenter>
           <FlexColumn className="details">
-            <p>{title}</p>
-            <div>
+            <p>
+              {title}
               {labels.data.length > 0 && labels.data.map(label => {
                 <span
                   style={{backgroundColor: `#${label.node.color}`}}
                   key={label.node.id}>
-                  {console.log(label)}
                   {label.node.name}
-                </span>;
+                </span>
               })}
-              <small style={{fontSize: 12}}>opened {moment(opened).fromNow()} by {author}</small>
+            </p>
+            <div>
+              {type === "issues" && <small style={{fontSize: 12}}>opened {moment(opened).fromNow()} by {author}</small>}
             </div>
           </FlexColumn>
         </FlexCenter>
