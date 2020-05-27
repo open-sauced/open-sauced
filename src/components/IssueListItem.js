@@ -1,8 +1,9 @@
 import React from "react";
 import {FloatRight, FloatLeft, FlexColumn, FlexHeader, FlexCenter} from "../styles/Grid";
 import {chevronRight} from "../icons";
+import moment from "moment";
 
-function IssueListItem({title, labels}) {
+function IssueListItem({title, labels, author, opened}) {
   return (
     <FlexHeader>
       <FloatLeft>
@@ -14,9 +15,11 @@ function IssueListItem({title, labels}) {
                 <span
                   style={{backgroundColor: `#${label.node.color}`}}
                   key={label.node.id}>
+                  {console.log(label)}
                   {label.node.name}
                 </span>;
               })}
+              <small style={{fontSize: 12}}>opened {moment(opened).fromNow()} by {author}</small>
             </div>
           </FlexColumn>
         </FlexCenter>

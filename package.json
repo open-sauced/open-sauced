@@ -83,6 +83,7 @@
     "babel-core": "^6.26.3",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "graphql": "^14.5.8",
+    "moment": "^2.26.0",
     "onegraph-apollo-client": "^2.1.0",
     "onegraph-auth": "^2.1.1",
     "prettier": "1.19.1",
