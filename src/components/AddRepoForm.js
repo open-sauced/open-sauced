@@ -9,7 +9,8 @@ import {isValidRepoUrl} from "../lib/util";
 function AddRepoForm({goalsId, onGoalAdded}) {
   const urlRef = useRef(null);
 
-  const _handleGoalCreation = () => {
+  const _handleGoalCreation = (event) => {
+    event.preventDefault();
     if (!urlRef.current.value) {
       urlRef.current.focus();
       console.warn("required");
@@ -33,14 +34,16 @@ function AddRepoForm({goalsId, onGoalAdded}) {
   };
 
   return (
-    <CardPadding>
-      <Flex>
-        <Input aria-label="repo name with owner" type="text" ref={urlRef} placeholder="owner/repo" />
-        <InputButton primary onClick={_handleGoalCreation}>
-          Add
-        </InputButton>
-      </Flex>
-    </CardPadding>
+    <form onSubmit={_handleGoalCreation}>
+      <CardPadding>
+        <Flex>
+          <Input aria-label="repo name with owner" type="text" ref={urlRef} placeholder="owner/repo" />
+          <InputButton type="submit" primary onClick={_handleGoalCreation}>
+            Add
+          </InputButton>
+        </Flex>
+      </CardPadding>
+    </form>
   );
 }
 
