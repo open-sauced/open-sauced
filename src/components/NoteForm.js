@@ -35,6 +35,10 @@ function NoteForm({goalId, repoName, note}) {
     setEditing(!editing);
   };
 
+  const _handleCancelEditing = () => {
+    setEditing(false);
+  };
+
   const _handleNotesChange = e => {
     setInput(e.target.value);
   };
@@ -71,8 +75,10 @@ function NoteForm({goalId, repoName, note}) {
             Edit Notes
           </Button>
         )}
+        <Button primary onClick={_handleCancelEditing}>
+          Cancel
+        </Button>
         <Button primary onClick={_handleRepoDeletion}>
-          {" "}
           Delete
         </Button>
       </FlexCenter>
