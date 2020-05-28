@@ -44,6 +44,7 @@ const operationsDoc = `
                   }
                 }
               }
+              createdAt
             }
           }
         }

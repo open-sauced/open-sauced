@@ -28,6 +28,7 @@ function IssueListItem({title, labels, author, opened, type}) {
             </p>
             <div>
               {type === "issues" && <small style={{fontSize: 12}}>opened {dayjs(opened).fromNow()} by {author}</small>}
+              {type === "contributions" && <small style={{fontSize: 12}}>opened {dayjs(opened).fromNow()}</small>}
             </div>
           </FlexColumn>
         </FlexCenter>
