@@ -1,8 +1,11 @@
 import React from "react";
 import {FloatRight, FloatLeft, FlexColumn, FlexHeader, FlexCenter} from "../styles/Grid";
 import {chevronRight} from "../icons";
-import moment from "moment";
+import dayjs from "dayjs";
+import relativeTime from "dayjs/plugin/relativeTime";
 import Octicon, {getIconByName} from "@primer/octicons-react";
+
+dayjs.extend(relativeTime);
 
 function IssueListItem({title, labels, author, opened, type}) {
   return (
@@ -24,7 +27,7 @@ function IssueListItem({title, labels, author, opened, type}) {
               ))}
             </p>
             <div>
-              {type === "issues" && <small style={{fontSize: 12}}>opened {moment(opened).fromNow()} by {author}</small>}
+              {type === "issues" && <small style={{fontSize: 12}}>opened {dayjs(opened).fromNow()} by {author}</small>}
             </div>
           </FlexColumn>
         </FlexCenter>
