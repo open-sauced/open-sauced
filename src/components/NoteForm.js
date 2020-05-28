@@ -78,10 +78,10 @@ function NoteForm({goalId, repoName, note}) {
         <Button primary onClick={_handleCancelEditing}>
           Cancel
         </Button>
-        <Button primary onClick={_handleRepoDeletion}>
-          Delete
-        </Button>
       </FlexCenter>
+      <Button primary onClick={_handleRepoDeletion}>
+        Delete this project
+      </Button>
     </Card>
   ) : (
     <Redirect to="/" />
