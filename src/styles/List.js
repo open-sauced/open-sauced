@@ -13,7 +13,7 @@ const Container = styled.ul`
 
   li:hover {
     color: ${colors.lightGrey};
-    background-color: ${colors.lighterGrey};
+    background-color: ${colors.lightestGrey};
   }
 `;
 

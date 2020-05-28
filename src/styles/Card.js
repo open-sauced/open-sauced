@@ -15,8 +15,8 @@ const Card = styled.div`
   min-width: 80%;
 
   a:hover {
-    text-decoration-color: ${colors.cheesyYellow};
-    color: ${colors.cheesyYellow};
+    text-decoration-color: ${colors.lightGrey};
+    color: ${colors.lightGrey};
   }
 
   a {
@@ -42,7 +42,7 @@ const Card = styled.div`
     font-size: 12px;
     font-weight: bold;
     margin: 0 5px;
-    padding: 5px;
+    padding: 4px;
     color: #fff;
     border-radius: 5px;
   }
