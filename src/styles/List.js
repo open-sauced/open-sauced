@@ -7,7 +7,7 @@ const Container = styled.ul`
   margin: 0;
 
   li {
-    padding: 20px;
+    padding: 8px 12px;
     border-top: 1px solid #e1e4e8;
   }
 

@@ -41,7 +41,7 @@ const Card = styled.div`
   span {
     font-size: 12px;
     font-weight: bold;
-    margin: 0 5px;
+    margin-right: 5px;
     padding: 4px;
     color: #fff;
     border-radius: 5px;

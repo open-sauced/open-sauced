@@ -12,12 +12,14 @@ function IssueListItem({title, labels, author, opened, type}) {
     <FlexHeader>
       <FloatLeft>
         <FlexCenter>
+          <span style={{marginRight: 10}}>
+            <Octicon verticalAlign="middle" icon={getIconByName("issue-opened")} />
+          </span>
           <FlexColumn className="details">
             <p>
-              <span style={{margin: 0}}>
-                <Octicon verticalAlign="middle" icon={getIconByName("issue-opened")} />
-              </span>
               {title}
+            </p>
+            <div>
               {labels.data.length > 0 && labels.data.map(label => (
                 <span
                   style={{backgroundColor: `#${label.node.color}`}}
@@ -25,7 +27,7 @@ function IssueListItem({title, labels, author, opened, type}) {
                   {label.node.name}
                 </span>
               ))}
-            </p>
+            </div>
             <div>
               {type === "issues" && <small style={{fontSize: 12}}>opened {dayjs(opened).fromNow()} by {author}</small>}
               {type === "contributions" && <small style={{fontSize: 12}}>opened {dayjs(opened).fromNow()}</small>}
