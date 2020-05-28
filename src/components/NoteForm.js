@@ -49,7 +49,7 @@ function NoteForm({goalId, repoName, note}) {
     <Card>
       {!editing ? (
         <div style={{marginBottom: 10}}>
-          <ReactMarkdown source={noteContent} />
+          <ReactMarkdown source={noteContent || ""} />
         </div>
       ) : (
         <TextArea
