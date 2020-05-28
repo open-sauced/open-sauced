@@ -15,13 +15,13 @@ function IssueListItem({title, labels, author, opened, type}) {
                 <Octicon verticalAlign="middle" icon={getIconByName("issue-opened")} />
               </span>
               {title}
-              {labels.data.length > 0 && labels.data.map(label => {
+              {labels.data.length > 0 && labels.data.map(label => (
                 <span
                   style={{backgroundColor: `#${label.node.color}`}}
                   key={label.node.id}>
                   {label.node.name}
                 </span>
-              })}
+              ))}
             </p>
             <div>
               {type === "issues" && <small style={{fontSize: 12}}>opened {moment(opened).fromNow()} by {author}</small>}
