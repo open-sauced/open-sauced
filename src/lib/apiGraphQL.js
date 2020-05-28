@@ -40,6 +40,7 @@ const operationsDoc = `
                   node {
                     id
                     name
+                    color
                   }
                 }
               }
