@@ -14,7 +14,6 @@ function ListGoals({goals}) {
             goals.nodes.map(goal => (
               <li key={goal.id}>
                 <Link
-                  style={{textDecoration: "none"}}
                   to={{
                     pathname: `/repos/${goal.title}/${goal.number}`,
                   }}>
