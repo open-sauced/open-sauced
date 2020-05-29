@@ -71,8 +71,8 @@ const PizzaPosition = styled.img`
 const SaucePosition = styled.img`
   height: 450px;
   position: absolute;
-  right: 16%;
-  top: 3%;
+  right: 12%;
+  top: 1%;
 `;
 
 const TopHero = styled(Hero)`

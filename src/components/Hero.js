@@ -11,7 +11,7 @@ import {
   QuoteSection,
   DetailsSection,
 } from "../styles/Header";
-import {sauceFull} from "../images";
+import {gucci, go, graphql, electron, next, sauceFull, bdougie} from "../images";
 import {logo1 as logo} from "../logos";
 import {archive, mortarBoard, watch, squirrel} from "../icons";
 import {Flex, FlexColumn, FloatLeft, FloatRight} from "../styles/Grid";
@@ -27,7 +27,7 @@ function Hero({handleLogIn}) {
             <h1>contribution.</h1>
           </div>
           <FoodElements>
-            <SaucePosition alt="sauce" src={sauceFull} />
+            <SaucePosition alt="pizza" src={sauceFull} />
           </FoodElements>
         </Wrapper>
       </TopHero>
@@ -50,14 +50,14 @@ function Hero({handleLogIn}) {
             <li>
               <img
                 alt="graphql"
-                src={"https://www.pinclipart.com/picdir/big/256-2564394_code-chrysalis-graphql-meetup-clipart.png"}
+                src={graphql}
               />
             </li>
             <li>
               <img
                 alt="nextjs"
                 src={
-                  "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Nextjs-logo.svg/1280px-Nextjs-logo.svg.png"
+                  next
                 }
               />
             </li>
@@ -65,7 +65,7 @@ function Hero({handleLogIn}) {
               <img
                 alt="electron"
                 src={
-                  "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Electron_Wordmark.svg/1280px-Electron_Wordmark.svg.png"
+                  electron
                 }
               />
             </li>
@@ -73,7 +73,7 @@ function Hero({handleLogIn}) {
               <img
                 alt="golang"
                 src={
-                  "https://www.ably.io/assets/open-policy/open-software/golang-4d0dd72145040e2584ddb2e062f6b0a9a5ed15528c1634cec759f7a3e956c0a6.png"
+                  go
                 }
               />
             </li>
@@ -94,7 +94,7 @@ function Hero({handleLogIn}) {
               <img
                 alt="open sauced"
                 src={
-                  "https://s3-us-west-2.amazonaws.com/paradigm-media-library/music_artists/Gucci%20Mane%20800x800.jpg"
+                  gucci
                 }
               />
               <span>
@@ -103,9 +103,9 @@ function Hero({handleLogIn}) {
               </span>
             </Flex>
             <Flex className="quote">
-              <img alt="open sauced" src={"https://github.com/bdougie.png"} />
+              <img alt="open sauced" src={bdougie} />
               <span>
-                <q>Getting traction in contributing to open-source is just loggin in and getting started.</q>
+                <q>Getting traction contributing to open-source is only one log in away.</q>
                 <Flex className="author">- bdougie</Flex>
               </span>
             </Flex>
