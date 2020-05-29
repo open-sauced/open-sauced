@@ -6,8 +6,7 @@ const Hero = styled.section`
   @import url("https://fonts.googleapis.com/css2?family=Arvo&display=swap");
   padding-left: 5rem;
   padding-right: 5rem;
-  padding-top: 0;
-  min-height: 15vh;
+  padding-top: 36px;
   margin: auto;
   overflow-y: hidden;
 
@@ -72,7 +71,7 @@ const PizzaPosition = styled.img`
 const SaucePosition = styled.img`
   height: 450px;
   position: absolute;
-  right: 27%;
+  right: 16%;
   top: 3%;
 `;
 
@@ -106,7 +105,11 @@ const TrustSection = styled(Hero)`
   ul {
     display: inline-flex;
     ${MEDIA.TABLET`
-      display: initial;
+      width: 80%;
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      align-content: space-around;
     `};
   }
 
@@ -137,6 +140,7 @@ const QuoteSection = styled(Hero)`
     ${MEDIA.TABLET`
       margin: auto;
       text-align: center;
+      padding: 16px 0;
     `};
   }
 
@@ -175,14 +179,20 @@ const QuoteSection = styled(Hero)`
     `};
   }
 
+  .quotes {
+    margin-top: 72px;
+  }
+
   .description {
     width: 40%;
     font-size: 14px;
     font-weight: bold;
     margin-top: 20px;
+    flex-direction: column;
     ${MEDIA.TABLET`
-      width: 100%;
-      text-align: center;
+      width: 90%;
+      padding-left: 24px;
+      text-align: left;
     `};
   }
 
@@ -194,8 +204,7 @@ const QuoteSection = styled(Hero)`
 
 const DetailsSection = styled(Hero)`
   background-color: white;
-  padding-top: 100px;
-  padding-right: 10px;
+  padding-top: 36px;;
   .detail {
     ${MEDIA.TABLET`
       width: 80%;  

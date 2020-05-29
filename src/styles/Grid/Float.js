@@ -3,6 +3,11 @@ import MEDIA from "../mediaTemplates";
 
 const FloatLeft = styled.div`
   float: left;
+`;
+
+// Special case for the mobile view of the nav.
+const FloatLeftMobileNav = styled.div`
+  float: left;
   ${MEDIA.TABLET`
     display: flex;
     width: 100%;
@@ -16,4 +21,4 @@ const FloatRight = styled.div`
   float: right;
 `;
 
-export {FloatRight, FloatLeft};
+export {FloatRight, FloatLeft, FloatLeftMobileNav};

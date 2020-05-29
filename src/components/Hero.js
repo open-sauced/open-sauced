@@ -82,14 +82,14 @@ function Hero({handleLogIn}) {
       </TrustSection>
       <QuoteSection>
         <Wrapper>
-          <Link to="/">
-            <img style={{height: 50}} alt="open sauced" src={logo} />
-          </Link>
           <Flex className="description">
+            <Link to="/">
+              <img style={{height: 50}} alt="open sauced" src={logo} />
+            </Link>
             Open Sauced provides structure onboarding for new contributors to open source. This structure provides a way
             to track your next contributions by leveraging a unique dashboard built on top of the GitHub GraphQL API.
           </Flex>
-          <Flex style={{marginTop: 100}}>
+          <Flex className="quotes">
             <Flex className="quote">
               <img
                 alt="open sauced"
@@ -131,8 +131,8 @@ function Hero({handleLogIn}) {
                 <FlexColumn className="copy">
                   <h2>Structured onboarding for new contributors</h2>
                   <p>
-                    Starting a new contribution is challenging when it is hard to find the content. Find project with
-                    structured contributing guidelines.
+                    Starting a new contribution is challenging when it is hard to find the content. Easily find projects
+                    with structured contributing guidelines.
                   </p>
                 </FlexColumn>
               </Flex>
