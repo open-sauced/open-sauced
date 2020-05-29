@@ -45,7 +45,7 @@ function NoteForm({goalId, repoName, note}) {
     <Card>
       {!editing ? (
         <div style={{marginBottom: 10}}>
-          <ReactMarkdown source={noteContent} />
+          <ReactMarkdown source={noteContent || ""} />
         </div>
       ) : (
         <TextArea
@@ -71,10 +71,15 @@ function NoteForm({goalId, repoName, note}) {
             Edit Notes
           </Button>
         )}
-        <Button primary onClick={_handleRepoDeletion}>
-          {" "}
-          Delete
-        </Button>
+        {editing ? (
+          <Button primary onClick={_handleToggleEditing}>
+            Cancel
+          </Button>
+        ) : (
+          <Button primary onClick={_handleRepoDeletion}>
+            Delete
+          </Button>
+        )}
       </FlexCenter>
     </Card>
   ) : (
