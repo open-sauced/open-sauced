@@ -76,4 +76,4 @@ This project uses the sw-precache to kickstart an offline cache. The offline cac
 
 ## ⚖️ LICENSE
 
-MIT © [Brian Douglas](LICENSE)
+MIT © [Open Sauced](LICENSE)
