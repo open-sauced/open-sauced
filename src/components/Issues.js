@@ -79,7 +79,7 @@ function Issues({repoName, owner}) {
               </li>
             ))}
           <CardPadding>
-            <FlexCenter>
+            <FlexCenter style={{paddingLeft: 30}}>
               {offset > 0 && <InputButton onClick={_handlePreviousIssues}>Prev</InputButton>}
               {currentPage !== totalPages && <InputButton onClick={_handleNextIssues}>Next</InputButton>}
             </FlexCenter>
