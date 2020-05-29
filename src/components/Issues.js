@@ -60,7 +60,7 @@ function Issues({repoName, owner}) {
   return owner ? (
     totalCount > 0 ? (
       <Card fitted>
-        <CardHeader style={{paddingLeft: 45}}>
+        <CardHeader>
           <h1>Issues</h1>
         </CardHeader>
         <List>
@@ -79,7 +79,7 @@ function Issues({repoName, owner}) {
               </li>
             ))}
           <CardPadding>
-            <FlexCenter style={{paddingLeft: 30}}>
+            <FlexCenter className="pagination-buttons">
               {offset > 0 && <InputButton onClick={_handlePreviousIssues}>Prev</InputButton>}
               {currentPage !== totalPages && <InputButton onClick={_handleNextIssues}>Next</InputButton>}
             </FlexCenter>

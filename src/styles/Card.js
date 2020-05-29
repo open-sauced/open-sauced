@@ -73,6 +73,10 @@ const FittedCard = styled(Card)`
 
 const CardPadding = styled.div`
   padding: ${size.tiny};
+
+  .pagination-buttons {
+    padding-left: 30px;
+  }
 `;
 
 const CardHeader = styled.div`
@@ -80,6 +84,10 @@ const CardHeader = styled.div`
   background: ${colors.lightestGrey};
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
+
+  h1 {
+    padding-left: 30px;
+  }
 `;
 
 const ContextStyle = styled(Card)`
