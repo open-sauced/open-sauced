@@ -206,6 +206,7 @@ const DetailsSection = styled(Hero)`
   background-color: white;
   padding-top: 36px;;
   .detail {
+    padding: 8px;
     ${MEDIA.TABLET`
       width: 80%;  
       margin: auto;
