@@ -21,7 +21,7 @@ const Hero = styled.section`
     margin: 0;
     color: ${colors.saucyRed};
     text-decoration: underline;
-    font-size: 40px;
+    font-size: ${size.medium};
   }
 
   small {
@@ -126,7 +126,7 @@ const TrustSection = styled(Hero)`
   }
 
   img {
-    height: 40px;
+    height: ${size.medium};
   }
 `;
 
@@ -136,11 +136,11 @@ const QuoteSection = styled(Hero)`
 
   .quote {
     width: 90%;
-    margin-right: 16px;
+    margin-right: ${size.tiny};
     ${MEDIA.TABLET`
       margin: auto;
       text-align: center;
-      padding: 16px 0;
+      padding: ${size.tiny} 0;
     `};
   }
 
@@ -191,7 +191,7 @@ const QuoteSection = styled(Hero)`
     flex-direction: column;
     ${MEDIA.TABLET`
       width: 90%;
-      padding-left: 24px;
+      padding-left: ${size.small};
       text-align: left;
     `};
   }
@@ -206,12 +206,12 @@ const DetailsSection = styled(Hero)`
   background-color: white;
   padding-top: 36px;;
   .detail {
-    padding: 8px;
+    padding: ${size.micro};
     ${MEDIA.TABLET`
       width: 80%;  
       margin: auto;
       flex-direction: row;
-      margin-bottom: 24px;
+      margin-bottom: ${size.small};
     `};
   }
 
