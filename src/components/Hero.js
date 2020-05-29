@@ -1,8 +1,8 @@
 import React from "react";
 import {Link} from "react-router-dom";
 import {MarketingButton} from "../styles/Button";
-import {Wrapper, FoodElements, SaucePosition, PizzaPosition, TopHero, SubHero, TrustSection, QuoteSection, DetailsSection} from "../styles/Header";
-import {sauceFull, pizza} from "../images";
+import {Wrapper, FoodElements, SaucePosition, TopHero, SubHero, TrustSection, QuoteSection, DetailsSection} from "../styles/Header";
+import {sauceFull} from "../images";
 import {logo1 as logo} from "../logos";
 import {Flex, FlexColumn} from "../styles/Grid";
 
@@ -18,7 +18,6 @@ function Hero({handleLogIn}) {
           </div>
           <FoodElements>
             <SaucePosition alt="sauce" src={sauceFull} />
-            <PizzaPosition alt="pizza" src={pizza} />
           </FoodElements>
         </Wrapper>
       </TopHero>
