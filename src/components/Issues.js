@@ -60,7 +60,7 @@ function Issues({repoName, owner}) {
   return owner ? (
     totalCount > 0 ? (
       <Card fitted>
-        <CardHeader>
+        <CardHeader style={{paddingLeft: 45}}>
           <h1>Issues</h1>
         </CardHeader>
         <List>
