@@ -67,7 +67,7 @@ function Issues({repoName, owner}) {
           {issues &&
             issues.map(issue => (
               <li key={issue.node.id}>
-                <a style={{textDecoration: "none"}} target="_blank" href={issue.node.url}>
+                <a target="_blank" href={issue.node.url}>
                   <IssuesListItem
                     type="issues"
                     title={issue.node.title}

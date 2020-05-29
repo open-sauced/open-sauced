@@ -6,6 +6,10 @@ const Container = styled.ul`
   padding: 0;
   margin: 0;
 
+  a {
+    text-decoration: none;
+  }
+
   li {
     padding: 8px 12px;
     border-top: 1px solid #e1e4e8;
