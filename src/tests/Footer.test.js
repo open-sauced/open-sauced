@@ -19,12 +19,6 @@ test('renders a "OneGraph" link', () => {
   expect(link).toHaveAttribute("href");
 });
 
-test('renders a "Feather" link', () => {
-  const {getByText} = render(<Footer />);
-  const link = getByText("Feather");
-  expect(link).toHaveAttribute("href");
-});
-
 test('renders a "Netlify" link', () => {
   const {getByText} = render(<Footer />);
   const link = getByText("Netlify");
