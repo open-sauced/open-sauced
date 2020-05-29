@@ -1,10 +1,20 @@
 import React from "react";
 import {Link} from "react-router-dom";
 import {MarketingButton} from "../styles/Button";
-import {Wrapper, FoodElements, SaucePosition, PizzaPosition, TopHero, SubHero, TrustSection, QuoteSection, DetailsSection} from "../styles/Header";
-import {sauceFull, pizza} from "../images";
+import {
+  Wrapper,
+  FoodElements,
+  SaucePosition,
+  TopHero,
+  SubHero,
+  TrustSection,
+  QuoteSection,
+  DetailsSection,
+} from "../styles/Header";
+import {gucci, go, graphql, electron, next, sauceFull, bdougie} from "../images";
 import {logo1 as logo} from "../logos";
-import {Flex, FlexColumn} from "../styles/Grid";
+import {archive, mortarBoard, watch, squirrel} from "../icons";
+import {Flex, FlexColumn, FloatLeft, FloatRight} from "../styles/Grid";
 
 function Hero({handleLogIn}) {
   return (
@@ -17,8 +27,7 @@ function Hero({handleLogIn}) {
             <h1>contribution.</h1>
           </div>
           <FoodElements>
-            <SaucePosition alt="sauce" src={sauceFull} />
-            <PizzaPosition alt="pizza" src={pizza} />
+            <SaucePosition alt="pizza" src={sauceFull} />
           </FoodElements>
         </Wrapper>
       </TopHero>
@@ -39,40 +48,64 @@ function Hero({handleLogIn}) {
               <small>Trusted By</small>
             </li>
             <li>
-              <img alt="graphql" src={"https://www.pinclipart.com/picdir/big/256-2564394_code-chrysalis-graphql-meetup-clipart.png"} />
+              <img
+                alt="graphql"
+                src={graphql}
+              />
             </li>
             <li>
-              <img alt="nextjs" src={"https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Nextjs-logo.svg/1280px-Nextjs-logo.svg.png"} />
+              <img
+                alt="nextjs"
+                src={
+                  next
+                }
+              />
             </li>
             <li>
-              <img alt="electron" src={"https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Electron_Wordmark.svg/1280px-Electron_Wordmark.svg.png"} />
+              <img
+                alt="electron"
+                src={
+                  electron
+                }
+              />
             </li>
             <li>
-              <img alt="golang" src={"https://www.ably.io/assets/open-policy/open-software/golang-4d0dd72145040e2584ddb2e062f6b0a9a5ed15528c1634cec759f7a3e956c0a6.png"} />
+              <img
+                alt="golang"
+                src={
+                  go
+                }
+              />
             </li>
           </ul>
         </Wrapper>
       </TrustSection>
       <QuoteSection>
         <Wrapper>
-          <Link to="/">
-            <img style={{height: 50}} alt="open sauced" src={logo} />
-          </Link>
           <Flex className="description">
-            Open Sauced provides structure onboarding for new contributors to open source. This structure provides a way to track your next contributions by leveraging a unique dashboard built on top of the GitHub GraphQL API.
+            <Link to="/">
+              <img style={{height: 50}} alt="open sauced" src={logo} />
+            </Link>
+            Open Sauced provides structure onboarding for new contributors to open source. This structure provides a way
+            to track your next contributions by leveraging a unique dashboard built on top of the GitHub GraphQL API.
           </Flex>
-          <Flex style={{marginTop: 100}}>
+          <Flex className="quotes">
             <Flex className="quote">
-              <img alt="open sauced" src={"https://github.com/yg.png"} />
+              <img
+                alt="open sauced"
+                src={
+                  gucci
+                }
+              />
               <span>
-                <q>Dictum fusce ut placerat orci nulla pellentesque dignissim.</q>
-                <Flex className="author">- bdougie</Flex>
+                <q>If you don't got sauce, then you lost.</q>
+                <Flex className="author">- Gucci Mane</Flex>
               </span>
             </Flex>
             <Flex className="quote">
-              <img alt="open sauced" src={"https://github.com/yg.png"} />
+              <img alt="open sauced" src={bdougie} />
               <span>
-                <q>Dictum fusce ut placerat orci nulla pellentesque dignissim.</q>
+                <q>Getting traction contributing to open-source is only one log in away.</q>
                 <Flex className="author">- bdougie</Flex>
               </span>
             </Flex>
@@ -81,46 +114,48 @@ function Hero({handleLogIn}) {
       </QuoteSection>
       <DetailsSection>
         <Wrapper>
-          <Flex style={{justifyContent: "space-between"}}>
-            <Flex className="detail">
-              <img alt="open sauced" src={"https://github.com/bdougie.png"} />
-              <FlexColumn className="copy">
-                <h2>Dictum fusce ut placerat orci nulla pellentesque dignissim.</h2>
-                <p>Dictum fusce ut placerat orci nulla pellentesque dignissim.</p>
-              </FlexColumn>
-            </Flex>
-            <Flex className="detail">
-              <img alt="open sauced" src={"https://github.com/bdougie.png"} />
-              <FlexColumn className="copy">
-                <h2>Dictum fusce ut placerat orci nulla pellentesque dignissim.</h2>
-                <p>Dictum fusce ut placerat orci nulla pellentesque dignissim.</p>
-              </FlexColumn>
-            </Flex>
-          </Flex>
-          <Flex style={{justifyContent: "space-between"}}>
-            <Flex className="detail">
-              <img alt="open sauced" src={"https://github.com/bdougie.png"} />
-              <FlexColumn className="copy">
-                <h2>Dictum fusce ut placerat orci nulla pellentesque dignissim.</h2>
-                <p>Dictum fusce ut placerat orci nulla pellentesque dignissim.</p>
-              </FlexColumn>
-            </Flex>
-            <Flex className="detail">
-              <img alt="open sauced" src={"https://github.com/bdougie.png"} />
-              <FlexColumn className="copy">
-                <h2>Dictum fusce ut placerat orci nulla pellentesque dignissim.</h2>
-                <p>Dictum fusce ut placerat orci nulla pellentesque dignissim.</p>
-              </FlexColumn>
-            </Flex>
-          </Flex>
-          <Flex style={{justifyContent: "space-between"}}>
-            <Flex className="detail">
-              <img alt="open sauced" src={"https://github.com/bdougie.png"} />
-              <FlexColumn className="copy">
-                <h2>Dictum fusce ut placerat orci nulla pellentesque dignissim.</h2>
-                <p>Dictum fusce ut placerat orci nulla pellentesque dignissim.</p>
-              </FlexColumn>
-            </Flex>
+          <Flex>
+            <FloatLeft>
+              <Flex className="detail">
+                <img alt="open sauced" src={archive} />
+                <FlexColumn className="copy">
+                  <h2>Contributor issue tracking and triaging</h2>
+                  <p>
+                    Working on good first issues has never been easier. Create and track your wishlist all in one
+                    dashboard.
+                  </p>
+                </FlexColumn>
+              </Flex>
+              <Flex className="detail">
+                <img alt="open sauced" src={mortarBoard} />
+                <FlexColumn className="copy">
+                  <h2>Structured onboarding for new contributors</h2>
+                  <p>
+                    Starting a new contribution is challenging when it is hard to find the content. Easily find projects
+                    with structured contributing guidelines.
+                  </p>
+                </FlexColumn>
+              </Flex>
+            </FloatLeft>
+            <FloatRight>
+              <Flex className="detail">
+                <img alt="open sauced" src={watch} />
+                <FlexColumn className="copy">
+                  <h2>Scheduled reminders</h2>
+                  <p>Get notified when the contributions you are following change status or are closed.</p>
+                </FlexColumn>
+              </Flex>
+              <Flex className="detail">
+                <img alt="open sauced" src={squirrel} />
+                <FlexColumn className="copy">
+                  <h2>Find community and mentorship from approved projects</h2>
+                  <p>
+                    No more guessing what issues are ups for grabs. Leverage the guidance from leaders in the project to
+                    grab issues ready for work.
+                  </p>
+                </FlexColumn>
+              </Flex>
+            </FloatRight>
           </Flex>
         </Wrapper>
       </DetailsSection>
