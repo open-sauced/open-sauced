@@ -6,7 +6,7 @@ import Card from "./Card";
 import List from "../styles/List";
 import IssuesListItem from "../components/IssueListItem";
 import {InputButton} from "../styles/Button";
-import {CardPadding} from "../styles/Card";
+import {CardPadding, CardHeader} from "../styles/Card";
 import Octicon, {getIconByName} from "@primer/octicons-react";
 import {Spinner} from "../styles/Spinner";
 
@@ -60,21 +60,26 @@ function Issues({repoName, owner}) {
   return owner ? (
     totalCount > 0 ? (
       <Card fitted>
-        <CardPadding>
+        <CardHeader>
           <h1>Issues</h1>
-          <hr />
-        </CardPadding>
+        </CardHeader>
         <List>
           {issues &&
             issues.map(issue => (
               <li key={issue.node.id}>
                 <a target="_blank" href={issue.node.url}>
-                  <IssuesListItem title={issue.node.title} labels={issue.node.labels} />
+                  <IssuesListItem
+                    type="issues"
+                    title={issue.node.title}
+                    labels={issue.node.labels}
+                    author={issue.node.author.login}
+                    opened={issue.node.createdAt}
+                  />
                 </a>
               </li>
             ))}
           <CardPadding>
-            <FlexCenter>
+            <FlexCenter className="pagination-buttons">
               {offset > 0 && <InputButton onClick={_handlePreviousIssues}>Prev</InputButton>}
               {currentPage !== totalPages && <InputButton onClick={_handleNextIssues}>Next</InputButton>}
             </FlexCenter>
