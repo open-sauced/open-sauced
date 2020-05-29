@@ -17,7 +17,7 @@ Some thoughts to help you contribute to this project
 
 
 ```sh
-$ git clone https://github.com/bdougie/open-sauced
+$ git clone https://github.com/open-sauced/open-sauced
 $ cd open-sauced
 $ npm install
 ```
