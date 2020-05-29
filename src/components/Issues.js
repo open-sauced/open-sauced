@@ -6,7 +6,7 @@ import Card from "./Card";
 import List from "../styles/List";
 import IssuesListItem from "../components/IssueListItem";
 import {InputButton} from "../styles/Button";
-import {CardPadding} from "../styles/Card";
+import {CardPadding, CardHeader} from "../styles/Card";
 import Octicon, {getIconByName} from "@primer/octicons-react";
 import {Spinner} from "../styles/Spinner";
 
@@ -60,9 +60,9 @@ function Issues({repoName, owner}) {
   return owner ? (
     totalCount > 0 ? (
       <Card fitted>
-        <CardPadding>
+        <CardHeader>
           <h1>Issues</h1>
-        </CardPadding>
+        </CardHeader>
         <List>
           {issues &&
             issues.map(issue => (

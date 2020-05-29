@@ -75,6 +75,13 @@ const CardPadding = styled.div`
   padding: ${size.tiny};
 `;
 
+const CardHeader = styled.div`
+  padding: ${size.tiny};
+  background: ${colors.lightestGrey};
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+`;
+
 const ContextStyle = styled(Card)`
   h1 {
     width: 100%;
@@ -154,4 +161,4 @@ const OnBoardStyle = styled(Card)`
   }
 `;
 
-export {Card, CardPadding, FittedCard, ContextStyle, HintStyle, OnBoardStyle};
+export {Card, CardPadding, CardHeader, FittedCard, ContextStyle, HintStyle, OnBoardStyle};
