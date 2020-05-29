@@ -6,20 +6,17 @@ const Container = styled.ul`
   padding: 0;
   margin: 0;
 
+  a {
+    text-decoration: none;
+  }
+
   li {
-    padding: 16px;
+    padding: 8px 12px;
+    border-top: 1px solid #e1e4e8;
   }
 
   li:hover {
     color: ${colors.lightGrey};
-    background-color: ${colors.lighterGrey};
-  }
-
-  li:nth-child(even):hover {
-    background-color: ${colors.lighterGrey};
-  }
-
-  li:nth-child(even) {
     background-color: ${colors.lightestGrey};
   }
 `;

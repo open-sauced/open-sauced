@@ -1,6 +1,6 @@
 import React from "react";
 import {logo1 as logo} from "../logos";
-import {FloatLeft, FloatRight} from "../styles/Grid";
+import {FloatLeftMobileNav, FloatRight} from "../styles/Grid";
 import {SubtleLink} from "../styles/Typography";
 import {AppNav, HomeNav} from "../styles/Header";
 import {SpaceBetween} from "../styles/Grid";
@@ -9,7 +9,7 @@ import ProfileAvatar from "../styles/ProfileAvatar";
 
 function LeftSide({user, handleLogIn, handleLogOut}) {
   return (
-    <FloatLeft>
+    <FloatLeftMobileNav>
       <Link style={{verticalAlign: "middle"}} to="/">
         <img alt="open sauced" src={logo} />
       </Link>
@@ -22,7 +22,7 @@ function LeftSide({user, handleLogIn, handleLogOut}) {
         </li>
         {user && (
           <li>
-            <SubtleLink className="nav-link" target="_blank" href="https://dev.to/bdougieyo/a-path-for-open-source-contributions-2oa2">
+            <SubtleLink className="nav-link" target="_blank" href="https://github.com/bdougie/open-sauced/issues/new/choose">
               Issue
             </SubtleLink>
           </li>
@@ -39,7 +39,7 @@ function LeftSide({user, handleLogIn, handleLogOut}) {
           )}
         </li>
       </ul>
-    </FloatLeft>
+    </FloatLeftMobileNav>
   );
 }
 
