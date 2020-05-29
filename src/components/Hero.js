@@ -62,16 +62,16 @@ function Hero({handleLogIn}) {
           </Flex>
           <Flex style={{marginTop: 100}}>
             <Flex className="quote">
-              <img alt="open sauced" src={"https://github.com/yg.png"} />
+              <img alt="open sauced" src={"https://s3-us-west-2.amazonaws.com/paradigm-media-library/music_artists/Gucci%20Mane%20800x800.jpg"} />
               <span>
-                <q>Dictum fusce ut placerat orci nulla pellentesque dignissim.</q>
-                <Flex className="author">- bdougie</Flex>
+                <q>If you don't got sauce, then you lost.</q>
+                <Flex className="author">- Gucci Mane</Flex>
               </span>
             </Flex>
             <Flex className="quote">
-              <img alt="open sauced" src={"https://github.com/yg.png"} />
+              <img alt="open sauced" src={"https://github.com/bdougie.png"} />
               <span>
-                <q>Dictum fusce ut placerat orci nulla pellentesque dignissim.</q>
+                <q>Getting traction in contributing to open-source is just loggin in and getting started.</q>
                 <Flex className="author">- bdougie</Flex>
               </span>
             </Flex>

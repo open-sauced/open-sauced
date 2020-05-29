@@ -3,7 +3,7 @@ import {colors, size} from "../variables";
 import MEDIA from "../mediaTemplates";
 
 const Hero = styled.section`
-  @import url('https://fonts.googleapis.com/css2?family=Arvo&display=swap');
+  @import url("https://fonts.googleapis.com/css2?family=Arvo&display=swap");
   padding-left: 5rem;
   padding-right: 5rem;
   padding-top: 0;
@@ -44,7 +44,7 @@ const Wrapper = styled.div`
   margin-left: auto;
   margin-right: auto;
   max-width: 1000px;
-  font-family: 'Arvo', serif;
+  font-family: "Arvo", serif;
 
   ${MEDIA.TABLET`
     padding: 0;
@@ -81,7 +81,7 @@ const TopHero = styled(Hero)`
 `;
 
 const SubHero = styled(Hero)`
-  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+  @import url("https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap");
   padding-bottom: 45px;
   padding-top: 32px;
   background-color: ${colors.cheesyYellow};
@@ -109,7 +109,7 @@ const TrustSection = styled(Hero)`
       display: initial;
     `};
   }
-  
+
   li {
     margin-right: 50px;
     display: flex;
@@ -132,6 +132,7 @@ const QuoteSection = styled(Hero)`
   padding-top: 10px;
 
   .quote {
+    width: 90%;
     margin-right: 16px;
     ${MEDIA.TABLET`
       margin: auto;
@@ -162,6 +163,7 @@ const QuoteSection = styled(Hero)`
   }
 
   img {
+    border-radius: 5px;
     max-width: 150px;
     max-height: 150px;
     margin-right: 20px;
@@ -193,7 +195,7 @@ const QuoteSection = styled(Hero)`
 const DetailsSection = styled(Hero)`
   background-color: white;
   padding-top: 100px;
-.detail {
+  .detail {
     ${MEDIA.TABLET`
       width: 80%;  
       margin: auto;
@@ -241,4 +243,14 @@ const DetailsSection = styled(Hero)`
   }
 `;
 
-export {Wrapper, FoodElements, SubHero, TopHero, TrustSection, QuoteSection, DetailsSection, PizzaPosition, SaucePosition};
+export {
+  Wrapper,
+  FoodElements,
+  SubHero,
+  TopHero,
+  TrustSection,
+  QuoteSection,
+  DetailsSection,
+  PizzaPosition,
+  SaucePosition,
+};
