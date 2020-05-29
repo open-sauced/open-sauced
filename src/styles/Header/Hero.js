@@ -195,6 +195,7 @@ const QuoteSection = styled(Hero)`
 const DetailsSection = styled(Hero)`
   background-color: white;
   padding-top: 100px;
+  padding-right: 10px;
   .detail {
     ${MEDIA.TABLET`
       width: 80%;  
@@ -210,12 +211,9 @@ const DetailsSection = styled(Hero)`
   img {
     float: left;
     margin-right: 20px;
-    width: 50px;
-    height: 50px;
+    min-width: 30px;
     ${MEDIA.TABLET`
-      margin: auto;
-      margin-top: 10px;
-      text-align: center;    
+      display: none;
     `};
   }
 
@@ -224,12 +222,14 @@ const DetailsSection = styled(Hero)`
     font-size: 15px;
     font-weight: bold;
     text-transform: uppercase;
+    text-decoration: none;
     text-align: left;
+    margin-bottom: 4px;
     ${MEDIA.TABLET`
-      margin: auto;
+      margin: 0;
       margin-top: 10px;
       margin-bottom: 10px;
-      text-align: left;    
+      text-align: left;
     `};
   }
 
@@ -238,7 +238,7 @@ const DetailsSection = styled(Hero)`
     font-weight: 500;
     ${MEDIA.TABLET`
       margin: auto;
-      text-align: center;    
+      text-align: left;
     `};
   }
 `;
