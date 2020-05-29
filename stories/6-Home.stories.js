@@ -17,7 +17,7 @@ export const Hero = () => (
           <SubtleLink href="https://dev.to/t/opensauced">Blog</SubtleLink>
         </li>
         <li>
-          <SubtleLink href="https://github.com/bdougie/open-sauced">GitHub</SubtleLink>
+          <SubtleLink href="https://github.com/open-sauced/open-sauced">GitHub</SubtleLink>
         </li>
         <li>
           <SubtleLink href="#">Subscribe</SubtleLink>
