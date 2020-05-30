@@ -6,6 +6,7 @@ import {AppNav, HomeNav} from "../styles/Header";
 import {SpaceBetween} from "../styles/Grid";
 import {Link} from "react-router-dom";
 import ProfileAvatar from "../styles/ProfileAvatar";
+import AdminStatsBar from "./AdminStatsBar";
 
 function LeftSide({user, handleLogIn, handleLogOut}) {
   return (
@@ -60,10 +61,13 @@ function RightSide({user}) {
 function Header({user, handleLogOut, handleLogIn}) {
   const Nav = user ? AppNav : HomeNav;
   return (
-    <Nav>
-      <LeftSide handleLogOut={handleLogOut} handleLogIn={handleLogIn} user={user} />
-      <RightSide user={user} />
-    </Nav>
+    <div>
+      {user && (<AdminStatsBar />)}
+      <Nav>
+        <LeftSide handleLogOut={handleLogOut} handleLogIn={handleLogIn} user={user} />
+        <RightSide user={user} />
+      </Nav>
+    </div>
   );
 }
 
