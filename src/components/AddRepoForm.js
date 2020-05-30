@@ -17,7 +17,7 @@ function AddRepoForm({goalsId, onGoalAdded}) {
       return;
     }
 
-    const [isValid, repoUrl] = isValidRepoUrl(urlRef.current.value);
+    const [isValid, repoUrl] = isValidRepoUrl(urlRef.current.value.trim());
     if (!isValid) {
       urlRef.current.focus();
       console.warn("Invalid GitHub repository!");
