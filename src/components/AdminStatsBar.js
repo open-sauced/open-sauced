@@ -1,19 +1,18 @@
 import React, {useState, useEffect} from "react";
 import {AdminNav} from "../styles/Header";
 import {getAppVersion} from "../lib/appVersion";
-import {Link} from "react-router-dom";
 
 function LeftSide() {
   return (
     <div>
       <ul>
         <li>
-          <Link to="Path">
+          <a href={`https://github.com/open-sauced/open-sauced/releases/tag/v${getAppVersion()}`} target="_blank">
             📦 v{getAppVersion()}
-          </Link>
+          </a>
         </li>
         <li className="no-well">
-          <a href="#">
+          <a href={`https://github.com/facebook/react/releases/tag/v${React.version}`} target="_blank">
             ⚛️ <b>React</b> v{React.version}
           </a>
         </li>
