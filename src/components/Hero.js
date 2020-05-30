@@ -48,16 +48,16 @@ function Hero({handleLogIn}) {
               <small>Trusted By</small>
             </li>
             <li>
-              <img alt="graphql" src={graphql} />
+              <a target="_blank" href="https://github.com/graphql/"><img alt="graphql" src={graphql} /></a>
             </li>
             <li>
-              <img alt="nextjs" src={next} />
+              <a target="_blank" href="https://github.com/vercel/next.js/"><img alt="nextjs" src={next} /></a>
             </li>
             <li>
-              <img alt="electron" src={electron} />
+              <a target="_blank" href="https://github.com/electron/"><img alt="electron" src={electron} /></a>
             </li>
             <li>
-              <img alt="golang" src={go} />
+              <a target="_blank" href="https://github.com/golang/"><img alt="golang" src={go} /></a>
             </li>
           </ul>
         </Wrapper>

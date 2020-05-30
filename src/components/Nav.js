@@ -25,7 +25,10 @@ function LeftSide({user, handleLogIn, handleLogOut}) {
         </li>
         {user && (
           <li>
-            <SubtleLink className="nav-link" target="_blank" href="https://github.com/bdougie/open-sauced/issues/new/choose">
+            <SubtleLink
+              className="nav-link"
+              target="_blank"
+              href="https://github.com/bdougie/open-sauced/issues/new/choose">
               Issue
             </SubtleLink>
           </li>
