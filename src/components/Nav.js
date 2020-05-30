@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import {logo1 as logo} from "../logos";
 import {FloatLeftMobileNav, FloatRight} from "../styles/Grid";
 import {SubtleLink} from "../styles/Typography";
@@ -7,6 +7,7 @@ import {SpaceBetween} from "../styles/Grid";
 import {Link} from "react-router-dom";
 import ProfileAvatar from "../styles/ProfileAvatar";
 import AdminStatsBar from "./AdminStatsBar";
+import Hotkeys from "react-hot-keys";
 
 function LeftSide({user, handleLogIn, handleLogOut}) {
   return (
@@ -59,10 +60,23 @@ function RightSide({user}) {
 }
 
 function Header({user, handleLogOut, handleLogIn}) {
+  const [adminBar, setAdminBar] = useState(false);
   const Nav = user ? AppNav : HomeNav;
+
+  const onKeyUp = () => {
+    setAdminBar(!adminBar);
+  };
+
   return (
     <div>
-      {user && (<AdminStatsBar />)}
+      {user && (
+        <Hotkeys
+          keyName="`"
+          onKeyUp={(e) => onKeyUp(e)}
+        >
+          {adminBar && <AdminStatsBar />}
+        </Hotkeys>
+      )}
       <Nav>
         <LeftSide handleLogOut={handleLogOut} handleLogIn={handleLogIn} user={user} />
         <RightSide user={user} />
