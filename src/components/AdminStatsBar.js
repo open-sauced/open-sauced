@@ -1,12 +1,13 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import {AdminNav} from "../styles/Header";
+import {getAppVersion} from "../lib/appVersion";
 
 function LeftSide() {
   return (
     <div>
       <ul>
         <li>
-          🚧 WIP
+          📦 v{getAppVersion()}
         </li>
         <li>
           🚧 WIP
@@ -38,17 +39,20 @@ function RightSide({numRequests}) {
 }
 
 function AdminStatsBar() {
-  // Left Side
+  const [numRequests, setNumRequests] = useState("🍕");
 
-  // Right Side
-  const numRequests = () => {
-    return window.performance.getEntriesByType("resource").length;
+  const getNumRequests = () => {
+    setNumRequests(window.performance.getEntriesByType("resource").length);
   };
+
+  useEffect(() => {
+    getNumRequests();
+  }, []);
 
   return (
     <AdminNav>
       <LeftSide />
-      <RightSide numRequests={numRequests()} />
+      <RightSide numRequests={numRequests} />
     </AdminNav>
   );
 }
