@@ -1,13 +1,13 @@
 import styled from "styled-components";
-import {size} from "../variables";
+import {size, colors} from "../variables";
 import MEDIA from "../mediaTemplates";
 
 const Container = styled.nav`
   display: flex;
   justify-content: space-between;
-  background-color: #171c1d;
+  background-color: ${colors.darkGrey};
   color: white;
-  font-size: 8px;
+  font-size: ${size.micro};
   font-weight: bold;
 
   ul {
@@ -20,7 +20,7 @@ const Container = styled.nav`
     font-size: 13px;
     margin-right: ${size.tiny};
     padding: 2px 7px;
-    background: #0c0e0e;
+    background: ${colors.darkestGrey};
     border-radius: 5px;
   }
 
