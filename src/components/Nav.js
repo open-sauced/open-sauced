@@ -28,7 +28,7 @@ function LeftSide({user, handleLogIn, handleLogOut}) {
             <SubtleLink
               className="nav-link"
               target="_blank"
-              href="https://github.com/bdougie/open-sauced/issues/new/choose">
+              href="https://github.com/open-sauced/open-sauced/issues/new/choose">
               Issue
             </SubtleLink>
           </li>
