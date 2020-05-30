@@ -14,7 +14,7 @@
     "@storybook/addons": "^5.2.8",
     "@storybook/react": "^5.2.8",
     "@testing-library/jest-dom": "^5.1.1",
-    "@testing-library/react": "^9.4.0",
+    "@testing-library/react": "^10.0.4",
     "@webpack-cli/migrate": "^0.1.9",
     "autoprefixer": "9.7.3",
     "babel-eslint": "6.1.2",
