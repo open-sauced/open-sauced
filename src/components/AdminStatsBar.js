@@ -1,16 +1,21 @@
 import React, {useState, useEffect} from "react";
 import {AdminNav} from "../styles/Header";
 import {getAppVersion} from "../lib/appVersion";
+import {Link} from "react-router-dom";
 
 function LeftSide() {
   return (
     <div>
       <ul>
         <li>
-          📦 v{getAppVersion()}
+          <Link to="Path">
+            📦 v{getAppVersion()}
+          </Link>
         </li>
         <li className="no-well">
-          ⚛️ React v{React.version}
+          <a href="#">
+            ⚛️ <b>React</b> v{React.version}
+          </a>
         </li>
       </ul>
     </div>

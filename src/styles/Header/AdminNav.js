@@ -26,6 +26,8 @@ const Container = styled.nav`
 
   a {
     vertical-align: middle;
+    text-decoration: none;
+    color: #fff;
   }
 
   span {
@@ -35,7 +37,6 @@ const Container = styled.nav`
   .no-well {
     background: transparent;
     font-weight: initial;
-    color: #b7b7b7;
   }
 
   ${MEDIA.TABLET`
