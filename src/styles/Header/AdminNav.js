@@ -31,6 +31,12 @@ const Container = styled.nav`
   span {
     margin-right: ${size.micro};
   }
+  
+  .no-well {
+    background: transparent;
+    font-weight: initial;
+    color: #b7b7b7;
+  }
 
   ${MEDIA.TABLET`
     .nav-link {

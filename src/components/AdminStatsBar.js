@@ -9,11 +9,8 @@ function LeftSide() {
         <li>
           📦 v{getAppVersion()}
         </li>
-        <li>
-          🚧 WIP
-        </li>
-        <li>
-          🚧 WIP
+        <li className="no-well">
+          ⚛️ React v{React.version}
         </li>
       </ul>
     </div>
@@ -27,19 +24,13 @@ function RightSide({numRequests}) {
         <li>
           {numRequests} Requests
         </li>
-        <li>
-          🚧 WIP
-        </li>
-        <li>
-          🚧 WIP
-        </li>
       </ul>
     </div>
   );
 }
 
 function AdminStatsBar() {
-  const [numRequests, setNumRequests] = useState("🍕");
+  const [numRequests, setNumRequests] = useState(0);
 
   const getNumRequests = () => {
     setNumRequests(window.performance.getEntriesByType("resource").length);
