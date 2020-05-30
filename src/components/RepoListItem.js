@@ -10,7 +10,7 @@ function RepoListItem({goal, stars}) {
     <FlexHeader>
       <FloatLeft>
         <FlexCenter>
-          <Avatar alt="avatar" src={`https://avatars.githubusercontent.com/${goal.title.split("/")[0]}`} />
+          <Avatar alt="avatar" src={`https://avatars.githubusercontent.com/${goal.title.split("/")[0].trim()}`} />
           <FlexColumn className="details">
             <p>{goal.title}</p>
             {stars && (
