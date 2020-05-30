@@ -5,9 +5,10 @@ import MEDIA from "../mediaTemplates";
 const Container = styled.nav`
   display: flex;
   justify-content: space-between;
-  font-size: ${size.micro};
   background-color: #171c1d;
   color: white;
+  font-size: 8px;
+  font-weight: bold;
 
   ul {
     list-style: none;
@@ -16,8 +17,11 @@ const Container = styled.nav`
   }
 
   li {
-    font-size: ${size.tiny}
+    font-size: 13px;
     margin-right: ${size.tiny};
+    padding: 2px 7px;
+    background: #0c0e0e;
+    border-radius: 5px;
   }
 
   a {

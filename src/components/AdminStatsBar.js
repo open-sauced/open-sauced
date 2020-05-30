@@ -6,31 +6,31 @@ function LeftSide() {
     <div>
       <ul>
         <li>
-          Hello
+          🚧 WIP
         </li>
         <li>
-          Hello
+          🚧 WIP
         </li>
         <li>
-          Hello
+          🚧 WIP
         </li>
       </ul>
     </div>
   );
 }
 
-function RightSide() {
+function RightSide({numRequests}) {
   return (
     <div>
       <ul>
         <li>
-          Hello
+          {numRequests} Requests
         </li>
         <li>
-          Hello
+          🚧 WIP
         </li>
         <li>
-          Hello
+          🚧 WIP
         </li>
       </ul>
     </div>
@@ -38,10 +38,17 @@ function RightSide() {
 }
 
 function AdminStatsBar() {
+  // Left Side
+
+  // Right Side
+  const numRequests = () => {
+    return window.performance.getEntriesByType("resource").length;
+  };
+
   return (
     <AdminNav>
       <LeftSide />
-      <RightSide />
+      <RightSide numRequests={numRequests()} />
     </AdminNav>
   );
 }

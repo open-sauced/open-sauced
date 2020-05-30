@@ -28,6 +28,7 @@ function Index() {
           .then(res => {
             const viewerIsAMember = res.data.gitHub.viewer.organization === null ? false : true;
             setIsAdmin(viewerIsAMember);
+            localStorage.setItem("adminBar", true);
           })
           .catch(e => {
             console.log(e);
