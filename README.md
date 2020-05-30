@@ -75,6 +75,7 @@ This project uses GitHub as a database. When you login, you will be presented wh
 This project uses the sw-precache to kickstart an offline cache. The offline cache only registers in production. If service needs to be manually removed make an **unregister** call from the registerServiceWorker.js import. 
 
 ## 🍕Community
+
 The [mutualfun.live](https://mutualfun.live) community can be leveraged for questions about this project. Join the conversation in the [#open-sauced channel](https://discord.gg/gZMKK5q).
 
 ## ⚖️ LICENSE
