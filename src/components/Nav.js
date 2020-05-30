@@ -59,7 +59,7 @@ function RightSide({user}) {
   );
 }
 
-function Header({user, handleLogOut, handleLogIn}) {
+function Header({user, handleLogOut, handleLogIn, isAdmin}) {
   const [adminBar, setAdminBar] = useState(localStorage.getItem("adminBar") === "true");
   const Nav = user ? AppNav : HomeNav;
 
@@ -70,7 +70,7 @@ function Header({user, handleLogOut, handleLogIn}) {
 
   return (
     <div>
-      {user && (
+      {isAdmin && (
         <Hotkeys
           keyName="`"
           onKeyUp={(e) => onKeyUp(e)}

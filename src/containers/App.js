@@ -8,7 +8,7 @@ import LocaleContext from "../Context";
 import auth from "../hoc/AuthHOC";
 import {getAppVersion} from "../lib/appVersion";
 
-function App({handleLogIn, handleLogOut, user}) {
+function App({handleLogIn, handleLogOut, user, isAdmin}) {
   console.log("version", getAppVersion());
   const [goalsId, setGoalsId] = useState({});
 
@@ -27,7 +27,7 @@ function App({handleLogIn, handleLogOut, user}) {
   return (
     <Router>
       <LocaleContext.Provider value={value}>
-        <Nav handleLogIn={handleLogIn} handleLogOut={handleLogOut} user={user} />
+        <Nav handleLogIn={handleLogIn} handleLogOut={handleLogOut} user={user} isAdmin={isAdmin} />
         <Route exact path="/" component={guard(Dashboard)} />
         <Route path="/repos" component={guard(Dashboard)} />
         <Route path="/callback" component={guard(Dashboard)} />
