@@ -60,10 +60,11 @@ function RightSide({user}) {
 }
 
 function Header({user, handleLogOut, handleLogIn}) {
-  const [adminBar, setAdminBar] = useState(false);
+  const [adminBar, setAdminBar] = useState(localStorage.getItem("adminBar") === "true");
   const Nav = user ? AppNav : HomeNav;
 
   const onKeyUp = () => {
+    localStorage.setItem("adminBar", !adminBar);
     setAdminBar(!adminBar);
   };
 
