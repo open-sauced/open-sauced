@@ -60,7 +60,6 @@ function RightSide({user}) {
 }
 
 function Header({user, handleLogOut, handleLogIn, isAdmin}) {
-  console.log(localStorage.getItem("adminBar"));
   const [adminBar, setAdminBar] = useState(localStorage.getItem("adminBar") === "true");
   const Nav = user ? AppNav : HomeNav;
 
