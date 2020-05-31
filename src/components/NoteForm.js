@@ -1,8 +1,8 @@
 import React, {useState} from "react";
 import {Redirect} from "react-router";
 import Button from "../styles/Button";
+import {NoteArea, RenderedNote} from "../styles/Note";
 import Card from "./Card";
-import TextArea from "../styles/TextArea";
 import {FlexCenter} from "../styles/Grid";
 import Octicon, {getIconByName} from "@primer/octicons-react";
 import ReactMarkdown from "react-markdown";
@@ -44,12 +44,11 @@ function NoteForm({goalId, repoName, note}) {
   return !deleted ? (
     <Card>
       {!editing ? (
-        <div style={{marginBottom: 10}}>
-          <ReactMarkdown source={noteContent || ""} />
-        </div>
+        <RenderedNote>
+          <ReactMarkdown className="noteContent" source={noteContent || ""} />
+        </RenderedNote>
       ) : (
-        <TextArea
-          style={{minHeight: 170}}
+        <NoteArea
           disabled={!editing}
           onChange={_handleNotesChange}
           value={noteContent || ""}
