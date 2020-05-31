@@ -4,7 +4,6 @@ import {FloatLeftMobileNav, FloatRight} from "../styles/Grid";
 import {SubtleLink} from "../styles/Typography";
 import {AppNav, HomeNav} from "../styles/Header";
 import {SpaceBetween} from "../styles/Grid";
-import {Link} from "react-router-dom";
 import ProfileAvatar from "../styles/ProfileAvatar";
 import {useHistory} from "react-router-dom";
 
