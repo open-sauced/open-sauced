@@ -22,13 +22,10 @@ function LeftSide() {
   );
 }
 
-function RightSide({numRequests, rateLimit}) {
+function RightSide({rateLimit}) {
   return (
     <div>
       <ul>
-        <li>
-          {numRequests} Requests
-        </li>
         <li>
           Rate Limit: {rateLimit}
         </li>
@@ -38,12 +35,7 @@ function RightSide({numRequests, rateLimit}) {
 }
 
 function AdminStatsBar() {
-  const [numRequests, setNumRequests] = useState("⌛");
   const [rateLimit, setRateLimit] = useState("⌛");
-
-  const getNumRequests = () => {
-    setNumRequests(window.performance.getEntriesByType("resource").length);
-  };
 
   const getRateLimit = () => {
     api
@@ -57,7 +49,6 @@ function AdminStatsBar() {
   };
 
   useEffect(() => {
-    getNumRequests();
     getRateLimit();
   }, []);
 
@@ -65,7 +56,6 @@ function AdminStatsBar() {
     <AdminNav>
       <LeftSide />
       <RightSide
-        numRequests={numRequests}
         rateLimit={rateLimit}
       />
     </AdminNav>
