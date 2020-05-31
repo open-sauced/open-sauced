@@ -241,12 +241,20 @@ const operationsDoc = `
     }
   }
 
-  query FetchMemberStatusQuery($owner: String!) {
+  query FetchMemberStatusQuery() {
     gitHub {
       viewer {
         organization(login: "open-sauced") {
           viewerIsAMember
         }
+      }
+    }
+  }
+
+  query FetchRateLimitQuery() {
+    gitHub {
+      rateLimit {
+        remaining
       }
     }
   }
@@ -379,6 +387,10 @@ function fetchMemberStatus(owner) {
   return fetchOneGraph(operationsDoc, "FetchMemberStatusQuery");
 }
 
+function fetchRateLimit(owner) {
+  return fetchOneGraph(operationsDoc, "FetchRateLimitQuery");
+}
+
 function createOpenSaucedGoalsRepo(ownerId) {
   return fetchOneGraph(operationsDoc, "CreateOpenSaucedGoalsRepo", {ownerId: ownerId});
 }
@@ -410,6 +422,7 @@ const api = {
   fetchGoalsQuery,
   fetchGoalQuery,
   fetchMemberStatus,
+  fetchRateLimit,
   createOpenSaucedGoalsRepo,
   createGoal,
   updateGoal,

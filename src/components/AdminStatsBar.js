@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react";
 import {AdminNav} from "../styles/Header";
 import {getAppVersion} from "../lib/appVersion";
+import api from "../lib/apiGraphQL";
 
 function LeftSide() {
   return (
@@ -21,12 +22,15 @@ function LeftSide() {
   );
 }
 
-function RightSide({numRequests}) {
+function RightSide({numRequests, rateLimit}) {
   return (
     <div>
       <ul>
         <li>
           {numRequests} Requests
+        </li>
+        <li>
+          Rate Limit: {rateLimit}
         </li>
       </ul>
     </div>
@@ -34,20 +38,36 @@ function RightSide({numRequests}) {
 }
 
 function AdminStatsBar() {
-  const [numRequests, setNumRequests] = useState(0);
+  const [numRequests, setNumRequests] = useState("⌛");
+  const [rateLimit, setRateLimit] = useState("⌛");
 
   const getNumRequests = () => {
     setNumRequests(window.performance.getEntriesByType("resource").length);
   };
 
+  const getRateLimit = () => {
+    api
+      .fetchRateLimit()
+      .then(res => {
+        setRateLimit(res.data.gitHub.rateLimit.remaining);
+      })
+      .catch(e => {
+        console.log(e);
+      });
+  };
+
   useEffect(() => {
     getNumRequests();
+    getRateLimit();
   }, []);
 
   return (
     <AdminNav>
       <LeftSide />
-      <RightSide numRequests={numRequests} />
+      <RightSide
+        numRequests={numRequests}
+        rateLimit={rateLimit}
+      />
     </AdminNav>
   );
 }
