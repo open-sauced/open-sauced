@@ -4,7 +4,7 @@ import HomeNav from "./HomeNav";
 import AdminNav from "./AdminNav";
 import SimpleHeader from "./SimpleHeader";
 import SubHeading from "./SubHeading";
-import {Wrapper, FoodElements, TopHero, SubHero, TrustSection, QuoteSection, DetailsSection, PizzaPosition, SaucePosition} from "./Hero";
+import {Wrapper, TopHero, SubHero, TrustSection, QuoteSection, DetailsSection, PizzaPosition} from "./Hero";
 import {colors} from "../variables";
 
 const AppNav = styled(HomeNav)`
@@ -18,7 +18,6 @@ export {
   Heading,
   TopHero,
   SubHero,
-  FoodElements,
   TrustSection,
   QuoteSection,
   DetailsSection,
@@ -26,6 +25,5 @@ export {
   HomeNav,
   SimpleHeader,
   PizzaPosition,
-  SaucePosition,
   Wrapper,
 };

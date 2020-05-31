@@ -50,29 +50,20 @@ const Wrapper = styled.div`
   `};
 `;
 
-const FoodElements = styled.div`
-  display: flex;
-
-  ${MEDIA.TABLET`
-    display: none;
-  `};
-`;
-
 const PizzaPosition = styled.img`
-  height: 375px;
-  position: absolute;
-  right: 5%;
-  top: 80px;
-
-  ${MEDIA.PHONE`
-    height: 75px;
-  `};
-`;
-const SaucePosition = styled.img`
-  height: 450px;
+  height: 29rem;
   position: absolute;
   right: 12%;
   top: 1%;
+  ${MEDIA.TABLET`
+    display: none;
+  `};
+
+  ${MEDIA.DESKTOP`
+    height: 20rem;
+  right: 6%;
+    top: 22%;
+  `};
 `;
 
 const TopHero = styled(Hero)`
@@ -255,12 +246,10 @@ const DetailsSection = styled(Hero)`
 
 export {
   Wrapper,
-  FoodElements,
   SubHero,
   TopHero,
   TrustSection,
   QuoteSection,
   DetailsSection,
   PizzaPosition,
-  SaucePosition,
 };
