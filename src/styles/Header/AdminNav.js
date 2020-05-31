@@ -45,8 +45,8 @@ const Container = styled.nav`
   }
 
   ${MEDIA.TABLET`
-    .nav-link {
-      display: none;
+    .helper {
+      margin-left: 5px;
     }
 
     ul {
@@ -57,9 +57,8 @@ const Container = styled.nav`
       display: none;
     }
 
-    ul li:nth-last-of-type(1),
-    ul li:nth-last-of-type(1) ~ li {
-        display: inherit !important;
+    ul li:nth-last-of-type(2) {
+      display: inherit !important;
     }
   `};
 `;
