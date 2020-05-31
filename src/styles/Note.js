@@ -3,6 +3,7 @@ import {margin, size} from "./variables";
 
 const RenderedNote = styled.div`
   margin-bottom: ${margin.gutter};
+  font-size: ${size.tiny};
 
   .noteContent {
     margin-bottom: ${size.small}
