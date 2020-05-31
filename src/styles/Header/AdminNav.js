@@ -39,6 +39,11 @@ const Container = styled.nav`
     font-weight: initial;
   }
 
+  .helper {
+    margin: 0;
+    color: ${colors.lightGrey};
+  }
+
   ${MEDIA.TABLET`
     .nav-link {
       display: none;

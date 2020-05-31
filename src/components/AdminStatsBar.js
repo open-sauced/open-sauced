@@ -46,10 +46,10 @@ function RightSide({timing, rateLimit}) {
     <div>
       <ul>
         <li>
-          {humanizer(timing.renderTime)} render
+          🕒 {humanizer(timing.renderTime)} <span className="helper">render</span>
         </li>
         <li>
-          {humanizer(timing.loadTime)} load
+          🕒 {humanizer(timing.loadTime)} <span className="helper">load</span>
         </li>
         <li>
           Rate Limit: {rateLimit}
@@ -67,7 +67,14 @@ function AdminStatsBar() {
     api
       .fetchRateLimit()
       .then(res => {
-        setRateLimit(res.data.gitHub.rateLimit.remaining);
+        const rateLimit = res.data.gitHub.rateLimit.remaining;
+        if (rateLimit > 4000) {
+          setRateLimit(`${rateLimit} 😎`);
+        } else if (rateLimit  > 2000 && rateLimit < 4000) {
+          setRateLimit(`${rateLimit} ⚠️`);
+        } else if (rateLimit  > 0 && rateLimit < 2000) {
+          setRateLimit(`${rateLimit} 🚫️`);
+        }
       })
       .catch(e => {
         console.log(e);
