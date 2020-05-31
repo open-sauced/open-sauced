@@ -1,7 +1,26 @@
 import React, {useState, useEffect} from "react";
 import {AdminNav} from "../styles/Header";
 import {getAppVersion} from "../lib/appVersion";
+import humanizeDuration from "humanize-duration";
 import api from "../lib/apiGraphQL";
+
+const humanizer = humanizeDuration.humanizer({
+  language: "shortEn",
+  maxDecimalPoints: 2,
+  spacer: "",
+  languages: {
+    shortEn: {
+      y: () => "y",
+      mo: () => "mo",
+      w: () => "w",
+      d: () => "d",
+      h: () => "h",
+      m: () => "m",
+      s: () => "s",
+      ms: () => "ms",
+    }
+  }
+});
 
 function LeftSide() {
   return (
@@ -22,10 +41,16 @@ function LeftSide() {
   );
 }
 
-function RightSide({rateLimit}) {
+function RightSide({timing, rateLimit}) {
   return (
     <div>
       <ul>
+        <li>
+          {humanizer(timing.renderTime)} render
+        </li>
+        <li>
+          {humanizer(timing.loadTime)} load
+        </li>
         <li>
           Rate Limit: {rateLimit}
         </li>
@@ -36,6 +61,7 @@ function RightSide({rateLimit}) {
 
 function AdminStatsBar() {
   const [rateLimit, setRateLimit] = useState("⌛");
+  const [timing, setTiming] = useState({});
 
   const getRateLimit = () => {
     api
@@ -48,12 +74,20 @@ function AdminStatsBar() {
       });
   };
 
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      getRateLimit();
-    }, 5000);
+  const getTiming = () => {
+    const timingAPI = window.performance.timing;
+    const loadTime = timingAPI.loadEventEnd - timingAPI.navigationStart;
+    const renderTime = timingAPI.domComplete - timingAPI.domLoading;
+    console.log(renderTime);
+    setTiming({
+      loadTime,
+      renderTime
+    });
+  };
 
-    return () => clearInterval(intervalId);
+  useEffect(() => {
+    getRateLimit();
+    getTiming();
   }, []);
 
   return (
@@ -61,6 +95,7 @@ function AdminStatsBar() {
       <LeftSide />
       <RightSide
         rateLimit={rateLimit}
+        timing={timing}
       />
     </AdminNav>
   );
