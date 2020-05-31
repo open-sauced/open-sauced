@@ -3,8 +3,7 @@ import {Link} from "react-router-dom";
 import {MarketingButton} from "../styles/Button";
 import {
   Wrapper,
-  FoodElements,
-  SaucePosition,
+  PizzaPosition,
   TopHero,
   SubHero,
   TrustSection,
@@ -26,9 +25,7 @@ function Hero({handleLogIn}) {
             <h2>Open Source</h2>
             <h1>contribution.</h1>
           </div>
-          <FoodElements>
-            <SaucePosition alt="pizza" src={sauceFull} />
-          </FoodElements>
+          <PizzaPosition alt="pizza" src={sauceFull} />
         </Wrapper>
       </TopHero>
       <SubHero>
