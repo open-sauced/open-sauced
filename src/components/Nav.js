@@ -6,13 +6,20 @@ import {AppNav, HomeNav} from "../styles/Header";
 import {SpaceBetween} from "../styles/Grid";
 import {Link} from "react-router-dom";
 import ProfileAvatar from "../styles/ProfileAvatar";
+import {useHistory} from "react-router-dom";
 
 function LeftSide({user, handleLogIn, handleLogOut}) {
+  const history = useHistory();
+  const _logOutRedirect = () => {
+    handleLogOut();
+    history.push("/");
+  };
+
   return (
     <FloatLeftMobileNav>
-      <Link style={{verticalAlign: "middle"}} to="/">
+      <a style={{verticalAlign: "middle"}} to="/">
         <img alt="open sauced" src={logo} />
-      </Link>
+      </a>
       <ul>
         <li>
           <SubtleLink href="https://dev.to/t/opensauced">Blog</SubtleLink>
@@ -36,11 +43,11 @@ function LeftSide({user, handleLogIn, handleLogOut}) {
         <li>
           {user ? (
             <div>
-              <SubtleLink onClick={handleLogOut}>Logout</SubtleLink>
+              <SubtleLink alt="log in" onClick={_logOutRedirect}>Logout</SubtleLink>
             </div>
           ) : (
             <div>
-              <SubtleLink onClick={handleLogIn}>Login</SubtleLink>
+              <SubtleLink alt="log out" onClick={handleLogIn}>Login</SubtleLink>
             </div>
           )}
         </li>
