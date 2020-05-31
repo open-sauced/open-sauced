@@ -28,17 +28,17 @@ function LeftSide({deployment}) {
       <ul>
         <li>
           <a href={`https://github.com/open-sauced/open-sauced/tree/${deployment.environment}`} target="_blank">
-            🌵 {deployment.environment}
+            🌵  {deployment.environment}
           </a>
         </li>
         <li>
           <a href={`https://github.com/open-sauced/open-sauced/releases/tag/v${getAppVersion()}`} target="_blank">
-            📦 v{getAppVersion()}
+            📦  v{getAppVersion()}
           </a>
         </li>
         <li className="no-well">
           <a href={`https://github.com/facebook/react/releases/tag/v${React.version}`} target="_blank">
-            ⚛️ <b>React</b> v{React.version}
+            ⚛️  <b>React</b> v{React.version}
           </a>
         </li>
       </ul>
@@ -51,10 +51,10 @@ function RightSide({timing, rateLimit}) {
     <div>
       <ul>
         <li>
-          🕒 {humanizer(timing.renderTime)} <span className="helper">render</span>
+          🕒  {humanizer(timing.renderTime)} <span className="helper">render</span>
         </li>
         <li>
-          🕒 {humanizer(timing.loadTime)} <span className="helper">load</span>
+          🕒  {humanizer(timing.loadTime)} <span className="helper">load</span>
         </li>
         <li>
           Rate Limit: {rateLimit}
