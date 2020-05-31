@@ -49,7 +49,7 @@ function NoteForm({goalId, repoName, note}) {
         </div>
       ) : (
         <TextArea
-          style={{minHeight: 170}}
+          style={{resize: "none", minHeight: 170}}
           disabled={!editing}
           onChange={_handleNotesChange}
           value={noteContent || ""}
