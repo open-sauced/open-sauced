@@ -12,7 +12,7 @@ const RenderedNote = styled.div`
 
 const NoteArea = styled.textarea`
   resize: none;
-  min-height: 170px;
+  min-height: ${size.xxl};
 `;
 
 export {RenderedNote, NoteArea};
