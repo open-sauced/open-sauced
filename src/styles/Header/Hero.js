@@ -53,16 +53,21 @@ const Wrapper = styled.div`
 const PizzaPosition = styled.img`
   height: 29rem;
   position: absolute;
-  right: 12%;
+  right: 2%;
   top: 1%;
   ${MEDIA.TABLET`
     display: none;
   `};
 
+  ${MEDIA.MIN_TABLET`
+    right: 8%;
+    top: 1%;
+  `};
+
   ${MEDIA.DESKTOP`
-    height: 20rem;
-  right: 6%;
-    top: 22%;
+    height: 22rem;
+    right: 3%;
+    top: 9%;
   `};
 `;
 
