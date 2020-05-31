@@ -31,7 +31,7 @@ const Container = styled.nav`
   }
 
   span {
-    margin-right: ${size.micro};
+    margin-right: 5px;
   }
   
   .no-well {
