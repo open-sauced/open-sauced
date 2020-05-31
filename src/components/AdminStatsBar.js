@@ -49,7 +49,11 @@ function AdminStatsBar() {
   };
 
   useEffect(() => {
-    getRateLimit();
+    const intervalId = setInterval(() => {
+      getRateLimit();
+    }, 5000);
+
+    return () => clearInterval(intervalId);
   }, []);
 
   return (
