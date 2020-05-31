@@ -22,10 +22,15 @@ const humanizer = humanizeDuration.humanizer({
   }
 });
 
-function LeftSide() {
+function LeftSide({deployment}) {
   return (
     <div>
       <ul>
+        <li>
+          <a href={`https://github.com/open-sauced/open-sauced/tree/${deployment.environment}`} target="_blank">
+            🌵 {deployment.environment}
+          </a>
+        </li>
         <li>
           <a href={`https://github.com/open-sauced/open-sauced/releases/tag/v${getAppVersion()}`} target="_blank">
             📦 v{getAppVersion()}
@@ -62,6 +67,7 @@ function RightSide({timing, rateLimit}) {
 function AdminStatsBar() {
   const [rateLimit, setRateLimit] = useState("⌛");
   const [timing, setTiming] = useState({});
+  const [deployment, setDeployment] = useState("⌛");
 
   const getRateLimit = () => {
     api
@@ -81,11 +87,22 @@ function AdminStatsBar() {
       });
   };
 
+  const getDeloyment = () => {
+    api
+      .fetchDeploymentStatus()
+      .then(res => {
+        const deployment = res.data.gitHub.repository.deployments.nodes[0];
+        setDeployment(deployment);
+      })
+      .catch(e => {
+        console.log(e);
+      });
+  };
+
   const getTiming = () => {
     const timingAPI = window.performance.timing;
     const loadTime = timingAPI.loadEventEnd - timingAPI.navigationStart;
     const renderTime = timingAPI.domComplete - timingAPI.domLoading;
-    console.log(renderTime);
     setTiming({
       loadTime,
       renderTime
@@ -95,11 +112,14 @@ function AdminStatsBar() {
   useEffect(() => {
     getRateLimit();
     getTiming();
+    getDeloyment();
   }, []);
 
   return (
     <AdminNav>
-      <LeftSide />
+      <LeftSide
+        deployment={deployment}
+      />
       <RightSide
         rateLimit={rateLimit}
         timing={timing}
