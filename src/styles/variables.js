@@ -9,6 +9,8 @@ const colors = {
   lightGrey: "#8b8b8b",
   backgroundGrey: "#2F372E",
   grey: "#313d3e",
+  darkGrey: "#171c1d",
+  darkestGrey: "#0c0e0e",
   gold: "#f6bc00",
   orange: "#fe9d68",
   blue: "#4d9abf",

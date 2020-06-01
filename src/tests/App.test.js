@@ -17,7 +17,8 @@ test("renders without crashing", async () => {
   ReactDOM.unmountComponentAtNode(div);
 });
 
-// TODO: Skipped until React.Suspense + zeit/swr is testable
+// TODO: Skipped until React.Suspense + zeit/swr is testable 
+// https://github.com/open-sauced/open-sauced/discussions/408
 test.skip("app login integration", () => {
   const history = createMemoryHistory();
   const handleLogIn = jest.fn();
