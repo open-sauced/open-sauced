@@ -10,5 +10,6 @@ import electron from "./electron.png";
 import next from "./next.png";
 import gucci from "./gucci.jpg";
 import graphql from "./graphql.png";
+import ohno from "./404.svg";
 
-export {gucci, go, graphql, electron, next, bdougie, one, face, sauce, sauced, pizza, sauceFull};
+export {gucci, go, graphql, electron, ohno, next, bdougie, one, face, sauce, sauced, pizza, sauceFull};
