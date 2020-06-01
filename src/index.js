@@ -8,6 +8,7 @@ import registerServiceWorker from "./registerServiceWorker";
 import OneGraphApolloClient from "onegraph-apollo-client";
 import {ApolloProvider} from "react-apollo";
 import api from "./lib/apiGraphQL";
+import {getCookieValue, setCookie, deleteCookie} from "./lib/cookies";
 
 const apolloClient = new OneGraphApolloClient({
   oneGraphAuth: Config.auth,
@@ -15,14 +16,18 @@ const apolloClient = new OneGraphApolloClient({
 
 function Index() {
   const [user, setUser] = useState(null);
+  const [isLoggedIn, setLogin] = useState(getCookieValue("isLoggedIn") === "true");
   const [isAdmin, setIsAdmin] = useState(null);
 
   useEffect(() => {
     const auth = Config.auth;
     auth.isLoggedIn("github").then(isLoggedIn => {
       if (isLoggedIn) {
+        setCookie("isLoggedIn", "true")
+
         const user = getUserFromJwt(auth);
         setUser(user);
+        setLogin(true)
         api
           .fetchMemberStatus()
           .then(res => {
@@ -67,6 +72,7 @@ function Index() {
       // Remove the local AdminStats bar status storage
       localStorage.removeItem("adminBar");
       setUser(null);
+      deleteCookie("isLoggedIn");
     });
   };
 
@@ -75,6 +81,7 @@ function Index() {
       <ApolloProvider client={apolloClient}>
         <App
           user={user}
+          isLoggedIn={isLoggedIn}
           isAdmin={isAdmin}
           userId={user && user.id}
           handleLogIn={() => _handleLogIn()}

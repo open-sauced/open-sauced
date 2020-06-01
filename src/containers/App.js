@@ -8,12 +8,12 @@ import LocaleContext from "../Context";
 import auth from "../hoc/AuthHOC";
 import {getAppVersion} from "../lib/appVersion";
 
-function App({handleLogIn, handleLogOut, user, isAdmin}) {
+function App({handleLogIn, handleLogOut, user, isAdmin, isLoggedIn}) {
   console.log("version", getAppVersion());
   const [goalsId, setGoalsId] = useState({});
 
   const guard = component => {
-    return auth(component, user, handleLogIn);
+    return auth(component, isLoggedIn, handleLogIn);
   };
 
   const value = useMemo(
