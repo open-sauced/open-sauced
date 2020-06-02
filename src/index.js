@@ -23,11 +23,11 @@ function Index() {
     const auth = Config.auth;
     auth.isLoggedIn("github").then(isLoggedIn => {
       if (isLoggedIn) {
-        setCookie("isLoggedIn", "true")
+        setCookie("isLoggedIn", "true");
 
         const user = getUserFromJwt(auth);
         setUser(user);
-        setLogin(true)
+        setLogin(true);
         api
           .fetchMemberStatus()
           .then(res => {
@@ -56,6 +56,7 @@ function Index() {
             // app
             const user = getUserFromJwt(auth);
             setUser(user);
+            setCookie("isLoggedIn", "true");
           } else {
             console.warn("User did not grant auth for GitHub");
           }

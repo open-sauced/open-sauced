@@ -13,7 +13,7 @@ function App({handleLogIn, handleLogOut, user, isAdmin, isLoggedIn}) {
   const [goalsId, setGoalsId] = useState({});
 
   const guard = component => {
-    return auth(component, isLoggedIn, handleLogIn);
+    return auth(component, user, isLoggedIn, handleLogIn);
   };
 
   const value = useMemo(
