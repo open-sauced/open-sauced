@@ -63,7 +63,7 @@ function RightSide({user}) {
       <SpaceBetween>
         {user && (
           <SubtleLink alt="user login name" className="nav-link" href={`https://github.com/${user.login}`}>
-            <ProfileAvatar alt="avatar" src={`https://avatars.githubusercontent.com/u/${user.id}`} />
+            <ProfileAvatar alt="avatar" src={`https://github.com/${user.login}.png`} />
           </SubtleLink>
         )}
       </SpaceBetween>
