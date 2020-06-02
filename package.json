@@ -74,7 +74,7 @@
     "whatwg-fetch": "3.0.0"
   },
   "dependencies": {
-    "@babel/preset-env": "^7.6.3",
+    "@babel/preset-env": "^7.10.2",
     "@babel/register": "^7.7.4",
     "@babel/runtime": "^7.7.5",
     "@primer/components": "^15.2.2",
