@@ -17,9 +17,11 @@ const Container = styled.textarea`
 export const RenderedNote = styled.div`
   margin-bottom: ${margin.gutter};
   font-size: ${size.tiny};
+  max-width: 30rem;
 
   .noteContent {
     margin-bottom: ${size.small}
+    overflow: scroll;
   }
 `;
 
