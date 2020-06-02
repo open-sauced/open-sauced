@@ -1,6 +1,6 @@
 import { humanizeNumber } from "./humanizeNumber";
 
-describe("Test: isValidRepoUrl()", () => {
+describe("Test: humanizeNumber()", () => {
   test(`1000 should humanize`, () => {
     const num = 1000;
     const result = humanizeNumber(num);
