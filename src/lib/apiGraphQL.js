@@ -271,6 +271,14 @@ const operationsDoc = `
     }
   }
 
+  query FetchRepoCountQuery() {
+    gitHub {
+      search(query: "open-sauced-goals", type: REPOSITORY) {
+        repositoryCount
+      }
+    }
+  }
+
   mutation CreateOpenSaucedGoalsRepo($ownerId: ID!) {
     gitHub {
       cloneTemplateRepository(
@@ -407,6 +415,10 @@ function fetchDeploymentStatus() {
   return fetchOneGraph(operationsDoc, "FetchDeploymentStatusQuery");
 }
 
+function fetchRepoCount() {
+  return fetchOneGraph(operationsDoc, "FetchRepoCountQuery");
+}
+
 function createOpenSaucedGoalsRepo(ownerId) {
   return fetchOneGraph(operationsDoc, "CreateOpenSaucedGoalsRepo", {ownerId: ownerId});
 }
@@ -440,6 +452,7 @@ const api = {
   fetchMemberStatus,
   fetchRateLimit,
   fetchDeploymentStatus,
+  fetchRepoCount,
   createOpenSaucedGoalsRepo,
   createGoal,
   updateGoal,
