@@ -55,7 +55,7 @@ function RightSide({timing, rateLimit, repoCount}) {
           <span>🕒</span>{humanizer(timing.loadTime)} <span className="helper">load</span>
         </li>
         <li>
-          Users: {repoCount}
+          <span>👥</span>Users: {repoCount}
         </li>
         <li>
           Rate Limit: {rateLimit}
