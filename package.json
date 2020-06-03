@@ -9,7 +9,7 @@
     "@babel/preset-react": "^7.6.3",
     "@storybook/addon-actions": "^5.2.5",
     "@storybook/addon-links": "^5.2.8",
-    "@storybook/addon-storysource": "^5.2.8",
+    "@storybook/addon-storysource": "^5.3.19",
     "@storybook/addon-viewport": "^5.2.8",
     "@storybook/addons": "^5.2.8",
     "@storybook/react": "^5.2.8",
@@ -46,7 +46,7 @@
     "html-webpack-plugin": "^4.3.0",
     "http-proxy-middleware": "1.0.3",
     "jest": "24.9.0",
-    "jest-axe": "^3.2.0",
+    "jest-axe": "^3.4.0",
     "jest-localstorage-mock": "^2.4.0",
     "json-loader": "^0.5.7",
     "mini-css-extract-plugin": "^0.8.0",
@@ -74,7 +74,7 @@
     "whatwg-fetch": "3.0.0"
   },
   "dependencies": {
-    "@babel/preset-env": "^7.6.3",
+    "@babel/preset-env": "^7.10.2",
     "@babel/register": "^7.7.4",
     "@babel/runtime": "^7.7.5",
     "@primer/components": "^15.2.2",
