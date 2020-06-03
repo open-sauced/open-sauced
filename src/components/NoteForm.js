@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import {Redirect} from "react-router";
 import Button from "../styles/Button";
-import {NoteArea, RenderedNote} from "../styles/Note";
+import {NoteArea, RenderedNote} from "../styles/TextArea";
 import Card from "./Card";
 import {FlexCenter} from "../styles/Grid";
 import Octicon, {getIconByName} from "@primer/octicons-react";

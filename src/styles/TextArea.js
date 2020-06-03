@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {size, borderRadius, colors} from "./variables";
+import {margin, size, borderRadius, colors} from "./variables";
 
 const Container = styled.textarea`
   margin-bottom: 12px;
@@ -12,6 +12,23 @@ const Container = styled.textarea`
   outline: none;
   padding: ${size.tiny};
   width: 100%;
+`;
+
+export const RenderedNote = styled.div`
+  margin-bottom: ${margin.gutter};
+  font-size: ${size.tiny};
+  max-width: 30rem;
+
+  .noteContent {
+    margin-bottom: ${size.small}
+    overflow: scroll;
+  }
+`;
+
+
+export const NoteArea = styled(Container)`
+  resize: none;
+  min-height: ${size.xxl};
 `;
 
 export default Container;
