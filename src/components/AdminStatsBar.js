@@ -44,7 +44,7 @@ function LeftSide({deployment}) {
   );
 }
 
-function RightSide({timing, rateLimit}) {
+function RightSide({timing, rateLimit, repoCount}) {
   return (
     <div>
       <ul>
@@ -53,6 +53,9 @@ function RightSide({timing, rateLimit}) {
         </li>
         <li>
           <span>🕒</span>{humanizer(timing.loadTime)} <span className="helper">load</span>
+        </li>
+        <li>
+          <span>😍</span>Users: {repoCount}
         </li>
         <li>
           Rate Limit: {rateLimit}
@@ -66,6 +69,7 @@ function AdminStatsBar() {
   const [rateLimit, setRateLimit] = useState("⌛");
   const [timing, setTiming] = useState({});
   const [deployment, setDeployment] = useState("⌛");
+  const [repoCount, setRepoCount] = useState("⌛");
 
   const getRateLimit = () => {
     api
@@ -85,12 +89,24 @@ function AdminStatsBar() {
       });
   };
 
-  const getDeloyment = () => {
+  const getDeployment = () => {
     api
       .fetchDeploymentStatus()
       .then(res => {
         const deployment = res.data.gitHub.repository.deployments.nodes[0];
         setDeployment(deployment);
+      })
+      .catch(e => {
+        console.log(e);
+      });
+  };
+
+  const getRepoCount = () => {
+    api
+      .fetchRepoCount()
+      .then(res => {
+        const repoCount = res.data.gitHub.search.repositoryCount;
+        setRepoCount(repoCount);
       })
       .catch(e => {
         console.log(e);
@@ -110,7 +126,9 @@ function AdminStatsBar() {
   useEffect(() => {
     getRateLimit();
     getTiming();
-    getDeloyment();
+    getDeployment();
+    getRepoCount();
+
   }, []);
 
   return (
@@ -121,6 +139,7 @@ function AdminStatsBar() {
       <RightSide
         rateLimit={rateLimit}
         timing={timing}
+        repoCount={repoCount}
       />
     </AdminNav>
   );
