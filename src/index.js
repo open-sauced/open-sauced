@@ -8,7 +8,6 @@ import registerServiceWorker from "./registerServiceWorker";
 import OneGraphApolloClient from "onegraph-apollo-client";
 import {ApolloProvider} from "react-apollo";
 import api from "./lib/apiGraphQL";
-import {getCookieValue, setCookie, deleteCookie} from "./lib/cookies";
 
 const apolloClient = new OneGraphApolloClient({
   oneGraphAuth: Config.auth,
@@ -16,18 +15,16 @@ const apolloClient = new OneGraphApolloClient({
 
 function Index() {
   const [user, setUser] = useState(null);
-  const [isLoggedIn, setLogin] = useState(getCookieValue("isLoggedIn") === "true");
+  const [loggedInStatus, setLogin] = useState(localStorage.getItem("isLoggedIn"));
   const [isAdmin, setIsAdmin] = useState(null);
 
   useEffect(() => {
     const auth = Config.auth;
     auth.isLoggedIn("github").then(isLoggedIn => {
       if (isLoggedIn) {
-        setCookie("isLoggedIn", "true");
 
         const user = getUserFromJwt(auth);
         setUser(user);
-        setLogin(true);
         api
           .fetchMemberStatus()
           .then(res => {
@@ -37,6 +34,9 @@ function Index() {
           .catch(e => {
             console.log(e);
           });
+
+        setLogin(isLoggedIn);
+        localStorage.setItem("isLoggedIn", isLoggedIn);
         return user;
       } else {
         console.warn("User is not logged into GitHub");
@@ -56,7 +56,8 @@ function Index() {
             // app
             const user = getUserFromJwt(auth);
             setUser(user);
-            setCookie("isLoggedIn", "true");
+            localStorage.setItem("isLoggedIn", isLoggedIn);
+            setLogin(isLoggedIn);
           } else {
             console.warn("User did not grant auth for GitHub");
           }
@@ -72,8 +73,9 @@ function Index() {
       localStorage.removeItem("oneGraph:" + Config.appId);
       // Remove the local AdminStats bar status storage
       localStorage.removeItem("adminBar");
+      localStorage.removeItem("isLoggedIn");
       setUser(null);
-      deleteCookie("isLoggedIn");
+      setLogin(false);
     });
   };
 
@@ -82,7 +84,7 @@ function Index() {
       <ApolloProvider client={apolloClient}>
         <App
           user={user}
-          isLoggedIn={isLoggedIn}
+          isLoggedIn={loggedInStatus}
           isAdmin={isAdmin}
           userId={user && user.id}
           handleLogIn={() => _handleLogIn()}
