@@ -9,7 +9,7 @@ import AdminStatsBar from "./AdminStatsBar";
 import Hotkeys from "react-hot-keys";
 import {useHistory, Link} from "react-router-dom";
 
-function LeftSide({user, handleLogIn, handleLogOut}) {
+function LeftSide({isLoggedIn, user, handleLogIn, handleLogOut}) {
   const history = useHistory();
   const _logOutRedirect = () => {
     handleLogOut();
@@ -31,7 +31,7 @@ function LeftSide({user, handleLogIn, handleLogOut}) {
         <li>
           <SubtleLink href="https://discord.gg/gZMKK5q">Discord</SubtleLink>
         </li>
-        {user && (
+        {isLoggedIn && (
           <li>
             <SubtleLink
               className="nav-link"
@@ -42,7 +42,7 @@ function LeftSide({user, handleLogIn, handleLogOut}) {
           </li>
         )}
         <li>
-          {user ? (
+          {isLoggedIn ? (
             <div>
               <SubtleLink alt="log in" onClick={_logOutRedirect}>Logout</SubtleLink>
             </div>
@@ -71,9 +71,9 @@ function RightSide({user}) {
   );
 }
 
-function Header({user, handleLogOut, handleLogIn, isAdmin}) {
+function Header({user, handleLogOut, handleLogIn, isAdmin, isLoggedIn}) {
   const [adminBar, setAdminBar] = useState(localStorage.getItem("adminBar") === "true");
-  const Nav = user ? AppNav : HomeNav;
+  const Nav = isLoggedIn ? AppNav : HomeNav;
 
   const onKeyUp = () => {
     localStorage.setItem("adminBar", !adminBar);
@@ -91,7 +91,7 @@ function Header({user, handleLogOut, handleLogIn, isAdmin}) {
         </Hotkeys>
       )}
       <Nav>
-        <LeftSide handleLogOut={handleLogOut} handleLogIn={handleLogIn} user={user} />
+        <LeftSide handleLogOut={handleLogOut} handleLogIn={handleLogIn} isLoggedIn={isLoggedIn} user={user} />
         <RightSide user={user} />
       </Nav>
     </div>

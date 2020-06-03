@@ -27,7 +27,7 @@ function App({handleLogIn, handleLogOut, user, isAdmin, isLoggedIn}) {
   return (
     <Router>
       <LocaleContext.Provider value={value}>
-        <Nav handleLogIn={handleLogIn} handleLogOut={handleLogOut} user={user} isAdmin={isAdmin} />
+        <Nav handleLogIn={handleLogIn} handleLogOut={handleLogOut} isLoggedIn={isLoggedIn} user={user} isAdmin={isAdmin} />
         <Route exact path="/" component={guard(Dashboard)} />
         <Route path="/repos" component={guard(Dashboard)} />
         <Route path="/callback" component={guard(Dashboard)} />
