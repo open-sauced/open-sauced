@@ -15,12 +15,14 @@ const apolloClient = new OneGraphApolloClient({
 
 function Index() {
   const [user, setUser] = useState(null);
+  const [loggedInStatus, setLogin] = useState(localStorage.getItem("isLoggedIn"));
   const [isAdmin, setIsAdmin] = useState(null);
 
   useEffect(() => {
     const auth = Config.auth;
     auth.isLoggedIn("github").then(isLoggedIn => {
       if (isLoggedIn) {
+
         const user = getUserFromJwt(auth);
         setUser(user);
         api
@@ -32,6 +34,9 @@ function Index() {
           .catch(e => {
             console.log(e);
           });
+
+        setLogin(isLoggedIn);
+        localStorage.setItem("isLoggedIn", isLoggedIn);
         return user;
       } else {
         console.warn("User is not logged into GitHub");
@@ -51,6 +56,8 @@ function Index() {
             // app
             const user = getUserFromJwt(auth);
             setUser(user);
+            localStorage.setItem("isLoggedIn", isLoggedIn);
+            setLogin(isLoggedIn);
           } else {
             console.warn("User did not grant auth for GitHub");
           }
@@ -66,7 +73,9 @@ function Index() {
       localStorage.removeItem("oneGraph:" + Config.appId);
       // Remove the local AdminStats bar status storage
       localStorage.removeItem("adminBar");
+      localStorage.removeItem("isLoggedIn");
       setUser(null);
+      setLogin(false);
     });
   };
 
@@ -75,6 +84,7 @@ function Index() {
       <ApolloProvider client={apolloClient}>
         <App
           user={user}
+          isLoggedIn={loggedInStatus}
           isAdmin={isAdmin}
           userId={user && user.id}
           handleLogIn={() => _handleLogIn()}

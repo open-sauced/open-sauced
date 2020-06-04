@@ -44,6 +44,7 @@ describe("Test: isValidRepoUrl()", () => {
     expect(isValidRepoUrl("Http://github.com/owner_name/repo_name")[0]).toBe(true);
     expect(isValidRepoUrl("Https://github.com/owner_name/repo_name")[0]).toBe(true);
     expect(isValidRepoUrl("http://GITHUB.com/owner_name/repo_name")[0]).toBe(true);
+    expect(isValidRepoUrl("http://github.com/ owner_name / repo_name ")[0]).toBe(true);
   });
   test("App version", () => {
     expect(getAppVersion()).not.toBe("");
