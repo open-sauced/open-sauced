@@ -6,6 +6,7 @@ import Nav from "../components/Nav";
 import {BrowserRouter as Router, Route, Switch, useHistory} from "react-router-dom";
 import {MarketingButton} from "../styles/Button";
 import {Wrapper} from "../styles/Header";
+import {SpaceAround} from "../styles/Grid";
 import {NotFound} from "../styles/NotFound";
 import LocaleContext from "../Context";
 import auth from "../hoc/AuthHOC";
@@ -18,14 +19,16 @@ function NoMatch() {
   return (
     <NotFound>
       <Wrapper>
-        <img alt="404" src={ohno} />
         <h2>Oh No! This page does not exist yet. Would you like to build it?</h2>
-        <MarketingButton primary onClick={() => history.push("/")}>
-          Back to safety
-        </MarketingButton>
-        <a target="_blank" href="https://github.com/open-sauced/open-sauced/issues/new/choose">
-          <MarketingButton>Click here if yes</MarketingButton>
-        </a>
+        <img alt="404" src={ohno} />
+        <SpaceAround>
+          <MarketingButton primary onClick={() => history.push("/")}>
+            Back to safety
+          </MarketingButton>
+          <a target="_blank" href="https://github.com/open-sauced/open-sauced/issues/new/choose">
+            <MarketingButton>Click here if yes</MarketingButton>
+          </a>
+        </SpaceAround>
       </Wrapper>
     </NotFound>
   );
