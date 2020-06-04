@@ -1,15 +1,7 @@
 import React from "react";
 import {Link} from "react-router-dom";
 import {MarketingButton} from "../styles/Button";
-import {
-  Wrapper,
-  PizzaPosition,
-  TopHero,
-  SubHero,
-  TrustSection,
-  QuoteSection,
-  DetailsSection,
-} from "../styles/Header";
+import {Wrapper, PizzaPosition, TopHero, SubHero, TrustSection, QuoteSection, DetailsSection} from "../styles/Header";
 import {gucci, go, graphql, electron, next, sauceFull, bdougie} from "../images";
 import {logo1 as logo} from "../logos";
 import {archive, mortarBoard, watch, squirrel} from "../icons";
@@ -73,8 +65,8 @@ function Hero({handleLogIn}) {
             <Link to="/">
               <img style={{height: 50}} alt="open sauced" src={logo} />
             </Link>
-            Open Sauced provides structure onboarding for new contributors to open source. This structure provides a way
-            to track your next contributions by leveraging a unique dashboard built on top of the GitHub GraphQL API.
+            Open Sauced provides guidance onboarding for new contributors. Out approach towards open-source onboarding
+            offers a way to track contributions through GitHub GraphQL API powered dashboard.
           </Flex>
           <Flex className="quotes">
             <Flex className="quote">
@@ -103,8 +95,8 @@ function Hero({handleLogIn}) {
                 <FlexColumn className="copy">
                   <h2>Contributor issue tracking and triaging</h2>
                   <p>
-                    Working on good first issues has never been easier. Create and track your wishlist all in one
-                    dashboard.
+                    Working on good-first-issues has never been easier. Create and track your contribution wishlist all
+                    in one dashboard.
                   </p>
                 </FlexColumn>
               </Flex>
@@ -113,8 +105,8 @@ function Hero({handleLogIn}) {
                 <FlexColumn className="copy">
                   <h2>Structured onboarding for new contributors</h2>
                   <p>
-                    Starting a new contribution is challenging when it is hard to find the content. Easily find projects
-                    with structured contributing guidelines.
+                    Starting a new contribution is challenging when there is no guide. Easily find projects with
+                    structured contributor onboarding.
                   </p>
                 </FlexColumn>
               </Flex>
@@ -132,8 +124,8 @@ function Hero({handleLogIn}) {
                 <FlexColumn className="copy">
                   <h2>Find community and mentorship from approved projects</h2>
                   <p>
-                    No more guessing what issues are ups for grabs. Leverage the guidance from leaders in the project to
-                    grab issues ready for work.
+                    No more guessing what issues are ups for grabs. Through mentorship and community you will be first
+                    to know what issues are ups-for-grabs.
                   </p>
                 </FlexColumn>
               </Flex>
