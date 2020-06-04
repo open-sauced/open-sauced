@@ -68,7 +68,7 @@ Authentication is handled through [OneGraph's AuthGuardian](https://www.onegraph
 
 ## 💾 Database
 
-This project uses GitHub as a database. When you login, you will be presented whena button to create a goals repository. That repository template lives at [open-sauced/goals-template](https://github.com/open-sauced/goals-template).
+This project uses GitHub as a database. When you login, you will be presented with a button to create a goals repository. That repository template lives at [open-sauced/goals-template](https://github.com/open-sauced/goals-template).
 
 ## 💨 Service Worker
 
