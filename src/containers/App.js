@@ -3,10 +3,36 @@ import Dashboard from "../containers/Dashboard";
 import Footer from "../components/Footer";
 import DashboardFooter from "../components/DashboardFooter";
 import Nav from "../components/Nav";
-import {BrowserRouter as Router, Route} from "react-router-dom";
+import {BrowserRouter as Router, Route, Switch, useHistory} from "react-router-dom";
+import {MarketingButton} from "../styles/Button";
+import {Wrapper} from "../styles/Header";
+import {SpaceAround} from "../styles/Grid";
+import {NotFound} from "../styles/NotFound";
 import LocaleContext from "../Context";
 import auth from "../hoc/AuthHOC";
 import {getAppVersion} from "../lib/appVersion";
+import {ohno} from "../images";
+
+function NoMatch() {
+  const history = useHistory();
+
+  return (
+    <NotFound>
+      <Wrapper>
+        <h2>Oh No! This page does not exist yet. Would you like to build it?</h2>
+        <img alt="404" src={ohno} />
+        <SpaceAround>
+          <MarketingButton primary onClick={() => history.push("/")}>
+            Back to safety
+          </MarketingButton>
+          <a target="_blank" href="https://github.com/open-sauced/open-sauced/issues/new/choose">
+            <MarketingButton>Click here if yes</MarketingButton>
+          </a>
+        </SpaceAround>
+      </Wrapper>
+    </NotFound>
+  );
+}
 
 function App({handleLogIn, handleLogOut, user, isAdmin, isLoggedIn}) {
   console.log("version", getAppVersion());
@@ -26,11 +52,20 @@ function App({handleLogIn, handleLogOut, user, isAdmin, isLoggedIn}) {
 
   return (
     <Router>
+      <Nav
+        handleLogIn={handleLogIn}
+        handleLogOut={handleLogOut}
+        isLoggedIn={isLoggedIn}
+        user={user}
+        isAdmin={isAdmin}
+      />
       <LocaleContext.Provider value={value}>
-        <Nav handleLogIn={handleLogIn} handleLogOut={handleLogOut} isLoggedIn={isLoggedIn} user={user} isAdmin={isAdmin} />
-        <Route exact path="/" component={guard(Dashboard)} />
-        <Route path="/repos" component={guard(Dashboard)} />
-        <Route path="/callback" component={guard(Dashboard)} />
+        <Switch>
+          <Route exact path="/" component={guard(Dashboard)} />
+          <Route path="/repos" component={guard(Dashboard)} />
+          <Route path="/callback" component={guard(Dashboard)} />
+          <Route component={NoMatch} />
+        </Switch>
         {!user && <Footer />}
         {user && <DashboardFooter />}
       </LocaleContext.Provider>
