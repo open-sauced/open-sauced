@@ -6,6 +6,7 @@ import Nav from "../components/Nav";
 import {BrowserRouter as Router, Route, Switch, useHistory} from "react-router-dom";
 import {MarketingButton} from "../styles/Button";
 import {Wrapper} from "../styles/Header";
+import {NotFound} from "../styles/NotFound";
 import LocaleContext from "../Context";
 import auth from "../hoc/AuthHOC";
 import {getAppVersion} from "../lib/appVersion";
@@ -15,16 +16,18 @@ function NoMatch() {
   const history = useHistory();
 
   return (
-    <Wrapper style={{textAlign: "center", margin: "auto", padding: 30}}>
-      <img style={{width: "50%"}} alt="404" src={ohno} />
-      <h2>Oh No! This page does not exist yet. Would you like to build it?</h2>
-      <MarketingButton primary onClick={() => history.push("/")}>
-        Back to safety
-      </MarketingButton>
-      <a target="_blank" href="https://github.com/open-sauced/open-sauced/issues/new/choose">
-        <MarketingButton>Click here if yes</MarketingButton>
-      </a>
-    </Wrapper>
+    <NotFound>
+      <Wrapper>
+        <img alt="404" src={ohno} />
+        <h2>Oh No! This page does not exist yet. Would you like to build it?</h2>
+        <MarketingButton primary onClick={() => history.push("/")}>
+          Back to safety
+        </MarketingButton>
+        <a target="_blank" href="https://github.com/open-sauced/open-sauced/issues/new/choose">
+          <MarketingButton>Click here if yes</MarketingButton>
+        </a>
+      </Wrapper>
+    </NotFound>
   );
 }
 
@@ -46,23 +49,23 @@ function App({handleLogIn, handleLogOut, user, isAdmin, isLoggedIn}) {
 
   return (
     <Router>
-      <Switch>
-        <LocaleContext.Provider value={value}>
-          <Nav
-            handleLogIn={handleLogIn}
-            handleLogOut={handleLogOut}
-            isLoggedIn={isLoggedIn}
-            user={user}
-            isAdmin={isAdmin}
-          />
+      <Nav
+        handleLogIn={handleLogIn}
+        handleLogOut={handleLogOut}
+        isLoggedIn={isLoggedIn}
+        user={user}
+        isAdmin={isAdmin}
+      />
+      <LocaleContext.Provider value={value}>
+        <Switch>
           <Route exact path="/" component={guard(Dashboard)} />
           <Route path="/repos" component={guard(Dashboard)} />
           <Route path="/callback" component={guard(Dashboard)} />
           <Route component={NoMatch} />
           {!user && <Footer />}
           {user && <DashboardFooter />}
-        </LocaleContext.Provider>
-      </Switch>
+        </Switch>
+      </LocaleContext.Provider>
     </Router>
   );
 }

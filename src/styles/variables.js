@@ -24,6 +24,10 @@ const margin = {
   gutter: "10px",
 };
 
+const padding = {
+  sides: "30px",
+};
+
 const typography = {
   thin: "100",
   light: "300",
@@ -53,4 +57,4 @@ const responsiveBreakpoints = {
   display: "1200px"
 };
 
-export {colors, margin, typography, size, borderRadius, responsiveBreakpoints};
+export {padding, colors, margin, typography, size, borderRadius, responsiveBreakpoints};
