@@ -65,9 +65,9 @@ function App({handleLogIn, handleLogOut, user, isAdmin, isLoggedIn}) {
           <Route path="/repos" component={guard(Dashboard)} />
           <Route path="/callback" component={guard(Dashboard)} />
           <Route component={NoMatch} />
-          {!user && <Footer />}
-          {user && <DashboardFooter />}
         </Switch>
+        {!user && <Footer />}
+        {user && <DashboardFooter />}
       </LocaleContext.Provider>
     </Router>
   );
