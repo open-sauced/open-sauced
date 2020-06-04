@@ -8,12 +8,12 @@ import LocaleContext from "../Context";
 import auth from "../hoc/AuthHOC";
 import {getAppVersion} from "../lib/appVersion";
 
-function App({handleLogIn, handleLogOut, user, isAdmin}) {
+function App({handleLogIn, handleLogOut, user, isAdmin, isLoggedIn}) {
   console.log("version", getAppVersion());
   const [goalsId, setGoalsId] = useState({});
 
   const guard = component => {
-    return auth(component, user, handleLogIn);
+    return auth(component, user, isLoggedIn, handleLogIn);
   };
 
   const value = useMemo(
@@ -27,7 +27,7 @@ function App({handleLogIn, handleLogOut, user, isAdmin}) {
   return (
     <Router>
       <LocaleContext.Provider value={value}>
-        <Nav handleLogIn={handleLogIn} handleLogOut={handleLogOut} user={user} isAdmin={isAdmin} />
+        <Nav handleLogIn={handleLogIn} handleLogOut={handleLogOut} isLoggedIn={isLoggedIn} user={user} isAdmin={isAdmin} />
         <Route exact path="/" component={guard(Dashboard)} />
         <Route path="/repos" component={guard(Dashboard)} />
         <Route path="/callback" component={guard(Dashboard)} />
