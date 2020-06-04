@@ -54,6 +54,8 @@ We actively welcome your pull requests.
 1. A PR description and titleis required. 
 1. [Link to an issue](https://help.github.com/en/github/writing-on-github/autolinked-references-and-urls) in the project. Unsolicited code is welcomed, but an issue is the best place to announce your intentions to work on things.
 
+*note for maintainers: All pull requests need a label to assist automation. See the [template](https://github.com/open-sauced/open-sauced/blob/master/.github/release-drafter.yml) to guide which labels to use.*
+
 ## Issues
 
 If you plan to contribute a change based on an open issue, please assign your self by commenting on the following word `.take`. Issues that are not assigned are assumed open, and to avoid conflicts, please assign yourself before beginning work on any issues.  
