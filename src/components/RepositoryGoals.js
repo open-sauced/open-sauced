@@ -79,7 +79,7 @@ function RepositoryGoals({user}) {
             ) : (
               <EmptyPlaceholder>
                 <div style={{color: "grey"}}>
-                  <Octicon size="large" verticalAlign="middle" icon={getIconByName("rocket")} />
+                  <Octicon size="large" verticalAlign="middle" icon={getIconByName("checklist")} />
                 </div>
                 <div className="helper">
                   No Goals created
