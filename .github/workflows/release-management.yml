@@ -6,6 +6,7 @@ on:
     branches:
       - release/*
       - patch/*
+      - master
       
 
 jobs:
