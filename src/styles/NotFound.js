@@ -11,7 +11,9 @@ const NotFound = styled.section`
   h1 {
     font-size: 1rem;
   }
-
+  h2 {
+    font-family: "Segoe UI";  
+  }
   img {
     width: 50%;
     padding: 30px;
