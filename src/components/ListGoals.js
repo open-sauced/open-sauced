@@ -27,10 +27,10 @@ function ListGoals({goals}) {
           ) : (
             <EmptyPlaceholder>
               <div style={{color: "grey"}}>
-                <Octicon size="large" verticalAlign="middle" icon={getIconByName("issue-opened")} />
+                <Octicon size="large" verticalAlign="middle" icon={getIconByName("rocket")} />
               </div>
               <div className="helper">
-                No Issues found
+                No Goals created
               </div>
             </EmptyPlaceholder>
           )}
