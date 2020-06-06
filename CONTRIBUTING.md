@@ -10,8 +10,8 @@ Some thoughts to help you contribute to this project
 
 1. Always leave screenshots for visuals changes
 1. Always leave a detailed description  in the Pull Request. Leave nothing ambiguous for the reviewer. 
-1. Always review you code first. Do this by leaving comments in your coding noting questions, or interesting things for the reviewer.
-1. Always with communicate. Whether it is in the issue or the pull request, keeping the lines of communication helps everyone around you.
+1. Always review your code first. Do this by leaving comments in your coding noting questions, or interesting things for the reviewer.
+1. Always communicate. Whether it is in the issue or the pull request, keeping the lines of communication helps everyone around you.
 
 ## Setup
 
@@ -51,7 +51,7 @@ We actively welcome your pull requests.
 1. Ensure the test suite passes.
 1. Make sure you address any lint warnings.
 1. If you make the existing code better, please let us know in your PR description.
-1. A PR description and titleis required. 
+1. A PR description and title are required. 
 1. [Link to an issue](https://help.github.com/en/github/writing-on-github/autolinked-references-and-urls) in the project. Unsolicited code is welcomed, but an issue is the best place to announce your intentions to work on things.
 
 *note for maintainers: All pull requests need a label to assist automation. See the [template](https://github.com/open-sauced/open-sauced/blob/master/.github/release-drafter.yml) to guide which labels to use.*
@@ -61,7 +61,7 @@ We actively welcome your pull requests.
 If you plan to contribute a change based on an open issue, please assign your self by commenting on the following word `.take`. Issues that are not assigned are assumed open, and to avoid conflicts, please assign yourself before beginning work on any issues.  
 
 ## Community
-The [mutualfun.live](https://mutualfun.live) Twitch community can be leveraged for questions about this project. Join the conversation in the [#open-sauced channel](https://discord.gg/gZMKK5q).
+The [mutualfun.live](https://mutualfun.live) Twitch community can be leveraged for questions about this project. Join the conversation on the [#open-sauced channel](https://discord.gg/gZMKK5q).
 
 ## License
 
