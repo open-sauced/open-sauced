@@ -39,19 +39,17 @@ function NoteForm({goalId, repoName, note}) {
     setInput(e.target.value);
   };
 
-  const noteContent = input !== "" ? input : note;
-
   return !deleted ? (
     <Card>
       {!editing ? (
         <RenderedNote>
-          <ReactMarkdown className="noteContent" source={noteContent || ""} />
+          <ReactMarkdown className="noteContent" source={input || ""} />
         </RenderedNote>
       ) : (
         <NoteArea
           disabled={!editing}
           onChange={_handleNotesChange}
-          value={noteContent || ""}
+          value={input || ""}
           type="text"
           placeholder={`Type your notes for ${repoName} here...`}
           name="notes"
