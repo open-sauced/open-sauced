@@ -4,8 +4,8 @@ on:
   push:
     # branches to consider in the event; optional, defaults to all
     branches:
-      - 'release/*'
-      - 'patch/*'
+      - 'release/v0.15.0'
+      - 'patch/v0.14.3'
 
 jobs:
   update_draft_release:
