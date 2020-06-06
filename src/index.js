@@ -73,8 +73,10 @@ function Index() {
       localStorage.removeItem("oneGraph:" + Config.appId);
       // Remove the local AdminStats bar status storage
       localStorage.removeItem("adminBar");
+      // Remove the local logged in status storage
       localStorage.removeItem("isLoggedIn");
       setUser(null);
+      setIsAdmin(false);
       setLogin(false);
     });
   };
