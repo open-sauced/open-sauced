@@ -34,7 +34,7 @@ ask questions if required. No question is a bad question!
 
 There are a few cases where members can be removed as triagers:
 
-- Breaking the CoC or project contributor guidelines
+- Breaking the [CoC](/CODE_OF_CONDUCT.md) or [project contributor guidelines](/CONTRIBUTING.md)
 - Abuse or misuse of the role as deemed by the TC
 - Lack of participation for more than 6 months
 
