@@ -18,11 +18,6 @@ In all cases, issues may be closed by maintainers if they don't receive timely r
 further information is sought, or when additional questions are asked.
 
 ## Approaches and Best Practices for getting into triage contributions
-
-Review the organization's [ProjectBoard](https://github.com/open-sauced/open-sauced/projects/1),
-pay special attention to the bugs. This gives you an overview of the current bugs and features in the repository.
-Pick a few projects based on that criteria, your interests, and skills (existing or aspiring).
-
 Review the project's contribution guideline if present. In a nutshell,
 commit to the community's standards and values. Review the
 documentation, for most of the projects it is just the README.md, and
