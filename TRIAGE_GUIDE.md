@@ -9,7 +9,7 @@ classification:
 
 * `needs triage`: This can be kept if the triager is unsure which next steps to take
 * `awaiting more info`: If more info has been requested from the author, apply this label.
-* `question`: User questions which do not appear to be bugs or enahncements.
+* `question`: User questions that do not appear to be bugs or enhancements.
 * `discuss`: Topics for discussion. Might end in an `enhancement` or `question` label.
 * `bug`: Issues that present a reasonable conviction there is a reproducible bug.
 * `enhancement`: Issues that are found to be a reasonable candidate feature additions.
