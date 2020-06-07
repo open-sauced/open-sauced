@@ -71,14 +71,14 @@ function Hero({handleLogIn}) {
           <Flex className="quotes">
             <Flex className="quote">
               <img alt="open sauced" src={gucci} />
-              <span>
+              <span style={{fontSize: 18}}>
                 <q>If you don't got sauce, then you lost.</q>
                 <Flex className="author">- Gucci Mane</Flex>
               </span>
             </Flex>
             <Flex className="quote">
               <img alt="open sauced" src={bdougie} />
-              <span>
+              <span style={{fontSize: 18}}>
                 <q>Getting traction contributing to open-source is only one log in away.</q>
                 <Flex className="author">- bdougie</Flex>
               </span>
