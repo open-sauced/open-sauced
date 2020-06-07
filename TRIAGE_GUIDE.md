@@ -20,7 +20,7 @@ further information is sought, or when additional questions are asked.
 ## Approaches and Best Practices for getting into triage contributions
 
 Review the organization's [ProjectBoard](https://github.com/open-sauced/open-sauced/projects/1),
-pay special attention to the bugs. This gives you an overview of the current bugs and feature in the repository.
+pay special attention to the bugs. This gives you an overview of the current bugs and features in the repository.
 Pick a few projects based on that criteria, your interests, and skills (existing or aspiring).
 
 Review the project's contribution guideline if present. In a nutshell,
