@@ -42,6 +42,17 @@ function Index() {
         console.warn("User is not logged into GitHub");
       }
     });
+
+    window.$crisp = [];
+    window.CRISP_WEBSITE_ID = "c12c1001-d900-4cd9-8ce8-c7fa1cd6bc6f";
+
+    (function() {
+      var d = document;
+      var s = d.createElement("script");
+      s.src = "https://client.crisp.chat/l.js";
+      s.async = 1;
+      d.getElementsByTagName("head")[0].appendChild(s);
+    })();
   }, []);
 
   const _handleLogIn = () => {
