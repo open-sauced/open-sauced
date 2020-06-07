@@ -58,7 +58,7 @@ We actively welcome your pull requests.
 
 ## Issues
 
-If you plan to contribute a change based on an open issue, please assign your self by commenting on the following word `.take`. Issues that are not assigned are assumed open, and to avoid conflicts, please assign yourself before beginning work on any issues.  
+If you plan to contribute a change based on an open issue, please assign yourself by commenting on the following word `.take`. Issues that are not assigned are assumed open, and to avoid conflicts, please assign yourself before beginning work on any issues.  
 
 ### Triage Team
 The Triage team is inspired by [expressjs/express](https://github.com/expressjs/express/blob/master/Triager-Guide.md). This team exists to create a path to contributing to this project and open source. All Triage Team members are expected to follow this guide: [TRIAGE_GUIDE.md](/add-triage-doc/TRIAGE_GUIDE.md)
