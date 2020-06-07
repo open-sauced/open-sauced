@@ -3,7 +3,7 @@
 ## Issue Triage Process
 
 When a new issue or pull request is opened the issue will be labled with `needs triage`.
-If a traige team member is available they can help make sure all the required information
+If a triage team member is available they can help make sure all the required information
 is provided. Depending on the issue or PR there are several next labels they can add for further
 classification:
 
