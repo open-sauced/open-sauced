@@ -19,11 +19,10 @@ const StyledSpinner = styled.svg`
     width: 40px;
     height: 40px;
     margin: auto;
-    padding-top: 16;
     text-align: center;
     width: 100%;
     margin-top: 50px;
-    
+
     & .path {
       stroke: ${colors.saucyRed};
       stroke-linecap: round;
