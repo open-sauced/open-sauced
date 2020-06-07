@@ -18,6 +18,9 @@
   <a href="https://github.com/open-sauced/open-sauced/issues">
     <img src="https://img.shields.io/github/issues/open-sauced/open-sauced" alt="GitHub issues">
   </a>
+  <a href="https://discord.gg/gZMKK5q">
+    <img src="https://img.shields.io/discord/714698561081704529.svg?label=&logo=discord&logoColor=ffffff&color=7389D8&labelColor=6A7EC2" alt="Discord">
+  </a>
 </p>
 
 Open Sauced provides structure onboarding for new contributors to open source. This structure provides a way to track your next contributions by leveraging a unique dashboard built on top of the [GitHub GraphQL API](https://developer.github.com/v4/).
