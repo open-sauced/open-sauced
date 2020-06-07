@@ -1,4 +1,4 @@
-# Express Triager Guide
+# Open Sauced Triager Guide
 
 ## Issue Triage Process
 
