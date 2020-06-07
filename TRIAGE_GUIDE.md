@@ -14,7 +14,7 @@ classification:
 * `bug`: Issues that present a reasonable conviction there is a reproducible bug.
 * `enhancement`: Issues that are found to be a reasonable candidate feature additions.
 
-In all cases, issues may be closed by maintainers if they don't receive timely response when
+In all cases, issues may be closed by maintainers if they don't receive a timely response when
 further information is sought, or when additional questions are asked.
 
 ## Approaches and Best Practices for getting into triage contributions
