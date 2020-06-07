@@ -21,7 +21,8 @@ export const RenderedNote = styled.div`
 
   .noteContent {
     margin-bottom: ${size.small}
-    overflow: scroll;
+    overflow: auto;
+    max-height: 300px;
   }
 `;
 
