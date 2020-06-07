@@ -63,7 +63,7 @@ If you plan to contribute a change based on an open issue, please assign your se
 ### Triage Team
 The Triage team is inspired by [expressjs/express](https://github.com/expressjs/express/blob/master/Triager-Guide.md). This team exists to create a path to contributing to this project and open source. 
 
-> **There are no minimum requirements for being a member of the team.**. 
+> **There are no minimum requirements for being a member of the team.**
 
 For those interested in getting involved in the project or just open source in general, please request an invite to the Triage Team in [this discussion.](https://github.com/open-sauced/open-sauced/discussions/638) 
 
