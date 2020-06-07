@@ -18,6 +18,9 @@
   <a href="https://github.com/open-sauced/open-sauced/issues">
     <img src="https://img.shields.io/github/issues/open-sauced/open-sauced" alt="GitHub issues">
   </a>
+  <a href="https://github.com/open-sauced/open-sauced/releases">
+    <img src="https://img.shields.io/github/v/release/open-sauced/open-sauced.svg?style=flat" alt="GitHub Release">
+  </a>
   <a href="https://discord.gg/gZMKK5q">
     <img src="https://img.shields.io/discord/714698561081704529.svg?label=&logo=discord&logoColor=ffffff&color=7389D8&labelColor=6A7EC2" alt="Discord">
   </a>
