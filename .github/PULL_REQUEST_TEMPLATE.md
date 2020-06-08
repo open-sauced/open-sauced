@@ -18,7 +18,7 @@
 
 - [ ] ♻️ Refactor
 - [ ] ✨ Feature
-- [ ] 🐛Bug Fix
+- [ ] 🐛 Bug Fix
 - [ ] 👷 Optimization
 - [ ] 📝 Documentation Update
 - [ ] 🔖 Release
@@ -52,4 +52,3 @@
 
 
 ## [optional] What gif best describes this PR or how it makes you feel?
-
