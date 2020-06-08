@@ -16,12 +16,13 @@
 
 ## What type of PR is this? (check all applicable)
 
-- [ ] Refactor
-- [ ] Feature
-- [ ] Bug Fix
-- [ ] Optimization
-- [ ] Documentation Update
-- [ ] Release
+- [ ] ♻️ Refactor
+- [ ] ✨ Feature
+- [ ] 🐛 Bug Fix
+- [ ] 👷 Optimization
+- [ ] 📝 Documentation Update
+- [ ] 🔖 Release
+- [ ] 🚩 Other
 
 ## Description
 
@@ -37,18 +38,17 @@
 
 ## Added tests?
 
-- [ ] yes
-- [ ] no, because they aren't needed
-- [ ] no, because I need help
+- [ ] 👍 yes
+- [ ] 🙅 no, because they aren't needed
+- [ ] 🙋 no, because I need help
 
 ## Added to documentation?
 
-- [ ] readme
-- [ ] no documentation needed
+- [ ] 📜 readme
+- [ ] 🙅 no documentation needed
 
 ## [optional] Are there any post deployment tasks we need to perform?
 
 
 
 ## [optional] What gif best describes this PR or how it makes you feel?
-
