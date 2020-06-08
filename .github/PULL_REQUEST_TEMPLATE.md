@@ -45,7 +45,7 @@
 ## Added to documentation?
 
 - [ ] 📜 readme
-- [ ] no documentation needed
+- [ ] 🙅 no documentation needed
 
 ## [optional] Are there any post deployment tasks we need to perform?
 
