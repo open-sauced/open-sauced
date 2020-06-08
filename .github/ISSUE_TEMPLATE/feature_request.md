@@ -1,7 +1,8 @@
 ---
 name: 🚀 Feature request
-about: Suggest an idea for this project
-labels: needs-response
+about: Suggest an idea for this project 💡
+title: "Feature: "
+labels: needs-response, featurea
 ---
 
 ### Is your feature request related to a problem? Please describe.
