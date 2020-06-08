@@ -177,6 +177,7 @@ const QuoteSection = styled(Hero)`
 
   .quotes {
     margin-top: 72px;
+    padding-bottom :${size.tiny};
   }
 
   .description {
