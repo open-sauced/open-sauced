@@ -17,7 +17,7 @@ function NoteForm({goalId, repoName, note}) {
   const _handleNoteUpdate = () => {
     api
       .updateGoal(goalId, repoName, "OPEN", input)
-      .then(res => _handleToggleEditing())
+      .then(_handleToggleEditing())
       .catch(err => console.log(err));
   };
 
