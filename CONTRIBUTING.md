@@ -66,7 +66,7 @@ The Triage team is inspired by [expressjs/express](https://github.com/expressjs/
 For those interested in getting involved in the project or just open source in general, please request an invite to the Triage Team in [this discussion.](https://github.com/open-sauced/open-sauced/discussions/638) 
 
 ## Community
-The [mutualfun.live](https://mutualfun.live) Twitch community can be leveraged for questions about this project. Join the conversation on the [#open-sauced channel](https://discord.gg/gZMKK5q).
+Got Questions? Join the conversation in the [#open-sauced channel](https://discord.gg/gZMKK5q).
 
 ## License
 
