@@ -8,7 +8,7 @@ jobs:
     - name: Audit Netlify deploy preview
       uses: jakejarvis/lighthouse-action@master
       with:
-        netlify_site: 'opensauced.netlify.app'
+        netlify_site: 'open-sauced.netlify.app'
     - uses: actions/upload-artifact@master
       with:
         name: report
