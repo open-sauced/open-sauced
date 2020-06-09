@@ -24,7 +24,7 @@ function NoteForm({goalId, repoName, note}) {
   const _handleRepoDeletion = () => {
     api
       .updateGoal(goalId, repoName, "CLOSED", input)
-      .then(res => {
+      .then(() => {
         setEditing(false);
         setDeleted(true);
       })
