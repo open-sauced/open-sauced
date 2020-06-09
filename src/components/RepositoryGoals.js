@@ -61,7 +61,7 @@ function RepositoryGoals({user}) {
                 </p>
                 <small>
                   <em>
-                    <a href="https://opensource.guide/" target="_blank">
+                    <a href="https://opensource.guide/" rel="noreferrer" target="_blank">
                       Learn about about open source
                     </a>
                   </em>

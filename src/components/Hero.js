@@ -25,7 +25,7 @@ function Hero({handleLogIn}) {
           <MarketingButton primary onClick={handleLogIn}>
             Login
           </MarketingButton>
-          <a target="_blank" href="https://discord.gg/gZMKK5q">
+          <a rel="noreferrer" target="_blank" href="https://discord.gg/gZMKK5q">
             <MarketingButton>Join Discord</MarketingButton>
           </a>
         </Wrapper>
@@ -37,22 +37,22 @@ function Hero({handleLogIn}) {
               <small>Trusted By</small>
             </li>
             <li>
-              <a target="_blank" href="https://github.com/graphql/">
+              <a rel="noreferrer" target="_blank" href="https://github.com/graphql/">
                 <img alt="graphql" src={graphql} />
               </a>
             </li>
             <li>
-              <a target="_blank" href="https://github.com/vercel/next.js/">
+              <a rel="noreferrer" target="_blank" href="https://github.com/vercel/next.js/">
                 <img alt="nextjs" src={next} />
               </a>
             </li>
             <li>
-              <a target="_blank" href="https://github.com/electron/">
+              <a rel="noreferrer" target="_blank" href="https://github.com/electron/">
                 <img alt="electron" src={electron} />
               </a>
             </li>
             <li>
-              <a target="_blank" href="https://github.com/golang/">
+              <a rel="noreferrer" target="_blank" href="https://github.com/golang/">
                 <img alt="golang" src={go} />
               </a>
             </li>
