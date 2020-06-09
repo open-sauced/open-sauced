@@ -36,7 +36,7 @@ function Contributions({repoName, owner}) {
             issues &&
             issues.map(issue => (
               <li key={issue.node.id}>
-                <a rel=noreferrer target="_blank" href={issue.node.url}>
+                <a rel="noreferrer" target="_blank" href={issue.node.url}>
                   <IssuesListItem
                     type="contributions"
                     title={issue.node.title}
