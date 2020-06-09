@@ -55,7 +55,7 @@ export const App = () => (
             <SubtleLink href="#">Subscribe</SubtleLink>
           </li>
           <li>
-            <SubtleLink className="nav-link" target="_blank" href="https://github.com/open-sauced/open-sauced/issues/new">
+            <SubtleLink className="nav-link" rel="noreferrer" target="_blank" href="https://github.com/open-sauced/open-sauced/issues/new">
               Issue
             </SubtleLink>
           </li>

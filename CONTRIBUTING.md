@@ -68,6 +68,11 @@ For those interested in getting involved in the project or just open source in g
 ## Community
 The [mutualfun.live](https://mutualfun.live) Twitch community can be leveraged for questions about this project. Join the conversation on the [#open-sauced channel](https://discord.gg/gZMKK5q).
 
+## Coding Tips
+- Ask questions if you are stuck. 
+- Use [CSS variables](https://github.com/open-sauced/open-sauced/blob/master/src/styles/variables.js)
+- Always use [rel="noreferrer" on all target="_blank" links](https://web.dev/external-anchors-use-rel-noopener/). 
+
 ## License
 
 By contributing to the Open Sauced project, you agree that your contributions will be licensed

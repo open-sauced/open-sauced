@@ -25,7 +25,7 @@ function NoMatch() {
           <MarketingButton primary onClick={() => history.push("/")}>
             Back to safety
           </MarketingButton>
-          <a target="_blank" href="https://github.com/open-sauced/open-sauced/issues/new/choose">
+          <a rel="noreferrer" target="_blank" href="https://github.com/open-sauced/open-sauced/issues/new/choose">
             <MarketingButton>Click here if yes</MarketingButton>
           </a>
         </SpaceAround>

@@ -30,12 +30,12 @@ function LeftSide({deployment}) {
           <span>🌵</span>{deployment.environment}
         </li>
         <li>
-          <a href={`https://github.com/open-sauced/open-sauced/releases/tag/v${getAppVersion()}`} target="_blank">
+          <a href={`https://github.com/open-sauced/open-sauced/releases/tag/v${getAppVersion()}`} rel="noreferrer" target="_blank">
             <span>📦</span>v{getAppVersion()}
           </a>
         </li>
         <li className="no-well">
-          <a href={`https://github.com/facebook/react/releases/tag/v${React.version}`} target="_blank">
+          <a href={`https://github.com/facebook/react/releases/tag/v${React.version}`} rel="noreferrer" target="_blank">
             <span>⚛️</span> <b>React</b> v{React.version}
           </a>
         </li>
