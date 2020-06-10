@@ -31,11 +31,11 @@ function IssueListItem({title, labels, author, opened, type, participants}) {
             <div>
               {type === "issues" && <small style={{fontSize: 12}}>opened {dayjs(opened).fromNow()} by {author}</small>}
               {type === "contributions" && <small style={{fontSize: 12}}>opened {dayjs(opened).fromNow()}</small>}
-              {participants.nodes.map((user, key) => (
+              {participants && participants.nodes.map((user, key) => (
                 <img className="participants" key={key} src={user.avatarUrl} />
               ))}
               <span className="participantsCount">
-                {participants.totalCount > 5 && (participants.totalCount - 5) + "+ Participants"}
+                {participants && participants.totalCount > 5 && (participants.totalCount - 5) + "+ Participants"}
               </span>
             </div>
           </FlexColumn>
