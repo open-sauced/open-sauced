@@ -47,6 +47,7 @@ const operationsDoc = `
               participants(first: 5) {
                 totalCount
                 nodes {
+                  login
                   avatarUrl
                 }
               }
@@ -120,6 +121,7 @@ const operationsDoc = `
                 participants(first: 5) {
                   totalCount
                   nodes {
+                    login
                     avatarUrl
                   }
                 }
@@ -160,6 +162,7 @@ const operationsDoc = `
                 participants(first: 5) {
                   totalCount
                   nodes {
+                    login
                     avatarUrl
                   }
                 }
@@ -200,6 +203,7 @@ const operationsDoc = `
                 participants(first: 5) {
                   totalCount
                   nodes {
+                    login
                     avatarUrl
                   }
                 }

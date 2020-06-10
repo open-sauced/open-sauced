@@ -32,7 +32,7 @@ function IssueListItem({title, labels, author, opened, type, participants}) {
               {type === "issues" && <small style={{fontSize: 12}}>opened {dayjs(opened).fromNow()} by {author}</small>}
               {type === "contributions" && <small style={{fontSize: 12}}>opened {dayjs(opened).fromNow()}</small>}
               {participants && participants.nodes.map((user, key) => (
-                <img className="participants" key={key} src={user.avatarUrl} />
+                <img className="participants" key={key} src={user.avatarUrl} title={user.login} />
               ))}
               <span className="participantsCount">
                 {participants && participants.totalCount > 5 && (participants.totalCount - 5) + "+ Participants"}
