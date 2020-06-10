@@ -45,6 +45,7 @@ const operationsDoc = `
                 }
               }
               participants(first: 5) {
+                totalCount
                 nodes {
                   avatarUrl
                 }
@@ -117,6 +118,7 @@ const operationsDoc = `
                   }
                 }
                 participants(first: 5) {
+                  totalCount
                   nodes {
                     avatarUrl
                   }
@@ -156,6 +158,7 @@ const operationsDoc = `
                   }
                 }
                 participants(first: 5) {
+                  totalCount
                   nodes {
                     avatarUrl
                   }
@@ -195,6 +198,7 @@ const operationsDoc = `
                   }
                 }
                 participants(first: 5) {
+                  totalCount
                   nodes {
                     avatarUrl
                   }

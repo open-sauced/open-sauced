@@ -34,6 +34,9 @@ function IssueListItem({title, labels, author, opened, type, participants}) {
               {participants.nodes.map((user, key) => (
                 <img className="participants" key={key} src={user.avatarUrl} />
               ))}
+              <span className="participantsCount">
+                {participants.totalCount > 5 && (participants.totalCount - 5) + "+ Participants"}
+              </span>
             </div>
           </FlexColumn>
         </FlexCenter>

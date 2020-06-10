@@ -28,6 +28,11 @@ const Container = styled.ul`
     margin-left: 5px;
     margin-top: 5px;
   }
+
+  .participantsCount {
+    color: grey;
+    margin-left: 3px;
+  }
 `;
 
 export default Container;
