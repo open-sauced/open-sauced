@@ -29,7 +29,7 @@ const Container = styled.ul`
     margin-top: 5px;
   }
 
-  .participantsCount {
+  .issueHelper {
     color: grey;
     margin-left: 3px;
 

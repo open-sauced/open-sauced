@@ -47,6 +47,9 @@ const operationsDoc = `
               comments {
                 totalCount
               }
+              milestone {
+                title
+              }
               participants(first: 5) {
                 totalCount
                 nodes {
@@ -124,6 +127,9 @@ const operationsDoc = `
                 comments {
                   totalCount
                 }
+                milestone {
+                  title
+                }
                 participants(first: 5) {
                   totalCount
                   nodes {
@@ -168,6 +174,9 @@ const operationsDoc = `
                 comments {
                   totalCount
                 }
+                milestone {
+                  title
+                }
                 participants(first: 5) {
                   totalCount
                   nodes {
@@ -211,6 +220,9 @@ const operationsDoc = `
                 }
                 comments {
                   totalCount
+                }
+                milestone {
+                  title
                 }
                 participants(first: 5) {
                   totalCount
