@@ -44,6 +44,9 @@ const operationsDoc = `
                   }
                 }
               }
+              comments {
+                totalCount
+              }
               participants(first: 5) {
                 totalCount
                 nodes {
@@ -118,6 +121,9 @@ const operationsDoc = `
                     }
                   }
                 }
+                comments {
+                  totalCount
+                }
                 participants(first: 5) {
                   totalCount
                   nodes {
@@ -159,6 +165,9 @@ const operationsDoc = `
                     }
                   }
                 }
+                comments {
+                  totalCount
+                }
                 participants(first: 5) {
                   totalCount
                   nodes {
@@ -199,6 +208,9 @@ const operationsDoc = `
                       color
                     }
                   }
+                }
+                comments {
+                  totalCount
                 }
                 participants(first: 5) {
                   totalCount

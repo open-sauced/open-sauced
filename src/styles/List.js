@@ -32,6 +32,10 @@ const Container = styled.ul`
   .participantsCount {
     color: grey;
     margin-left: 3px;
+
+    .icon {
+      margin-top: 5px;
+    }
   }
 `;
 

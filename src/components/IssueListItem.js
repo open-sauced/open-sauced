@@ -7,7 +7,7 @@ import Octicon, {getIconByName} from "@primer/octicons-react";
 
 dayjs.extend(relativeTime);
 
-function IssueListItem({title, labels, author, opened, type, participants}) {
+function IssueListItem({title, labels, author, opened, type, participants, comments}) {
   return (
     <FlexHeader>
       <FloatLeft>
@@ -31,6 +31,10 @@ function IssueListItem({title, labels, author, opened, type, participants}) {
             <div>
               {type === "issues" && <small style={{fontSize: 12}}>opened {dayjs(opened).fromNow()} by {author}</small>}
               {type === "contributions" && <small style={{fontSize: 12}}>opened {dayjs(opened).fromNow()}</small>}
+              <span className="participantsCount">
+                <Octicon className="icon" size={13} verticalAlign="middle" icon={getIconByName("comment")} />
+                {comments && comments.totalCount}
+              </span>
               {participants && participants.nodes.map((user, key) => (
                 <img className="participants" key={key} src={user.avatarUrl} title={user.login} />
               ))}
