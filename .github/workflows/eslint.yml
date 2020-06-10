@@ -3,15 +3,15 @@ name: Lint
 on: [pull_request]
 
 jobs:
-  lint:
+  eslint:
     runs-on: ubuntu-latest
-
     steps:
-      - uses: actions/checkout@v2
-      - name: Use Node.js
-        uses: actions/setup-node@v2-beta
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
         with:
           node-version: 14
       - run: npm install
-      - run: npm install eslint -g
-      - run: eslint src/
+      - uses: tinovyatkin/action-eslint@v1
+        with:
+          repo-token: ${{secrets.GITHUB_TOKEN}}
+          check-name: eslint
