@@ -85,7 +85,7 @@ This project uses the sw-precache to kickstart an offline cache. The offline cac
 
 ## 🍕 Community
 
-The [mutualfun.live](https://mutualfun.live) community can be leveraged for questions about this project. Join the conversation in the [#open-sauced channel](https://discord.gg/gZMKK5q).
+Got Questions? Join the conversation in the [#open-sauced channel](https://discord.gg/gZMKK5q).
 
 ## ⚖️ LICENSE
 

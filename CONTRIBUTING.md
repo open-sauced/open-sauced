@@ -59,6 +59,7 @@ We actively welcome your pull requests.
 If you plan to contribute a change based on an open issue, please assign yourself by commenting on the following word `.take`. Issues that are not assigned are assumed open, and to avoid conflicts, please assign yourself before beginning work on any issues.
 
 ### Triage Team
+
 The Triage team is inspired by [expressjs/express](https://github.com/expressjs/express/blob/master/Triager-Guide.md). This team exists to create a path for making contributions to this project and open source. All Triage Team members are expected to follow this guide: [TRIAGE_GUIDE.md](/add-triage-doc/TRIAGE_GUIDE.md)
 
 > **There are no minimum requirements to become a member of the Triage Team.**
@@ -66,7 +67,8 @@ The Triage team is inspired by [expressjs/express](https://github.com/expressjs/
 For those interested in getting involved in the project or just open source in general, please request an invite to the Triage Team in [this discussion.](https://github.com/open-sauced/open-sauced/discussions/638) 
 
 ## Community
-The [mutualfun.live](https://mutualfun.live) Twitch community can be leveraged for questions about this project. Join the conversation on the [#open-sauced channel](https://discord.gg/gZMKK5q).
+
+Got Questions? Join the conversation in the [#open-sauced channel](https://discord.gg/gZMKK5q).
 
 ## Coding Tips
 - Ask questions if you are stuck. 
