@@ -74,6 +74,7 @@ function Issues({repoName, owner}) {
                     labels={issue.node.labels}
                     author={issue.node.author.login}
                     opened={issue.node.createdAt}
+                    participants={issue.node.participants}
                   />
                 </a>
               </li>
