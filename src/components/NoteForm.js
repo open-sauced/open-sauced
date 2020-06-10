@@ -17,14 +17,14 @@ function NoteForm({goalId, repoName, note}) {
   const _handleNoteUpdate = () => {
     api
       .updateGoal(goalId, repoName, "OPEN", input)
-      .then(res => _handleToggleEditing())
+      .then(_handleToggleEditing())
       .catch(err => console.log(err));
   };
 
   const _handleRepoDeletion = () => {
     api
       .updateGoal(goalId, repoName, "CLOSED", input)
-      .then(res => {
+      .then(() => {
         setEditing(false);
         setDeleted(true);
       })
