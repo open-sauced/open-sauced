@@ -50,7 +50,7 @@ const operationsDoc = `
               milestone {
                 title
               }
-              participants(first: 5) {
+              participants(first: 3) {
                 totalCount
                 nodes {
                   login
@@ -130,7 +130,7 @@ const operationsDoc = `
                 milestone {
                   title
                 }
-                participants(first: 5) {
+                participants(first: 3) {
                   totalCount
                   nodes {
                     login
@@ -177,7 +177,7 @@ const operationsDoc = `
                 milestone {
                   title
                 }
-                participants(first: 5) {
+                participants(first: 3) {
                   totalCount
                   nodes {
                     login
@@ -224,7 +224,7 @@ const operationsDoc = `
                 milestone {
                   title
                 }
-                participants(first: 5) {
+                participants(first: 3) {
                   totalCount
                   nodes {
                     login
