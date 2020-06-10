@@ -10,7 +10,7 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 14
-      - run: npm install
+      - run: npm ci --no-audit --prefer-offline
       - uses: tinovyatkin/action-eslint@v1
         with:
           repo-token: ${{secrets.GITHUB_TOKEN}}
