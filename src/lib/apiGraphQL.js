@@ -155,6 +155,11 @@ const operationsDoc = `
                     }
                   }
                 }
+                participants(first: 5) {
+                  nodes {
+                    avatarUrl
+                  }
+                }
                 createdAt
               }
             }
@@ -187,6 +192,11 @@ const operationsDoc = `
                       name
                       color
                     }
+                  }
+                }
+                participants(first: 5) {
+                  nodes {
+                    avatarUrl
                   }
                 }
                 createdAt
