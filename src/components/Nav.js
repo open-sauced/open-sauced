@@ -36,6 +36,7 @@ function LeftSide({isLoggedIn, user, handleLogIn, handleLogOut}) {
             <SubtleLink
               className="nav-link"
               target="_blank"
+              rel="noreferrer"
               href="https://github.com/open-sauced/open-sauced/issues/new/choose">
               Issue
             </SubtleLink>
