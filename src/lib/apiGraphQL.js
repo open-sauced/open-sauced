@@ -81,6 +81,13 @@ const operationsDoc = `
           stargazers {
             totalCount
           }
+          languages(first: 3) {
+            totalCount
+            nodes {
+              name
+              color
+            }
+          }
         }
       }
     }
