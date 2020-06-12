@@ -45,7 +45,7 @@ function IssueListItem({title, labels, author, opened, type, participants, comme
                 <img className="participants" key={key} src={user.avatarUrl} title={user.login} />
               ))}
               <span className="issueHelper">
-                {participants && participants.totalCount > 3 && (participants.totalCount - 3) + "+ Participants"}
+                {participants && participants.totalCount > 3 && "+" + participants.totalCount - 3 + " Participants"}
               </span>
             </div>
           </FlexColumn>
