@@ -216,7 +216,7 @@ const DetailsSection = styled(Hero)`
     text-align: left;
   }
   img {
-    float: left;
+    align-self: flex-start;
     margin-right: 20px;
     min-width: 30px;
     ${MEDIA.TABLET`
