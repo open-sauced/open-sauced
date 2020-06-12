@@ -91,7 +91,7 @@ function Repository({match}) {
                 </span>
               ))}
               <span style={{color: "grey"}}>
-                {repository && repository.languages.totalCount > 3 && repository.languages.totalCount - 3 + "+ languages"}
+                {repository && repository.languages.totalCount > 3 && "+" + repository.languages.totalCount - 3 + " languages"}
               </span>
             </div>
           </div>
