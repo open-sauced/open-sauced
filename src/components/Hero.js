@@ -5,7 +5,7 @@ import {Wrapper, PizzaPosition, TopHero, SubHero, TrustSection, QuoteSection, De
 import {gucci, go, graphql, electron, next, sauceFull, bdougie} from "../images";
 import {logo1 as logo} from "../logos";
 import {archive, mortarBoard, watch, squirrel} from "../icons";
-import {Flex, FlexColumn, FloatLeft, FloatRight} from "../styles/Grid";
+import {Flex, FlexColumn, GridColumns} from "../styles/Grid";
 
 function Hero({handleLogIn}) {
   return (
@@ -88,49 +88,45 @@ function Hero({handleLogIn}) {
       </QuoteSection>
       <DetailsSection>
         <Wrapper>
-          <Flex>
-            <FloatLeft>
-              <Flex className="detail">
-                <img alt="open sauced" src={archive} />
-                <FlexColumn className="copy">
-                  <h2>Contributor issue tracking and triaging</h2>
-                  <p>
-                    Working on good-first-issues has never been easier. Create and track your contribution wishlist all
-                    in one dashboard.
-                  </p>
-                </FlexColumn>
-              </Flex>
-              <Flex className="detail">
-                <img alt="open sauced" src={mortarBoard} />
-                <FlexColumn className="copy">
-                  <h2>Structured onboarding for new contributors</h2>
-                  <p>
-                    Starting a new contribution is challenging when there is no guide. Easily find projects with
-                    structured contributor onboarding.
-                  </p>
-                </FlexColumn>
-              </Flex>
-            </FloatLeft>
-            <FloatRight>
-              <Flex className="detail">
-                <img alt="open sauced" src={watch} />
-                <FlexColumn className="copy">
-                  <h2>Scheduled reminders</h2>
-                  <p>Get notified when the contributions you are following change status or are closed.</p>
-                </FlexColumn>
-              </Flex>
-              <Flex className="detail">
-                <img alt="open sauced" src={squirrel} />
-                <FlexColumn className="copy">
-                  <h2>Find community and mentorship from approved projects</h2>
-                  <p>
-                    No more guessing what issues are ups for grabs. Through mentorship and community you will be first
-                    to know what issues are ups-for-grabs.
-                  </p>
-                </FlexColumn>
-              </Flex>
-            </FloatRight>
-          </Flex>
+          <GridColumns columns={2}>
+            <Flex className="detail">
+              <img alt="open sauced" src={archive} />
+              <FlexColumn className="copy">
+                <h2>Contributor issue tracking and triaging</h2>
+                <p>
+                  Working on good-first-issues has never been easier. Create and track your contribution wishlist all
+                  in one dashboard.
+                </p>
+              </FlexColumn>
+            </Flex>
+            <Flex className="detail">
+              <img alt="open sauced" src={mortarBoard} />
+              <FlexColumn className="copy">
+                <h2>Structured onboarding for new contributors</h2>
+                <p>
+                  Starting a new contribution is challenging when there is no guide. Easily find projects with
+                  structured contributor onboarding.
+                </p>
+              </FlexColumn>
+            </Flex>
+            <Flex className="detail">
+              <img alt="open sauced" src={watch} />
+              <FlexColumn className="copy">
+                <h2>Scheduled reminders</h2>
+                <p>Get notified when the contributions you are following change status or are closed.</p>
+              </FlexColumn>
+            </Flex>
+            <Flex className="detail">
+              <img alt="open sauced" src={squirrel} />
+              <FlexColumn className="copy">
+                <h2>Find community and mentorship from approved projects</h2>
+                <p>
+                  No more guessing what issues are ups for grabs. Through mentorship and community you will be first
+                  to know what issues are ups-for-grabs.
+                </p>
+              </FlexColumn>
+            </Flex>
+          </GridColumns>
         </Wrapper>
       </DetailsSection>
     </React.Fragment>
