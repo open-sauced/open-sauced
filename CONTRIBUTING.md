@@ -8,7 +8,7 @@ Some thoughts to help you contribute to this project
 ## Recommended Communication Style
 
 1. Always leave screenshots for visuals changes
-1. Always leave a detailed description  in the Pull Request. Leave nothing ambiguous for the reviewer.
+1. Always leave a detailed description in the Pull Request. Leave nothing ambiguous for the reviewer.
 1. Always review your code first. Do this by leaving comments in your coding noting questions, or interesting things for the reviewer.
 1. Always communicate. Whether it is in the issue or the pull request, keeping the lines of communication helps everyone around you.
 
@@ -33,10 +33,6 @@ $ npm run build
 $ npm run test
 ```
 
-```sh
-$ npm run lint
-```
-
 ## Pull Requests
 
 We actively welcome your pull requests.
@@ -45,7 +41,7 @@ We actively welcome your pull requests.
 1. Name your branch something that is descriptive to the work you are doing. i.e. adds-new-thing or fixes-modbile-render
 1. If you've added code that should be tested, add tests.
 1. If you've changed APIs, update the documentation.
-1. If you make visual changes, screenshots are requiremed
+1. If you make visual changes, screenshots are required.
 1. Ensure the test suite passes.
 1. Make sure you address any lint warnings.
 1. If you make the existing code better, please let us know in your PR description.
