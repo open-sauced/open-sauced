@@ -208,6 +208,13 @@ const operationsDoc = `
       viewer {
         repository(name: "open-sauced-goals") {
           id
+          object(expression: "master:data.json") {
+            id
+            ... on GitHubBlob {
+              id
+              text
+            }
+          }
           issues(
             first: 10
             states: OPEN
