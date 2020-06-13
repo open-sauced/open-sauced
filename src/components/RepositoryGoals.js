@@ -45,6 +45,8 @@ function RepositoryGoals({user}) {
     dispatch({type: "UPDATE", payload: updatedRepos});
   };
 
+  const data = repository.data && JSON.parse(repository.data.text)
+
   return (
     <section>
       {repository && repository.issues ? (
@@ -72,7 +74,7 @@ function RepositoryGoals({user}) {
           </ContextStyle>
           <Cards fitted>
             <AddRepoForm goalsId={goalsId} onGoalAdded={onGoalAdded} />
-            <ListGoals data={JSON.parse(repository.data.text)} goals={repository.issues} />
+            <ListGoals data={data} goals={repository.issues} />
           </Cards>
         </React.Fragment>
       ) : (
