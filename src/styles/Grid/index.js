@@ -1,4 +1,14 @@
-import {Flex, FlexStart, FlexColumnCenter, FlexColumn, FlexCenter, FlexHeader, SpaceAround, SpaceBetween} from "./Flex";
+import {
+  Flex,
+  FlexEnd,
+  FlexStart,
+  FlexColumnCenter,
+  FlexColumn,
+  FlexCenter,
+  FlexHeader,
+  SpaceAround,
+  SpaceBetween,
+} from "./Flex";
 import IssuesColumn from "./IssuesColumn";
 import FormColumn from "./FormColumn";
 import {FloatLeftMobileNav, FloatRight, FloatLeft} from "./Float";
@@ -10,6 +20,7 @@ export {
   Flex,
   FlexColumnCenter,
   FlexStart,
+  FlexEnd,
   FlexColumn,
   FlexCenter,
   FlexHeader,
@@ -18,5 +29,5 @@ export {
   FloatLeft,
   FloatRight,
   FloatLeftMobileNav,
-  GridColumns
+  GridColumns,
 };

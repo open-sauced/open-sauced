@@ -72,7 +72,7 @@ function RepositoryGoals({user}) {
           </ContextStyle>
           <Cards fitted>
             <AddRepoForm goalsId={goalsId} onGoalAdded={onGoalAdded} />
-            <ListGoals goals={repository.issues} />
+            <ListGoals data={JSON.parse(repository.data.text)} goals={repository.issues} />
           </Cards>
         </React.Fragment>
       ) : (

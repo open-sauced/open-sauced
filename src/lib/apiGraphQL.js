@@ -208,7 +208,7 @@ const operationsDoc = `
       viewer {
         repository(name: "open-sauced-goals") {
           id
-          object(expression: "master:data.json") {
+          data: object(expression: "master:data.json") {
             id
             ... on GitHubBlob {
               id
@@ -223,7 +223,7 @@ const operationsDoc = `
             totalCount
             nodes {
               id
-              title
+              full_name: title
               body
               number
               labels(first: 3) {
