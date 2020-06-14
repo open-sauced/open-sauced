@@ -64,7 +64,7 @@ function Repository({match}) {
       {error && <ErrorMessage>{error}</ErrorMessage>}
       <ContextStyle>
         <SpaceBetween>
-          <div className="context-div">
+          <div>
             <a style={{textDecoration: "none"}} href={url} rel="noreferrer" target="_blank">
               {nameWithOwner ? (
                 <h1>{nameWithOwner}</h1>
