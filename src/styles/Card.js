@@ -114,6 +114,12 @@ const ContextStyle = styled(Card)`
 
   .languages {
     margin-top: 20px;
+    
+    .dot {
+      font-size: 25px;
+      margin: 0;
+      vertical-align: sub;
+    }
   }
 `;
 
