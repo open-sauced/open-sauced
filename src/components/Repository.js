@@ -83,10 +83,10 @@ function Repository({match}) {
                 </a>
               </em>
             </small>
-            <div style={{marginTop: 20}}>
+            <div className="languages">
               {repository && repository.languages.nodes.map((language, key) => (
                 <span key={key}>
-                  <span style={{color: language.color, fontSize: 25, margin: 0, verticalAlign: "middle"}}>•</span>
+                  <span className="dot" style={{color: language.color, fontSize: 25, margin: 0, verticalAlign: "middle"}}>•</span>
                   <span style={{color: "black"}}>{language.name}</span>
                 </span>
               ))}
