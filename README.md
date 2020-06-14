@@ -85,7 +85,7 @@ This project uses the sw-precache to kickstart an offline cache. The offline cac
 
 ## 🍕 Community
 
-Got Questions? Join the conversation in the [#open-sauced channel](https://discord.gg/gZMKK5q).
+Got Questions? Join the conversation in our [Discord](https://discord.gg/gZMKK5q).
 
 ## ⚖️ LICENSE
 

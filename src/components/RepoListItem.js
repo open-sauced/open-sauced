@@ -15,7 +15,9 @@ function RepoListItem({goal, stars}) {
             <p>{goal.title.replace(/\s+/g, "")}</p>
             {stars && (
               <FlexStart>
-                <Octicon alt="star" verticalAlign="middle" icon={getIconByName("star")} />
+                <div>
+                  <Octicon alt="star" verticalAlign="middle" icon={getIconByName("star")} />
+                </div>
                 <p>{stars}</p>
               </FlexStart>
             )}
