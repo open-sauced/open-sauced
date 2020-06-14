@@ -64,7 +64,7 @@ For those interested in getting involved in the project or just open source in g
 
 ## Community
 
-Got Questions? Join the conversation in the [#open-sauced channel](https://discord.gg/gZMKK5q).
+Got Questions? Join the conversation in our [Discord](https://discord.gg/gZMKK5q).
 
 ## Coding Tips
 - Ask questions if you are stuck. 
