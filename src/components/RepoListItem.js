@@ -1,6 +1,6 @@
 import React from "react";
 import Label from "../styles/Label";
-import {FlexStart, FloatRight, FloatLeft, FlexColumn, FlexHeader, FlexCenter} from "../styles/Grid";
+import {FlexStart, FloatRight, FloatLeft, FlexColumn, FlexHeader, FlexCenter, Star} from "../styles/Grid";
 import Octicon, {getIconByName} from "@primer/octicons-react";
 import Avatar from "../styles/Avatar";
 import {chevronRight} from "../icons";
@@ -15,7 +15,9 @@ function RepoListItem({goal, stars}) {
             <p>{goal.title.replace(/\s+/g, "")}</p>
             {stars && (
               <FlexStart>
-                <Octicon alt="star" verticalAlign="middle" icon={getIconByName("star")} />
+                <Star>
+                  <Octicon alt="star" verticalAlign="middle" icon={getIconByName("star")} />
+                </Star>
                 <p>{stars}</p>
               </FlexStart>
             )}
