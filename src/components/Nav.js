@@ -23,7 +23,7 @@ function LeftSide({isLoggedIn, user, handleLogIn, handleLogOut}) {
       </Link>
       <ul>
         <li>
-          <SubtleLink href="https://dev.to/t/opensauced">Blog</SubtleLink>
+          <SubtleLink href="https://dev.to/opensauced">Blog</SubtleLink>
         </li>
         <li>
           <SubtleLink href="https://github.com/open-sauced/open-sauced">GitHub</SubtleLink>
