@@ -87,10 +87,10 @@ function Repository({match}) {
               {repository && repository.languages.nodes.map((language, key) => (
                 <span key={key}>
                   <span className="dot"  style={{color: language.color}}>•</span>
-                  <span style={{color: "black"}}>{language.name}</span>
+                  <span className="name">{language.name}</span>
                 </span>
               ))}
-              <span style={{color: "grey"}}>
+              <span className="more">
                 {repository && repository.languages.totalCount > 3 && `+${repository.languages.totalCount - 3} languages`}
               </span>
             </div>
