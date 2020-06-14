@@ -13,8 +13,10 @@ function RepoListItem({goal, stars}) {
           <FlexColumn className="details">
             <p>{goal.full_name.replace(/\s+/g, "")}</p>
             {stars && (
-              <FlexStart className="stars">
-                <Octicon alt="star" verticalAlign="middle" icon={getIconByName("star")} />
+              <FlexStart>
+                <div>
+                  <Octicon alt="star" verticalAlign="middle" icon={getIconByName("star")} />
+                </div>
                 <p>{stars}</p>
               </FlexStart>
             )}
