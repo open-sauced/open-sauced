@@ -1,5 +1,9 @@
 # Open Sauced Triager Guide
 
+## How do I Join the Triage Team?
+1. Sign up for [opensauced.pizza](https://opensauced.pizza)
+2. Leave a reply in the [invite discussion](https://github.com/open-sauced/open-sauced/discussions/638).
+
 ## Issue Triage Process
 
 When a new issue or pull request is opened the issue will be labeled with `needs triage`. If a triage team member is available they can help make sure all the required information is provided. Depending on the issue or PR there are several next labels they can add for further classification:
