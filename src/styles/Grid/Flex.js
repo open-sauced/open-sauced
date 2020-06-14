@@ -11,10 +11,6 @@ const Flex = styled.div`
 const FlexCenter = styled.div`
   display: flex;
   align-items: center;
-
-  .stars {
-    align-items: flex-end !important;
-  }
 `;
 
 const FlexHeader = styled(FlexCenter)`
@@ -28,10 +24,6 @@ const FlexColumnCenter = styled(FlexCenter)`
 const FlexColumn = styled.div`
   display: flex;
   flex-direction: column;
-`;
-
-const FlexEnd = styled(FlexCenter)`
-  justify-content: flex-end;
 `;
 
 const FlexStart = styled(FlexCenter)`
@@ -61,7 +53,6 @@ export {
   SpaceAround,
   SpaceBetween,
   FlexColumnCenter,
-  FlexEnd,
   FlexStart,
   FlexCenter,
   FlexColumn,

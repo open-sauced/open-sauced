@@ -1,6 +1,5 @@
 import {
   Flex,
-  FlexEnd,
   FlexStart,
   FlexColumnCenter,
   FlexColumn,
@@ -20,7 +19,6 @@ export {
   Flex,
   FlexColumnCenter,
   FlexStart,
-  FlexEnd,
   FlexColumn,
   FlexCenter,
   FlexHeader,
