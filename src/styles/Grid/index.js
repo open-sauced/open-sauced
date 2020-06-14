@@ -18,5 +18,5 @@ export {
   FloatLeft,
   FloatRight,
   FloatLeftMobileNav,
-  GridColumns,
+  GridColumns
 };
