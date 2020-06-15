@@ -24,6 +24,7 @@
     "case-sensitive-paths-webpack-plugin": "2.3.0",
     "chalk": "4.0.0",
     "connect-history-api-fallback": "1.6.0",
+    "cross-env": "^7.0.2",
     "cross-spawn": "7.0.1",
     "css-loader": "^3.2.0",
     "detect-port": "1.3.0",
@@ -45,6 +46,7 @@
     "gzip-size": "5.1.1",
     "html-webpack-plugin": "^4.3.0",
     "http-proxy-middleware": "1.0.3",
+    "husky": "^4.2.5",
     "jest": "24.9.0",
     "jest-axe": "^3.4.0",
     "jest-localstorage-mock": "^2.4.0",
@@ -108,7 +110,13 @@
     "clean": "rimraf src/tests/__snapshots__/",
     "test": "npm run clean && node scripts/test.js --env=jsdom --updateSnapshot",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "lint": "eslint src/components src/containers src/lib"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint"
+    }
   },
   "jest": {
     "moduleFileExtensions": [

@@ -1,4 +1,4 @@
-import {goalsReducer, usePersistentStateReducer} from "../lib/reducers";
+import {goalsReducer} from "../lib/reducers";
 import {data} from "../tests/mocks";
 
 const state = {data};
