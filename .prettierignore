@@ -1,0 +1,7 @@
+.github
+.netlify
+.storybook
+public
+env/
+*.md
+.gitignore
