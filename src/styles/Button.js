@@ -1,17 +1,17 @@
-import styled from "styled-components";
-import {borderRadius, colors, size} from "./variables";
+import styled from 'styled-components';
+import { borderRadius, colors, size } from './variables';
 
 const Button = styled.button`
   background: ${props => {
     return props.primary ? colors.saucyRed : colors.offWhite;
   }};
   border: ${props => {
-    return props.primary ? "none" : `2px solid ${colors.offWhite}`;
+    return props.primary ? 'none' : `2px solid ${colors.offWhite}`;
   }};
   border-radius: ${borderRadius};
-  box-shadow: 0 1px 2px 0 #33160F;
+  box-shadow: 0 1px 2px 0 #33160f;
   color: ${props => {
-    return props.primary ? "white" : "#664E48";
+    return props.primary ? 'white' : '#664E48';
   }};
   cursor: pointer;
   font-size: ${size.tiny};
@@ -22,14 +22,14 @@ const Button = styled.button`
   margin-right: ${size.micro};
   outline: none;
   padding: ${props => {
-    return props.primary ? "19px" : size.tiny;
+    return props.primary ? '19px' : size.tiny;
   }};
   transition: background 0.2s ease;
 
   &:hover {
     background: ${props => {
-    return props.primary ? colors.saucyRed : colors.lighestGrey;
-  }};
+      return props.primary ? colors.saucyRed : colors.lighestGrey;
+    }};
 
     color: ${colors.lighterGrey};
     transition: background 0.9s ease, linear;

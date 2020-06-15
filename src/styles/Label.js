@@ -1,6 +1,6 @@
-import styled from "styled-components";
-import {borderRadius, colors} from "./variables";
-import MEDIA from "./mediaTemplates";
+import styled from 'styled-components';
+import { borderRadius, colors } from './variables';
+import MEDIA from './mediaTemplates';
 
 const Label = styled.p`
   border: ${colors.lighterGrey} solid 2px;
@@ -11,7 +11,6 @@ const Label = styled.p`
   ${MEDIA.TABLET`
     display: none;
   `};
-
 `;
 
 export default Label;

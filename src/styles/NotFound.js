@@ -1,14 +1,12 @@
-import styled from "styled-components";
-import MEDIA from "./mediaTemplates";
-import {padding, colors} from "./variables";
+import styled from 'styled-components';
+import MEDIA from './mediaTemplates';
+import { padding, colors } from './variables';
 
 const NotFound = styled.section`
   text-align: center;
   margin: auto;
   padding: ${padding.sides};
-  color: ${colors.lightGrey}
-
-  h1 {
+  color: ${colors.lightGrey} h1 {
     font-size: 1rem;
   }
 
@@ -23,4 +21,4 @@ const NotFound = styled.section`
   }
 `;
 
-export {NotFound};
+export { NotFound };

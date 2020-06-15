@@ -1,11 +1,11 @@
-import useSWR, {mutate} from "swr";
-import api from "./apiGraphQL";
+import useSWR, { mutate } from 'swr';
+import api from './apiGraphQL';
 
 export function usePersistedState(bucket) {
   const query = queryMap[bucket];
-  const {data, error} = useSWR(bucket, query, {suspense: true});
+  const { data, error } = useSWR(bucket, query, { suspense: true });
 
-  const state = {...data, error};
+  const state = { ...data, error };
 
   const setState = value => {
     try {

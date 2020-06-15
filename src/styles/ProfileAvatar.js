@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import {borderRadius} from "./variables";
+import styled from 'styled-components';
+import { borderRadius } from './variables';
 
 const ProfileAvatar = styled.img`
   object-fit: cover;

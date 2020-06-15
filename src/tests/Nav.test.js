@@ -1,9 +1,9 @@
-import React from "react";
-import {Router} from "react-router-dom";
-import "@testing-library/jest-dom/extend-expect";
-import {render, cleanup} from "@testing-library/react";
-import Nav from "../components/Nav";
-import {axe, toHaveNoViolations} from "jest-axe";
+import React from 'react';
+import { Router } from 'react-router-dom';
+import '@testing-library/jest-dom/extend-expect';
+import { render, cleanup } from '@testing-library/react';
+import Nav from '../components/Nav';
+import { axe, toHaveNoViolations } from 'jest-axe';
 expect.extend(toHaveNoViolations);
 
 jest.mock('react-router-dom', () => {
@@ -18,11 +18,11 @@ jest.mock('react-router-dom', () => {
   };
 });
 
-// TODO: Skipped until React.Suspense + zeit/swr is testable 
+// TODO: Skipped until React.Suspense + zeit/swr is testable
 // https://github.com/open-sauced/open-sauced/discussions/408
-test.skip("container component should have no violations", async () => {
+test.skip('container component should have no violations', async () => {
   const history = createMemoryHistory();
-  const {container} = render(<Nav />);
+  const { container } = render(<Nav />);
   const results = await axe(container);
   expect(results).toHaveNoViolations();
 
@@ -30,13 +30,13 @@ test.skip("container component should have no violations", async () => {
 });
 
 test.skip('renders a "Login" link', () => {
-  const {getByText} = render(<Nav />);
-  const link = getByText("Login");
-  expect(link).toHaveAttribute("alt");
+  const { getByText } = render(<Nav />);
+  const link = getByText('Login');
+  expect(link).toHaveAttribute('alt');
 });
 
 test.skip('renders a "Logout" link with user present', () => {
-  const {getByText} = render(<Nav user={{login: "me"}} />);
-  const link = getByText("Logout");
-  expect(link).toHaveAttribute("alt");
+  const { getByText } = render(<Nav user={{ login: 'me' }} />);
+  const link = getByText('Logout');
+  expect(link).toHaveAttribute('alt');
 });

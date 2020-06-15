@@ -1,6 +1,6 @@
-import styled from "styled-components";
-import {size} from "../variables";
-import MEDIA from "../mediaTemplates";
+import styled from 'styled-components';
+import { size } from '../variables';
+import MEDIA from '../mediaTemplates';
 
 const IssuesColumn = styled.div`
   flex: 2;

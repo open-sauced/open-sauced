@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import {size, borderRadius, colors} from "./variables";
+import styled from 'styled-components';
+import { size, borderRadius, colors } from './variables';
 
 const Container = styled.input`
   border-radius: ${borderRadius};

@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import MEDIA from "../mediaTemplates";
+import styled from 'styled-components';
+import MEDIA from '../mediaTemplates';
 
 const FloatLeft = styled.div`
   float: left;
@@ -14,11 +14,10 @@ const FloatLeftMobileNav = styled.div`
     justify-content: space-between;
     align-items: center;
   `};
-
 `;
 
 const FloatRight = styled.div`
   float: right;
 `;
 
-export {FloatRight, FloatLeft, FloatLeftMobileNav};
+export { FloatRight, FloatLeft, FloatLeftMobileNav };

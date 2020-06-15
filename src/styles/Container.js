@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import MEDIA from "./mediaTemplates";
+import styled from 'styled-components';
+import MEDIA from './mediaTemplates';
 
 export const Container = styled.div`
   padding: 2rem 4rem;

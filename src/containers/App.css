@@ -119,7 +119,7 @@ input.urlForm {
     &::before,
     &::after {
       background: var(--green);
-      content: " ";
+      content: ' ';
       height: 1px;
       position: absolute;
       bottom: 0;

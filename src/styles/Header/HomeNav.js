@@ -1,6 +1,6 @@
-import styled from "styled-components";
-import {size, colors} from "../variables";
-import MEDIA from "../mediaTemplates";
+import styled from 'styled-components';
+import { size, colors } from '../variables';
+import MEDIA from '../mediaTemplates';
 
 const Container = styled.nav`
   display: flex;

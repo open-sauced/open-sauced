@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import {colors} from "./variables";
+import styled from 'styled-components';
+import { colors } from './variables';
 
 const Container = styled.ul`
   list-style: none;

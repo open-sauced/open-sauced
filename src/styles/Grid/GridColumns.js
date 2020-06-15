@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import MEDIA from "../mediaTemplates";
+import styled from 'styled-components';
+import MEDIA from '../mediaTemplates';
 
 const GridColumns = styled.div`
   display: grid;

@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import MEDIA from "../mediaTemplates";
+import styled from 'styled-components';
+import MEDIA from '../mediaTemplates';
 
 const Flex = styled.div`
   display: flex;
@@ -54,4 +54,13 @@ const SpaceBetween = styled.div`
   `};
 `;
 
-export {Flex, SpaceAround, SpaceBetween, FlexColumnCenter, FlexStart, FlexCenter, FlexColumn, FlexHeader};
+export {
+  Flex,
+  SpaceAround,
+  SpaceBetween,
+  FlexColumnCenter,
+  FlexStart,
+  FlexCenter,
+  FlexColumn,
+  FlexHeader,
+};

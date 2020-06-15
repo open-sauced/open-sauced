@@ -1,24 +1,24 @@
-import React, {useState} from "react";
-import {logo1 as logo} from "../logos";
-import {FloatLeftMobileNav, FloatRight} from "../styles/Grid";
-import {SubtleLink} from "../styles/Typography";
-import {AppNav, HomeNav} from "../styles/Header";
-import {SpaceBetween} from "../styles/Grid";
-import ProfileAvatar from "../styles/ProfileAvatar";
-import AdminStatsBar from "./AdminStatsBar";
-import Hotkeys from "react-hot-keys";
-import {useHistory, Link} from "react-router-dom";
+import React, { useState } from 'react';
+import { logo1 as logo } from '../logos';
+import { FloatLeftMobileNav, FloatRight } from '../styles/Grid';
+import { SubtleLink } from '../styles/Typography';
+import { AppNav, HomeNav } from '../styles/Header';
+import { SpaceBetween } from '../styles/Grid';
+import ProfileAvatar from '../styles/ProfileAvatar';
+import AdminStatsBar from './AdminStatsBar';
+import Hotkeys from 'react-hot-keys';
+import { useHistory, Link } from 'react-router-dom';
 
-function LeftSide({isLoggedIn, user, handleLogIn, handleLogOut}) {
+function LeftSide({ isLoggedIn, user, handleLogIn, handleLogOut }) {
   const history = useHistory();
   const _logOutRedirect = () => {
     handleLogOut();
-    history.push("/");
+    history.push('/');
   };
 
   return (
     <FloatLeftMobileNav>
-      <Link style={{verticalAlign: "middle"}} to="/">
+      <Link style={{ verticalAlign: 'middle' }} to="/">
         <img alt="open sauced" src={logo} />
       </Link>
       <ul>
@@ -26,7 +26,9 @@ function LeftSide({isLoggedIn, user, handleLogIn, handleLogOut}) {
           <SubtleLink href="https://dev.to/opensauced">Blog</SubtleLink>
         </li>
         <li>
-          <SubtleLink href="https://github.com/open-sauced/open-sauced">GitHub</SubtleLink>
+          <SubtleLink href="https://github.com/open-sauced/open-sauced">
+            GitHub
+          </SubtleLink>
         </li>
         <li>
           <SubtleLink href="https://discord.gg/gZMKK5q">Discord</SubtleLink>
@@ -37,7 +39,8 @@ function LeftSide({isLoggedIn, user, handleLogIn, handleLogOut}) {
               className="nav-link"
               target="_blank"
               rel="noreferrer"
-              href="https://github.com/open-sauced/open-sauced/issues/new/choose">
+              href="https://github.com/open-sauced/open-sauced/issues/new/choose"
+            >
               Issue
             </SubtleLink>
           </li>
@@ -45,11 +48,15 @@ function LeftSide({isLoggedIn, user, handleLogIn, handleLogOut}) {
         <li>
           {isLoggedIn ? (
             <div>
-              <SubtleLink alt="log in" onClick={_logOutRedirect}>Logout</SubtleLink>
+              <SubtleLink alt="log in" onClick={_logOutRedirect}>
+                Logout
+              </SubtleLink>
             </div>
           ) : (
             <div>
-              <SubtleLink alt="log out" onClick={handleLogIn}>Login</SubtleLink>
+              <SubtleLink alt="log out" onClick={handleLogIn}>
+                Login
+              </SubtleLink>
             </div>
           )}
         </li>
@@ -58,13 +65,20 @@ function LeftSide({isLoggedIn, user, handleLogIn, handleLogOut}) {
   );
 }
 
-function RightSide({user}) {
+function RightSide({ user }) {
   return (
     <FloatRight>
       <SpaceBetween>
         {user && (
-          <SubtleLink alt="user login name" className="nav-link" href={`https://github.com/${user.login}`}>
-            <ProfileAvatar alt="avatar" src={`https://github.com/${user.login}.png`} />
+          <SubtleLink
+            alt="user login name"
+            className="nav-link"
+            href={`https://github.com/${user.login}`}
+          >
+            <ProfileAvatar
+              alt="avatar"
+              src={`https://github.com/${user.login}.png`}
+            />
           </SubtleLink>
         )}
       </SpaceBetween>
@@ -72,27 +86,31 @@ function RightSide({user}) {
   );
 }
 
-function Header({user, handleLogOut, handleLogIn, isAdmin, isLoggedIn}) {
-  const [adminBar, setAdminBar] = useState(localStorage.getItem("adminBar") === "true");
+function Header({ user, handleLogOut, handleLogIn, isAdmin, isLoggedIn }) {
+  const [adminBar, setAdminBar] = useState(
+    localStorage.getItem('adminBar') === 'true',
+  );
   const Nav = isLoggedIn ? AppNav : HomeNav;
 
   const onKeyUp = () => {
-    localStorage.setItem("adminBar", !adminBar);
+    localStorage.setItem('adminBar', !adminBar);
     setAdminBar(!adminBar);
   };
 
   return (
     <div>
       {isAdmin && (
-        <Hotkeys
-          keyName="`"
-          onKeyUp={(e) => onKeyUp(e)}
-        >
+        <Hotkeys keyName="`" onKeyUp={e => onKeyUp(e)}>
           {adminBar && <AdminStatsBar />}
         </Hotkeys>
       )}
       <Nav>
-        <LeftSide handleLogOut={handleLogOut} handleLogIn={handleLogIn} isLoggedIn={isLoggedIn} user={user} />
+        <LeftSide
+          handleLogOut={handleLogOut}
+          handleLogIn={handleLogIn}
+          isLoggedIn={isLoggedIn}
+          user={user}
+        />
         <RightSide user={user} />
       </Nav>
     </div>

@@ -1,5 +1,5 @@
-import {css} from "styled-components";
-import BREAKPOINTS from "./breakpoints";
+import { css } from 'styled-components';
+import BREAKPOINTS from './breakpoints';
 
 // This creates the media templates, which allows for simple
 // breakpoint usage inside styled-components, e.g.:

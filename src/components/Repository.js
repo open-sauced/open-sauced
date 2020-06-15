@@ -1,22 +1,22 @@
-import React, {useState, useEffect} from "react";
-import Form from "../components/NoteForm";
-import Card from "../components/Card";
-import Issues from "../components/Issues";
-import Contributions from "../components/Contributions";
-import DetailInfo from "../components/DetailInfo";
-import api from "../lib/apiGraphQL";
-import Illustration from "../styles/Illustration";
-import {ErrorMessage} from "../styles/Typography";
-import {SpaceBetween} from "../styles/Grid";
-import {diary} from "../illustrations";
-import {ContextStyle} from "../styles/Card";
-import {Spinner} from "../styles/Spinner";
-import {Flex, FormColumn, IssuesColumn} from "../styles/Grid";
-import {humanizeNumber} from "../lib/humanizeNumber";
+import React, { useState, useEffect } from 'react';
+import Form from '../components/NoteForm';
+import Card from '../components/Card';
+import Issues from '../components/Issues';
+import Contributions from '../components/Contributions';
+import DetailInfo from '../components/DetailInfo';
+import api from '../lib/apiGraphQL';
+import Illustration from '../styles/Illustration';
+import { ErrorMessage } from '../styles/Typography';
+import { SpaceBetween } from '../styles/Grid';
+import { diary } from '../illustrations';
+import { ContextStyle } from '../styles/Card';
+import { Spinner } from '../styles/Spinner';
+import { Flex, FormColumn, IssuesColumn } from '../styles/Grid';
+import { humanizeNumber } from '../lib/humanizeNumber';
 
-function Repository({match}) {
+function Repository({ match }) {
   const {
-    params: {repoName, repoOwner, id},
+    params: { repoName, repoOwner, id },
   } = match;
   const [repository, setRepository] = useState(null);
   const [error, setError] = useState(null);
@@ -27,7 +27,7 @@ function Repository({match}) {
     api
       .fetchRepositoryData(repoOwner, repoName)
       .then(res => {
-        const {errors, data} = res;
+        const { errors, data } = res;
 
         if (errors && errors.length > 0) {
           setError(`"${errors[0].message}"`);
@@ -48,7 +48,7 @@ function Repository({match}) {
     api
       .fetchGoalQuery(parseInt(id))
       .then(res => {
-        const {id, body} = res.data.gitHub.viewer.repository.issue;
+        const { id, body } = res.data.gitHub.viewer.repository.issue;
         setNote(body);
         setIssueId(id);
       })
@@ -57,7 +57,8 @@ function Repository({match}) {
       });
   }, []);
 
-  const {url, stargazers, forks, issues, name, nameWithOwner, owner} = repository || {};
+  const { url, stargazers, forks, issues, name, nameWithOwner, owner } =
+    repository || {};
 
   return (
     <section>
@@ -65,20 +66,26 @@ function Repository({match}) {
       <ContextStyle>
         <SpaceBetween>
           <div>
-            <a style={{textDecoration: "none"}} href={url} rel="noreferrer" target="_blank">
-              {nameWithOwner ? (
-                <h1>{nameWithOwner}</h1>
-              ) : (
-                <h1>Loading...</h1>
-              )}
+            <a
+              style={{ textDecoration: 'none' }}
+              href={url}
+              rel="noreferrer"
+              target="_blank"
+            >
+              {nameWithOwner ? <h1>{nameWithOwner}</h1> : <h1>Loading...</h1>}
             </a>
             <p>
-              Use the issue list to find things to work on. The notes form is here to also assist with the tracking
-              contributions for the {name} repository.
+              Use the issue list to find things to work on. The notes form is
+              here to also assist with the tracking contributions for the {name}{' '}
+              repository.
             </p>
             <small>
               <em>
-                <a href="https://opensource.guide/how-to-contribute/" rel="noreferrer" target="_blank">
+                <a
+                  href="https://opensource.guide/how-to-contribute/"
+                  rel="noreferrer"
+                  target="_blank"
+                >
                   Learn how to contribute to open source projects
                 </a>
               </em>
@@ -89,16 +96,29 @@ function Repository({match}) {
       </ContextStyle>
 
       <Flex>
-        <IssuesColumn>{owner && <Issues repoName={name} owner={owner.login} />}</IssuesColumn>
+        <IssuesColumn>
+          {owner && <Issues repoName={name} owner={owner.login} />}
+        </IssuesColumn>
         {repository ? (
           <FormColumn>
             <Card>
-              <DetailInfo text={`${humanizeNumber(issues.totalCount)} issues`} icon="issue-opened" />
-              <DetailInfo text={`${humanizeNumber(forks.totalCount)} forks`} icon="repo-forked" />
-              <DetailInfo text={`${humanizeNumber(stargazers.totalCount)} stars`} icon="star" />
+              <DetailInfo
+                text={`${humanizeNumber(issues.totalCount)} issues`}
+                icon="issue-opened"
+              />
+              <DetailInfo
+                text={`${humanizeNumber(forks.totalCount)} forks`}
+                icon="repo-forked"
+              />
+              <DetailInfo
+                text={`${humanizeNumber(stargazers.totalCount)} stars`}
+                icon="star"
+              />
             </Card>
             <Contributions repoName={name} owner={owner.login} />
-            {owner && <Form note={note} goalId={issueId} repoName={nameWithOwner} />}
+            {owner && (
+              <Form note={note} goalId={issueId} repoName={nameWithOwner} />
+            )}
           </FormColumn>
         ) : (
           !error && <Spinner />

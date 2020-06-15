@@ -1,6 +1,6 @@
-import styled from "styled-components";
-import {size, colors} from "../variables";
-import MEDIA from "../mediaTemplates";
+import styled from 'styled-components';
+import { size, colors } from '../variables';
+import MEDIA from '../mediaTemplates';
 
 const Container = styled.nav`
   display: flex;
@@ -33,7 +33,7 @@ const Container = styled.nav`
   span {
     margin-right: 5px;
   }
-  
+
   .no-well {
     background: transparent;
     font-weight: initial;

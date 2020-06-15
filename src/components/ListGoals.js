@@ -1,11 +1,11 @@
-import React from "react";
-import {Link} from "react-router-dom";
-import {Container} from "../styles/ListItem";
-import RepoListItem from "../components/RepoListItem";
-import Card from "../components/Card";
-import List from "../styles/List";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { Container } from '../styles/ListItem';
+import RepoListItem from '../components/RepoListItem';
+import Card from '../components/Card';
+import List from '../styles/List';
 
-function ListGoals({goals}) {
+function ListGoals({ goals }) {
   return (
     <Container>
       <Card fitted>
@@ -15,8 +15,11 @@ function ListGoals({goals}) {
               <li key={goal.id}>
                 <Link
                   to={{
-                    pathname: `/repos/${goal.title.replace(/\s+/g, "")}/${goal.number}`,
-                  }}>
+                    pathname: `/repos/${goal.title.replace(/\s+/g, '')}/${
+                      goal.number
+                    }`,
+                  }}
+                >
                   <RepoListItem goal={goal} stars={328} contributors={18} />
                 </Link>
               </li>

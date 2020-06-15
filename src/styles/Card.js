@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import {borderRadius, colors, size, typography} from "./variables";
+import styled from 'styled-components';
+import { borderRadius, colors, size, typography } from './variables';
 
 const Card = styled.div`
   background-color: white;
@@ -127,7 +127,7 @@ const OnBoardStyle = styled(Card)`
     position: absolute;
   }
   /* hide default checkbox */
-  .checkbox input[type="checkbox"] {
+  .checkbox input[type='checkbox'] {
     opacity: 0;
   }
 
@@ -142,7 +142,7 @@ const OnBoardStyle = styled(Card)`
 
   /* create outer box */
   .checkbox label::before {
-    content: "";
+    content: '';
     display: block;
     height: 16px;
     width: 16px;
@@ -150,7 +150,7 @@ const OnBoardStyle = styled(Card)`
     margin-right: 20px;
   }
   .checkbox label::after {
-    content: "";
+    content: '';
   }
 
   .checkbox label {
@@ -169,4 +169,12 @@ const OnBoardStyle = styled(Card)`
   }
 `;
 
-export {Card, CardPadding, CardHeader, FittedCard, ContextStyle, HintStyle, OnBoardStyle};
+export {
+  Card,
+  CardPadding,
+  CardHeader,
+  FittedCard,
+  ContextStyle,
+  HintStyle,
+  OnBoardStyle,
+};

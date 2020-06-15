@@ -1,4 +1,4 @@
-import {version} from "!json./../../package";
+import { version } from '!json./../../package';
 export function getAppVersion() {
   return version;
 }

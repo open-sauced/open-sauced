@@ -1,29 +1,29 @@
-import React, {useState} from "react";
-import {Redirect} from "react-router";
-import Button from "../styles/Button";
-import {NoteArea, RenderedNote} from "../styles/TextArea";
-import Card from "./Card";
-import {FlexCenter} from "../styles/Grid";
-import Octicon, {getIconByName} from "@primer/octicons-react";
-import ReactMarkdown from "react-markdown";
+import React, { useState } from 'react';
+import { Redirect } from 'react-router';
+import Button from '../styles/Button';
+import { NoteArea, RenderedNote } from '../styles/TextArea';
+import Card from './Card';
+import { FlexCenter } from '../styles/Grid';
+import Octicon, { getIconByName } from '@primer/octicons-react';
+import ReactMarkdown from 'react-markdown';
 
-import api from "../lib/apiGraphQL";
+import api from '../lib/apiGraphQL';
 
-function NoteForm({goalId, repoName, note}) {
+function NoteForm({ goalId, repoName, note }) {
   const [input, setInput] = useState(note);
   const [editing, setEditing] = useState(false);
   const [deleted, setDeleted] = useState(false);
 
   const _handleNoteUpdate = () => {
     api
-      .updateGoal(goalId, repoName, "OPEN", input)
+      .updateGoal(goalId, repoName, 'OPEN', input)
       .then(_handleToggleEditing())
       .catch(err => console.log(err));
   };
 
   const _handleRepoDeletion = () => {
     api
-      .updateGoal(goalId, repoName, "CLOSED", input)
+      .updateGoal(goalId, repoName, 'CLOSED', input)
       .then(() => {
         setEditing(false);
         setDeleted(true);
@@ -43,13 +43,13 @@ function NoteForm({goalId, repoName, note}) {
     <Card>
       {!editing ? (
         <RenderedNote>
-          <ReactMarkdown className="noteContent" source={input || ""} />
+          <ReactMarkdown className="noteContent" source={input || ''} />
         </RenderedNote>
       ) : (
         <NoteArea
           disabled={!editing}
           onChange={_handleNotesChange}
-          value={input || ""}
+          value={input || ''}
           type="text"
           placeholder={`Type your notes for ${repoName} here...`}
           name="notes"
@@ -59,12 +59,12 @@ function NoteForm({goalId, repoName, note}) {
       <FlexCenter>
         {editing ? (
           <Button onClick={_handleNoteUpdate}>
-            <Octicon verticalAlign="middle" icon={getIconByName("pencil")} />
+            <Octicon verticalAlign="middle" icon={getIconByName('pencil')} />
             Save Notes
           </Button>
         ) : (
           <Button onClick={_handleToggleEditing}>
-            <Octicon verticalAlign="middle" icon={getIconByName("pencil")} />
+            <Octicon verticalAlign="middle" icon={getIconByName('pencil')} />
             Edit Notes
           </Button>
         )}

@@ -1,4 +1,4 @@
-import Config from "../config";
+import Config from '../config';
 
 const fetchOneGraph = Config.fetchOneGraph;
 
@@ -368,67 +368,90 @@ const operationsDoc = `
 `;
 
 function fetchContributedRepoQuery() {
-  return fetchOneGraph(operationsDoc, "ContributedRepoQuery");
+  return fetchOneGraph(operationsDoc, 'ContributedRepoQuery');
 }
 
 function fetchRepoInteractions(owner, repo) {
-  return fetchOneGraph(operationsDoc, "RepoInteractionsQuery", {owner: owner, repo: repo});
+  return fetchOneGraph(operationsDoc, 'RepoInteractionsQuery', {
+    owner: owner,
+    repo: repo,
+  });
 }
 
 function fetchRepoQuery(owner, repo) {
-  return fetchOneGraph(operationsDoc, "RepoQuery", {repo: repo, owner: owner});
+  return fetchOneGraph(operationsDoc, 'RepoQuery', {
+    repo: repo,
+    owner: owner,
+  });
 }
 
 function fetchIssuesQuery(owner, repo, cursor) {
-  return fetchOneGraph(operationsDoc, "IssuesQuery", {owner: owner, repo: repo});
+  return fetchOneGraph(operationsDoc, 'IssuesQuery', {
+    owner: owner,
+    repo: repo,
+  });
 }
 
 function fetchIssuesBeforeQuery(owner, repo, cursor) {
-  return fetchOneGraph(operationsDoc, "IssuesBeforeQuery", {owner: owner, repo: repo, cursor: cursor});
+  return fetchOneGraph(operationsDoc, 'IssuesBeforeQuery', {
+    owner: owner,
+    repo: repo,
+    cursor: cursor,
+  });
 }
 
 function fetchIssuesAfterQuery(owner, repo, cursor) {
-  return fetchOneGraph(operationsDoc, "IssuesAfterQuery", {owner: owner, repo: repo, cursor: cursor});
+  return fetchOneGraph(operationsDoc, 'IssuesAfterQuery', {
+    owner: owner,
+    repo: repo,
+    cursor: cursor,
+  });
 }
 
 function fetchGoalsQuery() {
-  return fetchOneGraph(operationsDoc, "FetchGoals");
+  return fetchOneGraph(operationsDoc, 'FetchGoals');
 }
 
 function fetchGoalQuery(number) {
-  return fetchOneGraph(operationsDoc, "FetchGoal", {number: number});
+  return fetchOneGraph(operationsDoc, 'FetchGoal', { number: number });
 }
 
 function fetchOwnerId(owner) {
-  return fetchOneGraph(operationsDoc, "FetchOwnerQuery", {owner: owner});
+  return fetchOneGraph(operationsDoc, 'FetchOwnerQuery', { owner: owner });
 }
 
 function fetchMemberStatus() {
-  return fetchOneGraph(operationsDoc, "FetchMemberStatusQuery");
+  return fetchOneGraph(operationsDoc, 'FetchMemberStatusQuery');
 }
 
 function fetchRateLimit() {
-  return fetchOneGraph(operationsDoc, "FetchRateLimitQuery");
+  return fetchOneGraph(operationsDoc, 'FetchRateLimitQuery');
 }
 
 function fetchDeploymentStatus() {
-  return fetchOneGraph(operationsDoc, "FetchDeploymentStatusQuery");
+  return fetchOneGraph(operationsDoc, 'FetchDeploymentStatusQuery');
 }
 
 function fetchRepoCount() {
-  return fetchOneGraph(operationsDoc, "FetchRepoCountQuery");
+  return fetchOneGraph(operationsDoc, 'FetchRepoCountQuery');
 }
 
 function createOpenSaucedGoalsRepo(ownerId) {
-  return fetchOneGraph(operationsDoc, "CreateOpenSaucedGoalsRepo", {ownerId: ownerId});
+  return fetchOneGraph(operationsDoc, 'CreateOpenSaucedGoalsRepo', {
+    ownerId: ownerId,
+  });
 }
 
 function createGoal(repoId, title, notes) {
-  return fetchOneGraph(operationsDoc, "CreateGoal", {repoId: repoId, title: title, notes: notes});
+  return fetchOneGraph(operationsDoc, 'CreateGoal', {
+    repoId: repoId,
+    title: title,
+    notes: notes,
+  });
 }
 
 function updateGoal(id, title, state, notes) {
-  return fetchOneGraph(operationsDoc, "UpdateGoal", {
+  return fetchOneGraph(operationsDoc, 'UpdateGoal', {
     id: id,
     state: state,
     title: title,
@@ -443,7 +466,8 @@ const api = {
   fetchIssuesQuery,
   fetchOwnerId,
   fetchRepositoryIssues: (owner, repo, cursor, previous = false) => {
-    const issueFetcher = cursor && previous ? fetchIssuesBeforeQuery : fetchIssuesAfterQuery;
+    const issueFetcher =
+      cursor && previous ? fetchIssuesBeforeQuery : fetchIssuesAfterQuery;
 
     return issueFetcher(owner, repo, cursor);
   },

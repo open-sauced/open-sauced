@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import {size} from "../variables";
+import styled from 'styled-components';
+import { size } from '../variables';
 
 const SubHeading = styled.ul`
   display: flex;

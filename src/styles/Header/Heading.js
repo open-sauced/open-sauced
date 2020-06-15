@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import {size} from "../variables";
+import styled from 'styled-components';
+import { size } from '../variables';
 
 const Heading = styled.h1`
   align-items: center;

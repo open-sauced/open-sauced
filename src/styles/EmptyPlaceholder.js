@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import MEDIA from "./mediaTemplates";
+import styled from 'styled-components';
+import MEDIA from './mediaTemplates';
 
 const EmptyPlaceholder = styled.div`
   text-align: center;
@@ -16,4 +16,4 @@ const EmptyPlaceholder = styled.div`
   `};
 `;
 
-export {EmptyPlaceholder};
+export { EmptyPlaceholder };

@@ -1,9 +1,9 @@
-import styled from "styled-components";
-import {colors, size} from "../variables";
-import MEDIA from "../mediaTemplates";
+import styled from 'styled-components';
+import { colors, size } from '../variables';
+import MEDIA from '../mediaTemplates';
 
 const Hero = styled.section`
-  @import url("https://fonts.googleapis.com/css2?family=Arvo&display=swap");
+  @import url('https://fonts.googleapis.com/css2?family=Arvo&display=swap');
   padding-left: 5rem;
   padding-right: 5rem;
   padding-top: 36px;
@@ -43,7 +43,7 @@ const Wrapper = styled.div`
   margin-left: auto;
   margin-right: auto;
   max-width: 1000px;
-  font-family: "Arvo", serif;
+  font-family: 'Arvo', serif;
 
   ${MEDIA.TABLET`
     padding: 0;
@@ -76,7 +76,7 @@ const TopHero = styled(Hero)`
 `;
 
 const SubHero = styled(Hero)`
-  @import url("https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap");
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
   padding-bottom: 45px;
   padding-top: 32px;
   background-color: ${colors.cheesyYellow};
@@ -201,7 +201,7 @@ const QuoteSection = styled(Hero)`
 
 const DetailsSection = styled(Hero)`
   background-color: white;
-  padding-top: 36px;;
+  padding-top: 36px;
   .detail {
     padding: ${size.micro};
     ${MEDIA.TABLET`

@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import {margin, size, borderRadius, colors} from "./variables";
+import styled from 'styled-components';
+import { margin, size, borderRadius, colors } from './variables';
 
 const Container = styled.textarea`
   margin-bottom: 12px;
@@ -25,7 +25,6 @@ export const RenderedNote = styled.div`
     max-height: 300px;
   }
 `;
-
 
 export const NoteArea = styled(Container)`
   resize: none;

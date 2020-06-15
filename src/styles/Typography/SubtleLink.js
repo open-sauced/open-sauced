@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import {size, colors} from "../variables";
+import styled from 'styled-components';
+import { size, colors } from '../variables';
 
 const SubtleLink = styled.a`
   color: ${colors.offWhite} !important;

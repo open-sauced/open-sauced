@@ -1,13 +1,13 @@
-import React, {useState, useEffect} from "react";
-import ReactDOM from "react-dom";
-import App from "./containers/App";
-import Config from "./config";
-import {getUserFromJwt} from "./lib/identityActions";
-import "./index.css";
-import registerServiceWorker from "./registerServiceWorker";
-import OneGraphApolloClient from "onegraph-apollo-client";
-import {ApolloProvider} from "react-apollo";
-import api from "./lib/apiGraphQL";
+import React, { useState, useEffect } from 'react';
+import ReactDOM from 'react-dom';
+import App from './containers/App';
+import Config from './config';
+import { getUserFromJwt } from './lib/identityActions';
+import './index.css';
+import registerServiceWorker from './registerServiceWorker';
+import OneGraphApolloClient from 'onegraph-apollo-client';
+import { ApolloProvider } from 'react-apollo';
+import api from './lib/apiGraphQL';
 
 const apolloClient = new OneGraphApolloClient({
   oneGraphAuth: Config.auth,
@@ -15,20 +15,22 @@ const apolloClient = new OneGraphApolloClient({
 
 function Index() {
   const [user, setUser] = useState(null);
-  const [loggedInStatus, setLogin] = useState(localStorage.getItem("isLoggedIn"));
+  const [loggedInStatus, setLogin] = useState(
+    localStorage.getItem('isLoggedIn'),
+  );
   const [isAdmin, setIsAdmin] = useState(null);
 
   useEffect(() => {
     const auth = Config.auth;
-    auth.isLoggedIn("github").then(isLoggedIn => {
+    auth.isLoggedIn('github').then(isLoggedIn => {
       if (isLoggedIn) {
-
         const user = getUserFromJwt(auth);
         setUser(user);
         api
           .fetchMemberStatus()
           .then(res => {
-            const viewerIsAMember = res.data.gitHub.viewer.organization === null ? false : true;
+            const viewerIsAMember =
+              res.data.gitHub.viewer.organization === null ? false : true;
             setIsAdmin(viewerIsAMember);
           })
           .catch(e => {
@@ -36,10 +38,10 @@ function Index() {
           });
 
         setLogin(isLoggedIn);
-        localStorage.setItem("isLoggedIn", isLoggedIn);
+        localStorage.setItem('isLoggedIn', isLoggedIn);
         return user;
       } else {
-        console.warn("User is not logged into GitHub");
+        console.warn('User is not logged into GitHub');
       }
     });
   }, []);
@@ -47,34 +49,34 @@ function Index() {
   const _handleLogIn = () => {
     const auth = Config.auth;
     auth
-      .login("github")
+      .login('github')
       .then(() => {
-        auth.isLoggedIn("github").then(isLoggedIn => {
+        auth.isLoggedIn('github').then(isLoggedIn => {
           if (isLoggedIn) {
             // Pull the user-data we care about from the JWT and
             // store it in component local state for the rest of the
             // app
             const user = getUserFromJwt(auth);
             setUser(user);
-            localStorage.setItem("isLoggedIn", isLoggedIn);
+            localStorage.setItem('isLoggedIn', isLoggedIn);
             setLogin(isLoggedIn);
           } else {
-            console.warn("User did not grant auth for GitHub");
+            console.warn('User did not grant auth for GitHub');
           }
         });
       })
-      .catch(e => console.error("Problem logging in", e));
+      .catch(e => console.error('Problem logging in', e));
   };
 
   const _handleLogOut = () => {
     const auth = Config.auth;
-    auth.logout("github").then(() => {
+    auth.logout('github').then(() => {
       // Remove the local onegraph-auth storage
-      localStorage.removeItem("oneGraph:" + Config.appId);
+      localStorage.removeItem('oneGraph:' + Config.appId);
       // Remove the local AdminStats bar status storage
-      localStorage.removeItem("adminBar");
+      localStorage.removeItem('adminBar');
       // Remove the local logged in status storage
-      localStorage.removeItem("isLoggedIn");
+      localStorage.removeItem('isLoggedIn');
       setUser(null);
       setIsAdmin(false);
       setLogin(false);
@@ -97,6 +99,6 @@ function Index() {
   );
 }
 
-ReactDOM.render(<Index />, document.getElementById("root"));
+ReactDOM.render(<Index />, document.getElementById('root'));
 
 registerServiceWorker();

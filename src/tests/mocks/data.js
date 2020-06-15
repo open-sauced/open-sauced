@@ -1,31 +1,31 @@
 const data = {
-  user: {login: "sam"},
+  user: { login: 'sam' },
   allRepositories: [
     {
       id: Math.random(),
-      name: "Mock Repository A",
+      name: 'Mock Repository A',
     },
     {
       id: Math.random(),
-      name: "Mock Repository B",
+      name: 'Mock Repository B',
     },
   ],
   refetch: () => {},
   createRepository: jest.fn(),
-  gitHub: {viewer: {}},
+  gitHub: { viewer: {} },
   goals: {
     nodes: [
       {
         id: Math.random(),
-        name: "Mock Repository A",
-        title: "mock/A",
-        labels: {data: []},
+        name: 'Mock Repository A',
+        title: 'mock/A',
+        labels: { data: [] },
       },
       {
         id: Math.random(),
-        name: "Mock Repository B",
-        title: "mock/B",
-        labels: {data: []},
+        name: 'Mock Repository B',
+        title: 'mock/B',
+        labels: { data: [] },
       },
     ],
   },

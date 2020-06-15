@@ -1,41 +1,50 @@
-import React, {useState, useEffect} from "react";
-import {AdminNav} from "../styles/Header";
-import {getAppVersion} from "../lib/appVersion";
-import humanizeDuration from "humanize-duration";
-import api from "../lib/apiGraphQL";
+import React, { useState, useEffect } from 'react';
+import { AdminNav } from '../styles/Header';
+import { getAppVersion } from '../lib/appVersion';
+import humanizeDuration from 'humanize-duration';
+import api from '../lib/apiGraphQL';
 
 const humanizer = humanizeDuration.humanizer({
-  language: "shortEn",
+  language: 'shortEn',
   maxDecimalPoints: 2,
-  spacer: "",
+  spacer: '',
   languages: {
     shortEn: {
-      y: () => "y",
-      mo: () => "mo",
-      w: () => "w",
-      d: () => "d",
-      h: () => "h",
-      m: () => "m",
-      s: () => "s",
-      ms: () => "ms",
-    }
-  }
+      y: () => 'y',
+      mo: () => 'mo',
+      w: () => 'w',
+      d: () => 'd',
+      h: () => 'h',
+      m: () => 'm',
+      s: () => 's',
+      ms: () => 'ms',
+    },
+  },
 });
 
-function LeftSide({deployment}) {
+function LeftSide({ deployment }) {
   return (
     <div>
       <ul>
         <li>
-          <span>🌵</span>{deployment.environment}
+          <span>🌵</span>
+          {deployment.environment}
         </li>
         <li>
-          <a href={`https://github.com/open-sauced/open-sauced/releases/tag/v${getAppVersion()}`} rel="noreferrer" target="_blank">
+          <a
+            href={`https://github.com/open-sauced/open-sauced/releases/tag/v${getAppVersion()}`}
+            rel="noreferrer"
+            target="_blank"
+          >
             <span>📦</span>v{getAppVersion()}
           </a>
         </li>
         <li className="no-well">
-          <a href={`https://github.com/facebook/react/releases/tag/v${React.version}`} rel="noreferrer" target="_blank">
+          <a
+            href={`https://github.com/facebook/react/releases/tag/v${React.version}`}
+            rel="noreferrer"
+            target="_blank"
+          >
             <span>⚛️</span> <b>React</b> v{React.version}
           </a>
         </li>
@@ -44,32 +53,32 @@ function LeftSide({deployment}) {
   );
 }
 
-function RightSide({timing, rateLimit, repoCount}) {
+function RightSide({ timing, rateLimit, repoCount }) {
   return (
     <div>
       <ul>
         <li>
-          <span>🕒</span>{humanizer(timing.renderTime)} <span className="helper">render</span>
+          <span>🕒</span>
+          {humanizer(timing.renderTime)} <span className="helper">render</span>
         </li>
         <li>
-          <span>🕒</span>{humanizer(timing.loadTime)} <span className="helper">load</span>
+          <span>🕒</span>
+          {humanizer(timing.loadTime)} <span className="helper">load</span>
         </li>
         <li>
           <span>😍</span>Users: {repoCount}
         </li>
-        <li>
-          Rate Limit: {rateLimit}
-        </li>
+        <li>Rate Limit: {rateLimit}</li>
       </ul>
     </div>
   );
 }
 
 function AdminStatsBar() {
-  const [rateLimit, setRateLimit] = useState("⌛");
+  const [rateLimit, setRateLimit] = useState('⌛');
   const [timing, setTiming] = useState({});
-  const [deployment, setDeployment] = useState("⌛");
-  const [repoCount, setRepoCount] = useState("⌛");
+  const [deployment, setDeployment] = useState('⌛');
+  const [repoCount, setRepoCount] = useState('⌛');
 
   const getRateLimit = () => {
     api
@@ -78,9 +87,9 @@ function AdminStatsBar() {
         const rateLimit = res.data.gitHub.rateLimit.remaining;
         if (rateLimit > 4000) {
           setRateLimit(`${rateLimit} 😎`);
-        } else if (rateLimit  > 2000 && rateLimit < 4000) {
+        } else if (rateLimit > 2000 && rateLimit < 4000) {
           setRateLimit(`${rateLimit} ⚠️`);
-        } else if (rateLimit  > 0 && rateLimit < 2000) {
+        } else if (rateLimit > 0 && rateLimit < 2000) {
           setRateLimit(`${rateLimit} 🚫️`);
         }
       })
@@ -119,7 +128,7 @@ function AdminStatsBar() {
     const renderTime = timingAPI.domComplete - timingAPI.domLoading;
     setTiming({
       loadTime,
-      renderTime
+      renderTime,
     });
   };
 
@@ -128,19 +137,12 @@ function AdminStatsBar() {
     getTiming();
     getDeployment();
     getRepoCount();
-
   }, []);
 
   return (
     <AdminNav>
-      <LeftSide
-        deployment={deployment}
-      />
-      <RightSide
-        rateLimit={rateLimit}
-        timing={timing}
-        repoCount={repoCount}
-      />
+      <LeftSide deployment={deployment} />
+      <RightSide rateLimit={rateLimit} timing={timing} repoCount={repoCount} />
     </AdminNav>
   );
 }

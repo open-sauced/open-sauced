@@ -1,20 +1,20 @@
-import React, {useState, useEffect} from "react";
-import api from "../lib/apiGraphQL";
-import Card from "./Card";
-import List from "../styles/List";
-import IssuesListItem from "../components/IssueListItem";
-import {CardPadding} from "../styles/Card";
-import {AccentLink, MicroFont} from "../styles/Typography";
-import {Spinner} from "../styles/Spinner";
+import React, { useState, useEffect } from 'react';
+import api from '../lib/apiGraphQL';
+import Card from './Card';
+import List from '../styles/List';
+import IssuesListItem from '../components/IssueListItem';
+import { CardPadding } from '../styles/Card';
+import { AccentLink, MicroFont } from '../styles/Typography';
+import { Spinner } from '../styles/Spinner';
 
-function Contributions({repoName, owner}) {
+function Contributions({ repoName, owner }) {
   const [issues, setIssues] = useState(null);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     setLoading(true);
     api.fetchRepoInteractions(owner, repoName).then(response => {
-      const {data} = response.data.gitHub.repository.issues;
+      const { data } = response.data.gitHub.repository.issues;
       setIssues(data);
       setLoading(false);
     });
@@ -26,7 +26,11 @@ function Contributions({repoName, owner}) {
         <CardPadding>
           <em>Contributions</em>
           <MicroFont>
-            <AccentLink href={`https://github.com/${owner}/${repoName}/contribute`}>make new contributions.</AccentLink>
+            <AccentLink
+              href={`https://github.com/${owner}/${repoName}/contribute`}
+            >
+              make new contributions.
+            </AccentLink>
           </MicroFont>
         </CardPadding>
         <List>

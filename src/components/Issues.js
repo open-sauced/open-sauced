@@ -1,16 +1,16 @@
-import React, {useState, useEffect} from "react";
-import {FlexCenter} from "../styles/Grid";
-import {EmptyPlaceholder} from "../styles/EmptyPlaceholder";
-import api from "../lib/apiGraphQL";
-import Card from "./Card";
-import List from "../styles/List";
-import IssuesListItem from "../components/IssueListItem";
-import {InputButton} from "../styles/Button";
-import {CardPadding, CardHeader} from "../styles/Card";
-import Octicon, {getIconByName} from "@primer/octicons-react";
-import {Spinner} from "../styles/Spinner";
+import React, { useState, useEffect } from 'react';
+import { FlexCenter } from '../styles/Grid';
+import { EmptyPlaceholder } from '../styles/EmptyPlaceholder';
+import api from '../lib/apiGraphQL';
+import Card from './Card';
+import List from '../styles/List';
+import IssuesListItem from '../components/IssueListItem';
+import { InputButton } from '../styles/Button';
+import { CardPadding, CardHeader } from '../styles/Card';
+import Octicon, { getIconByName } from '@primer/octicons-react';
+import { Spinner } from '../styles/Spinner';
 
-function Issues({repoName, owner}) {
+function Issues({ repoName, owner }) {
   const [issues, setIssues] = useState(null);
   const [loading, setLoading] = useState(false);
   const [cursor, setCursor] = useState(null);
@@ -20,9 +20,12 @@ function Issues({repoName, owner}) {
   useEffect(() => {
     setLoading(true);
     api.fetchIssuesQuery(owner, repoName).then(response => {
-      const {data, totalCount} = response.data.gitHub.repositoryOwner.repository.issues;
+      const {
+        data,
+        totalCount,
+      } = response.data.gitHub.repositoryOwner.repository.issues;
       const lastIssue = totalCount > 0 ? data[data.length - 1] : {};
-      const {cursor} = lastIssue;
+      const { cursor } = lastIssue;
 
       setIssues(data);
       setCursor(cursor);
@@ -33,7 +36,10 @@ function Issues({repoName, owner}) {
 
   const _handleNextIssues = () => {
     api.fetchRepositoryIssues(owner, repoName, cursor).then(response => {
-      const {data, totalCount} = response.data.gitHub.repositoryOwner.repository.issues;
+      const {
+        data,
+        totalCount,
+      } = response.data.gitHub.repositoryOwner.repository.issues;
       const firstIssue = data[data.length - 1];
       const newCursor = firstIssue.cursor;
       setIssues(data);
@@ -45,7 +51,10 @@ function Issues({repoName, owner}) {
 
   const _handlePreviousIssues = () => {
     api.fetchRepositoryIssues(owner, repoName, cursor, true).then(response => {
-      const {data, totalCount} = response.data.gitHub.repositoryOwner.repository.issues;
+      const {
+        data,
+        totalCount,
+      } = response.data.gitHub.repositoryOwner.repository.issues;
       const newCursor = data[0].newCursor;
       setIssues(data);
       setCursor(newCursor);
@@ -80,25 +89,29 @@ function Issues({repoName, owner}) {
             ))}
           <CardPadding>
             <FlexCenter className="pagination-buttons">
-              {offset > 0 && <InputButton onClick={_handlePreviousIssues}>Prev</InputButton>}
-              {currentPage !== totalPages && <InputButton onClick={_handleNextIssues}>Next</InputButton>}
+              {offset > 0 && (
+                <InputButton onClick={_handlePreviousIssues}>Prev</InputButton>
+              )}
+              {currentPage !== totalPages && (
+                <InputButton onClick={_handleNextIssues}>Next</InputButton>
+              )}
             </FlexCenter>
           </CardPadding>
         </List>
       </Card>
+    ) : loading ? (
+      <Spinner />
     ) : (
-      loading ? (
-        <Spinner />
-      ) : (
-        <EmptyPlaceholder>
-          <div style={{color: "grey"}}>
-            <Octicon size="large" verticalAlign="middle" icon={getIconByName("issue-opened")} />
-          </div>
-          <div className="helper">
-            No Issues found
-          </div>
-        </EmptyPlaceholder>
-      )
+      <EmptyPlaceholder>
+        <div style={{ color: 'grey' }}>
+          <Octicon
+            size="large"
+            verticalAlign="middle"
+            icon={getIconByName('issue-opened')}
+          />
+        </div>
+        <div className="helper">No Issues found</div>
+      </EmptyPlaceholder>
     )
   ) : (
     <p>...Loading</p>

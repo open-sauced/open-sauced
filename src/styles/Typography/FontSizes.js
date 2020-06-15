@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import {size} from "../variables";
+import styled from 'styled-components';
+import { size } from '../variables';
 
 const Font = styled.div`
   display: flex;
@@ -13,4 +13,4 @@ const MicroFont = styled(Font)`
   font-size: ${size.micro};
 `;
 
-export {TinyFont, MicroFont};
+export { TinyFont, MicroFont };

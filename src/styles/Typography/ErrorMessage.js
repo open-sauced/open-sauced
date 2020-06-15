@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import {colors} from "../variables";
+import styled from 'styled-components';
+import { colors } from '../variables';
 
 const ErrorMessage = styled.p`
   color: ${colors.saucyRed};

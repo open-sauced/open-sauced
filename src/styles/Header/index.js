@@ -1,11 +1,19 @@
-import styled from "styled-components";
-import Heading from "./Heading";
-import HomeNav from "./HomeNav";
-import AdminNav from "./AdminNav";
-import SimpleHeader from "./SimpleHeader";
-import SubHeading from "./SubHeading";
-import {Wrapper, TopHero, SubHero, TrustSection, QuoteSection, DetailsSection, PizzaPosition} from "./Hero";
-import {colors} from "../variables";
+import styled from 'styled-components';
+import Heading from './Heading';
+import HomeNav from './HomeNav';
+import AdminNav from './AdminNav';
+import SimpleHeader from './SimpleHeader';
+import SubHeading from './SubHeading';
+import {
+  Wrapper,
+  TopHero,
+  SubHero,
+  TrustSection,
+  QuoteSection,
+  DetailsSection,
+  PizzaPosition,
+} from './Hero';
+import { colors } from '../variables';
 
 const AppNav = styled(HomeNav)`
   background-color: ${colors.grey};
