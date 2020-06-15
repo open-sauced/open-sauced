@@ -51,7 +51,7 @@ function RepositoryGoals({user}) {
         <React.Fragment>
           <ContextStyle>
             <SpaceBetween>
-              <div className="context-div">
+              <div>
                 {" "}
                 <h1>Dashboard</h1>
                 <p>
