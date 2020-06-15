@@ -47,6 +47,8 @@ function RepositoryGoals({user}) {
     dispatch({type: "UPDATE", payload: updatedRepos});
   };
 
+  const data = repository.data && JSON.parse(repository.data.text)
+
   return (
     <section>
       {repository && repository.issues ? (
@@ -75,7 +77,7 @@ function RepositoryGoals({user}) {
           <Cards fitted>
             <AddRepoForm goalsId={goalsId} onGoalAdded={onGoalAdded} />
             {repository.issues.totalCount > 0 ? (
-              <ListGoals goals={repository.issues} />
+              <ListGoals data={data} goals={repository.issues} />
             ) : (
               <EmptyPlaceholder>
                 <div style={{color: "grey"}}>

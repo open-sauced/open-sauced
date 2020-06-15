@@ -267,6 +267,13 @@ const operationsDoc = `
       viewer {
         repository(name: "open-sauced-goals") {
           id
+          data: object(expression: "master:data.json") {
+            id
+            ... on GitHubBlob {
+              id
+              text
+            }
+          }
           issues(
             first: 10
             states: OPEN
@@ -275,7 +282,7 @@ const operationsDoc = `
             totalCount
             nodes {
               id
-              title
+              full_name: title
               body
               number
               labels(first: 3) {

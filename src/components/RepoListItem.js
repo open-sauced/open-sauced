@@ -1,24 +1,27 @@
 import React from "react";
-import Label from "../styles/Label";
 import {FlexStart, FloatRight, FloatLeft, FlexColumn, FlexHeader, FlexCenter} from "../styles/Grid";
 import Octicon, {getIconByName} from "@primer/octicons-react";
 import Avatar from "../styles/Avatar";
 import {chevronRight} from "../icons";
+import {humanizeNumber} from "../lib/humanizeNumber";
 
 function RepoListItem({goal, stars}) {
   return (
     <FlexHeader>
       <FloatLeft>
         <FlexCenter>
-          <Avatar alt="avatar" src={`https://avatars.githubusercontent.com/${goal.title.split("/")[0].replace(/\s+/g, "")}`} />
+          <Avatar
+            alt="avatar"
+            src={`https://avatars.githubusercontent.com/${goal.full_name.split("/")[0].replace(/\s+/g, "")}`}
+          />
           <FlexColumn className="details">
-            <p>{goal.title.replace(/\s+/g, "")}</p>
+            <p>{goal.full_name.replace(/\s+/g, "")}</p>
             {stars && (
-              <FlexStart>
+              <FlexStart style={{alignItems: "flex-start"}}>
                 <div>
                   <Octicon alt="star" verticalAlign="middle" icon={getIconByName("star")} />
                 </div>
-                <p>{stars}</p>
+                <p>{humanizeNumber(stars)}</p>
               </FlexStart>
             )}
           </FlexColumn>
@@ -26,7 +29,6 @@ function RepoListItem({goal, stars}) {
       </FloatLeft>
       <FloatRight>
         <FlexCenter>
-          <Label>TBD</Label>
           <img alt="pointing right icon" src={chevronRight} />
         </FlexCenter>
       </FloatRight>
