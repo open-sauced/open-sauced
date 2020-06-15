@@ -47,7 +47,7 @@ function RepositoryGoals({user}) {
     dispatch({type: "UPDATE", payload: updatedRepos});
   };
 
-  const data = repository.data && JSON.parse(repository.data.text)
+  const data = repository.data && JSON.parse(repository.data.text);
 
   return (
     <section>
