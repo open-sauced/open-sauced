@@ -1,6 +1,5 @@
 import face from "./face.png";
 import bdougie from "./bdougie.jpg";
-import one from "./one.jpeg";
 import sauce from "./sauce.svg";
 import sauced from "./sauced.svg";
 import sauceFull from "./pizza-n-sauce.svg";
