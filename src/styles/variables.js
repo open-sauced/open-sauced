@@ -38,7 +38,7 @@ const typography = {
 };
 
 const size = {
-  micro:" 8px",
+  micro:"8px",
   tiny: "16px",
   small: "24px",
   medium: "40px",
