@@ -19,6 +19,7 @@ function Index() {
   const [isAdmin, setIsAdmin] = useState(null);
 
   useEffect(() => {
+    console.log("%c 🍕 Open Sauced 🍕 ", " color: #f6d82b; font-size: 30px; font-weight: bold");
     const auth = Config.auth;
     auth.isLoggedIn("github").then(isLoggedIn => {
       if (isLoggedIn) {
