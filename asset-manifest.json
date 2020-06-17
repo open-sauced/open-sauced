@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.js": "/main.c81de9c6ed70162c5be3.bundle.js",
-    "main.js.map": "/main.c81de9c6ed70162c5be3.bundle.js.map",
-    "runtime~main.js": "/runtime~main.c81de9c6ed70162c5be3.bundle.js",
-    "runtime~main.js.map": "/runtime~main.c81de9c6ed70162c5be3.bundle.js.map",
-    "vendors~main.js": "/vendors~main.c81de9c6ed70162c5be3.bundle.js",
-    "vendors~main.js.map": "/vendors~main.c81de9c6ed70162c5be3.bundle.js.map",
+    "main.js": "/main.140b06b9586a79368270.bundle.js",
+    "main.js.map": "/main.140b06b9586a79368270.bundle.js.map",
+    "runtime~main.js": "/runtime~main.140b06b9586a79368270.bundle.js",
+    "runtime~main.js.map": "/runtime~main.140b06b9586a79368270.bundle.js.map",
+    "vendors~main.js": "/vendors~main.140b06b9586a79368270.bundle.js",
+    "vendors~main.js.map": "/vendors~main.140b06b9586a79368270.bundle.js.map",
     "iframe.html": "/iframe.html",
-    "precache-manifest.e899453ef642de86900340601dcacc0e.js": "/precache-manifest.e899453ef642de86900340601dcacc0e.js",
+    "precache-manifest.1069f0740b86e6df76e1e57940431efc.js": "/precache-manifest.1069f0740b86e6df76e1e57940431efc.js",
     "service-worker.js": "/service-worker.js",
     "static/media/404.svg": "/static/media/404.5c7b90ee.svg",
     "static/media/alert-circle.svg": "/static/media/alert-circle.0289b2ff.svg",
@@ -32,7 +32,7 @@
     "static/media/home.svg": "/static/media/home.acb4667f.svg",
     "static/media/log-in.svg": "/static/media/log-in.162a7e98.svg",
     "static/media/log-out.svg": "/static/media/log-out.f95e301e.svg",
-    "static/media/logo1.svg": "/static/media/logo1.92f1a87f.svg",
+    "static/media/logo.svg": "/static/media/logo.92f1a87f.svg",
     "static/media/logo2.svg": "/static/media/logo2.92f1a87f.svg",
     "static/media/logo3.svg": "/static/media/logo3.3d81157d.svg",
     "static/media/logo4.svg": "/static/media/logo4.7e594ffa.svg",
@@ -56,11 +56,11 @@
     "static/media/undrawDiary.svg": "/static/media/undrawDiary.08c81dd8.svg",
     "static/media/undrawDoneChecking.svg": "/static/media/undrawDoneChecking.de8bc137.svg",
     "static/media/watch.svg": "/static/media/watch.62f6aa2d.svg",
-    "vendors~main.c81de9c6ed70162c5be3.bundle.js.LICENSE.txt": "/vendors~main.c81de9c6ed70162c5be3.bundle.js.LICENSE.txt"
+    "vendors~main.140b06b9586a79368270.bundle.js.LICENSE.txt": "/vendors~main.140b06b9586a79368270.bundle.js.LICENSE.txt"
   },
   "entrypoints": [
-    "runtime~main.c81de9c6ed70162c5be3.bundle.js",
-    "vendors~main.c81de9c6ed70162c5be3.bundle.js",
-    "main.c81de9c6ed70162c5be3.bundle.js"
+    "runtime~main.140b06b9586a79368270.bundle.js",
+    "vendors~main.140b06b9586a79368270.bundle.js",
+    "main.140b06b9586a79368270.bundle.js"
   ]
 }
