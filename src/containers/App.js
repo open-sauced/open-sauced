@@ -10,7 +10,6 @@ import {SpaceAround} from "../styles/Grid";
 import {NotFound} from "../styles/NotFound";
 import LocaleContext from "../Context";
 import auth from "../hoc/AuthHOC";
-import {getAppVersion} from "../lib/appVersion";
 import {ohno} from "../images";
 
 function NoMatch() {
@@ -35,7 +34,6 @@ function NoMatch() {
 }
 
 function App({handleLogIn, handleLogOut, user, isAdmin, isLoggedIn}) {
-  console.log("version", getAppVersion());
   const [goalsId, setGoalsId] = useState({});
 
   const guard = component => {
