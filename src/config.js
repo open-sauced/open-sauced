@@ -1,6 +1,6 @@
 import OneGraphAuth from "onegraph-auth";
 
-const APP_ID = "06238984-0a96-4774-95ad-d7b654c980c5";
+const APP_ID = "bc178799-292e-49df-8016-223abf5a07cb";
 
 const auth = new OneGraphAuth({
   appId: APP_ID
