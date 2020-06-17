@@ -3,7 +3,7 @@ import {Link} from "react-router-dom";
 import {MarketingButton} from "../styles/Button";
 import {Wrapper, PizzaPosition, TopHero, SubHero, TrustSection, QuoteSection, DetailsSection} from "../styles/Header";
 import {gucci, go, graphql, electron, next, sauceFull, bdougie} from "../images";
-import {logo1 as logo} from "../logos";
+import {logo} from "../logos";
 import {archive, mortarBoard, watch, squirrel} from "../icons";
 import {Flex, FlexColumn, GridColumns} from "../styles/Grid";
 
