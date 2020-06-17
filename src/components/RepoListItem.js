@@ -13,7 +13,7 @@ function RepoListItem({goal, stars}) {
         <FlexCenter>
           <Avatar alt="avatar" src={`https://avatars.githubusercontent.com/${goal.title.split("/")[0].replace(/\s+/g, "")}`} />
           <FlexColumn className="details">
-            <p>{truncate(goal.title.replace(/\s+/g, ""), 100)}</p>
+            <p>{truncate(goal.title.replace(/\s+/g, ""), 60)}</p>
             {stars && (
               <FlexStart>
                 <div>
