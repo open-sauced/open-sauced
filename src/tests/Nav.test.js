@@ -6,9 +6,9 @@ import Nav from "../components/Nav";
 import {axe, toHaveNoViolations} from "jest-axe";
 expect.extend(toHaveNoViolations);
 
-jest.mock('react-router-dom', () => {
+jest.mock("react-router-dom", () => {
   // Require the original module to not be mocked...
-  const originalModule = jest.requireActual('react-router-dom');
+  const originalModule = jest.requireActual("react-router-dom");
 
   return {
     __esModule: true,
@@ -18,9 +18,9 @@ jest.mock('react-router-dom', () => {
   };
 });
 
-// TODO: Skipped until React.Suspense + zeit/swr is testable 
+// TODO: Skipped until React.Suspense + zeit/swr is testable
 // https://github.com/open-sauced/open-sauced/discussions/408
-test.skip("container component should have no violations", async () => {
+test.skip("container component should have no violations", async() => {
   const history = createMemoryHistory();
   const {container} = render(<Nav />);
   const results = await axe(container);
