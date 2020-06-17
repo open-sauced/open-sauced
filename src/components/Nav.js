@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {logo1 as logo} from "../logos";
+import {logo} from "../logos";
 import {FloatLeftMobileNav, FloatRight} from "../styles/Grid";
 import {SubtleLink} from "../styles/Typography";
 import {AppNav, HomeNav} from "../styles/Header";
