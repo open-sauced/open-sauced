@@ -16,7 +16,7 @@ function RepoListItem({goal, stars}) {
             src={`https://avatars.githubusercontent.com/${goal.full_name.split("/")[0].replace(/\s+/g, "")}`}
           />
           <FlexColumn className="details">
-            <p>{truncate(goal.title.replace(/\s+/g, ""), 60)}</p>
+            <p>{truncate(goal.full_name.replace(/\s+/g, ""), 60)}</p>
             {stars && (
               <FlexStart style={{alignItems: "flex-start"}}>
                 <div>
