@@ -1,4 +1,4 @@
-import { humanizeNumber } from "./humanizeNumber";
+import {humanizeNumber} from "./humanizeNumber";
 
 describe("Test: humanizeNumber()", () => {
   test(`1000 should humanize`, () => {
