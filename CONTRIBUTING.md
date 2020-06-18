@@ -35,7 +35,7 @@ $ npm run test
 
 ## Pull Requests
 
-We actively welcome your pull requests, however we would prefer if an issue or discussion was opened before opening the pull requests.
+### _We actively welcome your pull requests, however linking yoru work to an existing issue is preferred._
 
 1. Fork the repo and create your branch from `master`.
 1. Name your branch something that is descriptive to the work you are doing. i.e. adds-new-thing or fixes-modbile-render
