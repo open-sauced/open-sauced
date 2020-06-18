@@ -31,7 +31,7 @@ const Container = styled.ul`
       margin-top: 10px;
       background-color: white;
       border: 1px solid white;
-      border-radius: 15px;
+      border-radius: ${size.tiny};
       transition: margin 0.1s ease-in-out;
     }
 
