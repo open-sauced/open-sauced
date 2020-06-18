@@ -33,6 +33,10 @@ const Container = styled.ul`
       border: 1px solid white;
       border-radius: ${size.tiny};
       transition: margin 0.1s ease-in-out;
+
+      &:last-child {
+        margin-right: 2px;
+      }
     }
 
     &:hover .avatar {
