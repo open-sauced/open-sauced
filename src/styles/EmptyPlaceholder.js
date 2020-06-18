@@ -3,7 +3,7 @@ import MEDIA from "./mediaTemplates";
 
 const EmptyPlaceholder = styled.div`
   text-align: center;
-  margin-top: 100px;
+  padding-bottom: 50px;
 
   .helper {
     color: grey;

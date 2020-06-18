@@ -74,6 +74,9 @@ function Issues({repoName, owner}) {
                     labels={issue.node.labels}
                     author={issue.node.author.login}
                     opened={issue.node.createdAt}
+                    participants={issue.node.participants}
+                    comments={issue.node.comments}
+                    milestone={issue.node.milestone}
                   />
                 </a>
               </li>
@@ -90,7 +93,7 @@ function Issues({repoName, owner}) {
       loading ? (
         <Spinner />
       ) : (
-        <EmptyPlaceholder>
+        <EmptyPlaceholder style={{marginTop: 100}}>
           <div style={{color: "grey"}}>
             <Octicon size="large" verticalAlign="middle" icon={getIconByName("issue-opened")} />
           </div>

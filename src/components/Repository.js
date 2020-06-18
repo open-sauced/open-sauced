@@ -23,6 +23,8 @@ function Repository({match}) {
   const [note, setNote] = useState(location.note);
   const [issueId, setIssueId] = useState();
 
+  const languagesShown = 3;
+
   useEffect(() => {
     api
       .fetchRepositoryData(repoOwner, repoName)
@@ -83,6 +85,17 @@ function Repository({match}) {
                 </a>
               </em>
             </small>
+            <div className="languages">
+              {repository && repository.languages.nodes.map((language, key) => (
+                <span key={key}>
+                  <span className="dot"  style={{color: language.color}}>•</span>
+                  <span className="name">{language.name}</span>
+                </span>
+              ))}
+              <span className="more">
+                {repository && repository.languages.totalCount > languagesShown && `+${repository.languages.totalCount - languagesShown} languages`}
+              </span>
+            </div>
           </div>
           <Illustration src={diary} />
         </SpaceBetween>
