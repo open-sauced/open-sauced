@@ -99,6 +99,7 @@ const ContextStyle = styled(Card)`
     margin-bottom: 16px;
     word-break: break-word;
   }
+
   p {
     width: 100%;
     word-wrap: break-word;
@@ -109,6 +110,24 @@ const ContextStyle = styled(Card)`
 
   a {
     color: ${colors.lighterGrey};
+  }
+
+  .languages {
+    margin-top: 20px;
+    
+    .dot {
+      font-size: 25px;
+      margin: 0;
+      vertical-align: sub;
+    }
+    
+    .name {
+      color: black;
+    }
+    
+    .more {
+      color: grey;
+    }
   }
 `;
 

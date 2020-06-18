@@ -7,7 +7,7 @@ import Octicon, {getIconByName} from "@primer/octicons-react";
 
 dayjs.extend(relativeTime);
 
-function IssueListItem({title, labels, author, opened, type}) {
+function IssueListItem({title, labels, author, opened, type, participants, comments, milestone}) {
   return (
     <FlexHeader>
       <FloatLeft>
@@ -31,6 +31,22 @@ function IssueListItem({title, labels, author, opened, type}) {
             <div>
               {type === "issues" && <small style={{fontSize: 12}}>opened {dayjs(opened).fromNow()} by {author}</small>}
               {type === "contributions" && <small style={{fontSize: 12}}>opened {dayjs(opened).fromNow()}</small>}
+              <span className="issueHelper">
+                <Octicon className="icon" size={13} verticalAlign="middle" icon={getIconByName("comment")} />
+                {comments && comments.totalCount}
+              </span>
+              {milestone && (
+                <span className="issueHelper">
+                  <Octicon className="icon" size={13} verticalAlign="middle" icon={getIconByName("milestone")} />
+                  {milestone.title}
+                </span>
+              )}
+              {participants && participants.nodes.map((user, key) => (
+                <img className="participants" key={key} src={user.avatarUrl} title={user.login} />
+              ))}
+              <span className="issueHelper">
+                {participants && participants.totalCount > 3 && `+${participants.totalCount - 3} Participants`}
+              </span>
             </div>
           </FlexColumn>
         </FlexCenter>
@@ -43,4 +59,5 @@ function IssueListItem({title, labels, author, opened, type}) {
     </FlexHeader>
   );
 }
+
 export default IssueListItem;

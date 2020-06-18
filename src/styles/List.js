@@ -19,6 +19,24 @@ const Container = styled.ul`
     color: ${colors.lightGrey};
     background-color: ${colors.lightestGrey};
   }
+
+  .participants {
+    height: 15px;
+    border-radius: 10px;
+    vertical-align: middle;
+    margin-right: 0;
+    margin-left: 5px;
+    margin-top: 5px;
+  }
+
+  .issueHelper {
+    color: grey;
+    margin-left: 3px;
+
+    .icon {
+      margin-top: 5px;
+    }
+  }
 `;
 
 export default Container;

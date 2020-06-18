@@ -3,14 +3,13 @@ import Dashboard from "../containers/Dashboard";
 import Footer from "../components/Footer";
 import DashboardFooter from "../components/DashboardFooter";
 import Nav from "../components/Nav";
-import {BrowserRouter as Router, Route, Switch, useHistory} from "react-router-dom";
+import {BrowserRouter as Router, Route, Redirect, Switch, useHistory} from "react-router-dom";
 import {MarketingButton} from "../styles/Button";
 import {Wrapper} from "../styles/Header";
 import {SpaceAround} from "../styles/Grid";
 import {NotFound} from "../styles/NotFound";
 import LocaleContext from "../Context";
 import auth from "../hoc/AuthHOC";
-import {getAppVersion} from "../lib/appVersion";
 import {ohno} from "../images";
 
 function NoMatch() {
@@ -35,7 +34,6 @@ function NoMatch() {
 }
 
 function App({handleLogIn, handleLogOut, user, isAdmin, isLoggedIn}) {
-  console.log("version", getAppVersion());
   const [goalsId, setGoalsId] = useState({});
 
   const guard = component => {
@@ -64,6 +62,13 @@ function App({handleLogIn, handleLogOut, user, isAdmin, isLoggedIn}) {
           <Route exact path="/" component={guard(Dashboard)} />
           <Route path="/repos" component={guard(Dashboard)} />
           <Route path="/callback" component={guard(Dashboard)} />
+          <Route exact path="/logout" render={() => (
+            isLoggedIn ? (
+              handleLogOut()
+            ) : (
+              <Redirect to="/" />
+            )
+          )}/>
           <Route component={NoMatch} />
         </Switch>
         {!user && <Footer />}

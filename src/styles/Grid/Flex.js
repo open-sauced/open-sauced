@@ -13,16 +13,12 @@ const FlexCenter = styled.div`
   align-items: center;
 `;
 
-const FlexHeader = styled.div`
-  display: flex;
-  align-items: center;
+const FlexHeader = styled(FlexCenter)`
   justify-content: space-between;
 `;
 
-const FlexColumnCenter = styled.div`
-  display: flex;
+const FlexColumnCenter = styled(FlexCenter)`
   flex-direction: column;
-  align-items: center;
 `;
 
 const FlexColumn = styled.div`
@@ -30,9 +26,7 @@ const FlexColumn = styled.div`
   flex-direction: column;
 `;
 
-const FlexStart = styled.div`
-  display: flex;
-  align-items: center;
+const FlexStart = styled(FlexCenter)`
   justify-content: flex-start;
 `;
 
@@ -54,4 +48,13 @@ const SpaceBetween = styled.div`
   `};
 `;
 
-export {Flex, SpaceAround, SpaceBetween, FlexColumnCenter, FlexStart, FlexCenter, FlexColumn, FlexHeader};
+export {
+  Flex,
+  SpaceAround,
+  SpaceBetween,
+  FlexColumnCenter,
+  FlexStart,
+  FlexCenter,
+  FlexColumn,
+  FlexHeader
+};

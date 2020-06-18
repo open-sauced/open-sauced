@@ -1,6 +1,6 @@
 {
   "name": "open-sauced",
-  "version": "0.14.5",
+  "version": "0.15.0",
   "private": true,
   "devDependencies": {
     "@babel/core": "^7.6.4",
@@ -85,6 +85,7 @@
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "graphql": "^14.5.8",
     "humanize-duration": "^3.23.0",
+    "lodash": "^4.17.15",
     "onegraph-apollo-client": "^2.1.0",
     "onegraph-auth": "^2.1.1",
     "prettier": "1.19.1",
@@ -108,7 +109,9 @@
     "clean": "rimraf src/tests/__snapshots__/",
     "test": "npm run clean && node scripts/test.js --env=jsdom --updateSnapshot",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix --ext .js,.jsx ."
   },
   "jest": {
     "moduleFileExtensions": [

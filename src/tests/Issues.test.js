@@ -7,7 +7,7 @@ expect.extend(toHaveNoViolations);
 
 import {data} from "./mocks";
 
-test("container component should have no violations", async () => {
+test("container component should have no violations", async() => {
   const {container} = render(<Issues owner={data.user} />);
   const results = await axe(container);
   expect(results).toHaveNoViolations();

@@ -42,6 +42,9 @@ function Contributions({repoName, owner}) {
                     title={issue.node.title}
                     labels={issue.node.labels}
                     opened={issue.node.createdAt}
+                    participants={issue.node.participants}
+                    comments={issue.node.comments}
+                    milestone={issue.node.milestone}
                   />
                 </a>
               </li>

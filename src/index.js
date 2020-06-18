@@ -8,6 +8,7 @@ import registerServiceWorker from "./registerServiceWorker";
 import OneGraphApolloClient from "onegraph-apollo-client";
 import {ApolloProvider} from "react-apollo";
 import api from "./lib/apiGraphQL";
+import {getAppVersion} from "./lib/appVersion";
 
 const apolloClient = new OneGraphApolloClient({
   oneGraphAuth: Config.auth,
@@ -19,6 +20,15 @@ function Index() {
   const [isAdmin, setIsAdmin] = useState(null);
 
   useEffect(() => {
+    console.log(`%c
+ ██████╗ ██████╗ ███████╗███╗   ██╗    ███████╗ █████╗ ██╗   ██╗ ██████╗███████╗██████╗ 
+██╔═══██╗██╔══██╗██╔════╝████╗  ██║    ██╔════╝██╔══██╗██║   ██║██╔════╝██╔════╝██╔══██╗
+██║   ██║██████╔╝█████╗  ██╔██╗ ██║    ███████╗███████║██║   ██║██║     █████╗  ██║  ██║
+██║   ██║██╔═══╝ ██╔══╝  ██║╚██╗██║    ╚════██║██╔══██║██║   ██║██║     ██╔══╝  ██║  ██║
+╚██████╔╝██║     ███████╗██║ ╚████║    ███████║██║  ██║╚██████╔╝╚██████╗███████╗██████╔╝
+ ╚═════╝ ╚═╝     ╚══════╝╚═╝  ╚═══╝    ╚══════╝╚═╝  ╚═╝ ╚═════╝  ╚═════╝╚══════╝╚═════╝%c v${getAppVersion()}`,
+    "color:#f6d82b",
+    "color:green;font-weight:bold");
     const auth = Config.auth;
     auth.isLoggedIn("github").then(isLoggedIn => {
       if (isLoggedIn) {
