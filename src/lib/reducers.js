@@ -1,13 +1,19 @@
 import {useCallback} from "react";
 import {usePersistedState} from "./hooks";
 
+export const actions = {
+  GET: "GET",
+  UPDATE: "UPDATE",
+  CREATE: "CREATE"
+};
+
 export function goalsReducer(state, action) {
   switch (action.type) {
-    case "GET":
+    case actions.GET:
       return state.repository ? state : state.data.gitHub.viewer;
-    case "UPDATE":
+    case actions.UPDATE:
       return state;
-    case "CREATE":
+    case actions.CREATE:
       return state.data.createRepository;
     default:
       throw new Error("No Action was provided.");

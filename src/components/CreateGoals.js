@@ -4,7 +4,7 @@ import Illustration from "../styles/Illustration";
 import {ContextStyle} from "../styles/Card";
 import {FlexColumn, SpaceBetween} from "../styles/Grid";
 import api from "../lib/apiGraphQL";
-import {goalsReducer} from "../lib/reducers";
+import {goalsReducer, actions} from "../lib/reducers";
 import {devProductive} from "../illustrations";
 
 function CreateGoals({user, onRepoCreation}) {
@@ -29,7 +29,7 @@ function CreateGoals({user, onRepoCreation}) {
           },
         } = goalsRes;
 
-        onRepoCreation(id, goalsReducer(goalsRes, {type: "CREATE"}));
+        onRepoCreation(id, goalsReducer(goalsRes, {type: actions.CREATE}));
       });
     });
   };

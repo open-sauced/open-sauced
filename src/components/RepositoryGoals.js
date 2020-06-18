@@ -8,7 +8,7 @@ import AddRepoForm from "../components/AddRepoForm";
 import Cards from "./Card";
 import {doneChecking} from "../illustrations";
 import {ContextStyle} from "../styles/Card";
-import {goalsReducer, usePersistentStateReducer} from "../lib/reducers";
+import {goalsReducer, usePersistentStateReducer, actions} from "../lib/reducers";
 import {EmptyPlaceholder} from "../styles/EmptyPlaceholder";
 import Octicon, {getIconByName} from "@primer/octicons-react";
 
@@ -16,14 +16,14 @@ function RepositoryGoals({user}) {
   const {goalsId, setGoalsId} = useContext(LocaleContext);
   const [state, dispatch] = usePersistentStateReducer("goalsState", goalsReducer);
 
-  const {repository} = goalsReducer(state, {type: "GET"});
+  const {repository} = goalsReducer(state, {type: actions.GET});
 
   useEffect(() => {
     repository && setGoalsId(repository.id);
   }, [goalsId]);
 
   const onRepoCreation = (id, repo) => {
-    dispatch({type: "CREATE", payload: repo});
+    dispatch({type: actions.CREATE, payload: repo});
     setGoalsId(id);
   };
 
@@ -44,7 +44,7 @@ function RepositoryGoals({user}) {
       return newRepos;
     };
 
-    dispatch({type: "UPDATE", payload: updatedRepos});
+    dispatch({type: actions.UPDATE, payload: updatedRepos});
   };
 
   const data = repository.data && JSON.parse(repository.data.text);
@@ -56,7 +56,6 @@ function RepositoryGoals({user}) {
           <ContextStyle>
             <SpaceBetween>
               <div>
-                {" "}
                 <h1>Dashboard</h1>
                 <p>
                   Open Sauced is a project to track the contributions you would like to work on. Add a repository you
