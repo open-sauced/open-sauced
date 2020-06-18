@@ -113,8 +113,8 @@ const ContextStyle = styled(Card)`
   }
 
   .languages {
-    margin-top: 20px;
-    
+    margin: 20px 0;
+
     .dot {
       font-size: 25px;
       margin: 0;

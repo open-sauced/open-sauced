@@ -13,6 +13,7 @@ import {ContextStyle} from "../styles/Card";
 import {Spinner} from "../styles/Spinner";
 import {Flex, FormColumn, IssuesColumn} from "../styles/Grid";
 import {humanizeNumber} from "../lib/humanizeNumber";
+import Button from "../styles/Button";
 
 function Repository({match}) {
   const {
@@ -96,6 +97,13 @@ function Repository({match}) {
                 {repository && repository.languages.totalCount > languagesShown && `+${repository.languages.totalCount - languagesShown} languages`}
               </span>
             </div>
+            <Flex>
+              {repository && (
+                <Button primary>
+                  Watch on Codetriage
+                </Button>
+              )}
+            </Flex>
           </div>
           <Illustration src={diary} />
         </SpaceBetween>
