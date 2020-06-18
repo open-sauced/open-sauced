@@ -8,7 +8,7 @@ const contextValue = {goalsId: 1, setGoalsId: jest.fn()};
 
 let realUseContext;
 let useContextMock;
-let container = null;
+const container = null;
 
 // Setup mock
 beforeEach(() => {
@@ -27,8 +27,8 @@ jest.mock("../lib/apiGraphQL", () => {
 });
 
 // TODO: Skipped until React.Suspense + zeit/swr is testable
-test.skip("renders without crashing", async () => {
-  await act(async () => {
+test.skip("renders without crashing", async() => {
+  await act(async() => {
     render(
       <AppContext.Provider value={contextValue}>
         <RepositoryGoals />

@@ -10,7 +10,7 @@ expect.extend(toHaveNoViolations);
 const {goals} = data;
 const goal = goals.nodes[0];
 
-test("container component should have no violations", async () => {
+test("container component should have no violations", async() => {
   const {container} = render(
     <BrowserRouter>
       <RepoListItem goal={goal} />

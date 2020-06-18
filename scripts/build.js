@@ -1,31 +1,31 @@
-'use strict';
+
 
 // Do this as the first thing so that any code reading it knows the right env.
-process.env.BABEL_ENV = 'production';
-process.env.NODE_ENV = 'production';
+process.env.BABEL_ENV = "production";
+process.env.NODE_ENV = "production";
 
 // Makes the script crash on unhandled rejections instead of silently
 // ignoring them. In the future, promise rejections that are not handled will
 // terminate the Node.js process with a non-zero exit code.
-process.on('unhandledRejection', err => {
+process.on("unhandledRejection", err => {
   throw err;
 });
 
 // Ensure environment variables are read.
-require('../config/env');
+require("../config/env");
 
 
-const path = require('path');
-const chalk = require('react-dev-utils/chalk');
-const fs = require('fs-extra');
-const webpack = require('webpack');
-const configFactory = require('../config/webpack.config');
-const paths = require('../config/paths');
-const checkRequiredFiles = require('react-dev-utils/checkRequiredFiles');
-const formatWebpackMessages = require('react-dev-utils/formatWebpackMessages');
-const printHostingInstructions = require('react-dev-utils/printHostingInstructions');
-const FileSizeReporter = require('react-dev-utils/FileSizeReporter');
-const printBuildError = require('react-dev-utils/printBuildError');
+const path = require("path");
+const chalk = require("react-dev-utils/chalk");
+const fs = require("fs-extra");
+const webpack = require("webpack");
+const configFactory = require("../config/webpack.config");
+const paths = require("../config/paths");
+const checkRequiredFiles = require("react-dev-utils/checkRequiredFiles");
+const formatWebpackMessages = require("react-dev-utils/formatWebpackMessages");
+const printHostingInstructions = require("react-dev-utils/printHostingInstructions");
+const FileSizeReporter = require("react-dev-utils/FileSizeReporter");
+const printBuildError = require("react-dev-utils/printBuildError");
 
 const measureFileSizesBeforeBuild =
   FileSizeReporter.measureFileSizesBeforeBuild;
@@ -44,11 +44,11 @@ if (!checkRequiredFiles([paths.appHtml, paths.appIndexJs])) {
 }
 
 // Generate configuration
-const config = configFactory('production');
+const config = configFactory("production");
 
 // We require that you explicitly set browsers and do not fall back to
 // browserslist defaults.
-const { checkBrowsers } = require('react-dev-utils/browsersHelper');
+const {checkBrowsers} = require("react-dev-utils/browsersHelper");
 checkBrowsers(paths.appPath, isInteractive)
   .then(() => {
     // First, read the current file sizes in build directory.
@@ -65,25 +65,25 @@ checkBrowsers(paths.appPath, isInteractive)
     return build(previousFileSizes);
   })
   .then(
-    ({ stats, previousFileSizes, warnings }) => {
+    ({stats, previousFileSizes, warnings}) => {
       if (warnings.length) {
-        console.log(chalk.yellow('Compiled with warnings.\n'));
-        console.log(warnings.join('\n\n'));
+        console.log(chalk.yellow("Compiled with warnings.\n"));
+        console.log(warnings.join("\n\n"));
         console.log(
-          '\nSearch for the ' +
-            chalk.underline(chalk.yellow('keywords')) +
-            ' to learn more about each warning.'
+          "\nSearch for the " +
+            chalk.underline(chalk.yellow("keywords")) +
+            " to learn more about each warning."
         );
         console.log(
-          'To ignore, add ' +
-            chalk.cyan('// eslint-disable-next-line') +
-            ' to the line before.\n'
+          "To ignore, add " +
+            chalk.cyan("// eslint-disable-next-line") +
+            " to the line before.\n"
         );
       } else {
-        console.log(chalk.green('Compiled successfully.\n'));
+        console.log(chalk.green("Compiled successfully.\n"));
       }
 
-      console.log('File sizes after gzip:\n');
+      console.log("File sizes after gzip:\n");
       printFileSizesAfterBuild(
         stats,
         previousFileSizes,
@@ -106,7 +106,7 @@ checkBrowsers(paths.appPath, isInteractive)
       );
     },
     err => {
-      console.log(chalk.red('Failed to compile.\n'));
+      console.log(chalk.red("Failed to compile.\n"));
       printBuildError(err);
       process.exit(1);
     }
@@ -126,13 +126,13 @@ function build(previousFileSizes) {
   if (process.env.NODE_PATH) {
     console.log(
       chalk.yellow(
-        'Setting NODE_PATH to resolve modules absolutely has been deprecated in favor of setting baseUrl in jsconfig.json (or tsconfig.json if you are using TypeScript) and will be removed in a future major release of create-react-app.'
+        "Setting NODE_PATH to resolve modules absolutely has been deprecated in favor of setting baseUrl in jsconfig.json (or tsconfig.json if you are using TypeScript) and will be removed in a future major release of create-react-app."
       )
     );
     console.log();
   }
 
-  console.log('Creating an optimized production build...');
+  console.log("Creating an optimized production build...");
 
   const compiler = webpack(config);
   return new Promise((resolve, reject) => {
@@ -148,7 +148,7 @@ function build(previousFileSizes) {
         });
       } else {
         messages = formatWebpackMessages(
-          stats.toJson({ all: false, warnings: true, errors: true })
+          stats.toJson({all: false, warnings: true, errors: true})
         );
       }
       if (messages.errors.length) {
@@ -157,21 +157,21 @@ function build(previousFileSizes) {
         if (messages.errors.length > 1) {
           messages.errors.length = 1;
         }
-        return reject(new Error(messages.errors.join('\n\n')));
+        return reject(new Error(messages.errors.join("\n\n")));
       }
       if (
         process.env.CI &&
-        (typeof process.env.CI !== 'string' ||
-          process.env.CI.toLowerCase() !== 'false') &&
+        (typeof process.env.CI !== "string" ||
+          process.env.CI.toLowerCase() !== "false") &&
         messages.warnings.length
       ) {
         console.log(
           chalk.yellow(
-            '\nTreating warnings as errors because process.env.CI = true.\n' +
-              'Most CI servers set it automatically.\n'
+            "\nTreating warnings as errors because process.env.CI = true.\n" +
+              "Most CI servers set it automatically.\n"
           )
         );
-        return reject(new Error(messages.warnings.join('\n\n')));
+        return reject(new Error(messages.warnings.join("\n\n")));
       }
 
       return resolve({

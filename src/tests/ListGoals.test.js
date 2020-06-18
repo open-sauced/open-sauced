@@ -9,7 +9,7 @@ expect.extend(toHaveNoViolations);
 
 const {goals} = data;
 
-test("container component should have no violations", async () => {
+test("container component should have no violations", async() => {
   const {container} = render(
     <BrowserRouter>
       <ListGoals goals={goals} />

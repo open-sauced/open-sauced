@@ -5,7 +5,7 @@ import NoteForm from "../components/NoteForm";
 import {axe, toHaveNoViolations} from "jest-axe";
 expect.extend(toHaveNoViolations);
 
-test("container component should have no violations", async () => {
+test("container component should have no violations", async() => {
   const {container} = render(<NoteForm />);
   const results = await axe(container);
   expect(results).toHaveNoViolations();
