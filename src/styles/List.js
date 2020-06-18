@@ -27,7 +27,7 @@ const Container = styled.ul`
 
     .avatar {
       height: ${size.tiny};
-      margin-right: -5px;
+      margin-right: -${size.micro};
       margin-top: 10px;
       background-color: white;
       border: 1px solid white;
