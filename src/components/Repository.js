@@ -101,7 +101,7 @@ function Repository({match}) {
               {repository && (
                 <a rel="noreferrer" target="_blank" href={`https://codetriage.com/${nameWithOwner}`}>
                   <Button primary>
-                    Watch on Codetriage
+                    Watch on CodeTriage
                   </Button>
                 </a>
               )}
