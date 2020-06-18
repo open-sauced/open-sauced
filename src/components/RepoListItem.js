@@ -4,6 +4,7 @@ import {FlexStart, FloatRight, FloatLeft, FlexColumn, FlexHeader, FlexCenter} fr
 import Octicon, {getIconByName} from "@primer/octicons-react";
 import Avatar from "../styles/Avatar";
 import {chevronRight} from "../icons";
+import {truncate} from "../lib/truncate";
 
 function RepoListItem({goal, stars}) {
   return (
@@ -12,7 +13,7 @@ function RepoListItem({goal, stars}) {
         <FlexCenter>
           <Avatar alt="avatar" src={`https://avatars.githubusercontent.com/${goal.title.split("/")[0].replace(/\s+/g, "")}`} />
           <FlexColumn className="details">
-            <p>{goal.title.replace(/\s+/g, "")}</p>
+            <p>{truncate(goal.title.replace(/\s+/g, ""), 60)}</p>
             {stars && (
               <FlexStart>
                 <div>
