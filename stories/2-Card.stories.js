@@ -137,7 +137,7 @@ export const NoteCard = () => (
       className="utility-input boxed-input text-box light-shadow"
       value={""}
       type="text"
-      placeholder={`Type your notes for here...`}
+      placeholder={"Type your notes for here..."}
       name="notes"
     />
     <FlexCenter>
