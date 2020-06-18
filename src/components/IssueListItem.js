@@ -41,9 +41,11 @@ function IssueListItem({title, labels, author, opened, type, participants, comme
                   {milestone.title}
                 </span>
               )}
-              {participants && participants.nodes.map((user, key) => (
-                <img className="participants" key={key} src={user.avatarUrl} title={user.login} />
-              ))}
+              <div className="avatar-stack">
+                {participants && participants.nodes.map((user, key) => (
+                  <img className="avatar" key={key} src={user.avatarUrl} title={user.login} />
+                ))}
+              </div>
               <span className="issueHelper">
                 {participants && participants.totalCount > 3 && `+${participants.totalCount - 3} Participants`}
               </span>

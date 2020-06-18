@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {colors} from "./variables";
+import {colors, size} from "./variables";
 
 const Container = styled.ul`
   list-style: none;
@@ -20,14 +20,26 @@ const Container = styled.ul`
     background-color: ${colors.lightestGrey};
   }
 
-  .participants {
-    height: 15px;
-    border-radius: 10px;
+  .avatar-stack {
     vertical-align: middle;
-    margin-right: 0;
+    display: inline;
     margin-left: 5px;
-    margin-top: 5px;
+
+    .avatar {
+      height: ${size.tiny};
+      margin-right: -5px;
+      margin-top: 10px;
+      background-color: white;
+      border: 1px solid white;
+      border-radius: 15px;
+      transition: margin 0.1s ease-in-out;
+    }
+
+    &:hover .avatar {
+      margin-right: 3px;
+    }
   }
+
 
   .issueHelper {
     color: grey;
