@@ -23,7 +23,7 @@ const Container = styled.ul`
   .avatar-stack {
     vertical-align: middle;
     display: inline;
-    margin-left: 5px;
+    margin-left: 3px;
 
     .avatar {
       height: ${size.tiny};
@@ -39,7 +39,6 @@ const Container = styled.ul`
       margin-right: 3px;
     }
   }
-
 
   .issueHelper {
     color: grey;
