@@ -120,11 +120,11 @@ const ContextStyle = styled(Card)`
       margin: 0;
       vertical-align: sub;
     }
-    
+
     .name {
       color: black;
     }
-    
+
     .more {
       color: grey;
     }

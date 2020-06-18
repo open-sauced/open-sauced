@@ -99,9 +99,11 @@ function Repository({match}) {
             </div>
             <Flex>
               {repository && (
-                <Button primary>
-                  Watch on Codetriage
-                </Button>
+                <a rel="noreferrer" target="_blank" href={`https://codetriage.com/${nameWithOwner}`}>
+                  <Button primary>
+                    Watch on Codetriage
+                  </Button>
+                </a>
               )}
             </Flex>
           </div>
