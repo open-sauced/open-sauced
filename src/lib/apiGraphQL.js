@@ -110,6 +110,7 @@ const operationsDoc = `
     gitHub {
       repositoryOwner(login: $owner) {
         repository(name: $repo) {
+          hasIssuesEnabled
           issues(first: 5, states: OPEN, orderBy: {field: CREATED_AT, direction: DESC}) {
             totalCount
             data: edges {
