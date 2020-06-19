@@ -81,6 +81,7 @@ const operationsDoc = `
           name
           nameWithOwner
           url
+          hasIssuesEnabled
           owner {
             login
           }
@@ -89,6 +90,9 @@ const operationsDoc = `
             totalCount
           }
           issues {
+            totalCount
+          }
+          pullRequests {
             totalCount
           }
           stargazers {
