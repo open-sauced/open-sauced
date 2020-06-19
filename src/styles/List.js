@@ -32,7 +32,7 @@ const Container = styled.ul`
       background-color: white;
       border: 1px solid white;
       border-radius: ${size.tiny};
-      transition: margin 0.1s ease-in-out;
+      transition: 0.1s all;
 
       &:last-child {
         margin-right: 2px;
