@@ -81,6 +81,7 @@ const operationsDoc = `
           name
           nameWithOwner
           url
+          hasIssuesEnabled
           owner {
             login
           }
@@ -89,6 +90,9 @@ const operationsDoc = `
             totalCount
           }
           issues {
+            totalCount
+          }
+          pullRequests {
             totalCount
           }
           stargazers {
@@ -110,6 +114,7 @@ const operationsDoc = `
     gitHub {
       repositoryOwner(login: $owner) {
         repository(name: $repo) {
+          hasIssuesEnabled
           issues(first: 5, states: OPEN, orderBy: {field: CREATED_AT, direction: DESC}) {
             totalCount
             data: edges {
