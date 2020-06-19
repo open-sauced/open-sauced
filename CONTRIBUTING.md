@@ -35,7 +35,7 @@ $ npm run test
 
 ## Pull Requests
 
-We actively welcome your pull requests.
+### _We actively welcome your pull requests, however linking your work to an existing issue is preferred._
 
 1. Fork the repo and create your branch from `master`.
 1. Name your branch something that is descriptive to the work you are doing. i.e. adds-new-thing or fixes-modbile-render
@@ -53,6 +53,10 @@ We actively welcome your pull requests.
 ## Issues
 
 If you plan to contribute a change based on an open issue, please assign yourself by commenting on the following word `.take`. Issues that are not assigned are assumed open, and to avoid conflicts, please assign yourself before beginning work on any issues.
+
+If you would like to contribute to the project for the first time, please consider joining checking the [bug](https://github.com/open-sauced/open-sauced/issues?q=is%3Aissue+is%3Aopen+label%3A%22%F0%9F%90%9B+bug%22) or [good first issue](https://github.com/open-sauced/open-sauced/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22) labels. 
+
+Also, all questions are welcomed.
 
 ### Triage Team
 
