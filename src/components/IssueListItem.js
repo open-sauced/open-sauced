@@ -8,6 +8,8 @@ import Octicon, {getIconByName} from "@primer/octicons-react";
 dayjs.extend(relativeTime);
 
 function IssueListItem({title, labels, author, opened, type, participants, comments, milestone}) {
+  const participantsDiffCount = 3;
+  const participantsShowDiff = participants && participants.totalCount - participantsDiffCount;
   return (
     <FlexHeader>
       <FloatLeft>
@@ -45,7 +47,11 @@ function IssueListItem({title, labels, author, opened, type, participants, comme
                 <img className="participants" key={key} src={user.avatarUrl} title={user.login} />
               ))}
               <span className="issueHelper">
-                {participants && participants.totalCount > 3 && `+${participants.totalCount - 3} Participants`}
+                {
+                  participants &&
+                  participants.totalCount > participantsDiffCount &&
+                   `+${participantsShowDiff} participant${participantsShowDiff !== 1 ? "s" : ""}`
+                }
               </span>
             </div>
           </FlexColumn>
