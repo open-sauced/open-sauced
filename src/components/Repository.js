@@ -26,6 +26,7 @@ function Repository({match}) {
 
   const languagesShown = 3;
 
+
   useEffect(() => {
     api
       .fetchRepositoryData(repoOwner, repoName)
@@ -61,7 +62,7 @@ function Repository({match}) {
   }, []);
 
   const {url, stargazers, forks, issues, name, nameWithOwner, owner} = repository || {};
-
+  const totalLangDiff = repository && repository.languages.totalCount - languagesShown;
   return (
     <section>
       {error && <ErrorMessage>{error}</ErrorMessage>}
@@ -94,7 +95,11 @@ function Repository({match}) {
                 </span>
               ))}
               <span className="more">
-                {repository && repository.languages.totalCount > languagesShown && `+${repository.languages.totalCount - languagesShown} languages`}
+                {
+                  repository &&
+                  repository.languages.totalCount > languagesShown &&
+                  `+${totalLangDiff} language${totalLangDiff !== 1 ? "s" : ""}`
+                }
               </span>
             </div>
             <Flex>
