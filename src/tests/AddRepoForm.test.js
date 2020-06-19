@@ -8,7 +8,7 @@ expect.extend(toHaveNoViolations);
 
 const {goals} = data;
 
-test("container component should have no violations", async () => {
+test("container component should have no violations", async() => {
   const {container} = render(<AddRepoForm />);
   const results = await axe(container);
   expect(results).toHaveNoViolations();

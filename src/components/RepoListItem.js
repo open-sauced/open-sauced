@@ -4,6 +4,7 @@ import Octicon, {getIconByName} from "@primer/octicons-react";
 import Avatar from "../styles/Avatar";
 import {chevronRight} from "../icons";
 import {humanizeNumber} from "../lib/humanizeNumber";
+import {truncate} from "../lib/truncate";
 
 function RepoListItem({goal, stars}) {
   return (
@@ -15,7 +16,7 @@ function RepoListItem({goal, stars}) {
             src={`https://avatars.githubusercontent.com/${goal.full_name.split("/")[0].replace(/\s+/g, "")}`}
           />
           <FlexColumn className="details">
-            <p>{goal.full_name.replace(/\s+/g, "")}</p>
+            <p>{truncate(goal.full_name.replace(/\s+/g, ""), 60)}</p>
             {stars && (
               <FlexStart style={{alignItems: "flex-start"}}>
                 <div>
