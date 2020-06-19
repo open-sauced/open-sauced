@@ -42,6 +42,21 @@ const Container = styled.ul`
     &:hover .avatar {
       margin-right: 3px;
     }
+
+    .others {
+      color: black;
+      vertical-align: middle;
+      margin-bottom: 5px;
+      display: inline-block;
+      background-color: ${colors.lightestGrey};
+      font-size: ${size.micro};
+      line-height: 15px;
+      height: 15px;
+      min-width: 15px;
+      text-align: center;
+      border-radius: ${size.large};
+      border: 1px solid ${colors.darkGrey};
+    }
   }
 
   .issueHelper {

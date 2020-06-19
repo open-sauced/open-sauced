@@ -47,14 +47,12 @@ function IssueListItem({title, labels, author, opened, type, participants, comme
                 {participants && participants.nodes.map((user, key) => (
                   <img className="avatar" key={key} src={user.avatarUrl} title={user.login} />
                 ))}
-              </div>
-              <span className="issueHelper">
                 {
                   participants &&
                   participants.totalCount > participantsDiffCount &&
-                   `+${participantsShowDiff} participant${participantsShowDiff !== 1 ? "s" : ""}`
+                   (<div className="others">+{participantsShowDiff}</div>)
                 }
-              </span>
+              </div>
             </div>
           </FlexColumn>
         </FlexCenter>
