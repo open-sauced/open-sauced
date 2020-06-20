@@ -26,6 +26,8 @@ const margin = {
 
 const padding = {
   sides: "30px",
+  medium: "1em",
+  large: "1.5em",
 };
 
 const typography = {
@@ -35,6 +37,13 @@ const typography = {
   semibold: "500",
   bold: "700",
   black: "900",
+};
+
+const fontSize = {
+  small: "0.75rem",
+  medium: "1rem",
+  large: "1.5rem",
+  xlarge: "2rem"
 };
 
 const size = {
@@ -57,4 +66,4 @@ const responsiveBreakpoints = {
   display: "1200px"
 };
 
-export {padding, colors, margin, typography, size, borderRadius, responsiveBreakpoints};
+export {padding, colors, margin, typography, fontSize, size, borderRadius, responsiveBreakpoints};

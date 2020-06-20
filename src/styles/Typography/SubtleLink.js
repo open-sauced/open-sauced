@@ -1,12 +1,12 @@
 import styled from "styled-components";
-import {size, colors} from "../variables";
+import {fontSize, padding, colors} from "../variables";
 
 const SubtleLink = styled.a`
   color: ${colors.offWhite} !important;
   text-decoration: none;
   font-weight: bold;
-  font-size: ${size.tiny};
-  margin-right: 8px;
+  font-size: ${fontSize.large};
+  margin-right: ${padding.large};
 `;
 
 export default SubtleLink;
