@@ -61,7 +61,7 @@ function Repository({match}) {
       });
   }, []);
 
-  const {url, stargazers, forks, issues, name, nameWithOwner, owner} = repository || {};
+  const {url, stargazers, forks, issues, pullRequests, name, nameWithOwner, owner, hasIssuesEnabled} = repository || {};
   const totalLangDiff = repository && repository.languages.totalCount - languagesShown;
   return (
     <section>
@@ -121,7 +121,11 @@ function Repository({match}) {
         {repository ? (
           <FormColumn>
             <Card>
-              <DetailInfo text={`${humanizeNumber(issues.totalCount)} issues`} icon="issue-opened" />
+              {hasIssuesEnabled ? (
+                <DetailInfo text={`${humanizeNumber(issues.totalCount)} issues`} icon="issue-opened" />
+              ) : (
+                <DetailInfo text={`${humanizeNumber(pullRequests.totalCount)} pull requests`} icon="git-pull-request" />
+              )}
               <DetailInfo text={`${humanizeNumber(forks.totalCount)} forks`} icon="repo-forked" />
               <DetailInfo text={`${humanizeNumber(stargazers.totalCount)} stars`} icon="star" />
             </Card>
