@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {colors, size} from "./variables";
+import {colors, size, margin} from "./variables";
 
 const Container = styled.ul`
   list-style: none;
@@ -28,7 +28,7 @@ const Container = styled.ul`
     .avatar {
       height: ${size.tiny};
       margin-right: -${size.micro};
-      margin-top: 10px;
+      margin-top: ${margin.gutter};
       background-color: white;
       border: 1px solid white;
       border-radius: ${size.tiny};
