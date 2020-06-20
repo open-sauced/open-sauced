@@ -15,16 +15,19 @@ function Issues({repoName, owner}) {
   const [loading, setLoading] = useState(false);
   const [cursor, setCursor] = useState(null);
   const [totalCount, setTotal] = useState(0);
+  const [issuesEnabled, setIssuesEnabled] = useState(null);
   const [offset, setOffset] = useState(0);
 
   useEffect(() => {
     setLoading(true);
     api.fetchIssuesQuery(owner, repoName).then(response => {
       const {data, totalCount} = response.data.gitHub.repositoryOwner.repository.issues;
+      const {hasIssuesEnabled} = response.data.gitHub.repositoryOwner.repository;
       const lastIssue = totalCount > 0 ? data[data.length - 1] : {};
       const {cursor} = lastIssue;
 
       setIssues(data);
+      setIssuesEnabled(hasIssuesEnabled);
       setCursor(cursor);
       setTotal(totalCount);
       setLoading(false);
@@ -94,12 +97,25 @@ function Issues({repoName, owner}) {
         <Spinner />
       ) : (
         <EmptyPlaceholder style={{marginTop: 100}}>
-          <div style={{color: "grey"}}>
-            <Octicon size="large" verticalAlign="middle" icon={getIconByName("issue-opened")} />
-          </div>
-          <div className="helper">
-            No Issues found
-          </div>
+          {issuesEnabled ? (
+            <div>
+              <div style={{color: "grey"}}>
+                <Octicon size="large" verticalAlign="middle" icon={getIconByName("issue-opened")} />
+              </div>
+              <div className="helper">
+                No Issues found
+              </div>
+            </div>
+          ) : (
+            <div>
+              <div style={{color: "grey"}}>
+                <Octicon size="large" verticalAlign="middle" icon={getIconByName("issue-opened")} />
+              </div>
+              <div className="helper">
+                Issues not enabled
+              </div>
+            </div>
+          )}
         </EmptyPlaceholder>
       )
     )

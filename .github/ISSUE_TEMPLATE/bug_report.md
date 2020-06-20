@@ -2,7 +2,7 @@
 name: 🐛 Bug report
 about: Create a report to help us improve Open Sauced 🍕
 title: "Bug: "
-labels: 👀 needs-triage, 🐛 bug
+labels: 👀 needs triage, 🐛 bug
 ---
 
 <!-- Before creating a bug report, try disabling browser extensions to see if the bug is still present. -->
