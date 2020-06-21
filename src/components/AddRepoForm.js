@@ -34,6 +34,12 @@ function AddRepoForm({goalsId, onGoalAdded}) {
       setError("Repository not found!");
       return;
     }
+
+    if (statusCode === 301) {
+      urlRef.current.focus();
+      setError("Repository has been moved to another location!");
+      return;
+    }
     api
       .createGoal(goalsId, repoUrl, null)
       .then(response => {
