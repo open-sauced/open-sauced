@@ -5,11 +5,12 @@ import {CardPadding} from "../styles/Card";
 import {Flex} from "../styles/Grid";
 import api from "../lib/apiGraphQL";
 import {isValidRepoUrl} from "../lib/util";
+import {repoStatusCode} from "../lib/repoStatusCode";
 
 function AddRepoForm({goalsId, onGoalAdded}) {
   const urlRef = useRef(null);
 
-  const _handleGoalCreation = (event) => {
+  const _handleGoalCreation = async(event) => {
     event.preventDefault();
     if (!urlRef.current.value) {
       urlRef.current.focus();
@@ -18,9 +19,17 @@ function AddRepoForm({goalsId, onGoalAdded}) {
     }
 
     const [isValid, repoUrl] = isValidRepoUrl(urlRef.current.value.replace(/\s+/g, ""));
+    const statusCode = await repoStatusCode(repoUrl);
+
+    if (statusCode === 404) {
+      urlRef.current.focus();
+      alert("Repository not found!");
+      return;
+    }
+
     if (!isValid) {
       urlRef.current.focus();
-      console.warn("Invalid GitHub repository!");
+      alert("Invalid GitHub repository!");
       return;
     }
     api
