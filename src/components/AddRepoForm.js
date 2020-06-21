@@ -40,6 +40,7 @@ function AddRepoForm({goalsId, onGoalAdded}) {
         onGoalAdded(response.data.gitHub.createIssue.issue);
         urlRef.current.value = "";
         urlRef.current.focus();
+        setError(null);
       })
       .catch(e => console.error(e));
   };
