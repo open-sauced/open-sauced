@@ -9,7 +9,7 @@ import Illustration from "../styles/Illustration";
 import {ErrorMessage} from "../styles/Typography";
 import {SpaceBetween} from "../styles/Grid";
 import {diary} from "../illustrations";
-import {ContextStyle} from "../styles/Card";
+import {ButtonBoard, RepositoryContext} from "../styles/Card";
 import {Spinner} from "../styles/Spinner";
 import {Flex, FormColumn, IssuesColumn} from "../styles/Grid";
 import {humanizeNumber} from "../lib/humanizeNumber";
@@ -25,7 +25,6 @@ function Repository({match}) {
   const [issueId, setIssueId] = useState();
 
   const languagesShown = 3;
-
 
   useEffect(() => {
     api
@@ -66,55 +65,52 @@ function Repository({match}) {
   return (
     <section>
       {error && <ErrorMessage>{error}</ErrorMessage>}
-      <ContextStyle>
-        <SpaceBetween>
-          <div>
-            <a style={{textDecoration: "none"}} href={url} rel="noreferrer" target="_blank">
-              {nameWithOwner ? (
-                <h1>{nameWithOwner}</h1>
-              ) : (
-                <h1>Loading...</h1>
-              )}
-            </a>
-            <p>
-              Use the issue list to find things to work on. The notes form is here to also assist with the tracking
-              contributions for the {name} repository.
-            </p>
-            <small>
-              <em>
-                <a href="https://opensource.guide/how-to-contribute/" rel="noreferrer" target="_blank">
-                  Learn how to contribute to open source projects
-                </a>
-              </em>
-            </small>
-            <div className="languages">
-              {repository && repository.languages.nodes.map((language, key) => (
-                <span key={key}>
-                  <span className="dot"  style={{color: language.color}}>•</span>
-                  <span className="name">{language.name}</span>
+      <Flex>
+        <RepositoryContext>
+          <SpaceBetween>
+            <div>
+              <a style={{textDecoration: "none"}} href={url} rel="noreferrer" target="_blank">
+                {nameWithOwner ? <h1>{nameWithOwner}</h1> : <h1>Loading...</h1>}
+              </a>
+              <p>
+                Use the issue list to find things to work on. The notes form is here to also assist with the tracking
+                contributions for the {name} repository.
+              </p>
+              <small>
+                <em>
+                  <a href="https://opensource.guide/how-to-contribute/" rel="noreferrer" target="_blank">
+                    Learn how to contribute to open source projects
+                  </a>
+                </em>
+              </small>
+              <div className="languages">
+                {repository &&
+                  repository.languages.nodes.map((language, key) => (
+                    <span key={key}>
+                      <span className="dot" style={{color: language.color}}>
+                        •
+                      </span>
+                      <span className="name">{language.name}</span>
+                    </span>
+                  ))}
+                <span className="more">
+                  {repository &&
+                    repository.languages.totalCount > languagesShown &&
+                    `+${totalLangDiff} language${totalLangDiff !== 1 ? "s" : ""}`}
                 </span>
-              ))}
-              <span className="more">
-                {
-                  repository &&
-                  repository.languages.totalCount > languagesShown &&
-                  `+${totalLangDiff} language${totalLangDiff !== 1 ? "s" : ""}`
-                }
-              </span>
+              </div>
             </div>
-            <Flex>
-              {repository && (
-                <a rel="noreferrer" target="_blank" href={`https://codetriage.com/${nameWithOwner}`}>
-                  <Button primary>
-                    Watch on CodeTriage
-                  </Button>
-                </a>
-              )}
-            </Flex>
-          </div>
-          <Illustration src={diary} />
-        </SpaceBetween>
-      </ContextStyle>
+            <Illustration src={diary} />
+          </SpaceBetween>
+        </RepositoryContext>
+        <ButtonBoard>
+          {repository && (
+            <a rel="noreferrer" target="_blank" href={`https://codetriage.com/${nameWithOwner}`}>
+              <Button primary>Watch on CodeTriage</Button>
+            </a>
+          )}
+        </ButtonBoard>
+      </Flex>
 
       <Flex>
         <IssuesColumn>{owner && <Issues repoName={name} owner={owner.login} />}</IssuesColumn>
