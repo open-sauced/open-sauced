@@ -21,15 +21,15 @@ function AddRepoForm({goalsId, onGoalAdded}) {
     const [isValid, repoUrl] = isValidRepoUrl(urlRef.current.value.replace(/\s+/g, ""));
     const statusCode = await repoStatusCode(repoUrl);
 
-    if (statusCode === 404) {
-      urlRef.current.focus();
-      alert("Repository not found!");
-      return;
-    }
-
     if (!isValid) {
       urlRef.current.focus();
       alert("Invalid GitHub repository!");
+      return;
+    }
+
+    if (statusCode === 404) {
+      urlRef.current.focus();
+      alert("Repository not found!");
       return;
     }
     api
