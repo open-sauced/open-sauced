@@ -14,7 +14,6 @@ import {Spinner} from "../styles/Spinner";
 import {Flex, FormColumn, IssuesColumn} from "../styles/Grid";
 import {humanizeNumber} from "../lib/humanizeNumber";
 import Button from "../styles/Button";
-import Octicon, {getIconByName} from "@primer/octicons-react";
 
 function Repository({match}) {
   const {
@@ -113,10 +112,6 @@ function Repository({match}) {
               <a rel="noreferrer" target="_blank" href={`https://codetriage.com/${nameWithOwner}`}>
                 <Button primary>Set up CodeTriage</Button>
               </a>
-              <h4>
-                <Octicon className="icon" verticalAlign="text-top" icon={getIconByName("law")} />
-                {licenseInfo.name}
-              </h4>
             </span>
           ) : (
             <h3>Loading...</h3>
@@ -136,6 +131,9 @@ function Repository({match}) {
               )}
               <DetailInfo text={`${humanizeNumber(forks.totalCount)} forks`} icon="repo-forked" />
               <DetailInfo text={`${humanizeNumber(stargazers.totalCount)} stars`} icon="star" />
+              {licenseInfo && (
+                <DetailInfo text={`${licenseInfo.name}`} icon="law" />
+              )}
             </Card>
             <Contributions repoName={name} owner={owner.login} />
             {owner && <Form note={note} goalId={issueId} repoName={nameWithOwner} />}

@@ -78,10 +78,6 @@ const ButtonBoard = styled.div`
   p {
     line-height: ${size.small};
   }
-  
-  .icon {
-    margin-right: ${size.micro};
-  }
 `;
 
 const CardPadding = styled.div`
