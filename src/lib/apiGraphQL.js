@@ -99,6 +99,9 @@ const operationsDoc = `
           stargazers {
             totalCount
           }
+          licenseInfo {
+            name
+          }
           languages(first: 3) {
             totalCount
             nodes {
