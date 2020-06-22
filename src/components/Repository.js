@@ -115,7 +115,7 @@ function Repository({match}) {
                 <Button primary>Set up CodeTriage</Button>
               </a>
               <h4>Contributors</h4>
-              <Flex>
+              <div>
                 {mentionableUsers.nodes.map((user, key) => (
                   <img className="contributors" key={key} src={user.avatarUrl} title={user.login} />
                 ))}
@@ -123,7 +123,7 @@ function Repository({match}) {
                   {repository.mentionableUsers.totalCount > contributorsShown &&
                     `+${totalContributorsDiff} contributor${totalContributorsDiff !== 1 ? "s" : ""}`}
                 </span>
-              </Flex>
+              </div>
             </span>
           ) : (
             <h3>Loading...</h3>
