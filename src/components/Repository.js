@@ -109,7 +109,7 @@ function Repository({match}) {
           </p>
           {repository ? (
             <a rel="noreferrer" target="_blank" href={`https://codetriage.com/${nameWithOwner}`}>
-              <Button className="button" primary>Set up CodeTriage</Button>
+              <Button primary>Set up CodeTriage</Button>
             </a>
           ) : (
             <h3>Loading...</h3>

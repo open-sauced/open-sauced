@@ -76,11 +76,7 @@ const ButtonBoard = styled.div`
   padding: ${size.tiny} ${margin.gutter};
   
   p {
-    line-height: 24px;
-  }
-  
-  .button {
-    margin-top: ${size.micro};
+    line-height: ${size.small};
   }
 `;
 
