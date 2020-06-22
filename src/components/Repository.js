@@ -61,6 +61,7 @@ function Repository({match}) {
 
   const {url, stargazers, forks, issues, pullRequests, name, nameWithOwner, owner, hasIssuesEnabled, contributors_oneGraph} = repository || {};
   const totalLangDiff = repository && repository.languages.totalCount - languagesShown;
+  const contributors = repository && contributors_oneGraph.nodes.filter(user => !user.login.includes("[bot]"));
   return (
     <section>
       {error && <ErrorMessage>{error}</ErrorMessage>}
@@ -113,9 +114,12 @@ function Repository({match}) {
               </a>
               <h4>Contributors</h4>
               <div className="contributors">
-                {contributors_oneGraph.nodes.filter(user => !user.login.includes("[bot]")).slice(0, 5).map((user, key) => (
+                {contributors.slice(0, 5).map((user, key) => (
                   <img className="users" key={key} src={user.avatarUrl} title={`${user.login} • ${user.contributionCount} contributions`} />
                 ))}
+                {contributors.length > 5 && (
+                  <span className="more">more...</span>
+                )}
               </div>
             </span>
           ) : (
