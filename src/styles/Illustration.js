@@ -12,6 +12,10 @@ const DoneChecking = styled.img`
   ${MEDIA.TABLET`
     display: none;
   `};
+
+  ${MEDIA.DESKTOP`
+    display: none;
+  `};
 `;
 
 export default DoneChecking;
