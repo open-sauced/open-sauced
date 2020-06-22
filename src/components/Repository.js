@@ -114,7 +114,7 @@ function Repository({match}) {
               <h4>Contributors</h4>
               <div className="contributors">
                 {contributors_oneGraph.nodes.filter(user => !user.login.includes("[bot]")).slice(0, 5).map((user, key) => (
-                  <img className="users" key={key} src={user.avatarUrl} title={user.login} />
+                  <img className="users" key={key} src={user.avatarUrl} title={`${user.login} • ${user.contributionCount} contributions`} />
                 ))}
               </div>
             </span>

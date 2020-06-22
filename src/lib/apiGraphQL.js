@@ -111,6 +111,7 @@ const operationsDoc = `
             nodes {
               login
               avatarUrl
+              contributionCount
             }
           }
         }
