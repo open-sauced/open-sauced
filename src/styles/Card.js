@@ -78,6 +78,18 @@ const ButtonBoard = styled.div`
   p {
     line-height: ${size.small};
   }
+
+  .contributors {
+    height: 28px;
+    border-radius: 28px;
+    margin-right: 8px;
+  }
+
+  .more {
+    font-weight: bold;
+    font-size: 14px;
+    margin: ${size.micro};
+  }
 `;
 
 const CardPadding = styled.div`

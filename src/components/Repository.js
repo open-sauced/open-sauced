@@ -25,6 +25,7 @@ function Repository({match}) {
   const [issueId, setIssueId] = useState();
 
   const languagesShown = 3;
+  const contributorsShown = 5;
 
   useEffect(() => {
     api
@@ -60,8 +61,9 @@ function Repository({match}) {
       });
   }, []);
 
-  const {url, stargazers, forks, issues, pullRequests, name, nameWithOwner, owner, hasIssuesEnabled, licenseInfo} = repository || {};
+  const {url, stargazers, forks, issues, pullRequests, name, nameWithOwner, owner, hasIssuesEnabled, licenseInfo, mentionableUsers} = repository || {};
   const totalLangDiff = repository && repository.languages.totalCount - languagesShown;
+  const totalContributorsDiff = repository && repository.mentionableUsers.totalCount - contributorsShown;
   return (
     <section>
       {error && <ErrorMessage>{error}</ErrorMessage>}
@@ -112,6 +114,16 @@ function Repository({match}) {
               <a rel="noreferrer" target="_blank" href={`https://codetriage.com/${nameWithOwner}`}>
                 <Button primary>Set up CodeTriage</Button>
               </a>
+              <h4>Contributors</h4>
+              <Flex>
+                {mentionableUsers.nodes.map((user, key) => (
+                  <img className="contributors" key={key} src={user.avatarUrl} title={user.login} />
+                ))}
+                <span className="more">
+                  {repository.mentionableUsers.totalCount > contributorsShown &&
+                    `+${totalContributorsDiff} contributor${totalContributorsDiff !== 1 ? "s" : ""}`}
+                </span>
+              </Flex>
             </span>
           ) : (
             <h3>Loading...</h3>

@@ -101,6 +101,13 @@ const operationsDoc = `
           licenseInfo {
             name
           }
+          mentionableUsers(first: 5) {
+            totalCount
+            nodes {
+              login
+              avatarUrl
+            }
+          }
           languages(first: 3) {
             totalCount
             nodes {
