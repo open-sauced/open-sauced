@@ -98,18 +98,19 @@ const operationsDoc = `
           stargazers {
             totalCount
           }
-          mentionableUsers(first: 5) {
-            totalCount
-            nodes {
-              login
-              avatarUrl
-            }
-          }
           languages(first: 3) {
             totalCount
             nodes {
               name
               color
+            }
+          }
+          contributors_oneGraph(
+            includeAnonymousContributors: false
+          ) {
+            nodes {
+              login
+              avatarUrl
             }
           }
         }

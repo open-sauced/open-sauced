@@ -23,9 +23,7 @@ function Repository({match}) {
   const [error, setError] = useState(null);
   const [note, setNote] = useState(location.note);
   const [issueId, setIssueId] = useState();
-
   const languagesShown = 3;
-  const contributorsShown = 5;
 
   useEffect(() => {
     api
@@ -61,9 +59,8 @@ function Repository({match}) {
       });
   }, []);
 
-  const {url, stargazers, forks, issues, pullRequests, name, nameWithOwner, owner, hasIssuesEnabled, mentionableUsers} = repository || {};
+  const {url, stargazers, forks, issues, pullRequests, name, nameWithOwner, owner, hasIssuesEnabled, contributors_oneGraph} = repository || {};
   const totalLangDiff = repository && repository.languages.totalCount - languagesShown;
-  const totalContributorsDiff = repository && repository.mentionableUsers.totalCount - contributorsShown;
   return (
     <section>
       {error && <ErrorMessage>{error}</ErrorMessage>}
@@ -116,13 +113,9 @@ function Repository({match}) {
               </a>
               <h4>Contributors</h4>
               <div className="contributors">
-                {mentionableUsers.nodes.map((user, key) => (
+                {contributors_oneGraph.nodes.filter(user => !user.login.includes("[bot]")).slice(0, 5).map((user, key) => (
                   <img className="users" key={key} src={user.avatarUrl} title={user.login} />
                 ))}
-                <span className="more">
-                  {repository.mentionableUsers.totalCount > contributorsShown &&
-                    `+${totalContributorsDiff} contributor${totalContributorsDiff !== 1 ? "s" : ""}`}
-                </span>
               </div>
             </span>
           ) : (
