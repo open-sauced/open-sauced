@@ -9,10 +9,6 @@ const DoneChecking = styled.img`
   border-radius: ${borderRadius};
   padding: 0 20px
 
-  ${MEDIA.TABLET`
-    display: none;
-  `};
-
   ${MEDIA.DESKTOP`
     display: none;
   `};
