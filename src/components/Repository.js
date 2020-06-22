@@ -104,10 +104,15 @@ function Repository({match}) {
           </SpaceBetween>
         </RepositoryContext>
         <ButtonBoard>
-          {repository && (
+          <p>
+            CodeTriage helps by picking a handful of open issues and delivering them directly to your inbox.
+          </p>
+          {repository ? (
             <a rel="noreferrer" target="_blank" href={`https://codetriage.com/${nameWithOwner}`}>
-              <Button primary>Watch on CodeTriage</Button>
+              <Button className="button" primary>Set up CodeTriage</Button>
             </a>
+          ) : (
+            <h3>Loading...</h3>
           )}
         </ButtonBoard>
       </Flex>
