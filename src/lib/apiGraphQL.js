@@ -79,6 +79,7 @@ const operationsDoc = `
         repository(name: $repo) {
           id
           name
+          description
           nameWithOwner
           url
           hasIssuesEnabled

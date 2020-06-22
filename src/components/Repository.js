@@ -60,7 +60,7 @@ function Repository({match}) {
       });
   }, []);
 
-  const {url, stargazers, forks, issues, pullRequests, name, nameWithOwner, owner, hasIssuesEnabled, licenseInfo} = repository || {};
+  const {url, description, stargazers, forks, issues, pullRequests, name, nameWithOwner, owner, hasIssuesEnabled, licenseInfo} = repository || {};
   const totalLangDiff = repository && repository.languages.totalCount - languagesShown;
   return (
     <section>
@@ -76,8 +76,7 @@ function Repository({match}) {
               )}
             </a>
             <p>
-              Use the issue list to find things to work on. The notes form is here to also assist with the tracking
-              contributions for the {name} repository.
+              {description}
             </p>
             <small>
               <em>
