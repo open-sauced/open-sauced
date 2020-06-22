@@ -92,6 +92,11 @@ const ButtonBoard = styled.div`
     font-weight: bold;
     font-size: 14px;
     margin: ${size.micro};
+
+    a {
+      text-decoration: none;
+      color: gray;
+    }
   }
 `;
 

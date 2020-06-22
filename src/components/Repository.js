@@ -24,6 +24,7 @@ function Repository({match}) {
   const [note, setNote] = useState(location.note);
   const [issueId, setIssueId] = useState();
   const languagesShown = 3;
+  const contributorsShown = 5;
 
   useEffect(() => {
     api
@@ -114,11 +115,15 @@ function Repository({match}) {
               </a>
               <h4>Contributors</h4>
               <div className="contributors">
-                {contributors.slice(0, 5).map((user, key) => (
-                  <img className="users" key={key} src={user.avatarUrl} title={`${user.login} • ${user.contributionCount} contributions`} />
+                {contributors.slice(0, contributorsShown).map((user, key) => (
+                  <a href={`https://github.com/${user.login}`} rel="noreferrer" target="_blank">
+                    <img className="users" key={key} src={user.avatarUrl} title={`${user.login} • ${user.contributionCount} contributions`} />
+                  </a>
                 ))}
-                {contributors.length > 5 && (
-                  <span className="more">more...</span>
+                {contributors.length > contributorsShown && (
+                  <span className="more">
+                    <a href={`${url}/graphs/contributors`} rel="noreferrer" target="_blank">more...</a>
+                  </span>
                 )}
               </div>
             </span>
