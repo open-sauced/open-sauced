@@ -98,9 +98,6 @@ const operationsDoc = `
           stargazers {
             totalCount
           }
-          licenseInfo {
-            name
-          }
           mentionableUsers(first: 5) {
             totalCount
             nodes {

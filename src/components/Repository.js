@@ -61,7 +61,7 @@ function Repository({match}) {
       });
   }, []);
 
-  const {url, stargazers, forks, issues, pullRequests, name, nameWithOwner, owner, hasIssuesEnabled, licenseInfo, mentionableUsers} = repository || {};
+  const {url, stargazers, forks, issues, pullRequests, name, nameWithOwner, owner, hasIssuesEnabled, mentionableUsers} = repository || {};
   const totalLangDiff = repository && repository.languages.totalCount - languagesShown;
   const totalContributorsDiff = repository && repository.mentionableUsers.totalCount - contributorsShown;
   return (
@@ -143,9 +143,6 @@ function Repository({match}) {
               )}
               <DetailInfo text={`${humanizeNumber(forks.totalCount)} forks`} icon="repo-forked" />
               <DetailInfo text={`${humanizeNumber(stargazers.totalCount)} stars`} icon="star" />
-              {licenseInfo && (
-                <DetailInfo text={`${licenseInfo.name}`} icon="law" />
-              )}
             </Card>
             <Contributions repoName={name} owner={owner.login} />
             {owner && <Form note={note} goalId={issueId} repoName={nameWithOwner} />}
