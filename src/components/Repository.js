@@ -14,6 +14,7 @@ import {Spinner} from "../styles/Spinner";
 import {Flex, FormColumn, IssuesColumn} from "../styles/Grid";
 import {humanizeNumber} from "../lib/humanizeNumber";
 import Button from "../styles/Button";
+import Octicon, {getIconByName} from "@primer/octicons-react";
 
 function Repository({match}) {
   const {
@@ -60,7 +61,7 @@ function Repository({match}) {
       });
   }, []);
 
-  const {url, stargazers, forks, issues, pullRequests, name, nameWithOwner, owner, hasIssuesEnabled} = repository || {};
+  const {url, stargazers, forks, issues, pullRequests, name, nameWithOwner, owner, hasIssuesEnabled, licenseInfo} = repository || {};
   const totalLangDiff = repository && repository.languages.totalCount - languagesShown;
   return (
     <section>
@@ -104,13 +105,19 @@ function Repository({match}) {
           </SpaceBetween>
         </RepositoryContext>
         <ButtonBoard>
-          <p>
-            CodeTriage helps by picking a handful of open issues and delivering them directly to your inbox.
-          </p>
           {repository ? (
-            <a rel="noreferrer" target="_blank" href={`https://codetriage.com/${nameWithOwner}`}>
-              <Button primary>Set up CodeTriage</Button>
-            </a>
+            <span>
+              <p>
+                CodeTriage helps by picking a handful of open issues and delivering them directly to your inbox.
+              </p>
+              <a rel="noreferrer" target="_blank" href={`https://codetriage.com/${nameWithOwner}`}>
+                <Button primary>Set up CodeTriage</Button>
+              </a>
+              <h4>
+                <Octicon className="icon" verticalAlign="text-top" icon={getIconByName("law")} />
+                {licenseInfo.name}
+              </h4>
+            </span>
           ) : (
             <h3>Loading...</h3>
           )}
