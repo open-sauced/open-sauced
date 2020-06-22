@@ -80,10 +80,12 @@ const ButtonBoard = styled.div`
   }
 
   .contributors {
-    height: 28px;
-    width: 28px;
-    border-radius: 28px;
-    margin-right: 8px;
+    display: flex;
+    .users {
+      height: 28px;
+      border-radius: 28px;
+      margin-right: 8px;
+    }
   }
 
   .more {

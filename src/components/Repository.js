@@ -115,9 +115,9 @@ function Repository({match}) {
                 <Button primary>Set up CodeTriage</Button>
               </a>
               <h4>Contributors</h4>
-              <div>
+              <div className="contributors">
                 {mentionableUsers.nodes.map((user, key) => (
-                  <img className="contributors" key={key} src={user.avatarUrl} title={user.login} />
+                  <img className="users" key={key} src={user.avatarUrl} title={user.login} />
                 ))}
                 <span className="more">
                   {repository.mentionableUsers.totalCount > contributorsShown &&
