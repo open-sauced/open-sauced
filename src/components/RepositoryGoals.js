@@ -47,7 +47,7 @@ function RepositoryGoals({user}) {
     dispatch({type: "UPDATE", payload: updatedRepos});
   };
 
-  const data = repository.data && JSON.parse(repository.data.text);
+  const data = repository && repository.data && repository.data.text && JSON.parse(repository.data.text);
 
   return (
     <section>
@@ -91,7 +91,7 @@ function RepositoryGoals({user}) {
           </Cards>
         </React.Fragment>
       ) : (
-        <CreateGoals user={user.login} onRepoCreation={onRepoCreation} />
+        <CreateGoals user={user && user.login || ""} onRepoCreation={onRepoCreation} />
       )}
     </section>
   );
