@@ -109,6 +109,15 @@ const operationsDoc = `
               color
             }
           }
+          contributors_oneGraph(
+            includeAnonymousContributors: false
+          ) {
+            nodes {
+              login
+              avatarUrl
+              contributionCount
+            }
+          }
         }
       }
     }
