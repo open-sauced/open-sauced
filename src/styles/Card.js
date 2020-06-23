@@ -73,7 +73,35 @@ const FittedCard = styled(Card)`
 
 const ButtonBoard = styled.div`
   flex: 1;
+<<<<<<< HEAD
   padding: ${size.medium} ${margin.gutter};
+=======
+  padding: ${size.tiny} ${margin.gutter};
+  
+  p {
+    line-height: ${size.small};
+  }
+
+  .contributors {
+    display: flex;
+    .users {
+      height: 28px;
+      border-radius: 28px;
+      margin-right: 8px;
+    }
+  }
+
+  .more {
+    font-weight: bold;
+    font-size: 14px;
+    margin: ${size.micro};
+
+    a {
+      text-decoration: none;
+      color: gray;
+    }
+  }
+>>>>>>> cd4e6472faea137decb273c3803b5922716da519
 `;
 
 const CardPadding = styled.div`

@@ -23,8 +23,8 @@ function Repository({match}) {
   const [error, setError] = useState(null);
   const [note, setNote] = useState(location.note);
   const [issueId, setIssueId] = useState();
-
   const languagesShown = 3;
+  const contributorsShown = 5;
 
   useEffect(() => {
     api
@@ -60,8 +60,22 @@ function Repository({match}) {
       });
   }, []);
 
-  const {url, stargazers, forks, issues, pullRequests, name, nameWithOwner, owner, hasIssuesEnabled} = repository || {};
+  const {
+    url,
+    stargazers,
+    forks,
+    description,
+    issues,
+    pullRequests,
+    name,
+    nameWithOwner,
+    owner,
+    hasIssuesEnabled,
+    contributors_oneGraph,
+    licenseInfo,
+  } = repository || {};
   const totalLangDiff = repository && repository.languages.totalCount - languagesShown;
+  const contributors = repository && contributors_oneGraph.nodes.filter(user => !user.login.includes("[bot]"));
   return (
     <section>
       {error && <ErrorMessage>{error}</ErrorMessage>}
@@ -72,10 +86,7 @@ function Repository({match}) {
               <a style={{textDecoration: "none"}} href={url} rel="noreferrer" target="_blank">
                 {nameWithOwner ? <h1>{nameWithOwner}</h1> : <h1>Loading...</h1>}
               </a>
-              <p>
-                Use the issue list to find things to work on. The notes form is here to also assist with the tracking
-                contributions for the {name} repository.
-              </p>
+              <p>{description}</p>
               <small>
                 <em>
                   <a href="https://opensource.guide/how-to-contribute/" rel="noreferrer" target="_blank">
@@ -104,10 +115,35 @@ function Repository({match}) {
           </SpaceBetween>
         </RepositoryContext>
         <ButtonBoard>
-          {repository && (
-            <a rel="noreferrer" target="_blank" href={`https://codetriage.com/${nameWithOwner}`}>
-              <Button primary>Watch on CodeTriage</Button>
-            </a>
+          {repository ? (
+            <span>
+              <p>CodeTriage helps by picking a handful of open issues and delivering them directly to your inbox.</p>
+              <a rel="noreferrer" target="_blank" href={`https://codetriage.com/${nameWithOwner}`}>
+                <Button primary>Set up CodeTriage</Button>
+              </a>
+              <h4>Contributors</h4>
+              <div className="contributors">
+                {contributors.slice(0, contributorsShown).map((user, key) => (
+                  <a href={`https://github.com/${user.login}`} rel="noreferrer" target="_blank">
+                    <img
+                      className="users"
+                      key={key}
+                      src={user.avatarUrl}
+                      title={`${user.login} • ${user.contributionCount} contributions`}
+                    />
+                  </a>
+                ))}
+                {contributors.length > contributorsShown && (
+                  <span className="more">
+                    <a href={`${url}/graphs/contributors`} rel="noreferrer" target="_blank">
+                      more...
+                    </a>
+                  </span>
+                )}
+              </div>
+            </span>
+          ) : (
+            <h3>Loading...</h3>
           )}
         </ButtonBoard>
       </Flex>
@@ -124,6 +160,7 @@ function Repository({match}) {
               )}
               <DetailInfo text={`${humanizeNumber(forks.totalCount)} forks`} icon="repo-forked" />
               <DetailInfo text={`${humanizeNumber(stargazers.totalCount)} stars`} icon="star" />
+              {licenseInfo && <DetailInfo text={`${licenseInfo.name}`} icon="law" />}
             </Card>
             <Contributions repoName={name} owner={owner.login} />
             {owner && <Form note={note} goalId={issueId} repoName={nameWithOwner} />}
