@@ -60,7 +60,7 @@ function Repository({match}) {
       });
   }, []);
 
-  const {url, stargazers, forks, issues, pullRequests, name, nameWithOwner, owner, hasIssuesEnabled, contributors_oneGraph} = repository || {};
+  const {url, stargazers, forks, issues, pullRequests, name, nameWithOwner, owner, hasIssuesEnabled, contributors_oneGraph, licenseInfo} = repository || {};
   const totalLangDiff = repository && repository.languages.totalCount - languagesShown;
   const contributors = repository && contributors_oneGraph.nodes.filter(user => !user.login.includes("[bot]"));
   return (
@@ -74,8 +74,7 @@ function Repository({match}) {
                 {nameWithOwner ? <h1>{nameWithOwner}</h1> : <h1>Loading...</h1>}
               </a>
               <p>
-                Use the issue list to find things to work on. The notes form is here to also assist with the tracking
-                contributions for the {name} repository.
+                {description}
               </p>
               <small>
                 <em>
@@ -145,6 +144,9 @@ function Repository({match}) {
               )}
               <DetailInfo text={`${humanizeNumber(forks.totalCount)} forks`} icon="repo-forked" />
               <DetailInfo text={`${humanizeNumber(stargazers.totalCount)} stars`} icon="star" />
+              {licenseInfo && (
+                <DetailInfo text={`${licenseInfo.name}`} icon="law" />
+              )}
             </Card>
             <Contributions repoName={name} owner={owner.login} />
             {owner && <Form note={note} goalId={issueId} repoName={nameWithOwner} />}

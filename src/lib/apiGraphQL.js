@@ -79,6 +79,7 @@ const operationsDoc = `
         repository(name: $repo) {
           id
           name
+          description
           nameWithOwner
           url
           hasIssuesEnabled
@@ -97,6 +98,9 @@ const operationsDoc = `
           }
           stargazers {
             totalCount
+          }
+          licenseInfo {
+            name
           }
           languages(first: 3) {
             totalCount
