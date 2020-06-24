@@ -1,5 +1,5 @@
 import React, {useRef, useState} from "react";
-import { InputButton } from "../styles/Button";
+import {InputButton} from "../styles/Button";
 import Input from "../styles/Input";
 import {CardPadding} from "../styles/Card";
 import {Flex} from "../styles/Grid";
