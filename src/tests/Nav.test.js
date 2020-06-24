@@ -21,7 +21,6 @@ jest.mock("react-router-dom", () => {
 // TODO: Skipped until React.Suspense + zeit/swr is testable
 // https://github.com/open-sauced/open-sauced/discussions/408
 test.skip("container component should have no violations", async() => {
-  const history = createMemoryHistory();
   const {container} = render(<Nav />);
   const results = await axe(container);
   expect(results).toHaveNoViolations();

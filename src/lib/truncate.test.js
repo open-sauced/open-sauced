@@ -7,7 +7,7 @@ describe("Test: truncate()", () => {
     expect(result).toBe("test/test...");
   });
 
-  test(`'string should truncate with ending`, () => {
+  test("string should truncate with ending", () => {
     const string = "test/testtesttest";
     const result = truncate(string, 12, "!!!");
     expect(result).toBe("test/test!!!");
