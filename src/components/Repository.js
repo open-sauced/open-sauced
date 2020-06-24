@@ -5,6 +5,7 @@ import Issues from "../components/Issues";
 import Contributions from "../components/Contributions";
 import DetailInfo from "../components/DetailInfo";
 import api from "../lib/apiGraphQL";
+import RepositoryAvatar from "../styles/RepositoryAvatar";
 import Illustration from "../styles/Illustration";
 import {ErrorMessage} from "../styles/Typography";
 import {SpaceBetween} from "../styles/Grid";
@@ -84,7 +85,10 @@ function Repository({match}) {
           <SpaceBetween>
             <div>
               <a style={{textDecoration: "none"}} href={url} rel="noreferrer" target="_blank">
-                {nameWithOwner ? <h1>{nameWithOwner}</h1> : <h1>Loading...</h1>}
+                {nameWithOwner ? <h1><RepositoryAvatar
+                  alt="avatar"
+                  src={`https://avatars.githubusercontent.com/${nameWithOwner.split("/")[0]}`}
+                />{nameWithOwner}</h1> : <h1>Loading...</h1>}
               </a>
               <p>{description}</p>
               <small>
