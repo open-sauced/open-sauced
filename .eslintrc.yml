@@ -126,6 +126,8 @@ rules:
 # Global scoped method and vars
 globals:
   netlify: true
+  global: true
+  __dirname: true
   App: true
   describe: true
   it: true
