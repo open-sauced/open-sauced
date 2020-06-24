@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import {borderRadius, colors, size, typography} from "./variables";
+import MEDIA from "./mediaTemplates";
+import {margin, borderRadius, colors, size, typography} from "./variables";
 
 const Card = styled.div`
   background-color: white;
@@ -12,7 +13,6 @@ const Card = styled.div`
   margin: ${size.tiny} 0 0 0;
   outline: none;
   transition: background-color 0.2s ease;
-  min-width: 80%;
 
   a:hover {
     text-decoration-color: ${colors.lightGrey};
@@ -71,6 +71,39 @@ const FittedCard = styled(Card)`
   padding: 0;
 `;
 
+const ButtonBoard = styled.div`
+  flex: 1;
+<<<<<<< HEAD
+  padding: ${size.medium} ${margin.gutter};
+=======
+  padding: ${size.tiny} ${margin.gutter};
+  
+  p {
+    line-height: ${size.small};
+  }
+
+  .contributors {
+    display: flex;
+    .users {
+      height: 28px;
+      border-radius: 28px;
+      margin-right: 8px;
+    }
+  }
+
+  .more {
+    font-weight: bold;
+    font-size: 14px;
+    margin: ${size.micro};
+
+    a {
+      text-decoration: none;
+      color: gray;
+    }
+  }
+>>>>>>> cd4e6472faea137decb273c3803b5922716da519
+`;
+
 const CardPadding = styled.div`
   padding: ${size.tiny};
 
@@ -91,6 +124,10 @@ const CardHeader = styled.div`
 `;
 
 const ContextStyle = styled(Card)`
+  ${MEDIA.TABLET`
+    margin: 0;
+  `};
+
   h1 {
     width: 100%;
     font-size: ${size.medium};
@@ -113,22 +150,27 @@ const ContextStyle = styled(Card)`
   }
 
   .languages {
-    margin-top: 20px;
-    
+    margin: ${size.tiny} 0;
+
     .dot {
       font-size: 25px;
       margin: 0;
       vertical-align: sub;
     }
-    
+
     .name {
       color: black;
     }
-    
+
     .more {
       color: grey;
     }
   }
+`;
+
+const RepositoryContext = styled(ContextStyle)`
+  margin-right: ${size.small}
+  flex: 2;
 `;
 
 const HintStyle = styled(Card)`
@@ -188,4 +230,14 @@ const OnBoardStyle = styled(Card)`
   }
 `;
 
-export {Card, CardPadding, CardHeader, FittedCard, ContextStyle, HintStyle, OnBoardStyle};
+export {
+  Card,
+  ButtonBoard,
+  CardPadding,
+  CardHeader,
+  FittedCard,
+  ContextStyle,
+  HintStyle,
+  OnBoardStyle,
+  RepositoryContext,
+};

@@ -79,6 +79,7 @@ const operationsDoc = `
         repository(name: $repo) {
           id
           name
+          description
           nameWithOwner
           url
           hasIssuesEnabled
@@ -98,11 +99,23 @@ const operationsDoc = `
           stargazers {
             totalCount
           }
+          licenseInfo {
+            name
+          }
           languages(first: 3) {
             totalCount
             nodes {
               name
               color
+            }
+          }
+          contributors_oneGraph(
+            includeAnonymousContributors: false
+          ) {
+            nodes {
+              login
+              avatarUrl
+              contributionCount
             }
           }
         }
