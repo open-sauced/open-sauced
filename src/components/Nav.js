@@ -7,7 +7,7 @@ import {SpaceBetween} from "../styles/Grid";
 import ProfileAvatar from "../styles/ProfileAvatar";
 import AdminStatsBar from "./AdminStatsBar";
 import Hotkeys from "react-hot-keys";
-import {useHistory, Link} from "react-router-dom";
+import {useHistory} from "react-router-dom";
 
 function LeftSide({isLoggedIn, user, handleLogIn, handleLogOut}) {
   const history = useHistory();
@@ -18,10 +18,12 @@ function LeftSide({isLoggedIn, user, handleLogIn, handleLogOut}) {
 
   return (
     <FloatLeftMobileNav>
-      <Link style={{verticalAlign: "middle"}} to="/">
-        <img alt="open sauced" src={logo} />
-      </Link>
       <ul>
+        <li>
+          <SubtleLink href="/">
+            <img alt="open sauced" src={logo} />
+          </SubtleLink>
+        </li>
         <li>
           <SubtleLink href="https://dev.to/opensauced">Blog</SubtleLink>
         </li>

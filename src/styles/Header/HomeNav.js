@@ -12,12 +12,13 @@ const Container = styled.nav`
   box-shadow: 0 .200rem .25rem rgba(0,0,0,.075);
 
   img {
-    height: ${fontSize.xlarge}
+    height: ${fontSize.large}
   }
 
   ul {
     list-style: none;
     display: inline-flex;
+    padding: 0;
   }
 
   a {

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {colors, size} from "../variables";
+import {fontSize, colors, size} from "../variables";
 import MEDIA from "../mediaTemplates";
 
 const Hero = styled.section`
@@ -14,14 +14,14 @@ const Hero = styled.section`
     padding: 1rem;
   `};
   h1 {
-    font-size: 32px;
+    font-size: ${fontSize.xlarge};
   }
 
   h2 {
     margin: 0;
     color: ${colors.saucyRed};
     text-decoration: underline;
-    font-size: ${size.medium};
+    font-size: ${fontSize.xxlarge};
   }
 
   small {

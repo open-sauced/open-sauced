@@ -5,7 +5,7 @@ const SubtleLink = styled.a`
   color: ${colors.offWhite} !important;
   text-decoration: none;
   font-weight: bold;
-  font-size: ${fontSize.large};
+  font-size: ${fontSize.medium};
   margin-right: ${padding.large};
 `;
 
