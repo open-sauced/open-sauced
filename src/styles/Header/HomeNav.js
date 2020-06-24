@@ -25,7 +25,12 @@ const Container = styled.nav`
     vertical-align: middle;
   }
 
-  span {
+  a:hover {
+    text-decoration: underline;
+    color: ${colors.cheesyYellow} !important;  
+}
+
+  img, span {
     margin-right: ${size.micro};
   }
 
@@ -34,9 +39,6 @@ const Container = styled.nav`
       display: none;
     }
 
-    ul {
-      padding: 2px;
-    }
 
     ul li {
       display: none;
