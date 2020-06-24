@@ -1,16 +1,16 @@
 import styled from "styled-components";
-import {borderRadius} from "./variables";
+import {borderRadius, margin, size} from "./variables";
 
 const RepositoryAvatar = styled.img`
-  margin-right: 10px !important;
-  margin-bottom: -10px;
+  margin-right: ${margin.gutter} !important;
+  margin-bottom: -${margin.gutter};
   display:inline;
   object-fit: cover;
-  height: 40px;
-  width: 40px;
-  -moz-border-radius: 5px;
+  height: ${size.medium};
+  width: ${size.medium};
+  -moz-border-radius: ${borderRadius};
   -webkit-border-radius: ${borderRadius};
-  border-radius: 5px;
+  border-radius: ${borderRadius};
   border: 2px solid white;
   line-height: 50px;
 `;
