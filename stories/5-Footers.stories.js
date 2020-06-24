@@ -1,7 +1,6 @@
 import React from "react";
 import Card from "../src/components/Card";
 import Footer from "../src/components/Footer";
-import Gradient from "../src/styles/Gradient";
 import DashboardFooter from "../src/styles/Footer";
 import Background from "../src/styles/Background";
 import {sauced} from "../src/icons";
