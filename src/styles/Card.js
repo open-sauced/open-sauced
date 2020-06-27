@@ -73,9 +73,6 @@ const FittedCard = styled(Card)`
 
 const ButtonBoard = styled.div`
   flex: 1;
-<<<<<<< HEAD
-  padding: ${size.medium} ${margin.gutter};
-=======
   padding: ${size.tiny} ${margin.gutter};
   
   p {
@@ -101,7 +98,6 @@ const ButtonBoard = styled.div`
       color: gray;
     }
   }
->>>>>>> cd4e6472faea137decb273c3803b5922716da519
 `;
 
 const CardPadding = styled.div`
