@@ -77,6 +77,11 @@ function Index() {
   };
 
   const _handleLogOut = () => {
+    // Set the local react states so that rogue requests aren't made
+    // after log out but before we re-render.
+    setUser(null);
+    setIsAdmin(false);
+    setLogin(false);
     const auth = Config.auth;
     auth.logout("github").then(() => {
       // Remove the local onegraph-auth storage
@@ -85,9 +90,6 @@ function Index() {
       localStorage.removeItem("adminBar");
       // Remove the local logged in status storage
       localStorage.removeItem("isLoggedIn");
-      setUser(null);
-      setIsAdmin(false);
-      setLogin(false);
     });
   };
 
