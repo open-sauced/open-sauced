@@ -9,7 +9,7 @@ import {devProductive} from "../illustrations";
 
 function CreateGoals({installNeeded, user, onRepoCreation}) {
   const _handleRepoCreation = () => {
-    api.fetchOwnerId(user).then(ownerRes => {
+    api.fetchOwnerId(user.login).then(ownerRes => {
       const {
         data: {
           gitHub: {
@@ -59,8 +59,8 @@ function CreateGoals({installNeeded, user, onRepoCreation}) {
       </ContextStyle>
       <br style={{marginTop: 8}} />
       {installNeeded ? (
-        <a referrer="noreferrer" target="_blank" href="https://github.com/apps/open-sauced/installations/new/permissions?target_id=20134767">
-          <Button primary>Finish initializing {user}/open-sauced-goals</Button>
+        <a referrer="noreferrer" target="_blank" href={`https://github.com/apps/open-sauced/installations/new/permissions?target_id=${user.id}`}>
+          <Button primary>Finish initializing {user.login}/open-sauced-goals</Button>
         </a>
       ) : (
         <Button primary onClick={_handleRepoCreation}>
