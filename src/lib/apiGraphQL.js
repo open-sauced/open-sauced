@@ -449,6 +449,23 @@ const operationsDoc = `
       }
     }
   }
+
+  mutation ForkRepository(
+    $repoName: String!
+    $repoOwner: String!
+  ) {
+    gitHub {
+      createFork_oneGraph(
+        input: { repoName: $repoName, repoOwner: $repoOwner }
+      ) {
+        clientMutationId
+        repository {
+          id
+          url
+        }
+      }
+    }
+  }
 `;
 
 function fetchContributedRepoQuery() {
@@ -520,6 +537,10 @@ function updateGoal(id, title, state, notes) {
   });
 }
 
+function forkRepository(repoName, repoOwner) {
+  return fetchOneGraph(operationsDoc, "ForkRepository", {repoName, repoOwner});
+}
+
 const api = {
   fetchRepositoryData: fetchRepoQuery,
   fetchContributedRepoQuery,
@@ -540,6 +561,7 @@ const api = {
   createOpenSaucedGoalsRepo,
   createGoal,
   updateGoal,
+  forkRepository,
 };
 
 export default api;
