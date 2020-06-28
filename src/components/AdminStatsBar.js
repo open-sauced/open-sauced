@@ -93,7 +93,7 @@ function AdminStatsBar() {
 
   const getDeployment = () => {
     api
-      .fetchDeploymentStatus()
+      .persistedDeploymentFetch()
       .then(res => {
         const deployment = res.data.gitHub.repository.deployments.nodes[0];
         setDeployment(deployment);

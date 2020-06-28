@@ -25,10 +25,9 @@ function Repository({match}) {
 
   const languagesShown = 3;
 
-
   useEffect(() => {
     api
-      .fetchRepositoryData(repoOwner, repoName)
+      .persistedRepoDataFetch(repoOwner, repoName)
       .then(res => {
         const {errors, data} = res;
 
@@ -49,7 +48,7 @@ function Repository({match}) {
       });
 
     api
-      .fetchGoalQuery(parseInt(id))
+      .persistedGoalFetch(parseInt(id))
       .then(res => {
         const {id, body} = res.data.gitHub.viewer.repository.issue;
         setNote(body);
@@ -69,11 +68,7 @@ function Repository({match}) {
         <SpaceBetween>
           <div>
             <a style={{textDecoration: "none"}} href={url} rel="noreferrer" target="_blank">
-              {nameWithOwner ? (
-                <h1>{nameWithOwner}</h1>
-              ) : (
-                <h1>Loading...</h1>
-              )}
+              {nameWithOwner ? <h1>{nameWithOwner}</h1> : <h1>Loading...</h1>}
             </a>
             <p>
               Use the issue list to find things to work on. The notes form is here to also assist with the tracking
@@ -87,18 +82,19 @@ function Repository({match}) {
               </em>
             </small>
             <div className="languages">
-              {repository && repository.languages.nodes.map((language, key) => (
-                <span key={key}>
-                  <span className="dot"  style={{color: language.color}}>•</span>
-                  <span className="name">{language.name}</span>
-                </span>
-              ))}
+              {repository &&
+                repository.languages.nodes.map((language, key) => (
+                  <span key={key}>
+                    <span className="dot" style={{color: language.color}}>
+                      •
+                    </span>
+                    <span className="name">{language.name}</span>
+                  </span>
+                ))}
               <span className="more">
-                {
-                  repository &&
+                {repository &&
                   repository.languages.totalCount > languagesShown &&
-                  `+${totalLangDiff} language${totalLangDiff !== 1 ? "s" : ""}`
-                }
+                  `+${totalLangDiff} language${totalLangDiff !== 1 ? "s" : ""}`}
               </span>
             </div>
           </div>

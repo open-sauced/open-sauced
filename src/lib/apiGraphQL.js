@@ -1,4 +1,11 @@
 import Config from "../config";
+import {
+  persistedIssuesFetch,
+  persistedInteractionsFetch,
+  persistedGoalFetch,
+  persistedRepoDataFetch,
+  persistedDeploymentFetch,
+} from "./persistedGraphQL";
 
 const fetchOneGraph = Config.fetchOneGraph;
 
@@ -527,6 +534,11 @@ const api = {
   createOpenSaucedGoalsRepo,
   createGoal,
   updateGoal,
+  persistedRepoDataFetch,
+  persistedGoalFetch,
+  persistedInteractionsFetch,
+  persistedIssuesFetch,
+  persistedDeploymentFetch,
 };
 
 export default api;
