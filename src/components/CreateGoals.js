@@ -7,7 +7,7 @@ import api from "../lib/apiGraphQL";
 import {goalsReducer} from "../lib/reducers";
 import {devProductive} from "../illustrations";
 
-function CreateGoals({user, onRepoCreation}) {
+function CreateGoals({installNeeded, user, onRepoCreation}) {
   const _handleRepoCreation = () => {
     api.fetchOwnerId(user).then(ownerRes => {
       const {
@@ -19,15 +19,18 @@ function CreateGoals({user, onRepoCreation}) {
       } = ownerRes;
 
       api.createOpenSaucedGoalsRepo(id).then(goalsRes => {
+        const {errors, data} = goalsRes;
+
+        if (errors && errors.length > 0) {
+          console.log(`"${errors[0].message}"`);
+        }
         const {
-          data: {
-            gitHub: {
-              cloneTemplateRepository: {
-                repository: {id},
-              },
+          gitHub: {
+            cloneTemplateRepository: {
+              repository: {id},
             },
           },
-        } = goalsRes;
+        } = data;
 
         onRepoCreation(id, goalsReducer(goalsRes, {type: "CREATE"}));
       });
@@ -55,9 +58,15 @@ function CreateGoals({user, onRepoCreation}) {
         </SpaceBetween>
       </ContextStyle>
       <br style={{marginTop: 8}} />
-      <Button primary onClick={_handleRepoCreation}>
-        Create your goal workspace
-      </Button>
+      {installNeeded ? (
+        <a referrer="noreferrer" target="_blank" href="https://github.com/apps/open-sauced/installations/new/permissions?target_id=20134767">
+          <Button primary>Finish initializing {user}/open-sauced-goals</Button>
+        </a>
+      ) : (
+        <Button primary onClick={_handleRepoCreation}>
+          Create your goal workspace
+        </Button>
+      )}
     </React.Fragment>
   );
 }

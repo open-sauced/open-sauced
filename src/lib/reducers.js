@@ -3,7 +3,7 @@ import {usePersistedState} from "./hooks";
 
 export function goalsReducer(state, action) {
   if (state.errors) {
-    return {errors: `"${state.errors[0].message}"`};
+    return {error: `"${state.errors[0].message}"`};
   }
   switch (action.type) {
     case "GET":
