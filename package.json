@@ -1,6 +1,6 @@
 {
   "name": "open-sauced",
-  "version": "0.15.0",
+  "version": "0.14.7",
   "private": true,
   "devDependencies": {
     "@babel/core": "^7.6.4",
@@ -14,7 +14,8 @@
     "@storybook/addons": "^5.2.8",
     "@storybook/react": "^5.2.8",
     "@testing-library/jest-dom": "^5.1.1",
-    "@testing-library/react": "^10.0.4",
+    "@testing-library/react": "^10.4.3",
+    "@testing-library/user-event": "^12.0.11",
     "@webpack-cli/migrate": "^0.1.9",
     "autoprefixer": "9.7.3",
     "babel-eslint": "6.1.2",
