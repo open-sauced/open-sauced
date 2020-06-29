@@ -4,7 +4,7 @@ import Button from "../styles/Button";
 import {NoteArea, RenderedNote} from "../styles/TextArea";
 import Card from "./Card";
 import {FlexCenter} from "../styles/Grid";
-import Octicon, {getIconByName} from "@primer/octicons-react";
+import {PencilIcon} from "@primer/octicons-react";
 import ReactMarkdown from "react-markdown";
 
 import api from "../lib/apiGraphQL";
@@ -68,12 +68,12 @@ function NoteForm({goalId, repoName, note}) {
       <FlexCenter>
         {editing ? (
           <Button onClick={_handleNoteUpdate}>
-            <Octicon verticalAlign="middle" icon={getIconByName("pencil")} />
+            <PencilIcon verticalAlign="middle" />
             Save Notes
           </Button>
         ) : (
           <Button onClick={_handleToggleEditing}>
-            <Octicon verticalAlign="middle" icon={getIconByName("pencil")} />
+            <PencilIcon verticalAlign="middle" />
             Edit Notes
           </Button>
         )}

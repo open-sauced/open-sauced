@@ -7,7 +7,7 @@ import List from "../styles/List";
 import IssuesListItem from "../components/IssueListItem";
 import {InputButton} from "../styles/Button";
 import {CardPadding, CardHeader} from "../styles/Card";
-import Octicon, {getIconByName} from "@primer/octicons-react";
+import {IssueOpenedIcon} from "@primer/octicons-react";
 import {Spinner} from "../styles/Spinner";
 
 function Issues({repoName, owner}) {
@@ -100,7 +100,7 @@ function Issues({repoName, owner}) {
           {issuesEnabled ? (
             <div>
               <div style={{color: "grey"}}>
-                <Octicon size="large" verticalAlign="middle" icon={getIconByName("issue-opened")} />
+                <IssueOpenedIcon size="large" verticalAlign="middle" />
               </div>
               <div className="helper">
                 No Issues found
@@ -109,7 +109,7 @@ function Issues({repoName, owner}) {
           ) : (
             <div>
               <div style={{color: "grey"}}>
-                <Octicon size="large" verticalAlign="middle" icon={getIconByName("issue-opened")} />
+                <IssueOpenedIcon size="large" verticalAlign="middle" />
               </div>
               <div className="helper">
                 Issues not enabled
