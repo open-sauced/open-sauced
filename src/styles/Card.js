@@ -129,6 +129,10 @@ const ContextStyle = styled(Card)`
       color: grey;
     }
   }
+
+  .loading {
+    margin-bottom: ${size.tiny};
+  }
 `;
 
 const HintStyle = styled(Card)`
