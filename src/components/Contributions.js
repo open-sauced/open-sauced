@@ -31,9 +31,13 @@ function Contributions({repoName, owner}) {
         </CardPadding>
         <List>
           {loading ? (
-            <li className="loading">
-              <Skeleton height={50} count={5} />
-            </li>
+            <CardPadding className="loading">
+              <Skeleton height={50} />
+              <Skeleton height={50} />
+              <Skeleton height={50} />
+              <Skeleton height={50} />
+              <Skeleton height={50} />
+            </CardPadding>
           ) : (
             issues &&
             issues.map(issue => (
