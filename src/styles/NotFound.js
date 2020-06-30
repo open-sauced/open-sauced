@@ -11,6 +11,10 @@ const NotFound = styled.section`
   h1 {
     font-size: 1rem;
   }
+  h2 {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  }
 
   img {
     width: 50%;
