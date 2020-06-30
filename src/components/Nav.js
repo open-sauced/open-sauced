@@ -17,9 +17,9 @@ function LeftSide({isLoggedIn, user, handleLogIn, handleLogOut}) {
   };
 
   return (
-    <FloatLeftMobileNav>
-      <Link style={{verticalAlign: "middle"}} to="/">
-        <img alt="open sauced" src={logo} />
+    <FloatLeftMobileNav >
+      <Link to="/" style={{display: "inline-block", verticalAlign: "middle"}}>
+        <img alt="open sauced" src={logo} style={{display: "inline-block", verticalAlign: "middle", marginBottom: 6}} />
       </Link>
       <ul>
         <li>
