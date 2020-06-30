@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {colors} from "./variables";
+import {colors, size} from "./variables";
 
 const Container = styled.ul`
   list-style: none;
@@ -40,6 +40,10 @@ const Container = styled.ul`
 
   .loading {
     padding-right: 35px;
+
+    .meta {
+      margin-top: ${size.tiny}
+    }
   }
 `;
 
