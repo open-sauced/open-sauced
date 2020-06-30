@@ -8,8 +8,14 @@ import ProfileAvatar from "../styles/ProfileAvatar";
 import AdminStatsBar from "./AdminStatsBar";
 import Hotkeys from "react-hot-keys";
 import {useHistory, Link} from "react-router-dom";
+import styled from "styled-components";
 
 function LeftSide({isLoggedIn, user, handleLogIn, handleLogOut}) {
+  const Logo = styled.img`
+  display: "inline-block";
+  vertical-lign: "middle"; 
+  margin-bottom: 6;
+  `;
   const history = useHistory();
   const _logOutRedirect = () => {
     handleLogOut();
@@ -18,8 +24,8 @@ function LeftSide({isLoggedIn, user, handleLogIn, handleLogOut}) {
 
   return (
     <FloatLeftMobileNav >
-      <Link to="/" style={{display: "inline-block", verticalAlign: "middle"}}>
-        <img alt="open sauced" src={logo} style={{display: "inline-block", verticalAlign: "middle", marginBottom: 6}} />
+      <Link to="/" style={{verticalAlign: "middle", display: "inline-block"}}>
+        <Logo alt="open sauced" src={logo} />
       </Link>
       <ul>
         <li>
