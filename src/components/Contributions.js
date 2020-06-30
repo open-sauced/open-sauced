@@ -5,7 +5,7 @@ import List from "../styles/List";
 import IssuesListItem from "../components/IssueListItem";
 import {CardPadding} from "../styles/Card";
 import {AccentLink, MicroFont} from "../styles/Typography";
-import {Spinner} from "../styles/Spinner";
+import Skeleton from "react-loading-skeleton";
 
 function Contributions({repoName, owner}) {
   const [issues, setIssues] = useState(null);
@@ -31,7 +31,9 @@ function Contributions({repoName, owner}) {
         </CardPadding>
         <List>
           {loading ? (
-            <Spinner />
+            <li className="loading">
+              <Skeleton height={50} count={5} />
+            </li>
           ) : (
             issues &&
             issues.map(issue => (

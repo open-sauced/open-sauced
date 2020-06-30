@@ -37,6 +37,10 @@ const Container = styled.ul`
       margin-top: 5px;
     }
   }
+
+  .loading {
+    padding-right: 20px;
+  }
 `;
 
 export default Container;
