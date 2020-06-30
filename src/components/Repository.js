@@ -96,7 +96,9 @@ function Repository({match}) {
                   <span className="name">{language.name}</span>
                 </span>
               )) : (
-                <Skeleton height={10} width={320} />
+                <div>
+                  <Skeleton height={2} width={70} count={4} />
+                </div>
               )}
               <span className="more">
                 {
