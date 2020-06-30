@@ -74,7 +74,7 @@ function Repository({match}) {
                 <h1>{nameWithOwner}</h1>
               ) : (
                 <h1>
-                  <Skeleton height={30} width={500} />
+                  <Skeleton height={30} width={350} />
                 </h1>
               )}
             </a>

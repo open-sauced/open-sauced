@@ -32,11 +32,11 @@ function Contributions({repoName, owner}) {
         <List>
           {loading ? (
             <CardPadding className="loading">
-              <Skeleton height={50} />
-              <Skeleton height={50} />
-              <Skeleton height={50} />
-              <Skeleton height={50} />
-              <Skeleton height={50} />
+              {[...Array(5)].map((e, i) => (
+                <span>
+                  <Skeleton height={50} />
+                </span>
+              ))}
             </CardPadding>
           ) : (
             issues &&

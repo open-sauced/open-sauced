@@ -39,7 +39,7 @@ const Container = styled.ul`
   }
 
   .loading {
-    padding-right: 30px;
+    padding-right: 35px;
   }
 `;
 
