@@ -17,7 +17,7 @@ function LeftSide({isLoggedIn, user, handleLogIn, handleLogOut}) {
   };
 
   return (
-    <FloatLeftMobileNav >
+    <FloatLeftMobileNav>
       <Link to="/" style={{verticalAlign: "middle", display: "inline-block"}}>
         <Logo alt="open sauced" src={logo} />
       </Link>
