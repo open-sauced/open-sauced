@@ -13,6 +13,7 @@ import {ContextStyle} from "../styles/Card";
 import {Spinner} from "../styles/Spinner";
 import {Flex, FormColumn, IssuesColumn} from "../styles/Grid";
 import {humanizeNumber} from "../lib/humanizeNumber";
+import Skeleton from 'react-loading-skeleton';
 
 function Repository({match}) {
   const {
@@ -72,7 +73,9 @@ function Repository({match}) {
               {nameWithOwner ? (
                 <h1>{nameWithOwner}</h1>
               ) : (
-                <h1>Loading...</h1>
+                <h1>
+                  <Skeleton/>
+                </h1>
               )}
             </a>
             <p>
