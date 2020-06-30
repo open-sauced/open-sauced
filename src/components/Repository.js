@@ -13,7 +13,7 @@ import {ContextStyle} from "../styles/Card";
 import {Spinner} from "../styles/Spinner";
 import {Flex, FormColumn, IssuesColumn} from "../styles/Grid";
 import {humanizeNumber} from "../lib/humanizeNumber";
-import Skeleton from 'react-loading-skeleton';
+import Skeleton from "react-loading-skeleton";
 
 function Repository({match}) {
   const {
@@ -74,7 +74,7 @@ function Repository({match}) {
                 <h1>{nameWithOwner}</h1>
               ) : (
                 <h1>
-                  <Skeleton/>
+                  <Skeleton height={30} width={500} />
                 </h1>
               )}
             </a>
@@ -90,12 +90,14 @@ function Repository({match}) {
               </em>
             </small>
             <div className="languages">
-              {repository && repository.languages.nodes.map((language, key) => (
+              {repository ? repository.languages.nodes.map((language, key) => (
                 <span key={key}>
                   <span className="dot"  style={{color: language.color}}>•</span>
                   <span className="name">{language.name}</span>
                 </span>
-              ))}
+              )) : (
+                <Skeleton height={10} width={320} />
+              )}
               <span className="more">
                 {
                   repository &&
