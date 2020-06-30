@@ -41,7 +41,7 @@ const Container = styled.ul`
   .loading {
     padding-right: 35px;
 
-    .meta {
+    .meta, .label {
       margin-top: ${size.tiny}
     }
   }
