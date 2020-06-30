@@ -10,7 +10,7 @@ function DetailInfo({icon, text}) {
           switch (icon) {
             case "IssueOpenedIcon":
               return <IssueOpenedIcon verticalAlign="middle" />;
-            case "GitHubPullrequestIcon":
+            case "GitPullRequestIcon":
               return <GitPullRequestIcon verticalAlign="middle" />;
             case "RepoForkedIcon":
               return <RepoForkedIcon verticalAlign="middle" />;
