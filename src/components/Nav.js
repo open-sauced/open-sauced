@@ -3,19 +3,13 @@ import {logo} from "../logos";
 import {FloatLeftMobileNav, FloatRight} from "../styles/Grid";
 import {SubtleLink} from "../styles/Typography";
 import {AppNav, HomeNav} from "../styles/Header";
-import {SpaceBetween} from "../styles/Grid";
+import {SpaceBetween, Logo} from "../styles/Grid";
 import ProfileAvatar from "../styles/ProfileAvatar";
 import AdminStatsBar from "./AdminStatsBar";
 import Hotkeys from "react-hot-keys";
 import {useHistory, Link} from "react-router-dom";
-import styled from "styled-components";
 
 function LeftSide({isLoggedIn, user, handleLogIn, handleLogOut}) {
-  const Logo = styled.img`
-  display: "inline-block";
-  vertical-lign: "middle"; 
-  margin-bottom: 6;
-  `;
   const history = useHistory();
   const _logOutRedirect = () => {
     handleLogOut();
