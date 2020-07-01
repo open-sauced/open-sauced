@@ -8,7 +8,7 @@ import IssuesListItem from "../components/IssueListItem";
 import {InputButton} from "../styles/Button";
 import {CardPadding, CardHeader} from "../styles/Card";
 import {IssueOpenedIcon} from "@primer/octicons-react";
-import Skeleton from "react-loading-skeleton";
+import IssuesLoader from "./IssuesLoader";
 
 function Issues({repoName, owner}) {
   const [issues, setIssues] = useState(null);
@@ -75,24 +75,7 @@ function Issues({repoName, owner}) {
         {totalCount > 0 ? (
           <div>
             {issuesLoading ? (
-              <CardPadding className="loading">
-                {[...Array(5)].map(() => (
-                  <span>
-                    <div>
-                      <Skeleton height={10} />
-                    </div>
-                    <div className="label">
-                      <Skeleton height={10} width={100} count={3} />
-                    </div>
-                    <div className="meta">
-                      <Skeleton height={3} width={100} />
-                      <Skeleton height={3} width={5} />
-                      <Skeleton height={3} width={20} />
-                      <Skeleton height={3} width={3} />
-                    </div>
-                  </span>
-                ))}
-              </CardPadding>
+              <IssuesLoader />
             ) : (
               issues &&
                 issues.map(issue => (
@@ -121,24 +104,7 @@ function Issues({repoName, owner}) {
           </div>
         ) : (
           loading ? (
-            <CardPadding className="loading">
-              {[...Array(5)].map(() => (
-                <span>
-                  <div>
-                    <Skeleton height={10} />
-                  </div>
-                  <div className="label">
-                    <Skeleton height={10} width={100} count={3} />
-                  </div>
-                  <div className="meta">
-                    <Skeleton height={3} width={100} />
-                    <Skeleton height={3} width={5} />
-                    <Skeleton height={3} width={20} />
-                    <Skeleton height={3} width={3} />
-                  </div>
-                </span>
-              ))}
-            </CardPadding>
+            <IssuesLoader />
           ) : (
             <EmptyPlaceholder style={{marginTop: 100}}>
               {issuesEnabled ? (

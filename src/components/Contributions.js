@@ -5,7 +5,7 @@ import List from "../styles/List";
 import IssuesListItem from "../components/IssueListItem";
 import {CardPadding} from "../styles/Card";
 import {AccentLink, MicroFont} from "../styles/Typography";
-import Skeleton from "react-loading-skeleton";
+import IssuesLoader from "./IssuesLoader";
 
 function Contributions({repoName, owner}) {
   const [issues, setIssues] = useState(null);
@@ -31,24 +31,7 @@ function Contributions({repoName, owner}) {
         </CardPadding>
         <List>
           {loading ? (
-            <CardPadding className="loading">
-              {[...Array(5)].map(() => (
-                <span>
-                  <div>
-                    <Skeleton height={10} />
-                  </div>
-                  <div className="label">
-                    <Skeleton height={10} width={100} count={3} />
-                  </div>
-                  <div className="meta">
-                    <Skeleton height={3} width={100} />
-                    <Skeleton height={3} width={5} />
-                    <Skeleton height={3} width={20} />
-                    <Skeleton height={3} width={3} />
-                  </div>
-                </span>
-              ))}
-            </CardPadding>
+            <IssuesLoader />
           ) : (
             issues &&
             issues.map(issue => (
