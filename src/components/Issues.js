@@ -8,7 +8,6 @@ import IssuesListItem from "../components/IssueListItem";
 import {InputButton} from "../styles/Button";
 import {CardPadding, CardHeader} from "../styles/Card";
 import {IssueOpenedIcon} from "@primer/octicons-react";
-import {Spinner} from "../styles/Spinner";
 import Skeleton from "react-loading-skeleton";
 
 function Issues({repoName, owner}) {
@@ -67,13 +66,61 @@ function Issues({repoName, owner}) {
   const currentPage = offset / 5 + 1;
 
   return owner ? (
-    totalCount > 0 ? (
-      <Card fitted>
-        <CardHeader>
-          <h1>Issues</h1>
-        </CardHeader>
-        <List>
-          {issuesLoading ? (
+
+    <Card fitted>
+      <CardHeader>
+        <h1>Issues</h1>
+      </CardHeader>
+      <List>
+        {totalCount > 0 ? (
+          <div>
+            {issuesLoading ? (
+              <CardPadding className="loading">
+                {[...Array(5)].map(() => (
+                  <span>
+                    <div>
+                      <Skeleton height={10} />
+                    </div>
+                    <div className="label">
+                      <Skeleton height={10} width={100} count={3} />
+                    </div>
+                    <div className="meta">
+                      <Skeleton height={3} width={100} />
+                      <Skeleton height={3} width={5} />
+                      <Skeleton height={3} width={20} />
+                      <Skeleton height={3} width={3} />
+                    </div>
+                  </span>
+                ))}
+              </CardPadding>
+            ) : (
+              issues &&
+                issues.map(issue => (
+                  <li key={issue.node.id}>
+                    <a rel="noreferrer" target="_blank" href={issue.node.url}>
+                      <IssuesListItem
+                        type="issues"
+                        title={issue.node.title}
+                        labels={issue.node.labels}
+                        author={issue.node.author.login}
+                        opened={issue.node.createdAt}
+                        participants={issue.node.participants}
+                        comments={issue.node.comments}
+                        milestone={issue.node.milestone}
+                      />
+                    </a>
+                  </li>
+                ))
+            )}
+            <CardPadding>
+              <FlexCenter className="pagination-buttons">
+                {offset > 0 && <InputButton onClick={_handlePreviousIssues}>Prev</InputButton>}
+                {currentPage !== totalPages && <InputButton onClick={_handleNextIssues}>Next</InputButton>}
+              </FlexCenter>
+            </CardPadding>
+          </div>
+        ) : (
+          loading ? (
             <CardPadding className="loading">
               {[...Array(5)].map(() => (
                 <span>
@@ -93,59 +140,31 @@ function Issues({repoName, owner}) {
               ))}
             </CardPadding>
           ) : (
-            issues &&
-              issues.map(issue => (
-                <li key={issue.node.id}>
-                  <a rel="noreferrer" target="_blank" href={issue.node.url}>
-                    <IssuesListItem
-                      type="issues"
-                      title={issue.node.title}
-                      labels={issue.node.labels}
-                      author={issue.node.author.login}
-                      opened={issue.node.createdAt}
-                      participants={issue.node.participants}
-                      comments={issue.node.comments}
-                      milestone={issue.node.milestone}
-                    />
-                  </a>
-                </li>
-              ))
-          )}
-          <CardPadding>
-            <FlexCenter className="pagination-buttons">
-              {offset > 0 && <InputButton onClick={_handlePreviousIssues}>Prev</InputButton>}
-              {currentPage !== totalPages && <InputButton onClick={_handleNextIssues}>Next</InputButton>}
-            </FlexCenter>
-          </CardPadding>
-        </List>
-      </Card>
-    ) : (
-      loading ? (
-        <Spinner />
-      ) : (
-        <EmptyPlaceholder style={{marginTop: 100}}>
-          {issuesEnabled ? (
-            <div>
-              <div style={{color: "grey"}}>
-                <IssueOpenedIcon size="large" verticalAlign="middle" />
-              </div>
-              <div className="helper">
-                No Issues found
-              </div>
-            </div>
-          ) : (
-            <div>
-              <div style={{color: "grey"}}>
-                <IssueOpenedIcon size="large" verticalAlign="middle" />
-              </div>
-              <div className="helper">
-                Issues not enabled
-              </div>
-            </div>
-          )}
-        </EmptyPlaceholder>
-      )
-    )
+            <EmptyPlaceholder style={{marginTop: 100}}>
+              {issuesEnabled ? (
+                <div>
+                  <div style={{color: "grey"}}>
+                    <IssueOpenedIcon size="large" verticalAlign="middle" />
+                  </div>
+                  <div className="helper">
+                    No Issues found
+                  </div>
+                </div>
+              ) : (
+                <div>
+                  <div style={{color: "grey"}}>
+                    <IssueOpenedIcon size="large" verticalAlign="middle" />
+                  </div>
+                  <div className="helper">
+                    Issues not enabled
+                  </div>
+                </div>
+              )}
+            </EmptyPlaceholder>
+          )
+        )}
+      </List>
+    </Card>
   ) : (
     <p>...Loading</p>
   );
