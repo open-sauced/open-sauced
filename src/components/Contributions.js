@@ -32,10 +32,13 @@ function Contributions({repoName, owner}) {
         <List>
           {loading ? (
             <CardPadding className="loading">
-              {[...Array(3)].map(() => (
+              {[...Array(5)].map(() => (
                 <span>
                   <div>
-                    <Skeleton height={50} />
+                    <Skeleton height={10} />
+                  </div>
+                  <div className="label">
+                    <Skeleton height={10} width={100} count={3} />
                   </div>
                   <div className="meta">
                     <Skeleton height={3} width={100} />
