@@ -44,7 +44,7 @@ const fontSize = {
   medium: "1rem",
   large: "1.5rem",
   xlarge: "2rem",
-  xxlarge: "2.25rem"
+  xxlarge: "2.5rem"
 };
 
 const size = {

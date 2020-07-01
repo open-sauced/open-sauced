@@ -17,7 +17,12 @@ const Hero = styled.section`
     font-size: ${fontSize.xlarge};
   }
 
-  h2 {
+  h1 span {
+    display: block;
+    margin: var(--micro) 0;
+  }
+
+  h2, .h1-highlight {
     margin: 0;
     color: ${colors.saucyRed};
     text-decoration: underline;
