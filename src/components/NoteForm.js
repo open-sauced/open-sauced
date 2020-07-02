@@ -4,12 +4,13 @@ import Button from "../styles/Button";
 import {NoteArea, RenderedNote} from "../styles/TextArea";
 import Card from "./Card";
 import {FlexCenter} from "../styles/Grid";
-import Octicon, {getIconByName} from "@primer/octicons-react";
+import {PencilIcon} from "@primer/octicons-react";
 import ReactMarkdown from "react-markdown";
 
 import api from "../lib/apiGraphQL";
 
 function NoteForm({goalId, repoName, note}) {
+  const [previouslySavedValue, setPreviouslySavedValue] = useState(note);
   const [input, setInput] = useState(note);
   const [editing, setEditing] = useState(false);
   const [deleted, setDeleted] = useState(false);
@@ -17,7 +18,10 @@ function NoteForm({goalId, repoName, note}) {
   const _handleNoteUpdate = () => {
     api
       .updateGoal(goalId, repoName, "OPEN", input)
-      .then(_handleToggleEditing())
+      .then(() => {
+        _handleToggleEditing();
+        setPreviouslySavedValue(input);
+      })
       .catch(err => console.log(err));
   };
 
@@ -35,6 +39,11 @@ function NoteForm({goalId, repoName, note}) {
     setEditing(!editing);
   };
 
+  const _handleCancelEditing = () => {
+    setEditing(false);
+    setInput(previouslySavedValue);
+  };
+
   const _handleNotesChange = e => {
     setInput(e.target.value);
   };
@@ -42,7 +51,7 @@ function NoteForm({goalId, repoName, note}) {
   return !deleted ? (
     <Card>
       {!editing ? (
-        <RenderedNote>
+        <RenderedNote data-testid="notes-content" >
           <ReactMarkdown className="noteContent" source={input || ""} />
         </RenderedNote>
       ) : (
@@ -59,17 +68,17 @@ function NoteForm({goalId, repoName, note}) {
       <FlexCenter>
         {editing ? (
           <Button onClick={_handleNoteUpdate}>
-            <Octicon verticalAlign="middle" icon={getIconByName("pencil")} />
+            <PencilIcon verticalAlign="middle" />
             Save Notes
           </Button>
         ) : (
           <Button onClick={_handleToggleEditing}>
-            <Octicon verticalAlign="middle" icon={getIconByName("pencil")} />
+            <PencilIcon verticalAlign="middle" />
             Edit Notes
           </Button>
         )}
         {editing ? (
-          <Button primary onClick={_handleToggleEditing}>
+          <Button primary onClick={_handleCancelEditing}>
             Cancel
           </Button>
         ) : (

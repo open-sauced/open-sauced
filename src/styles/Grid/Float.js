@@ -21,4 +21,10 @@ const FloatRight = styled.div`
   float: right;
 `;
 
-export {FloatRight, FloatLeft, FloatLeftMobileNav};
+const Logo = styled.img`
+  display: "inline-block";
+  vertical-lign: "middle"; 
+  margin-bottom: 6;
+`;
+
+export {FloatRight, FloatLeft, FloatLeftMobileNav, Logo};

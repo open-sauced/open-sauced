@@ -3,7 +3,7 @@ import {FloatRight, FloatLeft, FlexColumn, FlexHeader, FlexCenter} from "../styl
 import {chevronRight} from "../icons";
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
-import Octicon, {getIconByName} from "@primer/octicons-react";
+import {IssueOpenedIcon, CommentIcon, MilestoneIcon} from "@primer/octicons-react";
 
 dayjs.extend(relativeTime);
 
@@ -15,7 +15,7 @@ function IssueListItem({title, labels, author, opened, type, participants, comme
       <FloatLeft>
         <FlexCenter>
           <span style={{marginRight: 10}}>
-            <Octicon verticalAlign="middle" icon={getIconByName("issue-opened")} />
+            <IssueOpenedIcon verticalAlign="middle" />
           </span>
           <FlexColumn className="details">
             <p>
@@ -34,12 +34,12 @@ function IssueListItem({title, labels, author, opened, type, participants, comme
               {type === "issues" && <small style={{fontSize: 12}}>opened {dayjs(opened).fromNow()} by {author}</small>}
               {type === "contributions" && <small style={{fontSize: 12}}>opened {dayjs(opened).fromNow()}</small>}
               <span className="issueHelper">
-                <Octicon className="icon" size={13} verticalAlign="middle" icon={getIconByName("comment")} />
+                <CommentIcon className="icon" size={13} verticalAlign="middle" />
                 {comments && comments.totalCount}
               </span>
               {milestone && (
                 <span className="issueHelper">
-                  <Octicon className="icon" size={13} verticalAlign="middle" icon={getIconByName("milestone")} />
+                  <MilestoneIcon className="icon" size={13} verticalAlign="middle" />
                   {milestone.title}
                 </span>
               )}

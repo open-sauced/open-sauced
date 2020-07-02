@@ -10,7 +10,7 @@ import {
 } from "./Flex";
 import IssuesColumn from "./IssuesColumn";
 import FormColumn from "./FormColumn";
-import {FloatLeftMobileNav, FloatRight, FloatLeft} from "./Float";
+import {FloatLeftMobileNav, FloatRight, FloatLeft, Logo} from "./Float";
 import GridColumns from "./GridColumns";
 
 export {
@@ -28,4 +28,5 @@ export {
   FloatRight,
   FloatLeftMobileNav,
   GridColumns,
+  Logo
 };
