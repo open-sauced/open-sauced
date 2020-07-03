@@ -8,6 +8,10 @@ const Select = styled.div`
     font-size: ${size.tiny};
     margin-right: ${size.micro};
   }
+
+  select {
+    padding: 5px 0;
+  }
 `;
 
 export {Select};
