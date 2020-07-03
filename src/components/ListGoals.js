@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import {Link} from "react-router-dom";
 import {Container} from "../styles/ListItem";
+import {Select} from "../styles/Select";
 import RepoListItem from "../components/RepoListItem";
 import Card from "../components/Card";
 import List from "../styles/List";
@@ -32,13 +33,16 @@ function ListGoals({goals, data}) {
 
   return (
     <Container>
-      <select onChange={e => handleSort(e.currentTarget.value)}>
-        <option value="Sort by">None</option>
-        <option value="a_z">A to Z</option>
-        <option value="z_a">Z to A</option>
-        <option value="most_stars">Most Stars</option>
-        <option value="fewest_stars">Fewest Stars</option>
-      </select>
+      <Select>
+        <label>Sort:</label>
+        <select onChange={e => handleSort(e.currentTarget.value)}>
+          <option value="none">None</option>
+          <option value="a_z">A to Z</option>
+          <option value="z_a">Z to A</option>
+          <option value="most_stars">Most Stars</option>
+          <option value="fewest_stars">Fewest Stars</option>
+        </select>
+      </Select>
       <Card fitted>
         <List>
           {goalsWithData &&

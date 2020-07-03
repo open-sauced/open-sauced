@@ -60,7 +60,7 @@ function AddRepoForm({goalsId, onGoalAdded}) {
             Add
           </InputButton>
         </Flex>
-        <ErrorMessage>{error}</ErrorMessage>
+        {error && <ErrorMessage>{error}</ErrorMessage>}
       </CardPadding>
     </form>
   );
