@@ -1,4 +1,4 @@
 export default function textColor(color, dark = "black", light = "white") {
-  const treshold = 13000000;
-  return Number("0x" + color) > treshold ? dark : light;
+  const threshold = 13000000;
+  return Number("0x" + color) > threshold ? dark : light;
 }
