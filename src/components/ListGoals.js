@@ -8,23 +8,41 @@ import {merge} from "lodash";
 import sortBy from "lodash/sortBy";
 
 function ListGoals({goals, data}) {
-  const [sortType, setSortType] = useState("full_name");
   const goalsWithData = merge(goals.nodes, data);
+  const [listGoals, setGoals] = useState(goalsWithData);
 
-  console.log(goalsWithData);
+  const handleSort = (sortType) => {
+    switch (sortType) {
+      case "a_z":
+        setGoals(sortBy(goalsWithData, "full_name"));
+        break;
+      case "z_a":
+        setGoals(sortBy(goalsWithData, "full_name").reverse());
+        break;
+      case "most_stars":
+        setGoals(sortBy(goalsWithData, "stargazers_count").reverse());
+        break;
+      case "fewest_stars":
+        setGoals(sortBy(goalsWithData, "stargazers_count"));
+        break;
+      default:
+        setGoals(sortBy(goalsWithData, sortType));
+    }
+  };
 
   return (
     <Container>
-      <select value={sortType} onChange={e => setSortType(e.currentTarget.value)}>
+      <select onChange={e => handleSort(e.currentTarget.value)}>
         <option value="wip">None</option>
-        <option value="full_name">Name</option>
-        <option value="stargazers_count">Most Stars</option>
-        <option value="stargazers_count">Fewest Stars</option>
+        <option value="a_z">A to Z</option>
+        <option value="z_a">Z to A</option>
+        <option value="most_stars">Most Stars</option>
+        <option value="fewest_stars">Fewest Stars</option>
       </select>
       <Card fitted>
         <List>
           {goalsWithData &&
-            sortBy(goalsWithData, sortType).map(goal => (
+            listGoals.map(goal => (
               <li key={goal.id}>
                 <Link
                   to={{
