@@ -165,7 +165,7 @@ function Repository({match}) {
               </a>
               {isForked ?
                 <a rel="noreferrer" target="_blank" href={`https://github.com/${user.login}/${repoName}`}>
-                  <Button disabled={isForkLoading}>Go to fork</Button>
+                  <Button disabled={isForkLoading} data-test="go-to-fork-button">Go to fork</Button>
                 </a> :
                 <Button disabled={isForkLoading} onClick={forkRepository}>Fork {humanizeNumber(forks.totalCount)}</Button>}
               <h4>Contributors</h4>
