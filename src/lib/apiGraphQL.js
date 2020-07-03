@@ -450,7 +450,7 @@ const operationsDoc = `
     }
   }
 
-  query FetchForkCount(
+  query FetchUserForkCount(
     $repoName: String!
     $repoOwner: String!
   ) {
@@ -550,8 +550,8 @@ function updateGoal(id, title, state, notes) {
   });
 }
 
-function fetchForkCount(repoName, repoOwner) {
-  return fetchOneGraph(operationsDoc, "FetchForkCount", {repoName, repoOwner});
+function fetchUserForkCount(repoName, repoOwner) {
+  return fetchOneGraph(operationsDoc, "FetchUserForkCount", {repoName, repoOwner});
 }
 
 function forkRepository(repoName, repoOwner) {
@@ -578,7 +578,7 @@ const api = {
   createOpenSaucedGoalsRepo,
   createGoal,
   updateGoal,
-  fetchForkCount,
+  fetchUserForkCount,
   forkRepository,
 };
 
