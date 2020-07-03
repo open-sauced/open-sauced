@@ -578,6 +578,7 @@ const api = {
   createOpenSaucedGoalsRepo,
   createGoal,
   updateGoal,
+  fetchForkCount,
   forkRepository,
 };
 
