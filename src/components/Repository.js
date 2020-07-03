@@ -17,6 +17,7 @@ import {humanizeNumber} from "../lib/humanizeNumber";
 import {getUserFromJwt} from "../lib/identityActions";
 import Config from "../config";
 import Button from "../styles/Button";
+import {RepoForkedIcon} from "@primer/octicons-react";
 
 function Repository({match}) {
   const {
@@ -167,7 +168,7 @@ function Repository({match}) {
                 <a rel="noreferrer" target="_blank" href={`https://github.com/${user.login}/${repoName}`}>
                   <Button disabled={isForkLoading} data-test="go-to-fork-button">View fork</Button>
                 </a> :
-                <Button disabled={isForkLoading} onClick={forkRepository}>Fork {humanizeNumber(forks.totalCount)}</Button>}
+                <Button disabled={isForkLoading} onClick={forkRepository}><RepoForkedIcon verticalAlign="middle" /> Fork</Button>}
               <h4>Contributors</h4>
               <div className="contributors">
                 {contributors.slice(0, contributorsShown).map((user, key) => (
