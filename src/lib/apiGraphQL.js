@@ -450,6 +450,19 @@ const operationsDoc = `
     }
   }
 
+  query FetchForkCount(
+    $repoName: String!
+    $repoOwner: String!
+  ) {
+    gitHub {
+      repository(name: $repoName, owner: $repoOwner) {
+        forks(affiliations: OWNER) {
+          totalCount
+        }
+      }
+    }
+  }
+
   mutation ForkRepository(
     $repoName: String!
     $repoOwner: String!
@@ -535,6 +548,10 @@ function updateGoal(id, title, state, notes) {
     title: title,
     notes: notes,
   });
+}
+
+function fetchForkCount(repoName, repoOwner) {
+  return fetchOneGraph(operationsDoc, "FetchForkCount", {repoName, repoOwner});
 }
 
 function forkRepository(repoName, repoOwner) {
