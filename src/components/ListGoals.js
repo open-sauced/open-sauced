@@ -26,14 +26,14 @@ function ListGoals({goals, data}) {
         setGoals(sortBy(goalsWithData, "stargazers_count"));
         break;
       default:
-        setGoals(sortBy(goalsWithData, sortType));
+        setGoals(goalsWithData);
     }
   };
 
   return (
     <Container>
       <select onChange={e => handleSort(e.currentTarget.value)}>
-        <option value="wip">None</option>
+        <option value="Sort by">None</option>
         <option value="a_z">A to Z</option>
         <option value="z_a">Z to A</option>
         <option value="most_stars">Most Stars</option>
