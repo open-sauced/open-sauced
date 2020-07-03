@@ -4,12 +4,9 @@ import {chevronRight} from "../icons";
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
 import {IssueOpenedIcon, CommentIcon, MilestoneIcon} from "@primer/octicons-react";
+import textColor from "../lib/colorContrast";
 
 dayjs.extend(relativeTime);
-
-function fontContrast(color) {
-  return Number("0x" + color) > 16000000 ? "black" : "white";
-}
 
 function IssueListItem({title, labels, author, opened, type, participants, comments, milestone}) {
   const participantsDiffCount = 3;
@@ -28,7 +25,7 @@ function IssueListItem({title, labels, author, opened, type, participants, comme
             <div>
               {labels.data.length > 0 && labels.data.map(label => (
                 <span
-                  style={{backgroundColor: `#${label.node.color}`, color: `${fontContrast(label.node.color)}`}}
+                  style={{backgroundColor: `#${label.node.color}`, color: `${textColor(label.node.color)}`}}
                   key={label.node.id}>
                   {label.node.name}
                 </span>
