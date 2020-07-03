@@ -1,6 +1,6 @@
 import React from "react";
 import {FlexStart, FloatRight, FloatLeft, FlexColumn, FlexHeader, FlexCenter} from "../styles/Grid";
-import Octicon, {getIconByName} from "@primer/octicons-react";
+import {StarIcon} from "@primer/octicons-react";
 import Avatar from "../styles/Avatar";
 import {chevronRight} from "../icons";
 import {humanizeNumber} from "../lib/humanizeNumber";
@@ -20,7 +20,7 @@ function RepoListItem({goal, stars}) {
             {stars ? (
               <FlexStart style={{alignItems: "flex-start"}}>
                 <div>
-                  <Octicon alt="star" verticalAlign="middle" icon={getIconByName("star")} />
+                  <StarIcon alt="star" verticalAlign="middle" />
                 </div>
                 <p>{humanizeNumber(stars)}</p>
               </FlexStart>

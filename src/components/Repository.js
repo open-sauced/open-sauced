@@ -201,13 +201,13 @@ function Repository({match}) {
           <FormColumn>
             <Card>
               {hasIssuesEnabled ? (
-                <DetailInfo text={`${humanizeNumber(issues.totalCount)} issues`} icon="issue-opened" />
+                <DetailInfo text={`${humanizeNumber(issues.totalCount)} issues`} icon="IssueOpenedIcon" />
               ) : (
-                <DetailInfo text={`${humanizeNumber(pullRequests.totalCount)} pull requests`} icon="git-pull-request" />
+                <DetailInfo text={`${humanizeNumber(pullRequests.totalCount)} pull requests`} icon="GitPullRequestIcon" />
               )}
-              <DetailInfo text={`${humanizeNumber(forks.totalCount)} forks`} icon="repo-forked" />
-              <DetailInfo text={`${humanizeNumber(stargazers.totalCount)} stars`} icon="star" />
-              {licenseInfo && <DetailInfo text={`${licenseInfo.name}`} icon="law" />}
+              <DetailInfo text={`${humanizeNumber(forks.totalCount)} forks`} icon="RepoForkedIcon" />
+              <DetailInfo text={`${humanizeNumber(stargazers.totalCount)} stars`} icon="StarIcon" />
+              {licenseInfo && <DetailInfo text={`${licenseInfo.name}`} icon="LawIcon" />}
             </Card>
             <Contributions repoName={name} owner={owner.login} />
             {owner && <Form note={note} goalId={issueId} repoName={nameWithOwner} />}
