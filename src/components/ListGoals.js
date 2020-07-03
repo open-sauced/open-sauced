@@ -34,8 +34,8 @@ function ListGoals({goals, data}) {
   return (
     <Container>
       <Select>
-        <label>Sort:</label>
-        <select onChange={e => handleSort(e.currentTarget.value)}>
+        <label htmlFor="sort">Sort:</label>
+        <select id="sort" onChange={e => handleSort(e.currentTarget.value)}>
           <option value="none">None</option>
           <option value="a_z">A to Z</option>
           <option value="z_a">Z to A</option>

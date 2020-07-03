@@ -53,7 +53,7 @@ function AddRepoForm({goalsId, onGoalAdded}) {
 
   return (
     <form onSubmit={_handleGoalCreation}>
-      <CardPadding>
+      <CardPadding style={{paddingBottom: 0}}>
         <Flex>
           <Input aria-label="repo name with owner" type="text" ref={urlRef} placeholder="owner/repo" />
           <InputButton type="submit" primary>

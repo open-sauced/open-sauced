@@ -7,6 +7,7 @@ const Container = styled.input`
   box-sizing: border-box;
   box-shadow: none;
   font-size: ${size.tiny};
+  margin-bottom: ${size.tiny};
   margin-right: ${size.tiny};
   outline: none;
   padding: ${size.tiny};
