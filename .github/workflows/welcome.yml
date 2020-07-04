@@ -1,0 +1,17 @@
+name: Welcome New Contributor
+
+on:
+  pull_request:
+    types: [opened]
+
+jobs:
+  welcome:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/first-interaction@v1
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          pr-message: |-
+            Congrats on making your first Pull Request and thanks for taking the time to improve Open Sauced! ❤️! 🎉🍕
+            Say hello by joining the conversation in our [Discord](https://discord.gg/gZMKK5q)
