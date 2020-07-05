@@ -126,9 +126,22 @@ function Repository({match}) {
             <div>
               <a style={{textDecoration: "none"}} href={url} rel="noreferrer" target="_blank">
                 {nameWithOwner ? (
-                  <h1>{nameWithOwner}</h1>
+                  <h1>
+                    <RepositoryAvatar
+                      alt="avatar"
+                      src={`https://avatars.githubusercontent.com/${nameWithOwner.split("/")[0]}`}
+                    />{nameWithOwner}
+                  </h1>
                 ) : (
-                  <Skeleton className="loading" height={35} width={350} />
+                  <div className="loading">
+                    <div>
+                      <Skeleton height={30} width={35} />
+                      <Skeleton height={30} width={350} />
+                    </div>
+                    <div className="description">
+                      <Skeleton height={5} width={410} />
+                    </div>
+                  </div>
                 )}
               </a>
               <p>{description}</p>
@@ -142,17 +155,17 @@ function Repository({match}) {
               <div className="languages">
                 {repository ?
                   repository.languages.nodes.map((language, key) => (
-                  <span key={key}>
-                    <span className="dot"  style={{color: language.color}}>
-                      •
+                    <span key={key}>
+                      <span className="dot"  style={{color: language.color}}>
+                        •
+                      </span>
+                      <span className="name">{language.name}</span>
                     </span>
-                    <span className="name">{language.name}</span>
-                  </span>
-                )) : (
-                  <div>
-                    <Skeleton height={2} width={70} count={4} />
-                  </div>
-                )}
+                  )) : (
+                    <div>
+                      <Skeleton height={2} width={70} count={4} />
+                    </div>
+                  )}
                 <span className="more">
                   {repository &&
                     repository.languages.totalCount > languagesShown &&

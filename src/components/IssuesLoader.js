@@ -5,8 +5,8 @@ import Skeleton from "react-loading-skeleton";
 function IssuesLoader() {
   return (
     <CardPadding className="loading">
-      {[...Array(5)].map(() => (
-        <span>
+      {[...Array(5)].map((key) => (
+        <span key={key}>
           <div>
             <Skeleton height={10} />
           </div>

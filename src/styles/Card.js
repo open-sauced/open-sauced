@@ -171,6 +171,12 @@ const ContextStyle = styled(Card)`
 const RepositoryContext = styled(ContextStyle)`
   margin-right: ${size.small}
   flex: 2;
+  
+  .loading {
+    .description {
+      margin-top: 16px;
+    }
+  }
 `;
 
 const HintStyle = styled(Card)`
