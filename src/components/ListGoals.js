@@ -7,10 +7,12 @@ import Card from "../components/Card";
 import List from "../styles/List";
 import {merge} from "lodash";
 import sortBy from "lodash/sortBy";
+import Search from "../styles/Search";
 
 function ListGoals({goals, data}) {
   const goalsWithData = merge(goals.nodes, data);
   const [listGoals, setGoals] = useState(goalsWithData);
+  const [searchTerm, setSearchTerm] = useState("");
 
   const handleSort = (sortType) => {
     switch (sortType) {
@@ -33,13 +35,9 @@ function ListGoals({goals, data}) {
 
   return (
     <Container>
-      <input
+      <Search
         placeholder="Search"
-        style={{
-          marginLeft: 16,
-          float: "left",
-          padding: 5,
-        }}
+        onChange={e => setSearchTerm(e.target.value)}
       />
       <Select>
         <label htmlFor="sort">Sort:</label>
@@ -54,7 +52,7 @@ function ListGoals({goals, data}) {
       <Card fitted>
         <List>
           {goalsWithData &&
-            listGoals.map(goal => (
+            listGoals.filter(goals => goals.full_name.includes(searchTerm)).map(goal => (
               <li key={goal.id}>
                 <Link
                   to={{
