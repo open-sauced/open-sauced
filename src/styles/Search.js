@@ -9,8 +9,13 @@ const Container = styled.input`
   font-size: ${size.tiny};
   margin-left: ${size.tiny};
   float: left;
-  padding: 5px;
+  padding: 6px;
   outline: none;
+  transition: all .5s ease;
+  
+  &:focus {
+    width: 300px;
+  }
 `;
 
 export default Container;

@@ -11,7 +11,10 @@ const Select = styled.div`
   }
 
   select {
-    padding: 5px 0;
+    padding: 6px;
+    border-radius: 5px;
+    border: 1px solid #e6e6e6;
+    background: transparent;
   }
 `;
 
