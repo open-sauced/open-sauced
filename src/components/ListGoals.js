@@ -8,6 +8,8 @@ import List from "../styles/List";
 import {merge} from "lodash";
 import sortBy from "lodash/sortBy";
 import Search from "../styles/Search";
+import {EmptyPlaceholder} from "../styles/EmptyPlaceholder";
+import {SearchIcon} from "@primer/octicons-react";
 
 function ListGoals({goals, data}) {
   const goalsWithData = merge(goals.nodes, data);
@@ -33,6 +35,11 @@ function ListGoals({goals, data}) {
     }
   };
 
+  const filteredSearch = listGoals.filter(
+    goals =>
+      goals.full_name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   return (
     <Container>
       <Search
@@ -54,19 +61,27 @@ function ListGoals({goals, data}) {
       <Card fitted>
         <List>
           {goalsWithData &&
-          listGoals
-            .filter(goals => goals.full_name.toLowerCase().includes(searchTerm.toLowerCase()))
-            .map(goal => (
-              <li key={goal.id}>
-                <Link
-                  to={{
-                    pathname: `/repos/${goal.full_name.replace(/\s+/g, "")}/${goal.number}`,
-                  }}>
-                  <RepoListItem goal={goal} stars={goal.stargazers_count} />
-                </Link>
-              </li>
-            ))}
+          filteredSearch.map(goal => (
+            <li key={goal.id}>
+              <Link
+                to={{
+                  pathname: `/repos/${goal.full_name.replace(/\s+/g, "")}/${goal.number}`,
+                }}>
+                <RepoListItem goal={goal} stars={goal.stargazers_count} />
+              </Link>
+            </li>
+          ))}
         </List>
+        {filteredSearch.length === 0 && (
+          <EmptyPlaceholder>
+            <div style={{color: "grey"}}>
+              <SearchIcon size="large" verticalAlign="middle" />
+            </div>
+            <div className="helper">
+              No result found for <b>'{searchTerm}'</b>
+            </div>
+          </EmptyPlaceholder>
+        )}
       </Card>
     </Container>
   );
