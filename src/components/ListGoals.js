@@ -54,7 +54,7 @@ function ListGoals({goals, data}) {
       <Card fitted>
         <List>
           {goalsWithData &&
-          listGoals.filter(goals => goals.full_name.includes(searchTerm)).map(goal => (
+          listGoals.filter(goals => goals.full_name.toLowerCase().includes(searchTerm.toLowerCase())).map(goal => (
             <li key={goal.id}>
               <Link
                 to={{
