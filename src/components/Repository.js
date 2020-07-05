@@ -167,12 +167,12 @@ function Repository({match}) {
               <a rel="noreferrer" target="_blank" href={`https://codetriage.com/${nameWithOwner}`}>
                 <Button primary>Set up CodeTriage</Button>
               </a>
-              { showFork ? (
+              { showFork && (
                 isForked ?
                   <a rel="noreferrer" target="_blank" href={`https://github.com/${user.login}/${repoName}`}>
                     <Button disabled={showFork} data-test="go-to-fork-button">View fork</Button>
                   </a> :
-                  <Button disabled={showFork} onClick={forkRepository}><RepoForkedIcon verticalAlign="middle" /> Fork</Button>) : null
+                  <Button disabled={showFork} onClick={forkRepository}><RepoForkedIcon verticalAlign="middle" /> Fork</Button>)
               }
               <h4>Contributors</h4>
               <div className="contributors">
