@@ -71,65 +71,63 @@ function Issues({repoName, owner}) {
       <CardHeader>
         <h1>Issues</h1>
       </CardHeader>
-      <List>
-        {totalCount > 0 ? (
-          <div>
-            {issuesLoading ? (
-              <IssuesLoader />
-            ) : (
-              issues &&
-                issues.map(issue => (
-                  <li key={issue.node.id}>
-                    <a rel="noreferrer" target="_blank" href={issue.node.url}>
-                      <IssuesListItem
-                        type="issues"
-                        title={issue.node.title}
-                        labels={issue.node.labels}
-                        author={issue.node.author.login}
-                        opened={issue.node.createdAt}
-                        participants={issue.node.participants}
-                        comments={issue.node.comments}
-                        milestone={issue.node.milestone}
-                      />
-                    </a>
-                  </li>
-                ))
-            )}
-            <CardPadding>
-              <FlexCenter className="pagination-buttons">
-                {offset > 0 && <InputButton onClick={_handlePreviousIssues}>Prev</InputButton>}
-                {currentPage !== totalPages && <InputButton onClick={_handleNextIssues}>Next</InputButton>}
-              </FlexCenter>
-            </CardPadding>
-          </div>
-        ) : (
-          loading ? (
+      {totalCount > 0 ? (
+        <List>
+          {issuesLoading ? (
             <IssuesLoader />
           ) : (
-            <EmptyPlaceholder style={{marginTop: 100}}>
-              {issuesEnabled ? (
-                <div>
-                  <div style={{color: "grey"}}>
-                    <IssueOpenedIcon size="large" verticalAlign="middle" />
-                  </div>
-                  <div className="helper">
-                    No Issues found
-                  </div>
+            issues &&
+              issues.map(issue => (
+                <li key={issue.node.id}>
+                  <a rel="noreferrer" target="_blank" href={issue.node.url}>
+                    <IssuesListItem
+                      type="issues"
+                      title={issue.node.title}
+                      labels={issue.node.labels}
+                      author={issue.node.author.login}
+                      opened={issue.node.createdAt}
+                      participants={issue.node.participants}
+                      comments={issue.node.comments}
+                      milestone={issue.node.milestone}
+                    />
+                  </a>
+                </li>
+              ))
+          )}
+          <CardPadding>
+            <FlexCenter className="pagination-buttons">
+              {offset > 0 && <InputButton onClick={_handlePreviousIssues}>Prev</InputButton>}
+              {currentPage !== totalPages && <InputButton onClick={_handleNextIssues}>Next</InputButton>}
+            </FlexCenter>
+          </CardPadding>
+        </List>
+      ) : (
+        loading ? (
+          <IssuesLoader />
+        ) : (
+          <EmptyPlaceholder style={{marginTop: 100}}>
+            {issuesEnabled ? (
+              <div>
+                <div style={{color: "grey"}}>
+                  <IssueOpenedIcon size="large" verticalAlign="middle" />
                 </div>
-              ) : (
-                <div>
-                  <div style={{color: "grey"}}>
-                    <IssueOpenedIcon size="large" verticalAlign="middle" />
-                  </div>
-                  <div className="helper">
-                    Issues not enabled
-                  </div>
+                <div className="helper">
+                  No Issues found
                 </div>
-              )}
-            </EmptyPlaceholder>
-          )
-        )}
-      </List>
+              </div>
+            ) : (
+              <div>
+                <div style={{color: "grey"}}>
+                  <IssueOpenedIcon size="large" verticalAlign="middle" />
+                </div>
+                <div className="helper">
+                  Issues not enabled
+                </div>
+              </div>
+            )}
+          </EmptyPlaceholder>
+        )
+      )}
     </Card>
   ) : (
     <p>...Loading</p>
