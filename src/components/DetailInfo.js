@@ -1,6 +1,6 @@
 import React from "react";
 import {FlexCenter} from "../styles/Grid";
-import {IssueOpenedIcon, GitPullRequestIcon, RepoForkedIcon, StarIcon} from "@primer/octicons-react";
+import {IssueOpenedIcon, GitPullRequestIcon, RepoForkedIcon, StarIcon, LawIcon} from "@primer/octicons-react";
 
 function DetailInfo({icon, text}) {
   return (
@@ -16,6 +16,8 @@ function DetailInfo({icon, text}) {
               return <RepoForkedIcon verticalAlign="middle" />;
             case "StarIcon":
               return <StarIcon verticalAlign="middle" />;
+            case "LawIcon":
+              return <LawIcon verticalAlign="middle" />;
             default:
               return null;
           }
