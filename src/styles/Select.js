@@ -11,7 +11,7 @@ const Select = styled.div`
   }
 
   select {
-    padding: 6px;
+    padding: ${size.micro};
     border-radius: ${borderRadius};
     border: 1px solid ${colors.lightestGrey};
     background: transparent;

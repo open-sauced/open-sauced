@@ -10,12 +10,12 @@ const Container = styled.input`
   font-size: ${size.tiny};
   margin-left: ${size.tiny};
   float: left;
-  padding: 6px;
+  padding: ${size.micro};
   outline: none;
 
   &[type=search] {
     background: ${colors.lightestGrey} url(${search}) no-repeat ${size.micro} center;
-    padding: 6px 6px 6px 35px;
+    padding: ${size.micro} ${size.micro} ${size.micro} 35px;
   	width: 200px;
   	transition: all .3s;
   }
