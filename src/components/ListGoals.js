@@ -33,6 +33,14 @@ function ListGoals({goals, data}) {
 
   return (
     <Container>
+      <input
+        placeholder="Search"
+        style={{
+          marginLeft: 16,
+          float: "left",
+          padding: 5,
+        }}
+      />
       <Select>
         <label htmlFor="sort">Sort:</label>
         <select id="sort" onChange={e => handleSort(e.currentTarget.value)}>

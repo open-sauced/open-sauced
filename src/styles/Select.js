@@ -2,7 +2,8 @@ import styled from "styled-components";
 import {size} from "./variables";
 
 const Select = styled.div`
-  padding: 0 ${size.tiny};
+  padding: 0 ${size.small};
+  text-align: end;
 
   label {
     font-size: ${size.tiny};
