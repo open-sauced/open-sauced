@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {size} from "./variables";
+import {size, borderRadius, colors} from "./variables";
 
 const Select = styled.div`
   padding: 0 ${size.small};
@@ -12,8 +12,8 @@ const Select = styled.div`
 
   select {
     padding: 6px;
-    border-radius: 5px;
-    border: 1px solid #e6e6e6;
+    border-radius: ${borderRadius};
+    border: 1px solid ${colors.lightestGrey};
     background: transparent;
   }
 `;

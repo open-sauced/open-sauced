@@ -14,7 +14,7 @@ const Container = styled.input`
   outline: none;
 
   &[type=search] {
-    background: #ededed url(${search}) no-repeat ${size.micro} center;
+    background: ${colors.lightestGrey} url(${search}) no-repeat ${size.micro} center;
     padding: 6px 6px 6px 35px;
   	width: 200px;
   	transition: all .3s;
