@@ -125,26 +125,22 @@ function Repository({match}) {
           <SpaceBetween>
             <div>
               <a style={{textDecoration: "none"}} href={url} rel="noreferrer" target="_blank">
-                {nameWithOwner ? (
-                  <h1>
-                    <RepositoryAvatar
-                      alt="avatar"
-                      src={`https://avatars.githubusercontent.com/${nameWithOwner.split("/")[0]}`}
-                    />{nameWithOwner}
-                  </h1>
-                ) : (
-                  <div className="loading">
-                    <div>
-                      <Skeleton height={30} width={35} />
-                      <Skeleton height={30} width={350} />
-                    </div>
-                    <div className="description">
-                      <Skeleton height={5} width={410} />
-                    </div>
-                  </div>
-                )}
+                <h1>
+                  <RepositoryAvatar
+                    alt="avatar"
+                    src={`https://avatars.githubusercontent.com/${repoOwner}`}
+                  />{repoOwner}/{repoName}
+                </h1>
               </a>
-              <p>{description}</p>
+              {description ? (
+                <p>{description}</p>
+              ) : (
+                <div className="loading">
+                  <div className="description">
+                    <Skeleton height={5} width={410} />
+                  </div>
+                </div>
+              )}
               <small>
                 <em>
                   <a href="https://opensource.guide/how-to-contribute/" rel="noreferrer" target="_blank">
