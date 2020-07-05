@@ -54,16 +54,18 @@ function ListGoals({goals, data}) {
       <Card fitted>
         <List>
           {goalsWithData &&
-          listGoals.filter(goals => goals.full_name.toLowerCase().includes(searchTerm.toLowerCase())).map(goal => (
-            <li key={goal.id}>
-              <Link
-                to={{
-                  pathname: `/repos/${goal.full_name.replace(/\s+/g, "")}/${goal.number}`,
-                }}>
-                <RepoListItem goal={goal} stars={goal.stargazers_count} />
-              </Link>
-            </li>
-          ))}
+          listGoals
+            .filter(goals => goals.full_name.toLowerCase().includes(searchTerm.toLowerCase()))
+            .map(goal => (
+              <li key={goal.id}>
+                <Link
+                  to={{
+                    pathname: `/repos/${goal.full_name.replace(/\s+/g, "")}/${goal.number}`,
+                  }}>
+                  <RepoListItem goal={goal} stars={goal.stargazers_count} />
+                </Link>
+              </li>
+            ))}
         </List>
       </Card>
     </Container>
