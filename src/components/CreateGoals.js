@@ -32,7 +32,10 @@ function InstallApp() {
         permissions to access data.
       </p>
       <p>The Open Sauced App needs to be installed on your newly created "open-sauced-goals" public repository.</p>
-      <img style={{textAlign: "center", width: "80%"}} src="https://user-images.githubusercontent.com/20134767/86527180-4a83c700-be51-11ea-8eaf-660298cf3c66.png" />
+      <img
+        style={{textAlign: "center", width: "80%"}}
+        src="https://user-images.githubusercontent.com/20134767/86527180-4a83c700-be51-11ea-8eaf-660298cf3c66.png"
+      />
       <small>
         <em>The installation grants access storing note data and tracking open source contributions.</em>
       </small>
