@@ -79,6 +79,7 @@ const operationsDoc = `
         repository(name: $repo) {
           id
           name
+          description
           nameWithOwner
           url
           hasIssuesEnabled
@@ -98,11 +99,23 @@ const operationsDoc = `
           stargazers {
             totalCount
           }
+          licenseInfo {
+            name
+          }
           languages(first: 3) {
             totalCount
             nodes {
               name
               color
+            }
+          }
+          contributors_oneGraph(
+            includeAnonymousContributors: false
+          ) {
+            nodes {
+              login
+              avatarUrl
+              contributionCount
             }
           }
         }
@@ -436,6 +449,36 @@ const operationsDoc = `
       }
     }
   }
+
+  query FetchUserForkCount(
+    $repoName: String!
+    $repoOwner: String!
+  ) {
+    gitHub {
+      repository(name: $repoName, owner: $repoOwner) {
+        forks(affiliations: OWNER) {
+          totalCount
+        }
+      }
+    }
+  }
+
+  mutation ForkRepository(
+    $repoName: String!
+    $repoOwner: String!
+  ) {
+    gitHub {
+      createFork_oneGraph(
+        input: { repoName: $repoName, repoOwner: $repoOwner }
+      ) {
+        clientMutationId
+        repository {
+          id
+          url
+        }
+      }
+    }
+  }
 `;
 
 function fetchContributedRepoQuery() {
@@ -507,6 +550,14 @@ function updateGoal(id, title, state, notes) {
   });
 }
 
+function fetchUserForkCount(repoName, repoOwner) {
+  return fetchOneGraph(operationsDoc, "FetchUserForkCount", {repoName, repoOwner});
+}
+
+function forkRepository(repoName, repoOwner) {
+  return fetchOneGraph(operationsDoc, "ForkRepository", {repoName, repoOwner});
+}
+
 const api = {
   fetchRepositoryData: fetchRepoQuery,
   fetchContributedRepoQuery,
@@ -527,6 +578,8 @@ const api = {
   createOpenSaucedGoalsRepo,
   createGoal,
   updateGoal,
+  fetchUserForkCount,
+  forkRepository,
 };
 
 export default api;

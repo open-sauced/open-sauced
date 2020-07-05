@@ -17,13 +17,15 @@ function RepoListItem({goal, stars}) {
           />
           <FlexColumn className="details">
             <p>{truncate(goal.full_name.replace(/\s+/g, ""), 60)}</p>
-            {stars && (
+            {stars ? (
               <FlexStart style={{alignItems: "flex-start"}}>
                 <div>
                   <StarIcon alt="star" verticalAlign="middle" />
                 </div>
                 <p>{humanizeNumber(stars)}</p>
               </FlexStart>
+            ) : (
+              <p><i>Sync in Progress</i></p>
             )}
           </FlexColumn>
         </FlexCenter>
