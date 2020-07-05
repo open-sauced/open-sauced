@@ -14,7 +14,7 @@ import {ButtonBoard, RepositoryContext} from "../styles/Card";
 import {Spinner} from "../styles/Spinner";
 import {Flex, FormColumn, IssuesColumn} from "../styles/Grid";
 import {humanizeNumber} from "../lib/humanizeNumber";
-import Skeleton from "react-loading-skeleton";
+import Skeleton, {SkeletonTheme} from "react-loading-skeleton";
 import {getUserFromJwt} from "../lib/identityActions";
 import Config from "../config";
 import Button from "../styles/Button";
@@ -210,7 +210,22 @@ function Repository({match}) {
               </div>
             </span>
           ) : (
-            <h3>Loading...</h3>
+            <SkeletonTheme color="#fbfbfb" highlightColor="#f2f2f2">
+              <div style={{lineHeight: 1.5}}>
+                <Skeleton height={15} />
+                <Skeleton height={15} width={250} />
+              </div>
+              <div style={{marginTop: 20}}>
+                <Skeleton style={{marginRight: 5}} height={60} width={150} />
+                <Skeleton height={60} width={150} />
+              </div>
+              <div style={{marginTop: 30}}>
+                <Skeleton height={20} width={120} />
+              </div>
+              <div style={{marginTop: 20}}>
+                <Skeleton style={{marginRight: 5}} circle height={30} width={30} count={5} />
+              </div>
+            </SkeletonTheme>
           )}
         </ButtonBoard>
       </Flex>
