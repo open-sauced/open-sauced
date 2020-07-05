@@ -29,11 +29,11 @@ function Contributions({repoName, owner}) {
             <AccentLink href={`https://github.com/${owner}/${repoName}/contribute`}>make new contributions.</AccentLink>
           </MicroFont>
         </CardPadding>
-        <List>
-          {loading ? (
-            <IssuesLoader />
-          ) : (
-            issues &&
+        {loading ? (
+          <IssuesLoader />
+        ) : (
+          <List>
+            {issues &&
             issues.map(issue => (
               <li key={issue.node.id}>
                 <a rel="noreferrer" target="_blank" href={issue.node.url}>
@@ -48,9 +48,9 @@ function Contributions({repoName, owner}) {
                   />
                 </a>
               </li>
-            ))
-          )}
-        </List>
+            ))}
+          </List>
+        )}
       </Card>
     )
   );
