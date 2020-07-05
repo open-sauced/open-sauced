@@ -37,6 +37,8 @@ function ListGoals({goals, data}) {
     <Container>
       <Search
         placeholder="Search"
+        aria-label="search"
+        type="search"
         onChange={e => setSearchTerm(e.target.value)}
       />
       <Select>

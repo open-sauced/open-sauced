@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import {size, borderRadius, colors} from "./variables";
+import {search} from "../icons";
 
 const Container = styled.input`
   border-radius: ${borderRadius};
@@ -11,8 +12,14 @@ const Container = styled.input`
   float: left;
   padding: 6px;
   outline: none;
-  transition: all .5s ease;
-  
+
+  &[type=search] {
+    background: #ededed url(${search}) no-repeat ${size.micro} center;
+    padding: 6px 6px 6px 35px;
+  	width: 200px;
+  	transition: all .3s;
+  }
+
   &:focus {
     width: 300px;
   }
