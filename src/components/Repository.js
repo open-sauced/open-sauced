@@ -101,7 +101,7 @@ function Repository({match}) {
 
   const user = getUserFromJwt(Config.auth);
 
-  const showFork = repoOwner !== user.login ? true : isForkLoading;
+  const showFork = repoOwner !== user && user.login ? true : isForkLoading;
 
   const {
     url,
