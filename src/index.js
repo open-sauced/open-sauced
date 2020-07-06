@@ -10,11 +10,10 @@ import {ApolloProvider} from "react-apollo";
 import api from "./lib/apiGraphQL";
 import {getAppVersion} from "./lib/appVersion";
 import * as Sentry from "@sentry/react";
-import {isDev} from "./lib/isDev";
+import {isProd} from "./lib/isProd";
 
-console.log(isDev());
-
-Sentry.init({dsn: "https://33235628c0f14f559dc62e408e3b4299@o180224.ingest.sentry.io/5311329"});
+isProd() &&
+  Sentry.init({dsn: "https://33235628c0f14f559dc62e408e3b4299@o180224.ingest.sentry.io/5311329"});
 
 const apolloClient = new OneGraphApolloClient({
   oneGraphAuth: Config.auth,

@@ -1,7 +1,7 @@
-export function isDev() {
+export function isProd() {
   if (process.env.NODE_ENV === "development") {
-    return true;
-  } else {
     return false;
+  } else {
+    return true;
   }
 }
