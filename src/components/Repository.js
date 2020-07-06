@@ -97,7 +97,7 @@ function Repository({user, match}) {
   };
 
   const showFork = repoOwner !== user && user.login ? true : isForkLoading;
-  
+
   const {
     url,
     stargazers,
