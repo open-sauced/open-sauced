@@ -3,6 +3,7 @@ import {AdminNav} from "../styles/Header";
 import {getAppVersion} from "../lib/appVersion";
 import humanizeDuration from "humanize-duration";
 import api from "../lib/apiGraphQL";
+import {isProd} from "../lib/isProd";
 
 const humanizer = humanizeDuration.humanizer({
   language: "shortEn",
@@ -39,6 +40,11 @@ function LeftSide({deployment}) {
             <span>⚛️</span> <b>React</b> v{React.version}
           </a>
         </li>
+        {!isProd() && (
+          <li title="Development" className="no-well">
+            <span>🐥</span>
+          </li>
+        )}
       </ul>
     </div>
   );
