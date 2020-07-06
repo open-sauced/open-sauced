@@ -96,6 +96,8 @@ function Repository({user, match}) {
       .finally(() => setIsForkLoading(false));
   };
 
+  const showFork = repoOwner !== user && user.login ? true : isForkLoading;
+
   const {
     url,
     stargazers,
@@ -167,11 +169,13 @@ function Repository({user, match}) {
               <a rel="noreferrer" target="_blank" href={`https://codetriage.com/${nameWithOwner}`}>
                 <Button primary>Set up CodeTriage</Button>
               </a>
-              {isForked ?
-                <a rel="noreferrer" target="_blank" href={`https://github.com/${user.login}/${repoName}`}>
-                  <Button disabled={isForkLoading} data-test="go-to-fork-button">View fork</Button>
-                </a> :
-                <Button disabled={isForkLoading} onClick={forkRepository}><RepoForkedIcon verticalAlign="middle" /> Fork</Button>}
+              { showFork && (
+                isForked ?
+                  <a rel="noreferrer" target="_blank" href={`https://github.com/${user.login}/${repoName}`}>
+                    <Button disabled={showFork} data-test="go-to-fork-button">View fork</Button>
+                  </a> :
+                  <Button disabled={showFork} onClick={forkRepository}><RepoForkedIcon verticalAlign="middle" /> Fork</Button>)
+              }
               <h4>Contributors</h4>
               <div className="contributors">
                 {contributors.slice(0, contributorsShown).map((user, key) => (
