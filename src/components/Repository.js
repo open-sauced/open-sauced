@@ -167,26 +167,11 @@ function Repository({user, match}) {
               <a rel="noreferrer" target="_blank" href={`https://codetriage.com/${nameWithOwner}`}>
                 <Button primary>Set up CodeTriage</Button>
               </a>
-<<<<<<< HEAD
               {isForked ?
                 <a rel="noreferrer" target="_blank" href={`https://github.com/${user.login}/${repoName}`}>
                   <Button disabled={isForkLoading} data-test="go-to-fork-button">View fork</Button>
                 </a> :
                 <Button disabled={isForkLoading} onClick={forkRepository}><RepoForkedIcon verticalAlign="middle" /> Fork</Button>}
-=======
-              {showFork &&
-                (isForked ? (
-                  <a rel="noreferrer" target="_blank" href={`https://github.com/${user.login}/${repoName}`}>
-                    <Button disabled={showFork} data-test="go-to-fork-button">
-                      View fork
-                    </Button>
-                  </a>
-                ) : (
-                  <Button disabled={showFork} onClick={forkRepository}>
-                    <RepoForkedIcon verticalAlign="middle" /> Fork
-                  </Button>
-                ))}
->>>>>>> d40fd75... clean up user usage for testing
               <h4>Contributors</h4>
               <div className="contributors">
                 {contributors.slice(0, contributorsShown).map((user, key) => (
