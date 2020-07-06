@@ -4,6 +4,8 @@ import Repository from "../components/Repository";
 import {data, match, location} from "./mocks";
 
 describe("<Repository />", () => {
+  const getUserFromJwt = jest.fn();
+  getUserFromJwt.mockReturnValueOnce({id:29888641,login:"filiptronicek"}).mockReturnValue(true);
   it("should render without throwing an error", () => {
     const component = shallow(<Repository location={location} match={match} data={data} />);
     expect(component).toMatchSnapshot();
