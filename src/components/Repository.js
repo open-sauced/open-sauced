@@ -14,12 +14,10 @@ import {ButtonBoard, RepositoryContext} from "../styles/Card";
 import {Spinner} from "../styles/Spinner";
 import {Flex, FormColumn, IssuesColumn} from "../styles/Grid";
 import {humanizeNumber} from "../lib/humanizeNumber";
-import {getUserFromJwt} from "../lib/identityActions";
-import Config from "../config";
 import Button from "../styles/Button";
 import {RepoForkedIcon} from "@primer/octicons-react";
 
-function Repository({match}) {
+function Repository({user, match}) {
   const {
     params: {repoName, repoOwner, id},
   } = match;
@@ -75,7 +73,7 @@ function Repository({match}) {
 
         setIsForked(!!data.gitHub.repository.forks.totalCount);
       })
-      .catch((e) => console.log(e))
+      .catch(e => console.log(e))
       .finally(() => setIsForkLoading(false));
   }, []);
 
@@ -97,8 +95,6 @@ function Repository({match}) {
       .catch(e => console.log(e))
       .finally(() => setIsForkLoading(false));
   };
-
-  const user = getUserFromJwt(Config.auth);
 
   const {
     url,
@@ -124,10 +120,17 @@ function Repository({match}) {
           <SpaceBetween>
             <div>
               <a style={{textDecoration: "none"}} href={url} rel="noreferrer" target="_blank">
-                {nameWithOwner ? <h1><RepositoryAvatar
-                  alt="avatar"
-                  src={`https://avatars.githubusercontent.com/${nameWithOwner.split("/")[0]}`}
-                />{nameWithOwner}</h1> : <h1>Loading...</h1>}
+                {nameWithOwner ? (
+                  <h1>
+                    <RepositoryAvatar
+                      alt="avatar"
+                      src={`https://avatars.githubusercontent.com/${nameWithOwner.split("/")[0]}`}
+                    />
+                    {nameWithOwner}
+                  </h1>
+                ) : (
+                  <h1>Loading...</h1>
+                )}
               </a>
               <p>{description}</p>
               <small>
@@ -164,11 +167,26 @@ function Repository({match}) {
               <a rel="noreferrer" target="_blank" href={`https://codetriage.com/${nameWithOwner}`}>
                 <Button primary>Set up CodeTriage</Button>
               </a>
+<<<<<<< HEAD
               {isForked ?
                 <a rel="noreferrer" target="_blank" href={`https://github.com/${user.login}/${repoName}`}>
                   <Button disabled={isForkLoading} data-test="go-to-fork-button">View fork</Button>
                 </a> :
                 <Button disabled={isForkLoading} onClick={forkRepository}><RepoForkedIcon verticalAlign="middle" /> Fork</Button>}
+=======
+              {showFork &&
+                (isForked ? (
+                  <a rel="noreferrer" target="_blank" href={`https://github.com/${user.login}/${repoName}`}>
+                    <Button disabled={showFork} data-test="go-to-fork-button">
+                      View fork
+                    </Button>
+                  </a>
+                ) : (
+                  <Button disabled={showFork} onClick={forkRepository}>
+                    <RepoForkedIcon verticalAlign="middle" /> Fork
+                  </Button>
+                ))}
+>>>>>>> d40fd75... clean up user usage for testing
               <h4>Contributors</h4>
               <div className="contributors">
                 {contributors.slice(0, contributorsShown).map((user, key) => (
@@ -204,7 +222,10 @@ function Repository({match}) {
               {hasIssuesEnabled ? (
                 <DetailInfo text={`${humanizeNumber(issues.totalCount)} issues`} icon="IssueOpenedIcon" />
               ) : (
-                <DetailInfo text={`${humanizeNumber(pullRequests.totalCount)} pull requests`} icon="GitPullRequestIcon" />
+                <DetailInfo
+                  text={`${humanizeNumber(pullRequests.totalCount)} pull requests`}
+                  icon="GitPullRequestIcon"
+                />
               )}
               <DetailInfo text={`${humanizeNumber(forks.totalCount)} forks`} icon="RepoForkedIcon" />
               <DetailInfo text={`${humanizeNumber(stargazers.totalCount)} stars`} icon="StarIcon" />
