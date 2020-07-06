@@ -40,9 +40,13 @@ function LeftSide({deployment}) {
             <span>⚛️</span> <b>React</b> v{React.version}
           </a>
         </li>
-        {!isProd() && (
+        {!isProd() ? (
           <li title="Development" className="no-well">
             <span>🐥</span>
+          </li>
+        ) : (
+          <li title="Production" className="no-well">
+            <span>💡</span>
           </li>
         )}
       </ul>
