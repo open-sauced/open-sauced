@@ -97,6 +97,8 @@ function Repository({user, match}) {
       .finally(() => setIsForkLoading(false));
   };
 
+  console.log(user);
+
   const showFork = repoOwner !== user && user.login ? true : isForkLoading;
 
   const {
@@ -135,7 +137,7 @@ function Repository({user, match}) {
               ) : (
                 <div className="loading">
                   <div className="description">
-                    <Skeleton height={5} width={410} />
+                    <Skeleton height={5} />
                   </div>
                 </div>
               )}
