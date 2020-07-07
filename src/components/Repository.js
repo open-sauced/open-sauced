@@ -15,8 +15,6 @@ import {Spinner} from "../styles/Spinner";
 import {Flex, FormColumn, IssuesColumn} from "../styles/Grid";
 import {humanizeNumber} from "../lib/humanizeNumber";
 import Skeleton, {SkeletonTheme} from "react-loading-skeleton";
-import {getUserFromJwt} from "../lib/identityActions";
-import Config from "../config";
 import Button from "../styles/Button";
 import {RepoForkedIcon} from "@primer/octicons-react";
 
