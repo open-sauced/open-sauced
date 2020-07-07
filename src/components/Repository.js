@@ -97,8 +97,6 @@ function Repository({user, match}) {
       .finally(() => setIsForkLoading(false));
   };
 
-  console.log(user);
-
   const showFork = repoOwner !== user && user.login ? true : isForkLoading;
 
   const {
