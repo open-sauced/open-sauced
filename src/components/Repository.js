@@ -14,6 +14,7 @@ import {ButtonBoard, RepositoryContext} from "../styles/Card";
 import {Spinner} from "../styles/Spinner";
 import {Flex, FormColumn, IssuesColumn} from "../styles/Grid";
 import {humanizeNumber} from "../lib/humanizeNumber";
+import Skeleton, {SkeletonTheme} from "react-loading-skeleton";
 import {getUserFromJwt} from "../lib/identityActions";
 import Config from "../config";
 import Button from "../styles/Button";
@@ -124,12 +125,22 @@ function Repository({match}) {
           <SpaceBetween>
             <div>
               <a style={{textDecoration: "none"}} href={url} rel="noreferrer" target="_blank">
-                {nameWithOwner ? <h1><RepositoryAvatar
-                  alt="avatar"
-                  src={`https://avatars.githubusercontent.com/${nameWithOwner.split("/")[0]}`}
-                />{nameWithOwner}</h1> : <h1>Loading...</h1>}
+                <h1>
+                  <RepositoryAvatar
+                    alt="avatar"
+                    src={`https://avatars.githubusercontent.com/${repoOwner}`}
+                  />{repoOwner}/{repoName}
+                </h1>
               </a>
-              <p>{description}</p>
+              {description ? (
+                <p>{description}</p>
+              ) : (
+                <div className="loading">
+                  <div className="description">
+                    <Skeleton height={5} width={410} />
+                  </div>
+                </div>
+              )}
               <small>
                 <em>
                   <a href="https://opensource.guide/how-to-contribute/" rel="noreferrer" target="_blank">
@@ -138,15 +149,19 @@ function Repository({match}) {
                 </em>
               </small>
               <div className="languages">
-                {repository &&
+                {repository ?
                   repository.languages.nodes.map((language, key) => (
                     <span key={key}>
-                      <span className="dot" style={{color: language.color}}>
+                      <span className="dot"  style={{color: language.color}}>
                         •
                       </span>
                       <span className="name">{language.name}</span>
                     </span>
-                  ))}
+                  )) : (
+                    <div>
+                      <Skeleton height={2} width={70} count={4} />
+                    </div>
+                  )}
                 <span className="more">
                   {repository &&
                     repository.languages.totalCount > languagesShown &&
@@ -191,7 +206,22 @@ function Repository({match}) {
               </div>
             </span>
           ) : (
-            <h3>Loading...</h3>
+            <SkeletonTheme color="#fbfbfb" highlightColor="#f2f2f2">
+              <div style={{lineHeight: 1.5}}>
+                <Skeleton height={15} />
+                <Skeleton height={15} width={250} />
+              </div>
+              <div style={{marginTop: 20}}>
+                <Skeleton style={{marginRight: 5}} height={60} width={150} />
+                <Skeleton height={60} width={150} />
+              </div>
+              <div style={{marginTop: 30}}>
+                <Skeleton height={20} width={120} />
+              </div>
+              <div style={{marginTop: 20}}>
+                <Skeleton style={{marginRight: 5}} circle height={30} width={30} count={5} />
+              </div>
+            </SkeletonTheme>
           )}
         </ButtonBoard>
       </Flex>

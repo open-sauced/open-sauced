@@ -8,11 +8,12 @@ import IssuesListItem from "../components/IssueListItem";
 import {InputButton} from "../styles/Button";
 import {CardPadding, CardHeader} from "../styles/Card";
 import {IssueOpenedIcon} from "@primer/octicons-react";
-import {Spinner} from "../styles/Spinner";
+import IssuesLoader from "./IssuesLoader";
 
 function Issues({repoName, owner}) {
   const [issues, setIssues] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [issuesLoading, setIssuesLoading] = useState(false);
   const [cursor, setCursor] = useState(null);
   const [totalCount, setTotal] = useState(0);
   const [issuesEnabled, setIssuesEnabled] = useState(null);
@@ -35,6 +36,7 @@ function Issues({repoName, owner}) {
   }, []);
 
   const _handleNextIssues = () => {
+    setIssuesLoading(true);
     api.fetchRepositoryIssues(owner, repoName, cursor).then(response => {
       const {data, totalCount} = response.data.gitHub.repositoryOwner.repository.issues;
       const firstIssue = data[data.length - 1];
@@ -43,10 +45,12 @@ function Issues({repoName, owner}) {
       setCursor(newCursor);
       setTotal(totalCount);
       setOffset(offset + 5);
+      setIssuesLoading(false);
     });
   };
 
   const _handlePreviousIssues = () => {
+    setIssuesLoading(true);
     api.fetchRepositoryIssues(owner, repoName, cursor, true).then(response => {
       const {data, totalCount} = response.data.gitHub.repositoryOwner.repository.issues;
       const newCursor = data[0].newCursor;
@@ -54,6 +58,7 @@ function Issues({repoName, owner}) {
       setCursor(newCursor);
       setTotal(totalCount);
       setOffset(offset - 5);
+      setIssuesLoading(false);
     });
   };
 
@@ -61,29 +66,34 @@ function Issues({repoName, owner}) {
   const currentPage = offset / 5 + 1;
 
   return owner ? (
-    totalCount > 0 ? (
-      <Card fitted>
-        <CardHeader>
-          <h1>Issues</h1>
-        </CardHeader>
+
+    <Card fitted>
+      <CardHeader>
+        <h1>Issues</h1>
+      </CardHeader>
+      {totalCount > 0 ? (
         <List>
-          {issues &&
-            issues.map(issue => (
-              <li key={issue.node.id}>
-                <a rel="noreferrer" target="_blank" href={issue.node.url}>
-                  <IssuesListItem
-                    type="issues"
-                    title={issue.node.title}
-                    labels={issue.node.labels}
-                    author={issue.node.author.login}
-                    opened={issue.node.createdAt}
-                    participants={issue.node.participants}
-                    comments={issue.node.comments}
-                    milestone={issue.node.milestone}
-                  />
-                </a>
-              </li>
-            ))}
+          {issuesLoading ? (
+            <IssuesLoader />
+          ) : (
+            issues &&
+              issues.map(issue => (
+                <li key={issue.node.id}>
+                  <a rel="noreferrer" target="_blank" href={issue.node.url}>
+                    <IssuesListItem
+                      type="issues"
+                      title={issue.node.title}
+                      labels={issue.node.labels}
+                      author={issue.node.author.login}
+                      opened={issue.node.createdAt}
+                      participants={issue.node.participants}
+                      comments={issue.node.comments}
+                      milestone={issue.node.milestone}
+                    />
+                  </a>
+                </li>
+              ))
+          )}
           <CardPadding>
             <FlexCenter className="pagination-buttons">
               {offset > 0 && <InputButton onClick={_handlePreviousIssues}>Prev</InputButton>}
@@ -91,34 +101,34 @@ function Issues({repoName, owner}) {
             </FlexCenter>
           </CardPadding>
         </List>
-      </Card>
-    ) : (
-      loading ? (
-        <Spinner />
       ) : (
-        <EmptyPlaceholder style={{marginTop: 100}}>
-          {issuesEnabled ? (
-            <div>
-              <div style={{color: "grey"}}>
-                <IssueOpenedIcon size="large" verticalAlign="middle" />
+        loading ? (
+          <IssuesLoader />
+        ) : (
+          <EmptyPlaceholder style={{marginTop: 100}}>
+            {issuesEnabled ? (
+              <div>
+                <div style={{color: "grey"}}>
+                  <IssueOpenedIcon size="large" verticalAlign="middle" />
+                </div>
+                <div className="helper">
+                  No Issues found
+                </div>
               </div>
-              <div className="helper">
-                No Issues found
+            ) : (
+              <div>
+                <div style={{color: "grey"}}>
+                  <IssueOpenedIcon size="large" verticalAlign="middle" />
+                </div>
+                <div className="helper">
+                  Issues not enabled
+                </div>
               </div>
-            </div>
-          ) : (
-            <div>
-              <div style={{color: "grey"}}>
-                <IssueOpenedIcon size="large" verticalAlign="middle" />
-              </div>
-              <div className="helper">
-                Issues not enabled
-              </div>
-            </div>
-          )}
-        </EmptyPlaceholder>
-      )
-    )
+            )}
+          </EmptyPlaceholder>
+        )
+      )}
+    </Card>
   ) : (
     <p>...Loading</p>
   );
