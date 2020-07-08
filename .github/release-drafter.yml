@@ -3,17 +3,15 @@ tag-template: 'v$NEXT_PATCH_VERSION'
 categories:
   - title: '🚀 Features'
     labels:
-      - 'feature'
-      - 'enhancement'
+      - '💡 feature'
+      - '🍕 enhancement'
   - title: '🐛 Bug Fixes'
     labels:
-      - 'fix'
-      - 'bugfix'
-      - 'bug'
+      - '🐛 bug'
   - title: '🧰 Maintenance'
     label: 'chore'
   - title: '📖 Documentation'
-    label: 'documentation'
+    label: '📝 documentation'
 change-template: '- $TITLE @$AUTHOR (#$NUMBER)'
 version-resolver:
   major:
