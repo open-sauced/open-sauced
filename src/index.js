@@ -13,7 +13,7 @@ import * as Sentry from "@sentry/react";
 import {isProd} from "./lib/isProd";
 
 isProd() &&
-  Sentry.init({dsn: "https://33235628c0f14f559dc62e408e3b4299@o180224.ingest.sentry.io/5311329"});
+  Sentry.init({dsn: "https://c38b324e1edf48e08ce298a649417905@o416962.ingest.sentry.io/5314544"});
 
 const apolloClient = new OneGraphApolloClient({
   oneGraphAuth: Config.auth,
