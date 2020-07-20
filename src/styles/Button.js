@@ -9,7 +9,9 @@ const Button = styled.button`
     return props.primary ? "none" : `2px solid ${colors.offWhite}`;
   }};
   border-radius: ${borderRadius};
-  box-shadow: 0 1px 2px 0 #33160F;
+  webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+  moz-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
   color: ${props => {
     return props.primary ? "white" : "#664E48";
   }};
@@ -24,15 +26,18 @@ const Button = styled.button`
   padding: ${props => {
     return props.primary ? "19px" : size.tiny;
   }};
-  transition: background 0.2s ease;
+  transition: background 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
 
   &:hover {
     background: ${props => {
     return props.primary ? colors.saucyRed : colors.lighestGrey;
   }};
 
-    color: ${colors.lighterGrey};
-    transition: background 0.9s ease, linear;
+    webkit-box-shadow: 0 5px 7px 0 rgba(0, 0, 0, 0.2);
+    moz-box-shadow: 0 5px 7px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 5px 7px 0 rgba(0, 0, 0, 0.2);
+    transform: translate(0, -3px);
+    transition: background 0.9s ease, box-shadow 0.2s ease, transform 0.2s ease;
   }
 
   &:disabled {
