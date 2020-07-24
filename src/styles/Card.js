@@ -162,11 +162,21 @@ const ContextStyle = styled(Card)`
       color: grey;
     }
   }
+
+  .loading {
+    margin-bottom: ${size.tiny};
+  }
 `;
 
 const RepositoryContext = styled(ContextStyle)`
   margin-right: ${size.small}
   flex: 2;
+  
+  .loading {
+    .description {
+      margin-top: 16px;
+    }
+  }
 `;
 
 const HintStyle = styled(Card)`

@@ -38,4 +38,5 @@ function RepoListItem({goal, stars}) {
     </FlexHeader>
   );
 }
+
 export default RepoListItem;

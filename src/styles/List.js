@@ -67,6 +67,14 @@ const Container = styled.ul`
       margin-top: 5px;
     }
   }
+
+  .loading {
+    padding: 0 35px 0 ${size.small};
+
+    .meta, .label {
+      margin-top: ${size.tiny}
+    }
+  }
 `;
 
 export default Container;
