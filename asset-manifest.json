@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.js": "/main.f60be9bce665acb94b2d.bundle.js",
-    "main.js.map": "/main.f60be9bce665acb94b2d.bundle.js.map",
-    "runtime~main.js": "/runtime~main.f60be9bce665acb94b2d.bundle.js",
-    "runtime~main.js.map": "/runtime~main.f60be9bce665acb94b2d.bundle.js.map",
-    "vendors~main.js": "/vendors~main.f60be9bce665acb94b2d.bundle.js",
-    "vendors~main.js.map": "/vendors~main.f60be9bce665acb94b2d.bundle.js.map",
+    "main.js": "/main.83621be5e22cfea4d912.bundle.js",
+    "main.js.map": "/main.83621be5e22cfea4d912.bundle.js.map",
+    "runtime~main.js": "/runtime~main.83621be5e22cfea4d912.bundle.js",
+    "runtime~main.js.map": "/runtime~main.83621be5e22cfea4d912.bundle.js.map",
+    "vendors~main.js": "/vendors~main.83621be5e22cfea4d912.bundle.js",
+    "vendors~main.js.map": "/vendors~main.83621be5e22cfea4d912.bundle.js.map",
     "iframe.html": "/iframe.html",
-    "precache-manifest.fdf46b4e66018ff0582664957a9a6474.js": "/precache-manifest.fdf46b4e66018ff0582664957a9a6474.js",
+    "precache-manifest.6ea15d0144ccaa2cf42d9f882905ccc0.js": "/precache-manifest.6ea15d0144ccaa2cf42d9f882905ccc0.js",
     "service-worker.js": "/service-worker.js",
     "static/media/404.svg": "/static/media/404.5c7b90ee.svg",
     "static/media/alert-circle.svg": "/static/media/alert-circle.0289b2ff.svg",
@@ -42,17 +42,18 @@
     "static/media/sauce.svg": "/static/media/sauce.736eaa08.svg",
     "static/media/sauced.svg": "/static/media/sauced.b72147b5.svg",
     "static/media/save.svg": "/static/media/save.44e36bfe.svg",
+    "static/media/search.svg": "/static/media/search.a563ba33.svg",
     "static/media/squirrel.svg": "/static/media/squirrel.5ac857b7.svg",
     "static/media/star.svg": "/static/media/star.6f0022f9.svg",
     "static/media/undrawDevProductivity.svg": "/static/media/undrawDevProductivity.fe51e730.svg",
     "static/media/undrawDiary.svg": "/static/media/undrawDiary.08c81dd8.svg",
     "static/media/undrawDoneChecking.svg": "/static/media/undrawDoneChecking.de8bc137.svg",
     "static/media/watch.svg": "/static/media/watch.62f6aa2d.svg",
-    "vendors~main.f60be9bce665acb94b2d.bundle.js.LICENSE.txt": "/vendors~main.f60be9bce665acb94b2d.bundle.js.LICENSE.txt"
+    "vendors~main.83621be5e22cfea4d912.bundle.js.LICENSE.txt": "/vendors~main.83621be5e22cfea4d912.bundle.js.LICENSE.txt"
   },
   "entrypoints": [
-    "runtime~main.f60be9bce665acb94b2d.bundle.js",
-    "vendors~main.f60be9bce665acb94b2d.bundle.js",
-    "main.f60be9bce665acb94b2d.bundle.js"
+    "runtime~main.83621be5e22cfea4d912.bundle.js",
+    "vendors~main.83621be5e22cfea4d912.bundle.js",
+    "main.83621be5e22cfea4d912.bundle.js"
   ]
 }
