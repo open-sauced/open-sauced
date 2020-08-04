@@ -6,7 +6,7 @@ on:
     branches:
       - 'release/*'
       - 'patch/*'
-      - master
+      - main
 
 jobs:
   update_draft_release:
