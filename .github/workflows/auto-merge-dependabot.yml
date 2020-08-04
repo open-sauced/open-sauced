@@ -10,6 +10,6 @@ jobs:
       run: echo "Hello ref ${{ github.ref }}"
     - name: automerge
       uses: bdougie/automerge-action@bot
-      if: github.event.check_suite.app.name == 'Netlify' && github.event.check_suite.conclusion == 'success'
+      if: github.actor == 'dependabot[bot]' || github.actor == 'dependabot-preview[bot]'
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
