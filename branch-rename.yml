@@ -1,0 +1,73 @@
+name: Deprecate "master" branch
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  on-push:
+    runs-on: ubuntu-latest
+    if: ${{ github.event_name == 'push' }}
+    steps:
+      - name: Deprecation
+        uses: peter-evans/commit-comment@v1
+        with:
+          body: |
+            Hello @${{ github.event.sender.login }}!
+
+            I see that you have pushed some commits to the "master" branch. We are in the process of renaming the "master" branch to "main" in this repository.
+
+            :warning: **The "master" branch is deprecated and will be removed from this repository in the future.**
+
+            Please migrate your local repository by renaming the "master" branch to "main":
+
+            ```bash
+            $ cd my-git-project
+            $ git checkout master
+            $ git branch -m main
+            $ git branch -u origin/main
+            ```
+
+            Before merging pull requests, ensure their base branch is set to "main" instead of "master". For more information on how to do this, refer to [this GitHub support article][1].
+
+            [1]: https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/changing-the-base-branch-of-a-pull-request
+
+  on-pull-request:
+    runs-on: ubuntu-latest
+    if: ${{ github.event_name == 'pull_request' }}
+    env:
+      DEPRECATION_MESSAGE: |
+        Hello @${{ github.event.sender.login }}!
+
+        I see that you have opened a pull request against the "master" branch. We are in the process of renaming the "master" branch to "main" in this repository.
+
+        :warning: **The "master" branch is deprecated and will be removed from this repository in the future.**
+
+        Please migrate your local repository by renaming the "master" branch to "main":
+
+        ```bash
+        $ cd my-git-project
+        $ git checkout master
+        $ git branch -m main
+        $ git branch -u origin/main
+        ```
+
+        Please also set the base branch for this pull request to "main" instead of "master". For more information on how to do this, refer to [this GitHub support article][1].
+
+        [1]: https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/changing-the-base-branch-of-a-pull-request
+    steps:
+      - name: Deprecation
+        if: ${{ github.event.pull_request.head.repo.fork == false }}
+        uses: peter-evans/create-or-update-comment@v1
+        with:
+          issue-number: ${{ github.event.number }}
+          body: ${{ env.DEPRECATION_MESSAGE }}
+      - name: Deprecation
+        if: ${{ github.event.pull_request.head.repo.fork == true }}
+        run: |
+          echo "$DEPRECATION_MESSAGE"
+          echo '::error::Please set the base branch for this pull request to "main" instead of "master".'
+          exit 1
