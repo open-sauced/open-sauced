@@ -1,5 +1,3 @@
-# source: https://github.com/pandas-dev/pandas/blob/cb6859249d93dee7231d56bb3c2eb103ba2d97d0/.github/workflows/assign.yml
-
 name: Assign
 on:
   issue_comment:
@@ -9,9 +7,6 @@ jobs:
   one:
     runs-on: ubuntu-latest
     steps:
+      # .take in an issue comment. 
       - name: take an issue
-        run: |
-            if [[ "${{ github.event.comment.body }}" == ".take" ]]; then
-                echo "Assigning issue ${{ github.event.issue.number }} to ${{ github.event.comment.user.login }}"
-                curl -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" -d '{"assignees": ["${{ github.event.comment.user.login }}"]}' https://api.github.com/repos/${{ github.repository }}/issues/${{ github.event.issue.number }}/assignees
-            fi
+        uses: bdougie/take-action@main
