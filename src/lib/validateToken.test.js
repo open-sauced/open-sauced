@@ -4,7 +4,6 @@ describe("Test: validateToken()", () => {
     test("valid token", () => {
         const tomorrow = new Date() 
         tomorrow.setDate(tomorrow.getDate() + 1)
-        console.log(tomorrow)
         const result = validateToken({
             tokenExpireDate: () => tomorrow
         })
