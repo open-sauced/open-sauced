@@ -9,25 +9,16 @@ import OneGraphApolloClient from "onegraph-apollo-client";
 import {ApolloProvider} from "react-apollo";
 import api from "./lib/apiGraphQL";
 import {getAppVersion} from "./lib/appVersion";
+import {validateToken} from "./lib/validateToken";
 
 const apolloClient = new OneGraphApolloClient({
   oneGraphAuth: Config.auth,
 });
 
-// OneGraph has an expire date on the token it stores in local storage
-// check to make sure the token hasn't expired
-const IsTokenValid = () => {
-  try {
-    return Config.auth.tokenExpireDate() > Date.now();
-  } catch (e) {
-    console.log(`Error checking valid: ${e}`);
-    return false;
-  }
-};
 
 function Index() {
   const [user, setUser] = useState(null);
-  const [loggedInStatus, setLogin] = useState(JSON.parse(localStorage.getItem("isLoggedIn")) && IsTokenValid());
+  const [loggedInStatus, setLogin] = useState(JSON.parse(localStorage.getItem("isLoggedIn")) && validateToken(Config.auth));
   const [isAdmin, setIsAdmin] = useState(null);
 
   useEffect(() => {
