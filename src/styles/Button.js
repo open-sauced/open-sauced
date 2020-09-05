@@ -46,12 +46,12 @@ const Button = styled.button`
 `;
 
 export const InputButton = styled(Button)`
-  font-size: 14px;
+  font-size: ${size.tiny};
   padding: 0;
 `;
 
 export const MarketingButton = styled(Button)`
-  font-size: 1rem;
+  font-size: ${size.tiny};
   text-transform: uppercase;
   padding: 10px 32px;
 `;

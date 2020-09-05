@@ -10,7 +10,7 @@ const TinyFont = styled(Font)`
 `;
 
 const MicroFont = styled(Font)`
-  font-size: ${size.micro};
+  font-size: ${size.tiny};
 `;
 
 export {TinyFont, MicroFont};

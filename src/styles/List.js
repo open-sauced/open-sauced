@@ -49,7 +49,7 @@ const Container = styled.ul`
       margin-bottom: 5px;
       display: inline-block;
       background-color: ${colors.lightestGrey};
-      font-size: ${size.micro};
+      font-size: ${size.tiny};
       line-height: 15px;
       height: 15px;
       min-width: 15px;

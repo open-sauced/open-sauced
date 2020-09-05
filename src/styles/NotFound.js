@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import MEDIA from "./mediaTemplates";
-import {padding, colors} from "./variables";
+import {padding, colors, size} from "./variables";
 
 const NotFound = styled.section`
   text-align: center;
@@ -9,7 +9,7 @@ const NotFound = styled.section`
   color: ${colors.lightGrey}
 
   h1 {
-    font-size: 1rem;
+    font-size: ${size.tiny};
   }
   h2 {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
