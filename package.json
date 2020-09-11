@@ -86,7 +86,7 @@
     "dayjs": "^1.8.28",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "graphql": "^14.5.8",
-    "humanize-duration": "^3.23.0",
+    "humanize-duration": "^3.23.1",
     "lodash": "^4.17.19",
     "onegraph-apollo-client": "^2.1.0",
     "onegraph-auth": "^2.2.4",
