@@ -45,7 +45,7 @@
     "fs-extra": "8.1.0",
     "gzip-size": "5.1.1",
     "html-webpack-plugin": "^4.4.1",
-    "http-proxy-middleware": "1.0.3",
+    "http-proxy-middleware": "1.0.5",
     "jest": "24.9.0",
     "jest-axe": "^3.4.0",
     "jest-localstorage-mock": "^2.4.0",
