@@ -83,7 +83,7 @@
     "apollo-boost": "^0.4.9",
     "babel-core": "^6.26.3",
     "contrast": "^1.0.1",
-    "dayjs": "^1.8.28",
+    "dayjs": "^1.8.35",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "graphql": "^14.5.8",
     "humanize-duration": "^3.23.0",
