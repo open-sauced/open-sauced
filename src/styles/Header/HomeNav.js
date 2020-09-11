@@ -6,7 +6,7 @@ const Container = styled.nav`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: ${size.micro};
+  font-size: ${size.tiny};
   background-color: ${colors.grey};
   padding: ${size.tiny};
   margin: auto;

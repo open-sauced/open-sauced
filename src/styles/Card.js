@@ -39,7 +39,7 @@ const Card = styled.div`
   }
 
   span {
-    font-size: 12px;
+    font-size: ${size.tiny};
     font-weight: bold;
     margin-right: 5px;
     padding: 4px;
@@ -90,7 +90,7 @@ const ButtonBoard = styled.div`
 
   .more {
     font-weight: bold;
-    font-size: 14px;
+    font-size: ${size.tiny};
     margin: ${size.micro};
 
     a {
@@ -149,7 +149,7 @@ const ContextStyle = styled(Card)`
     margin: ${size.tiny} 0;
 
     .dot {
-      font-size: 25px;
+      font-size: ${size.small};
       margin: 0;
       vertical-align: sub;
     }
