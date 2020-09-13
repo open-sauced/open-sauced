@@ -65,8 +65,8 @@ function Hero({handleLogIn}) {
             <Link to="/">
               <img style={{height: 50}} alt="open sauced" src={logo} />
             </Link>
-            Open Sauced provides guidance onboarding for new contributors. Our approach towards open-source onboarding
-            offers a way to track contributions through GitHub GraphQL API powered dashboard.
+            Open Sauced provides guidance for new contributors finding their next contribution. Our approach towards onboarding
+            offers a way to track contributions through a GitHub powered dashboard.
           </Flex>
           <Flex className="quotes">
             <Flex className="quote">
