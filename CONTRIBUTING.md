@@ -12,10 +12,10 @@ Some thoughts to help you contribute to this project
 1. Always review your code first. Do this by leaving comments in your coding noting questions, or interesting things for the reviewer.
 1. Always communicate. Whether it is in the issue or the pull request, keeping the lines of communication helps everyone around you.
 
-## Setup
+## Setup (forks are preferred).
 
 ```sh
-$ git clone https://github.com/open-sauced/open-sauced
+$ git clone https://github.com/<your-name>/open-sauced
 $ cd open-sauced
 $ npm install
 ```
