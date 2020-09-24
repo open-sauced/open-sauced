@@ -168,6 +168,7 @@ const QuoteSection = styled(Hero)`
     border-radius: 5px;
     max-width: 150px;
     max-height: 150px;
+    min-width: 150px;
     margin-right: 20px;
     ${MEDIA.TABLET`
       margin: auto;
@@ -208,7 +209,7 @@ const QuoteSection = styled(Hero)`
 
 const DetailsSection = styled(Hero)`
   background-color: white;
-  padding-top: 36px;;
+  padding-top: 36px;
   .detail {
     padding: ${size.micro};
     ${MEDIA.TABLET`
