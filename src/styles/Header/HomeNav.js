@@ -14,6 +14,7 @@ const Container = styled.nav`
 
   img {
     height: ${size.small}
+    width: 95px;
   }
 
   ul {
