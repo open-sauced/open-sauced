@@ -52,6 +52,7 @@ const Wrapper = styled.div`
 
 const PizzaPosition = styled.img`
   height: 29rem;
+  width: 36rem;
   position: absolute;
   right: 2%;
   top: 1%;
@@ -66,6 +67,7 @@ const PizzaPosition = styled.img`
 
   ${MEDIA.DESKTOP`
     height: 22rem;
+    width: 27.5rem;
     right: 3%;
     top: 9%;
   `};
@@ -175,6 +177,11 @@ const QuoteSection = styled(Hero)`
     `};
   }
 
+  .quoteImage {
+    min-width: 150px;
+    min-height: 150px;
+  }
+
   .quotes {
     margin-top: 72px;
     padding-bottom :${size.tiny};
@@ -219,6 +226,7 @@ const DetailsSection = styled(Hero)`
     align-self: flex-start;
     margin-right: 20px;
     min-width: 30px;
+    min-height: 30px;
     ${MEDIA.TABLET`
       display: none;
     `};

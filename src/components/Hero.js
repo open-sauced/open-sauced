@@ -38,22 +38,22 @@ function Hero({handleLogIn}) {
             </li>
             <li>
               <a rel="noreferrer" target="_blank" href="https://github.com/graphql/">
-                <img alt="graphql" src={graphql} />
+                <img alt="graphql" src={graphql} width={141} />
               </a>
             </li>
             <li>
               <a rel="noreferrer" target="_blank" href="https://github.com/vercel/next.js/">
-                <img alt="nextjs" src={next} />
+                <img alt="nextjs" src={next}  width={66} />
               </a>
             </li>
             <li>
               <a rel="noreferrer" target="_blank" href="https://github.com/electron/">
-                <img alt="electron" src={electron} />
+                <img alt="electron" src={electron}  width={261} />
               </a>
             </li>
             <li>
               <a rel="noreferrer" target="_blank" href="https://github.com/golang/">
-                <img alt="golang" src={go} />
+                <img alt="golang" src={go}  width={101} />
               </a>
             </li>
           </ul>
@@ -70,14 +70,14 @@ function Hero({handleLogIn}) {
           </Flex>
           <Flex className="quotes">
             <Flex className="quote">
-              <img alt="open sauced" src={gucci} />
+              <img className="quoteImage" alt="open sauced" src={gucci} />
               <span>
                 <q>If you don't got sauce, then you lost.</q>
                 <Flex className="author">- Gucci Mane</Flex>
               </span>
             </Flex>
             <Flex className="quote">
-              <img alt="open sauced" src={bdougie} />
+              <img className="quoteImage" alt="open sauced" src={bdougie} />
               <span>
                 <q>Getting traction contributing to open-source is only one log in away.</q>
                 <Flex className="author">- bdougie</Flex>
