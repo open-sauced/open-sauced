@@ -250,7 +250,7 @@ function Repository({user, match}) {
             </Card>
             <Contributions repoName={name} owner={owner.login} />
             {owner && <Form note={note} goalId={issueId} repoName={nameWithOwner} />}
-            {owner && <DangerZone goalId={issueId} repoName={nameWithOwner} />}
+            {owner && <DangerZone note={note} goalId={issueId} repoName={nameWithOwner} />}
           </FormColumn>
         ) : (
           !error && <Spinner />
