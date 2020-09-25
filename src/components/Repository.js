@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from "react";
 import Form from "../components/NoteForm";
+import DangerZone from "../components/DangerZone";
 import Card from "../components/Card";
 import Issues from "../components/Issues";
 import Contributions from "../components/Contributions";
@@ -249,6 +250,7 @@ function Repository({user, match}) {
             </Card>
             <Contributions repoName={name} owner={owner.login} />
             {owner && <Form note={note} goalId={issueId} repoName={nameWithOwner} />}
+            {owner && <DangerZone note={note} goalId={issueId} repoName={nameWithOwner} />}
           </FormColumn>
         ) : (
           !error && <Spinner />
