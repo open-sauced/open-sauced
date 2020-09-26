@@ -29,7 +29,7 @@
 
 
 ## Related Tickets & Documents
-
+<!-- Please use this format link issue numbers: Fixes #123-->
 
 
 ## Mobile & Desktop Screenshots/Recordings (if there are UI changes)
