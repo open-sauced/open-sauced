@@ -35,7 +35,7 @@ function CreateGoals({user, onRepoCreation}) {
   };
 
   return (
-    <React.Fragment>
+    <>
       <ContextStyle>
         <SpaceBetween>
           <FlexColumn>
@@ -58,7 +58,7 @@ function CreateGoals({user, onRepoCreation}) {
       <Button primary onClick={_handleRepoCreation}>
         Create your goal workspace
       </Button>
-    </React.Fragment>
+    </>
   );
 }
 
