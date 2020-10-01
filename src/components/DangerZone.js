@@ -6,7 +6,7 @@ import {FlexCenter} from "../styles/Grid";
 
 import api from "../lib/apiGraphQL";
 
-function DangerZone({goalId, repoName, note}) {
+function DangerZone =({goalId, repoName, note})=> {
   const [deleted, setDeleted] = useState(false);
 
   const _handleRepoDeletion = () => {
