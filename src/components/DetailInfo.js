@@ -2,7 +2,7 @@ import React from "react";
 import {FlexCenter} from "../styles/Grid";
 import {IssueOpenedIcon, GitPullRequestIcon, RepoForkedIcon, StarIcon, LawIcon} from "@primer/octicons-react";
 
-function DetailInfo({icon, text}) {
+function DetailInfo =({icon, text})=> {
   return (
     <FlexCenter style={{width: "100%", flexWrap: "wrap"}}>
       <div style={{width: "30px", color: "grey"}}>
