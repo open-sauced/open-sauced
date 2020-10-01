@@ -52,7 +52,7 @@ function RepositoryGoals({user}) {
   return (
     <section>
       {repository && repository.issues ? (
-        <React.Fragment>
+        <>
           <ContextStyle>
             <SpaceBetween>
               <div>
@@ -89,7 +89,7 @@ function RepositoryGoals({user}) {
               </EmptyPlaceholder>
             )}
           </Cards>
-        </React.Fragment>
+        </>
       ) : (
         <CreateGoals user={user && user.login || ""} onRepoCreation={onRepoCreation} />
       )}
