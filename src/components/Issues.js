@@ -10,7 +10,7 @@ import {CardPadding, CardHeader} from "../styles/Card";
 import {IssueOpenedIcon} from "@primer/octicons-react";
 import IssuesLoader from "./IssuesLoader";
 
-function Issues({repoName, owner}) {
+function Issues =({repoName, owner})=> {
   const [issues, setIssues] = useState(null);
   const [loading, setLoading] = useState(false);
   const [issuesLoading, setIssuesLoading] = useState(false);
