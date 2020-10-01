@@ -9,7 +9,7 @@ import {Flex, FlexColumn, GridColumns} from "../styles/Grid";
 
 function Hero({handleLogIn}) {
   return (
-    <React.Fragment>
+    <>
       <TopHero>
         <Wrapper>
           <div style={{paddingTop: 24}}>
@@ -129,7 +129,7 @@ function Hero({handleLogIn}) {
           </GridColumns>
         </Wrapper>
       </DetailsSection>
-    </React.Fragment>
+    </>
   );
 }
 
