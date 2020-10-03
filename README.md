@@ -29,7 +29,7 @@
   </a>
 </p>
 
-Open Sauced provides structured onboarding for new contributors to open source. This structure provides a way to track your next contributions by leveraging a unique dashboard built on top of the [GitHub GraphQL API](https://developer.github.com/v4/).
+Open Sauced provides a structured onboarding for new contributors to open source. This structure provides a way to track your next contributions by leveraging a unique dashboard built on top of the [GitHub GraphQL API](https://developer.github.com/v4/).
 
 [![open-sauced-screencap](/src/images/homepage.png)
 ](https://opensauced.pizza)
@@ -73,7 +73,7 @@ npm run storybook
 
 ## 🔑 Authentication
 
-Authentication is handled through [OneGraph's AuthGuardian](https://www.onegraph.com/docs/auth_guardian.html) service. 
+Authentication is handled through the [OneGraph's AuthGuardian](https://www.onegraph.com/docs/auth_guardian.html) service. 
 
 ## 💾 Database
 
