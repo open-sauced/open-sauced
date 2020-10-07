@@ -26,8 +26,8 @@ describe("Test: isValidRepoUrl()", () => {
     const [isValid] = isValidRepoUrl(repoUrl);
     expect(isValid).toBe(false);
   });
-  test(`repo-url '${ownerName}/${repoName}' should paas`, () => {
-    const repoUrl = `${ownerName}/${repoName}`;
+  test(`repo-url '/${ownerName}/${repoName}' should paas`, () => {
+    const repoUrl = `/${ownerName}/${repoName}`;
     const [isValid, relativeRepoUrl] = isValidRepoUrl(repoUrl);
     expect(isValid).toBe(true);
     expect(relativeRepoUrl).toBe(`${ownerName}/${repoName}`);
