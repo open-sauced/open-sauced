@@ -12,7 +12,7 @@ describe("Test: isValidRepoUrl()", () => {
   const baseFullSecureUrl = "https://www.github.com/";
   const typoUrl = "htp://github.com";
   const typoSecureUrl = "htps://github.com";
-  const invalidRepoName = "///hello/";
+  const invalidRepoName = "www.google.com";
   test(`repo-url '${baseUrl}${ownerName}/${repoName}' should pass`, () => {
     const repoUrl = `${baseUrl}${ownerName}/${repoName}`;
     const [isValid, relativeRepoUrl] = isValidRepoUrl(repoUrl);
@@ -61,6 +61,11 @@ describe("Test: isValidRepoUrl()", () => {
   });
   test(`repo-url '${invalidRepoName}/${ownerName}' should fail`, () => {
     const repoUrl = `${invalidRepoName}/${ownerName}`;
+    const [isValid] = isValidRepoUrl(repoUrl);
+    expect(isValid).toBe(false);
+  });
+  test(`repo-url 'http://${invalidRepoName}/${ownerName}' should fail`, () => {
+    const repoUrl = `http://${invalidRepoName}/${ownerName}`;
     const [isValid] = isValidRepoUrl(repoUrl);
     expect(isValid).toBe(false);
   });
