@@ -6,7 +6,7 @@ export function isValidRepoUrl(url) {
 
     if (isRelativeUrl)
       url = "https://github.com" + url;
-    const checkIfValidByInstantiation = new URL(url);
+    new URL(url);
     const regex = new RegExp("https?://github.com/", "i"); // passing "i" as 2nd argument to ignore case
     const relativeRepoUrl = url.toLowerCase().replace(regex, "");
 
