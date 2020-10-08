@@ -6,9 +6,9 @@
   commits if your PR already received reviews or comments.
   
   Before submitting a Pull Request, please ensure you've done the following:
-  - 📖 Read the Open Sauced Contributing Guide: https://github.com/open-sauced/open-sauced/blob/master/CONTRIBUTING.md#create-a-pull-request.
-  - 📖 Read the Open Sauced Code of Conduct: https://github.com/open-sauced/open-sauced/blob/master/CODE_OF_CONDUCT.md.
-  - 👷‍♀️ Create small PRs. In most cases this will be possible.
+  - 📖 Read the Open Sauced Contributing Guide: https://github.com/open-sauced/open-sauced/blob/HEAD/CONTRIBUTING.md#create-a-pull-request.
+  - 📖 Read the Open Sauced Code of Conduct: https://github.com/open-sauced/open-sauced/blob/HEAD/CODE_OF_CONDUCT.md.
+  - 👷‍♀️ Create small PRs. In most cases, this will be possible.
   - ✅ Provide tests for your changes.
   - 📝 Use descriptive commit messages.
   - 📗 Update any related documentation and include any relevant screenshots.
@@ -29,7 +29,7 @@
 
 
 ## Related Tickets & Documents
-
+<!-- Please use this format link issue numbers: Fixes #123-->
 
 
 ## Mobile & Desktop Screenshots/Recordings (if there are UI changes)
@@ -47,7 +47,7 @@
 - [ ] 📜 readme
 - [ ] 🙅 no documentation needed
 
-## [optional] Are there any post deployment tasks we need to perform?
+## [optional] Are there any post-deployment tasks we need to perform?
 
 
 

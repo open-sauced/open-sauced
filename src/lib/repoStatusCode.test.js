@@ -13,5 +13,9 @@ describe("Test: repoStatusCode()", () => {
     expect(result).toBe(404);
   });
 
-  // TODO: After the 1.0 launch, I would love to circle back to the testing issue and find solutions.
+  test("bdougie/open-sauced should return 301", async() => {
+    const repoUrl = "bdougie/open-sauced";
+    const result = await repoStatusCode(repoUrl);
+    expect(result).toBe(301);
+  });
 });
