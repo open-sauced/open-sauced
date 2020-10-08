@@ -23,3 +23,9 @@ src/tests/__snapshots__/
 .DS_Store
 ../.DS_Store
 ../../.DS_Store
+
+#ignore wallaby.js
+wallaby.js
+babel.config.js
+jest.config.js
+svgTransform.js
