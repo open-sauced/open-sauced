@@ -26,10 +26,10 @@
 
 ## Description
 
-
+<!-- Please do not leave this blank -->
 
 ## Related Tickets & Documents
-<!-- Please use this format link issue numbers: Fixes #123-->
+<!-- Please use this format link issue numbers: Fixes #123 https://docs.github.com/en/free-pro-team@latest/github/managing-your-work-on-github/linking-a-pull-request-to-an-issue#linking-a-pull-request-to-an-issue-using-a-keyword-->
 
 
 ## Mobile & Desktop Screenshots/Recordings (if there are UI changes)
@@ -52,3 +52,8 @@
 
 
 ## [optional] What gif best describes this PR or how it makes you feel?
+
+
+
+<!-- note: PRs with deletes sections will be marked invalid invalid -->
+
