@@ -1,5 +1,5 @@
 export function isValidRepoUrl(url) {
-  url = url.trim().toLowerCase();
+  url = url.trim();
   url = url.substr(0, 1) === "/" ? url.substr(1) : url;
 
   const isRelativeUrl = !(url.substr(0, 4) === "http" || url.includes(".com") || url.includes("www."));
@@ -37,7 +37,7 @@ function absoluteUrlValidator(url) {
 
     const [owner, repo] = relativeRepoUrl.split("/");
 
-    if (!url.includes("github.com"))
+    if (!url.toLowerCase().includes("github.com"))
       return [false, null];
 
     if (!owner || !repo || !(urlObject.protocol === "http:" || urlObject.protocol === "https:")) {
