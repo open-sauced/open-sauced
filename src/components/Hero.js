@@ -15,7 +15,7 @@ function Hero({handleLogIn}) {
           <div style={{paddingTop: 24}}>
             <h1>
               <span>The path to your next</span>
-              <span class="h1-highlight">Open Source</span>
+              <span className="h1-highlight">Open Source</span>
               <span>contribution.</span>
             </h1>
           </div>
