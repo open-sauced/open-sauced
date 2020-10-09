@@ -35,7 +35,12 @@ $ npm run test
 
 ## Committing
 
-Simply use git cz or just cz instead of git commit when committing. You can also use git-cz, which is an alias for cz.
+```sh
+$ git add .
+$ npm run commit
+```
+
+Answer the proceeding questions and you should be good-to-go.
 
 ## Pull Requests
 

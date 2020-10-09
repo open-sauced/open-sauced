@@ -48,6 +48,7 @@
     "gzip-size": "5.1.1",
     "html-webpack-plugin": "^4.4.1",
     "http-proxy-middleware": "1.0.3",
+    "husky": "^4.3.0",
     "jest": "24.9.0",
     "jest-axe": "^3.4.0",
     "jest-localstorage-mock": "^2.4.0",
@@ -162,6 +163,11 @@
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "prepare-commit-msg": "exec < /dev/tty && git cz --hook || true"
     }
   }
 }
