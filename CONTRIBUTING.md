@@ -40,6 +40,8 @@ $ git add .
 $ npm run commit
 ```
 
+Answer the proceeding questions and your change will be committed.
+
 Once all of your features have been completed:
 
 ```sh
@@ -56,7 +58,6 @@ $ git push --follow-tags origin master
 
 THE ABOVE SHOULD BE AUTOMATED IN THE FUTURE
 
-Answer the proceeding questions and you should be good-to-go.
 
 ## Pull Requests
 
