@@ -40,6 +40,22 @@ $ git add .
 $ npm run commit
 ```
 
+Once all of your features have been completed:
+
+```sh
+$ git push origin <feature-branch>
+```
+
+After it is merged, the owner of Open-Sauced (not you the contributor)
+runs the following commands to update main branch:
+
+```sh
+$ npm run release
+$ git push --follow-tags origin master
+```
+
+THE ABOVE SHOULD BE AUTOMATED IN THE FUTURE
+
 Answer the proceeding questions and you should be good-to-go.
 
 ## Pull Requests
