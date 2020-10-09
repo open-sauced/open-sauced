@@ -64,6 +64,7 @@
     "recursive-readdir": "2.2.2",
     "rimraf": "3.0.0",
     "semantic-release": "^17.1.2",
+    "standard-version": "^9.0.0",
     "strip-ansi": "6.0.0",
     "style-loader": "1.0.0",
     "stylefmt": "^6.0.3",
@@ -119,7 +120,8 @@
     "build-storybook": "build-storybook",
     "lint": "eslint .",
     "lint:fix": "eslint --fix --ext .js,.jsx .",
-    "commit": "cz"
+    "commit": "cz",
+    "release": "standard-version"
   },
   "jest": {
     "moduleFileExtensions": [
@@ -162,7 +164,22 @@
   },
   "config": {
     "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
+      "path": "./node_modules/cz-conventional-changelog",
+      "disableScopeLowerCase": false,
+      "disableSubjectLowerCase": false,
+      "maxHeaderWidth": 100,
+      "maxLineWidth": 100,
+      "defaultType": "",
+      "defaultScope": "",
+      "defaultSubject": "",
+      "defaultBody": "",
+      "defaultIssues": "",
+      "types": {
+        "feat": {
+          "description": "A new feature",
+          "title": "Features"
+        }
+      }
     }
   },
   "husky": {
