@@ -33,6 +33,10 @@ $ npm run build
 $ npm run test
 ```
 
+## Committing
+
+Simply use git cz or just cz instead of git commit when committing. You can also use git-cz, which is an alias for cz.
+
 ## Pull Requests
 
 ### _We actively welcome your pull requests, however linking your work to an existing issue is preferred._
