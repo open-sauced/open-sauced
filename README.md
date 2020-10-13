@@ -44,6 +44,7 @@ We encourage you to contribute to Open Sauced! Please check out the [Contributin
 
 - [Node.js](https://nodejs.org/en/): we recommend using [nvm](https://github.com/nvm-sh/nvm#installing-and-updating) to install the Node version.
 - [NPM](https://npmjs.com/): please refer to their [installation guide](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm).
++ `terser-webpack-plugin` minimum supported Node.js version is 10.13
 
 ## 🖥️ Local development
 
