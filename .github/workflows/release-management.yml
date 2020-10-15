@@ -41,6 +41,4 @@ jobs:
           npm install
           npm test
       - name: Release
-        env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
-        run: npx semantic-release
+        run: npm run release
