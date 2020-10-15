@@ -49,7 +49,7 @@ const SpaceBetween = styled.div`
   `};
 `;
 
-const AlignFlexStartSpaceBetween = styled(SpaceBetween)`
+const SpaceBetweenTop = styled(SpaceBetween)`
   align-items: flex-start;
   -webkit-align-items: flex-start;
 `;
@@ -58,7 +58,7 @@ export {
   Flex,
   SpaceAround,
   SpaceBetween,
-  AlignFlexStartSpaceBetween,
+  SpaceBetweenTop,
   FlexColumnCenter,
   FlexStart,
   FlexCenter,
