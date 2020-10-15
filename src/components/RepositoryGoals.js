@@ -1,6 +1,6 @@
 import React, {useEffect, useContext} from "react";
 import CreateGoals from "./CreateGoals";
-import {SpaceBetween} from "../styles/Grid";
+import {AlignFlexStartSpaceBetween} from "../styles/Grid";
 import ListGoals from "./ListGoals";
 import LocaleContext from "../Context";
 import Illustration from "../styles/Illustration";
@@ -54,7 +54,7 @@ function RepositoryGoals({user}) {
       {repository && repository.issues ? (
         <React.Fragment>
           <ContextStyle>
-            <SpaceBetween>
+            <AlignFlexStartSpaceBetween>
               <div>
                 {" "}
                 <h1>Dashboard</h1>
@@ -72,7 +72,7 @@ function RepositoryGoals({user}) {
                 </small>
               </div>
               <Illustration alt="done checking image" src={doneChecking} />
-            </SpaceBetween>
+            </AlignFlexStartSpaceBetween>
           </ContextStyle>
           <Cards fitted>
             <AddRepoForm goalsId={goalsId} onGoalAdded={onGoalAdded} />
