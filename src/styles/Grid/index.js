@@ -7,6 +7,7 @@ import {
   FlexHeader,
   SpaceAround,
   SpaceBetween,
+  SpaceBetweenTop,
 } from "./Flex";
 import IssuesColumn from "./IssuesColumn";
 import FormColumn from "./FormColumn";
@@ -16,6 +17,7 @@ import GridColumns from "./GridColumns";
 export {
   SpaceAround,
   SpaceBetween,
+  SpaceBetweenTop,
   Flex,
   FlexColumnCenter,
   FlexStart,

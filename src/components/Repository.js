@@ -9,7 +9,7 @@ import api from "../lib/apiGraphQL";
 import RepositoryAvatar from "../styles/RepositoryAvatar";
 import Illustration from "../styles/Illustration";
 import {ErrorMessage} from "../styles/Typography";
-import {SpaceBetween} from "../styles/Grid";
+import {SpaceBetweenTop} from "../styles/Grid";
 import {diary} from "../illustrations";
 import {ButtonBoard, RepositoryContext} from "../styles/Card";
 import {Spinner} from "../styles/Spinner";
@@ -121,7 +121,7 @@ function Repository({user, match}) {
       {error && <ErrorMessage>{error}</ErrorMessage>}
       <Flex>
         <RepositoryContext>
-          <SpaceBetween>
+          <SpaceBetweenTop>
             <div>
               <a style={{textDecoration: "none"}} href={url} rel="noreferrer" target="_blank">
                 <h1>
@@ -169,7 +169,7 @@ function Repository({user, match}) {
               </div>
             </div>
             <Illustration src={diary} />
-          </SpaceBetween>
+          </SpaceBetweenTop>
         </RepositoryContext>
         <ButtonBoard>
           {repository ? (
