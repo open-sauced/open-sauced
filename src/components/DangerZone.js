@@ -28,6 +28,7 @@ function DangerZone({goalId, repoName, note}) {
         <Card>
           <h1>Confirm Deletion on Repository: {repoName}?</h1>
           <Button primary onClick={_handleRepoDeletion}>Confirm</Button>
+          &nbsp;&nbsp;
           <Button onClick={() => setDeleteModalOpen(false)}>Cancel</Button>
         </Card>
       </Modal>
