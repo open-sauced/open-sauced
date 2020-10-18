@@ -45,11 +45,11 @@ function LeftSide({isLoggedIn, user, handleLogIn, handleLogOut}) {
         <li>
           {isLoggedIn ? (
             <div>
-              <SubtleLink alt="log in" onClick={_logOutRedirect}>Logout</SubtleLink>
+              <SubtleLink tabIndex={0} onClick={_logOutRedirect}>Logout</SubtleLink>
             </div>
           ) : (
             <div>
-              <SubtleLink alt="log out" onClick={handleLogIn}>Login</SubtleLink>
+              <SubtleLink tabIndex={0} onClick={handleLogIn}>Login</SubtleLink>
             </div>
           )}
         </li>
