@@ -3,11 +3,12 @@ import {Redirect} from "react-router";
 import Button from "../styles/Button";
 import Card from "./Card";
 import {FlexCenter} from "../styles/Grid";
-
+import Modal from "./Modal";
 import api from "../lib/apiGraphQL";
 
 function DangerZone({goalId, repoName, note}) {
   const [deleted, setDeleted] = useState(false);
+  const [deleteModalOpen, setDeleteModalOpen] = useState(false);
 
   const _handleRepoDeletion = () => {
     api
@@ -20,8 +21,19 @@ function DangerZone({goalId, repoName, note}) {
 
   return !deleted ? (
     <Card>
+      <Modal
+        modalOpen={deleteModalOpen}
+        setModalOpen={setDeleteModalOpen}
+      >
+        <Card>
+          <h1>Confirm Deletion on Repository: {repoName}?</h1>
+          <Button primary onClick={_handleRepoDeletion}>Confirm</Button>
+          &nbsp;&nbsp;
+          <Button onClick={() => setDeleteModalOpen(false)}>Cancel</Button>
+        </Card>
+      </Modal>
       <FlexCenter>
-        <Button primary onClick={_handleRepoDeletion}>
+        <Button primary onClick={() => setDeleteModalOpen(true)}>
           Delete this repository
         </Button>
       </FlexCenter>
