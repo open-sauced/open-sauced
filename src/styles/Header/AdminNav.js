@@ -7,7 +7,7 @@ const Container = styled.nav`
   justify-content: space-between;
   background-color: ${colors.darkGrey};
   color: white;
-  font-size: ${size.micro};
+  font-size: ${size.tiny};
   font-weight: bold;
 
   ul {
@@ -17,7 +17,7 @@ const Container = styled.nav`
   }
 
   li {
-    font-size: 13px;
+    font-size: ${size.tiny};
     margin-right: ${size.tiny};
     padding: 2px 7px;
     background: ${colors.darkestGrey};

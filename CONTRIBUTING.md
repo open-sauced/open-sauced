@@ -12,10 +12,10 @@ Some thoughts to help you contribute to this project
 1. Always review your code first. Do this by leaving comments in your coding noting questions, or interesting things for the reviewer.
 1. Always communicate. Whether it is in the issue or the pull request, keeping the lines of communication helps everyone around you.
 
-## Setup
+## Setup (forks are preferred).
 
 ```sh
-$ git clone https://github.com/open-sauced/open-sauced
+$ git clone https://github.com/<your-name>/open-sauced
 $ cd open-sauced
 $ npm install
 ```
@@ -37,8 +37,8 @@ $ npm run test
 
 ### _We actively welcome your pull requests, however linking your work to an existing issue is preferred._
 
-1. Fork the repo and create your branch from `master`.
-1. Name your branch something that is descriptive to the work you are doing. i.e. adds-new-thing or fixes-modbile-render
+1. Fork the repo and create your branch from `main`.
+1. Name your branch something that is descriptive to the work you are doing. i.e. adds-new-thing or fixes-mobile
 1. If you've added code that should be tested, add tests.
 1. If you've changed APIs, update the documentation.
 1. If you make visual changes, screenshots are required.
@@ -46,9 +46,9 @@ $ npm run test
 1. Make sure you address any lint warnings.
 1. If you make the existing code better, please let us know in your PR description.
 1. A PR description and title are required. 
-1. [Link to an issue](https://help.github.com/en/github/writing-on-github/autolinked-references-and-urls) in the project. Unsolicited code is welcomed, but an issue is the best place to announce your intentions to work on things.
+1. [Link to an issue](https://help.github.com/en/github/writing-on-github/autolinked-references-and-urls) in the project. Unsolicited code is welcomed, but an issue is required for announce your intentions. PR's without a linked issue will be marked invalid and closed.
 
-*note for maintainers: All pull requests need a label to assist automation. See the [template](https://github.com/open-sauced/open-sauced/blob/master/.github/release-drafter.yml) to guide which labels to use.*
+*note for maintainers: All pull requests need a label to assist automation. See the [template](https://github.com/open-sauced/open-sauced/blob/HEAD/.github/release-drafter.yml) to guide which labels to use.*
 
 ## Issues
 
@@ -60,7 +60,7 @@ Also, all questions are welcomed.
 
 ### Triage Team
 
-The Triage team is inspired by [expressjs/express](https://github.com/expressjs/express/blob/master/Triager-Guide.md). This team exists to create a path for making contributions to this project and open source. All Triage Team members are expected to follow this guide: [TRIAGE_GUIDE.md](/add-triage-doc/TRIAGE_GUIDE.md)
+The Triage team is inspired by [expressjs/express](https://github.com/expressjs/express/blob/HEAD/Triager-Guide.md). This team exists to create a path for making contributions to this project and open source. All Triage Team members are expected to follow this guide: [TRIAGE_GUIDE.md](/add-triage-doc/TRIAGE_GUIDE.md)
 
 > **There are no minimum requirements to become a member of the Triage Team.**
 
@@ -72,7 +72,7 @@ Got Questions? Join the conversation in our [Discord](https://discord.gg/gZMKK5q
 
 ## Coding Tips
 - Ask questions if you are stuck. 
-- Use [CSS variables](https://github.com/open-sauced/open-sauced/blob/master/src/styles/variables.js)
+- Use [CSS variables](https://github.com/open-sauced/open-sauced/blob/HEAD/src/styles/variables.js)
 - Always use [rel="noreferrer" on all target="_blank" links](https://web.dev/external-anchors-use-rel-noopener/). 
 
 ## License

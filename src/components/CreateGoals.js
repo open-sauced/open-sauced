@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import Button from "../styles/Button";
 import Illustration from "../styles/Illustration";
 import {ContextStyle} from "../styles/Card";
-import {FlexColumn, SpaceBetween} from "../styles/Grid";
+import {FlexColumn, SpaceBetweenTop} from "../styles/Grid";
 import api from "../lib/apiGraphQL";
 import {goalsReducer} from "../lib/reducers";
 import {devProductive} from "../illustrations";
@@ -85,10 +85,10 @@ function CreateGoals({installNeeded, user, onRepoCreation}) {
   return (
     <React.Fragment>
       <ContextStyle>
-        <SpaceBetween>
+        <SpaceBetweenTop>
           <FlexColumn>{installReady ? <InstallApp /> : <CreateApp />}</FlexColumn>
           <Illustration alt="productive developer image" src={devProductive} />
-        </SpaceBetween>
+        </SpaceBetweenTop>
       </ContextStyle>
       <br style={{marginTop: 8}} />
       {installReady ? (

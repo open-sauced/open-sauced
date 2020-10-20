@@ -21,6 +21,7 @@ import login from "./log-in.svg";
 import logout from "./log-out.svg";
 import issue from "./alert-circle.svg";
 import watch from "./watch.svg";
+import search from "./search.svg";
 
 export {
   anchor,
@@ -46,4 +47,5 @@ export {
   star,
   squirrel,
   watch,
+  search,
 };

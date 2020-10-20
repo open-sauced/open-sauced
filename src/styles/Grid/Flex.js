@@ -42,16 +42,23 @@ const SpaceBetween = styled.div`
   display: -webkit-flex;
   display: -ms-flexbox;
   justify-content: space-between;
+  -webkit-justify-content: space-between;
 
   ${MEDIA.TABLET`
     flex-direction: column;
   `};
 `;
 
+const SpaceBetweenTop = styled(SpaceBetween)`
+  align-items: flex-start;
+  -webkit-align-items: flex-start;
+`;
+
 export {
   Flex,
   SpaceAround,
   SpaceBetween,
+  SpaceBetweenTop,
   FlexColumnCenter,
   FlexStart,
   FlexCenter,

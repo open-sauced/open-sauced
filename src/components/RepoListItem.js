@@ -1,6 +1,6 @@
 import React from "react";
 import {FlexStart, FloatRight, FloatLeft, FlexColumn, FlexHeader, FlexCenter} from "../styles/Grid";
-import Octicon, {getIconByName} from "@primer/octicons-react";
+import {StarIcon} from "@primer/octicons-react";
 import Avatar from "../styles/Avatar";
 import {chevronRight} from "../icons";
 import {humanizeNumber} from "../lib/humanizeNumber";
@@ -17,13 +17,15 @@ function RepoListItem({goal, stars}) {
           />
           <FlexColumn className="details">
             <p>{truncate(goal.full_name.replace(/\s+/g, ""), 60)}</p>
-            {stars && (
+            {stars >= 0 ? (
               <FlexStart style={{alignItems: "flex-start"}}>
                 <div>
-                  <Octicon alt="star" verticalAlign="middle" icon={getIconByName("star")} />
+                  <StarIcon alt="star" verticalAlign="middle" />
                 </div>
                 <p>{humanizeNumber(stars)}</p>
               </FlexStart>
+            ) : (
+              <p><i>Sync in Progress</i></p>
             )}
           </FlexColumn>
         </FlexCenter>
@@ -36,4 +38,5 @@ function RepoListItem({goal, stars}) {
     </FlexHeader>
   );
 }
+
 export default RepoListItem;

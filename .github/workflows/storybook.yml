@@ -1,7 +1,7 @@
 on: 
   push:
     branches:
-     - master
+     - main
     paths: ["stories/**", "src/components/**"]
     
 name: Publish stories if changed

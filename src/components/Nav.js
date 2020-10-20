@@ -3,7 +3,7 @@ import {logo} from "../logos";
 import {FloatLeftMobileNav, FloatRight} from "../styles/Grid";
 import {SubtleLink} from "../styles/Typography";
 import {AppNav, HomeNav} from "../styles/Header";
-import {SpaceBetween} from "../styles/Grid";
+import {SpaceBetween, Logo} from "../styles/Grid";
 import ProfileAvatar from "../styles/ProfileAvatar";
 import AdminStatsBar from "./AdminStatsBar";
 import Hotkeys from "react-hot-keys";
@@ -18,8 +18,8 @@ function LeftSide({isLoggedIn, user, handleLogIn, handleLogOut}) {
 
   return (
     <FloatLeftMobileNav>
-      <Link style={{verticalAlign: "middle"}} to="/">
-        <img alt="open sauced" src={logo} />
+      <Link to="/" style={{verticalAlign: "middle", display: "inline-block"}}>
+        <Logo alt="open sauced" src={logo} />
       </Link>
       <ul>
         <li>
@@ -45,11 +45,11 @@ function LeftSide({isLoggedIn, user, handleLogIn, handleLogOut}) {
         <li>
           {isLoggedIn ? (
             <div>
-              <SubtleLink alt="log in" onClick={_logOutRedirect}>Logout</SubtleLink>
+              <SubtleLink tabIndex={0} onClick={_logOutRedirect}>Logout</SubtleLink>
             </div>
           ) : (
             <div>
-              <SubtleLink alt="log out" onClick={handleLogIn}>Login</SubtleLink>
+              <SubtleLink tabIndex={0} onClick={handleLogIn}>Login</SubtleLink>
             </div>
           )}
         </li>

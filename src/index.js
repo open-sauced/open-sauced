@@ -9,14 +9,16 @@ import OneGraphApolloClient from "onegraph-apollo-client";
 import {ApolloProvider} from "react-apollo";
 import api from "./lib/apiGraphQL";
 import {getAppVersion} from "./lib/appVersion";
+import {validateToken} from "./lib/validateToken";
 
 const apolloClient = new OneGraphApolloClient({
   oneGraphAuth: Config.auth,
 });
 
+
 function Index() {
   const [user, setUser] = useState(null);
-  const [loggedInStatus, setLogin] = useState(localStorage.getItem("isLoggedIn"));
+  const [loggedInStatus, setLogin] = useState(JSON.parse(localStorage.getItem("isLoggedIn")) && validateToken(Config.auth));
   const [isAdmin, setIsAdmin] = useState(null);
 
   useEffect(() => {

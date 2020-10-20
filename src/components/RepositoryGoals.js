@@ -1,6 +1,6 @@
 import React, {useEffect, useContext} from "react";
 import CreateGoals from "./CreateGoals";
-import {SpaceBetween} from "../styles/Grid";
+import {SpaceBetweenTop} from "../styles/Grid";
 import ListGoals from "./ListGoals";
 import LocaleContext from "../Context";
 import Illustration from "../styles/Illustration";
@@ -10,7 +10,7 @@ import {doneChecking} from "../illustrations";
 import {ContextStyle} from "../styles/Card";
 import {goalsReducer, usePersistentStateReducer} from "../lib/reducers";
 import {EmptyPlaceholder} from "../styles/EmptyPlaceholder";
-import Octicon, {getIconByName} from "@primer/octicons-react";
+import {ChecklistIcon} from "@primer/octicons-react";
 
 function RepositoryGoals({user}) {
   const {goalsId, setGoalsId} = useContext(LocaleContext);
@@ -54,7 +54,7 @@ function RepositoryGoals({user}) {
       {repository && repository.issues ? (
         <React.Fragment>
           <ContextStyle>
-            <SpaceBetween>
+            <SpaceBetweenTop>
               <div>
                 {" "}
                 <h1>Dashboard</h1>
@@ -66,13 +66,13 @@ function RepositoryGoals({user}) {
                 <small>
                   <em>
                     <a href="https://opensource.guide/" rel="noreferrer" target="_blank">
-                      Learn about about open source
+                      Learn about open source
                     </a>
                   </em>
                 </small>
               </div>
               <Illustration alt="done checking image" src={doneChecking} />
-            </SpaceBetween>
+            </SpaceBetweenTop>
           </ContextStyle>
           <Cards fitted>
             <AddRepoForm goalsId={goalsId} onGoalAdded={onGoalAdded} />
@@ -81,7 +81,7 @@ function RepositoryGoals({user}) {
             ) : (
               <EmptyPlaceholder>
                 <div style={{color: "grey"}}>
-                  <Octicon size="large" verticalAlign="middle" icon={getIconByName("checklist")} />
+                  <ChecklistIcon size="large" verticalAlign="middle" />
                 </div>
                 <div className="helper">
                   No Goals created

@@ -1,10 +1,9 @@
 import React, {useState} from "react";
-import {Redirect} from "react-router";
 import Button from "../styles/Button";
 import {NoteArea, RenderedNote} from "../styles/TextArea";
 import Card from "./Card";
 import {FlexCenter} from "../styles/Grid";
-import Octicon, {getIconByName} from "@primer/octicons-react";
+import {PencilIcon} from "@primer/octicons-react";
 import ReactMarkdown from "react-markdown";
 
 import api from "../lib/apiGraphQL";
@@ -13,7 +12,6 @@ function NoteForm({goalId, repoName, note}) {
   const [previouslySavedValue, setPreviouslySavedValue] = useState(note);
   const [input, setInput] = useState(note);
   const [editing, setEditing] = useState(false);
-  const [deleted, setDeleted] = useState(false);
 
   const _handleNoteUpdate = () => {
     api
@@ -21,16 +19,6 @@ function NoteForm({goalId, repoName, note}) {
       .then(() => {
         _handleToggleEditing();
         setPreviouslySavedValue(input);
-      })
-      .catch(err => console.log(err));
-  };
-
-  const _handleRepoDeletion = () => {
-    api
-      .updateGoal(goalId, repoName, "CLOSED", input)
-      .then(() => {
-        setEditing(false);
-        setDeleted(true);
       })
       .catch(err => console.log(err));
   };
@@ -48,7 +36,7 @@ function NoteForm({goalId, repoName, note}) {
     setInput(e.target.value);
   };
 
-  return !deleted ? (
+  return (
     <Card>
       {!editing ? (
         <RenderedNote data-testid="notes-content" >
@@ -68,12 +56,12 @@ function NoteForm({goalId, repoName, note}) {
       <FlexCenter>
         {editing ? (
           <Button onClick={_handleNoteUpdate}>
-            <Octicon verticalAlign="middle" icon={getIconByName("pencil")} />
+            <PencilIcon verticalAlign="middle" />
             Save Notes
           </Button>
         ) : (
           <Button onClick={_handleToggleEditing}>
-            <Octicon verticalAlign="middle" icon={getIconByName("pencil")} />
+            <PencilIcon verticalAlign="middle" />
             Edit Notes
           </Button>
         )}
@@ -81,15 +69,9 @@ function NoteForm({goalId, repoName, note}) {
           <Button primary onClick={_handleCancelEditing}>
             Cancel
           </Button>
-        ) : (
-          <Button primary onClick={_handleRepoDeletion}>
-            Delete
-          </Button>
-        )}
+        ) : ""}
       </FlexCenter>
     </Card>
-  ) : (
-    <Redirect to="/" />
   );
 }
 

@@ -7,15 +7,17 @@ import {
   FlexHeader,
   SpaceAround,
   SpaceBetween,
+  SpaceBetweenTop,
 } from "./Flex";
 import IssuesColumn from "./IssuesColumn";
 import FormColumn from "./FormColumn";
-import {FloatLeftMobileNav, FloatRight, FloatLeft} from "./Float";
+import {FloatLeftMobileNav, FloatRight, FloatLeft, Logo} from "./Float";
 import GridColumns from "./GridColumns";
 
 export {
   SpaceAround,
   SpaceBetween,
+  SpaceBetweenTop,
   Flex,
   FlexColumnCenter,
   FlexStart,
@@ -28,4 +30,5 @@ export {
   FloatRight,
   FloatLeftMobileNav,
   GridColumns,
+  Logo
 };

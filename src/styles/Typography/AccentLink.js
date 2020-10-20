@@ -5,7 +5,7 @@ const AccentLink = styled.a`
   color: ${colors.green} !important;
   font-weight: bold;
   margin-top: ${size.micro};
-  font-size: 0.7rem
+  font-size: ${size.tiny};
 `;
 
 export default AccentLink;

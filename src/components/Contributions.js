@@ -5,7 +5,7 @@ import List from "../styles/List";
 import IssuesListItem from "../components/IssueListItem";
 import {CardPadding} from "../styles/Card";
 import {AccentLink, MicroFont} from "../styles/Typography";
-import {Spinner} from "../styles/Spinner";
+import IssuesLoader from "./IssuesLoader";
 
 function Contributions({repoName, owner}) {
   const [issues, setIssues] = useState(null);
@@ -29,11 +29,11 @@ function Contributions({repoName, owner}) {
             <AccentLink href={`https://github.com/${owner}/${repoName}/contribute`}>make new contributions.</AccentLink>
           </MicroFont>
         </CardPadding>
-        <List>
-          {loading ? (
-            <Spinner />
-          ) : (
-            issues &&
+        {loading ? (
+          <IssuesLoader />
+        ) : (
+          <List>
+            {issues &&
             issues.map(issue => (
               <li key={issue.node.id}>
                 <a rel="noreferrer" target="_blank" href={issue.node.url}>
@@ -48,9 +48,9 @@ function Contributions({repoName, owner}) {
                   />
                 </a>
               </li>
-            ))
-          )}
-        </List>
+            ))}
+          </List>
+        )}
       </Card>
     )
   );
