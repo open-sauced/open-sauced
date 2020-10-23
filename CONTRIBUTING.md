@@ -45,7 +45,7 @@ $ npm run test
 1. Ensure the test suite passes.
 1. Make sure you address any lint warnings.
 1. If you make the existing code better, please let us know in your PR description.
-1. A PR description and title are required. 
+1. A PR description and title are required. The title is required to begin with: "feat:" or "fix:"
 1. [Link to an issue](https://help.github.com/en/github/writing-on-github/autolinked-references-and-urls) in the project. Unsolicited code is welcomed, but an issue is required for announce your intentions. PR's without a linked issue will be marked invalid and closed.
 
 *note for maintainers: All pull requests need a label to assist automation. See the [template](https://github.com/open-sauced/open-sauced/blob/HEAD/.github/release-drafter.yml) to guide which labels to use.*
@@ -60,7 +60,7 @@ Also, all questions are welcomed.
 
 ### Triage Team
 
-The Triage team is inspired by [expressjs/express](https://github.com/expressjs/express/blob/HEAD/Triager-Guide.md). This team exists to create a path for making contributions to this project and open source. All Triage Team members are expected to follow this guide: [TRIAGE_GUIDE.md](/add-triage-doc/TRIAGE_GUIDE.md)
+The Triage team is inspired by [expressjs/express](https://github.com/expressjs/express/blob/HEAD/Triager-Guide.md). This team exists to create a path for making contributions to this project and open source. All Triage Team members are expected to follow this guide: [TRIAGE_GUIDE.md](TRIAGE_GUIDE.md)
 
 > **There are no minimum requirements to become a member of the Triage Team.**
 
