@@ -1,5 +1,6 @@
 import Config from "../config";
 import {
+  persistedForkFetch,
   persistedIssuesFetch,
   persistedInteractionsFetch,
   persistedGoalFetch,
@@ -586,6 +587,7 @@ const api = {
   createGoal,
   updateGoal,
   persistedRepoDataFetch,
+  persistedForkFetch,
   persistedGoalFetch,
   persistedInteractionsFetch,
   persistedIssuesFetch,
