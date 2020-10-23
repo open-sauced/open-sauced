@@ -60,7 +60,7 @@ Also, all questions are welcomed.
 
 ### Triage Team
 
-The Triage team is inspired by [expressjs/express](https://github.com/expressjs/express/blob/HEAD/Triager-Guide.md). This team exists to create a path for making contributions to this project and open source. All Triage Team members are expected to follow this guide: [TRIAGE_GUIDE.md](/add-triage-doc/TRIAGE_GUIDE.md)
+The Triage team is inspired by [expressjs/express](https://github.com/expressjs/express/blob/HEAD/Triager-Guide.md). This team exists to create a path for making contributions to this project and open source. All Triage Team members are expected to follow this guide: [TRIAGE_GUIDE.md](TRIAGE_GUIDE.md)
 
 > **There are no minimum requirements to become a member of the Triage Team.**
 
