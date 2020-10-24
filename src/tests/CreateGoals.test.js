@@ -19,5 +19,5 @@ test("container component should have no violations", async() => {
 test("should render a link to track first repository if there are no repositories", () => {
   const mockData = [];
   const {container} = render(<CreateGoals />);
-  expect(container).toHaveTextContent("Open Sauced is a tool to help track your next open source contributions.");
+  expect(container).toHaveTextContent("Create your goals workspace");
 });

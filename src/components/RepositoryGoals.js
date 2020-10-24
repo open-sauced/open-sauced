@@ -16,7 +16,7 @@ function RepositoryGoals({user}) {
   const {goalsId, setGoalsId} = useContext(LocaleContext);
   const [state, dispatch] = usePersistentStateReducer("goalsState", goalsReducer);
 
-  const {repository} = goalsReducer(state, {type: "GET"});
+  const {repository, error} = goalsReducer(state, {type: "GET"});
 
   useEffect(() => {
     repository && setGoalsId(repository.id);
@@ -91,7 +91,7 @@ function RepositoryGoals({user}) {
           </Cards>
         </React.Fragment>
       ) : (
-        <CreateGoals user={user && user.login || ""} onRepoCreation={onRepoCreation} />
+        <CreateGoals installNeeded={!!error} user={user && user || ""} onRepoCreation={onRepoCreation} />
       )}
     </section>
   );

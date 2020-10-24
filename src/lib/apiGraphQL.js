@@ -1,4 +1,12 @@
 import Config from "../config";
+import {
+  persistedForkFetch,
+  persistedIssuesFetch,
+  persistedInteractionsFetch,
+  persistedGoalFetch,
+  persistedRepoDataFetch,
+  persistedDeploymentFetch,
+} from "./persistedGraphQL";
 
 const fetchOneGraph = Config.fetchOneGraph;
 
@@ -578,6 +586,12 @@ const api = {
   createOpenSaucedGoalsRepo,
   createGoal,
   updateGoal,
+  persistedRepoDataFetch,
+  persistedForkFetch,
+  persistedGoalFetch,
+  persistedInteractionsFetch,
+  persistedIssuesFetch,
+  persistedDeploymentFetch,
   fetchUserForkCount,
   forkRepository,
 };

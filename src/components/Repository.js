@@ -34,7 +34,7 @@ function Repository({user, match}) {
 
   useEffect(() => {
     api
-      .fetchRepositoryData(repoOwner, repoName)
+      .persistedRepoDataFetch(repoOwner, repoName)
       .then(res => {
         const {errors, data} = res;
 
@@ -55,7 +55,7 @@ function Repository({user, match}) {
       });
 
     api
-      .fetchGoalQuery(parseInt(id))
+      .persistedGoalFetch(parseInt(id))
       .then(res => {
         const {id, body} = res.data.gitHub.viewer.repository.issue;
         setNote(body);
@@ -66,7 +66,7 @@ function Repository({user, match}) {
       });
 
     api
-      .fetchUserForkCount(repoName, repoOwner)
+      .persistedForkFetch(repoName, repoOwner, "FetchUserForkCount")
       .then(({data, errors}) => {
         if (errors && errors.length > 0) {
           setError(`"${errors[0].message}"`);
@@ -83,7 +83,7 @@ function Repository({user, match}) {
     setIsForkLoading(true);
 
     api
-      .forkRepository(repoName, repoOwner)
+      .persistedForkFetch(repoName, repoOwner, "ForkRepository")
       .then(res => {
         const {errors} = res;
 
@@ -98,7 +98,7 @@ function Repository({user, match}) {
       .finally(() => setIsForkLoading(false));
   };
 
-  const showFork = repository && repoOwner !== user && user.login ? true : isForkLoading;
+  const showFork = repository && user && repoOwner !== user && user.login ? true : isForkLoading;
 
   const {
     url,
@@ -125,10 +125,8 @@ function Repository({user, match}) {
             <div>
               <a style={{textDecoration: "none"}} href={url} rel="noreferrer" target="_blank">
                 <h1>
-                  <RepositoryAvatar
-                    alt="avatar"
-                    src={`https://avatars.githubusercontent.com/${repoOwner}`}
-                  />{repoOwner}/{repoName}
+                  <RepositoryAvatar alt="avatar" src={`https://avatars.githubusercontent.com/${repoOwner}`} />
+                  {repoOwner}/{repoName}
                 </h1>
               </a>
               {description ? (
@@ -148,19 +146,20 @@ function Repository({user, match}) {
                 </em>
               </small>
               <div className="languages">
-                {repository ?
+                {repository ? (
                   repository.languages.nodes.map((language, key) => (
                     <span key={key}>
-                      <span className="dot"  style={{color: language.color}}>
+                      <span className="dot" style={{color: language.color}}>
                         •
                       </span>
                       <span className="name">{language.name}</span>
                     </span>
-                  )) : (
-                    <div>
-                      <Skeleton height={2} width={70} count={4} />
-                    </div>
-                  )}
+                  ))
+                ) : (
+                  <div>
+                    <Skeleton height={2} width={70} count={4} />
+                  </div>
+                )}
                 <span className="more">
                   {repository &&
                     repository.languages.totalCount > languagesShown &&
@@ -178,17 +177,17 @@ function Repository({user, match}) {
               <a rel="noreferrer" target="_blank" href={`https://codetriage.com/${nameWithOwner}`}>
                 <Button primary>Set up CodeTriage</Button>
               </a>
-              {showFork &&
-                isForked ? (
-                  <a rel="noreferrer" target="_blank" href={`https://github.com/${user.login}/${repoName}`}>
-                    <Button disabled={isForkLoading} data-test="go-to-fork-button">View fork</Button>
-                  </a>
-                ) : (
-                  <Button disabled={isForkLoading} onClick={forkRepository}>
-                    <RepoForkedIcon verticalAlign="middle" /> Fork
+              {showFork && isForked ? (
+                <a rel="noreferrer" target="_blank" href={`https://github.com/${user.login}/${repoName}`}>
+                  <Button disabled={isForkLoading} data-test="go-to-fork-button">
+                    View fork
                   </Button>
-                )
-              }
+                </a>
+              ) : (
+                <Button disabled={isForkLoading} onClick={forkRepository}>
+                  <RepoForkedIcon verticalAlign="middle" /> Fork
+                </Button>
+              )}
               <h4>Contributors</h4>
               <div className="contributors">
                 {contributors.slice(0, contributorsShown).map((user, key) => (
