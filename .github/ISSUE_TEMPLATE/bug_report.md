@@ -1,6 +1,6 @@
 ---
 name: 🐛 Bug report
-about: Create a report to help us improve Open Sauced 🍕
+about: Create a bug report to help us improve Open Sauced 🍕
 title: "Bug: "
 labels: 👀 needs triage, 🐛 bug
 ---
