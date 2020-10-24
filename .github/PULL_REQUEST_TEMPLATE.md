@@ -45,6 +45,7 @@
 ## Added to documentation?
 
 - [ ] 📜 readme
+- [ ] 📜 contributing.md
 - [ ] 🙅 no documentation needed
 
 ## [optional] Are there any post-deployment tasks we need to perform?

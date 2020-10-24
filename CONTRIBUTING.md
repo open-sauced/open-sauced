@@ -50,6 +50,20 @@ $ npm run test
 
 *note for maintainers: All pull requests need a label to assist automation. See the [template](https://github.com/open-sauced/open-sauced/blob/HEAD/.github/release-drafter.yml) to guide which labels to use.*
 
+### PR Validation
+Examples for valid PR titles:
+
+- fix: Correct typo.
+- feat: Add support for Node 12.
+- refactor!: Drop support for Node 6.
+
+_Note that since PR titles only have a single line, you have to use the ! syntax for breaking changes._
+
+See [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) for more examples.
+
+### Work in progress
+Github has support for draft pull requests, which will disable the merge button until the PR is marked as ready for merge.
+
 ## Issues
 
 If you plan to contribute a change based on an open issue, please assign yourself by commenting on the following word `.take`. Issues that are not assigned are assumed open, and to avoid conflicts, please assign yourself before beginning work on any issues.
