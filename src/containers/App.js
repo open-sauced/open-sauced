@@ -3,6 +3,7 @@ import Dashboard from "../containers/Dashboard";
 import Footer from "../components/Footer";
 import DashboardFooter from "../components/DashboardFooter";
 import Nav from "../components/Nav";
+import Repository from "../components/Repository";
 import {BrowserRouter as Router, Route, Redirect, Switch, useHistory} from "react-router-dom";
 import {MarketingButton} from "../styles/Button";
 import {Wrapper} from "../styles/Header";
@@ -60,7 +61,7 @@ function App({handleLogIn, handleLogOut, user, isAdmin, isLoggedIn}) {
       <LocaleContext.Provider value={value}>
         <Switch>
           <Route exact path="/" component={guard(Dashboard)} />
-          <Route path="/repos/:owner/:name/" component={guard(Dashboard)} />
+          <Route path="/repos/:repoOwner/:repoName/" component={guard(Repository)} />
           <Route path="/callback" component={guard(Dashboard)} />
           <Route exact path="/logout" render={() => (
             isLoggedIn ? (
