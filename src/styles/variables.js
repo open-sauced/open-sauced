@@ -21,11 +21,11 @@ const colors = {
 };
 
 const margin = {
-  gutter: "10px",
+  gutter: "1rem",
 };
 
 const padding = {
-  sides: "30px",
+  sides: "3rem",
 };
 
 const typography = {
@@ -38,16 +38,16 @@ const typography = {
 };
 
 const size = {
-  micro:"8px",
-  tiny: "16px",
-  small: "24px",
-  medium: "40px",
-  large: "64px",
-  xl: "104px",
-  xxl: "168px",
+  micro: "0.8rem",
+  tiny: "1.6rem",
+  small: "2.4rem",
+  medium: "4rem",
+  large: "6.4rem",
+  xl: "10.4rem",
+  xxl: "16.8rem",
 };
 
-const borderRadius = "5px";
+const borderRadius = "0.5rem";
 
 const responsiveBreakpoints = {
   mobile: "480px",
