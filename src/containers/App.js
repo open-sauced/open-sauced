@@ -19,16 +19,12 @@ function NoMatch() {
   return (
     <NotFound>
       <Wrapper>
-        <h2>Oh No! This page does not exist yet. Would you like to build it?</h2>
-        <img alt="404" src={ohno} />
         <SpaceAround>
-          <MarketingButton primary onClick={() => history.push("/")}>
-            Back to safety
-          </MarketingButton>
-          <a rel="noreferrer" target="_blank" href="https://github.com/open-sauced/open-sauced/issues/new/choose">
-            <MarketingButton>Click here if yes</MarketingButton>
-          </a>
+          <img alt="404" src={ohno} />
         </SpaceAround>
+        <MarketingButton primary onClick={() => history.push("/")}>
+          Back to home
+        </MarketingButton>
       </Wrapper>
     </NotFound>
   );

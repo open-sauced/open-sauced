@@ -17,12 +17,11 @@ const NotFound = styled.section`
   }
 
   img {
-    width: 50%;
+    width: 70%;
     padding: 30px;
 
     ${MEDIA.TABLET`
       width: 90%;
-      padding: 0;
     `};
   }
 `;
