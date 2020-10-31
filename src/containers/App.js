@@ -19,10 +19,6 @@ function NoMatch() {
   return (
     <NotFound>
       <Wrapper>
-        <section>
-          <blockquote class="speechOne bubble">Oh no!</blockquote>
-          <blockquote class="speechTwo bubble">Something went wrong...</blockquote>
-        </section>
         <SpaceAround>
           <img alt="404" src={ohno} />
         </SpaceAround>
