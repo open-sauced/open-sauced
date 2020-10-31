@@ -10,5 +10,6 @@ import next from "./next.png";
 import gucci from "./gucci.jpg";
 import graphql from "./graphql.png";
 import ohno from "./404.svg";
+import chatBubble from "./chat-bubble.svg";
 
-export {gucci, go, graphql, electron, ohno, next, bdougie, face, sauce, sauced, pizza, sauceFull};
+export {gucci, go, graphql, electron, ohno, next, bdougie, face, sauce, sauced, pizza, sauceFull, chatBubble};
