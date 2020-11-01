@@ -1,6 +1,7 @@
 import React from "react";
 import {FlexCenter} from "../styles/Grid";
 import {IssueOpenedIcon, GitPullRequestIcon, RepoForkedIcon, StarIcon, LawIcon} from "@primer/octicons-react";
+import {fontSize} from "../styles/variables";
 
 function DetailInfo({icon, text}) {
   return (
@@ -23,7 +24,7 @@ function DetailInfo({icon, text}) {
           }
         })()}
       </div>
-      <div style={{fontSize: "15px", color: "grey"}}>{text}</div>
+      <div style={{fontSize: fontSize.default, color: "grey"}}>{text}</div>
     </FlexCenter>
   );
 }

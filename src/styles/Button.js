@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {borderRadius, colors, size} from "./variables";
+import {borderRadius, colors, size, fontSize} from "./variables";
 
 const Button = styled.button`
   background: ${props => {
@@ -16,7 +16,7 @@ const Button = styled.button`
     return props.primary ? "white" : "#664E48";
   }};
   cursor: pointer;
-  font-size: ${size.tiny};
+  font-size: ${fontSize.default};
   font-weight: 600;
   min-height: 35px;
   min-width: 68px;
@@ -46,12 +46,12 @@ const Button = styled.button`
 `;
 
 export const InputButton = styled(Button)`
-  font-size: ${size.tiny};
+  font-size: ${fontSize.default};
   padding: 0;
 `;
 
 export const MarketingButton = styled(Button)`
-  font-size: ${size.tiny};
+  font-size: ${fontSize.default};
   text-transform: uppercase;
   padding: 10px 32px;
 `;

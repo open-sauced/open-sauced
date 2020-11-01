@@ -47,6 +47,13 @@ const size = {
   xxl: "16.8rem",
 };
 
+const fontSize = {
+  small: "1.6rem",
+  default: "1.8rem",
+  large: "2rem",
+  xl: "2.4rem",
+};
+
 const borderRadius = "0.5rem";
 
 const responsiveBreakpoints = {
@@ -57,4 +64,4 @@ const responsiveBreakpoints = {
   display: "1200px"
 };
 
-export {padding, colors, margin, typography, size, borderRadius, responsiveBreakpoints};
+export {padding, colors, margin, typography, size, borderRadius, responsiveBreakpoints, fontSize};

@@ -1,12 +1,12 @@
 import styled from "styled-components";
-import {size, borderRadius, colors} from "./variables";
+import {size, borderRadius, colors, fontSize} from "./variables";
 
 const Select = styled.div`
   padding: 0 ${size.small};
   text-align: end;
 
   label {
-    font-size: ${size.tiny};
+    font-size: ${fontSize.default};
     margin-right: ${size.micro};
   }
 

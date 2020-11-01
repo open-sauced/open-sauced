@@ -6,6 +6,7 @@ import {gucci, go, graphql, electron, next, sauceFull, bdougie} from "../images"
 import {logo} from "../logos";
 import {archive, mortarBoard, watch, squirrel} from "../icons";
 import {Flex, FlexColumn, GridColumns} from "../styles/Grid";
+import {fontSize} from "../styles/variables";
 
 function Hero({handleLogIn}) {
   return (
@@ -34,7 +35,7 @@ function Hero({handleLogIn}) {
         <Wrapper>
           <ul>
             <li>
-              <small>Trusted By</small>
+              <small style={{fontSize: fontSize.small}}>Trusted By</small>
             </li>
             <li>
               <a rel="noreferrer" target="_blank" href="https://github.com/graphql/">
