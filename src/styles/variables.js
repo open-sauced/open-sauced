@@ -21,11 +21,11 @@ const colors = {
 };
 
 const margin = {
-  gutter: "1rem",
+  gutter: "10px",
 };
 
 const padding = {
-  sides: "3rem",
+  sides: "30px",
 };
 
 const typography = {
@@ -38,23 +38,23 @@ const typography = {
 };
 
 const size = {
-  micro: "0.8rem",
-  tiny: "1.6rem",
-  small: "2.4rem",
-  medium: "4rem",
-  large: "6.4rem",
-  xl: "10.4rem",
-  xxl: "16.8rem",
+  micro: "8px",
+  tiny: "16px",
+  small: "24px",
+  medium: "40px",
+  large: "64px",
+  xl: "104px",
+  xxl: "168px",
 };
 
 const fontSize = {
-  small: "1.6rem",
-  default: "1.8rem",
+  small: "1.4rem",
+  default: "1.6rem",
   large: "2rem",
   xl: "2.4rem",
 };
 
-const borderRadius = "0.5rem";
+const borderRadius = "5px";
 
 const responsiveBreakpoints = {
   mobile: "480px",

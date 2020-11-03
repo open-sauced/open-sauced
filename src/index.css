@@ -27,17 +27,17 @@
   --black: 900;
 
   /* padding */
-  --micro: 0.8rem;
-  --tiny: 1.6rem;
-  --small: 2.4rem;
-  --medium: 4rem;
-  --large: 6.4rem;
-  --xl: 10.4rem;
-  --xxl: 16.8rem;
+  --micro: 8px;
+  --tiny: 16px;
+  --small: 24px;
+  --medium: 40px;
+  --large: 64px;
+  --xl: 104px;
+  --xxl: 168px;
 
   /* border radius */
-  --smallBorderRadius: 0.4rem;
-  --borderRadius: 1rem;
+  --smallBorderRadius: 4px;
+  --borderRadius: 10px;
 
   /* responsive breakpoints */
   --mobile: 480px;
