@@ -56,5 +56,5 @@
 
 
 
-<!-- note: PRs with deletes sections will be marked invalid invalid -->
+<!-- note: PRs with deletes sections will be marked invalid -->
 
