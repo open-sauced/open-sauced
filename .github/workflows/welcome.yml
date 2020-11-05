@@ -10,6 +10,7 @@ jobs:
 
     steps:
       - uses: actions/first-interaction@v1.0.0
+        if: github.actor != 'dependabot[bot]'
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           pr-message: |-
