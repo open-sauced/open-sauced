@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.18.2](https://github.com/open-sauced/open-sauced/compare/v0.18.0...v0.18.2) (2020-11-05)
+
+
+### Features
+
+* 404 page improved  ([#868](https://github.com/open-sauced/open-sauced/issues/868)) ([ac6aa63](https://github.com/open-sauced/open-sauced/commit/ac6aa6369dc0b20c21ccf3c455589892a48bd7d7))
+
+
+### Bug Fixes
+
+* add note about pr validation ([#861](https://github.com/open-sauced/open-sauced/issues/861)) ([5cb383d](https://github.com/open-sauced/open-sauced/commit/5cb383da67a1375efd11a6180c0d79ebe1301f22))
+* bump node version release-management.yml ([#860](https://github.com/open-sauced/open-sauced/issues/860)) ([72ad524](https://github.com/open-sauced/open-sauced/commit/72ad524f6806413bcb4f888b098abe06baf64d1b))
+* prevent welcome check with dependabot ([#878](https://github.com/open-sauced/open-sauced/issues/878)) ([379267f](https://github.com/open-sauced/open-sauced/commit/379267f6651e4e60088562bff56b2c18be15f889))
+
 ### [0.17.3](https://github.com/CodeItQuick/open-sauced/compare/v0.17.4...v0.17.3) (2020-10-15)
 
 
