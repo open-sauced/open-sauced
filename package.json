@@ -89,7 +89,7 @@
     "babel-core": "^6.26.3",
     "contrast": "^1.0.1",
     "dayjs": "^1.8.35",
-    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
     "graphql": "^14.5.8",
     "humanize-duration": "^3.23.0",
     "lodash": "^4.17.19",
