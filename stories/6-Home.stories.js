@@ -2,7 +2,7 @@ import React from "react";
 import {MarketingButton} from "../src/styles/Button";
 import {HomeNav} from "../src/styles/Header";
 import {SubtleLink} from "../src/styles/Typography";
-import {sauce, pizza} from "../src/icons";
+import {sauce, pizza} from "../src/images";
 import {logo} from "../src/logos";
 
 export default {
