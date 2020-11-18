@@ -11,7 +11,7 @@ import {Flex, FlexCenter, FlexColumn, FloatLeft, IssuesColumn, SpaceAround, Spac
 import List from "../src/styles/List";
 import Avatar from "../src/styles/Avatar";
 import {chevronRight, check} from "../src/icons";
-import Octicon, {getIconByName} from "@primer/octicons-react";
+import {PencilIcon} from "@primer/octicons-react";
 import RepoListItem from "../src/components/RepoListItem";
 import IssuesListItem from "../src/components/IssueListItem";
 import DetailInfo from "../src/components/DetailInfo";
@@ -25,6 +25,7 @@ export default {
 
 const goal = {
   title: "webpack",
+  full_name: "open-sauced/open-sauced"
 };
 
 export const ButtonCard = () => (
@@ -142,7 +143,7 @@ export const NoteCard = () => (
     />
     <FlexCenter>
       <Button onClick={() => console.log("clicked")}>
-        <Octicon verticalAlign="middle" icon={getIconByName("pencil")} />
+        <PencilIcon verticalAlign="middle" />
         Edit Notes
       </Button>
       <Button primary onClick={() => console.log("clicked")}>
