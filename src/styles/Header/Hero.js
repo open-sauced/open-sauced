@@ -14,14 +14,14 @@ const Hero = styled.section`
     padding: 1rem;
   `};
   h1 {
-    font-size: ${fontSize.xl};
+    font-size: ${fontSize.xxl};
   }
 
   h2 {
     margin: 0;
     color: ${colors.saucyRed};
     text-decoration: underline;
-    font-size: ${fontSize.xl};
+    font-size: ${fontSize.xxl};
   }
 
   small {

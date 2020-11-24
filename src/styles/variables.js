@@ -52,6 +52,7 @@ const fontSize = {
   default: "1.6rem",
   large: "2rem",
   xl: "2.4rem",
+  xxl: "4rem",
 };
 
 const borderRadius = "5px";

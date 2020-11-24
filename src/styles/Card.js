@@ -126,7 +126,7 @@ const ContextStyle = styled(Card)`
 
   h1 {
     width: 100%;
-    font-size: ${fontSize.xl};
+    font-size: ${fontSize.xxl};
     font-weight: ${typography.light};
     color: ${colors.lightGrey};
     margin-bottom: 16px;
