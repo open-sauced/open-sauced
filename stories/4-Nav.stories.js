@@ -15,10 +15,10 @@ export const HomePage = () => (
       <FloatLeft>
         <ul>
           <li>
-            <SubtleLink href="https://dev.to/t/opensauced">Blog</SubtleLink>
+            <SubtleLink className="nav-link" rel="noreferrer" target="_blank" href="https://dev.to/t/opensauced">Blog</SubtleLink>
           </li>
           <li>
-            <SubtleLink href="https://github.com/open-sauced/open-sauced">GitHub</SubtleLink>
+            <SubtleLink className="nav-link" rel="noreferrer" target="_blank" href="https://github.com/open-sauced/open-sauced">GitHub</SubtleLink>
           </li>
           <li>
             <SubtleLink href="#">Subscribe</SubtleLink>
@@ -46,10 +46,10 @@ export const App = () => (
       <FloatLeft>
         <ul>
           <li>
-            <SubtleLink href="https://dev.to/t/opensauced">Blog</SubtleLink>
+            <SubtleLink className="nav-link" rel="noreferrer" target="_blank" href="https://dev.to/t/opensauced">Blog</SubtleLink>
           </li>
           <li>
-            <SubtleLink href="https://github.com/open-sauced/open-sauced">GitHub</SubtleLink>
+            <SubtleLink className="nav-link" rel="noreferrer" target="_blank" href="https://github.com/open-sauced/open-sauced">GitHub</SubtleLink>
           </li>
           <li>
             <SubtleLink href="#">Subscribe</SubtleLink>

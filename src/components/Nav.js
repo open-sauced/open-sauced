@@ -23,13 +23,31 @@ function LeftSide({isLoggedIn, user, handleLogIn, handleLogOut}) {
       </Link>
       <ul>
         <li>
-          <SubtleLink href="https://dev.to/opensauced">Blog</SubtleLink>
+          <SubtleLink
+            href="https://dev.to/opensauced"
+            className="nav-link"
+            target="_blank"
+            rel="noreferrer">
+            Blog
+          </SubtleLink>
         </li>
         <li>
-          <SubtleLink href="https://github.com/open-sauced/open-sauced">GitHub</SubtleLink>
+          <SubtleLink
+            href="https://github.com/open-sauced/open-sauced"
+            className="nav-link"
+            target="_blank"
+            rel="noreferrer">
+            GitHub
+          </SubtleLink>
         </li>
         <li>
-          <SubtleLink href="https://discord.gg/gZMKK5q">Discord</SubtleLink>
+          <SubtleLink
+            className="nav-link"
+            target="_blank"
+            rel="noreferrer"
+            href="https://discord.gg/gZMKK5q">
+            Discord
+          </SubtleLink>
         </li>
         {isLoggedIn && (
           <li>
