@@ -23,7 +23,7 @@
     "babel-loader": "^8.0.6",
     "babel-preset-react-app": "^9.0.2",
     "case-sensitive-paths-webpack-plugin": "2.3.0",
-    "chalk": "4.0.0",
+    "chalk": "4.1.0",
     "connect-history-api-fallback": "1.6.0",
     "cross-spawn": "7.0.1",
     "css-loader": "^5.0.1",
