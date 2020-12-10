@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {colors, size, margin} from "./variables";
+import {colors, size, margin, fontSize} from "./variables";
 
 const Container = styled.ul`
   list-style: none;
@@ -49,7 +49,7 @@ const Container = styled.ul`
       margin-bottom: 5px;
       display: inline-block;
       background-color: ${colors.lightestGrey};
-      font-size: ${size.tiny};
+      font-size: ${fontSize.default};
       line-height: 15px;
       height: 15px;
       min-width: 15px;

@@ -18,6 +18,7 @@ import {humanizeNumber} from "../lib/humanizeNumber";
 import Skeleton, {SkeletonTheme} from "react-loading-skeleton";
 import Button from "../styles/Button";
 import {RepoForkedIcon} from "@primer/octicons-react";
+import {fontSize} from "../styles/variables";
 
 function Repository({user, match}) {
   const {
@@ -173,7 +174,7 @@ function Repository({user, match}) {
         <ButtonBoard>
           {repository ? (
             <span>
-              <p>CodeTriage helps by picking a handful of open issues and delivering them directly to your inbox.</p>
+              <p style={{fontSize: fontSize.small}}>CodeTriage helps by picking a handful of open issues and delivering them directly to your inbox.</p>
               <a rel="noreferrer" target="_blank" href={`https://codetriage.com/${nameWithOwner}`}>
                 <Button primary>Set up CodeTriage</Button>
               </a>
@@ -188,7 +189,7 @@ function Repository({user, match}) {
                   <RepoForkedIcon verticalAlign="middle" /> Fork
                 </Button>
               )}
-              <h4>Contributors</h4>
+              <h3 style={{fontSize: fontSize.default}}>Contributors</h3>
               <div className="contributors">
                 {contributors.slice(0, contributorsShown).map((user, key) => (
                   <a href={`https://github.com/${user.login}`} rel="noreferrer" target="_blank" key={key}>

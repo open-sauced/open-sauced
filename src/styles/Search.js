@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {size, borderRadius, colors} from "./variables";
+import {size, borderRadius, colors, fontSize} from "./variables";
 import {search} from "../icons";
 
 const Container = styled.input`
@@ -7,7 +7,7 @@ const Container = styled.input`
   border: 1px solid ${colors.lightestGrey};
   box-sizing: border-box;
   box-shadow: none;
-  font-size: ${size.tiny};
+  font-size: ${fontSize.default};
   margin-left: ${size.tiny};
   float: left;
   padding: ${size.micro};

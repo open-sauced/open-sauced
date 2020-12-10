@@ -5,6 +5,7 @@ import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
 import {IssueOpenedIcon, CommentIcon, MilestoneIcon} from "@primer/octicons-react";
 import contrast from "contrast";
+import {fontSize, size} from "../styles/variables";
 
 dayjs.extend(relativeTime);
 
@@ -19,29 +20,34 @@ function IssueListItem({title, labels, author, opened, type, participants, comme
             <IssueOpenedIcon verticalAlign="middle" />
           </span>
           <FlexColumn className="details">
-            <p>
-              {title}
+            <p style={{fontSize: fontSize.default}}>
+              <b>{title}</b>
             </p>
             <div>
               {labels.data.length > 0 && labels.data.map(label => (
                 <span
-                  style={{backgroundColor: `#${label.node.color}`, color: `${contrast(label.node.color) === "light" ? "black" : "white"}`}}
+                  style={{
+                    backgroundColor: `#${label.node.color}`,
+                    color: `${contrast(label.node.color) === "light" ? "black" : "white"}`,
+                    fontSize: fontSize.small,
+                    padding: size.micro,
+                  }}
                   key={label.node.id}>
                   {label.node.name}
                 </span>
               ))}
             </div>
             <div>
-              {type === "issues" && <small style={{fontSize: 12}}>opened {dayjs(opened).fromNow()} by {author}</small>}
-              {type === "contributions" && <small style={{fontSize: 12}}>opened {dayjs(opened).fromNow()}</small>}
+              {type === "issues" && <small style={{fontSize: fontSize.small}}>opened {dayjs(opened).fromNow()} by {author}</small>}
+              {type === "contributions" && <small style={{fontSize: fontSize.small}}>opened {dayjs(opened).fromNow()}</small>}
               <span className="issueHelper">
                 <CommentIcon className="icon" size={13} verticalAlign="middle" />
-                {comments && comments.totalCount}
+                <small style={{fontSize: fontSize.small}}>{comments && comments.totalCount}</small>
               </span>
               {milestone && (
                 <span className="issueHelper">
                   <MilestoneIcon className="icon" size={13} verticalAlign="middle" />
-                  {milestone.title}
+                  <small style={{fontSize: fontSize.small}}>{milestone.title}</small>
                 </span>
               )}
               <div className="avatar-stack">

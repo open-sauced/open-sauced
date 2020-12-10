@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import MEDIA from "./mediaTemplates";
-import {size} from "./variables";
+import {fontSize} from "./variables";
 
 const EmptyPlaceholder = styled.div`
   text-align: center;
@@ -8,7 +8,7 @@ const EmptyPlaceholder = styled.div`
 
   .helper {
     color: grey;
-    font-size: ${size.small};
+    font-size: ${fontSize.large};
     margin-top: 10px;
   }
 

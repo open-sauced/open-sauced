@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {size, colors} from "../variables";
+import {size, colors, fontSize} from "../variables";
 import MEDIA from "../mediaTemplates";
 
 const Container = styled.nav`
@@ -7,7 +7,7 @@ const Container = styled.nav`
   justify-content: space-between;
   background-color: ${colors.darkGrey};
   color: white;
-  font-size: ${size.tiny};
+  font-size: ${fontSize.default};
   font-weight: bold;
 
   ul {
@@ -17,7 +17,7 @@ const Container = styled.nav`
   }
 
   li {
-    font-size: ${size.tiny};
+    font-size: ${fontSize.default};
     margin-right: ${size.tiny};
     padding: 2px 7px;
     background: ${colors.darkestGrey};

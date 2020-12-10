@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import MEDIA from "./mediaTemplates";
-import {margin, borderRadius, colors, size, typography} from "./variables";
+import {margin, borderRadius, colors, size, typography, fontSize} from "./variables";
 
 const Card = styled.div`
   background-color: white;
@@ -8,7 +8,7 @@ const Card = styled.div`
   padding: ${size.small};
   border: 0 solid rgba(123, 123, 123, 0.498039);
   border-radius: ${borderRadius};
-  font-size: ${size.small};
+  font-size: ${fontSize.large};
   list-style-type: none;
   margin: ${size.tiny} 0 0 0;
   outline: none;
@@ -34,12 +34,12 @@ const Card = styled.div`
   }
 
   p {
-    font-size: ${size.tiny};
+    font-size: ${fontSize.default};
     margin: 5px 0 4px 0;
   }
 
   span {
-    font-size: ${size.tiny};
+    font-size: ${fontSize.default};
     font-weight: bold;
     margin-right: 5px;
     padding: 4px;
@@ -48,7 +48,7 @@ const Card = styled.div`
   }
 
   small {
-    font-size: ${size.tiny};
+    font-size: ${fontSize.default};
   }
 
   svg {
@@ -90,7 +90,7 @@ const ButtonBoard = styled.div`
 
   .more {
     font-weight: bold;
-    font-size: ${size.tiny};
+    font-size: ${fontSize.default};
     margin: ${size.micro};
 
     a {
@@ -126,7 +126,7 @@ const ContextStyle = styled(Card)`
 
   h1 {
     width: 100%;
-    font-size: ${size.medium};
+    font-size: ${fontSize.xxl};
     font-weight: ${typography.light};
     color: ${colors.lightGrey};
     margin-bottom: 16px;
@@ -149,7 +149,7 @@ const ContextStyle = styled(Card)`
     margin: ${size.tiny} 0;
 
     .dot {
-      font-size: ${size.small};
+      font-size: ${fontSize.large};
       margin: 0;
       vertical-align: sub;
     }

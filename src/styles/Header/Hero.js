@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {colors, size} from "../variables";
+import {colors, size, fontSize} from "../variables";
 import MEDIA from "../mediaTemplates";
 
 const Hero = styled.section`
@@ -14,14 +14,14 @@ const Hero = styled.section`
     padding: 1rem;
   `};
   h1 {
-    font-size: ${size.medium};
+    font-size: ${fontSize.xxl};
   }
 
   h2 {
     margin: 0;
     color: ${colors.saucyRed};
     text-decoration: underline;
-    font-size: ${size.medium};
+    font-size: ${fontSize.xxl};
   }
 
   small {
@@ -142,13 +142,13 @@ const QuoteSection = styled(Hero)`
 
   span {
     font-weight: bold;
-    font-size: ${size.small};
+    font-size: ${fontSize.large};
     font-family: 'Arvo', serif;
 
     q::before {
       content: open-quote;
       color: ${colors.lightGrey}
-      font-size: ${size.medium};
+      font-size: ${fontSize.xl};
       margin-right: 5px;
       font-family: 'Times New Roman';
     }
@@ -156,7 +156,7 @@ const QuoteSection = styled(Hero)`
     q::after {
       content: close-quote;
       color: ${colors.lightGrey}
-      font-size: ${size.medium};
+      font-size: ${fontSize.xl};
       margin-left: 5px;
       font-family: 'Times New Roman';
     }
@@ -182,7 +182,7 @@ const QuoteSection = styled(Hero)`
 
   .description {
     width: 40%;
-    font-size: ${size.tiny};
+    font-size: ${fontSize.default};
     font-weight: bold;
     margin-top: 20px;
     flex-direction: column;
@@ -194,7 +194,7 @@ const QuoteSection = styled(Hero)`
   }
 
   .author {
-    font-size: ${size.tiny};
+    font-size: ${fontSize.default};
     margin-top: 15px;
   }
 `;
@@ -226,7 +226,7 @@ const DetailsSection = styled(Hero)`
 
   h2 {
     width: 80%;
-    font-size: ${size.tiny};
+    font-size: ${fontSize.default};
     font-weight: bold;
     text-transform: uppercase;
     text-decoration: none;
@@ -241,7 +241,7 @@ const DetailsSection = styled(Hero)`
   }
 
   p {
-    font-size: ${size.tiny};
+    font-size: ${fontSize.default};
     font-weight: 500;
     ${MEDIA.TABLET`
       margin: auto;

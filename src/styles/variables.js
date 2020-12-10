@@ -38,13 +38,21 @@ const typography = {
 };
 
 const size = {
-  micro:"8px",
+  micro: "8px",
   tiny: "16px",
   small: "24px",
   medium: "40px",
   large: "64px",
   xl: "104px",
   xxl: "168px",
+};
+
+const fontSize = {
+  small: "1.4rem",
+  default: "1.6rem",
+  large: "2rem",
+  xl: "2.4rem",
+  xxl: "4rem",
 };
 
 const borderRadius = "5px";
@@ -57,4 +65,4 @@ const responsiveBreakpoints = {
   display: "1200px"
 };
 
-export {padding, colors, margin, typography, size, borderRadius, responsiveBreakpoints};
+export {padding, colors, margin, typography, size, borderRadius, responsiveBreakpoints, fontSize};
