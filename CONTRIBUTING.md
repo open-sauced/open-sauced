@@ -62,7 +62,7 @@ _Note that since PR titles only have a single line, you have to use the ! syntax
 See [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) for more examples.
 
 ### Work in progress
-Github has support for draft pull requests, which will disable the merge button until the PR is marked as ready for merge.
+GitHub has support for draft pull requests, which will disable the merge button until the PR is marked as ready for merge.
 
 ## Issues
 
@@ -82,7 +82,7 @@ For those interested in getting involved in the project or just open source in g
 
 ## Community
 
-Got Questions? Join the conversation in our [Discord](https://discord.gg/gZMKK5q).
+Do you have questions? Join the conversation in our [Discord](https://discord.gg/gZMKK5q).
 
 ## Coding Tips
 - Ask questions if you are stuck. 
