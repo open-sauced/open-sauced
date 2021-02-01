@@ -65,7 +65,7 @@
     "semantic-release": "^17.1.2",
     "standard-version": "^9.0.0",
     "strip-ansi": "6.0.0",
-    "style-loader": "1.0.0",
+    "style-loader": "2.0.0",
     "stylefmt": "^6.0.3",
     "stylelint": "^13.0.0",
     "stylelint-config-standard": "^20.0.0",
