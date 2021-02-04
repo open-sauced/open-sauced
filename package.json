@@ -63,7 +63,7 @@
     "recursive-readdir": "2.2.2",
     "rimraf": "3.0.0",
     "semantic-release": "^17.1.2",
-    "standard-version": "^9.0.0",
+    "standard-version": "^9.1.0",
     "strip-ansi": "6.0.0",
     "style-loader": "2.0.0",
     "stylefmt": "^6.0.3",
