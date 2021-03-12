@@ -56,7 +56,7 @@
     "path-exists": "4.0.0",
     "postcss-loader": "^3.0.0",
     "promise": "8.1.0",
-    "react-dev-utils": "^9.1.0",
+    "react-dev-utils": "^11.0.4",
     "react-is": "^17.0.1",
     "react-scripts": "^3.4.3",
     "react-test-renderer": "^16.12.0",
