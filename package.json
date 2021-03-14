@@ -76,7 +76,7 @@
     "webpack": "^4.41.5",
     "webpack-cli": "^4.4.0",
     "webpack-dev-server": "^3.11.0",
-    "whatwg-fetch": "3.4.1"
+    "whatwg-fetch": "3.6.2"
   },
   "dependencies": {
     "@babel/preset-env": "^7.10.2",
