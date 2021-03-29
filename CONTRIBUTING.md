@@ -80,6 +80,9 @@ The Triage team is inspired by [expressjs/express](https://github.com/expressjs/
 
 For those interested in getting involved in the project or just open source in general, please request an invite to the Triage Team in [this discussion.](https://github.com/open-sauced/open-sauced/discussions/638) 
 
+## Funding
+Open Sauced is a part of GitHub Sponsors. If you would like to contribute, please note the [sponsor page](https://github.com/sponsors/open-sauced) for details on how funds are distributed. If you have made any contributions to the projectd directly or indirectly, please consider adding your profile to the [funding.yml](https://github.com/open-sauced/open-sauced/blob/main/.github/funding.yml).
+
 ## Community
 
 Do you have questions? Join the conversation in our [Discord](https://discord.gg/gZMKK5q).
