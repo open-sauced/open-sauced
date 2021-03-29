@@ -40,20 +40,20 @@ We encourage you to contribute to Open Sauced! Please check out the [Contributin
 
 <img align="right" src="https://i.ibb.co/CJfW18H/ship.gif" width="200"/>
 
-## 📖 Prerequisites
+### 📖 Prerequisites
 
 - [Node.js](https://nodejs.org/en/): we recommend using [nvm](https://github.com/nvm-sh/nvm#installing-and-updating) to install the Node version.
 - [NPM](https://npmjs.com/): please refer to their [installation guide](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm).
 + `terser-webpack-plugin` minimum supported Node.js version is 10.13
 
-## 🖥️ Local development
+### 🖥️ Local development
 
 ```
 npm install
 npm start
 ```
 
-## 🧪 Test
+### 🧪 Test
 
 ```
 npm test
@@ -62,7 +62,7 @@ npm test
 npm run clean
 ```
 
-## 📙 Storybook
+### 📙 Storybook
 
 Storybook is being leveraged to mock out visual React components. The latest version of the design system can be found at this [url](https://sauced-components.netlify.app/).
 
@@ -72,15 +72,15 @@ npm run storybook
 
 ![storybook example screenshot](https://user-images.githubusercontent.com/5713670/68147486-0cd14600-ff32-11e9-8cc0-fd91f4171b87.png)
 
-## 🔑 Authentication
+### 🔑 Authentication
 
 Authentication is handled through [OneGraph's AuthGuardian](https://www.onegraph.com/docs/auth_guardian.html) service. 
 
-## 💾 Database
+### 💾 Database
 
 This project uses GitHub as a database. When you login, you will be presented with a button to create a goals repository. That repository template lives at [open-sauced/goals-template](https://github.com/open-sauced/goals-template).
 
-## 💨 Service Worker
+### 💨 Service Worker
 
 This project uses the sw-precache to kickstart an offline cache. The offline cache only registers in production. If service needs to be manually removed make an **unregister** call from the registerServiceWorker.js import. 
 
