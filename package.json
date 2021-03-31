@@ -14,7 +14,7 @@
     "@storybook/react": "^6.1.15",
     "@testing-library/dom": "^7.26.3",
     "@testing-library/jest-dom": "^5.11.5",
-    "@testing-library/react": "^11.1.0",
+    "@testing-library/react": "^11.2.5",
     "@testing-library/user-event": "^12.3.0",
     "@webpack-cli/migrate": "^0.1.9",
     "autoprefixer": "9.7.3",
