@@ -21,7 +21,7 @@
   <a href="https://github.com/open-sauced/open-sauced/releases">
     <img src="https://img.shields.io/github/v/release/open-sauced/open-sauced.svg?style=flat" alt="GitHub Release">
   </a>
-  <a href="https://discord.gg/gZMKK5q">
+  <a href="https://discord.gg/U2peSNf23P">
     <img src="https://img.shields.io/discord/714698561081704529.svg?label=&logo=discord&logoColor=ffffff&color=7389D8&labelColor=6A7EC2" alt="Discord">
   </a>
   <a href="https://twitter.com/saucedopen">
@@ -86,7 +86,7 @@ This project uses the sw-precache to kickstart an offline cache. The offline cac
 
 ## 🍕 Community
 
-Got Questions? Join the conversation in our [Discord](https://discord.gg/gZMKK5q).  
+Got Questions? Join the conversation in our [Discord](https://discord.gg/U2peSNf23P).  
 Find Open Sauced videos and release overviews on our [YouTube Channel](https://www.youtube.com/channel/UCklWxKrTti61ZCROE1e5-MQ).
 
 ## ⚖️ LICENSE
