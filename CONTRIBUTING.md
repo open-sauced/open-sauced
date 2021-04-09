@@ -85,7 +85,7 @@ Open Sauced is a part of GitHub Sponsors. If you would like to contribute, pleas
 
 ## Community
 
-Do you have questions? Join the conversation in our [Discord](https://discord.gg/gZMKK5q).
+Do you have questions? Join the conversation in our [Discord](https://discord.gg/U2peSNf23P).
 
 ## Coding Tips
 - Ask questions if you are stuck. 
