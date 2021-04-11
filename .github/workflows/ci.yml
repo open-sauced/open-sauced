@@ -11,7 +11,7 @@ jobs:
         node-version: [12.x, 14.x]
 
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v2
     - name: Cache node modules
       uses: actions/cache@v2
       with:
@@ -29,3 +29,15 @@ jobs:
         npm test
       env:
         CI: true
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Audit Netlify deploy preview
+      if: github.event.check_suite.app.name == 'Netlify' && github.event.check_suite.conclusion == 'success'
+      uses: jakejarvis/lighthouse-action@master
+      with:
+        netlify_site: 'open-sauced.netlify.app'
+    - uses: actions/upload-artifact@master
+      with:
+        name: report
+        path: './report'
