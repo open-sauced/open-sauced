@@ -34,6 +34,7 @@ jobs:
   welcome:
     runs-on: ubuntu-latest
     needs: semantics
+    if: github.event.action == 'opened'
 
     steps:
       - uses: actions/first-interaction@v1
