@@ -1,0 +1,46 @@
+name: "PR Audit"
+on:
+  pull_request_target:
+    types:
+      - opened
+      - edited
+      - synchronize
+    branches:
+      - "release/*"
+      - "patch/*"
+      - main
+
+jobs:
+  semantics:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: amannn/action-semantic-pull-request@v1.2.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
+  audit:
+    runs-on: ubuntu-latest
+    if: github.event.check_suite.app.name == 'Netlify' && github.event.check_suite.conclusion == 'success'
+
+    steps:
+    - name: Audit Netlify deploy preview
+      uses: jakejarvis/lighthouse-action@master
+      with:
+        netlify_site: 'open-sauced.netlify.app'
+    - uses: actions/upload-artifact@master
+      with:
+        name: report
+        path: './report'
+        
+  welcome:
+    runs-on: ubuntu-latest
+    needs: semantics
+    if: github.event.action == 'opened'
+
+    steps:
+      - uses: actions/first-interaction@v1
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          pr-message: |-
+            Congrats on making your first Pull Request and thanks for taking the time to improve Open Sauced! ❤️! 🎉🍕
+            Say hello by joining the conversation in our [Discord](https://discord.gg/gZMKK5q)
