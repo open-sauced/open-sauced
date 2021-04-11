@@ -45,7 +45,7 @@ function LeftSide({isLoggedIn, user, handleLogIn, handleLogOut}) {
             className="nav-link"
             target="_blank"
             rel="noreferrer"
-            href="https://discord.gg/gZMKK5q">
+            href="https://discord.gg/U2peSNf23P">
             Discord
           </SubtleLink>
         </li>
