@@ -26,7 +26,7 @@ function Hero({handleLogIn}) {
           <MarketingButton primary onClick={handleLogIn}>
             Login
           </MarketingButton>
-          <a rel="noreferrer" target="_blank" href="https://discord.gg/gZMKK5q">
+          <a rel="noreferrer" target="_blank" href="https://discord.gg/U2peSNf23P">
             <MarketingButton>Join Discord</MarketingButton>
           </a>
         </Wrapper>
