@@ -20,9 +20,10 @@ jobs:
           
   audit:
     runs-on: ubuntu-latest
+    if: github.event.check_suite.app.name == 'Netlify' && github.event.check_suite.conclusion == 'success'
+
     steps:
     - name: Audit Netlify deploy preview
-      if: github.event.check_suite.app.name == 'Netlify' && github.event.check_suite.conclusion == 'success'
       uses: jakejarvis/lighthouse-action@master
       with:
         netlify_site: 'open-sauced.netlify.app'
