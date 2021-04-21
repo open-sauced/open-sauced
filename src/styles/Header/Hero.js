@@ -124,6 +124,16 @@ const TrustSection = styled(Hero)`
   img {
     height: ${size.medium};
   }
+  a {
+    text-decoration: none;
+  }
+  .use-shopping-cart {
+    background-color: #fff;
+    color: rgb(62,76,147);
+    font-family: bungee
+
+    
+  }
 `;
 
 const QuoteSection = styled(Hero)`
