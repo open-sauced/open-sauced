@@ -10,6 +10,6 @@ import ohno from "./404.svg";
 import remirror from "./remirror.svg";
 import UseShoppingCart from "./UseShoppingCart.png";
 
-export {gucci, graphql, ohno, bdougie, face, sauce, sauced, pizza, sauceFull, remirror,
+export {gucci, ohno, bdougie, face, sauce, sauced, pizza, sauceFull, remirror,
   gitTrends, UseShoppingCart
 };
