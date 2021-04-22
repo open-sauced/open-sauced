@@ -4,7 +4,6 @@ import sauce from "./sauce.svg";
 import sauced from "./sauced.svg";
 import sauceFull from "./pizza-n-sauce.svg";
 import pizza from "./pizza.svg";
-import go from "./go.png";
 import gucci from "./gucci.jpg";
 import gitTrends from "./gitTrends.svg";
 import ohno from "./404.svg";
