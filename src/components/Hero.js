@@ -2,7 +2,7 @@ import React from "react";
 import {Link} from "react-router-dom";
 import {MarketingButton} from "../styles/Button";
 import {Wrapper, PizzaPosition, TopHero, SubHero, TrustSection, QuoteSection, DetailsSection} from "../styles/Header";
-import {gucci, go, graphql, electron, next, sauceFull, bdougie} from "../images";
+import {gucci, graphql, gitTrends, remirror, sauceFull, bdougie, UseShoppingCart} from "../images";
 import {logo} from "../logos";
 import {archive, mortarBoard, watch, squirrel} from "../icons";
 import {Flex, FlexColumn, GridColumns} from "../styles/Grid";
@@ -38,23 +38,23 @@ function Hero({handleLogIn}) {
               <small style={{fontSize: fontSize.small}}>Trusted By</small>
             </li>
             <li>
+              <a rel="noreferrer" target="_blank" href="https://github.com/dayhaysoos/use-shopping-cart">
+                <img alt="UseShoppingCart" src={UseShoppingCart} />
+              </a>
+            </li>
+            <li>
+              <a rel="noreferrer" target="_blank" href="https://github.com/remirror/remirror">
+                <img alt="remirror" src={remirror} />
+              </a>
+            </li>
+            <li>
+              <a rel="noreferrer" target="_blank" href="https://github.com/GitTrends/GitTrends">
+                <img alt="gitTrends" src={gitTrends} />
+              </a>
+            </li>
+            <li>
               <a rel="noreferrer" target="_blank" href="https://github.com/graphql/">
                 <img alt="graphql" src={graphql} />
-              </a>
-            </li>
-            <li>
-              <a rel="noreferrer" target="_blank" href="https://github.com/vercel/next.js/">
-                <img alt="nextjs" src={next} />
-              </a>
-            </li>
-            <li>
-              <a rel="noreferrer" target="_blank" href="https://github.com/electron/">
-                <img alt="electron" src={electron} />
-              </a>
-            </li>
-            <li>
-              <a rel="noreferrer" target="_blank" href="https://github.com/golang/">
-                <img alt="golang" src={go} />
               </a>
             </li>
           </ul>
