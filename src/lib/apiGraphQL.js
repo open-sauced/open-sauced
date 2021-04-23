@@ -29,6 +29,26 @@ const operationsDoc = `
     }
   }
 
+  query StarredRepoQuery {
+    gitHub {
+      viewer {
+        starredRepositories(
+          first: 3
+          orderBy: { direction: DESC, field: STARRED_AT }
+        ) {
+          edges {
+            node {
+              id
+              name
+              url
+              nameWithOwner
+            }
+          }
+        }
+      }
+    }
+  }
+
   query RepoInteractionsQuery($owner: String!, $repo: String!) {
     gitHub {
       repository(name: $repo, owner: $owner) {
@@ -493,6 +513,10 @@ function fetchContributedRepoQuery() {
   return fetchOneGraph(operationsDoc, "ContributedRepoQuery");
 }
 
+function fetchStarredRepoQuery() {
+  return fetchOneGraph(operationsDoc, "StarredRepoQuery");
+}
+
 function fetchRepoInteractions(owner, repo) {
   return fetchOneGraph(operationsDoc, "RepoInteractionsQuery", {owner: owner, repo: repo});
 }
@@ -569,6 +593,7 @@ function forkRepository(repoName, repoOwner) {
 const api = {
   fetchRepositoryData: fetchRepoQuery,
   fetchContributedRepoQuery,
+  fetchStarredRepoQuery,
   fetchRepoInteractions,
   fetchIssuesQuery,
   fetchOwnerId,
