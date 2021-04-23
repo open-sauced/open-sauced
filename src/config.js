@@ -1,6 +1,9 @@
 import OneGraphAuth from "onegraph-auth";
 
-const APP_ID = "bc178799-292e-49df-8016-223abf5a07cb";
+const PRODUCTION_APP_ID = "bc178799-292e-49df-8016-223abf5a07cb"
+const DEVELOPMENT_APP_ID = "1fd08c2a-5951-4a29-8078-02f98f06eda4"
+
+const APP_ID = process.env.NODE_ENV === "production" ? PRODUCTION_APP_ID : DEVELOPMENT_APP_ID;
 
 const auth = new OneGraphAuth({
   appId: APP_ID
