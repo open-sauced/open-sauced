@@ -111,15 +111,16 @@
     "yarn": "^1.22.4"
   },
   "scripts": {
-    "start": "node scripts/start.js",
+    "start": "node -r dotenv/config scripts/start.js",
     "build": "node scripts/build.js",
     "clean": "rimraf src/tests/__snapshots__/",
-    "test": "npm run clean && node scripts/test.js --env=jsdom --updateSnapshot",
+    "test": "node scripts/test.js --env=jsdom --updateSnapshot",
     "storybook": "start-storybook -p 6006 --no-dll",
     "build-storybook": "build-storybook --no-dll",
     "lint": "eslint .",
     "lint:fix": "eslint --fix --ext .js,.jsx .",
-    "release": "standard-version"
+    "release": "standard-version",
+    "dry-run": "npm run clean && npm run build && npm test"
   },
   "jest": {
     "moduleFileExtensions": [

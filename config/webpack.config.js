@@ -21,7 +21,6 @@ const ModuleScopePlugin = require("react-dev-utils/ModuleScopePlugin");
 const getCSSModuleLocalIdent = require("react-dev-utils/getCSSModuleLocalIdent");
 const paths = require("./paths");
 const modules = require("./modules");
-const getClientEnvironment = require("./env");
 const ModuleNotFoundPlugin = require("react-dev-utils/ModuleNotFoundPlugin");
 const ForkTsCheckerWebpackPlugin = require("react-dev-utils/ForkTsCheckerWebpackPlugin");
 const typescriptFormatter = require("react-dev-utils/typescriptFormatter");
@@ -66,7 +65,7 @@ module.exports = function(webpackEnv) {
     ? publicPath.slice(0, -1)
     : isEnvDevelopment && "";
   // Get environment variables to inject into our app.
-  const env = getClientEnvironment(publicUrl);
+  const env = process.env;
 
   // common function to get style loaders
   const getStyleLoaders = (cssOptions, preProcessor) => {
@@ -512,7 +511,7 @@ module.exports = function(webpackEnv) {
       // In production, it will be an empty string unless you specify "homepage"
       // in `package.json`, in which case it will be the pathname of that URL.
       // In development, this will be an empty string.
-      new InterpolateHtmlPlugin(HtmlWebpackPlugin, env.raw),
+      new InterpolateHtmlPlugin(HtmlWebpackPlugin, env),
       // This gives some necessary context to module not found errors, such as
       // the requesting resource.
       new ModuleNotFoundPlugin(paths.appPath),
@@ -521,7 +520,7 @@ module.exports = function(webpackEnv) {
       // It is absolutely essential that NODE_ENV is set to production
       // during a production build.
       // Otherwise React will be compiled in the very slow development mode.
-      new webpack.DefinePlugin(env.stringified),
+      new webpack.DefinePlugin(env),
       // This is necessary to emit hot updates (currently CSS only):
       isEnvDevelopment && new webpack.HotModuleReplacementPlugin(),
       // Watcher doesn't work well if you mistype casing in a path so we use
