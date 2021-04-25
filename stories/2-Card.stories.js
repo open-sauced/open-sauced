@@ -16,7 +16,6 @@ import IssuesListItem from "../src/components/IssueListItem";
 import DetailInfo from "../src/components/DetailInfo";
 import Illustration from "../src/styles/Illustration";
 import {doneChecking} from "../src/illustrations";
-import Label from "../src/styles/Label";
 
 export default {
   title: "Cards",
@@ -158,14 +157,14 @@ export const OnboardingCard = () => (
       <h4>Onboarding</h4>
       <div className="checkbox">
         <input id="agenda" type="checkbox" />
-        <Label htmlFor="agenda">Follow the babel community</Label>
+        <label htmlFor="agenda">Follow the babel community</label>
       </div>
       <div className="checkbox">
         <img src={check} alt="check" />
         <input id="agenda" type="checkbox" checked />
-        <Label className="checked" htmlFor="agenda">
+        <label className="checked" htmlFor="agenda">
           Onboarding
-        </Label>
+        </label>
       </div>
       <div className="checkbox">
         <input id="agenda" type="checkbox" />
