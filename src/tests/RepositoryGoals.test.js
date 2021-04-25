@@ -7,8 +7,6 @@ import AppContext from "../Context";
 const contextValue = {goalsId: 1, setGoalsId: jest.fn()};
 
 let realUseContext;
-// container may be used in future version of skipped tests.
-// const container = null;
 
 // Setup mock
 beforeEach(() => {
