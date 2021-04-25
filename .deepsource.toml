@@ -7,4 +7,9 @@ name = "javascript"
 enabled = true
 
   [analyzers.meta]
+  environment = [
+    "nodejs",
+    "browser",
+    "jest"
+  ]
   plugins = ["react"]
