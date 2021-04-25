@@ -1,7 +1,6 @@
 import "@testing-library/jest-dom/extend-expect";
 import { isValidRepoUrl } from "../lib/util";
 import { getAppVersion } from "../lib/appVersion";
-import { string } from "postcss-selector-parser";
 
 describe("Test: isValidRepoUrl()", () => {
   const repoName = "repo_name";

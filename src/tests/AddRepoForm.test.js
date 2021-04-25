@@ -2,11 +2,13 @@ import React from "react";
 import "@testing-library/jest-dom/extend-expect";
 import {render, cleanup} from "@testing-library/react";
 import AddRepoForm from "../components/AddRepoForm";
-import {data} from "./mocks";
+// data may be used in future test of non-blank goals list
+// import {data} from "./mocks";
 import {axe, toHaveNoViolations} from "jest-axe";
 expect.extend(toHaveNoViolations);
 
-const {goals} = data;
+// goals may be used in future test of non-blank goals list
+// const {goals} = data;
 
 test("container component should have no violations", async() => {
   const {container} = render(<AddRepoForm />);
