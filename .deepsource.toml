@@ -1,5 +1,7 @@
 version = 1
 
+test_patterns = ["src/tests/**/*.js"]
+
 [[analyzers]]
 name = "javascript"
 enabled = true
