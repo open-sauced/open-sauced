@@ -36,3 +36,5 @@ jobs:
           npm test
       - name: Release
         run: npm run release
+      - name: Push tags
+        run: git push --follow-tags origin main
