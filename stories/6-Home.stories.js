@@ -26,7 +26,7 @@ export const Hero = () => (
           <SubtleLink href="#">Login</SubtleLink>
         </li>
       </ul>
-      <img src={logo} />
+      <img src={logo} alt="Open Sauced logo" />
     </HomeNav>
     <div
       style={{width: "100%", paddingLeft: 70, display: "inline-flex", height: 240, backgroundColor: "#faeace"}}

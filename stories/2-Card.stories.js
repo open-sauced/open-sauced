@@ -1,23 +1,21 @@
 import React from "react";
 import Card from "../src/components/Card";
 import Button, {InputButton} from "../src/styles/Button";
-import {AccentLink, TinyFont, MicroFont} from "../src/styles/Typography";
+import {AccentLink, MicroFont} from "../src/styles/Typography";
 import {PrimaryWithText} from "./1-Button.stories";
 import {CardPadding, ContextStyle, HintStyle, OnBoardStyle} from "../src/styles/Card";
 import Input from "../src/styles/Input";
 import Background from "../src/styles/Background";
 import TextArea from "../src/styles/TextArea";
-import {Flex, FlexCenter, FlexColumn, FloatLeft, IssuesColumn, SpaceAround, SpaceBetween} from "../src/styles/Grid";
+import {Flex, FlexCenter, FlexColumn, IssuesColumn, SpaceAround, SpaceBetween} from "../src/styles/Grid";
 import List from "../src/styles/List";
-import Avatar from "../src/styles/Avatar";
-import {chevronRight, check} from "../src/icons";
+import {check} from "../src/icons";
 import {PencilIcon} from "@primer/octicons-react";
 import RepoListItem from "../src/components/RepoListItem";
 import IssuesListItem from "../src/components/IssueListItem";
 import DetailInfo from "../src/components/DetailInfo";
 import Illustration from "../src/styles/Illustration";
 import {doneChecking} from "../src/illustrations";
-import Label from "../src/styles/Label";
 
 export default {
   title: "Cards",

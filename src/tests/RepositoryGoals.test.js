@@ -7,13 +7,11 @@ import AppContext from "../Context";
 const contextValue = {goalsId: 1, setGoalsId: jest.fn()};
 
 let realUseContext;
-let useContextMock;
-const container = null;
 
 // Setup mock
 beforeEach(() => {
   realUseContext = React.useContext;
-  useContextMock = React.useContext = jest.fn();
+  React.useContext = jest.fn();
 });
 // Cleanup mock
 afterEach(() => {

@@ -21,8 +21,6 @@ test("renders without crashing", async() => {
 // https://github.com/open-sauced/open-sauced/discussions/408
 test.skip("app login integration", () => {
   const history = createMemoryHistory();
-  const handleLogIn = jest.fn();
-
   const {container, getByText, rerender} = render(
     <Router history={history}>
       <App />
