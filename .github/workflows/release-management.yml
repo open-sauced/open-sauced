@@ -26,13 +26,14 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - name: set git user
-        run: |
-          git config --global user.name ${GITHUB_ACTOR}
-          git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
       - name: npm install and test
         run: |
           npm install
           npm test
       - name: Release
         run: npm run release
+      - name: Automated commit
+        uses: mikeal/publish-to-github-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH_NAME: 'main'
