@@ -36,7 +36,5 @@ jobs:
           npm test
       - name: Release
         run: npm run release
-      - uses: mikeal/publish-to-github-action@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH_NAME: 'main'
+      - name: Push tags
+        run: git push --follow-tags origin main
