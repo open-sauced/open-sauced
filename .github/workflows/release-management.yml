@@ -32,7 +32,7 @@ jobs:
           git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
       - name: npm install and test
         run: |
-          npm ci
+          npm install
           npm test
       - name: Release
         run: npm run release
