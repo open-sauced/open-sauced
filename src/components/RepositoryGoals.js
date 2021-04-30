@@ -11,6 +11,7 @@ import {ContextStyle} from "../styles/Card";
 import {goalsReducer, usePersistentStateReducer} from "../lib/reducers";
 import {EmptyPlaceholder} from "../styles/EmptyPlaceholder";
 import {ChecklistIcon} from "@primer/octicons-react";
+import api from "../lib/apiGraphQL";
 
 function RepositoryGoals({user}) {
   const {goalsId, setGoalsId} = useContext(LocaleContext);
@@ -20,6 +21,15 @@ function RepositoryGoals({user}) {
 
   useEffect(() => {
     repository && setGoalsId(repository.id);
+
+    user && api
+      .persistedViewerStars(user, "FetchViewerStars")
+      .then(res => {
+        console.log(res);
+      })
+      .catch(e => {
+        console.log(e);
+      });
   }, [goalsId]);
 
   const onRepoCreation = (id, repo) => {
