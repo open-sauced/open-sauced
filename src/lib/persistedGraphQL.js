@@ -152,10 +152,10 @@ async function persistedIssuesByLabelBeforeFetch(owner, repo, cursor) {
   return response;
 }
 
-async function persistedViewerStars() {
+async function persistedViewerStars(user, queryName) {
   const options = {
     method: "POST",
-    body: JSON.stringify({doc_id: doc_id7}),
+    body: JSON.stringify({doc_id: doc_id7, operationName: queryName, variables: {viewer: user.login}}),
   };
   const response = await fetch(url, options)
     .then(res => res.json())
