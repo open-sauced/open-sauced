@@ -11,6 +11,9 @@ const doc_id2 = "ed0abd8a-3ff3-46ce-bd1f-04f94af25d12";
 const doc_id3 = "c8c187a1-853f-446b-b3fa-b4876447c954";
 const doc_id4 = "8ecd5737-ebba-4807-a20b-4155272500bf";
 const doc_id5 = "89a3dc22-4355-494e-9d6f-a29c21e065e0";
+const doc_id6 = "a510812e-ad0d-4181-bda3-805ee2481a83";
+
+// TODO: Move this entire file to an npm package
 
 async function persistedForkFetch(repo, owner, queryName) {
   const options = {
@@ -84,6 +87,18 @@ async function persistedDeploymentFetch() {
   return response;
 }
 
+async function persistedIssuesByLabelFetch(owner, repo) {
+  const options = {
+    method: "POST",
+    body: JSON.stringify({doc_id: doc_id6, variables: {repo: repo, owner: owner}}),
+  };
+  const response = await fetch(url, options)
+    .then(res => res.json())
+    .then(json => json);
+
+  return response;
+}
+
 export {
   persistedForkFetch,
   persistedDeploymentFetch,
@@ -91,4 +106,5 @@ export {
   persistedInteractionsFetch,
   persistedGoalFetch,
   persistedRepoDataFetch,
+  persistedIssuesByLabelFetch,
 };
