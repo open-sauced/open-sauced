@@ -6,6 +6,7 @@ import {
   persistedGoalFetch,
   persistedRepoDataFetch,
   persistedDeploymentFetch,
+  persistedIssuesByLabelFetch,
 } from "./persistedGraphQL";
 
 const fetchOneGraph = Config.fetchOneGraph;
@@ -592,6 +593,7 @@ const api = {
   persistedInteractionsFetch,
   persistedIssuesFetch,
   persistedDeploymentFetch,
+  persistedIssuesByLabelFetch,
   fetchUserForkCount,
   forkRepository,
 };
