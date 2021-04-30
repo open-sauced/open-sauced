@@ -27,7 +27,7 @@ $ npm run build
 ```
 
 ## Testing
-
+For running the test suite, use the following command. Since the tests run in watch mode by default, some users may encounter errors about too many files being open. In this case, it may be beneficial to [install watchman](https://facebook.github.io/watchman/docs/install.html).
 ```sh
 # the tests will run in watch mode by default
 $ npm run test
