@@ -1,4 +1,5 @@
 import Config from "../config";
+// TODO: Write docs on how persisted queries work
 import {
   persistedForkFetch,
   persistedIssuesFetch,
@@ -11,6 +12,7 @@ import {
   persistedIssuesByLabelFetch,
   persistedIssuesByLabelAfterFetch,
   persistedIssuesByLabelBeforeFetch,
+  persistedViewerStars,
 } from "./persistedGraphQL";
 
 const fetchOneGraph = Config.fetchOneGraph;
@@ -608,6 +610,7 @@ const api = {
 
     return issueFetcher(owner, repo, cursor);
   },
+  persistedViewerStars,
   fetchUserForkCount,
   forkRepository,
 };
