@@ -30,6 +30,8 @@ jobs:
         run: |
           git config --global user.name ${GITHUB_ACTOR}
           git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+          env:
+            GITHUB_TOKEN: ${{ secrets.BDOUGIE_TOKEN }}
       - name: npm install and test
         run: |
           npm install
@@ -38,3 +40,5 @@ jobs:
         run: npm run release
       - name: Push tags
         run: git push --follow-tags origin main
+        env:
+          GITHUB_TOKEN: ${{ secrets.BDOUGIE_TOKEN }}
