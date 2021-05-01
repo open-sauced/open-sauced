@@ -1,9 +1,12 @@
 import React, {useState, useEffect} from "react";
-import {FlexCenter} from "../styles/Grid";
+import {Flex, FlexCenter} from "../styles/Grid";
 import {EmptyPlaceholder} from "../styles/EmptyPlaceholder";
 import api from "../lib/apiGraphQL";
 import Card from "./Card";
 import List from "../styles/List";
+import Button from "../styles/Button";
+import Paragraph from "../styles/Paragraph";
+//import Container from "../styles/Container";
 import IssuesListItem from "../components/IssueListItem";
 import {InputButton} from "../styles/Button";
 import {CardPadding, CardHeader} from "../styles/Card";
@@ -13,6 +16,7 @@ import IssuesLoader from "./IssuesLoader";
 function Issues({repoName, owner}) {
   const [issues, setIssues] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [issuesFilter, setIssuesFilter] = useState(false);
   const [issuesLoading, setIssuesLoading] = useState(false);
   const [cursor, setCursor] = useState(null);
   const [totalCount, setTotal] = useState(0);
@@ -21,7 +25,8 @@ function Issues({repoName, owner}) {
 
   useEffect(() => {
     setLoading(true);
-    api.persistedIssuesFetch(owner, repoName).then(response => {
+    const functionName = issuesFilter ? "persistedIssuesByLabelFetch" : "persistedIssuesFetch";
+    api[functionName](owner, repoName).then(response => {
       const {data, totalCount} = response.data.gitHub.repositoryOwner.repository.issues;
       const {hasIssuesEnabled} = response.data.gitHub.repositoryOwner.repository;
       const lastIssue = totalCount > 0 ? data[data.length - 1] : {};
@@ -33,8 +38,10 @@ function Issues({repoName, owner}) {
       setTotal(totalCount);
       setLoading(false);
     });
-  }, []);
-
+  }, [issuesFilter]);
+  const _toggleIssuesFilter = () => {
+    setIssuesFilter(!issuesFilter);
+  };
   const _handleNextIssues = () => {
     setIssuesLoading(true);
     api.fetchRepositoryIssues(owner, repoName, cursor).then(response => {
@@ -71,6 +78,12 @@ function Issues({repoName, owner}) {
       <CardHeader>
         <h1>Issues</h1>
       </CardHeader>
+      <Card style={{paddingBottom: 0, paddingTop: "0.5em"}}>
+        <Flex>
+          <Paragraph>Issues can be filtered by to show good opportunities to assist with this repository.</Paragraph>
+          <Button primary onClick={_toggleIssuesFilter}>{issuesFilter ? "Unfilter" : "Filter" }</Button>
+        </Flex>
+      </Card>
       {totalCount > 0 ? (
         <List>
           {issuesLoading ? (

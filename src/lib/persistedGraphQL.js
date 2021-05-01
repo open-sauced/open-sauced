@@ -90,7 +90,7 @@ async function persistedDeploymentFetch() {
 async function persistedIssuesByLabelFetch(owner, repo) {
   const options = {
     method: "POST",
-    body: JSON.stringify({doc_id: doc_id6, variables: {repo: repo, owner: owner}}),
+    body: JSON.stringify({doc_id: doc_id6, operationName: "IssuesByLabelQuery", variables: {repo: repo, owner: owner}}),
   };
   const response = await fetch(url, options)
     .then(res => res.json())
