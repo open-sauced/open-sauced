@@ -1,12 +1,10 @@
 import React, {useState, useEffect} from "react";
-import {Flex, FlexCenter} from "../styles/Grid";
+import {FlexHeader, FlexCenter} from "../styles/Grid";
 import {EmptyPlaceholder} from "../styles/EmptyPlaceholder";
 import api from "../lib/apiGraphQL";
 import Card from "./Card";
 import List from "../styles/List";
 import Button from "../styles/Button";
-import Paragraph from "../styles/Paragraph";
-//import Container from "../styles/Container";
 import IssuesListItem from "../components/IssueListItem";
 import {InputButton} from "../styles/Button";
 import {CardPadding, CardHeader} from "../styles/Card";
@@ -76,14 +74,14 @@ function Issues({repoName, owner}) {
 
     <Card fitted>
       <CardHeader>
-        <h1>Issues</h1>
+        <FlexHeader>
+          <h1 style={{float:"left"}}>Issues</h1>
+          <Button style={{float:"right"}} primary onClick={_toggleIssuesFilter}>
+            {issuesFilter === true ? "all issues" : "good first issues" }
+          </Button>
+
+        </FlexHeader>
       </CardHeader>
-      <Card style={{paddingBottom: 0, paddingTop: "0.5em"}}>
-        <Flex>
-          <Paragraph>Issues can be filtered by to show good opportunities to assist with this repository.</Paragraph>
-          <Button primary onClick={_toggleIssuesFilter}>{issuesFilter ? "Unfilter" : "Filter" }</Button>
-        </Flex>
-      </Card>
       {totalCount > 0 ? (
         <List>
           {issuesLoading ? (
