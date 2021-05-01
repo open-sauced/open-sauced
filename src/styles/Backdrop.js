@@ -17,15 +17,15 @@ const BackdropContent = styled.div`
   top: 20%;
   overflow: "hidden";
   transition: all 0.3s ease-out;
-  width: "300";
+  width: 300;
   transform: ${(props) => {
     return props.modalOpen ? "translateY(0px)" : "translateY(-1000px)";
   }};
 
   @media (min-width: 600px) {
-    width: 800px;
-    left: 30%;
-    top: 30%;
+    width: 500px;
+    left: 20%;
+    top: 20%;
   }
 `;
 
