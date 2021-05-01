@@ -151,7 +151,6 @@ const ContextStyle = styled(Card)`
     .dot {
       font-size: ${fontSize.large};
       margin: 0;
-      vertical-align: sub;
     }
 
     .name {
