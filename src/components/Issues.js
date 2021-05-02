@@ -21,7 +21,8 @@ function Issues({repoName, owner}) {
 
   useEffect(() => {
     setLoading(true);
-    api.persistedIssuesFetch(owner, repoName).then(response => {
+    api.persistedRepositoryIssuesFetch(owner, repoName).then(response => {
+      console.log(response)
       const {data, totalCount} = response.data.gitHub.repositoryOwner.repository.issues;
       const {hasIssuesEnabled} = response.data.gitHub.repositoryOwner.repository;
       const lastIssue = totalCount > 0 ? data[data.length - 1] : {};

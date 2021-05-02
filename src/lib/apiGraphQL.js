@@ -6,6 +6,8 @@ import {
   persistedGoalFetch,
   persistedRepoDataFetch,
   persistedDeploymentFetch,
+  persistedIssuesAfterFetch,
+  persistedIssuesBeforeFetch,
   persistedIssuesByLabelFetch,
 } from "./persistedGraphQL";
 
@@ -592,6 +594,11 @@ const api = {
   persistedGoalFetch,
   persistedInteractionsFetch,
   persistedIssuesFetch,
+  persistedRepositoryIssuesFetch: (owner, repo, cursor, previous = false) => {
+    const issueFetcher = cursor && previous ? persistedIssuesBeforeFetch : persistedIssuesAfterFetch;
+
+    return issueFetcher(owner, repo, cursor);
+  },
   persistedDeploymentFetch,
   persistedIssuesByLabelFetch,
   fetchUserForkCount,
