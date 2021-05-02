@@ -14,8 +14,8 @@ const doc_id5 = "89a3dc22-4355-494e-9d6f-a29c21e065e0";
 const doc_id6 = "a510812e-ad0d-4181-bda3-805ee2481a83";
 
 // TODO: Move this entire file to an npm package
-function makeFetch(doc_id,requiredVariables=[],operationName=false){
-  return async function(variables=false){
+function makeFetch(doc_id,requiredVariables=[]){
+  return async function(variables={},operationName=false){
     let body = { doc_id };
     if(operationName) body.operationName = operationName;
     // Validate required variables by presence
@@ -38,15 +38,21 @@ function makeFetch(doc_id,requiredVariables=[],operationName=false){
     return response;
   }
 }
-
+const persistedForkFetch = makeFetch(doc_id0,["repoName","repoOwner"]);
+const persistedRepoDataFetch = makeFetch(doc_id1,["repo","owner"]);
+const persistedGoalFetch = makeFetch(doc_id2,["number"]);
+const persistedInteractionsFetch = makeFetch(doc_id3,["repo","owner"]);
+const persistedIssuesFetch = makeFetch(doc_id4,["repo","owner"]);
+const persistedDeploymentFetch = makeFetch(doc_id5);
+const persistedIssuesByLabelFetch = makeFetch(doc_id6,["repo","owner"]);
 export {
-  persistedForkFetch: makeFetch(doc_id0,["repoName","repoOwner"],"FetchUserForkCount"),
-  persistedRepoDataFetch: makeFetch(doc_id1,["repo","owner"]),
-  persistedGoalFetch: makeFetch(doc_id2,["number"]),
-  persistedInteractionsFetch: makeFetch(doc_id3,["repo","owner"]),
-  persistedIssuesFetch: makeFetch(doc_id4,["repo","owner"]),
-  persistedDeploymentFetch: makeFetch(doc_id5),
-  persistedIssuesByLabelFetch: makeFetch(doc_id6,["repo","owner"]), //{repo: repo, owner: owner}
+  persistedForkFetch,
+  persistedRepoDataFetch,
+  persistedGoalFetch,
+  persistedInteractionsFetch,
+  persistedIssuesFetch,
+  persistedDeploymentFetch,
+  persistedIssuesByLabelFetch, //{repo: repo, owner: owner}
 };
 
 /*
