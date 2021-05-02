@@ -6,7 +6,11 @@ import {
   persistedGoalFetch,
   persistedRepoDataFetch,
   persistedDeploymentFetch,
+  persistedIssuesAfterFetch,
+  persistedIssuesBeforeFetch,
   persistedIssuesByLabelFetch,
+  persistedIssuesByLabelAfterFetch,
+  persistedIssuesByLabelBeforeFetch,
 } from "./persistedGraphQL";
 
 const fetchOneGraph = Config.fetchOneGraph;
@@ -592,8 +596,18 @@ const api = {
   persistedGoalFetch,
   persistedInteractionsFetch,
   persistedIssuesFetch,
+  persistedRepositoryIssuesFetch: (owner, repo, cursor, previous = false) => {
+    const issueFetcher = cursor && previous ? persistedIssuesBeforeFetch : persistedIssuesAfterFetch;
+
+    return issueFetcher(owner, repo, cursor);
+  },
   persistedDeploymentFetch,
   persistedIssuesByLabelFetch,
+  persistedRepositoryIssuesByLabelFetch: (owner, repo, cursor, previous = false) => {
+    const issueFetcher = cursor && previous ? persistedIssuesByLabelBeforeFetch : persistedIssuesByLabelAfterFetch;
+
+    return issueFetcher(owner, repo, cursor);
+  },
   fetchUserForkCount,
   forkRepository,
 };
