@@ -21,7 +21,8 @@ function Issues({repoName, owner}) {
 
   useEffect(() => {
     setLoading(true);
-    api.persistedIssuesFetch(owner, repoName).then(response => {
+    api.persistedRepositoryIssuesFetch(owner, repoName).then(response => {
+      console.log(response)
       const {data, totalCount} = response.data.gitHub.repositoryOwner.repository.issues;
       const {hasIssuesEnabled} = response.data.gitHub.repositoryOwner.repository;
       const lastIssue = totalCount > 0 ? data[data.length - 1] : {};
@@ -37,7 +38,7 @@ function Issues({repoName, owner}) {
 
   const _handleNextIssues = () => {
     setIssuesLoading(true);
-    api.fetchRepositoryIssues(owner, repoName, cursor).then(response => {
+    api.persistedRepositoryIssuesFetch(owner, repoName, cursor).then(response => {
       const {data, totalCount} = response.data.gitHub.repositoryOwner.repository.issues;
       const firstIssue = data[data.length - 1];
       const newCursor = firstIssue.cursor;
@@ -51,7 +52,8 @@ function Issues({repoName, owner}) {
 
   const _handlePreviousIssues = () => {
     setIssuesLoading(true);
-    api.fetchRepositoryIssues(owner, repoName, cursor, true).then(response => {
+    api.persistedRepositoryIssuesFetch(owner, repoName, cursor, true).then(response => {
+      console.log(response)
       const {data, totalCount} = response.data.gitHub.repositoryOwner.repository.issues;
       const newCursor = data[0].newCursor;
       setIssues(data);

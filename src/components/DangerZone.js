@@ -7,34 +7,35 @@ import Modal from "./Modal";
 import api from "../lib/apiGraphQL";
 
 function DangerZone({goalId, repoName, note}) {
-  const [deleted, setDeleted] = useState(false);
-  const [deleteModalOpen, setDeleteModalOpen] = useState(false);
+  const [removed, setRemoved] = useState(false);
+  const [removeModalOpen, setRemoveModalOpen] = useState(false);
 
-  const _handleRepoDeletion = () => {
+  const _handleRepoRemoval = () => {
     api
       .updateGoal(goalId, repoName, "CLOSED", note)
       .then(() => {
-        setDeleted(true);
+        setRemoved(true);
       })
       .catch(err => console.log(err));
   };
 
-  return !deleted ? (
+  return !removed ? (
     <Card>
       <Modal
-        modalOpen={deleteModalOpen}
-        setModalOpen={setDeleteModalOpen}
+        modalOpen={removeModalOpen}
+        setModalOpen={setRemoveModalOpen}
       >
         <Card>
-          <h1>Confirm Deletion on Repository: {repoName}?</h1>
-          <Button primary onClick={_handleRepoDeletion}>Confirm</Button>
+          <h1>Confirm Removal</h1>
+          <p>Are you sure you want to remove this repository from your dashboard: <strong>{repoName}?</strong></p>
+          <Button primary onClick={_handleRepoRemoval}>Confirm</Button>
           &nbsp;&nbsp;
-          <Button onClick={() => setDeleteModalOpen(false)}>Cancel</Button>
+          <Button onClick={() => setRemoveModalOpen(false)}>Cancel</Button>
         </Card>
       </Modal>
       <FlexCenter>
-        <Button primary onClick={() => setDeleteModalOpen(true)}>
-          Delete this repository
+        <Button primary onClick={() => setRemoveModalOpen(true)}>
+          Remove from Dashboard
         </Button>
       </FlexCenter>
     </Card>
