@@ -13,7 +13,7 @@ function Contributions({repoName, owner}) {
 
   useEffect(() => {
     setLoading(true);
-    api.persistedInteractionsFetch(owner, repoName).then(response => {
+    api.persistedInteractionsFetch({owner, repo:repoName}).then(response => {
       const {data} = response.data.gitHub.repository.issues;
       setIssues(data);
       setLoading(false);
