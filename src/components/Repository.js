@@ -59,7 +59,6 @@ function Repository({user, match}) {
       .persistedGoalFetch(parseInt(id))
       .then(res => {
         const {id, body} = res.data.gitHub.viewer.repository.issue;
-        console.log(res)
         setNote(body);
         setIssueId(id);
       })
