@@ -75,7 +75,7 @@ function RepositoryGoals({user}) {
             </SpaceBetweenTop>
           </ContextStyle>
           <Cards fitted>
-            <AddRepoForm goalsId={goalsId} onGoalAdded={onGoalAdded} />
+            <AddRepoForm goalsId={goalsId} onGoalAdded={onGoalAdded} goals={repository.issues} />
             {repository.issues.totalCount > 0 ? (
               <ListGoals data={data} goals={repository.issues} />
             ) : (

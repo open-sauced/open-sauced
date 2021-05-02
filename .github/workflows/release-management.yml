@@ -23,18 +23,16 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node-version }}
       - name: set git user
         run: |
           git config --global user.name ${GITHUB_ACTOR}
           git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
-      - name: npm install and test
-        run: |
-          npm install
-          npm test
       - name: Release
         run: npm run release
       - name: Push tags
         run: git push --follow-tags origin main
+        env:
+          GITHUB_TOKEN: ${{ secrets.BDOUGIE_TOKEN }}
