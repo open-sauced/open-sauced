@@ -14,37 +14,37 @@ const doc_id5 = "89a3dc22-4355-494e-9d6f-a29c21e065e0";
 const doc_id6 = "a510812e-ad0d-4181-bda3-805ee2481a83";
 
 // TODO: Move this entire file to an npm package
-function makeFetch(doc_id,requiredVariables=[]){
-  return async function(variables={},operationName=false){
-    let body = { doc_id };
-    if(operationName) body.operationName = operationName;
+function makeFetch(doc_id, requiredVariables = []) {
+  return async function(variables = {}, operationName = false) {
+    const body = {doc_id};
+    if (operationName) body.operationName = operationName;
     // Validate required variables by presence
-    if(requiredVariables.length > 0){
-      if(!variables || variables == undefined) throw "No required variables provided for persisted fetch";
-      let missing = [];
-      for(name of requiredVariables){
-        if(!variables.hasOwnProperty(name)) missing.push(name);
+    if (requiredVariables.length > 0) {
+      if (!variables || variables === undefined) throw "No required variables provided for persisted fetch";
+      const missing = [];
+      for (name of requiredVariables) {
+        if (!variables.hasOwnProperty(name)) missing.push(name);
       }
-      if(missing.length > 0) throw `Missing required variables: ${missing.join(", ")}.`
+      if (missing.length > 0) throw `Missing required variables: ${missing.join(", ")}.`;
     }
-    if(variables) body.variables = variables;
+    if (variables) body.variables = variables;
     const options = {
       method:"POST",
       body: JSON.stringify(body)
     };
     const response = await fetch(url, options)
-    .then(res => res.json())
-    .then(json => json)
+      .then(res => res.json())
+      .then(json => json);
     return response;
-  }
+  };
 }
-const persistedForkFetch = makeFetch(doc_id0,["repoName","repoOwner"]);
-const persistedRepoDataFetch = makeFetch(doc_id1,["repo","owner"]);
-const persistedGoalFetch = makeFetch(doc_id2,["number"]);
-const persistedInteractionsFetch = makeFetch(doc_id3,["repo","owner"]);
-const persistedIssuesFetch = makeFetch(doc_id4,["repo","owner"]);
+const persistedForkFetch = makeFetch(doc_id0, ["repoName", "repoOwner"]);
+const persistedRepoDataFetch = makeFetch(doc_id1, ["repo", "owner"]);
+const persistedGoalFetch = makeFetch(doc_id2, ["number"]);
+const persistedInteractionsFetch = makeFetch(doc_id3, ["repo", "owner"]);
+const persistedIssuesFetch = makeFetch(doc_id4, ["repo", "owner"]);
 const persistedDeploymentFetch = makeFetch(doc_id5);
-const persistedIssuesByLabelFetch = makeFetch(doc_id6,["repo","owner"]);
+const persistedIssuesByLabelFetch = makeFetch(doc_id6, ["repo", "owner"]);
 export {
   persistedForkFetch,
   persistedRepoDataFetch,
