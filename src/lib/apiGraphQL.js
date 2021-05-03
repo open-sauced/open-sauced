@@ -294,7 +294,7 @@ const operationsDoc = `
       viewer {
         repository(name: "open-sauced-goals") {
           id
-          data: object(expression: "master:data.json") {
+          data: object(expression: "HEAD:data.json") {
             id
             ... on GitHubBlob {
               id
