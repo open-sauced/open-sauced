@@ -20,7 +20,8 @@ function Issues({repoName, owner}) {
   const [totalCount, setTotal] = useState(0);
   const [issuesEnabled, setIssuesEnabled] = useState(null);
   const [offset, setOffset] = useState(0);
-
+  const [totalPages, setTotalPages] = useState(0);
+  const [currentPage, setCurrentPage] = useState(0);
   useEffect(() => {
     setLoading(true);
     const functionName = issuesFilter ? "persistedIssuesByLabelFetch" : "persistedIssuesFetch";
@@ -42,7 +43,8 @@ function Issues({repoName, owner}) {
   };
   const _handleNextIssues = () => {
     setIssuesLoading(true);
-    api.persistedRepositoryIssuesFetch(owner, repoName, cursor).then(response => {
+    const functionName = issuesFilter ? "persistedRepositoryIssuesByLabelFetch" : "persistedRepositoryIssuesFetch";
+    api[functionName](owner, repoName, cursor).then(response => {
       const {data, totalCount} = response.data.gitHub.repositoryOwner.repository.issues;
       const firstIssue = data[data.length - 1];
       const newCursor = firstIssue.cursor;
@@ -53,11 +55,14 @@ function Issues({repoName, owner}) {
       setIssuesLoading(false);
     });
   };
-
+  useEffect(() => {
+    setTotalPages(Math.round(totalCount / 5));
+    setCurrentPage(offset / 5 + 1);
+  }, [totalCount, offset]);
   const _handlePreviousIssues = () => {
     setIssuesLoading(true);
-    api.persistedRepositoryIssuesFetch(owner, repoName, cursor, true).then(response => {
-      console.log(response)
+    const functionName = issuesFilter ? "persistedRepositoryIssuesByLabelFetch" : "persistedRepositoryIssuesFetch";
+    api[functionName](owner, repoName, cursor, true).then(response => {
       const {data, totalCount} = response.data.gitHub.repositoryOwner.repository.issues;
       const newCursor = data[0].newCursor;
       setIssues(data);
@@ -67,10 +72,6 @@ function Issues({repoName, owner}) {
       setIssuesLoading(false);
     });
   };
-
-  const totalPages = Math.round(totalCount / 5);
-  const currentPage = offset / 5 + 1;
-
   return owner ? (
 
     <Card fitted>
