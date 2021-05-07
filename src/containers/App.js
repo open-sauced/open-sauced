@@ -57,7 +57,7 @@ function App({handleLogIn, handleLogOut, user, isAdmin, isLoggedIn}) {
       <LocaleContext.Provider value={value}>
         <Switch>
           <Route exact path="/" component={guard(Dashboard)} />
-          <Route path="/repos/:repoOwner/:repoName/" component={guard(Repository)} />
+          <Route path="/repos/:repoOwner/:repoName/:id" component={guard(Repository)} />
           <Route path="/callback" component={guard(Dashboard)} />
           <Route exact path="/logout" render={() => (
             isLoggedIn ? (
