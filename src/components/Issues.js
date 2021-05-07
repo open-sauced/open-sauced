@@ -1,9 +1,10 @@
 import React, {useState, useEffect} from "react";
-import {FlexCenter} from "../styles/Grid";
+import {FlexHeader, FlexCenter} from "../styles/Grid";
 import {EmptyPlaceholder} from "../styles/EmptyPlaceholder";
 import api from "../lib/apiGraphQL";
 import Card from "./Card";
 import List from "../styles/List";
+import Button from "../styles/Button";
 import IssuesListItem from "../components/IssueListItem";
 import {InputButton} from "../styles/Button";
 import {CardPadding, CardHeader} from "../styles/Card";
@@ -13,15 +14,18 @@ import IssuesLoader from "./IssuesLoader";
 function Issues({repoName, owner}) {
   const [issues, setIssues] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [issuesFilter, setIssuesFilter] = useState(false);
   const [issuesLoading, setIssuesLoading] = useState(false);
   const [cursor, setCursor] = useState(null);
   const [totalCount, setTotal] = useState(0);
   const [issuesEnabled, setIssuesEnabled] = useState(null);
   const [offset, setOffset] = useState(0);
-
+  const [totalPages, setTotalPages] = useState(0);
+  const [currentPage, setCurrentPage] = useState(0);
   useEffect(() => {
     setLoading(true);
-    api.persistedRepositoryIssuesFetch(owner, repoName).then(response => {
+    const functionName = issuesFilter ? "persistedIssuesByLabelFetch" : "persistedIssuesFetch";
+    api[functionName](owner, repoName).then(response => {
       const {data, totalCount} = response.data.gitHub.repositoryOwner.repository.issues;
       const {hasIssuesEnabled} = response.data.gitHub.repositoryOwner.repository;
       const lastIssue = totalCount > 0 ? data[data.length - 1] : {};
@@ -33,11 +37,14 @@ function Issues({repoName, owner}) {
       setTotal(totalCount);
       setLoading(false);
     });
-  }, []);
-
+  }, [issuesFilter]);
+  const _toggleIssuesFilter = () => {
+    setIssuesFilter(!issuesFilter);
+  };
   const _handleNextIssues = () => {
     setIssuesLoading(true);
-    api.persistedRepositoryIssuesFetch(owner, repoName, cursor).then(response => {
+    const functionName = issuesFilter ? "persistedRepositoryIssuesByLabelFetch" : "persistedRepositoryIssuesFetch";
+    api[functionName](owner, repoName, cursor).then(response => {
       const {data, totalCount} = response.data.gitHub.repositoryOwner.repository.issues;
       const firstIssue = data[data.length - 1];
       const newCursor = firstIssue.cursor;
@@ -48,10 +55,14 @@ function Issues({repoName, owner}) {
       setIssuesLoading(false);
     });
   };
-
+  useEffect(() => {
+    setTotalPages(Math.round(totalCount / 5));
+    setCurrentPage(offset / 5 + 1);
+  }, [totalCount, offset]);
   const _handlePreviousIssues = () => {
     setIssuesLoading(true);
-    api.persistedRepositoryIssuesFetch(owner, repoName, cursor, true).then(response => {
+    const functionName = issuesFilter ? "persistedRepositoryIssuesByLabelFetch" : "persistedRepositoryIssuesFetch";
+    api[functionName](owner, repoName, cursor, true).then(response => {
       const {data, totalCount} = response.data.gitHub.repositoryOwner.repository.issues;
       const newCursor = data[0].newCursor;
       setIssues(data);
@@ -61,15 +72,17 @@ function Issues({repoName, owner}) {
       setIssuesLoading(false);
     });
   };
-
-  const totalPages = Math.round(totalCount / 5);
-  const currentPage = offset / 5 + 1;
-
   return owner ? (
 
     <Card fitted>
       <CardHeader>
-        <h1>Issues</h1>
+        <FlexHeader>
+          <h1>Issues</h1>
+          <Button primary onClick={_toggleIssuesFilter}>
+            {issuesFilter === true ? "all issues" : "good first issues" }
+          </Button>
+
+        </FlexHeader>
       </CardHeader>
       {totalCount > 0 ? (
         <List>
