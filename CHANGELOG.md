@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.18.11](https://github.com/open-sauced/open-sauced/compare/v0.18.5...v0.18.11) (2021-05-07)
+
+
+### Features
+
+* Adding new Trust Icons ([#938](https://github.com/open-sauced/open-sauced/issues/938)) ([f0d4036](https://github.com/open-sauced/open-sauced/commit/f0d4036d93c6894e612ccc7c631ca7647c9972bc))
+
+
+### Bug Fixes
+
+* 971 pagination for issues ([#977](https://github.com/open-sauced/open-sauced/issues/977)) ([b3c4b6a](https://github.com/open-sauced/open-sauced/commit/b3c4b6a59ca4cb749f802166b5f3806d9488503c))
+* able to add the same repo twice ([#975](https://github.com/open-sauced/open-sauced/issues/975)) ([d10d3a2](https://github.com/open-sauced/open-sauced/commit/d10d3a208427b3b315baa93bd13c67d56e63d95a))
+* Explicitly publish commit with tags  ([#947](https://github.com/open-sauced/open-sauced/issues/947)) ([3fce5ec](https://github.com/open-sauced/open-sauced/commit/3fce5ecb8474531056a2aa48161b9af0b7b48021))
+* Update broken discord links everywhere ([#935](https://github.com/open-sauced/open-sauced/issues/935)) ([93654fb](https://github.com/open-sauced/open-sauced/commit/93654fb65801283385cc423a3e04caced0353db0))
+* working note taking and deletion ([#980](https://github.com/open-sauced/open-sauced/issues/980)) ([d60a6c1](https://github.com/open-sauced/open-sauced/commit/d60a6c1f4c329a0b1ab600ea3aa5c8c223c99296))
+* **styles-card:** fix dot vertical alignment ([#972](https://github.com/open-sauced/open-sauced/issues/972)) ([5c7048c](https://github.com/open-sauced/open-sauced/commit/5c7048c4a345c676c4063bcf6b95593dd4c5ed9e))
+* Patch release-management.yml (testing if this works) ([#945](https://github.com/open-sauced/open-sauced/issues/945)) ([33224c8](https://github.com/open-sauced/open-sauced/commit/33224c87c40063f13f4978ef3664bf496dc3cb14))
+
 ### 0.18.10 (2021-05-01)
 
 ### 0.18.9 (2021-05-01)
