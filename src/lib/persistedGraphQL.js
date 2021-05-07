@@ -12,7 +12,7 @@ const doc_id3 = "c8c187a1-853f-446b-b3fa-b4876447c954"; // IssuesQuery
 const doc_id4 = "8ecd5737-ebba-4807-a20b-4155272500bf"; // IssuesByLabelQuery
 const doc_id5 = "89a3dc22-4355-494e-9d6f-a29c21e065e0"; // FetchDeploymentStatusQuery
 const doc_id6 = "a510812e-ad0d-4181-bda3-805ee2481a83"; // IssuesByLabelQuery
-const doc_id7 = "bbb7ea6c-0d40-4e83-bbcd-3c227a1786c5"; // FetchViewStars
+const doc_id7 = "b685adc3-85dc-46cd-a29f-d6cbc791a98e"; // FetchViewStars
 const doc_id8 = "b582b05d-ddbe-4334-8118-57e0839de311"; // IssuesAfterQuery
 const doc_id9 = "6ff8e5b9-ec3b-41af-acde-9595f2b36980"; // IssuesBeforeQuery
 const doc_id10 = "90e25769-0a60-4144-8728-ee9e29ccb926"; // IssuesByLabelAfterQuery
@@ -152,10 +152,10 @@ async function persistedIssuesByLabelBeforeFetch(owner, repo, cursor) {
   return response;
 }
 
-async function persistedViewerStars(user, queryName) {
+async function persistedViewerStars(user) {
   const options = {
     method: "POST",
-    body: JSON.stringify({doc_id: doc_id7, operationName: queryName, variables: {viewer: user.login}}),
+    body: JSON.stringify({doc_id: doc_id7, variables: {viewer: user.login}}),
   };
   const response = await fetch(url, options)
     .then(res => res.json())

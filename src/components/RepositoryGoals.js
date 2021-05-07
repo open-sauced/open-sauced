@@ -23,7 +23,7 @@ function RepositoryGoals({user}) {
     repository && setGoalsId(repository.id);
 
     user && api
-      .persistedViewerStars(user, "FetchViewerStars")
+      .persistedViewerStars(user)
       .then(res => {
         console.log(res);
       })
