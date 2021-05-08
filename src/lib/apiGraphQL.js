@@ -358,7 +358,7 @@ const api = {
   fetchRepositoryIssues: (owner, repo, cursor, previous = false) => {
     const issueFetcher = cursor && previous ? fetchIssuesBeforeQuery : fetchIssuesAfterQuery;
 
-    return issueFetcher(owner, repo, cursor);
+    return issueFetcher({owner, repo, cursor});
   },
   fetchGoalsQuery,
   fetchMemberStatus,
@@ -375,14 +375,14 @@ const api = {
   persistedRepositoryIssuesFetch: (owner, repo, cursor, previous = false) => {
     const issueFetcher = cursor && previous ? persistedIssuesBeforeFetch : persistedIssuesAfterFetch;
 
-    return issueFetcher(owner, repo, cursor);
+    return issueFetcher({owner, repo, cursor});
   },
   persistedDeploymentFetch,
   persistedIssuesByLabelFetch,
   persistedRepositoryIssuesByLabelFetch: (owner, repo, cursor, previous = false) => {
     const issueFetcher = cursor && previous ? persistedIssuesByLabelBeforeFetch : persistedIssuesByLabelAfterFetch;
 
-    return issueFetcher(owner, repo, cursor);
+    return issueFetcher({owner, repo, cursor});
   },
   fetchUserForkCount,
   forkRepository,
