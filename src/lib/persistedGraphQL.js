@@ -18,8 +18,8 @@ const doc_id10 = "90e25769-0a60-4144-8728-ee9e29ccb926"; // IssuesByLabelAfterQu
 const doc_id11 = "407cef3b-eba4-4caa-9a9e-506b25e3f0c9"; // IssuesByLabelBeforeQuery
 
 // TODO: Move this entire file to an npm package
-function makeFetch(doc_id, requiredVariables = []) {
-  return async function(variables = {}, operationName = false) {
+function makeFetch(doc_id, requiredVariables = [], operationName = false) {
+  return async function(variables = {}) {
     const body = {doc_id};
     if (operationName) body.operationName = operationName;
     // Validate required variables by presence
@@ -42,17 +42,17 @@ function makeFetch(doc_id, requiredVariables = []) {
     return response;
   };
 }
-const persistedForkFetch = makeFetch(doc_id0, ["repoName", "repoOwner"]);
+const persistedForkFetch = makeFetch(doc_id0, ["repoName", "repoOwner"], "FetchUserForkCount");
 const persistedRepoDataFetch = makeFetch(doc_id1, ["repo", "owner"]);
 const persistedGoalFetch = makeFetch(doc_id2, ["number"]);
 const persistedInteractionsFetch = makeFetch(doc_id3, ["repo", "owner"]);
 const persistedIssuesFetch = makeFetch(doc_id4, ["repo", "owner"]);
 const persistedDeploymentFetch = makeFetch(doc_id5);
-const persistedIssuesByLabelFetch = makeFetch(doc_id6, ["repo", "owner"]);
-const persistedIssuesAfterFetch = makeFetch(doc_id8,["repo","owner","cursor"]);
-const persistedIssuesBeforeFetch = makeFetch(doc_id9,["repo","owner","cursor"]);
+const persistedIssuesByLabelFetch = makeFetch(doc_id6, ["repo", "owner"], "IssuesByLabelQuery");
+const persistedIssuesAfterFetch = makeFetch(doc_id8, ["repo", "owner", "cursor"]);
+const persistedIssuesBeforeFetch = makeFetch(doc_id9, ["repo", "owner", "cursor"]);
 const persistedIssuesByLabelAfterFetch = makeFetch(doc_id10, ["repo", "owner", "cursor"]);
-const persistedIssuesByLabelBeforeFetch = makeFetch(doc_id11,["repo", "owner", "cursor"]);
+const persistedIssuesByLabelBeforeFetch = makeFetch(doc_id11, ["repo", "owner", "cursor"]);
 
 export {
   persistedForkFetch,
