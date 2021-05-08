@@ -8,7 +8,7 @@ import {isValidRepoUrl} from "../lib/util";
 import {repoStatusCode} from "../lib/repoStatusCode";
 import {ErrorMessage} from "../styles/Typography";
 
-function AddRepoForm({goalsId, onGoalAdded}) {
+function AddRepoForm({goalsId, onGoalAdded, goals}) {
   const urlRef = useRef(null);
   const [error, setError] = useState(null);
 
@@ -22,10 +22,17 @@ function AddRepoForm({goalsId, onGoalAdded}) {
 
     const [isValid, repoUrl] = isValidRepoUrl(urlRef.current.value.replace(/\s+/g, ""));
     const statusCode = await repoStatusCode(repoUrl);
+    const goalExists = goals.nodes.find(goal => goal.full_name === repoUrl);
 
     if (!isValid) {
       urlRef.current.focus();
       setError("Invalid GitHub repository!");
+      return;
+    }
+
+    if (goalExists) {
+      urlRef.current.focus();
+      setError("Already exists!");
       return;
     }
 

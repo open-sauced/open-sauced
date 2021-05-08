@@ -6,7 +6,11 @@ import {
   persistedGoalFetch,
   persistedRepoDataFetch,
   persistedDeploymentFetch,
+  persistedIssuesAfterFetch,
+  persistedIssuesBeforeFetch,
   persistedIssuesByLabelFetch,
+  persistedIssuesByLabelAfterFetch,
+  persistedIssuesByLabelBeforeFetch,
 } from "./persistedGraphQL";
 
 const fetchOneGraph = Config.fetchOneGraph;
@@ -111,7 +115,7 @@ const operationsDoc = `
       viewer {
         repository(name: "open-sauced-goals") {
           id
-          data: object(expression: "master:data.json") {
+          data: object(expression: "HEAD:data.json") {
             id
             ... on GitHubBlob {
               id
@@ -368,8 +372,18 @@ const api = {
   persistedGoalFetch,
   persistedInteractionsFetch,
   persistedIssuesFetch,
+  persistedRepositoryIssuesFetch: (owner, repo, cursor, previous = false) => {
+    const issueFetcher = cursor && previous ? persistedIssuesBeforeFetch : persistedIssuesAfterFetch;
+
+    return issueFetcher(owner, repo, cursor);
+  },
   persistedDeploymentFetch,
   persistedIssuesByLabelFetch,
+  persistedRepositoryIssuesByLabelFetch: (owner, repo, cursor, previous = false) => {
+    const issueFetcher = cursor && previous ? persistedIssuesByLabelBeforeFetch : persistedIssuesByLabelAfterFetch;
+
+    return issueFetcher(owner, repo, cursor);
+  },
   fetchUserForkCount,
   forkRepository,
 };
