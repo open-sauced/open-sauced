@@ -1,4 +1,4 @@
-import React, {useEffect, useContext} from "react";
+import React, {useState, useEffect, useContext} from "react";
 import CreateGoals from "./CreateGoals";
 import {SpaceBetweenTop} from "../styles/Grid";
 import ListGoals from "./ListGoals";
@@ -15,6 +15,7 @@ import api from "../lib/apiGraphQL";
 
 function RepositoryGoals({user}) {
   const {goalsId, setGoalsId} = useContext(LocaleContext);
+  const [stars, setStars] = useState({});
   const [state, dispatch] = usePersistentStateReducer("goalsState", goalsReducer);
 
   const {repository, error} = goalsReducer(state, {type: "GET"});
@@ -22,14 +23,22 @@ function RepositoryGoals({user}) {
   useEffect(() => {
     repository && setGoalsId(repository.id);
 
-    user && api
-      .persistedViewerStars(user)
-      .then(res => {
-        console.log(res);
-      })
-      .catch(e => {
-        console.log(e);
-      });
+    user &&
+      api
+        .persistedViewerStars(user)
+        .then(res => {
+          const {
+            data: {
+              gitHub: {
+                user: {starredRepositories},
+              },
+            },
+          } = res;
+          setStars(starredRepositories);
+        })
+        .catch(e => {
+          console.log(e);
+        });
   }, [goalsId]);
 
   const onRepoCreation = (id, repo) => {
@@ -59,6 +68,7 @@ function RepositoryGoals({user}) {
 
   const data = repository && repository.data && repository.data.text && JSON.parse(repository.data.text);
 
+  stars.edges && console.log(stars.edges)
   return (
     <section>
       {repository && repository.issues ? (
@@ -84,6 +94,11 @@ function RepositoryGoals({user}) {
               <Illustration alt="done checking image" src={doneChecking} />
             </SpaceBetweenTop>
           </ContextStyle>
+
+          {stars.edges && stars.edges.map((star) => (
+            <Cards key={star.node.name}>{star.node.nameWithOwner}</Cards>
+          ))}
+
           <Cards fitted>
             <AddRepoForm goalsId={goalsId} onGoalAdded={onGoalAdded} goals={repository.issues} />
             {repository.issues.totalCount > 0 ? (
@@ -93,15 +108,13 @@ function RepositoryGoals({user}) {
                 <div style={{color: "grey"}}>
                   <ChecklistIcon size="large" verticalAlign="middle" />
                 </div>
-                <div className="helper">
-                  No Goals created
-                </div>
+                <div className="helper">No Goals created</div>
               </EmptyPlaceholder>
             )}
           </Cards>
         </React.Fragment>
       ) : (
-        <CreateGoals installNeeded={!!error} user={user && user || ""} onRepoCreation={onRepoCreation} />
+        <CreateGoals installNeeded={!!error} user={(user && user) || ""} onRepoCreation={onRepoCreation} />
       )}
     </section>
   );
