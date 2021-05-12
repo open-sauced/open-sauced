@@ -67,7 +67,7 @@
     "strip-ansi": "6.0.0",
     "style-loader": "2.0.0",
     "stylefmt": "^6.0.3",
-    "stylelint": "^13.0.0",
+    "stylelint": "^13.13.1",
     "stylelint-config-standard": "^20.0.0",
     "stylelint-declaration-block-order": "^0.2.0",
     "terser-webpack-plugin": "^4.2.3",
