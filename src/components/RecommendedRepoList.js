@@ -1,22 +1,21 @@
 import React from "react";
-import {FlexStart, FloatRight, FloatLeft, Flex, FlexHeader, FlexCenter} from "../styles/Grid";
-import {StarIcon} from "@primer/octicons-react";
+import {FloatRight, FloatLeft, Flex, FlexHeader, FlexCenter} from "../styles/Grid";
 import {plus} from "../icons";
-import {humanizeNumber} from "../lib/humanizeNumber";
 import {truncate} from "../lib/truncate";
 import Avatar from "../styles/Avatar";
 
-function RecommendedRepoList({goal, stars}) {
+function RecommendedRepoList({goal}) {
   return (
     <FlexHeader>
       <FloatLeft>
         <FlexCenter>
-          <Avatar small
+          <Avatar
+            small
             alt="avatar"
-            src={`https://avatars.githubusercontent.com/${goal.full_name.split("/")[0].replace(/\s+/g, "")}`}
+            src={`https://avatars.githubusercontent.com/${goal.nameWithOwner.split("/")[0].replace(/\s+/g, "")}`}
           />
           <Flex className="details">
-            <p>{truncate(goal.full_name.replace(/\s+/g, ""), 60)}</p>
+            <p>{truncate(goal.nameWithOwner.split(/\s+/g, ""), 60)}</p>
           </Flex>
         </FlexCenter>
       </FloatLeft>

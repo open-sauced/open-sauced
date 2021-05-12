@@ -1,13 +1,12 @@
 import React, {useState, useEffect, useContext} from "react";
 import CreateGoals from "./CreateGoals";
-import {SpaceBetweenTop} from "../styles/Grid";
+import {SpaceBetweenTop, Flex, FlexColumn} from "../styles/Grid";
 import ListGoals from "./ListGoals";
 import LocaleContext from "../Context";
-import Illustration from "../styles/Illustration";
 import AddRepoForm from "../components/AddRepoForm";
 import Cards from "./Card";
-import {doneChecking} from "../illustrations";
-import {ContextStyle} from "../styles/Card";
+import RecommendedRepoList from "./RecommendedRepoList";
+import {RepositoryContext} from "../styles/Card";
 import {goalsReducer, usePersistentStateReducer} from "../lib/reducers";
 import {EmptyPlaceholder} from "../styles/EmptyPlaceholder";
 import {ChecklistIcon} from "@primer/octicons-react";
@@ -68,36 +67,39 @@ function RepositoryGoals({user}) {
 
   const data = repository && repository.data && repository.data.text && JSON.parse(repository.data.text);
 
-  stars.edges && console.log(stars.edges)
+  stars.edges && console.log(stars.edges);
   return (
     <section>
       {repository && repository.issues ? (
         <React.Fragment>
-          <ContextStyle>
-            <SpaceBetweenTop>
-              <div>
-                {" "}
-                <h1>Dashboard</h1>
-                <p>
-                  Open Sauced is a project to track the contributions you would like to work on. Add a repository you
-                  are interested contributing to using the Repository's owner and name, also known as the
-                  "nameWithOwner" format.
-                </p>
-                <small>
-                  <em>
-                    <a href="https://opensource.guide/" rel="noreferrer" target="_blank">
-                      Learn about open source
-                    </a>
-                  </em>
-                </small>
-              </div>
-              <Illustration alt="done checking image" src={doneChecking} />
-            </SpaceBetweenTop>
-          </ContextStyle>
+          <Flex>
+            <RepositoryContext>
+              <SpaceBetweenTop>
+                <div>
+                  {" "}
+                  <h1>Dashboard</h1>
+                  <p>
+                    Open Sauced is a project to track the contributions you would like to work on. Add a repository you
+                    are interested contributing to using the Repository's owner and name, also known as the
+                    "nameWithOwner" format.
+                  </p>
+                  <small>
+                    <em>
+                      <a href="https://opensource.guide/" rel="noreferrer" target="_blank">
+                        Learn about open source
+                      </a>
+                    </em>
+                  </small>
+                </div>
+              </SpaceBetweenTop>
+            </RepositoryContext>
 
-          {stars.edges && stars.edges.map((star) => (
-            <Cards key={star.node.name}>{star.node.nameWithOwner}</Cards>
-          ))}
+            <FlexColumn style={{flex: 1}}>
+              <Cards>
+                {stars.edges && stars.edges.map(star => <RecommendedRepoList key={star.node.name} goal={star.node} />)}
+              </Cards>
+            </FlexColumn>
+          </Flex>
 
           <Cards fitted>
             <AddRepoForm goalsId={goalsId} onGoalAdded={onGoalAdded} goals={repository.issues} />
