@@ -1,0 +1,2 @@
+- Please consider providing images smaller than 5mb.
+- Please consider opening a discussion for things you would like to see documented.
