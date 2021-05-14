@@ -35,7 +35,7 @@ function Repository({user, match}) {
 
   useEffect(() => {
     api
-      .persistedRepoDataFetch(repoOwner, repoName)
+      .persistedRepoDataFetch({owner:repoOwner, repo:repoName})
       .then(res => {
         const {errors, data} = res;
 
@@ -56,7 +56,7 @@ function Repository({user, match}) {
       });
 
     api
-      .persistedGoalFetch(parseInt(id))
+      .persistedGoalFetch({number:parseInt(id)})
       .then(res => {
         const {id, body} = res.data.gitHub.viewer.repository.issue;
         setNote(body);
@@ -67,7 +67,7 @@ function Repository({user, match}) {
       });
 
     api
-      .persistedForkFetch(repoName, repoOwner, "FetchUserForkCount")
+      .persistedForkFetch({repoName, repoOwner}, "FetchUserForkCount")
       .then(({data, errors}) => {
         if (errors && errors.length > 0) {
           setError(`"${errors[0].message}"`);
@@ -84,7 +84,7 @@ function Repository({user, match}) {
     setIsForkLoading(true);
 
     api
-      .persistedForkFetch(repoName, repoOwner, "ForkRepository")
+      .persistedForkFetch({repoName, repoOwner}, "ForkRepository")
       .then(res => {
         const {errors} = res;
 

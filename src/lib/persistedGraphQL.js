@@ -1,6 +1,6 @@
 // This file is temporary and meant to be a workaround for GitHub App limitations
 // https://github.com/open-sauced/open-sauced/pull/699#issuecomment-649126860
-//
+
 const url = "https://serve.onegraph.com/graphql?app_id=06238984-0a96-4774-95ad-d7b654c980c5";
 
 // variables are generically labelled for easy updating.
@@ -18,138 +18,41 @@ const doc_id10 = "90e25769-0a60-4144-8728-ee9e29ccb926"; // IssuesByLabelAfterQu
 const doc_id11 = "407cef3b-eba4-4caa-9a9e-506b25e3f0c9"; // IssuesByLabelBeforeQuery
 
 // TODO: Move this entire file to an npm package
-
-async function persistedForkFetch(repo, owner, queryName) {
-  const options = {
-    method: "POST",
-    body: JSON.stringify({doc_id: doc_id0, operationName: queryName, variables: {repoName: repo, repoOwner: owner}}),
+function makeFetch(doc_id, requiredVariables = [], operationName = false) {
+  return async function(variables = {}) {
+    const body = {doc_id};
+    if (operationName) body.operationName = operationName;
+    // Validate required variables by presence
+    if (requiredVariables.length > 0) {
+      if (!variables || variables === undefined) throw "No required variables provided for persisted fetch";
+      const missing = [];
+      for (name of requiredVariables) {
+        if (!variables.hasOwnProperty(name)) missing.push(name);
+      }
+      if (missing.length > 0) throw `Missing required variables: ${missing.join(", ")}.`;
+    }
+    if (variables) body.variables = variables;
+    const options = {
+      method:"POST",
+      body: JSON.stringify(body)
+    };
+    const response = await fetch(url, options)
+      .then(res => res.json())
+      .then(json => json);
+    return response;
   };
-  const response = await fetch(url, options)
-    .then(res => res.json())
-    .then(json => json);
-
-  return response;
 }
-
-async function persistedRepoDataFetch(owner, repo) {
-  const options = {
-    method: "POST",
-    body: JSON.stringify({doc_id: doc_id1, variables: {repo: repo, owner: owner}}),
-  };
-  const response = await fetch(url, options)
-    .then(res => res.json())
-    .then(json => json);
-
-  return response;
-}
-
-async function persistedGoalFetch(number) {
-  const options = {
-    method: "POST",
-    body: JSON.stringify({doc_id: doc_id2, variables: {number: number}}),
-  };
-  const response = await fetch(url, options)
-    .then(res => res.json())
-    .then(json => json);
-
-  return response;
-}
-
-async function persistedInteractionsFetch(owner, repo) {
-  const options = {
-    method: "POST",
-    body: JSON.stringify({doc_id: doc_id3, variables: {repo: repo, owner: owner}}),
-  };
-  const response = await fetch(url, options)
-    .then(res => res.json())
-    .then(json => json);
-
-  return response;
-}
-
-async function persistedIssuesFetch(owner, repo) {
-  const options = {
-    method: "POST",
-    body: JSON.stringify({doc_id: doc_id4, variables: {repo: repo, owner: owner}}),
-  };
-  const response = await fetch(url, options)
-    .then(res => res.json())
-    .then(json => json);
-
-  return response;
-}
-
-async function persistedIssuesAfterFetch(owner, repo, cursor) {
-  const options = {
-    method: "POST",
-    body: JSON.stringify({doc_id: doc_id8, variables: {repo: repo, owner: owner, cursor: cursor}}),
-  };
-  const response = await fetch(url, options)
-    .then(res => res.json())
-    .then(json => json);
-
-  return response;
-}
-
-async function persistedIssuesBeforeFetch(owner, repo, cursor) {
-  const options = {
-    method: "POST",
-    body: JSON.stringify({doc_id: doc_id9, variables: {repo: repo, owner: owner, cursor: cursor}}),
-  };
-  const response = await fetch(url, options)
-    .then(res => res.json())
-    .then(json => json);
-
-  return response;
-}
-
-async function persistedDeploymentFetch() {
-  const options = {
-    method: "POST",
-    body: JSON.stringify({doc_id: doc_id5}),
-  };
-  const response = await fetch(url, options)
-    .then(res => res.json())
-    .then(json => json);
-
-  return response;
-}
-
-async function persistedIssuesByLabelFetch(owner, repo, queryName) {
-  const options = {
-    method: "POST",
-    body: JSON.stringify({doc_id: doc_id6, operationName: "IssuesByLabelQuery", variables: {repo: repo, owner: owner}}),
-  };
-  const response = await fetch(url, options)
-    .then(res => res.json())
-    .then(json => json);
-
-  return response;
-}
-
-async function persistedIssuesByLabelAfterFetch(owner, repo, cursor) {
-  const options = {
-    method: "POST",
-    body: JSON.stringify({doc_id: doc_id10, variables: {repo: repo, owner: owner, cursor: cursor}}),
-  };
-  const response = await fetch(url, options)
-    .then(res => res.json())
-    .then(json => json);
-
-  return response;
-}
-
-async function persistedIssuesByLabelBeforeFetch(owner, repo, cursor) {
-  const options = {
-    method: "POST",
-    body: JSON.stringify({doc_id: doc_id11, variables: {repo: repo, owner: owner, cursor: cursor}}),
-  };
-  const response = await fetch(url, options)
-    .then(res => res.json())
-    .then(json => json);
-
-  return response;
-}
+const persistedForkFetch = makeFetch(doc_id0, ["repoName", "repoOwner"], "FetchUserForkCount");
+const persistedRepoDataFetch = makeFetch(doc_id1, ["repo", "owner"]);
+const persistedGoalFetch = makeFetch(doc_id2, ["number"]);
+const persistedInteractionsFetch = makeFetch(doc_id3, ["repo", "owner"]);
+const persistedIssuesFetch = makeFetch(doc_id4, ["repo", "owner"]);
+const persistedDeploymentFetch = makeFetch(doc_id5);
+const persistedIssuesByLabelFetch = makeFetch(doc_id6, ["repo", "owner"], "IssuesByLabelQuery");
+const persistedIssuesAfterFetch = makeFetch(doc_id8, ["repo", "owner", "cursor"]);
+const persistedIssuesBeforeFetch = makeFetch(doc_id9, ["repo", "owner", "cursor"]);
+const persistedIssuesByLabelAfterFetch = makeFetch(doc_id10, ["repo", "owner", "cursor"]);
+const persistedIssuesByLabelBeforeFetch = makeFetch(doc_id11, ["repo", "owner", "cursor"]);
 
 export {
   persistedForkFetch,
