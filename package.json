@@ -88,16 +88,16 @@
     "whatwg-fetch": "3.6.2"
   },
   "dependencies": {
-    "@primer/components": "^15.2.2",
+    "@primer/components": "^28.0.3",
     "@primer/octicons-react": "^14.1.0",
     "apollo-boost": "^0.4.9",
     "contrast": "^1.0.1",
-    "dayjs": "^1.8.35",
-    "graphql": "^14.5.8",
-    "humanize-duration": "^3.23.0",
+    "dayjs": "^1.10.4",
+    "graphql": "^14.7.0",
+    "humanize-duration": "^3.26.0",
     "lodash": "^4.17.21",
-    "onegraph-apollo-client": "^2.1.0",
-    "onegraph-auth": "^3.2.0",
+    "onegraph-apollo-client": "^3.1.2",
+    "onegraph-auth": "^3.3.2",
     "promisingagent": "5.3.2",
     "react": "^17.0.2",
     "react-apollo": "^3.1.5",
@@ -107,8 +107,8 @@
     "react-markdown": "^6.0.2",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
-    "styled-components": "^4.4.1",
-    "swr": "^0.2.0"
+    "styled-components": "^5.3.0",
+    "swr": "^0.5.6"
   },
   "scripts": {
     "start": "node scripts/start.js",
