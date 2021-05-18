@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 0.19.1 (2021-05-18)
+
 ### 0.18.12 (2021-05-07)
 
 ### [0.18.11](https://github.com/open-sauced/open-sauced/compare/v0.18.5...v0.18.11) (2021-05-07)
