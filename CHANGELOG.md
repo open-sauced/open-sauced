@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 0.20.2 (2021-05-19)
+
+
+### Bug Fixes
+
+* Add checkout to the release bump ([4e844a0](https://github.com/open-sauced/open-sauced/commit/4e844a001bda9186fea9349ccc7b400ac7907461))
+
 ### 0.19.1 (2021-05-18)
 
 ### 0.18.12 (2021-05-07)
