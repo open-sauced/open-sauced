@@ -8,6 +8,7 @@ on:
 
 jobs:
   build:
+    name: 🛠 BUILD
     runs-on: ubuntu-latest
 
     strategy:
@@ -33,3 +34,27 @@ jobs:
         npm test
       env:
         CI: true
+    
+  release: 
+    name: 💍 Semantic Release
+
+    needs: [build]
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push'
+
+    steps: 
+      - name: set git user
+        run: |
+          git config --global user.name ${GITHUB_ACTOR}
+          git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: npm install and test
+        run: |
+          npm install
+      - name: Release
+        run: |
+          npm run release
+          git push --follow-tags origin main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
