@@ -119,7 +119,7 @@
     "build-storybook": "build-storybook --no-dll",
     "lint": "eslint .",
     "lint:fix": "eslint --fix --ext .js,.jsx .",
-    "release": "standard-version --tag-prefix="
+    "release": "standard-version --git-tag-fallback"
   },
   "jest": {
     "moduleFileExtensions": [

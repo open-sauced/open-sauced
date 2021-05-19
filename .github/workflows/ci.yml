@@ -8,6 +8,7 @@ on:
 
 jobs:
   build:
+    name: 🛠 BUILD
     runs-on: ubuntu-latest
 
     strategy:
@@ -33,16 +34,27 @@ jobs:
         npm test
       env:
         CI: true
-        
-  update_draft_release:
-    name: 📝 Update release notes
-    if: github.event_name == 'push'
+    
+  release: 
+    name: 💍 Semantic Release
+
+    needs: [build]
     runs-on: ubuntu-latest
-    steps:
-      # Drafts your next Release notes as Pull Requests are merged into "master"
-      - name: Update release notes 🚀
-        uses: toolmantim/release-drafter@v5.15.0
-        with:
-          config-name: release-notes.yml
+    if: github.event_name == 'push'
+
+    steps: 
+      - name: set git user
+        run: |
+          git config --global user.name ${GITHUB_ACTOR}
+          git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: npm install and test
+        run: |
+          npm install
+      - name: Release
+        run: |
+          npm run release
+          git push --follow-tags origin main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
