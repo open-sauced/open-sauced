@@ -65,7 +65,7 @@ npm run clean
 
 ### 📙 Storybook
 
-Storybook is being leveraged to mock out visual React components. The latest version of the design system can be found at this [url](https://sauced-components.netlify.app/).
+Storybook is being leveraged to mock out visual React components. The latest version of the design system can be found at this [URL](https://sauced-components.netlify.app/).
 
 ```sh
 npm run storybook
