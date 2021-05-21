@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 0.20.4 (2021-05-21)
+
+
+### Bug Fixes
+
+* **actions:** removed failing production cache and updated npm to yarn compatible lockfiles ([#1012](https://github.com/open-sauced/open-sauced/issues/1012)) ([6b80a2d](https://github.com/open-sauced/open-sauced/commit/6b80a2d4b1d930bcc87db1dc02fb52ef8eda1e16))
+
 ### 0.20.3 (2021-05-21)
 
 ### 0.20.2 (2021-05-19)
