@@ -153,7 +153,7 @@ function Repository({user, match}) {
                       <span className="dot" style={{color: language.color}}>
                         •
                       </span>
-                      <span className="name">{language.name}</span>
+                      repo<span className="name">{language.name}</span>
                     </span>
                   ))
                 ) : (

@@ -13,6 +13,7 @@ import {
   persistedViewerStars,
   persistedIssuesByLabelAfterFetch,
   persistedIssuesByLabelBeforeFetch,
+  persistedViewerStars,
 } from "./persistedGraphQL";
 
 const fetchOneGraph = Config.fetchOneGraph;
@@ -300,7 +301,7 @@ const operationsDoc = `
       viewer {
         repository(name: "open-sauced-goals") {
           id
-          data: object(expression: "master:data.json") {
+          data: object(expression: "HEAD:data.json") {
             id
             ... on GitHubBlob {
               id
@@ -611,6 +612,7 @@ const api = {
 
     return issueFetcher(owner, repo, cursor);
   },
+  persistedViewerStars,
   fetchUserForkCount,
   forkRepository,
 };
