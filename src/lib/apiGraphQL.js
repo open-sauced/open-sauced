@@ -13,7 +13,6 @@ import {
   persistedViewerStars,
   persistedIssuesByLabelAfterFetch,
   persistedIssuesByLabelBeforeFetch,
-  persistedViewerStars,
 } from "./persistedGraphQL";
 
 const fetchOneGraph = Config.fetchOneGraph;
@@ -606,7 +605,6 @@ const api = {
   },
   persistedDeploymentFetch,
   persistedIssuesByLabelFetch,
-  persistedViewerStars,
   persistedRepositoryIssuesByLabelFetch: (owner, repo, cursor, previous = false) => {
     const issueFetcher = cursor && previous ? persistedIssuesByLabelBeforeFetch : persistedIssuesByLabelAfterFetch;
 

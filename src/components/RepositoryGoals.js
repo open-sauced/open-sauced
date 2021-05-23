@@ -11,6 +11,7 @@ import {goalsReducer, usePersistentStateReducer} from "../lib/reducers";
 import {EmptyPlaceholder} from "../styles/EmptyPlaceholder";
 import {ChecklistIcon} from "@primer/octicons-react";
 import api from "../lib/apiGraphQL";
+import {fontSize} from "../styles/variables";
 
 function RepositoryGoals({user}) {
   const {goalsId, setGoalsId} = useContext(LocaleContext);
@@ -67,7 +68,6 @@ function RepositoryGoals({user}) {
 
   const data = repository && repository.data && repository.data.text && JSON.parse(repository.data.text);
 
-  stars.edges && console.log(stars.edges);
   return (
     <section>
       {repository && repository.issues ? (
@@ -96,7 +96,8 @@ function RepositoryGoals({user}) {
 
             <FlexColumn style={{flex: 1}}>
               <Cards>
-                {stars.edges && stars.edges.map(star => <RecommendedRepoList key={star.node.name} goal={star.node} />)}
+                <h3 style={{fontSize: fontSize.default}}>Repo Recommendations</h3>
+                {stars.edges && stars.edges.map(star => <RecommendedRepoList key={star.node.name} goal={star.node} goalsId={goalsId} />)}
               </Cards>
             </FlexColumn>
           </Flex>

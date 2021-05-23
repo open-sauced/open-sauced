@@ -3,28 +3,43 @@ import {FloatRight, FloatLeft, Flex, FlexHeader, FlexCenter} from "../styles/Gri
 import {plus} from "../icons";
 import {truncate} from "../lib/truncate";
 import Avatar from "../styles/Avatar";
+import api from "../lib/apiGraphQL";
 
-function RecommendedRepoList({goal}) {
+function RecommendedRepoList({goal, goalsId}) {
+  const _handleGoalCreation = async(goal) => {
+
+    const repoUrl = `https://github.com/${goal}`
+
+    api
+      .createGoal(goalsId, repoUrl, null)
+      .then(response => {
+        console.log(response)
+      })
+      .catch(e => console.error(e));
+  };
+
   return (
-    <FlexHeader>
-      <FloatLeft>
-        <FlexCenter>
-          <Avatar
-            small
-            alt="avatar"
-            src={`https://avatars.githubusercontent.com/${goal.nameWithOwner.split("/")[0].replace(/\s+/g, "")}`}
-          />
-          <Flex className="details">
-            <p>{truncate(goal.nameWithOwner.split(/\s+/g, ""), 60)}</p>
-          </Flex>
-        </FlexCenter>
-      </FloatLeft>
-      <FloatRight>
-        <FlexCenter>
-          <img alt="pointing right icon" src={plus} />
-        </FlexCenter>
-      </FloatRight>
-    </FlexHeader>
+    <div>
+      <FlexHeader>
+        <FloatLeft>
+          <FlexCenter>
+            <Avatar
+              small
+              alt="avatar"
+              src={`https://avatars.githubusercontent.com/${goal.nameWithOwner.split("/")[0].replace(/\s+/g, "")}`}
+            />
+            <Flex className="details">
+              <p>{truncate(goal.nameWithOwner, 60)}</p>
+            </Flex>
+          </FlexCenter>
+        </FloatLeft>
+        <FloatRight>
+          <FlexCenter>
+            <a onClick={_handleGoalCreation(goal.nameWithOwner)} href="#"><img alt="pointing right icon" src={plus} /></a>
+          </FlexCenter>
+        </FloatRight>
+      </FlexHeader>
+    </div>
   );
 }
 

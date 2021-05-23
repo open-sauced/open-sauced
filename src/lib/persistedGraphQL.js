@@ -128,18 +128,6 @@ async function persistedIssuesByLabelFetch(owner, repo, queryName) {
   return response;
 }
 
-async function persistedViewerStars(user, queryName) {
-  const options = {
-    method: "POST",
-    body: JSON.stringify({doc_id: doc_id7, operationName: queryName, variables: {viewer: user.login}}),
-  };
-  const response = await fetch(url, options)
-    .then(res => res.json())
-    .then(json => json);
-
-  return response;
-}
-
 async function persistedIssuesByLabelAfterFetch(owner, repo, cursor) {
   const options = {
     method: "POST",
