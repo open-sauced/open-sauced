@@ -37,9 +37,9 @@ function absoluteUrlValidator(url) {
 
     const [owner, repo] = relativeRepoUrl.split("/");
 
-    if (!url.toLowerCase().includes("github.com"))
+    if (urlObject.hostname !== "github.com") {
       return [false, null];
-
+    }
     if (!owner || !repo || !(urlObject.protocol === "http:" || urlObject.protocol === "https:")) {
       return [false, null];
     }
