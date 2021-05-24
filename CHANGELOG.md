@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 0.20.5 (2021-05-24)
+
+
+### Bug Fixes
+
+* bump FetchGoals to 50 ([#1015](https://github.com/open-sauced/open-sauced/issues/1015)) ([20ccf8f](https://github.com/open-sauced/open-sauced/commit/20ccf8f18b091bcadcd7b88573cc04c6cab5e8a5))
+
 ### 0.20.4 (2021-05-21)
 
 
