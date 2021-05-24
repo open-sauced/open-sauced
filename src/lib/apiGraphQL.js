@@ -123,7 +123,7 @@ const operationsDoc = `
             }
           }
           issues(
-            first: 10
+            first: 50
             states: OPEN
             orderBy: { direction: DESC, field: CREATED_AT }
           ) {
