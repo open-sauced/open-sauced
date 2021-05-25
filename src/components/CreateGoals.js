@@ -24,7 +24,7 @@ function CreateApp() {
 }
 
 function InstallApp({user}) {
-  const repoUrl = "https://github.com/" + user.login + "/open-sauced-goals";
+  const repoUrl = `https://github.com/${user.login}/open-sauced-goals`;
   return (
     <React.Fragment>
       <h1>Install the GitHub App</h1>
