@@ -5,13 +5,13 @@ import Config from "./config";
 import {getUserFromJwt} from "./lib/identityActions";
 import "./index.css";
 import registerServiceWorker from "./registerServiceWorker";
-import OneGraphApolloClient from "onegraph-apollo-client";
+import ApolloClient from "apollo-boost";
 import {ApolloProvider} from "react-apollo";
 import api from "./lib/apiGraphQL";
 import {getAppVersion} from "./lib/appVersion";
 import {validateToken} from "./lib/validateToken";
 
-const apolloClient = new OneGraphApolloClient({
+const apolloClient = new ApolloClient({
   oneGraphAuth: Config.auth,
 });
 
