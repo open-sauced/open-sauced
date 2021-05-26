@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 0.20.6 (2021-05-26)
+
+
+### Features
+
+* Add link to user's open-sauced goals ([#1016](https://github.com/open-sauced/open-sauced/issues/1016)) ([2b28132](https://github.com/open-sauced/open-sauced/commit/2b281320ddc81974129041f293f606fada1870b3))
+
 ### 0.20.5 (2021-05-24)
 
 
