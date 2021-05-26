@@ -11,7 +11,6 @@ function DangerZone({goalId, repoName, note}) {
   const [removeModalOpen, setRemoveModalOpen] = useState(false);
 
   const _handleRepoRemoval = () => {
-    // TODO: resource not accessible by integration
     api
       .updateGoal(goalId, repoName, "CLOSED", note)
       .then(() => {
