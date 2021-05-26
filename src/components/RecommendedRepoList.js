@@ -5,15 +5,13 @@ import {truncate} from "../lib/truncate";
 import Avatar from "../styles/Avatar";
 import api from "../lib/apiGraphQL";
 
-function RecommendedRepoList({goal, goalsId}) {
-  const _handleGoalCreation = async(goal) => {
-
-    const repoUrl = `https://github.com/${goal}`
-
+function RecommendedRepoList({goal, goalsId, onGoalAdded}) {
+  const _handleGoalCreation = async goal => {
     api
-      .createGoal(goalsId, repoUrl, null)
+      .createGoal(goalsId, goal, null)
       .then(response => {
-        console.log(response)
+        console.log(response);
+        onGoalAdded(response.data.gitHub.createIssue.issue);
       })
       .catch(e => console.error(e));
   };
@@ -35,7 +33,9 @@ function RecommendedRepoList({goal, goalsId}) {
         </FloatLeft>
         <FloatRight>
           <FlexCenter>
-            <a onClick={_handleGoalCreation(goal.nameWithOwner)} href="#"><img alt="pointing right icon" src={plus} /></a>
+            <a onClick={() => _handleGoalCreation(goal.nameWithOwner)} href="#">
+              <img alt="pointing right icon" src={plus} />
+            </a>
           </FlexCenter>
         </FloatRight>
       </FlexHeader>

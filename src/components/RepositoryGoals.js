@@ -97,7 +97,15 @@ function RepositoryGoals({user}) {
             <FlexColumn style={{flex: 1}}>
               <Cards>
                 <h3 style={{fontSize: fontSize.default}}>Repo Recommendations</h3>
-                {stars.edges && stars.edges.map(star => <RecommendedRepoList key={star.node.name} goal={star.node} goalsId={goalsId} />)}
+                {stars.edges &&
+                  stars.edges.map(star => (
+                    <RecommendedRepoList
+                      key={star.node.name}
+                      goal={star.node}
+                      onGoalAdded={onGoalAdded}
+                      goalsId={goalsId}
+                    />
+                  ))}
               </Cards>
             </FlexColumn>
           </Flex>
