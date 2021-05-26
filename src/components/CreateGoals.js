@@ -15,7 +15,7 @@ function CreateApp() {
         Open Sauced is a tool to help track your open source contributions. You can get started by creating a goal
         workspace below.
       </p>
-      <p>A public repository name "open-sauced-goals" will be created on your GitHub account to store.</p>
+      <p>A public repository named "open-sauced-goals" will be created on your GitHub account to store data about your goals.</p>
       <small>
         <em>You own all your data saved while saucin.</em>
       </small>
@@ -23,7 +23,8 @@ function CreateApp() {
   );
 }
 
-function InstallApp() {
+function InstallApp({user}) {
+  const repoUrl = `https://github.com/${user.login}/open-sauced-goals`;
   return (
     <React.Fragment>
       <h1>Install the GitHub App</h1>
@@ -31,7 +32,11 @@ function InstallApp() {
         GitHub Apps are the officially recommended way to integrate with GitHub because they offer much more granular
         permissions to access data.
       </p>
-      <p>The Open Sauced App needs to be installed on your newly created "open-sauced-goals" public repository.</p>
+      <p>
+        The Open Sauced App needs to be installed on your newly
+        created <a href={repoUrl} target="_blank" rel="noreferrer">open-sauced-goals</a> public
+        repository.
+      </p>
       <img
         style={{textAlign: "center", width: "80%"}}
         src="https://user-images.githubusercontent.com/20134767/86527180-4a83c700-be51-11ea-8eaf-660298cf3c66.png"
@@ -86,7 +91,7 @@ function CreateGoals({installNeeded, user, onRepoCreation}) {
     <React.Fragment>
       <ContextStyle>
         <SpaceBetweenTop>
-          <FlexColumn>{installReady ? <InstallApp /> : <CreateApp />}</FlexColumn>
+          <FlexColumn>{installReady ? <InstallApp user={user} /> : <CreateApp />}</FlexColumn>
           <Illustration alt="productive developer image" src={devProductive} />
         </SpaceBetweenTop>
       </ContextStyle>

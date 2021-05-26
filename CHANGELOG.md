@@ -2,6 +2,38 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 0.20.6 (2021-05-26)
+
+
+### Features
+
+* Add link to user's open-sauced goals ([#1016](https://github.com/open-sauced/open-sauced/issues/1016)) ([2b28132](https://github.com/open-sauced/open-sauced/commit/2b281320ddc81974129041f293f606fada1870b3))
+
+### 0.20.5 (2021-05-24)
+
+
+### Bug Fixes
+
+* bump FetchGoals to 50 ([#1015](https://github.com/open-sauced/open-sauced/issues/1015)) ([20ccf8f](https://github.com/open-sauced/open-sauced/commit/20ccf8f18b091bcadcd7b88573cc04c6cab5e8a5))
+
+### 0.20.4 (2021-05-21)
+
+
+### Bug Fixes
+
+* **actions:** removed failing production cache and updated npm to yarn compatible lockfiles ([#1012](https://github.com/open-sauced/open-sauced/issues/1012)) ([6b80a2d](https://github.com/open-sauced/open-sauced/commit/6b80a2d4b1d930bcc87db1dc02fb52ef8eda1e16))
+
+### 0.20.3 (2021-05-21)
+
+### 0.20.2 (2021-05-19)
+
+
+### Bug Fixes
+
+* Add checkout to the release bump ([4e844a0](https://github.com/open-sauced/open-sauced/commit/4e844a001bda9186fea9349ccc7b400ac7907461))
+
+### 0.19.1 (2021-05-18)
+
 ### 0.18.12 (2021-05-07)
 
 ### [0.18.11](https://github.com/open-sauced/open-sauced/compare/v0.18.5...v0.18.11) (2021-05-07)
