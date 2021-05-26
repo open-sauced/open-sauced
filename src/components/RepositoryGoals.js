@@ -4,7 +4,7 @@ import {SpaceBetweenTop, Flex, FlexColumn} from "../styles/Grid";
 import ListGoals from "./ListGoals";
 import LocaleContext from "../Context";
 import AddRepoForm from "../components/AddRepoForm";
-import Cards from "./Card";
+import Card from "./Card";
 import RecommendedRepoList from "./RecommendedRepoList";
 import {RepositoryContext} from "../styles/Card";
 import {goalsReducer, usePersistentStateReducer} from "../lib/reducers";
@@ -95,7 +95,7 @@ function RepositoryGoals({user}) {
             </RepositoryContext>
 
             <FlexColumn style={{flex: 1}}>
-              <Cards>
+              <Card>
                 <h3 style={{fontSize: fontSize.default}}>Repo Recommendations</h3>
                 {stars.edges &&
                   stars.edges.map(star => (
@@ -106,11 +106,11 @@ function RepositoryGoals({user}) {
                       goalsId={goalsId}
                     />
                   ))}
-              </Cards>
+              </Card>
             </FlexColumn>
           </Flex>
 
-          <Cards fitted>
+          <Card fitted>
             <AddRepoForm goalsId={goalsId} onGoalAdded={onGoalAdded} goals={repository.issues} />
             {repository.issues.totalCount > 0 ? (
               <ListGoals data={data} goals={repository.issues} />
@@ -122,7 +122,7 @@ function RepositoryGoals({user}) {
                 <div className="helper">No Goals created</div>
               </EmptyPlaceholder>
             )}
-          </Cards>
+          </Card>
         </React.Fragment>
       ) : (
         <CreateGoals installNeeded={!!error} user={(user && user) || ""} onRepoCreation={onRepoCreation} />
