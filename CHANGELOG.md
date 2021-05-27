@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 0.20.7 (2021-05-27)
+
+
+### Features
+
+* 344 persisted fetch viewer stars ([#963](https://github.com/open-sauced/open-sauced/issues/963)) ([75c87ac](https://github.com/open-sauced/open-sauced/commit/75c87acef4dd9a19638e4c46cc79e534739eea7a))
+
 ### 0.20.6 (2021-05-26)
 
 
