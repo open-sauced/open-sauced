@@ -1,25 +1,44 @@
-import React, {useEffect, useContext} from "react";
+import React, {useState, useEffect, useContext} from "react";
 import CreateGoals from "./CreateGoals";
-import {SpaceBetweenTop} from "../styles/Grid";
+import {SpaceBetweenTop, Flex, FlexColumn} from "../styles/Grid";
 import ListGoals from "./ListGoals";
 import LocaleContext from "../Context";
-import Illustration from "../styles/Illustration";
 import AddRepoForm from "../components/AddRepoForm";
-import Cards from "./Card";
-import {doneChecking} from "../illustrations";
-import {ContextStyle} from "../styles/Card";
+import Card from "./Card";
+import RecommendedRepoList from "./RecommendedRepoList";
+import {RepositoryContext} from "../styles/Card";
 import {goalsReducer, usePersistentStateReducer} from "../lib/reducers";
 import {EmptyPlaceholder} from "../styles/EmptyPlaceholder";
 import {ChecklistIcon} from "@primer/octicons-react";
+import api from "../lib/apiGraphQL";
+import {fontSize} from "../styles/variables";
 
 function RepositoryGoals({user}) {
   const {goalsId, setGoalsId} = useContext(LocaleContext);
+  const [stars, setStars] = useState({});
   const [state, dispatch] = usePersistentStateReducer("goalsState", goalsReducer);
 
   const {repository, error} = goalsReducer(state, {type: "GET"});
 
   useEffect(() => {
     repository && setGoalsId(repository.id);
+
+    user &&
+      api
+        .persistedViewerStars(user)
+        .then(res => {
+          const {
+            data: {
+              gitHub: {
+                user: {starredRepositories},
+              },
+            },
+          } = res;
+          setStars(starredRepositories);
+        })
+        .catch(e => {
+          console.log(e);
+        });
   }, [goalsId]);
 
   const onRepoCreation = (id, repo) => {
@@ -53,28 +72,45 @@ function RepositoryGoals({user}) {
     <section>
       {repository && repository.issues ? (
         <React.Fragment>
-          <ContextStyle>
-            <SpaceBetweenTop>
-              <div>
-                {" "}
-                <h1>Dashboard</h1>
-                <p>
-                  Open Sauced is a project to track the contributions you would like to work on. Add a repository you
-                  are interested contributing to using the Repository's owner and name, also known as the
-                  "nameWithOwner" format.
-                </p>
-                <small>
-                  <em>
-                    <a href="https://opensource.guide/" rel="noreferrer" target="_blank">
-                      Learn about open source
-                    </a>
-                  </em>
-                </small>
-              </div>
-              <Illustration alt="done checking image" src={doneChecking} />
-            </SpaceBetweenTop>
-          </ContextStyle>
-          <Cards fitted>
+          <Flex>
+            <RepositoryContext>
+              <SpaceBetweenTop>
+                <div>
+                  {" "}
+                  <h1>Dashboard</h1>
+                  <p>
+                    Open Sauced is a project to track the contributions you would like to work on. Add a repository you
+                    are interested contributing to using the Repository's owner and name, also known as the
+                    "nameWithOwner" format.
+                  </p>
+                  <small>
+                    <em>
+                      <a href="https://opensource.guide/" rel="noreferrer" target="_blank">
+                        Learn about open source
+                      </a>
+                    </em>
+                  </small>
+                </div>
+              </SpaceBetweenTop>
+            </RepositoryContext>
+
+            <FlexColumn style={{flex: 1}}>
+              <Card>
+                <h3 style={{fontSize: fontSize.default}}>Repo Recommendations</h3>
+                {stars.edges &&
+                  stars.edges.map(star => (
+                    <RecommendedRepoList
+                      key={star.node.name}
+                      goal={star.node}
+                      onGoalAdded={onGoalAdded}
+                      goalsId={goalsId}
+                    />
+                  ))}
+              </Card>
+            </FlexColumn>
+          </Flex>
+
+          <Card fitted>
             <AddRepoForm goalsId={goalsId} onGoalAdded={onGoalAdded} goals={repository.issues} />
             {repository.issues.totalCount > 0 ? (
               <ListGoals data={data} goals={repository.issues} />
@@ -83,15 +119,13 @@ function RepositoryGoals({user}) {
                 <div style={{color: "grey"}}>
                   <ChecklistIcon size="large" verticalAlign="middle" />
                 </div>
-                <div className="helper">
-                  No Goals created
-                </div>
+                <div className="helper">No Goals created</div>
               </EmptyPlaceholder>
             )}
-          </Cards>
+          </Card>
         </React.Fragment>
       ) : (
-        <CreateGoals installNeeded={!!error} user={user && user || ""} onRepoCreation={onRepoCreation} />
+        <CreateGoals installNeeded={!!error} user={(user && user) || ""} onRepoCreation={onRepoCreation} />
       )}
     </section>
   );

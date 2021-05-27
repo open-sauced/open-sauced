@@ -12,6 +12,7 @@ import List from "../src/styles/List";
 import {check} from "../src/icons";
 import {PencilIcon} from "@primer/octicons-react";
 import RepoListItem from "../src/components/RepoListItem";
+import RecommendedRepoList from "../src/components/RecommendedRepoList";
 import IssuesListItem from "../src/components/IssueListItem";
 import DetailInfo from "../src/components/DetailInfo";
 import Illustration from "../src/styles/Illustration";
@@ -278,3 +279,18 @@ export const RepoDetailsCard = () => {
     </Background>
   );
 };
+
+export const RecommendedRepoListCard = () => (
+  <Background style={{height: 600, padding: "10px"}}>
+    <Card fitted>
+      <List>
+        <li>
+          <RecommendedRepoList stars={138} goal={goal} />
+        </li>
+        <li>
+          <RecommendedRepoList stars={381} goal={goal} />
+        </li>
+      </List>
+    </Card>
+  </Background>
+);
