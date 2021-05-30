@@ -3,6 +3,10 @@ import MEDIA from "./mediaTemplates";
 import {margin, borderRadius, colors, size, typography, fontSize} from "./variables";
 
 const Card = styled.div`
+  @media (prefers-color-scheme: dark) {
+    background-color: ${colors.darkestGrey};
+    color: ${colors.lightestGrey}
+  }
   flex: 1;
   background-color: white;
   box-shadow: rgba(0, 0, 0, 0.2) 0 1px 2px 0;

@@ -2,6 +2,14 @@ import styled from "styled-components";
 import {colors, size, margin, fontSize} from "./variables";
 
 const Container = styled.ul`
+  @media (prefers-color-scheme: dark) {
+    background-color: ${colors.darkestGrey};
+    color: ${colors.lightestGrey};
+    a, li:hover {
+      color: ${colors.lightestGrey};  
+    }
+  }
+
   list-style: none;
   padding: 0;
   margin: 0;

@@ -1,5 +1,6 @@
 /* stylelint-disable */
 :root {
+  color-scheme: dark;
   font-size: 62.5%;
 
   /* colors */
@@ -88,4 +89,10 @@ footer {
   margin: auto;
   padding: 32px 50px;
   width: 300px;
+}
+@media (prefers-color-scheme: dark) {
+  body {
+    background: var(--grey);
+    color: var(--lighterGrey);
+  }
 }

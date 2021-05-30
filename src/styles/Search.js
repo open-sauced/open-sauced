@@ -12,7 +12,6 @@ const Container = styled.input`
   float: left;
   padding: ${size.micro};
   outline: none;
-
   &[type=search] {
     background: ${colors.lightestGrey} url(${search}) no-repeat ${size.micro} center;
     padding: ${size.micro} ${size.micro} ${size.micro} 35px;
@@ -23,6 +22,11 @@ const Container = styled.input`
   &:focus {
     width: 300px;
   }
+  @media (prefers-color-scheme: dark) {
+    &[type=search] {
+      background: ${colors.darkestGrey} url(${search}) no-repeat ${size.micro} center;
+    }  
+}
 `;
 
 export default Container;
