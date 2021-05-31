@@ -72,6 +72,10 @@ const PizzaPosition = styled.img`
 `;
 
 const TopHero = styled(Hero)`
+  @media (prefers-color-scheme: dark) {
+    background-color: ${colors.darkestGrey};
+    color: ${colors.lightestGrey}
+  }
   background-color: ${colors.accent};
 `;
 
@@ -83,6 +87,10 @@ const SubHero = styled(Hero)`
   ${MEDIA.PHONE`
     text-align: center;
   `};
+  @media (prefers-color-scheme: dark) {
+    background-color: ${colors.darkestGrey};
+  }
+  
 `;
 
 const TrustSection = styled(Hero)`
@@ -133,6 +141,9 @@ const TrustSection = styled(Hero)`
     font-family: bungee
 
     
+  }
+  @media (prefers-color-scheme: dark) {
+    background-color: ${colors.grey};
   }
 `;
 
@@ -207,6 +218,10 @@ const QuoteSection = styled(Hero)`
     font-size: ${fontSize.default};
     margin-top: 15px;
   }
+  @media (prefers-color-scheme: dark) {
+    background-color: ${colors.darkestGrey};
+    color: ${colors.lightestGrey}
+  }
 `;
 
 const DetailsSection = styled(Hero)`
@@ -257,6 +272,10 @@ const DetailsSection = styled(Hero)`
       margin: auto;
       text-align: left;
     `};
+  }
+  @media (prefers-color-scheme: dark) {
+    background-color: ${colors.darkestGrey};
+    color: ${colors.lightestGrey}
   }
 `;
 

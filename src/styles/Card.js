@@ -122,6 +122,10 @@ const CardHeader = styled.div`
   h1 {
     padding-left: 30px;
   }
+  @media (prefers-color-scheme: dark) {
+    background-color: ${colors.darkestGrey};
+    color: ${colors.lightestGrey}
+  }
 `;
 
 const ContextStyle = styled(Card)`
@@ -169,6 +173,14 @@ const ContextStyle = styled(Card)`
 
   .loading {
     margin-bottom: ${size.tiny};
+  }
+  @media (prefers-color-scheme: dark) {
+    .languages {
+      .name {
+        color: ${colors.lightestGrey}
+      }
+    }
+    color: ${colors.lightestGrey}
   }
 `;
 
