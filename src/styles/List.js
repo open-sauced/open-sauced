@@ -2,13 +2,7 @@ import styled from "styled-components";
 import {colors, size, margin, fontSize} from "./variables";
 
 const Container = styled.ul`
-  @media (prefers-color-scheme: dark) {
-    background-color: ${colors.darkestGrey};
-    color: ${colors.lightestGrey};
-    a, li:hover {
-      color: ${colors.lightestGrey};  
-    }
-  }
+  
 
   list-style: none;
   padding: 0;
@@ -81,6 +75,14 @@ const Container = styled.ul`
 
     .meta, .label {
       margin-top: ${size.tiny}
+    }
+  }
+  @media (prefers-color-scheme: dark) {
+    background-color: ${colors.darkestGrey};
+    color: ${colors.lightestGrey};
+    a, li:hover {
+      background-color: ${colors.darkGrey}
+      color: ${colors.lightestGrey};  
     }
   }
 `;

@@ -10,6 +10,7 @@
   --lighterGrey: #bcbcbc;
   --lightGrey: #8b8b8b;
   --grey: #313d3e;
+  --backgroundGrey:#2F372E;
   --gold: #f6bc00;
   --orange: #fe9d68;
   --blue: #4d9abf;
@@ -92,7 +93,7 @@ footer {
 }
 @media (prefers-color-scheme: dark) {
   body {
-    background: var(--grey);
+    background: var(--darkestGrey);
     color: var(--lighterGrey);
   }
 }
