@@ -16,7 +16,7 @@
     "@testing-library/jest-dom": "^5.11.5",
     "@testing-library/react": "^11.2.5",
     "@testing-library/user-event": "^12.3.0",
-    "@webpack-cli/migrate": "^0.1.9",
+    "@webpack-cli/migrate": "^1.1.2",
     "autoprefixer": "9.7.3",
     "babel-eslint": "6.1.2",
     "babel-jest": "25.2.4",
