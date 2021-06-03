@@ -72,7 +72,7 @@ const PizzaPosition = styled.img`
 `;
 
 const TopHero = styled(Hero)`
-  @media (prefers-color-scheme: dark) {
+  body.dark & {
     background-color: ${colors.darkestGrey};
     color: ${colors.lightestGrey}
   }
@@ -87,7 +87,7 @@ const SubHero = styled(Hero)`
   ${MEDIA.PHONE`
     text-align: center;
   `};
-  @media (prefers-color-scheme: dark) {
+  body.dark & {
     background-color: ${colors.darkestGrey};
   }
   
@@ -142,7 +142,7 @@ const TrustSection = styled(Hero)`
 
     
   }
-  @media (prefers-color-scheme: dark) {
+  body.dark & {
     background-color: ${colors.grey};
   }
 `;
@@ -218,7 +218,7 @@ const QuoteSection = styled(Hero)`
     font-size: ${fontSize.default};
     margin-top: 15px;
   }
-  @media (prefers-color-scheme: dark) {
+  body.dark & {
     background-color: ${colors.darkestGrey};
     color: ${colors.lightestGrey}
   }
@@ -273,7 +273,7 @@ const DetailsSection = styled(Hero)`
       text-align: left;
     `};
   }
-  @media (prefers-color-scheme: dark) {
+  body.dark & {
     background-color: ${colors.darkestGrey};
     color: ${colors.lightestGrey}
   }

@@ -2,6 +2,7 @@ import styled from "styled-components";
 import {size, borderRadius, colors, fontSize} from "./variables";
 
 const Container = styled.input`
+  background: inherit;
   border-radius: ${borderRadius};
   border: 1px solid ${colors.lightestGrey};
   box-sizing: border-box;

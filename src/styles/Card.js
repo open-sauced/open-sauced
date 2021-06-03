@@ -3,10 +3,6 @@ import MEDIA from "./mediaTemplates";
 import {margin, borderRadius, colors, size, typography, fontSize} from "./variables";
 
 const Card = styled.div`
-  @media (prefers-color-scheme: dark) {
-    background-color: ${colors.darkestGrey};
-    color: ${colors.lightestGrey}
-  }
   flex: 1;
   background-color: white;
   box-shadow: rgba(0, 0, 0, 0.2) 0 1px 2px 0;
@@ -70,6 +66,11 @@ const Card = styled.div`
   .details {
     margin: 0;
   }
+  body.dark & {
+    background-color: ${colors.darkestGrey};
+    color: ${colors.lightestGrey}
+  }
+
 `;
 
 const FittedCard = styled(Card)`
@@ -122,7 +123,7 @@ const CardHeader = styled.div`
   h1 {
     padding-left: 30px;
   }
-  @media (prefers-color-scheme: dark) {
+  body.dark & {
     background-color: ${colors.darkestGrey};
     color: ${colors.lightestGrey}
   }
@@ -174,7 +175,7 @@ const ContextStyle = styled(Card)`
   .loading {
     margin-bottom: ${size.tiny};
   }
-  @media (prefers-color-scheme: dark) {
+  body.dark & {
     .languages {
       .name {
         color: ${colors.lightestGrey}

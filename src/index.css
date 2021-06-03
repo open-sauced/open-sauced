@@ -91,9 +91,7 @@ footer {
   padding: 32px 50px;
   width: 300px;
 }
-@media (prefers-color-scheme: dark) {
-  body {
-    background: var(--darkestGrey);
-    color: var(--lighterGrey);
-  }
+body.dark {
+  background: var(--darkestGrey);
+  color: var(--lighterGrey);
 }

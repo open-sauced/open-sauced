@@ -77,7 +77,7 @@ const Container = styled.ul`
       margin-top: ${size.tiny}
     }
   }
-  @media (prefers-color-scheme: dark) {
+  body.dark & {
     background-color: ${colors.darkestGrey};
     color: ${colors.lightestGrey};
     a, li:hover {

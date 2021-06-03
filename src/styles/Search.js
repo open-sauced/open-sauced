@@ -22,8 +22,8 @@ const Container = styled.input`
   &:focus {
     width: 300px;
   }
-  @media (prefers-color-scheme: dark) {
-    &[type=search] {
+  body.dark & {
+     
       background: ${colors.darkestGrey} url(${search}) no-repeat ${size.micro} center;
     }  
 }
