@@ -81,12 +81,12 @@ function RightSide({user}) {
   return (
     <FloatRight>
       <SpaceBetween>
+        <ThemeButtonGroup />
         {user && (
           <SubtleLink alt="user login name" className="nav-link" href={`https://github.com/${user.login}`}>
             <ProfileAvatar alt="avatar" src={`https://github.com/${user.login}.png`} />
           </SubtleLink>
         )}
-        <ThemeButtonGroup />
       </SpaceBetween>
     </FloatRight>
   );
