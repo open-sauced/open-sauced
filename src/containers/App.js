@@ -47,15 +47,22 @@ function App({handleLogIn, handleLogOut, user, isAdmin, isLoggedIn}) {
   );
   const systemIsDark = () => {
     return window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+  };
+  if (window.matchMedia) {
+    window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => {
+      console.log("System Theme Changed", systemIsDark());
+      if (theme === "system") applyTheme();
+    });
   }
-  const [theme, setTheme] = useState(localStorage.getItem("theme") || "system", systemIsDark ? "dark" : "system");
-  useEffect(() => {
+  const applyTheme = () => {
     console.log(`Theme is now ${theme}`);
     if (theme === "system") localStorage.removeItem("theme");
     else localStorage.setItem("theme", theme);
     if (theme === "dark" || systemIsDark()) document.body.classList.add("dark");
     else document.body.classList.remove("dark");
-  }, [theme]);
+  };
+  const [theme, setTheme] = useState(localStorage.getItem("theme") || "system", systemIsDark ? "dark" : "system");
+  useEffect(applyTheme, [theme]);
   return (
     <Router>
       <ThemeContext.Provider value={[theme, setTheme]}>
