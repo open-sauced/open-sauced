@@ -68,7 +68,10 @@ const Card = styled.div`
   }
   body.dark & {
     background-color: ${colors.darkestGrey};
-    color: ${colors.lightestGrey}
+    color: ${colors.lightestGrey};
+    h1 {
+      color: ${colors.lightestGrey} !important;
+    }
   }
 
 `;
@@ -176,12 +179,17 @@ const ContextStyle = styled(Card)`
     margin-bottom: ${size.tiny};
   }
   body.dark & {
+    p {
+      color: ${colors.lightestGrey};
+    }
+    h1 {
+      color: ${colors.lightestGrey};
+    }
     .languages {
       .name {
         color: ${colors.lightestGrey}
       }
     }
-    color: ${colors.lightestGrey}
   }
 `;
 

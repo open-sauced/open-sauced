@@ -84,6 +84,9 @@ const Container = styled.ul`
       background-color: ${colors.darkGrey}
       color: ${colors.lightestGrey};  
     }
+    li {
+      border-top: 1px solid ${colors.grey};
+    }
   }
 `;
 
