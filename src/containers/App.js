@@ -38,7 +38,7 @@ function App({handleLogIn, handleLogOut, user, isAdmin, isLoggedIn}) {
     return auth(component, user, isLoggedIn, handleLogIn);
   };
 
-  const value = useMemo(
+  const locale = useMemo(
     () => ({
       goalsId,
       setGoalsId,
@@ -48,20 +48,27 @@ function App({handleLogIn, handleLogOut, user, isAdmin, isLoggedIn}) {
   const systemIsDark = () => {
     return window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
   };
-  if (window.matchMedia) {
-    window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => {
-      console.log("System Theme Changed", systemIsDark());
-      if (theme === "system") applyTheme();
-    });
-  }
   const applyTheme = () => {
-    console.log(`Theme is now ${theme}`);
-    if (theme === "system") localStorage.removeItem("theme");
-    else localStorage.setItem("theme", theme);
-    if (theme === "dark" || systemIsDark()) document.body.classList.add("dark");
-    else document.body.classList.remove("dark");
+    if (theme === "system") {
+      localStorage.removeItem("theme");
+    } else {
+      localStorage.setItem("theme", theme);
+    }
+    const goDark = (theme === "dark" || (theme === "system" && systemIsDark()));
+    if (goDark) {
+      document.body.classList.add("dark");
+    } else {
+      document.body.classList.remove("dark");
+    }
   };
-  const [theme, setTheme] = useState(localStorage.getItem("theme") || "system", systemIsDark ? "dark" : "system");
+  useEffect(() => {
+    if (window.matchMedia) {
+      window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => {
+        if (theme === "system") applyTheme();
+      });
+    }
+  }, []);
+  const [theme, setTheme] = useState(localStorage.getItem("theme") || "system");
   useEffect(applyTheme, [theme]);
   return (
     <Router>
@@ -73,7 +80,7 @@ function App({handleLogIn, handleLogOut, user, isAdmin, isLoggedIn}) {
           user={user}
           isAdmin={isAdmin}
         />
-        <LocaleContext.Provider value={value}>
+        <LocaleContext.Provider value={locale}>
 
           <Switch>
             <Route exact path="/" component={guard(Dashboard)} />
