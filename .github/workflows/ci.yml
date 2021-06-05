@@ -24,7 +24,7 @@ jobs:
 
     - name: npm install and test
       run: |
-        npm ci
+        npm ci --no-audit
         npm audit --production
         npm test
     
