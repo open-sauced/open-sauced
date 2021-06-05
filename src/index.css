@@ -93,5 +93,11 @@ footer {
 }
 body.dark {
   background: var(--darkestGrey);
-  color: var(--lighterGrey);
+  color: var(--lightestGrey);
+}
+body.dark img.svg {
+  filter: invert(0.85);
+}
+body.dark svg.svg {
+  fill: var(--lightestGrey);
 }
