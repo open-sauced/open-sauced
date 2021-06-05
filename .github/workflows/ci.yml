@@ -24,7 +24,8 @@ jobs:
 
     - name: npm install and test
       run: |
-        npm ci --no-audit
+        npm config set audit false
+        npm ci
         npm audit --production
         npm test
     
