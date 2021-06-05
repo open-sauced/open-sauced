@@ -14,7 +14,7 @@
         "graphql": "^14.7.0",
         "humanize-duration": "^3.26.0",
         "lodash": "^4.17.21",
-        "onegraph-apollo-client": "^3.1.2",
+        "onegraph-apollo-client": "^2.2.2",
         "onegraph-auth": "^3.3.2",
         "react": "^17.0.2",
         "react-dom": "^17.0.2",
@@ -7633,7 +7633,6 @@
     },
     "node_modules/@types/node": {
       "version": "14.14.2",
-      "dev": true,
       "license": "MIT"
     },
     "node_modules/@types/node-fetch": {
@@ -8301,6 +8300,25 @@
         "react": "^17.0.0-0"
       }
     },
+    "node_modules/@wry/context": {
+      "version": "0.4.4",
+      "resolved": "https://registry.npmjs.org/@wry/context/-/context-0.4.4.tgz",
+      "integrity": "sha512-LrKVLove/zw6h2Md/KZyWxIkFM6AoyKp71OqpH9Hiip1csjPVoD3tPxlbQUNxEnHENks3UGgNpSBCAfq9KWuag==",
+      "peer": true,
+      "dependencies": {
+        "@types/node": ">=6",
+        "tslib": "^1.9.3"
+      }
+    },
+    "node_modules/@wry/equality": {
+      "version": "0.1.11",
+      "resolved": "https://registry.npmjs.org/@wry/equality/-/equality-0.1.11.tgz",
+      "integrity": "sha512-mwEVBDUVODlsQQ5dfuLUS5/Tf7jqUKyhKYHmVi4fPB6bDMOfWvUPJmKgS1Z7Za/sOI3vzWt4+O7yCiL/70MogA==",
+      "peer": true,
+      "dependencies": {
+        "tslib": "^1.9.3"
+      }
+    },
     "node_modules/@wry/trie": {
       "version": "0.3.0",
       "resolved": "https://registry.npmjs.org/@wry/trie/-/trie-0.3.0.tgz",
@@ -8622,6 +8640,152 @@
       },
       "engines": {
         "node": ">= 8"
+      }
+    },
+    "node_modules/apollo-boost": {
+      "version": "0.1.13",
+      "resolved": "https://registry.npmjs.org/apollo-boost/-/apollo-boost-0.1.13.tgz",
+      "integrity": "sha512-oaAHQO6xBPLtK3cK4+FYT3/BR3RFUYvldlK3zTn6JD7AL4lMovvvV68S+AZyQlECS7Cy3EjFqsANmAMbvvJxSA==",
+      "peer": true,
+      "dependencies": {
+        "apollo-cache": "^1.1.14",
+        "apollo-cache-inmemory": "^1.2.7",
+        "apollo-client": "^2.3.8",
+        "apollo-link": "^1.0.6",
+        "apollo-link-error": "^1.0.3",
+        "apollo-link-http": "^1.3.1",
+        "apollo-link-state": "^0.4.0",
+        "graphql-tag": "^2.4.2"
+      }
+    },
+    "node_modules/apollo-cache": {
+      "version": "1.3.5",
+      "resolved": "https://registry.npmjs.org/apollo-cache/-/apollo-cache-1.3.5.tgz",
+      "integrity": "sha512-1XoDy8kJnyWY/i/+gLTEbYLnoiVtS8y7ikBr/IfmML4Qb+CM7dEEbIUOjnY716WqmZ/UpXIxTfJsY7rMcqiCXA==",
+      "peer": true,
+      "dependencies": {
+        "apollo-utilities": "^1.3.4",
+        "tslib": "^1.10.0"
+      },
+      "peerDependencies": {
+        "graphql": "^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0"
+      }
+    },
+    "node_modules/apollo-cache-inmemory": {
+      "version": "1.6.6",
+      "resolved": "https://registry.npmjs.org/apollo-cache-inmemory/-/apollo-cache-inmemory-1.6.6.tgz",
+      "integrity": "sha512-L8pToTW/+Xru2FFAhkZ1OA9q4V4nuvfoPecBM34DecAugUZEBhI2Hmpgnzq2hTKZ60LAMrlqiASm0aqAY6F8/A==",
+      "peer": true,
+      "dependencies": {
+        "apollo-cache": "^1.3.5",
+        "apollo-utilities": "^1.3.4",
+        "optimism": "^0.10.0",
+        "ts-invariant": "^0.4.0",
+        "tslib": "^1.10.0"
+      },
+      "peerDependencies": {
+        "graphql": "^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0"
+      }
+    },
+    "node_modules/apollo-client": {
+      "version": "2.6.10",
+      "resolved": "https://registry.npmjs.org/apollo-client/-/apollo-client-2.6.10.tgz",
+      "integrity": "sha512-jiPlMTN6/5CjZpJOkGeUV0mb4zxx33uXWdj/xQCfAMkuNAC3HN7CvYDyMHHEzmcQ5GV12LszWoQ/VlxET24CtA==",
+      "peer": true,
+      "dependencies": {
+        "@types/zen-observable": "^0.8.0",
+        "apollo-cache": "1.3.5",
+        "apollo-link": "^1.0.0",
+        "apollo-utilities": "1.3.4",
+        "symbol-observable": "^1.0.2",
+        "ts-invariant": "^0.4.0",
+        "tslib": "^1.10.0",
+        "zen-observable": "^0.8.0"
+      },
+      "peerDependencies": {
+        "graphql": "^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0"
+      }
+    },
+    "node_modules/apollo-link": {
+      "version": "1.2.14",
+      "resolved": "https://registry.npmjs.org/apollo-link/-/apollo-link-1.2.14.tgz",
+      "integrity": "sha512-p67CMEFP7kOG1JZ0ZkYZwRDa369w5PIjtMjvrQd/HnIV8FRsHRqLqK+oAZQnFa1DDdZtOtHTi+aMIW6EatC2jg==",
+      "peer": true,
+      "dependencies": {
+        "apollo-utilities": "^1.3.0",
+        "ts-invariant": "^0.4.0",
+        "tslib": "^1.9.3",
+        "zen-observable-ts": "^0.8.21"
+      },
+      "peerDependencies": {
+        "graphql": "^0.11.3 || ^0.12.3 || ^0.13.0 || ^14.0.0 || ^15.0.0"
+      }
+    },
+    "node_modules/apollo-link-error": {
+      "version": "1.1.13",
+      "resolved": "https://registry.npmjs.org/apollo-link-error/-/apollo-link-error-1.1.13.tgz",
+      "integrity": "sha512-jAZOOahJU6bwSqb2ZyskEK1XdgUY9nkmeclCrW7Gddh1uasHVqmoYc4CKdb0/H0Y1J9lvaXKle2Wsw/Zx1AyUg==",
+      "peer": true,
+      "dependencies": {
+        "apollo-link": "^1.2.14",
+        "apollo-link-http-common": "^0.2.16",
+        "tslib": "^1.9.3"
+      }
+    },
+    "node_modules/apollo-link-http": {
+      "version": "1.5.17",
+      "resolved": "https://registry.npmjs.org/apollo-link-http/-/apollo-link-http-1.5.17.tgz",
+      "integrity": "sha512-uWcqAotbwDEU/9+Dm9e1/clO7hTB2kQ/94JYcGouBVLjoKmTeJTUPQKcJGpPwUjZcSqgYicbFqQSoJIW0yrFvg==",
+      "peer": true,
+      "dependencies": {
+        "apollo-link": "^1.2.14",
+        "apollo-link-http-common": "^0.2.16",
+        "tslib": "^1.9.3"
+      },
+      "peerDependencies": {
+        "graphql": "^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0"
+      }
+    },
+    "node_modules/apollo-link-http-common": {
+      "version": "0.2.16",
+      "resolved": "https://registry.npmjs.org/apollo-link-http-common/-/apollo-link-http-common-0.2.16.tgz",
+      "integrity": "sha512-2tIhOIrnaF4UbQHf7kjeQA/EmSorB7+HyJIIrUjJOKBgnXwuexi8aMecRlqTIDWcyVXCeqLhUnztMa6bOH/jTg==",
+      "peer": true,
+      "dependencies": {
+        "apollo-link": "^1.2.14",
+        "ts-invariant": "^0.4.0",
+        "tslib": "^1.9.3"
+      },
+      "peerDependencies": {
+        "graphql": "^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0"
+      }
+    },
+    "node_modules/apollo-link-state": {
+      "version": "0.4.2",
+      "resolved": "https://registry.npmjs.org/apollo-link-state/-/apollo-link-state-0.4.2.tgz",
+      "integrity": "sha512-xMPcAfuiPVYXaLwC6oJFIZrKgV3GmdO31Ag2eufRoXpvT0AfJZjdaPB4450Nu9TslHRePN9A3quxNueILlQxlw==",
+      "peer": true,
+      "dependencies": {
+        "apollo-utilities": "^1.0.8",
+        "graphql-anywhere": "^4.1.0-alpha.0"
+      },
+      "peerDependencies": {
+        "apollo-link": "^1.0.0"
+      }
+    },
+    "node_modules/apollo-utilities": {
+      "version": "1.3.4",
+      "resolved": "https://registry.npmjs.org/apollo-utilities/-/apollo-utilities-1.3.4.tgz",
+      "integrity": "sha512-pk2hiWrCXMAy2fRPwEyhvka+mqwzeP60Jr1tRYi5xru+3ko94HI9o6lK0CT33/w4RDlxWchmdhDCrvdr+pHCig==",
+      "peer": true,
+      "dependencies": {
+        "@wry/equality": "^0.1.2",
+        "fast-json-stable-stringify": "^2.0.0",
+        "ts-invariant": "^0.4.0",
+        "tslib": "^1.10.0"
+      },
+      "peerDependencies": {
+        "graphql": "^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0"
       }
     },
     "node_modules/app-root-dir": {
@@ -8946,6 +9110,7 @@
     },
     "node_modules/async-limiter": {
       "version": "1.0.1",
+      "devOptional": true,
       "license": "MIT"
     },
     "node_modules/asynckit": {
@@ -9822,7 +9987,9 @@
     "node_modules/backo2": {
       "version": "1.0.2",
       "resolved": "https://registry.npmjs.org/backo2/-/backo2-1.0.2.tgz",
-      "integrity": "sha1-MasayLEpNjRj41s+u2n038+6eUc="
+      "integrity": "sha1-MasayLEpNjRj41s+u2n038+6eUc=",
+      "optional": true,
+      "peer": true
     },
     "node_modules/bail": {
       "version": "1.0.5",
@@ -18885,6 +19052,29 @@
         "node": ">= 6.x"
       }
     },
+    "node_modules/graphql-anywhere": {
+      "version": "4.2.7",
+      "resolved": "https://registry.npmjs.org/graphql-anywhere/-/graphql-anywhere-4.2.7.tgz",
+      "integrity": "sha512-fJHvVywWVWjiHuPIMs16Nfjf4zdQUwSO1LKycwBJCWIPeoeQ8LqXK2BgYoZAHkhKEFktZZeYyzS4o/uIUG0z5A==",
+      "peer": true,
+      "dependencies": {
+        "apollo-utilities": "^1.3.4",
+        "ts-invariant": "^0.3.2",
+        "tslib": "^1.10.0"
+      },
+      "peerDependencies": {
+        "graphql": "^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0"
+      }
+    },
+    "node_modules/graphql-anywhere/node_modules/ts-invariant": {
+      "version": "0.3.3",
+      "resolved": "https://registry.npmjs.org/ts-invariant/-/ts-invariant-0.3.3.tgz",
+      "integrity": "sha512-UReOKsrJFGC9tUblgSRWo+BsVNbEd77Cl6WiV/XpMlkifXwNIJbknViCucHvVZkXSC/mcWeRnIGdY7uprcwvdQ==",
+      "peer": true,
+      "dependencies": {
+        "tslib": "^1.9.3"
+      }
+    },
     "node_modules/graphql-tag": {
       "version": "2.12.4",
       "resolved": "https://registry.npmjs.org/graphql-tag/-/graphql-tag-2.12.4.tgz",
@@ -24720,14 +24910,11 @@
       }
     },
     "node_modules/onegraph-apollo-client": {
-      "version": "3.1.2",
-      "resolved": "https://registry.npmjs.org/onegraph-apollo-client/-/onegraph-apollo-client-3.1.2.tgz",
-      "integrity": "sha512-0zCmPrccUgOSGbW0rX8IRXWdjIIfkJUQwa+N5lz6KcHeGNEOO2oE8/7p6tvXUWFFjUQfohM+BiYSFOn/o1jjEA==",
-      "dependencies": {
-        "onegraph-subscription-client": "^3.1.2"
-      },
+      "version": "2.2.2",
+      "resolved": "https://registry.npmjs.org/onegraph-apollo-client/-/onegraph-apollo-client-2.2.2.tgz",
+      "integrity": "sha512-Ll5rPKKuM9efWirNxYEoGKUEN1UDOJzMMVnYmX/+P1y0zla+0FINol5g+6NTBaW7vVTvgqSquqm8qBy4Qv+2nQ==",
       "peerDependencies": {
-        "@apollo/client": "^3.2.2"
+        "apollo-boost": "0.1.13"
       }
     },
     "node_modules/onegraph-auth": {
@@ -24741,14 +24928,6 @@
     "node_modules/onegraph-auth/node_modules/regenerator-runtime": {
       "version": "0.11.1",
       "license": "MIT"
-    },
-    "node_modules/onegraph-subscription-client": {
-      "version": "3.3.0",
-      "resolved": "https://registry.npmjs.org/onegraph-subscription-client/-/onegraph-subscription-client-3.3.0.tgz",
-      "integrity": "sha512-IqFw+4PQmiW6qOWPYY6KenqGBJx+ZZdwP0+i4TEN4aRWzvNy37t5Zeiy41J9F+kuFqmH+fwTgJLTKrFfDL6Mvw==",
-      "dependencies": {
-        "subscriptions-transport-ws": "~0.9.13"
-      }
     },
     "node_modules/onetime": {
       "version": "5.1.2",
@@ -24799,6 +24978,15 @@
       },
       "engines": {
         "node": ">=4"
+      }
+    },
+    "node_modules/optimism": {
+      "version": "0.10.3",
+      "resolved": "https://registry.npmjs.org/optimism/-/optimism-0.10.3.tgz",
+      "integrity": "sha512-9A5pqGoQk49H6Vhjb9kPgAeeECfUDF6aIICbMDL23kDLStBn1MWk3YvcZ4xWF9CsSf6XEgvRLkXy4xof/56vVw==",
+      "peer": true,
+      "dependencies": {
+        "@wry/context": "^0.4.0"
       }
     },
     "node_modules/optimize-css-assets-webpack-plugin": {
@@ -35077,6 +35265,8 @@
       "version": "0.9.18",
       "resolved": "https://registry.npmjs.org/subscriptions-transport-ws/-/subscriptions-transport-ws-0.9.18.tgz",
       "integrity": "sha512-tztzcBTNoEbuErsVQpTN2xUNN/efAZXyCyL5m3x4t6SKrEiTL2N8SaKWBFWM4u56pL79ULif3zjyeq+oV+nOaA==",
+      "optional": true,
+      "peer": true,
       "dependencies": {
         "backo2": "^1.0.2",
         "eventemitter3": "^3.1.0",
@@ -35091,12 +35281,16 @@
     "node_modules/subscriptions-transport-ws/node_modules/eventemitter3": {
       "version": "3.1.2",
       "resolved": "https://registry.npmjs.org/eventemitter3/-/eventemitter3-3.1.2.tgz",
-      "integrity": "sha512-tvtQIeLVHjDkJYnzf2dgVMxfuSGJeM/7UCG17TT4EumTfNtF+0nebF/4zWOIkCreAbtNqhGEboB6BWrwqNaw4Q=="
+      "integrity": "sha512-tvtQIeLVHjDkJYnzf2dgVMxfuSGJeM/7UCG17TT4EumTfNtF+0nebF/4zWOIkCreAbtNqhGEboB6BWrwqNaw4Q==",
+      "optional": true,
+      "peer": true
     },
     "node_modules/subscriptions-transport-ws/node_modules/ws": {
       "version": "5.2.2",
       "resolved": "https://registry.npmjs.org/ws/-/ws-5.2.2.tgz",
       "integrity": "sha512-jaHFD6PFv6UgoIVda6qZllptQsMlDEJkTQcybzzXDYM1XO9Y8em691FGMPmM46WGyLU4z9KMgQN+qrux/nhlHA==",
+      "optional": true,
+      "peer": true,
       "dependencies": {
         "async-limiter": "~1.0.0"
       }
@@ -35316,6 +35510,7 @@
     "node_modules/symbol-observable": {
       "version": "1.2.0",
       "license": "MIT",
+      "peer": true,
       "engines": {
         "node": ">=0.10.0"
       }
@@ -36129,6 +36324,15 @@
       "version": "2.0.12",
       "dev": true,
       "license": "MIT"
+    },
+    "node_modules/ts-invariant": {
+      "version": "0.4.4",
+      "resolved": "https://registry.npmjs.org/ts-invariant/-/ts-invariant-0.4.4.tgz",
+      "integrity": "sha512-uEtWkFM/sdZvRNNDL3Ehu4WVpwaulhwQszV8mrtcdeE8nN00BV9mAmQ88RkrBhFgl9gMgvjJLAQcZbnPXI9mlA==",
+      "peer": true,
+      "dependencies": {
+        "tslib": "^1.9.3"
+      }
     },
     "node_modules/ts-pnp": {
       "version": "1.2.0",
@@ -38805,6 +39009,16 @@
     "node_modules/zen-observable": {
       "version": "0.8.15",
       "license": "MIT"
+    },
+    "node_modules/zen-observable-ts": {
+      "version": "0.8.21",
+      "resolved": "https://registry.npmjs.org/zen-observable-ts/-/zen-observable-ts-0.8.21.tgz",
+      "integrity": "sha512-Yj3yXweRc8LdRMrCC8nIc4kkjWecPAUVh0TI0OUrWXx6aX790vLcDlWca6I4vsyCGH3LpWxq0dJRcMOFoVqmeg==",
+      "peer": true,
+      "dependencies": {
+        "tslib": "^1.9.3",
+        "zen-observable": "^0.8.0"
+      }
     },
     "node_modules/zwitch": {
       "version": "1.0.5",
@@ -43934,8 +44148,7 @@
       "dev": true
     },
     "@types/node": {
-      "version": "14.14.2",
-      "dev": true
+      "version": "14.14.2"
     },
     "@types/node-fetch": {
       "version": "2.5.7",
@@ -44410,6 +44623,25 @@
         "prop-types": "^15.7.0"
       }
     },
+    "@wry/context": {
+      "version": "0.4.4",
+      "resolved": "https://registry.npmjs.org/@wry/context/-/context-0.4.4.tgz",
+      "integrity": "sha512-LrKVLove/zw6h2Md/KZyWxIkFM6AoyKp71OqpH9Hiip1csjPVoD3tPxlbQUNxEnHENks3UGgNpSBCAfq9KWuag==",
+      "peer": true,
+      "requires": {
+        "@types/node": ">=6",
+        "tslib": "^1.9.3"
+      }
+    },
+    "@wry/equality": {
+      "version": "0.1.11",
+      "resolved": "https://registry.npmjs.org/@wry/equality/-/equality-0.1.11.tgz",
+      "integrity": "sha512-mwEVBDUVODlsQQ5dfuLUS5/Tf7jqUKyhKYHmVi4fPB6bDMOfWvUPJmKgS1Z7Za/sOI3vzWt4+O7yCiL/70MogA==",
+      "peer": true,
+      "requires": {
+        "tslib": "^1.9.3"
+      }
+    },
     "@wry/trie": {
       "version": "0.3.0",
       "resolved": "https://registry.npmjs.org/@wry/trie/-/trie-0.3.0.tgz",
@@ -44621,6 +44853,128 @@
       "requires": {
         "normalize-path": "^3.0.0",
         "picomatch": "^2.0.4"
+      }
+    },
+    "apollo-boost": {
+      "version": "0.1.13",
+      "resolved": "https://registry.npmjs.org/apollo-boost/-/apollo-boost-0.1.13.tgz",
+      "integrity": "sha512-oaAHQO6xBPLtK3cK4+FYT3/BR3RFUYvldlK3zTn6JD7AL4lMovvvV68S+AZyQlECS7Cy3EjFqsANmAMbvvJxSA==",
+      "peer": true,
+      "requires": {
+        "apollo-cache": "^1.1.14",
+        "apollo-cache-inmemory": "^1.2.7",
+        "apollo-client": "^2.3.8",
+        "apollo-link": "^1.0.6",
+        "apollo-link-error": "^1.0.3",
+        "apollo-link-http": "^1.3.1",
+        "apollo-link-state": "^0.4.0",
+        "graphql-tag": "^2.4.2"
+      }
+    },
+    "apollo-cache": {
+      "version": "1.3.5",
+      "resolved": "https://registry.npmjs.org/apollo-cache/-/apollo-cache-1.3.5.tgz",
+      "integrity": "sha512-1XoDy8kJnyWY/i/+gLTEbYLnoiVtS8y7ikBr/IfmML4Qb+CM7dEEbIUOjnY716WqmZ/UpXIxTfJsY7rMcqiCXA==",
+      "peer": true,
+      "requires": {
+        "apollo-utilities": "^1.3.4",
+        "tslib": "^1.10.0"
+      }
+    },
+    "apollo-cache-inmemory": {
+      "version": "1.6.6",
+      "resolved": "https://registry.npmjs.org/apollo-cache-inmemory/-/apollo-cache-inmemory-1.6.6.tgz",
+      "integrity": "sha512-L8pToTW/+Xru2FFAhkZ1OA9q4V4nuvfoPecBM34DecAugUZEBhI2Hmpgnzq2hTKZ60LAMrlqiASm0aqAY6F8/A==",
+      "peer": true,
+      "requires": {
+        "apollo-cache": "^1.3.5",
+        "apollo-utilities": "^1.3.4",
+        "optimism": "^0.10.0",
+        "ts-invariant": "^0.4.0",
+        "tslib": "^1.10.0"
+      }
+    },
+    "apollo-client": {
+      "version": "2.6.10",
+      "resolved": "https://registry.npmjs.org/apollo-client/-/apollo-client-2.6.10.tgz",
+      "integrity": "sha512-jiPlMTN6/5CjZpJOkGeUV0mb4zxx33uXWdj/xQCfAMkuNAC3HN7CvYDyMHHEzmcQ5GV12LszWoQ/VlxET24CtA==",
+      "peer": true,
+      "requires": {
+        "@types/zen-observable": "^0.8.0",
+        "apollo-cache": "1.3.5",
+        "apollo-link": "^1.0.0",
+        "apollo-utilities": "1.3.4",
+        "symbol-observable": "^1.0.2",
+        "ts-invariant": "^0.4.0",
+        "tslib": "^1.10.0",
+        "zen-observable": "^0.8.0"
+      }
+    },
+    "apollo-link": {
+      "version": "1.2.14",
+      "resolved": "https://registry.npmjs.org/apollo-link/-/apollo-link-1.2.14.tgz",
+      "integrity": "sha512-p67CMEFP7kOG1JZ0ZkYZwRDa369w5PIjtMjvrQd/HnIV8FRsHRqLqK+oAZQnFa1DDdZtOtHTi+aMIW6EatC2jg==",
+      "peer": true,
+      "requires": {
+        "apollo-utilities": "^1.3.0",
+        "ts-invariant": "^0.4.0",
+        "tslib": "^1.9.3",
+        "zen-observable-ts": "^0.8.21"
+      }
+    },
+    "apollo-link-error": {
+      "version": "1.1.13",
+      "resolved": "https://registry.npmjs.org/apollo-link-error/-/apollo-link-error-1.1.13.tgz",
+      "integrity": "sha512-jAZOOahJU6bwSqb2ZyskEK1XdgUY9nkmeclCrW7Gddh1uasHVqmoYc4CKdb0/H0Y1J9lvaXKle2Wsw/Zx1AyUg==",
+      "peer": true,
+      "requires": {
+        "apollo-link": "^1.2.14",
+        "apollo-link-http-common": "^0.2.16",
+        "tslib": "^1.9.3"
+      }
+    },
+    "apollo-link-http": {
+      "version": "1.5.17",
+      "resolved": "https://registry.npmjs.org/apollo-link-http/-/apollo-link-http-1.5.17.tgz",
+      "integrity": "sha512-uWcqAotbwDEU/9+Dm9e1/clO7hTB2kQ/94JYcGouBVLjoKmTeJTUPQKcJGpPwUjZcSqgYicbFqQSoJIW0yrFvg==",
+      "peer": true,
+      "requires": {
+        "apollo-link": "^1.2.14",
+        "apollo-link-http-common": "^0.2.16",
+        "tslib": "^1.9.3"
+      }
+    },
+    "apollo-link-http-common": {
+      "version": "0.2.16",
+      "resolved": "https://registry.npmjs.org/apollo-link-http-common/-/apollo-link-http-common-0.2.16.tgz",
+      "integrity": "sha512-2tIhOIrnaF4UbQHf7kjeQA/EmSorB7+HyJIIrUjJOKBgnXwuexi8aMecRlqTIDWcyVXCeqLhUnztMa6bOH/jTg==",
+      "peer": true,
+      "requires": {
+        "apollo-link": "^1.2.14",
+        "ts-invariant": "^0.4.0",
+        "tslib": "^1.9.3"
+      }
+    },
+    "apollo-link-state": {
+      "version": "0.4.2",
+      "resolved": "https://registry.npmjs.org/apollo-link-state/-/apollo-link-state-0.4.2.tgz",
+      "integrity": "sha512-xMPcAfuiPVYXaLwC6oJFIZrKgV3GmdO31Ag2eufRoXpvT0AfJZjdaPB4450Nu9TslHRePN9A3quxNueILlQxlw==",
+      "peer": true,
+      "requires": {
+        "apollo-utilities": "^1.0.8",
+        "graphql-anywhere": "^4.1.0-alpha.0"
+      }
+    },
+    "apollo-utilities": {
+      "version": "1.3.4",
+      "resolved": "https://registry.npmjs.org/apollo-utilities/-/apollo-utilities-1.3.4.tgz",
+      "integrity": "sha512-pk2hiWrCXMAy2fRPwEyhvka+mqwzeP60Jr1tRYi5xru+3ko94HI9o6lK0CT33/w4RDlxWchmdhDCrvdr+pHCig==",
+      "peer": true,
+      "requires": {
+        "@wry/equality": "^0.1.2",
+        "fast-json-stable-stringify": "^2.0.0",
+        "ts-invariant": "^0.4.0",
+        "tslib": "^1.10.0"
       }
     },
     "app-root-dir": {
@@ -44851,7 +45205,8 @@
       "dev": true
     },
     "async-limiter": {
-      "version": "1.0.1"
+      "version": "1.0.1",
+      "devOptional": true
     },
     "asynckit": {
       "version": "0.4.0",
@@ -45488,7 +45843,9 @@
     "backo2": {
       "version": "1.0.2",
       "resolved": "https://registry.npmjs.org/backo2/-/backo2-1.0.2.tgz",
-      "integrity": "sha1-MasayLEpNjRj41s+u2n038+6eUc="
+      "integrity": "sha1-MasayLEpNjRj41s+u2n038+6eUc=",
+      "optional": true,
+      "peer": true
     },
     "bail": {
       "version": "1.0.5"
@@ -51705,6 +52062,28 @@
         "iterall": "^1.2.2"
       }
     },
+    "graphql-anywhere": {
+      "version": "4.2.7",
+      "resolved": "https://registry.npmjs.org/graphql-anywhere/-/graphql-anywhere-4.2.7.tgz",
+      "integrity": "sha512-fJHvVywWVWjiHuPIMs16Nfjf4zdQUwSO1LKycwBJCWIPeoeQ8LqXK2BgYoZAHkhKEFktZZeYyzS4o/uIUG0z5A==",
+      "peer": true,
+      "requires": {
+        "apollo-utilities": "^1.3.4",
+        "ts-invariant": "^0.3.2",
+        "tslib": "^1.10.0"
+      },
+      "dependencies": {
+        "ts-invariant": {
+          "version": "0.3.3",
+          "resolved": "https://registry.npmjs.org/ts-invariant/-/ts-invariant-0.3.3.tgz",
+          "integrity": "sha512-UReOKsrJFGC9tUblgSRWo+BsVNbEd77Cl6WiV/XpMlkifXwNIJbknViCucHvVZkXSC/mcWeRnIGdY7uprcwvdQ==",
+          "peer": true,
+          "requires": {
+            "tslib": "^1.9.3"
+          }
+        }
+      }
+    },
     "graphql-tag": {
       "version": "2.12.4",
       "resolved": "https://registry.npmjs.org/graphql-tag/-/graphql-tag-2.12.4.tgz",
@@ -55714,12 +56093,10 @@
       "dev": true
     },
     "onegraph-apollo-client": {
-      "version": "3.1.2",
-      "resolved": "https://registry.npmjs.org/onegraph-apollo-client/-/onegraph-apollo-client-3.1.2.tgz",
-      "integrity": "sha512-0zCmPrccUgOSGbW0rX8IRXWdjIIfkJUQwa+N5lz6KcHeGNEOO2oE8/7p6tvXUWFFjUQfohM+BiYSFOn/o1jjEA==",
-      "requires": {
-        "onegraph-subscription-client": "^3.1.2"
-      }
+      "version": "2.2.2",
+      "resolved": "https://registry.npmjs.org/onegraph-apollo-client/-/onegraph-apollo-client-2.2.2.tgz",
+      "integrity": "sha512-Ll5rPKKuM9efWirNxYEoGKUEN1UDOJzMMVnYmX/+P1y0zla+0FINol5g+6NTBaW7vVTvgqSquqm8qBy4Qv+2nQ==",
+      "requires": {}
     },
     "onegraph-auth": {
       "version": "3.3.2",
@@ -55731,14 +56108,6 @@
         "regenerator-runtime": {
           "version": "0.11.1"
         }
-      }
-    },
-    "onegraph-subscription-client": {
-      "version": "3.3.0",
-      "resolved": "https://registry.npmjs.org/onegraph-subscription-client/-/onegraph-subscription-client-3.3.0.tgz",
-      "integrity": "sha512-IqFw+4PQmiW6qOWPYY6KenqGBJx+ZZdwP0+i4TEN4aRWzvNy37t5Zeiy41J9F+kuFqmH+fwTgJLTKrFfDL6Mvw==",
-      "requires": {
-        "subscriptions-transport-ws": "~0.9.13"
       }
     },
     "onetime": {
@@ -55770,6 +56139,15 @@
       "dev": true,
       "requires": {
         "is-wsl": "^1.1.0"
+      }
+    },
+    "optimism": {
+      "version": "0.10.3",
+      "resolved": "https://registry.npmjs.org/optimism/-/optimism-0.10.3.tgz",
+      "integrity": "sha512-9A5pqGoQk49H6Vhjb9kPgAeeECfUDF6aIICbMDL23kDLStBn1MWk3YvcZ4xWF9CsSf6XEgvRLkXy4xof/56vVw==",
+      "peer": true,
+      "requires": {
+        "@wry/context": "^0.4.0"
       }
     },
     "optimize-css-assets-webpack-plugin": {
@@ -62874,6 +63252,8 @@
       "version": "0.9.18",
       "resolved": "https://registry.npmjs.org/subscriptions-transport-ws/-/subscriptions-transport-ws-0.9.18.tgz",
       "integrity": "sha512-tztzcBTNoEbuErsVQpTN2xUNN/efAZXyCyL5m3x4t6SKrEiTL2N8SaKWBFWM4u56pL79ULif3zjyeq+oV+nOaA==",
+      "optional": true,
+      "peer": true,
       "requires": {
         "backo2": "^1.0.2",
         "eventemitter3": "^3.1.0",
@@ -62885,12 +63265,16 @@
         "eventemitter3": {
           "version": "3.1.2",
           "resolved": "https://registry.npmjs.org/eventemitter3/-/eventemitter3-3.1.2.tgz",
-          "integrity": "sha512-tvtQIeLVHjDkJYnzf2dgVMxfuSGJeM/7UCG17TT4EumTfNtF+0nebF/4zWOIkCreAbtNqhGEboB6BWrwqNaw4Q=="
+          "integrity": "sha512-tvtQIeLVHjDkJYnzf2dgVMxfuSGJeM/7UCG17TT4EumTfNtF+0nebF/4zWOIkCreAbtNqhGEboB6BWrwqNaw4Q==",
+          "optional": true,
+          "peer": true
         },
         "ws": {
           "version": "5.2.2",
           "resolved": "https://registry.npmjs.org/ws/-/ws-5.2.2.tgz",
           "integrity": "sha512-jaHFD6PFv6UgoIVda6qZllptQsMlDEJkTQcybzzXDYM1XO9Y8em691FGMPmM46WGyLU4z9KMgQN+qrux/nhlHA==",
+          "optional": true,
+          "peer": true,
           "requires": {
             "async-limiter": "~1.0.0"
           }
@@ -63045,7 +63429,8 @@
       }
     },
     "symbol-observable": {
-      "version": "1.2.0"
+      "version": "1.2.0",
+      "peer": true
     },
     "symbol-tree": {
       "version": "3.2.4",
@@ -63578,6 +63963,15 @@
     "ts-essentials": {
       "version": "2.0.12",
       "dev": true
+    },
+    "ts-invariant": {
+      "version": "0.4.4",
+      "resolved": "https://registry.npmjs.org/ts-invariant/-/ts-invariant-0.4.4.tgz",
+      "integrity": "sha512-uEtWkFM/sdZvRNNDL3Ehu4WVpwaulhwQszV8mrtcdeE8nN00BV9mAmQ88RkrBhFgl9gMgvjJLAQcZbnPXI9mlA==",
+      "peer": true,
+      "requires": {
+        "tslib": "^1.9.3"
+      }
     },
     "ts-pnp": {
       "version": "1.2.0",
@@ -65378,6 +65772,16 @@
     },
     "zen-observable": {
       "version": "0.8.15"
+    },
+    "zen-observable-ts": {
+      "version": "0.8.21",
+      "resolved": "https://registry.npmjs.org/zen-observable-ts/-/zen-observable-ts-0.8.21.tgz",
+      "integrity": "sha512-Yj3yXweRc8LdRMrCC8nIc4kkjWecPAUVh0TI0OUrWXx6aX790vLcDlWca6I4vsyCGH3LpWxq0dJRcMOFoVqmeg==",
+      "peer": true,
+      "requires": {
+        "tslib": "^1.9.3",
+        "zen-observable": "^0.8.0"
+      }
     },
     "zwitch": {
       "version": "1.0.5",
