@@ -91,7 +91,7 @@ function Hero({handleLogIn}) {
         <Wrapper>
           <GridColumns columns={2}>
             <Flex className="detail">
-              <img alt="open sauced" src={archive} />
+              <img alt="open sauced" className="svg" src={archive} />
               <FlexColumn className="copy">
                 <h2>Contributor issue tracking and triaging</h2>
                 <p>
@@ -101,7 +101,7 @@ function Hero({handleLogIn}) {
               </FlexColumn>
             </Flex>
             <Flex className="detail">
-              <img alt="open sauced" src={mortarBoard} />
+              <img alt="open sauced" className="svg" src={mortarBoard} />
               <FlexColumn className="copy">
                 <h2>Structured onboarding for new contributors</h2>
                 <p>
@@ -111,14 +111,14 @@ function Hero({handleLogIn}) {
               </FlexColumn>
             </Flex>
             <Flex className="detail">
-              <img alt="open sauced" src={watch} />
+              <img alt="open sauced" className="svg" src={watch} />
               <FlexColumn className="copy">
                 <h2>Scheduled reminders</h2>
                 <p>Get notified when the contributions you are following change status or are closed.</p>
               </FlexColumn>
             </Flex>
             <Flex className="detail">
-              <img alt="open sauced" src={squirrel} />
+              <img alt="open sauced" className="svg" src={squirrel} />
               <FlexColumn className="copy">
                 <h2>Find community and mentorship from approved projects</h2>
                 <p>

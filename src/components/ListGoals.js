@@ -76,7 +76,7 @@ function ListGoals({goals, data}) {
         {filteredSearch.length === 0 && (
           <EmptyPlaceholder>
             <div style={{color: "grey"}}>
-              <SearchIcon size="large" verticalAlign="middle" />
+              <SearchIcon size="large" verticalAlign="middle" className="svg" />
             </div>
             <div className="helper">
               No result found for <b>'{searchTerm}'</b>

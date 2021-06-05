@@ -67,7 +67,7 @@ function IssueListItem({title, labels, author, opened, type, participants, comme
       </FloatLeft>
       <FloatRight>
         <FlexCenter>
-          <img src={chevronRight} alt="right-chevron" />
+          <img className="svg" alt="right-chevron" src={chevronRight} />
         </FlexCenter>
       </FloatRight>
     </FlexHeader>
