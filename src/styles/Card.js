@@ -189,6 +189,9 @@ const ContextStyle = styled(Card)`
       .name {
         color: ${colors.lightestGrey}
       }
+      .more {
+        color: ${colors.lighterGrey}
+      }
     }
   }
 `;
