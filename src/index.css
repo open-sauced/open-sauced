@@ -96,8 +96,17 @@ body.dark {
   color: var(--lightestGrey);
 }
 body.dark img.svg {
-  filter: invert(0.85);
+  filter: invert();
 }
 body.dark svg.svg {
   fill: var(--lightestGrey);
+}
+body.dark .react-loading-skeleton{
+  background-color: var(--backgroundGrey);
+  background-image: linear-gradient(
+    90deg,
+    var(--backgroundGrey),
+    var(--grey),
+    var(--backgroundGrey)
+  );
 }

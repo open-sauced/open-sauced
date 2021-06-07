@@ -34,7 +34,7 @@ function RecommendedRepoList({goal, goalsId, onGoalAdded}) {
         <FloatRight>
           <FlexCenter>
             <a onClick={() => _handleGoalCreation(goal.nameWithOwner)} href="#">
-              <img alt="pointing right icon" src={plus} />
+              <img alt="add recommended repo" src={plus} className="svg" />
             </a>
           </FlexCenter>
         </FloatRight>
