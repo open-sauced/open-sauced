@@ -6,7 +6,7 @@ import {fontSize} from "../styles/variables";
 function DetailInfo({icon, text}) {
   return (
     <FlexCenter style={{width: "100%", flexWrap: "wrap"}}>
-      <div style={{width: "30px", color: "grey"}}>
+      <div style={{width: "30px"}}>
         {(() => {
           switch (icon) {
             case "IssueOpenedIcon":
@@ -24,7 +24,7 @@ function DetailInfo({icon, text}) {
           }
         })()}
       </div>
-      <div style={{fontSize: fontSize.default, color: "grey"}}>{text}</div>
+      <div style={{fontSize: fontSize.default}}>{text}</div>
     </FlexCenter>
   );
 }

@@ -72,6 +72,12 @@ const Card = styled.div`
     h1 {
       color: ${colors.lightestGrey} !important;
     }
+    a {
+      color: ${colors.lightestGrey};
+    }
+    svg {
+      fill: ${colors.lightestGrey} !important;
+    }
   }
 
 `;

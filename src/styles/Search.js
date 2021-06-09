@@ -23,7 +23,7 @@ const Container = styled.input`
     width: 300px;
   }
   body.dark & {
-     
+      color: ${colors.lightestGrey};
       background: ${colors.darkestGrey} url(${search}) no-repeat ${size.micro} center;
     }  
 }

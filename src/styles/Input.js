@@ -13,6 +13,9 @@ const Container = styled.input`
   outline: none;
   padding: ${size.tiny};
   width: 100%;
+  body.dark & {
+    color: ${colors.lightestGrey};
+  }
 `;
 
 export default Container;
