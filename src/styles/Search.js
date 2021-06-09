@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import {size, borderRadius, colors, fontSize} from "./variables";
-import {search} from "../icons";
+import {search, searchDark} from "../icons";
 
 const Container = styled.input`
   border-radius: ${borderRadius};
@@ -24,7 +24,7 @@ const Container = styled.input`
   }
   body.dark & {
       color: ${colors.lightestGrey};
-      background: ${colors.darkestGrey} url(${search}) no-repeat ${size.micro} center;
+      background: ${colors.darkestGrey} url(${searchDark}) no-repeat ${size.micro} center;
     }  
 }
 `;
