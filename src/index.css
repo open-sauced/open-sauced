@@ -9,6 +9,8 @@
   --lighterGrey: #bcbcbc;
   --lightGrey: #8b8b8b;
   --grey: #313d3e;
+  --backgroundGrey:#2F372E;
+  --darkestGrey:#0F0F0F;
   --gold: #f6bc00;
   --orange: #fe9d68;
   --blue: #4d9abf;
@@ -89,3 +91,26 @@ footer {
   padding: 32px 50px;
   width: 300px;
 }
+body.dark {
+  background: var(--darkestGrey);
+  color: var(--lightestGrey);
+}
+body.dark img.svg {
+  filter: invert();
+}
+body.dark svg.svg {
+  fill: var(--lightestGrey);
+}
+body.dark select {
+  color: var(--lightestGrey);
+}
+body.dark .react-loading-skeleton{
+  background-color: var(--backgroundGrey);
+  background-image: linear-gradient(
+    90deg,
+    var(--backgroundGrey),
+    var(--grey),
+    var(--backgroundGrey)
+  );
+}
+

@@ -66,6 +66,20 @@ const Card = styled.div`
   .details {
     margin: 0;
   }
+  body.dark & {
+    background-color: ${colors.darkestGrey};
+    color: ${colors.lightestGrey};
+    h1 {
+      color: ${colors.lightestGrey} !important;
+    }
+    a {
+      color: ${colors.lightestGrey};
+    }
+    svg {
+      fill: ${colors.lightestGrey} !important;
+    }
+  }
+
 `;
 
 const FittedCard = styled(Card)`
@@ -118,6 +132,10 @@ const CardHeader = styled.div`
   h1 {
     padding-left: 30px;
   }
+  body.dark & {
+    background-color: ${colors.darkestGrey};
+    color: ${colors.lightestGrey}
+  }
 `;
 
 const ContextStyle = styled(Card)`
@@ -165,6 +183,22 @@ const ContextStyle = styled(Card)`
 
   .loading {
     margin-bottom: ${size.tiny};
+  }
+  body.dark & {
+    p {
+      color: ${colors.lightestGrey};
+    }
+    h1 {
+      color: ${colors.lightestGrey};
+    }
+    .languages {
+      .name {
+        color: ${colors.lightestGrey}
+      }
+      .more {
+        color: ${colors.lighterGrey}
+      }
+    }
   }
 `;
 

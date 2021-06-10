@@ -53,25 +53,29 @@ const Wrapper = styled.div`
 const PizzaPosition = styled.img`
   height: 29rem;
   position: absolute;
-  right: 2%;
+  right: 4%;
   top: 1%;
   ${MEDIA.TABLET`
     display: none;
   `};
 
   ${MEDIA.MIN_TABLET`
-    right: 8%;
+    right: 12%;
     top: 1%;
   `};
 
   ${MEDIA.DESKTOP`
     height: 22rem;
-    right: 3%;
+    right: 5%;
     top: 9%;
   `};
 `;
 
 const TopHero = styled(Hero)`
+  body.dark & {
+    background-color: ${colors.darkestGrey};
+    color: ${colors.lightestGrey}
+  }
   background-color: ${colors.accent};
 `;
 
@@ -83,6 +87,10 @@ const SubHero = styled(Hero)`
   ${MEDIA.PHONE`
     text-align: center;
   `};
+  body.dark & {
+    background-color: ${colors.darkestGrey};
+  }
+  
 `;
 
 const TrustSection = styled(Hero)`
@@ -133,6 +141,9 @@ const TrustSection = styled(Hero)`
     font-family: bungee
 
     
+  }
+  body.dark & {
+    background-color: ${colors.grey};
   }
 `;
 
@@ -207,6 +218,10 @@ const QuoteSection = styled(Hero)`
     font-size: ${fontSize.default};
     margin-top: 15px;
   }
+  body.dark & {
+    background-color: ${colors.darkestGrey};
+    color: ${colors.lightestGrey}
+  }
 `;
 
 const DetailsSection = styled(Hero)`
@@ -257,6 +272,10 @@ const DetailsSection = styled(Hero)`
       margin: auto;
       text-align: left;
     `};
+  }
+  body.dark & {
+    background-color: ${colors.darkestGrey};
+    color: ${colors.lightestGrey}
   }
 `;
 

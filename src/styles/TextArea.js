@@ -12,6 +12,10 @@ const Container = styled.textarea`
   outline: none;
   padding: ${size.tiny};
   width: 100%;
+  body.dark & {
+    background-color: ${colors.darkestGrey};
+    color: ${colors.lightestGrey};
+  }
 `;
 
 export const RenderedNote = styled.div`
@@ -23,6 +27,9 @@ export const RenderedNote = styled.div`
     margin-bottom: ${size.small}
     overflow: auto;
     max-height: 300px;
+  }
+  body.dark .noteContent a {
+    color: ${colors.lightestGrey};
   }
 `;
 
