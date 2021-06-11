@@ -8,7 +8,7 @@ const url = "https://serve.onegraph.com/graphql?app_id=06238984-0a96-4774-95ad-d
 const doc_id0 = "9c4b4f3d-c27d-434f-ba20-7ccf8308a9a1"; // FetchUserForkCount
 const doc_id1 = "a0722788-adb0-4731-96fb-9e50c72a2528"; // RepoQuery
 const doc_id2 = "ed0abd8a-3ff3-46ce-bd1f-04f94af25d12"; // FetchGoal
-const doc_id3 = "c8c187a1-853f-446b-b3fa-b4876447c954"; // IssuesQuery
+const doc_id3 = "8f18e222-57ee-4f12-885a-959e4d4df778"; // ContributionsCollectionQuery
 const doc_id4 = "8ecd5737-ebba-4807-a20b-4155272500bf"; // IssuesByLabelQuery
 const doc_id5 = "89a3dc22-4355-494e-9d6f-a29c21e065e0"; // FetchDeploymentStatusQuery
 const doc_id6 = "a510812e-ad0d-4181-bda3-805ee2481a83"; // IssuesByLabelQuery
@@ -43,10 +43,11 @@ function makeFetch(doc_id, requiredVariables = [], operationName = false) {
     return response;
   };
 }
+
 const persistedForkFetch = makeFetch(doc_id0, ["repoName", "repoOwner"], "FetchUserForkCount");
 const persistedRepoDataFetch = makeFetch(doc_id1, ["repo", "owner"]);
 const persistedGoalFetch = makeFetch(doc_id2, ["number"]);
-const persistedInteractionsFetch = makeFetch(doc_id3, ["repo", "owner"]);
+const persistedInteractionsFetch = makeFetch(doc_id3, ["query"]);
 const persistedIssuesFetch = makeFetch(doc_id4, ["repo", "owner"]);
 const persistedDeploymentFetch = makeFetch(doc_id5);
 const persistedIssuesByLabelFetch = makeFetch(doc_id6, ["repo", "owner"], "IssuesByLabelQuery");

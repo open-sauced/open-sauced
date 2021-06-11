@@ -248,7 +248,7 @@ function Repository({user, match}) {
               <DetailInfo text={`${humanizeNumber(stargazers.totalCount)} stars`} icon="StarIcon" />
               {licenseInfo && <DetailInfo text={`${licenseInfo.name}`} icon="LawIcon" />}
             </Card>
-            <Contributions repoName={name} owner={owner.login} />
+            {user && <Contributions viewer={user.login} repoName={name} owner={owner.login} />}
             {owner && <Form note={note} goalId={issueId} repoName={nameWithOwner} />}
             {owner && <DangerZone note={note} goalId={issueId} repoName={nameWithOwner} />}
           </FormColumn>

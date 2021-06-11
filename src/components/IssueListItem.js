@@ -12,6 +12,7 @@ dayjs.extend(relativeTime);
 function IssueListItem({title, labels, author, opened, type, participants, comments, milestone}) {
   const participantsDiffCount = 3;
   const participantsShowDiff = participants && participants.totalCount - participantsDiffCount;
+  console.log(labels)
   return (
     <FlexHeader>
       <FloatLeft>
