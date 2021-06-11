@@ -8,6 +8,7 @@ import ProfileAvatar from "../styles/ProfileAvatar";
 import AdminStatsBar from "./AdminStatsBar";
 import Hotkeys from "react-hot-keys";
 import {useHistory, Link} from "react-router-dom";
+import ThemeButtonGroup from "./ThemeButtonGroup";
 
 function LeftSide({isLoggedIn, user, handleLogIn, handleLogOut}) {
   const history = useHistory();
@@ -80,6 +81,7 @@ function RightSide({user}) {
   return (
     <FloatRight>
       <SpaceBetween>
+        <ThemeButtonGroup />
         {user && (
           <SubtleLink alt="user login name" className="nav-link" href={`https://github.com/${user.login}`}>
             <ProfileAvatar alt="avatar" src={`https://github.com/${user.login}.png`} />

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import {size, borderRadius, colors, fontSize} from "./variables";
-import {search} from "../icons";
+import {search, searchDark} from "../icons";
 
 const Container = styled.input`
   border-radius: ${borderRadius};
@@ -12,7 +12,6 @@ const Container = styled.input`
   float: left;
   padding: ${size.micro};
   outline: none;
-
   &[type=search] {
     background: ${colors.lightestGrey} url(${search}) no-repeat ${size.micro} center;
     padding: ${size.micro} ${size.micro} ${size.micro} 35px;
@@ -23,6 +22,11 @@ const Container = styled.input`
   &:focus {
     width: 300px;
   }
+  body.dark & {
+      color: ${colors.lightestGrey};
+      background: ${colors.darkestGrey} url(${searchDark}) no-repeat ${size.micro} center;
+    }  
+}
 `;
 
 export default Container;

@@ -1,4 +1,4 @@
-import React, {useMemo, useState} from "react";
+import React, {useEffect, useMemo, useState} from "react";
 import Dashboard from "../containers/Dashboard";
 import Footer from "../components/Footer";
 import DashboardFooter from "../components/DashboardFooter";
@@ -10,6 +10,7 @@ import {Wrapper} from "../styles/Header";
 import {SpaceAround} from "../styles/Grid";
 import {NotFound} from "../styles/NotFound";
 import LocaleContext from "../Context";
+import ThemeContext from "../ThemeContext";
 import auth from "../hoc/AuthHOC";
 import {ohno} from "../images";
 
@@ -37,40 +38,67 @@ function App({handleLogIn, handleLogOut, user, isAdmin, isLoggedIn}) {
     return auth(component, user, isLoggedIn, handleLogIn);
   };
 
-  const value = useMemo(
+  const locale = useMemo(
     () => ({
       goalsId,
       setGoalsId,
     }),
     [goalsId],
   );
-
+  const systemIsDark = () => {
+    return window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+  };
+  const applyTheme = () => {
+    if (theme === "system") {
+      localStorage.removeItem("theme");
+    } else {
+      localStorage.setItem("theme", theme);
+    }
+    const goDark = (theme === "dark" || (theme === "system" && systemIsDark()));
+    if (goDark) {
+      document.body.classList.add("dark");
+    } else {
+      document.body.classList.remove("dark");
+    }
+  };
+  useEffect(() => {
+    if (window.matchMedia) {
+      window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => {
+        if (theme === "system") applyTheme();
+      });
+    }
+  }, []);
+  const [theme, setTheme] = useState(localStorage.getItem("theme") || "system");
+  useEffect(applyTheme, [theme]);
   return (
     <Router>
-      <Nav
-        handleLogIn={handleLogIn}
-        handleLogOut={handleLogOut}
-        isLoggedIn={isLoggedIn}
-        user={user}
-        isAdmin={isAdmin}
-      />
-      <LocaleContext.Provider value={value}>
-        <Switch>
-          <Route exact path="/" component={guard(Dashboard)} />
-          <Route path="/repos/:repoOwner/:repoName/:id" component={guard(Repository)} />
-          <Route path="/callback" component={guard(Dashboard)} />
-          <Route exact path="/logout" render={() => (
-            isLoggedIn ? (
-              handleLogOut()
-            ) : (
-              <Redirect to="/" />
-            )
-          )}/>
-          <Route component={NoMatch} />
-        </Switch>
-        {!user && <Footer />}
-        {user && <DashboardFooter />}
-      </LocaleContext.Provider>
+      <ThemeContext.Provider value={[theme, setTheme]}>
+        <Nav
+          handleLogIn={handleLogIn}
+          handleLogOut={handleLogOut}
+          isLoggedIn={isLoggedIn}
+          user={user}
+          isAdmin={isAdmin}
+        />
+        <LocaleContext.Provider value={locale}>
+
+          <Switch>
+            <Route exact path="/" component={guard(Dashboard)} />
+            <Route path="/repos/:repoOwner/:repoName/:id" component={guard(Repository)} />
+            <Route path="/callback" component={guard(Dashboard)} />
+            <Route exact path="/logout" render={() => (
+              isLoggedIn ? (
+                handleLogOut()
+              ) : (
+                <Redirect to="/" />
+              )
+            )}/>
+            <Route component={NoMatch} />
+          </Switch>
+          {!user && <Footer />}
+          {user && <DashboardFooter />}
+        </LocaleContext.Provider>
+      </ThemeContext.Provider>
     </Router>
   );
 }

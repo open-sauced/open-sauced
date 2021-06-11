@@ -15,7 +15,7 @@ import {ButtonBoard, RepositoryContext} from "../styles/Card";
 import {Spinner} from "../styles/Spinner";
 import {Flex, FormColumn, IssuesColumn} from "../styles/Grid";
 import {humanizeNumber} from "../lib/humanizeNumber";
-import Skeleton, {SkeletonTheme} from "react-loading-skeleton";
+import Skeleton from "react-loading-skeleton";
 import Button from "../styles/Button";
 import {RepoForkedIcon} from "@primer/octicons-react";
 import {fontSize} from "../styles/variables";
@@ -153,7 +153,7 @@ function Repository({user, match}) {
                       <span className="dot" style={{color: language.color}}>
                         •
                       </span>
-                      repo<span className="name">{language.name}</span>
+                      <span className="name">{language.name}</span>
                     </span>
                   ))
                 ) : (
@@ -211,7 +211,7 @@ function Repository({user, match}) {
               </div>
             </span>
           ) : (
-            <SkeletonTheme color="#fbfbfb" highlightColor="#f2f2f2">
+            <Skeleton>
               <div style={{lineHeight: 1.5}}>
                 <Skeleton height={15} />
                 <Skeleton height={15} width={250} />
@@ -226,7 +226,7 @@ function Repository({user, match}) {
               <div style={{marginTop: 20}}>
                 <Skeleton style={{marginRight: 5}} circle height={30} width={30} count={5} />
               </div>
-            </SkeletonTheme>
+            </Skeleton>
           )}
         </ButtonBoard>
       </Flex>

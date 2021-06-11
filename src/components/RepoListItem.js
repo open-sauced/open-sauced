@@ -32,7 +32,7 @@ function RepoListItem({goal, stars}) {
       </FloatLeft>
       <FloatRight>
         <FlexCenter>
-          <img alt="pointing right icon" src={chevronRight} />
+          <img alt="pointing right icon" src={chevronRight} className="svg" />
         </FlexCenter>
       </FloatRight>
     </FlexHeader>
