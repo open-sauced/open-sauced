@@ -4,13 +4,14 @@ import Button, {InputButton} from "../src/styles/Button";
 import {AccentLink, MicroFont} from "../src/styles/Typography";
 import {PrimaryWithText} from "./1-Button.stories";
 import {CardPadding, CardHeader, ContextStyle, HintStyle} from "../src/styles/Card";
+import Avatar from "../src/styles/Avatar";
 import Input from "../src/styles/Input";
 import {Container} from "../src/styles/ListItem";
 import Search from "../src/styles/Search";
 import {Select} from "../src/styles/Select";
 import Background from "../src/styles/Background";
 import TextArea from "../src/styles/TextArea";
-import {Flex, FlexHeader, FlexCenter, FlexColumn, IssuesColumn, SpaceBetween} from "../src/styles/Grid";
+import {Flex, FloatLeft, FloatRight, FlexHeader, FlexCenter, FlexColumn, IssuesColumn, SpaceBetween} from "../src/styles/Grid";
 import List from "../src/styles/List";
 import {check} from "../src/icons";
 import {PencilIcon} from "@primer/octicons-react";
@@ -20,6 +21,8 @@ import IssuesListItem from "../src/components/IssueListItem";
 import DetailInfo from "../src/components/DetailInfo";
 import Illustration from "../src/styles/Illustration";
 import {doneChecking} from "../src/illustrations";
+import {plus} from "../src/icons";
+import {npm} from "../src/images";
 
 export default {
   title: "Cards",
@@ -285,15 +288,49 @@ export const RepoDetailsCard = () => {
 
 export const RecommendedRepoListCard = () => (
   <Background style={{height: 600, padding: "10px"}}>
-    <Card fitted>
-      <List>
-        {/* <li>
-          <RecommendedRepoList stars={138} goal={goal} />
-        </li>
-        <li>
-          <RecommendedRepoList stars={381} goal={goal} />
-        </li> */}
-      </List>
+    <Card>
+      <FlexHeader>
+        <FloatLeft>
+          <FlexCenter>
+            <Avatar
+              small
+              alt="avatar"
+              src={npm}
+            />
+            <Flex className="details">
+              <p>npm/cli</p>
+            </Flex>
+          </FlexCenter>
+        </FloatLeft>
+        <FloatRight>
+          <FlexCenter>
+            <a href="#">
+              <img alt="add recommended repo" src={plus} className="svg" />
+            </a>
+          </FlexCenter>
+        </FloatRight>
+      </FlexHeader>
+      <FlexHeader>
+        <FloatLeft>
+          <FlexCenter>
+            <Avatar
+              small
+              alt="avatar"
+              src={npm}
+            />
+            <Flex className="details">
+              <p>npm/cli</p>
+            </Flex>
+          </FlexCenter>
+        </FloatLeft>
+        <FloatRight>
+          <FlexCenter>
+            <a href="#">
+              <img alt="add recommended repo" src={plus} className="svg" />
+            </a>
+          </FlexCenter>
+        </FloatRight>
+      </FlexHeader>
     </Card>
   </Background>
 );
