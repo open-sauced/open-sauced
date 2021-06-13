@@ -29,7 +29,7 @@ export const HomePage = () => (
             <SubtleLink className="nav-link" rel="noreferrer" target="_blank" href="https://github.com/open-sauced/open-sauced">GitHub</SubtleLink>
           </li>
           <li>
-            <SubtleLink href="#">Subscribe</SubtleLink>
+            <SubtleLink className="nav-link" rel="noreferrer" target="_blank" href="https://discord.gg/U2peSNf23P">Discord</SubtleLink>
           </li>
           <li>
             <SubtleLink onClick={() => console.log("clicked")}>Login</SubtleLink>
@@ -70,10 +70,10 @@ export const App = () => (
             <SubtleLink className="nav-link" rel="noreferrer" target="_blank" href="https://github.com/open-sauced/open-sauced">GitHub</SubtleLink>
           </li>
           <li>
-            <SubtleLink href="#">Subscribe</SubtleLink>
+            <SubtleLink className="nav-link" rel="noreferrer" target="_blank" href="https://discord.gg/U2peSNf23P">Discord</SubtleLink>
           </li>
           <li>
-            <SubtleLink className="nav-link" rel="noreferrer" target="_blank" href="https://github.com/open-sauced/open-sauced/issues/new">
+            <SubtleLink className="nav-link" rel="noreferrer" target="_blank" href="https://github.com/open-sauced/open-sauced/issues/new/choose">
               Issue
             </SubtleLink>
           </li>
