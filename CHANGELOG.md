@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 0.21.5 (2021-06-15)
+
+### 0.21.4 (2021-06-15)
+
+### 0.21.3 (2021-06-15)
+
+
+### Features
+
+* dark mode docs ([#1036](https://github.com/open-sauced/open-sauced/issues/1036)) ([f6f92c7](https://github.com/open-sauced/open-sauced/commit/f6f92c778b6a19848e253799450a915ff72a2bb1))
+
+### 0.21.2 (2021-06-12)
+
 ### 0.21.1 (2021-06-10)
 
 ### 0.20.13 (2021-06-10)
