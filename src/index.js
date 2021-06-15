@@ -6,15 +6,15 @@ import {getUserFromJwt} from "./lib/identityActions";
 import "./index.css";
 import registerServiceWorker from "./registerServiceWorker";
 import OneGraphApolloClient from "onegraph-apollo-client";
-import {ApolloProvider} from "react-apollo";
+import {ApolloProvider, InMemoryCache} from "@apollo/client";
 import api from "./lib/apiGraphQL";
 import {getAppVersion} from "./lib/appVersion";
 import {validateToken} from "./lib/validateToken";
 
 const apolloClient = new OneGraphApolloClient({
   oneGraphAuth: Config.auth,
+  cache: new InMemoryCache()
 });
-
 
 function Index() {
   const [user, setUser] = useState(null);
