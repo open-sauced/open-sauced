@@ -53,6 +53,6 @@ const Container = styled.textarea`
 ```
 
 ## References
-[Dark Mode at Stack Overflow](https://stackoverflow.blog/2020/03/31/building-dark-mode-on-stack-overflow/)
-[Color Control of SVGs](https://medium.com/@union_io/swapping-fill-color-on-image-tag-svgs-using-css-filters-fa4818bf7ec6)
-[React Context Docs](https://reactjs.org/docs/context.html#consuming-multiple-contexts)
+- [Dark Mode at Stack Overflow](https://stackoverflow.blog/2020/03/31/building-dark-mode-on-stack-overflow/)
+- [Color Control of SVGs](https://medium.com/@union_io/swapping-fill-color-on-image-tag-svgs-using-css-filters-fa4818bf7ec6)
+- [React Context Docs](https://reactjs.org/docs/context.html#consuming-multiple-contexts)
