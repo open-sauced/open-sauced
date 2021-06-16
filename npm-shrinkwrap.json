@@ -1,6 +1,6 @@
 {
   "name": "open-sauced",
-  "version": "0.21.5",
+  "version": "0.21.6",
   "lockfileVersion": 1,
   "requires": true,
   "dependencies": {
@@ -8013,6 +8013,11 @@
       "resolved": "https://registry.npmjs.org/babylon/-/babylon-6.18.0.tgz",
       "integrity": "sha512-q/UEjfGJ2Cm3oKV71DJz9d25TPnq5rhBVL2Q4fA5wcC3jcrdn7+SssEybFIxwAvvP+YCsCYNKughoF33GxgycQ==",
       "dev": true
+    },
+    "backo2": {
+      "version": "1.0.2",
+      "resolved": "https://registry.npmjs.org/backo2/-/backo2-1.0.2.tgz",
+      "integrity": "sha1-MasayLEpNjRj41s+u2n038+6eUc="
     },
     "bail": {
       "version": "1.0.5",
@@ -20176,9 +20181,12 @@
       }
     },
     "onegraph-apollo-client": {
-      "version": "2.2.2",
-      "resolved": "https://registry.npmjs.org/onegraph-apollo-client/-/onegraph-apollo-client-2.2.2.tgz",
-      "integrity": "sha512-Ll5rPKKuM9efWirNxYEoGKUEN1UDOJzMMVnYmX/+P1y0zla+0FINol5g+6NTBaW7vVTvgqSquqm8qBy4Qv+2nQ=="
+      "version": "3.1.2",
+      "resolved": "https://registry.npmjs.org/onegraph-apollo-client/-/onegraph-apollo-client-3.1.2.tgz",
+      "integrity": "sha512-0zCmPrccUgOSGbW0rX8IRXWdjIIfkJUQwa+N5lz6KcHeGNEOO2oE8/7p6tvXUWFFjUQfohM+BiYSFOn/o1jjEA==",
+      "requires": {
+        "onegraph-subscription-client": "^3.1.2"
+      }
     },
     "onegraph-auth": {
       "version": "3.3.2",
@@ -20194,6 +20202,14 @@
           "resolved": "https://registry.npmjs.org/regenerator-runtime/-/regenerator-runtime-0.11.1.tgz",
           "integrity": "sha512-MguG95oij0fC3QV3URf4V2SDYGJhJnJGqvIIgdECeODCT98wSWDAJ94SSuVpYQUoTcGUIL6L4yNB7j1DFFHSBg=="
         }
+      }
+    },
+    "onegraph-subscription-client": {
+      "version": "3.3.0",
+      "resolved": "https://registry.npmjs.org/onegraph-subscription-client/-/onegraph-subscription-client-3.3.0.tgz",
+      "integrity": "sha512-IqFw+4PQmiW6qOWPYY6KenqGBJx+ZZdwP0+i4TEN4aRWzvNy37t5Zeiy41J9F+kuFqmH+fwTgJLTKrFfDL6Mvw==",
+      "requires": {
+        "subscriptions-transport-ws": "~0.9.13"
       }
     },
     "onetime": {
@@ -26448,6 +26464,25 @@
         }
       }
     },
+    "subscriptions-transport-ws": {
+      "version": "0.9.19",
+      "resolved": "https://registry.npmjs.org/subscriptions-transport-ws/-/subscriptions-transport-ws-0.9.19.tgz",
+      "integrity": "sha512-dxdemxFFB0ppCLg10FTtRqH/31FNRL1y1BQv8209MK5I4CwALb7iihQg+7p65lFcIl8MHatINWBLOqpgU4Kyyw==",
+      "requires": {
+        "backo2": "^1.0.2",
+        "eventemitter3": "^3.1.0",
+        "iterall": "^1.2.1",
+        "symbol-observable": "^1.0.4",
+        "ws": "^5.2.0 || ^6.0.0 || ^7.0.0"
+      },
+      "dependencies": {
+        "eventemitter3": {
+          "version": "3.1.2",
+          "resolved": "https://registry.npmjs.org/eventemitter3/-/eventemitter3-3.1.2.tgz",
+          "integrity": "sha512-tvtQIeLVHjDkJYnzf2dgVMxfuSGJeM/7UCG17TT4EumTfNtF+0nebF/4zWOIkCreAbtNqhGEboB6BWrwqNaw4Q=="
+        }
+      }
+    },
     "supports-color": {
       "version": "5.5.0",
       "resolved": "https://registry.npmjs.org/supports-color/-/supports-color-5.5.0.tgz",
@@ -26548,6 +26583,11 @@
       "requires": {
         "dequal": "2.0.2"
       }
+    },
+    "symbol-observable": {
+      "version": "1.2.0",
+      "resolved": "https://registry.npmjs.org/symbol-observable/-/symbol-observable-1.2.0.tgz",
+      "integrity": "sha512-e900nM8RRtGhlV36KGEU9k65K3mPb1WV70OdjfxlG2EAuM1noi/E/BaW/uMhL7bPEssK8QV57vN3esixjUvcXQ=="
     },
     "symbol-tree": {
       "version": "3.2.4",
@@ -29582,8 +29622,7 @@
     "ws": {
       "version": "7.4.6",
       "resolved": "https://registry.npmjs.org/ws/-/ws-7.4.6.tgz",
-      "integrity": "sha512-YmhHDO4MzaDLB+M9ym/mDA5z0naX8j7SIlT8f8z+I0VtzsRbekxEutHSme7NPS2qE8StCYQNUnfWdXta/Yu85A==",
-      "dev": true
+      "integrity": "sha512-YmhHDO4MzaDLB+M9ym/mDA5z0naX8j7SIlT8f8z+I0VtzsRbekxEutHSme7NPS2qE8StCYQNUnfWdXta/Yu85A=="
     },
     "xml-name-validator": {
       "version": "3.0.0",

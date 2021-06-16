@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 0.21.6 (2021-06-16)
+
+
+### Bug Fixes
+
+* **npm:** added missing lockfile apollo-boost lib ([#1041](https://github.com/open-sauced/open-sauced/issues/1041)) ([31c4922](https://github.com/open-sauced/open-sauced/commit/31c49222025bcac56a620cd8206727c0aa1539d5))
+
 ### 0.21.5 (2021-06-15)
 
 ### 0.21.4 (2021-06-15)
