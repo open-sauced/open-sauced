@@ -1,17 +1,49 @@
 import React from "react";
 import Background from "../src/styles/Background";
-import Avatar from "../src/styles/Avatar";
-import {face} from "../src/images";
-import darkMode from "../src/images/darkMode.svg";
-import lightMode from "../src/images/lightMode.svg";
-import themeAuto from "../src/images/themeAuto.svg";
+import {AccentLink, SubtleLink, MicroFont, TinyFont, ErrorMessage} from "../src/styles/Typography";
 
 export default {
   title: "Primitives",
 };
 
-export const Placeholder = () => (
+export const TypographyAccentLink = () => (
   <Background style={{height: 1024, padding: "10px"}}>
-    boo
+    <AccentLink>
+      <a>Test</a>
+    </AccentLink>
+  </Background>
+);
+
+export const TypographySubtleLink = () => (
+  <Background style={{height: 1024, padding: "10px"}}>
+    <Background style={{height: 35, width: 50, backgroundColor: "black", padding: "10px"}}>
+      <SubtleLink>
+        <a>Test</a>
+      </SubtleLink>
+    </Background>
+  </Background>
+);
+
+export const TypographyMicroFont = () => (
+  <Background style={{height: 1024, padding: "10px"}}>
+    <MicroFont>
+      Test
+    </MicroFont>
+  </Background>
+);
+
+export const TypographyTinyFont = () => (
+  <Background style={{height: 1024, padding: "10px"}}>
+    <TinyFont>
+      Test
+    </TinyFont>
+  </Background>
+);
+
+export const TypographyErrorMessage = () => (
+  <Background style={{height: 1024, padding: "10px"}}>
+    <ErrorMessage>
+      Test
+    </ErrorMessage>
   </Background>
 );
