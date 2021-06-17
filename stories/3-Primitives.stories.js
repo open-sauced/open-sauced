@@ -12,7 +12,7 @@ export default {
 
 export const ProfileAvatar = () => (
   <Background style={{height: 1024, padding: "10px"}}>
-    <Avatar src={face} alt="profile pic" />
+    <Avatar style={{width: "40px"}} src={face} alt="profile pic" />
   </Background>
 );
 
