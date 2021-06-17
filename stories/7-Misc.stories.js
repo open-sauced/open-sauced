@@ -20,25 +20,30 @@ export const ProfileAvatar = () => (
   );
   
   export const DarkMode = () => (
-    <a
-      style={{margin:"0 .5rem"}}>
+    <Background style={{height: 1024, padding: "10px"}}>
+      <a
+        style={{margin:"0 .5rem"}}>
         <img src={darkMode} alt="dark mode" style={{padding:"0.25rem", borderRadius:"15%"}}/>
-    </a>
+      </a>
+    </Background>
   )
   
   export const ThemeAuto = () => (
-    <a
-      style={{margin:"0 .5rem"}}>
-      <img src={themeAuto} alt="theme auto" style={{padding:"0.25rem", borderRadius:"15%", width: "1%", height: "1%"}}/>
-    </a>
-  
+    <Background style={{height: 1024, padding: "10px"}}>
+      <a
+        style={{margin:"0 .5rem"}}>
+        <img src={themeAuto} alt="theme auto" style={{padding:"0.25rem", borderRadius:"15%", width: "24px", height: "24px"}}/>
+      </a>
+    </Background>
   )
   
   export const LightMode = () => (
-    <a
-     style={{margin:"0 .5rem"}}>
-      <img src={lightMode} alt="light mode" style={{padding:"0.25rem", borderRadius:"15%"}} />
-    </a>
+    <Background style={{height: 1024, padding: "10px"}}>
+      <a
+        style={{margin:"0 .5rem"}}>
+        <img src={lightMode} alt="light mode" style={{padding:"0.25rem", borderRadius:"15%"}} />
+      </a>
+    </Background>
   )
 
 export const Contributors = () => (

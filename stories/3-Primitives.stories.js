@@ -32,14 +32,6 @@ export const TypographyMicroFont = () => (
   </Background>
 );
 
-export const TypographyTinyFont = () => (
-  <Background style={{height: 1024, padding: "10px"}}>
-    <TinyFont>
-      Test
-    </TinyFont>
-  </Background>
-);
-
 export const TypographyErrorMessage = () => (
   <Background style={{height: 1024, padding: "10px"}}>
     <ErrorMessage>
