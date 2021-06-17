@@ -7,7 +7,6 @@ import {CardPadding} from "../styles/Card";
 import {AccentLink, MicroFont} from "../styles/Typography";
 import IssuesLoader from "./IssuesLoader";
 
-
 function Contributions({repoName, owner, viewer}) {
   const [issues, setIssues] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -20,7 +19,6 @@ function Contributions({repoName, owner, viewer}) {
     api
       .persistedInteractionsFetch({query: ContributionsCollectionQueryVars(owner, repoName, viewer)})
       .then(response => {
-        console.log(response)
         const {nodes} = response.data.gitHub.search;
         setIssues(nodes);
         setLoading(false);
