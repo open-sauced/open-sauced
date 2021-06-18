@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 0.21.8 (2021-06-18)
+
+
+### Bug Fixes
+
+* adds margin to recommended card ([#1051](https://github.com/open-sauced/open-sauced/issues/1051)) ([77f20b0](https://github.com/open-sauced/open-sauced/commit/77f20b05766b125478afd42d11cdd7f7c2ede840))
+
 ### 0.21.7 (2021-06-18)
 
 ### 0.21.6 (2021-06-16)
