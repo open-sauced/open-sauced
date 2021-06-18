@@ -23,6 +23,14 @@ Review the project's contribution guideline if present. In a nutshell, commit to
 
 It might be helpful to write your own test apps to re-affirm your understanding of the key functions. This may identify some gaps in documentation, record those as they might be good PR's to open. Skim through the issue backlog; identify low hanging issues and mostly new ones. From those, attempt to recreate issues based on the OP description and ask questions if required. No question is a bad question!
 
+## Labeling good first issues
+Issues labeled as `good first issue` represent a curated list of easy contributions for new contributors. These issues are meant to help folks make their first contribution to open-source and should not require an excessive amount of research or triaging on the contributor's part.
+
+*All good first issues should include one or more of the following: a solution, a suggestion for a solution, links to components, or in which issue occurs.*
+
+- Issues that `needs triage` cannot be labeled as `good first issues`.
+- It is better to have no `good first issue` labeled issues than to have a `good first issue` confusing enough to deter a contributor from contributing. 
+
 ## Removal of Triage Role
 
 There are a few cases where members can be removed as triagers:
