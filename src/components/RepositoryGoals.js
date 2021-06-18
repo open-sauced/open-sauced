@@ -94,7 +94,6 @@ function RepositoryGoals({user}) {
               </SpaceBetweenTop>
             </RepositoryContext>
 
-            {/* TODO: This section is temporary and will need ne styles. Inline style ok for now */}
             <FlexColumn style={{marginLeft: 16, flex: 1}}>
               <Card>
                 <h3 style={{fontSize: fontSize.default}}>Repo Recommendations</h3>
