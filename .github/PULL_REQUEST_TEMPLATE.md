@@ -47,6 +47,7 @@
 - [ ] 📜 readme
 - [ ] 📜 contributing.md
 - [ ] 📓 docs
+- [ ] 📕 storybook
 - [ ] 🙅 no documentation needed
 
 ## [optional] Are there any post-deployment tasks we need to perform?
