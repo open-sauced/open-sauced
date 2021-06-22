@@ -1,6 +1,8 @@
 import React from "react";
 import {action} from "@storybook/addon-actions";
 import Button from "../src/styles/Button";
+import {plus} from "../src/icons";
+import {PencilIcon} from "@primer/octicons-react";
 
 export default {
   title: "Button",
@@ -21,4 +23,19 @@ export const PrimaryWithText = () => (
 
 export const secondary = () => <Button onClick={action("clicked")}>Cancel</Button>;
 
+export const secondaryWithImageAndText = () => (
+  <div>
+    <Button>
+      <PencilIcon verticalAlign="middle" />
+        Edit Notes
+    </Button>
+  </div>
+);
 
+export const addTo = () => (
+  <div>
+            <a onClick={() => _handleGoalCreation(goal.nameWithOwner)} href="#">
+              <img alt="pointing right icon" src={plus} />
+            </a>
+  </div>
+)

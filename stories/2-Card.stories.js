@@ -3,11 +3,15 @@ import Card from "../src/components/Card";
 import Button, {InputButton} from "../src/styles/Button";
 import {AccentLink, MicroFont} from "../src/styles/Typography";
 import {PrimaryWithText} from "./1-Button.stories";
-import {CardPadding, ContextStyle, HintStyle, OnBoardStyle} from "../src/styles/Card";
+import {CardPadding, CardHeader, ContextStyle, HintStyle} from "../src/styles/Card";
+import Avatar from "../src/styles/Avatar";
 import Input from "../src/styles/Input";
+import {Container} from "../src/styles/ListItem";
+import Search from "../src/styles/Search";
+import {Select} from "../src/styles/Select";
 import Background from "../src/styles/Background";
 import TextArea from "../src/styles/TextArea";
-import {Flex, FlexCenter, FlexColumn, IssuesColumn, SpaceAround, SpaceBetween} from "../src/styles/Grid";
+import {Flex, FloatLeft, FloatRight, FlexHeader, FlexCenter, FlexColumn, IssuesColumn, SpaceBetween} from "../src/styles/Grid";
 import List from "../src/styles/List";
 import {check} from "../src/icons";
 import {PencilIcon} from "@primer/octicons-react";
@@ -17,6 +21,8 @@ import IssuesListItem from "../src/components/IssueListItem";
 import DetailInfo from "../src/components/DetailInfo";
 import Illustration from "../src/styles/Illustration";
 import {doneChecking} from "../src/illustrations";
+import {plus} from "../src/icons";
+import {npm} from "../src/images";
 
 export default {
   title: "Cards",
@@ -90,10 +96,15 @@ export const IssuesCard = () => (
   <Background style={{height: 1024, padding: "10px"}}>
     <IssuesColumn style={{width: 600}}>
       <Card fitted>
-        <CardPadding>
-          <h1>Good First Issues</h1>
-          <hr width="100%" />
-        </CardPadding>
+        <CardHeader>
+          <FlexHeader>
+            <h1>Issues</h1>
+            <Button primary>
+              good first issues
+            </Button>
+
+          </FlexHeader>
+        </CardHeader>
         <List>
           <li>
             <IssuesListItem title={data.title} labels={data.labels} />
@@ -124,7 +135,7 @@ export const NewRepoCard = () => (
     <Flex>
       <Input className="utility-input urlForm" type="text" placeholder="vuejs/vue" />
       <Button primary onClick={() => console.log("clicked")}>
-        add repo
+        add
       </Button>
     </Flex>
   </Card>
@@ -150,29 +161,6 @@ export const NoteCard = () => (
       </Button>
     </FlexCenter>
   </Card>
-);
-
-export const OnboardingCard = () => (
-  <Background style={{height: 1024, padding: "10px"}}>
-    <OnBoardStyle>
-      <h4>Onboarding</h4>
-      <div className="checkbox">
-        <input id="agenda" type="checkbox" />
-        <label htmlFor="agenda">Follow the babel community</label>
-      </div>
-      <div className="checkbox">
-        <img src={check} alt="check" />
-        <input id="agenda" type="checkbox" checked />
-        <label className="checked" htmlFor="agenda">
-          Onboarding
-        </label>
-      </div>
-      <div className="checkbox">
-        <input id="agenda" type="checkbox" />
-        <label htmlFor="agenda">Claim first issue</label>
-      </div>
-    </OnBoardStyle>
-  </Background>
 );
 
 export const PrimaryWithTextCard = () => (
@@ -208,14 +196,35 @@ export const RepoCard = () => (
 export const RepoCardList = () => (
   <Background style={{height: 1024, padding: "10px"}}>
     <Card fitted>
-      <List>
-        <li>
-          <RepoListItem stars={138} goal={goal} />
-        </li>
-        <li>
-          <RepoListItem stars={381} goal={goal} />
-        </li>
-      </List>
+      <Container>
+        <CardPadding>
+          <Search
+            placeholder="Search"
+            aria-label="search"
+            type="search"
+          />
+          <Select>
+            <label htmlFor="sort">Sort:</label>
+              <select id="sort" >
+                <option value="none">None</option>
+                <option value="a_z">A to Z</option>
+                <option value="z_a">Z to A</option>
+                <option value="most_stars">Most Stars</option>
+                <option value="fewest_stars">Fewest Stars</option>
+            </select>
+          </Select>
+        </CardPadding>
+        <Card fitted>
+          <List>
+            <li>
+              <RepoListItem stars={138} goal={goal} />
+            </li>
+            <li>
+              <RepoListItem stars={381} goal={goal} />
+            </li>
+          </List>
+        </Card>
+      </Container>
     </Card>
   </Background>
 );
@@ -227,70 +236,101 @@ export const RepoListWithForm = () => (
         <Flex>
           <Input type="text" placeholder="vuejs/vue" />
           <InputButton className="input" primary onClick={() => console.log("clicked")}>
-            add repo
+            add
           </InputButton>
         </Flex>
       </CardPadding>
-      <List>
-        <li>
-          <RepoListItem stars={138} goal={goal} />
-        </li>
-        <li>
-          <RepoListItem stars={381} goal={goal} />
-        </li>
-      </List>
+      <Container>
+        <Search
+          placeholder="Search"
+          aria-label="search"
+          type="search"
+        />
+        <Select>
+          <label htmlFor="sort">Sort:</label>
+            <select id="sort" >
+              <option value="none">None</option>
+              <option value="a_z">A to Z</option>
+              <option value="z_a">Z to A</option>
+              <option value="most_stars">Most Stars</option>
+              <option value="fewest_stars">Fewest Stars</option>
+          </select>
+        </Select>
+        <Card fitted>
+          <List>
+            <li>
+              <RepoListItem stars={138} goal={goal} />
+            </li>
+            <li>
+              <RepoListItem stars={381} goal={goal} />
+            </li>
+          </List>
+        </Card>
+      </Container>
     </Card>
   </Background>
 );
 
 export const RepoDetailsCard = () => {
-  //this logic grabs the icons and puts the icons and text into an arr
-  //of objects to be mapped over
-  const repoDetailDiv = () => {
-    const octoface = "octoface";
-    const star = "star";
-    const contributions = "git-commit";
-    const openContributions = "repo-pull";
-
-    const detailInfo = [
-      {icon: octoface, text: "120 contributors"},
-      {icon: star, text: "14K stars"},
-      {icon: contributions, text: "0 contributions"},
-      {icon: openContributions, text: "0 open contributions"},
-    ];
-    //map over arr of objects from line 192
-    return detailInfo.map(item => {
-      //retain an indiv div with just the contributors, stars, contributions and open
-      return <DetailInfo icon={item.icon} text={item.text} />;
-    });
-  };
-  //this is the render for the actual component
   return (
     <Background style={{height: 1024, padding: "10px"}}>
-      <Card>
-        <SpaceAround>
-          {/* TODO: un-hard code this...
-          funcs are not appropriate React children*/}
-          <FlexColumn>{repoDetailDiv()}</FlexColumn>
-          <FlexColumn>{repoDetailDiv()}</FlexColumn>
-          <FlexColumn>{repoDetailDiv()}</FlexColumn>
-        </SpaceAround>
-      </Card>
+      <Flex>
+        <Card>
+          <DetailInfo text={`30 issues`} icon="IssueOpenedIcon" />
+          <DetailInfo text={`3 forks`} icon="RepoForkedIcon" />
+          <DetailInfo text={`8 stars`} icon="StarIcon" />
+          <DetailInfo text={`Other`} icon="LawIcon" />
+        </Card>
+      </Flex>
     </Background>
   );
 };
 
 export const RecommendedRepoListCard = () => (
   <Background style={{height: 600, padding: "10px"}}>
-    <Card fitted>
-      <List>
-        <li>
-          <RecommendedRepoList stars={138} goal={goal} />
-        </li>
-        <li>
-          <RecommendedRepoList stars={381} goal={goal} />
-        </li>
-      </List>
+    <Card>
+      <FlexHeader>
+        <FloatLeft>
+          <FlexCenter>
+            <Avatar
+              small
+              alt="avatar"
+              src={npm}
+            />
+            <Flex className="details">
+              <p>npm/cli</p>
+            </Flex>
+          </FlexCenter>
+        </FloatLeft>
+        <FloatRight>
+          <FlexCenter>
+            <a href="#">
+              <img alt="add recommended repo" src={plus} className="svg" />
+            </a>
+          </FlexCenter>
+        </FloatRight>
+      </FlexHeader>
+      <FlexHeader>
+        <FloatLeft>
+          <FlexCenter>
+            <Avatar
+              small
+              alt="avatar"
+              src={npm}
+            />
+            <Flex className="details">
+              <p>npm/cli</p>
+            </Flex>
+          </FlexCenter>
+        </FloatLeft>
+        <FloatRight>
+          <FlexCenter>
+            <a href="#">
+              <img alt="add recommended repo" src={plus} className="svg" />
+            </a>
+          </FlexCenter>
+        </FloatRight>
+      </FlexHeader>
     </Card>
   </Background>
 );
