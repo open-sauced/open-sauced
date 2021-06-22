@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 0.21.11 (2021-06-22)
+
+
+### Features
+
+* Updating storybook ([#1037](https://github.com/open-sauced/open-sauced/issues/1037)) ([d03fe56](https://github.com/open-sauced/open-sauced/commit/d03fe56784e628d3795de15530e8d31c2be0e01a))
+
 ### 0.21.10 (2021-06-19)
 
 ### 0.21.9 (2021-06-19)
