@@ -51,7 +51,7 @@ function ListGoals({goals, data}) {
       />
       <Select>
         <label htmlFor="sort">Sort:</label>
-        <select id="sort" onChange={e => handleSort(e.currentTarget.value)} style={{fontSize: fontSize.small}}>
+        <select id="sort" onChange={e => handleSort(e.currentTarget.value)} style={{fontSize: fontSize.small, width: "80px"}}>
           <option value="none">None</option>
           <option value="a_z">A to Z</option>
           <option value="z_a">Z to A</option>
