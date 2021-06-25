@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 0.21.12 (2021-06-25)
+
+
+### Bug Fixes
+
+* safari bug ([#1058](https://github.com/open-sauced/open-sauced/issues/1058)) ([197d80e](https://github.com/open-sauced/open-sauced/commit/197d80e136cfcc9e0462cccb8008442dc476024f))
+
 ### 0.21.11 (2021-06-22)
 
 
