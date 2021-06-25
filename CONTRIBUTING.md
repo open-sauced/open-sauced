@@ -61,6 +61,8 @@ _Note that since PR titles only have a single line, you have to use the ! syntax
 
 See [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) for more examples.
 
+_[3 tips for getting your Pull Request reviewed](https://youtu.be/cuMeC-eZJJ4)_
+
 ### Work in progress
 GitHub has support for draft pull requests, which will disable the merge button until the PR is marked as ready for merge.
 
