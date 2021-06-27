@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 0.21.14 (2021-06-27)
+
+
+### Bug Fixes
+
+* dark mode dashboard hover ([#1060](https://github.com/open-sauced/open-sauced/issues/1060)) ([c800e76](https://github.com/open-sauced/open-sauced/commit/c800e76f59ac2f9770792de55faaa1a29917a254))
+
 ### 0.21.13 (2021-06-25)
 
 ### 0.21.12 (2021-06-25)
