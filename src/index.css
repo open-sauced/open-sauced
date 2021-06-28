@@ -77,6 +77,10 @@ p {
   color: var(--lightGrey);
 }
 
+#sort{
+  width: 80px;
+}
+
 .form-control {
   padding: 10px;
 }
