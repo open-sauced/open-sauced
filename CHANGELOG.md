@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 0.21.15 (2021-06-28)
+
+
+### Bug Fixes
+
+* 1046-fix-dashboard-search-bar-overlap-mobile ([#1059](https://github.com/open-sauced/open-sauced/issues/1059)) ([b222a14](https://github.com/open-sauced/open-sauced/commit/b222a14024d1ccde30cdb14ce303f198f5590ca6))
+
 ### 0.21.14 (2021-06-27)
 
 
