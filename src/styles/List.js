@@ -80,12 +80,12 @@ const Container = styled.ul`
   body.dark & {
     background-color: ${colors.darkestGrey};
     color: ${colors.lightestGrey};
-    a, li:hover {
-      background-color: ${colors.darkGrey}
-      color: ${colors.lightestGrey};  
-    }
     li {
       border-top: 1px solid ${colors.grey};
+    }
+    li:hover {
+      background-color: ${colors.darkGrey};
+      color: ${colors.lightestGrey};  
     }
   }
 `;

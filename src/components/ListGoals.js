@@ -36,9 +36,8 @@ function ListGoals({goals, data}) {
     }
   };
 
-  const filteredSearch = listGoals.filter(
-    goals =>
-      goals.full_name.toLowerCase().includes(searchTerm.toLowerCase())
+  const filteredSearch = listGoals.filter((goals) =>
+    goals.full_name.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   return (
@@ -47,11 +46,15 @@ function ListGoals({goals, data}) {
         placeholder="Search"
         aria-label="search"
         type="search"
-        onChange={e => setSearchTerm(e.target.value)}
+        onChange={(e) => setSearchTerm(e.target.value)}
       />
       <Select>
         <label htmlFor="sort">Sort:</label>
-        <select id="sort" onChange={e => handleSort(e.currentTarget.value)} style={{fontSize: fontSize.small}}>
+        <select
+          id="sort"
+          onChange={(e) => handleSort(e.currentTarget.value)}
+          style={{fontSize: fontSize.small}}
+        >
           <option value="none">None</option>
           <option value="a_z">A to Z</option>
           <option value="z_a">Z to A</option>
@@ -62,16 +65,19 @@ function ListGoals({goals, data}) {
       <Card fitted>
         <List>
           {goalsWithData &&
-          filteredSearch.map(goal => (
-            <li key={goal.full_name}>
-              <Link
-                to={{
-                  pathname: `/repos/${goal.full_name.replace(/\s+/g, "")}/${goal.number}/`,
-                }}>
-                <RepoListItem goal={goal} stars={goal.stargazers_count} />
-              </Link>
-            </li>
-          ))}
+            filteredSearch.map((goal) => (
+              <li key={goal.full_name}>
+                <Link
+                  to={{
+                    pathname: `/repos/${goal.full_name.replace(/\s+/g, "")}/${
+                      goal.number
+                    }/`,
+                  }}
+                >
+                  <RepoListItem goal={goal} stars={goal.stargazers_count} />
+                </Link>
+              </li>
+            ))}
         </List>
         {filteredSearch.length === 0 && (
           <EmptyPlaceholder>

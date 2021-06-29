@@ -25,7 +25,12 @@ const Container = styled.input`
   body.dark & {
       color: ${colors.lightestGrey};
       background: ${colors.darkestGrey} url(${searchDark}) no-repeat ${size.micro} center;
-    }  
+    }
+  @media only screen and (max-width: 433px){
+    &[type=search]{
+      width: 110px;
+    }
+  }  
 }
 `;
 
