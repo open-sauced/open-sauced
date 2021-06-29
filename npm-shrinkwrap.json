@@ -1,7 +1,7 @@
 {
   "name": "open-sauced",
-  "version": "0.21.13",
-  "lockfileVersion": 2,
+  "version": "0.21.15",
+  "lockfileVersion": 1,
   "requires": true,
   "packages": {
     "": {
