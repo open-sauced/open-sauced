@@ -66,8 +66,10 @@
   "dependencies": {
     "@apollo/client": "^3.3.20",
     "@primer/octicons-react": "^14.2.2",
+    "@remirror/editor-social": "^0.13.1",
     "contrast": "^1.0.1",
     "dayjs": "^1.10.5",
+    "emoji-regex": "^9.2.2",
     "graphql": "^14.7.0",
     "humanize-duration": "^3.27.0",
     "lodash": "^4.17.21",

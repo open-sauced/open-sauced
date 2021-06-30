@@ -1,11 +1,11 @@
 import React, {useState} from "react";
 import Button from "../styles/Button";
-import {NoteArea, RenderedNote} from "../styles/TextArea";
+import {RenderedNote} from "../styles/TextArea";
 import Card from "./Card";
 import {FlexCenter} from "../styles/Grid";
 import {PencilIcon} from "@primer/octicons-react";
 import ReactMarkdown from "react-markdown";
-
+import NoteEditor from "./NoteEditor";
 import api from "../lib/apiGraphQL";
 
 function NoteForm({goalId, repoName, note}) {
@@ -32,9 +32,9 @@ function NoteForm({goalId, repoName, note}) {
     setInput(previouslySavedValue);
   };
 
-  const _handleNotesChange = e => {
+  /*const _handleNotesChange = e => {
     setInput(e.target.value);
-  };
+  };*/
 
   return (
     <Card>
@@ -43,15 +43,7 @@ function NoteForm({goalId, repoName, note}) {
           <ReactMarkdown className="noteContent" source={input || ""} />
         </RenderedNote>
       ) : (
-        <NoteArea
-          disabled={!editing}
-          onChange={_handleNotesChange}
-          value={input || ""}
-          type="text"
-          placeholder={`Type your notes for ${repoName} here...`}
-          name="notes"
-          aria-label="note input"
-        />
+        <NoteEditor />
       )}
       <FlexCenter>
         {editing ? (
