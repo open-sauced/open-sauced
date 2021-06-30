@@ -1,6 +1,6 @@
 name: Node CI/CD
 
-on: 
+on:
   push:
     branches:
       - main
@@ -27,15 +27,15 @@ jobs:
         npm ci
         npm audit --production
         npm test
-    
-  release: 
+
+  release:
     name: 💍 Semantic Release
 
     needs: [build]
     runs-on: ubuntu-latest
     if: github.event_name == 'push'
 
-    steps: 
+    steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
         with:
@@ -46,9 +46,13 @@ jobs:
           git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Install npm@7
+        run: npm i -g npm@7
       - name: npm install and test
         run: |
-          npm install
+          npm ci
+          npm audit --production
+          npm test
       - name: Release
         run: |
           npm run release
