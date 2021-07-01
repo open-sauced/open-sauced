@@ -1,0 +1,8 @@
+name: Check for Linked Issue
+on: pull_request
+
+jobs:
+  check-pull-request:
+    runs-on: ubuntu-latest
+    steps:
+      - runs: echo "Hello world!"
