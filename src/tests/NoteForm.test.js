@@ -14,15 +14,15 @@ test("container component should have no violations", async() => {
   cleanup();
 });
 
-test("component should not display edits when cancelled", async () => {
+test("component should not display edits when cancelled", async() => {
 
   render(<NoteForm  />);
-  const editButton = screen.getByRole('button', {name: /Edit Notes/i})
+  const editButton = screen.getByRole("button", {name: /Edit Notes/i});
   expect(editButton).toBeVisible();
   userEvent.click(editButton);
-  userEvent.type(screen.getByRole('textbox', { name: /note input/i }), 'This is an initial note.');
-  userEvent.click(screen.getByRole('button', {name: /Cancel/i}));
-  expect(screen.getByTestId('notes-content')).not.toHaveTextContent(/initial/i)
+  userEvent.type(screen.getByRole("textbox", {name: /note input/i}), "This is an initial note.");
+  userEvent.click(screen.getByRole("button", {name: /Cancel/i}));
+  expect(screen.getByTestId("notes-content")).not.toHaveTextContent(/initial/i);
   screen.debug();
 
-})
+});

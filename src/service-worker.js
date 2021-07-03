@@ -16,9 +16,9 @@ self.addEventListener("activate", function(event) {
   console.log("[Servicework] Activate");
   event.waitUntil(
     caches.keys().then(function(keyList) {
-      return Promise.all(keyList.filter((key) => {return key !== cacheName}).map(function(key) {
-          console.log("[ServiceWorker] Removing old cache shell", key);
-          return caches.delete(key);
+      return Promise.all(keyList.filter((key) => {return key !== cacheName;}).map(function(key) {
+        console.log("[ServiceWorker] Removing old cache shell", key);
+        return caches.delete(key);
       }));
     })
   );

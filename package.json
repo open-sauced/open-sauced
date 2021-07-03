@@ -87,8 +87,8 @@
     "test": "npm run clean && node scripts/test.js --env=jsdom --updateSnapshot",
     "storybook": "start-storybook -p 6006 --no-dll",
     "build-storybook": "build-storybook --no-dll",
-    "lint": "eslint .",
-    "lint:fix": "eslint --fix --ext .js,.jsx .",
+    "lint": "eslint ./src",
+    "lint:fix": "eslint --fix --ext .js,.jsx ./src",
     "release": "standard-version --git-tag-fallback"
   },
   "jest": {
