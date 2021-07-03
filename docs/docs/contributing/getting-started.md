@@ -1,7 +1,7 @@
-# CONTRIBUTING
+# Getting started
 
 Contributions are always welcome, no matter how large or small. Before contributing,
-please read the [code of conduct](CODE_OF_CONDUCT.md).
+please read the [code of conduct](./code-of-conduct.md).
 
 Some thoughts to help you contribute to this project
 
@@ -35,7 +35,7 @@ $ npm run test
 
 ## Pull Requests
 
-### _We actively welcome your pull requests, however linking your work to an existing issue is preferred._
+___We actively welcome your pull requests, however linking your work to an existing issue is preferred.___
 
 1. Fork the repo and create your branch from `main`.
 1. Name your branch something that is descriptive to the work you are doing. i.e. adds-new-thing or fixes-mobile
@@ -70,17 +70,17 @@ GitHub has support for draft pull requests, which will disable the merge button 
 
 If you plan to contribute a change based on an open issue, please assign yourself by commenting on the following word `.take`. Issues that are not assigned are assumed open, and to avoid conflicts, please assign yourself before beginning work on any issues.
 
-If you would like to contribute to the project for the first time, please consider joining checking the [bug](https://github.com/open-sauced/open-sauced/issues?q=is%3Aissue+is%3Aopen+label%3A%22%F0%9F%90%9B+bug%22) or [good first issue](https://github.com/open-sauced/open-sauced/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22) labels. 
+If you would like to contribute to the project for the first time, please consider joining checking the [bug](https://github.com/open-sauced/open-sauced/issues?q=is%3Aissue+is%3Aopen+label%3A%22%F0%9F%90%9B+bug%22) or [good first issue](https://github.com/open-sauced/open-sauced/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22) labels.
 
 Also, all questions are welcomed.
 
-### Triage Team
+## Triage Team
 
-The Triage team is inspired by [expressjs/express](https://github.com/expressjs/express/blob/HEAD/Triager-Guide.md). This team exists to create a path for making contributions to this project and open source. All Triage Team members are expected to follow this guide: [TRIAGE_GUIDE.md](TRIAGE_GUIDE.md)
+The Triage team is inspired by [expressjs/express](https://github.com/expressjs/express/blob/HEAD/Triager-Guide.md). This team exists to create a path for making contributions to this project and open source. All Triage Team members are expected to follow this guide: [TRIAGE_GUIDE.md](./triage-guide.md)
 
 > **There are no minimum requirements to become a member of the Triage Team.**
 
-For those interested in getting involved in the project or just open source in general, please request an invite to the Triage Team in [this discussion.](https://github.com/open-sauced/open-sauced/discussions/638) 
+For those interested in getting involved in the project or just open source in general, please request an invite to the Triage Team in [this discussion.](https://github.com/open-sauced/open-sauced/discussions/638)
 
 ## Funding
 Open Sauced is a part of GitHub Sponsors. If you would like to contribute, please note the [sponsor page](https://github.com/sponsors/open-sauced) for details on how funds are distributed. If you have made any contributions to the projectd directly or indirectly, please consider adding your profile to the [funding.yml](https://github.com/open-sauced/open-sauced/blob/main/.github/funding.yml).
@@ -90,11 +90,11 @@ Open Sauced is a part of GitHub Sponsors. If you would like to contribute, pleas
 Do you have questions? Join the conversation in our [Discord](https://discord.gg/U2peSNf23P).
 
 ## Coding Tips
-- Ask questions if you are stuck. 
+- Ask questions if you are stuck.
 - Use [CSS variables](https://github.com/open-sauced/open-sauced/blob/HEAD/src/styles/variables.js)
-- Always use [rel="noreferrer" on all target="_blank" links](https://web.dev/external-anchors-use-rel-noopener/). 
+- Always use [rel="noreferrer" on all target="_blank" links](https://web.dev/external-anchors-use-rel-noopener/).
 
 ## License
 
 By contributing to the Open Sauced project, you agree that your contributions will be licensed
-under its [MIT license](LICENSE).
+under its [MIT license](https://raw.githubusercontent.com/open-sauced/open-sauced/main/LICENSE).

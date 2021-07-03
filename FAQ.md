@@ -1,1 +1,0 @@
-- [What is Open Sauced?](https://www.youtube.com/watch?v=lSb5GCA2jxA)

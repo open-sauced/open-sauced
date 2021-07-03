@@ -1,6 +1,7 @@
-# Open Sauced Triager Guide
+# Triage Guide
 
 ## How do I Join the Triage Team?
+
 1. Sign up for [opensauced.pizza](https://opensauced.pizza)
 2. Leave a reply in the [invite discussion](https://github.com/open-sauced/open-sauced/discussions/638).
 
@@ -24,6 +25,7 @@ Review the project's contribution guideline if present. In a nutshell, commit to
 It might be helpful to write your own test apps to re-affirm your understanding of the key functions. This may identify some gaps in documentation, record those as they might be good PR's to open. Skim through the issue backlog; identify low hanging issues and mostly new ones. From those, attempt to recreate issues based on the OP description and ask questions if required. No question is a bad question!
 
 ## Labeling good first issues
+
 Issues labeled as `good first issue` represent a curated list of easy contributions for new contributors. These issues are meant to help folks make their first contribution to open-source and should not require an excessive amount of research or triaging on the contributor's part.
 
 *All good first issues should include one or more of the following: a solution, a suggestion for a solution, links to components, or in which issue occurs.*
@@ -35,7 +37,7 @@ Issues labeled as `good first issue` represent a curated list of easy contributi
 
 There are a few cases where members can be removed as triagers:
 
-- Breaking the [CoC](/CODE_OF_CONDUCT.md) or [project contributor guidelines](/CONTRIBUTING.md)
+- Breaking the [CoC](./contributing/code-of-conduct.md) or [project contributor guidelines](./getting-started.md)
 - Abuse or misuse of the role as deemed by the TC
 - Lack of participation for more than 6 months
 
