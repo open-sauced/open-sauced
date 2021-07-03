@@ -16,7 +16,7 @@ module.exports = {
   themeConfig: {
     navbar: {
       logo: {
-        alt: 'My Site Logo',
+        alt: 'Open Sauced Logo',
         src: 'img/logo.svg',
       },
       items: [
@@ -27,7 +27,7 @@ module.exports = {
           label: 'Docs',
         },
         {
-          href: 'https://github.com/facebook/docusaurus',
+          href: 'https://github.com/open-sauced/open-sauced',
           label: 'GitHub',
           position: 'right',
         },
