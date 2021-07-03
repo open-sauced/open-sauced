@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 0.21.21 (2021-07-03)
+
+
+### Bug Fixes
+
+* added proper release management resolution ([#1064](https://github.com/open-sauced/open-sauced/issues/1064)) ([006348a](https://github.com/open-sauced/open-sauced/commit/006348a547be7361c2c97accfb30bf3a9bca012c))
+
 ### 0.21.20 (2021-07-03)
 
 ### 0.21.19 (2021-07-03)
