@@ -41,7 +41,7 @@ jobs:
   docusaurus:
     name: 📖 Documentation
 
-    needs: [ release ]
+    needs: [ build ]
     runs-on: ubuntu-latest
 
     steps:
