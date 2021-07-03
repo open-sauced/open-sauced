@@ -74,7 +74,7 @@ jobs:
       - name: npm install and test
         run: |
           cd docs
-          npm ci
+          npm ci --production
           npm run build
 
       - name: Deploy to static branch
