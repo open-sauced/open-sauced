@@ -13,10 +13,8 @@ import Background from "../src/styles/Background";
 import TextArea from "../src/styles/TextArea";
 import {Flex, FloatLeft, FloatRight, FlexHeader, FlexCenter, FlexColumn, IssuesColumn, SpaceBetween} from "../src/styles/Grid";
 import List from "../src/styles/List";
-import {check} from "../src/icons";
 import {PencilIcon} from "@primer/octicons-react";
 import RepoListItem from "../src/components/RepoListItem";
-import RecommendedRepoList from "../src/components/RecommendedRepoList";
 import IssuesListItem from "../src/components/IssueListItem";
 import DetailInfo from "../src/components/DetailInfo";
 import Illustration from "../src/styles/Illustration";
@@ -205,12 +203,12 @@ export const RepoCardList = () => (
           />
           <Select>
             <label htmlFor="sort">Sort:</label>
-              <select id="sort" >
-                <option value="none">None</option>
-                <option value="a_z">A to Z</option>
-                <option value="z_a">Z to A</option>
-                <option value="most_stars">Most Stars</option>
-                <option value="fewest_stars">Fewest Stars</option>
+            <select id="sort" >
+              <option value="none">None</option>
+              <option value="a_z">A to Z</option>
+              <option value="z_a">Z to A</option>
+              <option value="most_stars">Most Stars</option>
+              <option value="fewest_stars">Fewest Stars</option>
             </select>
           </Select>
         </CardPadding>
@@ -248,12 +246,12 @@ export const RepoListWithForm = () => (
         />
         <Select>
           <label htmlFor="sort">Sort:</label>
-            <select id="sort" >
-              <option value="none">None</option>
-              <option value="a_z">A to Z</option>
-              <option value="z_a">Z to A</option>
-              <option value="most_stars">Most Stars</option>
-              <option value="fewest_stars">Fewest Stars</option>
+          <select id="sort" >
+            <option value="none">None</option>
+            <option value="a_z">A to Z</option>
+            <option value="z_a">Z to A</option>
+            <option value="most_stars">Most Stars</option>
+            <option value="fewest_stars">Fewest Stars</option>
           </select>
         </Select>
         <Card fitted>
@@ -276,10 +274,10 @@ export const RepoDetailsCard = () => {
     <Background style={{height: 1024, padding: "10px"}}>
       <Flex>
         <Card>
-          <DetailInfo text={`30 issues`} icon="IssueOpenedIcon" />
-          <DetailInfo text={`3 forks`} icon="RepoForkedIcon" />
-          <DetailInfo text={`8 stars`} icon="StarIcon" />
-          <DetailInfo text={`Other`} icon="LawIcon" />
+          <DetailInfo text={"30 issues"} icon="IssueOpenedIcon" />
+          <DetailInfo text={"3 forks"} icon="RepoForkedIcon" />
+          <DetailInfo text={"8 stars"} icon="StarIcon" />
+          <DetailInfo text={"Other"} icon="LawIcon" />
         </Card>
       </Flex>
     </Background>
