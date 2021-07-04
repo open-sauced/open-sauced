@@ -3,7 +3,6 @@ import {colors, size, fontSize} from "../variables";
 import MEDIA from "../mediaTemplates";
 
 const Hero = styled.section`
-  @import url("https://fonts.googleapis.com/css2?family=Arvo&display=swap");
   padding-left: 5rem;
   padding-right: 5rem;
   padding-top: 36px;
@@ -43,7 +42,6 @@ const Wrapper = styled.div`
   margin-left: auto;
   margin-right: auto;
   max-width: 1000px;
-  font-family: "Arvo", serif;
 
   ${MEDIA.TABLET`
     padding: 0;
@@ -164,7 +162,6 @@ const QuoteSection = styled(Hero)`
   span {
     font-weight: bold;
     font-size: ${fontSize.large};
-    font-family: 'Arvo', serif;
 
     q::before {
       content: open-quote;
