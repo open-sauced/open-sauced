@@ -11,7 +11,7 @@
         "@primer/octicons-react": "^14.2.2",
         "contrast": "^1.0.1",
         "dayjs": "^1.10.5",
-        "graphql": "^14.7.0",
+        "graphql": "^15.5.1",
         "humanize-duration": "^3.27.0",
         "lodash": "^4.17.21",
         "onegraph-apollo-client": "^3.1.2",
@@ -17802,14 +17802,11 @@
       "dev": true
     },
     "node_modules/graphql": {
-      "version": "14.7.0",
-      "resolved": "https://registry.npmjs.org/graphql/-/graphql-14.7.0.tgz",
-      "integrity": "sha512-l0xWZpoPKpppFzMfvVyFmp9vLN7w/ZZJPefUicMCepfJeQ8sMcztloGYY9DfjVPo6tIUDzU5Hw3MUbIjj9AVVA==",
-      "dependencies": {
-        "iterall": "^1.2.2"
-      },
+      "version": "15.5.1",
+      "resolved": "https://registry.npmjs.org/graphql/-/graphql-15.5.1.tgz",
+      "integrity": "sha512-FeTRX67T3LoE3LWAxxOlW2K3Bz+rMYAC18rRguK4wgXaTZMiJwSUwDmPFo3UadAKbzirKIg5Qy+sNJXbpPRnQw==",
       "engines": {
-        "node": ">= 6.x"
+        "node": ">= 10.x"
       }
     },
     "node_modules/graphql-tag": {
@@ -50144,12 +50141,9 @@
       "dev": true
     },
     "graphql": {
-      "version": "14.7.0",
-      "resolved": "https://registry.npmjs.org/graphql/-/graphql-14.7.0.tgz",
-      "integrity": "sha512-l0xWZpoPKpppFzMfvVyFmp9vLN7w/ZZJPefUicMCepfJeQ8sMcztloGYY9DfjVPo6tIUDzU5Hw3MUbIjj9AVVA==",
-      "requires": {
-        "iterall": "^1.2.2"
-      }
+      "version": "15.5.1",
+      "resolved": "https://registry.npmjs.org/graphql/-/graphql-15.5.1.tgz",
+      "integrity": "sha512-FeTRX67T3LoE3LWAxxOlW2K3Bz+rMYAC18rRguK4wgXaTZMiJwSUwDmPFo3UadAKbzirKIg5Qy+sNJXbpPRnQw=="
     },
     "graphql-tag": {
       "version": "2.12.4",
