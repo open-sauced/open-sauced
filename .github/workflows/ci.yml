@@ -4,36 +4,36 @@ on:
   push:
     branches:
       - main
-  pull_request:
-
+  pull_request: null
 jobs:
   build:
     name: 🛠 BUILD
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
+      - name: Checkout repository
+        uses: actions/checkout@v2
 
-    - name: Setup Node
-      uses: actions/setup-node@v2
-      with:
-        node-version: '14.x'
+      - name: Setup Node
+        uses: actions/setup-node@v2
+        with:
+          node-version: "14.x"
+          cache: npm
 
-    - name: Install npm@7
-      run: npm i -g npm@7
+      - name: Install npm@7
+        run: npm i -g npm@7
 
-    - name: Build and test
-      run: |
-        npm ci
-        npm audit --production
-        npm test
+      - name: Build and test
+        run: |
+          npm ci
+          npm audit --production
+          npm test
 
-    - name: Release
-      if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-      run: |
-        git config --global user.name ${GITHUB_ACTOR}
-        git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
-        npm run release
-        git push --follow-tags origin main
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Release
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+        run: |
+          git config --global user.name ${GITHUB_ACTOR}
+          git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+          npm run release
+          git push --follow-tags origin main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
