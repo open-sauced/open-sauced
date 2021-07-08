@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 0.21.22 (2021-07-08)
+
+
+### Features
+
+* storybook dark mode ([#1061](https://github.com/open-sauced/open-sauced/issues/1061)) ([e9e84dc](https://github.com/open-sauced/open-sauced/commit/e9e84dc3fc8fc8f13ad55647001cca92e46ec47c))
+
 ### 0.21.21 (2021-07-03)
 
 
