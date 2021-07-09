@@ -19,7 +19,8 @@ module.exports = {
       items: [
         'contributing/getting-started',
         'contributing/code-of-conduct',
-        'contributing/triage-guide'
+        'contributing/triage-guide',
+        'contributing/resolve-merge-conflicts'
       ],
     },
     {

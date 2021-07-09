@@ -139,8 +139,8 @@ globals:
   global: true
 
 ignorePatterns: [
-  'public',
-  'test.js',
-  'docs'
+  'build',
+  'docs',
+  'public'
 ]
 
