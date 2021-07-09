@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 0.21.23 (2021-07-09)
+
+
+### Bug Fixes
+
+* pin down actions/node-setup to v2.1.5 ([#1082](https://github.com/open-sauced/open-sauced/issues/1082)) ([3229557](https://github.com/open-sauced/open-sauced/commit/322955744c889b2fec59d04cd578db580e9d8afe))
+
 ### 0.21.22 (2021-07-08)
 
 
