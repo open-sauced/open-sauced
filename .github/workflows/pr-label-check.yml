@@ -1,0 +1,42 @@
+name: "PR Label Check"
+
+on:
+  pull_request_target:
+    types:
+      - opened
+      - edited
+      - reopened
+      - synchronize
+
+jobs:
+  comment:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Check issues
+        id: check
+        uses: actions/github-script@v4
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const labelCheck = context.payload.pull_request.labels.length > 0;
+            const output = `#### Label check: ⚙️\`${ labelCheck ? 'success' : 'failure' }\`
+
+            *\`${ labelCheck
+              ? 'You have correctly labeled the pull request ! Wait for a code review now !'
+              : 'You need to attach an existing issue to this pull request in order get this code merged !' }\`*
+
+            *Pusher: @${{ github.actor }}, Action: \`${{ github.event_name }}\`*`;
+
+            await github.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: output
+            });
+
+            if (!labelCheck) {
+              return core.setFailed('Action failed');
+            }
