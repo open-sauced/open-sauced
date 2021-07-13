@@ -36,6 +36,8 @@ function NoteForm({goalId, repoName, note}) {
     setInput(e.target.value);
   };
 
+  console.log(note);
+
   return (
     <Card>
       {!editing ? (

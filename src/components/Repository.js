@@ -56,14 +56,12 @@ function Repository({user, match}) {
       });
 
     api
-      .fetchGoalQuery({number: parseInt(issueNumber)})
+      .fetchGoalQuery(parseInt(issueNumber))
       .then(res => {
         console.log(res);
-        console.log("id", issueNumber)
-        console.log("id type", typeof parseInt(issueNumber))
-        const {body} = res.data.gitHub.viewer.repository.issue;
-        setNote(body);
-        setIssueId(issueNumber);
+        const {issue} = res.data.gitHub.viewer.repository;
+        setNote(issue.body);
+        setIssueId(issue.id);
       })
       .catch(e => {
         console.log(e);
