@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 0.21.24 (2021-07-13)
+
+
+### Features
+
+* comment for assign yourself ([#1085](https://github.com/open-sauced/open-sauced/issues/1085)) ([6e946bf](https://github.com/open-sauced/open-sauced/commit/6e946bf9582162c4a9444c4f2f2d1a433b700c44))
+
 ### 0.21.23 (2021-07-09)
 
 
