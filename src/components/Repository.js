@@ -22,7 +22,7 @@ import {fontSize} from "../styles/variables";
 
 function Repository({user, match}) {
   const {
-    params: {repoName, repoOwner, id},
+    params: {repoName, repoOwner, id: issueNumber},
   } = match;
   const [repository, setRepository] = useState(null);
   const [error, setError] = useState(null);
@@ -56,11 +56,14 @@ function Repository({user, match}) {
       });
 
     api
-      .persistedGoalFetch({number:parseInt(id)})
+      .fetchGoalQuery({number: parseInt(issueNumber)})
       .then(res => {
-        const {id, body} = res.data.gitHub.viewer.repository.issue;
+        console.log(res);
+        console.log("id", issueNumber)
+        console.log("id type", typeof parseInt(issueNumber))
+        const {body} = res.data.gitHub.viewer.repository.issue;
         setNote(body);
-        setIssueId(id);
+        setIssueId(issueNumber);
       })
       .catch(e => {
         console.log(e);
