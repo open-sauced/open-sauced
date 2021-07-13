@@ -58,7 +58,6 @@ function Repository({user, match}) {
     api
       .fetchGoalQuery(parseInt(issueNumber))
       .then(res => {
-        console.log(res);
         const {issue} = res.data.gitHub.viewer.repository;
         setNote(issue.body);
         setIssueId(issue.id);
@@ -250,7 +249,7 @@ function Repository({user, match}) {
               {licenseInfo && <DetailInfo text={`${licenseInfo.name}`} icon="LawIcon" />}
             </Card>
             {user && <Contributions viewer={user.login} repoName={name} owner={owner.login} />}
-            {owner && note && <Form note={note} goalId={issueId} repoName={nameWithOwner} />}
+            {owner && <Form note={note} goalId={issueId} repoName={nameWithOwner} />}
             {owner && <DangerZone note={note} goalId={issueId} repoName={nameWithOwner} />}
           </FormColumn>
         ) : (
