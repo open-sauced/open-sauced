@@ -250,7 +250,7 @@ function Repository({user, match}) {
               {licenseInfo && <DetailInfo text={`${licenseInfo.name}`} icon="LawIcon" />}
             </Card>
             {user && <Contributions viewer={user.login} repoName={name} owner={owner.login} />}
-            {owner && <Form note={note} goalId={issueId} repoName={nameWithOwner} />}
+            {owner && note && <Form note={note} goalId={issueId} repoName={nameWithOwner} />}
             {owner && <DangerZone note={note} goalId={issueId} repoName={nameWithOwner} />}
           </FormColumn>
         ) : (
