@@ -88,7 +88,7 @@ module.exports = {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           editUrl:
-            'https://github.com/open-sauced/open-sauced/edit/main/docusaurus/',
+            'https://github.com/open-sauced/open-sauced/edit/main/docs/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
