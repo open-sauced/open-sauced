@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 0.21.27 (2021-07-14)
+
+
+### Bug Fixes
+
+* add proper folder to docusaurus build ([#1086](https://github.com/open-sauced/open-sauced/issues/1086)) ([b5709e7](https://github.com/open-sauced/open-sauced/commit/b5709e780d4d0f49aebc590ffe912e89e7617cc8))
+
 ### 0.21.26 (2021-07-14)
 
 
