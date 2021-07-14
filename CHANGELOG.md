@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 0.21.25 (2021-07-14)
+
+
+### Bug Fixes
+
+* persisted query fix with fragments ([#1034](https://github.com/open-sauced/open-sauced/issues/1034)) ([6ac20a8](https://github.com/open-sauced/open-sauced/commit/6ac20a8b6d20b0edeb2fe0b01137ce5f7996117d))
+
 ### 0.21.24 (2021-07-13)
 
 
