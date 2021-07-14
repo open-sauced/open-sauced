@@ -22,7 +22,7 @@ import {fontSize} from "../styles/variables";
 
 function Repository({user, match}) {
   const {
-    params: {repoName, repoOwner, id},
+    params: {repoName, repoOwner, id: issueNumber},
   } = match;
   const [repository, setRepository] = useState(null);
   const [error, setError] = useState(null);
@@ -56,11 +56,11 @@ function Repository({user, match}) {
       });
 
     api
-      .persistedGoalFetch({number:parseInt(id)})
+      .fetchGoalQuery(parseInt(issueNumber))
       .then(res => {
-        const {id, body} = res.data.gitHub.viewer.repository.issue;
-        setNote(body);
-        setIssueId(id);
+        const {issue} = res.data.gitHub.viewer.repository;
+        setNote(issue.body);
+        setIssueId(issue.id);
       })
       .catch(e => {
         console.log(e);
@@ -248,7 +248,7 @@ function Repository({user, match}) {
               <DetailInfo text={`${humanizeNumber(stargazers.totalCount)} stars`} icon="StarIcon" />
               {licenseInfo && <DetailInfo text={`${licenseInfo.name}`} icon="LawIcon" />}
             </Card>
-            <Contributions repoName={name} owner={owner.login} />
+            {user && <Contributions viewer={user.login} repoName={name} owner={owner.login} />}
             {owner && <Form note={note} goalId={issueId} repoName={nameWithOwner} />}
             {owner && <DangerZone note={note} goalId={issueId} repoName={nameWithOwner} />}
           </FormColumn>

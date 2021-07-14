@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 0.21.25 (2021-07-14)
+
+
+### Bug Fixes
+
+* persisted query fix with fragments ([#1034](https://github.com/open-sauced/open-sauced/issues/1034)) ([6ac20a8](https://github.com/open-sauced/open-sauced/commit/6ac20a8b6d20b0edeb2fe0b01137ce5f7996117d))
+
+### 0.21.24 (2021-07-13)
+
+
+### Features
+
+* comment for assign yourself ([#1085](https://github.com/open-sauced/open-sauced/issues/1085)) ([6e946bf](https://github.com/open-sauced/open-sauced/commit/6e946bf9582162c4a9444c4f2f2d1a433b700c44))
+
+### 0.21.23 (2021-07-09)
+
+
+### Bug Fixes
+
+* pin down actions/node-setup to v2.1.5 ([#1082](https://github.com/open-sauced/open-sauced/issues/1082)) ([3229557](https://github.com/open-sauced/open-sauced/commit/322955744c889b2fec59d04cd578db580e9d8afe))
+
 ### 0.21.22 (2021-07-08)
 
 
