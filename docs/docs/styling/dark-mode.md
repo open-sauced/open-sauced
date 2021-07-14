@@ -32,7 +32,7 @@ SVG images can have their coloring controlled by a few different means, dependin
 
 ## Loading Skeletons
 
-This project uses components from the library `react-loading-skeleton`, and these are addressed in `src/index.css` based on a reading of [the source](https://github.com/dvtng/react-loading-skeleton/blob/master/src/skeleton.js)
+This project uses components from the library `react-loading-skeleton`, and these are addressed in `src/index.css` based on [this file](https://github.com/dvtng/react-loading-skeleton/blob/master/src/skeleton.js) from their source code.
 
 ## Best Practices Moving Forward
 
