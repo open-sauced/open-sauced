@@ -1,6 +1,6 @@
 # Dark Mode Feature
 
-This project supports "dark mode" styling, and by default it will follow the color preference on your device. It also allows for overriding this using buttons at the top right of the screen, which will persist the preference to local storage on your device. More info about color preference web API's can be found here: [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme)
+This project supports "dark mode" styling, and by default it will follow the color preference on your device. It also allows for overriding this using buttons at the top right of the screen, which will persist the preference to local storage on your device. More info about color preference web API's can be found here in the [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme).
 
 ## Implementation Approach
 
@@ -32,7 +32,7 @@ SVG images can have their coloring controlled by a few different means, dependin
 
 ## Loading Skeletons
 
-This project uses components from the library `react-loading-skeleton`, and these are addressed in `src/index.css` based on a reading of [the source](https://github.com/dvtng/react-loading-skeleton/blob/master/src/skeleton.js)
+This project uses components from the library `react-loading-skeleton`, and these are addressed in `src/index.css` based on [this file](https://github.com/dvtng/react-loading-skeleton/blob/master/src/skeleton.js) from their source code.
 
 ## Best Practices Moving Forward
 
