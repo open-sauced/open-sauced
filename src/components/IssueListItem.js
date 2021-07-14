@@ -25,7 +25,7 @@ function IssueListItem({title, labels, author, opened, type, participants, comme
               <b>{title}</b>
             </p>
             <div>
-              {labels.data.length > 0 && labels.data.map(label => (
+              {labels.data && labels.data.length > 0 && labels.data.map(label => (
                 <span
                   style={{
                     backgroundColor: `#${label.node.color}`,

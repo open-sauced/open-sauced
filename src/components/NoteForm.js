@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import Button from "../styles/Button";
 import {NoteArea, RenderedNote} from "../styles/TextArea";
 import Card from "./Card";
@@ -12,6 +12,10 @@ function NoteForm({goalId, repoName, note}) {
   const [previouslySavedValue, setPreviouslySavedValue] = useState(note);
   const [input, setInput] = useState(note);
   const [editing, setEditing] = useState(false);
+
+  useEffect(() => {
+    setInput(note);
+  }, [note]);
 
   const _handleNoteUpdate = () => {
     api
@@ -39,8 +43,8 @@ function NoteForm({goalId, repoName, note}) {
   return (
     <Card>
       {!editing ? (
-        <RenderedNote data-testid="notes-content" >
-          <ReactMarkdown className="noteContent" source={input || ""} />
+        <RenderedNote data-testid="notes-content">
+          <ReactMarkdown className="noteContent" children={input} />
         </RenderedNote>
       ) : (
         <NoteArea
@@ -69,7 +73,9 @@ function NoteForm({goalId, repoName, note}) {
           <Button primary onClick={_handleCancelEditing}>
             Cancel
           </Button>
-        ) : ""}
+        ) : (
+          ""
+        )}
       </FlexCenter>
     </Card>
   );
