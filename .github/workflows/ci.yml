@@ -64,7 +64,7 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./build
+          publish_dir: ./docs/build
           commit_message: ${{ github.event.head_commit.message }}
           enable_jekyll: false
           cname: docs.opensauced.pizza
