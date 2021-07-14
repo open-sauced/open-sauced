@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 0.21.26 (2021-07-14)
+
+
+### Features
+
+* add Docusaurus static generated documentation ([#1078](https://github.com/open-sauced/open-sauced/issues/1078)) ([b116649](https://github.com/open-sauced/open-sauced/commit/b11664962aef208ed5762c2846de25b8e01f9f13)), closes [#1064](https://github.com/open-sauced/open-sauced/issues/1064) [#1066](https://github.com/open-sauced/open-sauced/issues/1066) [#1071](https://github.com/open-sauced/open-sauced/issues/1071) [#1067](https://github.com/open-sauced/open-sauced/issues/1067) [#1070](https://github.com/open-sauced/open-sauced/issues/1070) [#1071](https://github.com/open-sauced/open-sauced/issues/1071) [#1073](https://github.com/open-sauced/open-sauced/issues/1073)
+
 ### 0.21.25 (2021-07-14)
 
 
