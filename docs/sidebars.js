@@ -20,7 +20,8 @@ module.exports = {
         'contributing/getting-started',
         'contributing/code-of-conduct',
         'contributing/triage-guide',
-        'contributing/resolve-merge-conflicts'
+        'contributing/resolve-merge-conflicts',
+        'contributing/fetching-data-from-github'
       ],
     },
     {
