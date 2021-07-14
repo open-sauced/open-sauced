@@ -27,15 +27,15 @@ export const secondaryWithImageAndText = () => (
   <div>
     <Button>
       <PencilIcon verticalAlign="middle" />
-        Edit Notes
+      Edit Notes
     </Button>
   </div>
 );
 
 export const addTo = () => (
   <div>
-            <a onClick={() => _handleGoalCreation(goal.nameWithOwner)} href="#">
-              <img alt="pointing right icon" src={plus} />
-            </a>
+    <a onClick={() => _handleGoalCreation(goal.nameWithOwner)} href="#">
+      <img alt="pointing right icon" src={plus} />
+    </a>
   </div>
-)
+);

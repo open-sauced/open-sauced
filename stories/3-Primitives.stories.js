@@ -1,6 +1,6 @@
 import React from "react";
 import Background from "../src/styles/Background";
-import {AccentLink, SubtleLink, MicroFont, TinyFont, ErrorMessage} from "../src/styles/Typography";
+import {AccentLink, SubtleLink, MicroFont, ErrorMessage} from "../src/styles/Typography";
 
 export default {
   title: "Primitives",

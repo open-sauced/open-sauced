@@ -117,7 +117,6 @@ rules:
   react/no-string-refs: 1
   react/no-unknown-property: 1
   react/react-in-jsx-scope: 1
-  /* react/require-extension: 1 */
   import/extensions: 1
   react/self-closing-comp: 1
   react/sort-comp: 1
@@ -137,3 +136,11 @@ globals:
   module: true
   Promise: true
   SyntheticEvent: true
+  global: true
+
+ignorePatterns: [
+  'build',
+  'docs',
+  'public'
+]
+

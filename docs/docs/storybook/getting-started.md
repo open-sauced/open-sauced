@@ -1,4 +1,4 @@
-# Storybook for Open Sauced
+# Getting started
 
 Storybook is being leveraged to mock out visual React components. The latest version of the design system can be found at this [URL](https://sauced-components.netlify.app/).
 
@@ -26,7 +26,7 @@ Storybook is broken into several categories:
 
 This section details how to make changes to Storybook, mainly creating new categories or UI elements.
 
-### Adding a new category
+## Adding a new category
 
 To add a new category, a new file needs to be added to `/stories`. Please follow the naming convention of `*Previous File Number + 1*-*Name of Story Capitalized*-stories.js` when creating a new file. In the file ensure you have this code in the file:
 
@@ -36,7 +36,7 @@ export default {
 };
 ```
 
-### Adding a new UI element
+## Adding a new UI element
 
 To add a new UI element to to an existing category, add the following code to that category's file:
 
