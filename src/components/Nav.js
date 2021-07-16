@@ -25,6 +25,14 @@ function LeftSide({isLoggedIn, user, handleLogIn, handleLogOut}) {
       <ul>
         <li>
           <SubtleLink
+            href="https://docs.opensauced.pizza/"
+            className="nav-link"
+            rel="noreferrer">
+            Docs
+          </SubtleLink>
+        </li>
+        <li>
+          <SubtleLink
             href="https://dev.to/opensauced"
             className="nav-link"
             target="_blank"

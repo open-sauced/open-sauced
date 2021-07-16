@@ -18,6 +18,7 @@ module.exports = {
       logo: {
         alt: 'Open Sauced Logo',
         src: 'img/logo.svg',
+        href: 'https://opensauced.pizza/'
       },
       items: [
         {
@@ -25,6 +26,11 @@ module.exports = {
           docId: 'introduction',
           position: 'left',
           label: 'Docs',
+        },
+        {
+          href: 'https://opensauced.pizza/',
+          label: 'Home',
+          position: 'right',
         },
         {
           href: 'https://github.com/open-sauced/open-sauced',
