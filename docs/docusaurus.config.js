@@ -18,6 +18,7 @@ module.exports = {
       logo: {
         alt: 'Open Sauced Logo',
         src: 'img/logo.svg',
+        href: 'https://opensauced.pizza/'
       },
       items: [
         {
