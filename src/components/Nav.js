@@ -81,6 +81,7 @@ function RightSide({user}) {
   return (
     <FloatRight>
       <SpaceBetween>
+        <SubtleLink href="https://docs.opensauced.pizza/" className="nav-link" rel="noreferrer">Docs </SubtleLink>
         <ThemeButtonGroup />
         {user && (
           <SubtleLink alt="user login name" className="nav-link" href={`https://github.com/${user.login}`}>
