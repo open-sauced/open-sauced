@@ -25,6 +25,14 @@ function LeftSide({isLoggedIn, user, handleLogIn, handleLogOut}) {
       <ul>
         <li>
           <SubtleLink
+            href="https://docs.opensauced.pizza/"
+            className="nav-link"
+            rel="noreferrer">
+            Docs
+          </SubtleLink>
+        </li>
+        <li>
+          <SubtleLink
             href="https://dev.to/opensauced"
             className="nav-link"
             target="_blank"
@@ -81,7 +89,6 @@ function RightSide({user}) {
   return (
     <FloatRight>
       <SpaceBetween>
-        <SubtleLink href="https://docs.opensauced.pizza/" className="nav-link" rel="noreferrer">Docs </SubtleLink>
         <ThemeButtonGroup />
         {user && (
           <SubtleLink alt="user login name" className="nav-link" href={`https://github.com/${user.login}`}>
