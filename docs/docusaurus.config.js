@@ -46,8 +46,16 @@ module.exports = {
           title: 'Docs',
           items: [
             {
-              label: 'Tutorial',
-              to: '/',
+              label: 'Contributing',
+              to: '/contributing/getting-started/',
+            },
+            {
+              label: 'Styling',
+              to: '/styling/dark-mode/',
+            },
+            {
+              label: 'Storybook',
+              to: '/storybook/getting-started/',
             },
           ],
         },
