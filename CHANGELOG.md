@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 0.21.30 (2021-07-17)
+
+
+### Features
+
+* Change use-shopping-cart logo ([#1098](https://github.com/open-sauced/open-sauced/issues/1098)) ([a8555ed](https://github.com/open-sauced/open-sauced/commit/a8555ed93fe7161ff69c5382fe64e6e65c0b4d0a))
+
 ### 0.21.29 (2021-07-16)
 
 
