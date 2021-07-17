@@ -1,6 +1,6 @@
 {
   "name": "open-sauced",
-  "version": "0.21.28",
+  "version": "0.21.29",
   "private": true,
   "devDependencies": {
     "@babel/core": "^7.14.6",
