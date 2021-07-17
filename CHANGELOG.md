@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 0.21.31 (2021-07-17)
+
+
+### Features
+
+* Adding categories to footer docs ([#1099](https://github.com/open-sauced/open-sauced/issues/1099)) ([ec5a54c](https://github.com/open-sauced/open-sauced/commit/ec5a54ce0420937e45c1a05870c6d181c805fc3d))
+
 ### 0.21.30 (2021-07-17)
 
 
