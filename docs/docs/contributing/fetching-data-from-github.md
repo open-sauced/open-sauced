@@ -4,7 +4,7 @@ Over the past few years, GitHub has been enabling developers to build on our pla
 
 ## Implementation Approach
 
-Open Sauced is exclusively powered by the public data from open source reposistories. Not only is the data drawn from open sourced repos, the onboarding flow for Open Sauced walks the user through creating their own open sourced repo in order to track their own contributions. 
+Open Sauced is exclusively powered by the public data from open source repos. Not only is the data drawn from open sourced repos, the onboarding flow for Open Sauced walks the user through creating their own open sourced repo in order to track their own contributions. 
 
 ## OneGraph
 
