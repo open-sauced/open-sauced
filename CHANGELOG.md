@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 0.21.33 (2021-07-19)
+
+
+### Bug Fixes
+
+* add closing tags to docs break tags ([#1104](https://github.com/open-sauced/open-sauced/issues/1104)) ([b01f203](https://github.com/open-sauced/open-sauced/commit/b01f203a644fad03da46c6e7955fecccb578f249))
+
 ### 0.21.32 (2021-07-18)
 
 ### 0.21.31 (2021-07-17)
