@@ -30,25 +30,25 @@ The following table shows which components (`src/components/*.js`) use which API
 
 | Component | API Function | Persisted/Dynamic | Mutation |
 | --- | --- | --- | --- |
-| AddRepoForm | `api.createGoal`<br>Add goal through form input | Dynamic | x |
-| Contributions | `api.persistedInteractionsFetch`<br>Contributions list for the user | Persisted | |
-| CreateGoals | `api.fetchOwnerId`<br>Need the repo owner ID first | Dynamic | |
-| CreateGoals | `api.createOpenSaucedGoalsRepo`<br>Create from template | Dynamic | x |
-| DangerZone | `api.updateGoal`<br>Remove the goal | Dynamic | x |
-| Issues | `api.persistedIssuesByLabelFetch`<br>Fetch Goal's issues labeled `good first issue` (First 5) | Persisted | |
-| Issues | `api.persistedIssuesFetch`<br>Fetch Goal's all issues (First 5) | Persisted | |
-| Issues | `api.persistedRepositoryIssuesByLabelFetch`<br>Fetch Goal's all issues (Paginated) | Persisted | |
-| Issues | `api.persistedRepositoryIssuesFetch`<br>Fetch Goal's issues labeled `good first issue` (Paginated) | Persisted | |
-| NoteForm | `api.updateGoal`<br>Updates Notes | Dynamic | x |
-| RecommendedRepoList | `api.createGoal`<br>Add goal based on recommendations list | Dynamic | x |
-| Repository | `api.persistedRepoDataFetch`<br>Gather partial data for goal | Persisted | |
-| Repository | `api.fetchGoalQuery`<br>Gather partial data for goal | Dynamic | |
-| Repository | `api.persistedForkFetch`<br>Look at whether user has this repo forked | Persisted | |
-| Repository | `api.persistedForkFetch`<br>Initiate forking the repo for the user | Persisted | |
-| RepositoryGoals | `api.persistedViewerStars`<br>Fetch repos starred by the user | Persisted | |
-| AdminStatsBar | `api.fetchRateLimit`<br>Shows administrator the status of rate limiting | Dynamic | |
-| AdminStatsBar | `api.persistedDeploymentFetch`<br>Shows administrator deployment status | Persisted | |
-| AdminStatsBar | `api.fetchRepoCount`<br>Shows administrator the user count, based on count of `open-sauced-goals` repos | Dynamic | |
+| AddRepoForm | `api.createGoal`<br/>Add goal through form input | Dynamic | x |
+| Contributions | `api.persistedInteractionsFetch`<br/>Contributions list for the user | Persisted | |
+| CreateGoals | `api.fetchOwnerId`<br/>Need the repo owner ID first | Dynamic | |
+| CreateGoals | `api.createOpenSaucedGoalsRepo`<br/>Create from template | Dynamic | x |
+| DangerZone | `api.updateGoal`<br/>Remove the goal | Dynamic | x |
+| Issues | `api.persistedIssuesByLabelFetch`<br/>Fetch Goal's issues labeled `good first issue` (First 5) | Persisted | |
+| Issues | `api.persistedIssuesFetch`<br/>Fetch Goal's all issues (First 5) | Persisted | |
+| Issues | `api.persistedRepositoryIssuesByLabelFetch`<br/>Fetch Goal's all issues (Paginated) | Persisted | |
+| Issues | `api.persistedRepositoryIssuesFetch`<br/>Fetch Goal's issues labeled `good first issue` (Paginated) | Persisted | |
+| NoteForm | `api.updateGoal`<br/>Updates Notes | Dynamic | x |
+| RecommendedRepoList | `api.createGoal`<br/>Add goal based on recommendations list | Dynamic | x |
+| Repository | `api.persistedRepoDataFetch`<br/>Gather partial data for goal | Persisted | |
+| Repository | `api.fetchGoalQuery`<br/>Gather partial data for goal | Dynamic | |
+| Repository | `api.persistedForkFetch`<br/>Look at whether user has this repo forked | Persisted | |
+| Repository | `api.persistedForkFetch`<br/>Initiate forking the repo for the user | Persisted | |
+| RepositoryGoals | `api.persistedViewerStars`<br/>Fetch repos starred by the user | Persisted | |
+| AdminStatsBar | `api.fetchRateLimit`<br/>Shows administrator the status of rate limiting | Dynamic | |
+| AdminStatsBar | `api.persistedDeploymentFetch`<br/>Shows administrator deployment status | Persisted | |
+| AdminStatsBar | `api.fetchRepoCount`<br/>Shows administrator the user count, based on count of `open-sauced-goals` repos | Dynamic | |
 
 ## References
 - [Using Persisted Queries](https://www.onegraph.com/docs/persisted_queries.html)
