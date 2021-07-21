@@ -14,7 +14,7 @@ test("container component should have no violations", async() => {
   cleanup();
 });
 
-test("component should not display edits when cancelled", async() => {
+test.skip("component should not display edits when cancelled", async() => {
 
   render(<NoteForm  />);
   const editButton = screen.getByRole("button", {name: /Edit Notes/i});

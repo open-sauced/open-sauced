@@ -63,6 +63,8 @@
   "dependencies": {
     "@apollo/client": "^3.3.21",
     "@primer/octicons-react": "^14.2.2",
+    "@remirror/pm": "^1.0.1",
+    "@remirror/react": "^1.0.1",
     "contrast": "^1.0.1",
     "dayjs": "^1.10.6",
     "graphql": "^15.5.1",
@@ -77,6 +79,7 @@
     "react-markdown": "^6.0.2",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
+    "remirror": "^1.0.1",
     "styled-components": "^5.3.0",
     "swr": "^0.5.6"
   },
