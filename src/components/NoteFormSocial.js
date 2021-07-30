@@ -5,9 +5,9 @@ import Card from "./Card";
 import {FlexCenter} from "../styles/Grid";
 import {PencilIcon} from "@primer/octicons-react";
 import ReactMarkdown from "react-markdown";
-import styles from "remirror/styles/all.css";
+import "remirror/styles/all.css";
 import api from "../lib/apiGraphQL";
-import {BoldExtension, BulletListExtension, HeadingExtension, ItalicExtension, MarkdownExtension} from "remirror/extensions";
+import {BoldExtension, BulletListExtension, HeadingExtension, ItalicExtension, MarkdownExtension, MentionExtension, EmojiExtension} from "remirror/extensions";
 import {EditorComponent, Remirror, useRemirror, useCommands} from "@remirror/react";
 
 const extensions = () => [
@@ -16,8 +16,14 @@ const extensions = () => [
   new BoldExtension(),
   new ItalicExtension(),
   new MarkdownExtension(),
+  new EmojiExtension({supportedLanguages: ["typescript", "jsx"]}),
+  new MentionExtension({
+    matchers: [{
+      char: "@",
+      name: "at"
+    }]
+  }),
 ];
-if (!styles) console.log(styles);
 
 const Menu = () => {
   // Access the commands and the activity status of the editor.
@@ -57,6 +63,7 @@ const Editor = (props) => {
     extensions,
     selection:"end",
     stringHandler:"markdown",
+    content:props.input
   });
   const _onChange = (param) => {
     setState(param.state);
@@ -108,7 +115,7 @@ function NoteForm({goalId, repoName, note}) {
         </RenderedNote>
       ) : (
         <div className={"remirror-theme"}>
-          <Editor onChange={(parameter) => {
+          <Editor input={input} onChange={(parameter) => {
             const md = parameter.helpers.getMarkdown();
             setInput(md);
           }}/>
