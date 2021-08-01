@@ -18,7 +18,7 @@
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^12.0.0",
     "@testing-library/user-event": "^13.1.9",
-    "@wojtekmaj/enzyme-adapter-react-17": "^0.6.2",
+    "@wojtekmaj/enzyme-adapter-react-17": "^0.6.3",
     "babel-jest": "^27.0.6",
     "babel-loader": "^8.2.2",
     "babel-preset-react-app": "^10.0.0",
