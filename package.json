@@ -50,7 +50,7 @@
     "react-scripts": "^4.0.3",
     "react-test-renderer": "^17.0.2",
     "rimraf": "^3.0.2",
-    "standard-version": "^9.3.0",
+    "standard-version": "^9.3.1",
     "storybook-dark-mode": "^1.0.8",
     "style-loader": "^2.0.0",
     "url-loader": "4.1.1",
