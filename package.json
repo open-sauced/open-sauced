@@ -62,7 +62,7 @@
   },
   "dependencies": {
     "@apollo/client": "^3.3.21",
-    "@primer/octicons-react": "^14.2.2",
+    "@primer/octicons-react": "^15.0.0",
     "contrast": "^1.0.1",
     "dayjs": "^1.10.6",
     "graphql": "^15.5.1",
