@@ -14,23 +14,25 @@ Some thoughts to help you contribute to this project
 
 ## Setup (forks are preferred).
 
-```sh
-$ git clone https://github.com/<your-name>/open-sauced
-$ cd open-sauced
-$ npm install
+```shell
+git clone https://github.com/<your-name>/open-sauced
+cd open-sauced
+npm ci
 ```
 
 ## Building
 
-```sh
-$ npm run build
+```shell
+npm run build
 ```
 
 ## Testing
+
 For running the test suite, use the following command. Since the tests run in watch mode by default, some users may encounter errors about too many files being open. In this case, it may be beneficial to [install watchman](https://facebook.github.io/watchman/docs/install.html).
-```sh
+
+```shell
 # the tests will run in watch mode by default
-$ npm run test
+npm test
 ```
 
 ## Pull Requests
@@ -51,6 +53,7 @@ ___We actively welcome your pull requests, however linking your work to an exist
 *note for maintainers: All pull requests need a label to assist automation. See the [template](https://github.com/open-sauced/open-sauced/blob/HEAD/.github/release-drafter.yml) to guide which labels to use.*
 
 ### PR Validation
+
 Examples for valid PR titles:
 
 - fix: Correct typo.
@@ -63,7 +66,14 @@ See [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) for m
 
 _[3 tips for getting your Pull Request reviewed](https://youtu.be/cuMeC-eZJJ4)_
 
+You can also experiment with conventional commits by doing:
+
+```shell
+npm run push
+```
+
 ### Work in progress
+
 GitHub has support for draft pull requests, which will disable the merge button until the PR is marked as ready for merge.
 
 ## Issues
@@ -83,6 +93,7 @@ The Triage team is inspired by [expressjs/express](https://github.com/expressjs/
 For those interested in getting involved in the project or just open source in general, please request an invite to the Triage Team in [this discussion.](https://github.com/open-sauced/open-sauced/discussions/638)
 
 ## Funding
+
 Open Sauced is a part of GitHub Sponsors. If you would like to contribute, please note the [sponsor page](https://github.com/sponsors/open-sauced) for details on how funds are distributed. If you have made any contributions to the projectd directly or indirectly, please consider adding your profile to the [funding.yml](https://github.com/open-sauced/open-sauced/blob/main/.github/funding.yml).
 
 ## Community
@@ -90,6 +101,7 @@ Open Sauced is a part of GitHub Sponsors. If you would like to contribute, pleas
 Do you have questions? Join the conversation in our [Discord](https://discord.gg/U2peSNf23P).
 
 ## Coding Tips
+
 - Ask questions if you are stuck.
 - Use [CSS variables](https://github.com/open-sauced/open-sauced/blob/HEAD/src/styles/variables.js)
 - Always use [rel="noreferrer" on all target="_blank" links](https://web.dev/external-anchors-use-rel-noopener/).
