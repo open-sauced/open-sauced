@@ -5,7 +5,7 @@
   "requires": true,
   "packages": {
     "": {
-      "version": "0.21.25",
+      "version": "0.21.33",
       "dependencies": {
         "@apollo/client": "^3.3.21",
         "@primer/octicons-react": "^14.2.2",
@@ -81,7 +81,7 @@
         "webpack": "^4.41.5",
         "webpack-cli": "^4.7.2",
         "webpack-dev-server": "^3.11.2",
-        "webpack-manifest-plugin": "^2.2.0",
+        "webpack-manifest-plugin": "^4.0.2",
         "whatwg-fetch": "^3.6.2"
       }
     },
@@ -28770,6 +28770,38 @@
         "semver": "bin/semver.js"
       }
     },
+    "node_modules/react-scripts/node_modules/webpack-manifest-plugin": {
+      "version": "2.2.0",
+      "resolved": "https://registry.npmjs.org/webpack-manifest-plugin/-/webpack-manifest-plugin-2.2.0.tgz",
+      "integrity": "sha512-9S6YyKKKh/Oz/eryM1RyLVDVmy3NSPV0JXMRhZ18fJsq+AwGxUY34X54VNwkzYcEmEkDwNxuEOboCZEebJXBAQ==",
+      "dev": true,
+      "dependencies": {
+        "fs-extra": "^7.0.0",
+        "lodash": ">=3.5 <5",
+        "object.entries": "^1.1.0",
+        "tapable": "^1.0.0"
+      },
+      "engines": {
+        "node": ">=6.11.5"
+      },
+      "peerDependencies": {
+        "webpack": "2 || 3 || 4"
+      }
+    },
+    "node_modules/react-scripts/node_modules/webpack-manifest-plugin/node_modules/fs-extra": {
+      "version": "7.0.1",
+      "resolved": "https://registry.npmjs.org/fs-extra/-/fs-extra-7.0.1.tgz",
+      "integrity": "sha512-YJDaCJZEnBmcbw13fvdAM9AwNOJwOzrE4pqMqBq5nFiEqXUqHwlK4B+3pUw6JNvfSPtX05xFHtYy/1ni01eGCw==",
+      "dev": true,
+      "dependencies": {
+        "graceful-fs": "^4.1.2",
+        "jsonfile": "^4.0.0",
+        "universalify": "^0.1.0"
+      },
+      "engines": {
+        "node": ">=6 <7 || >=8"
+      }
+    },
     "node_modules/react-scripts/node_modules/wrap-ansi": {
       "version": "5.1.0",
       "resolved": "https://registry.npmjs.org/wrap-ansi/-/wrap-ansi-5.1.0.tgz",
@@ -34772,32 +34804,50 @@
       }
     },
     "node_modules/webpack-manifest-plugin": {
-      "version": "2.2.0",
-      "resolved": "https://registry.npmjs.org/webpack-manifest-plugin/-/webpack-manifest-plugin-2.2.0.tgz",
-      "integrity": "sha512-9S6YyKKKh/Oz/eryM1RyLVDVmy3NSPV0JXMRhZ18fJsq+AwGxUY34X54VNwkzYcEmEkDwNxuEOboCZEebJXBAQ==",
+      "version": "4.0.2",
+      "resolved": "https://registry.npmjs.org/webpack-manifest-plugin/-/webpack-manifest-plugin-4.0.2.tgz",
+      "integrity": "sha512-Ld6j05pRblXAVoX8xdXFDsc/s97cFnR1FOmQawhTSlp6F6aeU1Jia5aqTmDpkueaAz8g9sXpgSOqmEgVAR61Xw==",
       "dev": true,
       "dependencies": {
-        "fs-extra": "^7.0.0",
-        "lodash": ">=3.5 <5",
-        "object.entries": "^1.1.0",
-        "tapable": "^1.0.0"
+        "tapable": "^2.0.0",
+        "webpack-sources": "^2.2.0"
       },
       "engines": {
-        "node": ">=6.11.5"
+        "node": ">=12.22.0"
+      },
+      "peerDependencies": {
+        "webpack": "^4.44.2 || ^5.47.0"
       }
     },
-    "node_modules/webpack-manifest-plugin/node_modules/fs-extra": {
-      "version": "7.0.1",
-      "resolved": "https://registry.npmjs.org/fs-extra/-/fs-extra-7.0.1.tgz",
-      "integrity": "sha512-YJDaCJZEnBmcbw13fvdAM9AwNOJwOzrE4pqMqBq5nFiEqXUqHwlK4B+3pUw6JNvfSPtX05xFHtYy/1ni01eGCw==",
+    "node_modules/webpack-manifest-plugin/node_modules/source-map": {
+      "version": "0.6.1",
+      "resolved": "https://registry.npmjs.org/source-map/-/source-map-0.6.1.tgz",
+      "integrity": "sha512-UjgapumWlbMhkBgzT7Ykc5YXUT46F0iKu8SGXq0bcwP5dz/h0Plj6enJqjz1Zbq2l5WaqYnrVbwWOWMyF3F47g==",
+      "dev": true,
+      "engines": {
+        "node": ">=0.10.0"
+      }
+    },
+    "node_modules/webpack-manifest-plugin/node_modules/tapable": {
+      "version": "2.2.0",
+      "resolved": "https://registry.npmjs.org/tapable/-/tapable-2.2.0.tgz",
+      "integrity": "sha512-FBk4IesMV1rBxX2tfiK8RAmogtWn53puLOQlvO8XuwlgxcYbP4mVPS9Ph4aeamSyyVjOl24aYWAuc8U5kCVwMw==",
+      "dev": true,
+      "engines": {
+        "node": ">=6"
+      }
+    },
+    "node_modules/webpack-manifest-plugin/node_modules/webpack-sources": {
+      "version": "2.3.1",
+      "resolved": "https://registry.npmjs.org/webpack-sources/-/webpack-sources-2.3.1.tgz",
+      "integrity": "sha512-y9EI9AO42JjEcrTJFOYmVywVZdKVUfOvDUPsJea5GIr1JOEGFVqwlY2K098fFoIjOkDzHn2AjRvM8dsBZu+gCA==",
       "dev": true,
       "dependencies": {
-        "graceful-fs": "^4.1.2",
-        "jsonfile": "^4.0.0",
-        "universalify": "^0.1.0"
+        "source-list-map": "^2.0.1",
+        "source-map": "^0.6.1"
       },
       "engines": {
-        "node": ">=6 <7 || >=8"
+        "node": ">=10.13.0"
       }
     },
     "node_modules/webpack-merge": {
@@ -59100,6 +59150,31 @@
             }
           }
         },
+        "webpack-manifest-plugin": {
+          "version": "2.2.0",
+          "resolved": "https://registry.npmjs.org/webpack-manifest-plugin/-/webpack-manifest-plugin-2.2.0.tgz",
+          "integrity": "sha512-9S6YyKKKh/Oz/eryM1RyLVDVmy3NSPV0JXMRhZ18fJsq+AwGxUY34X54VNwkzYcEmEkDwNxuEOboCZEebJXBAQ==",
+          "dev": true,
+          "requires": {
+            "fs-extra": "^7.0.0",
+            "lodash": ">=3.5 <5",
+            "object.entries": "^1.1.0",
+            "tapable": "^1.0.0"
+          },
+          "dependencies": {
+            "fs-extra": {
+              "version": "7.0.1",
+              "resolved": "https://registry.npmjs.org/fs-extra/-/fs-extra-7.0.1.tgz",
+              "integrity": "sha512-YJDaCJZEnBmcbw13fvdAM9AwNOJwOzrE4pqMqBq5nFiEqXUqHwlK4B+3pUw6JNvfSPtX05xFHtYy/1ni01eGCw==",
+              "dev": true,
+              "requires": {
+                "graceful-fs": "^4.1.2",
+                "jsonfile": "^4.0.0",
+                "universalify": "^0.1.0"
+              }
+            }
+          }
+        },
         "wrap-ansi": {
           "version": "5.1.0",
           "resolved": "https://registry.npmjs.org/wrap-ansi/-/wrap-ansi-5.1.0.tgz",
@@ -64258,26 +64333,35 @@
       }
     },
     "webpack-manifest-plugin": {
-      "version": "2.2.0",
-      "resolved": "https://registry.npmjs.org/webpack-manifest-plugin/-/webpack-manifest-plugin-2.2.0.tgz",
-      "integrity": "sha512-9S6YyKKKh/Oz/eryM1RyLVDVmy3NSPV0JXMRhZ18fJsq+AwGxUY34X54VNwkzYcEmEkDwNxuEOboCZEebJXBAQ==",
+      "version": "4.0.2",
+      "resolved": "https://registry.npmjs.org/webpack-manifest-plugin/-/webpack-manifest-plugin-4.0.2.tgz",
+      "integrity": "sha512-Ld6j05pRblXAVoX8xdXFDsc/s97cFnR1FOmQawhTSlp6F6aeU1Jia5aqTmDpkueaAz8g9sXpgSOqmEgVAR61Xw==",
       "dev": true,
       "requires": {
-        "fs-extra": "^7.0.0",
-        "lodash": ">=3.5 <5",
-        "object.entries": "^1.1.0",
-        "tapable": "^1.0.0"
+        "tapable": "^2.0.0",
+        "webpack-sources": "^2.2.0"
       },
       "dependencies": {
-        "fs-extra": {
-          "version": "7.0.1",
-          "resolved": "https://registry.npmjs.org/fs-extra/-/fs-extra-7.0.1.tgz",
-          "integrity": "sha512-YJDaCJZEnBmcbw13fvdAM9AwNOJwOzrE4pqMqBq5nFiEqXUqHwlK4B+3pUw6JNvfSPtX05xFHtYy/1ni01eGCw==",
+        "source-map": {
+          "version": "0.6.1",
+          "resolved": "https://registry.npmjs.org/source-map/-/source-map-0.6.1.tgz",
+          "integrity": "sha512-UjgapumWlbMhkBgzT7Ykc5YXUT46F0iKu8SGXq0bcwP5dz/h0Plj6enJqjz1Zbq2l5WaqYnrVbwWOWMyF3F47g==",
+          "dev": true
+        },
+        "tapable": {
+          "version": "2.2.0",
+          "resolved": "https://registry.npmjs.org/tapable/-/tapable-2.2.0.tgz",
+          "integrity": "sha512-FBk4IesMV1rBxX2tfiK8RAmogtWn53puLOQlvO8XuwlgxcYbP4mVPS9Ph4aeamSyyVjOl24aYWAuc8U5kCVwMw==",
+          "dev": true
+        },
+        "webpack-sources": {
+          "version": "2.3.1",
+          "resolved": "https://registry.npmjs.org/webpack-sources/-/webpack-sources-2.3.1.tgz",
+          "integrity": "sha512-y9EI9AO42JjEcrTJFOYmVywVZdKVUfOvDUPsJea5GIr1JOEGFVqwlY2K098fFoIjOkDzHn2AjRvM8dsBZu+gCA==",
           "dev": true,
           "requires": {
-            "graceful-fs": "^4.1.2",
-            "jsonfile": "^4.0.0",
-            "universalify": "^0.1.0"
+            "source-list-map": "^2.0.1",
+            "source-map": "^0.6.1"
           }
         }
       }
