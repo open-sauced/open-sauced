@@ -14,6 +14,13 @@ module.exports = {
   projectName: 'open-sauced', // Usually your repo name.
   trailingSlash: true,
   themeConfig: {
+    algolia: {
+      apiKey: '1691a4a5b06166984397aa30153f663c',
+      indexName: 'opensauced',
+      algoliaOptions: { 'facetFilters': ["type:$TYPE"] },
+      debug: false,
+      placeholder: 'Search Open Sauced Docs',
+    },  
     navbar: {
       logo: {
         alt: 'Open Sauced Logo',
