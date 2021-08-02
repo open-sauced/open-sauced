@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 0.21.38 (2021-08-02)
+
+
+### Features
+
+* update docusaurus config for Algolia ([#1121](https://github.com/open-sauced/open-sauced/issues/1121)) ([54a5672](https://github.com/open-sauced/open-sauced/commit/54a5672fceb9027b02729c96b5762950f1b454c1)), closes [#1106](https://github.com/open-sauced/open-sauced/issues/1106)
+
 ### 0.21.37 (2021-08-01)
 
 ### 0.21.36 (2021-08-01)
