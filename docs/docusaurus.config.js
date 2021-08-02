@@ -13,6 +13,13 @@ module.exports = {
   organizationName: 'open-sauced', // Usually your GitHub org/user name.
   projectName: 'open-sauced', // Usually your repo name.
   trailingSlash: true,
+  algolia: {
+    apiKey: '1691a4a5b06166984397aa30153f663c',
+    indexName: 'opensauced',
+    algoliaOptions: { 'facetFilters': ["type:$TYPE"] },
+    debug: false,
+    placeholder: 'Search Open Sauced Docs',
+  },
   themeConfig: {
     navbar: {
       logo: {
