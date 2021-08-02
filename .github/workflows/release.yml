@@ -65,43 +65,6 @@ jobs:
           name: build
           path: build
 
-  docs:
-    name: Build docs
-    runs-on: ubuntu-latest
-    steps:
-      - name: "☁️ checkout repository"
-        uses: actions/checkout@v2
-
-      - name: "🔧 setup node"
-        uses: actions/setup-node@v2.1.5
-        with:
-          node-version: 16
-
-      - name: "🔧 setup cache"
-        uses: actions/cache@v2
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/npm-shrinkwrap.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
-
-      - name: "🔧 install npm@7"
-        run: npm i -g npm@7
-
-      - name: "📦 install dependencies"
-        run: |
-          cd docs
-          npm ci
-
-      - name: "🚀 static app"
-        run: npm run build
-
-      - name: "📂 production artifacts"
-        uses: actions/upload-artifact@v2
-        with:
-          name: docs
-          path: build
-
   lint:
     name: Code standards
     runs-on: ubuntu-latest
@@ -138,6 +101,7 @@ jobs:
     name: Semantic release
     needs:
       - docker
+      - build
       - lint
     runs-on: ubuntu-latest
     steps:
@@ -196,40 +160,10 @@ jobs:
           npx semantic-release
           echo "::set-output name=version::$(cat package.json | jq -r '.version')"
 
-  deploy:
-    name: Deploy to docs.opensauced.pizza
-    needs:
-      - docs
-      - release
-    runs-on: ubuntu-latest
-    steps:
-      - name: "☁️ checkout repository"
-        uses: actions/checkout@v2
-
-      - name: "📂 download artifacts"
-        uses: actions/download-artifact@v2
-        with:
-          name: docs
-          path: /home/runner/docs
-
-      - name: "📂 copy artifacts"
-        run: |
-          cp -R /home/runner/docs .
-          ls -lahH ./docs
-
-      - name: "🚀 deploy static"
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./docs
-          commit_message: ${{ github.event.head_commit.message }}
-          enable_jekyll: false
-          cname: docs.opensauced.pizza
-
   cleanup:
     name: Cleanup actions
     needs:
-      - deploy
+      - release
     runs-on: ubuntu-latest
     steps:
       - name: "♻️ remove build artifacts"
