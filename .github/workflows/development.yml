@@ -20,9 +20,9 @@ jobs:
         uses: actions/cache@v2
         with:
           path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/npm-shrinkwrap.json') }}
+          key: ${{ runner.os }}-node-pr-${{ hashFiles('**/npm-shrinkwrap.json') }}
           restore-keys: |
-            ${{ runner.os }}-node-
+            ${{ runner.os }}-node-pr-
 
       - name: "🔧 install npm@7"
         run: npm i -g npm@7
@@ -49,9 +49,9 @@ jobs:
         uses: actions/cache@v2
         with:
           path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/npm-shrinkwrap.json') }}
+          key: ${{ runner.os }}-node-pr-${{ hashFiles('**/npm-shrinkwrap.json') }}
           restore-keys: |
-            ${{ runner.os }}-node-
+            ${{ runner.os }}-node-pr-
 
       - name: "🔧 install npm@7"
         run: npm i -g npm@7
