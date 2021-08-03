@@ -24,16 +24,16 @@ function RecommendedRepoItem({goal, goalsId, onGoalAdded}) {
             <Avatar
               small
               alt="avatar"
-              src={`https://avatars.githubusercontent.com/${goal.nameWithOwner.split("/")[0].replace(/\s+/g, "")}`}
+              src={`https://avatars.githubusercontent.com/${goal.full_name.split("/")[0].replace(/\s+/g, "")}`}
             />
             <Flex className="details">
-              <p>{truncate(goal.nameWithOwner, 60)}</p>
+              <p>{truncate(goal.full_name, 60)}</p>
             </Flex>
           </FlexCenter>
         </FloatLeft>
         <FloatRight>
           <FlexCenter>
-            <a onClick={() => _handleGoalCreation(goal.nameWithOwner)} href="#">
+            <a onClick={() => _handleGoalCreation(goal.full_name)} href="#">
               <img alt="add recommended repo" src={plus} className="svg" />
             </a>
           </FlexCenter>

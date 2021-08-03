@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useContext} from "react";
+import React, {useEffect, useContext} from "react";
 import CreateGoals from "./CreateGoals";
 import {SpaceBetweenTop, Flex, FlexColumn} from "../styles/Grid";
 import ListGoals from "./ListGoals";
@@ -10,35 +10,16 @@ import {RepositoryContext} from "../styles/Card";
 import {goalsReducer, usePersistentStateReducer} from "../lib/reducers";
 import {EmptyPlaceholder} from "../styles/EmptyPlaceholder";
 import {ChecklistIcon} from "@primer/octicons-react";
-import api from "../lib/apiGraphQL";
 import {fontSize} from "../styles/variables";
 
 function RepositoryGoals({user}) {
   const {goalsId, setGoalsId} = useContext(LocaleContext);
-  const [stars, setStars] = useState({});
   const [state, dispatch] = usePersistentStateReducer("goalsState", goalsReducer);
 
   const {repository, error} = goalsReducer(state, {type: "GET"});
 
   useEffect(() => {
     repository && setGoalsId(repository.id);
-
-    user &&
-      api
-        .persistedViewerStars(user)
-        .then(res => {
-          const {
-            data: {
-              gitHub: {
-                user: {starredRepositories},
-              },
-            },
-          } = res;
-          setStars(starredRepositories);
-        })
-        .catch(e => {
-          console.log(e);
-        });
   }, [goalsId]);
 
   const onRepoCreation = (id, repo) => {
@@ -68,15 +49,14 @@ function RepositoryGoals({user}) {
 
   const data = repository && repository.data && repository.data.text && JSON.parse(repository.data.text);
   const viewerStars = repository && repository.stars && repository.stars.text && JSON.parse(repository.stars.text);
-  console.log("star", viewerStars)
-  console.log("data", data)
 
   // remove duplicates form data base viewersStars
   const unusedStarredRepos = viewerStars.filter(repo => {
     return data.find(repoData => repoData.full_name === repo.full_name) === undefined;
   });
-  console.log("result", unusedStarredRepos)
 
+  // limit unusedStarredRepos to the last 3
+  const theLastThreeStars = [...unusedStarredRepos.slice(0, 3)];
 
   return (
     <section>
@@ -107,11 +87,11 @@ function RepositoryGoals({user}) {
             <FlexColumn style={{marginLeft: 16, flex: 1}}>
               <Card>
                 <h3 style={{fontSize: fontSize.default}}>Repo Recommendations</h3>
-                {stars.edges &&
-                  stars.edges.map(star => (
+                {unusedStarredRepos &&
+                  theLastThreeStars.map(star => (
                     <RecommendedRepoItem
-                      key={star.node.name}
-                      goal={star.node}
+                      key={star.full_name}
+                      goal={star}
                       onGoalAdded={onGoalAdded}
                       goalsId={goalsId}
                     />
