@@ -67,6 +67,16 @@ function RepositoryGoals({user}) {
   };
 
   const data = repository && repository.data && repository.data.text && JSON.parse(repository.data.text);
+  const viewerStars = repository && repository.stars && repository.stars.text && JSON.parse(repository.stars.text);
+  console.log("star", viewerStars)
+  console.log("data", data)
+
+  // remove duplicates form data base viewersStars
+  const unusedStarredRepos = viewerStars.filter(repo => {
+    return data.find(repoData => repoData.full_name === repo.full_name) === undefined;
+  });
+  console.log("result", unusedStarredRepos)
+
 
   return (
     <section>
