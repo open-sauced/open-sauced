@@ -4,7 +4,7 @@ on:
   pull_request:
 
 jobs:
-  build:
+  test:
     name: Build application
     runs-on: ubuntu-latest
     steps:
@@ -30,8 +30,8 @@ jobs:
       - name: "📦 install dependencies"
         run: npm ci
 
-      - name: "🚀 static app"
-        run: npm run build
+      - name: "🔍 run tests"
+        run: npm t
 
   lint:
     name: Code standards
