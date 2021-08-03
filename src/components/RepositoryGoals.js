@@ -5,7 +5,7 @@ import ListGoals from "./ListGoals";
 import LocaleContext from "../Context";
 import AddRepoForm from "../components/AddRepoForm";
 import Card from "./Card";
-import RecommendedRepoList from "./RecommendedRepoList";
+import RecommendedRepoItem from "./RecommendedRepoItem";
 import {RepositoryContext} from "../styles/Card";
 import {goalsReducer, usePersistentStateReducer} from "../lib/reducers";
 import {EmptyPlaceholder} from "../styles/EmptyPlaceholder";
@@ -99,7 +99,7 @@ function RepositoryGoals({user}) {
                 <h3 style={{fontSize: fontSize.default}}>Repo Recommendations</h3>
                 {stars.edges &&
                   stars.edges.map(star => (
-                    <RecommendedRepoList
+                    <RecommendedRepoItem
                       key={star.node.name}
                       goal={star.node}
                       onGoalAdded={onGoalAdded}

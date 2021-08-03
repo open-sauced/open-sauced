@@ -5,7 +5,7 @@ import {truncate} from "../lib/truncate";
 import Avatar from "../styles/Avatar";
 import api from "../lib/apiGraphQL";
 
-function RecommendedRepoList({goal, goalsId, onGoalAdded}) {
+function RecommendedRepoItem({goal, goalsId, onGoalAdded}) {
   const _handleGoalCreation = async goal => {
     api
       .createGoal(goalsId, goal, null)
@@ -43,4 +43,4 @@ function RecommendedRepoList({goal, goalsId, onGoalAdded}) {
   );
 }
 
-export default RecommendedRepoList;
+export default RecommendedRepoItem;
