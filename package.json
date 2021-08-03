@@ -1,7 +1,21 @@
 {
-  "name": "open-sauced",
+  "name": "@open-sauced/open-sauced",
+  "description": "Open Sauced provides structured onboarding for new contributors to open source. This structure provides a way to track your next contributions by leveraging a unique dashboard built on top of the GitHub GraphQL API.",
   "version": "0.21.38",
   "private": true,
+  "license": "MIT",
+  "files": [
+    "build"
+  ],
+  "bugs": "https://github.com/open-sauced/open-sauced/issues",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/open-sauced/open-sauced.git"
+  },
+  "engines": {
+    "node": ">=16",
+    "npm": ">=7"
+  },
   "devDependencies": {
     "@babel/core": "^7.14.6",
     "@babel/eslint-parser": "^7.14.7",
