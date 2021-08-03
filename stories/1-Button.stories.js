@@ -34,6 +34,7 @@ export const secondaryWithImageAndText = () => (
 
 export const addTo = () => (
   <div>
+    {/* eslint-disable-next-line no-undef */}
     <a onClick={() => _handleGoalCreation(goal.nameWithOwner)} href="#">
       <img alt="pointing right icon" src={plus} />
     </a>
