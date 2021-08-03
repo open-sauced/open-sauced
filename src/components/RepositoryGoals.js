@@ -11,6 +11,7 @@ import {goalsReducer, usePersistentStateReducer} from "../lib/reducers";
 import {EmptyPlaceholder} from "../styles/EmptyPlaceholder";
 import {ChecklistIcon} from "@primer/octicons-react";
 import {fontSize} from "../styles/variables";
+import {remainingStars} from "../lib/manageStarData";
 
 function RepositoryGoals({user}) {
   const {goalsId, setGoalsId} = useContext(LocaleContext);
@@ -50,14 +51,8 @@ function RepositoryGoals({user}) {
   const data = repository && repository.data && repository.data.text && JSON.parse(repository.data.text);
   const viewerStars = repository && repository.stars && repository.stars.text && JSON.parse(repository.stars.text);
 
-  // remove duplicates form data base viewersStars
-  const unusedStarredRepos = viewerStars.filter(repo => {
-    return data.find(repoData => repoData.full_name === repo.full_name) === undefined;
-  });
-
-  // limit unusedStarredRepos to the last 3
-  const theLastThreeStars = [...unusedStarredRepos.slice(0, 3)];
-
+  const stars = remainingStars(data, viewerStars)
+  console.log(stars)
   return (
     <section>
       {repository && repository.issues ? (
@@ -87,8 +82,8 @@ function RepositoryGoals({user}) {
             <FlexColumn style={{marginLeft: 16, flex: 1}}>
               <Card>
                 <h3 style={{fontSize: fontSize.default}}>Repo Recommendations</h3>
-                {unusedStarredRepos &&
-                  theLastThreeStars.map(star => (
+                {viewerStars &&
+                  stars.map(star => (
                     <RecommendedRepoItem
                       key={star.full_name}
                       goal={star}
