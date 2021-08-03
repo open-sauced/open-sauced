@@ -5,7 +5,7 @@ on:
 
 jobs:
   test:
-    name: Build application
+    name: Test application
     runs-on: ubuntu-latest
     steps:
       - name: "☁️ checkout repository"
