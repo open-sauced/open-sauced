@@ -51,8 +51,8 @@ function RepositoryGoals({user}) {
   const data = repository && repository.data && repository.data.text && JSON.parse(repository.data.text);
   const viewerStars = repository && repository.stars && repository.stars.text && JSON.parse(repository.stars.text);
 
-  const stars = remainingStars(data, viewerStars)
-  console.log(stars)
+  const stars = remainingStars(data, viewerStars);
+  console.log(stars);
   return (
     <section>
       {repository && repository.issues ? (
@@ -84,12 +84,7 @@ function RepositoryGoals({user}) {
                 <h3 style={{fontSize: fontSize.default}}>Repo Recommendations</h3>
                 {viewerStars &&
                   stars.map(star => (
-                    <RecommendedRepoItem
-                      key={star.full_name}
-                      goal={star}
-                      onGoalAdded={onGoalAdded}
-                      goalsId={goalsId}
-                    />
+                    <RecommendedRepoItem key={star.full_name} goal={star} onGoalAdded={onGoalAdded} goalsId={goalsId} />
                   ))}
               </Card>
             </FlexColumn>
