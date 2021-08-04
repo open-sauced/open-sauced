@@ -1,3 +1,26 @@
+## [0.22.0](https://github.com/open-sauced/open-sauced/compare/v0.21.38...v0.22.0) (2021-08-04)
+
+
+### Features
+
+* use open sauced semantic release configuration ([#1120](https://github.com/open-sauced/open-sauced/issues/1120)) ([df74d24](https://github.com/open-sauced/open-sauced/commit/df74d24b23ff4f1e7f5899c656c150d84fac35df)), closes [#1107](https://github.com/open-sauced/open-sauced/issues/1107)
+
+
+### Bug Fixes
+
+* add conventional-changelog-conventionalcommits as temporary peer dependency ([#1126](https://github.com/open-sauced/open-sauced/issues/1126)) ([3e46d1e](https://github.com/open-sauced/open-sauced/commit/3e46d1e1688991b0b3382862ff1a69e110d3828f)), closes [#1107](https://github.com/open-sauced/open-sauced/issues/1107)
+* correct production environment variables ([#1123](https://github.com/open-sauced/open-sauced/issues/1123)) ([63809b0](https://github.com/open-sauced/open-sauced/commit/63809b03d2dd2da79fc052aa52ad728a628f2705)), closes [#1107](https://github.com/open-sauced/open-sauced/issues/1107)
+
+
+### Styles
+
+* correct eslint missing function ([#1122](https://github.com/open-sauced/open-sauced/issues/1122)) ([900495a](https://github.com/open-sauced/open-sauced/commit/900495a2b9e07a94b8acfa48d2d5faf16414a5b5)), closes [#1107](https://github.com/open-sauced/open-sauced/issues/1107)
+
+
+### Build System
+
+* correct requirements for semantic-release ([#1125](https://github.com/open-sauced/open-sauced/issues/1125)) ([b04cff0](https://github.com/open-sauced/open-sauced/commit/b04cff053b7ef6835ebe19c7e670e52351842e28)), closes [#1107](https://github.com/open-sauced/open-sauced/issues/1107)
+
 # Changelog
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
