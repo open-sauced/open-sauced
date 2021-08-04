@@ -1,12 +1,12 @@
 {
   "name": "@open-sauced/open-sauced",
-  "version": "0.21.38",
+  "version": "0.22.0",
   "lockfileVersion": 2,
   "requires": true,
   "packages": {
     "": {
       "name": "@open-sauced/open-sauced",
-      "version": "0.21.38",
+      "version": "0.22.0",
       "license": "MIT",
       "dependencies": {
         "@apollo/client": "^3.3.21",
