@@ -7,21 +7,23 @@ import {PencilIcon} from "@primer/octicons-react";
 import ReactMarkdown from "react-markdown";
 import "remirror/styles/all.css";
 import api from "../lib/apiGraphQL";
-import {BoldExtension, BulletListExtension, HeadingExtension, ItalicExtension, MarkdownExtension, MentionExtension, EmojiExtension} from "remirror/extensions";
+import {SuggestExtension} from "@remirror/core";
+import {BoldExtension, BulletListExtension, HeadingExtension, ItalicExtension, MarkdownExtension, EmojiExtension} from "remirror/extensions";
 import {EditorComponent, Remirror, useRemirror, useCommands} from "@remirror/react";
-
+import emojiData from "svgmoji/emoji";
 const extensions = () => [
+  new SuggestExtension(),
   new BulletListExtension(),
   new HeadingExtension(),
   new BoldExtension(),
   new ItalicExtension(),
   new MarkdownExtension(),
-  new EmojiExtension({supportedLanguages: ["typescript", "jsx"]}),
-  new MentionExtension({
-    matchers: [{
-      char: "@",
-      name: "at"
-    }]
+  new EmojiExtension({
+    data: emojiData,
+    moji:"noto",
+    fallback:":-)",
+    suggestionCharacter:":",
+    plainText:true
   }),
 ];
 
@@ -31,7 +33,7 @@ const Menu = () => {
   return (
     <div>
       <button
-        onClick={() => {commands.insertMarkdown("# Notes for Repo\n- fork the repo\n\n- follow everybody on twitter\n-troll, troll, troll<Cursor>");}}
+        onClick={() => {commands.insertMarkdown("### Notes for Repo\n- fork the repo\n\n- follow everybody on twitter\n-troll, troll, troll<Cursor>");}}
         style={{fontWeight: "bold"}}
       >
         New
