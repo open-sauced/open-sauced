@@ -52,7 +52,6 @@ function RepositoryGoals({user}) {
   const viewerStars = repository && repository.stars && repository.stars.text && JSON.parse(repository.stars.text);
 
   const stars = remainingStars(data, viewerStars);
-  console.log(stars);
   return (
     <section>
       {repository && repository.issues ? (
