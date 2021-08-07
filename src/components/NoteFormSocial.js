@@ -5,11 +5,12 @@ import Card from "./Card";
 import {FlexCenter} from "../styles/Grid";
 import {PencilIcon} from "@primer/octicons-react";
 import ReactMarkdown from "react-markdown";
-import "remirror/styles/all.css";
 import api from "../lib/apiGraphQL";
+import {AllStyledComponent} from "@remirror/styles/emotion";
 import {SuggestExtension} from "@remirror/core";
-import {BoldExtension, BulletListExtension, HeadingExtension, ItalicExtension, MarkdownExtension, EmojiExtension} from "remirror/extensions";
-import {EditorComponent, Remirror, useRemirror, useCommands} from "@remirror/react";
+import {BoldExtension, BulletListExtension, HeadingExtension, ItalicExtension, TableExtension, MarkdownExtension, EmojiExtension} from "remirror/extensions";
+import {EditorComponent, ThemeProvider, Remirror, useRemirror, useCommands, useEmoji} from "@remirror/react";
+import {EmojiPopupComponent} from "@remirror/react-components";
 import emojiData from "svgmoji/emoji";
 const extensions = () => [
   new SuggestExtension(),
@@ -17,6 +18,7 @@ const extensions = () => [
   new HeadingExtension(),
   new BoldExtension(),
   new ItalicExtension(),
+  new TableExtension(),
   new MarkdownExtension(),
   new EmojiExtension({
     data: emojiData,
@@ -26,7 +28,12 @@ const extensions = () => [
     plainText:true
   }),
 ];
-
+const MyEditor = () => {
+  useEmoji();
+  return (
+    <EditorComponent />
+  );
+};
 const Menu = () => {
   // Access the commands and the activity status of the editor.
   const commands = useCommands();
@@ -37,24 +44,6 @@ const Menu = () => {
         style={{fontWeight: "bold"}}
       >
         New
-      </button>
-      <button
-        onClick={() => {commands.insertMarkdown("# Heading 1");}}
-        style={{fontWeight: "bold"}}
-      >
-        H1
-      </button>
-      <button
-        onClick={() => {commands.insertMarkdown("\n\n- item 1\n- item 2");}}
-        style={{fontWeight: "bold"}}
-      >
-        List
-      </button>
-      <button
-        onClick={() => {commands.toggleBold();}}
-        style={{fontWeight: "bold"}}
-      >
-        B
       </button>
     </div>
   );
@@ -71,10 +60,15 @@ const Editor = (props) => {
     setState(param.state);
     props.onChange(param);
   };
-  return <Remirror manager={manager} state={state} onChange={_onChange}>
-    <Menu />
-    <EditorComponent />
-  </Remirror>;
+  return <AllStyledComponent>
+    <ThemeProvider>
+      <Remirror manager={manager} state={state} onChange={_onChange}>
+        <EmojiPopupComponent />
+        <Menu />
+        <MyEditor />
+      </Remirror>
+    </ThemeProvider>
+  </AllStyledComponent>;
 };
 
 function NoteForm({goalId, repoName, note}) {
