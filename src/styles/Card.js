@@ -289,16 +289,9 @@ const DropdownMenuCard = styled(Card)`
     }
   }
 
-  li * {
-     padding: ${size.tiny} ${size.small} ${size.tiny} ${size.micro};
-  }
-
-  .app-info {
-    color:${colors.lightGrey};
-  }
-  
   .menu-link{
     color: ${colors.grey} !important;
+    padding: ${size.tiny} ${size.small} ${size.tiny} ${size.micro};
     &:hover {
         color:${colors.lightGrey} !important;
       }
