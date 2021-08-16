@@ -7,13 +7,24 @@ function DropdownMenu({forwardRef, user, _logOutRedirect}) {
   return (
     <DropdownMenuCard ref={forwardRef}>
       <li>
-        <SubtleLink tabIndex={0} className="menu-link" href={`https://github.com/${user.login}`}>{user.login}</SubtleLink>
+        <SubtleLink
+          tabIndex={0}
+          className="menu-link"
+          href={`https://github.com/${user.login}`}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {user.login}
+        </SubtleLink>
       </li>
       <li>
         <SubtleLink
           tabIndex={0}
           className="menu-link"
-          href={`https://github.com/open-sauced/open-sauced/releases/tag/v${getAppVersion()}`}>
+          href={`https://github.com/open-sauced/open-sauced/releases/tag/v${getAppVersion()}`}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           v{getAppVersion()}
         </SubtleLink>
       </li>
