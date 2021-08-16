@@ -34,11 +34,20 @@ const Container = styled.nav`
     margin-right: ${size.micro};
   }
 
+  .mobile-link {
+    display: none;
+  }
+
   ${MEDIA.TABLET`
     .nav-link {
       display: none;
     }
-
+    .show-avatar {
+      display: none;
+    }
+    .mobile-link {
+      display: inline-block;
+    }
     ul {
       padding: 2px;
     }

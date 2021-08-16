@@ -1,9 +1,9 @@
 import React from "react";
 import Card from "../src/components/Card";
 import Button, {InputButton} from "../src/styles/Button";
-import {AccentLink, MicroFont} from "../src/styles/Typography";
+import {AccentLink, MicroFont, SubtleLink} from "../src/styles/Typography";
 import {PrimaryWithText} from "./1-Button.stories";
-import {CardPadding, CardHeader, ContextStyle, HintStyle} from "../src/styles/Card";
+import {CardPadding, CardHeader, ContextStyle, HintStyle, DropdownMenuCard} from "../src/styles/Card";
 import Avatar from "../src/styles/Avatar";
 import Input from "../src/styles/Input";
 import {Container} from "../src/styles/ListItem";
@@ -47,6 +47,20 @@ export const ContextCard = () => (
       <Illustration src={doneChecking} />
     </SpaceBetween>
   </ContextStyle>
+);
+
+export const DropdownMenu = () => (
+  <DropdownMenuCard>
+    <li>
+      <SubtleLink className="menu-link">OpenSaucedUser</SubtleLink>
+    </li>
+    <li>
+      <SubtleLink className="menu-link">Logout</SubtleLink>
+    </li>
+    <li>
+      <span className="app-info">v0.01</span>
+    </li>
+  </DropdownMenuCard>
 );
 
 export const HintCard = () => (
