@@ -55,10 +55,10 @@ export const DropdownMenu = () => (
       <SubtleLink href="#" className="menu-link">OpenSaucedUser</SubtleLink>
     </li>
     <li>
-      <SubtleLink href="#"className="menu-link">Logout</SubtleLink>
+      <SubtleLink href="#" className="menu-link">v0.01</SubtleLink>
     </li>
     <li>
-      <SubtleLink href="#" className="menu-link">v0.01</SubtleLink>
+      <SubtleLink href="#"className="menu-link">Logout</SubtleLink>
     </li>
   </DropdownMenuCard>
 );
