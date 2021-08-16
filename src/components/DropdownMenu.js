@@ -10,10 +10,10 @@ function DropdownMenu({forwardRef, user, _logOutRedirect}) {
         <SubtleLink className="menu-link" href={`https://github.com/${user.login}`}>{user.login}</SubtleLink>
       </li>
       <li>
-        <SubtleLink className="menu-link" onClick={_logOutRedirect}>Logout</SubtleLink>
+        <SubtleLink className="menu-link" href={`https://github.com/open-sauced/open-sauced/releases/tag/v${getAppVersion()}`}>v{getAppVersion()}</SubtleLink>
       </li>
       <li>
-        <span className="app-info">v{getAppVersion()}</span>
+        <SubtleLink className="menu-link" onClick={_logOutRedirect}>Logout</SubtleLink>
       </li>
     </DropdownMenuCard>
   );
