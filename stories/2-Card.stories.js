@@ -52,13 +52,13 @@ export const ContextCard = () => (
 export const DropdownMenu = () => (
   <DropdownMenuCard>
     <li>
-      <SubtleLink className="menu-link">OpenSaucedUser</SubtleLink>
+      <SubtleLink href="#" className="menu-link">OpenSaucedUser</SubtleLink>
     </li>
     <li>
-      <SubtleLink className="menu-link">Logout</SubtleLink>
+      <SubtleLink href="#"className="menu-link">Logout</SubtleLink>
     </li>
     <li>
-      <span className="app-info">v0.01</span>
+      <SubtleLink href="#" className="menu-link">v0.01</SubtleLink>
     </li>
   </DropdownMenuCard>
 );
