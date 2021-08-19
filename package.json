@@ -1,7 +1,21 @@
 {
-  "name": "open-sauced",
-  "version": "0.21.33",
+  "name": "@open-sauced/open-sauced",
+  "description": "Open Sauced provides structured onboarding for new contributors to open source. This structure provides a way to track your next contributions by leveraging a unique dashboard built on top of the GitHub GraphQL API.",
+  "version": "0.22.0",
   "private": true,
+  "license": "MIT",
+  "files": [
+    "build"
+  ],
+  "bugs": "https://github.com/open-sauced/open-sauced/issues",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/open-sauced/open-sauced.git"
+  },
+  "engines": {
+    "node": ">=16",
+    "npm": ">=7"
+  },
   "devDependencies": {
     "@babel/core": "^7.14.6",
     "@babel/eslint-parser": "^7.14.7",
@@ -9,6 +23,7 @@
     "@babel/plugin-transform-runtime": "^7.14.5",
     "@babel/register": "^7.14.5",
     "@babel/runtime": "^7.14.6",
+    "@open-sauced/semantic-release-conventional-config": "^1.1.0",
     "@storybook/addon-essentials": "^6.3.2",
     "@storybook/addon-links": "^6.3.2",
     "@storybook/addon-storysource": "^6.3.2",
@@ -18,19 +33,22 @@
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^12.0.0",
     "@testing-library/user-event": "^13.1.9",
-    "@wojtekmaj/enzyme-adapter-react-17": "^0.6.2",
+    "@wojtekmaj/enzyme-adapter-react-17": "^0.6.3",
     "babel-jest": "^27.0.6",
     "babel-loader": "^8.2.2",
     "babel-preset-react-app": "^10.0.0",
     "case-sensitive-paths-webpack-plugin": "^2.4.0",
+    "commitizen": "^4.2.4",
+    "conventional-changelog-conventionalcommits": "^4.6.0",
     "css-loader": "^5.2.7",
+    "cz-conventional-changelog": "^3.3.0",
     "dotenv": "^10.0.0",
     "dotenv-expand": "^5.1.0",
     "enzyme": "^3.11.0",
     "eslint": "^7.30.0",
     "eslint-config-react-app": "^6.0.0",
     "eslint-loader": "^4.0.2",
-    "eslint-plugin-flowtype": "5.8.0",
+    "eslint-plugin-flowtype": "5.8.2",
     "eslint-plugin-import": "^2.23.4",
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-prettier": "^3.4.0",
@@ -50,7 +68,7 @@
     "react-scripts": "^4.0.3",
     "react-test-renderer": "^17.0.2",
     "rimraf": "^3.0.2",
-    "standard-version": "^9.3.0",
+    "semantic-release": "^17.4.4",
     "storybook-dark-mode": "^1.0.8",
     "style-loader": "^2.0.0",
     "url-loader": "4.1.1",
@@ -62,7 +80,7 @@
   },
   "dependencies": {
     "@apollo/client": "^3.3.21",
-    "@primer/octicons-react": "^14.2.2",
+    "@primer/octicons-react": "^15.0.0",
     "@remirror/pm": "^1.0.1",
     "@remirror/react": "^1.0.1",
     "@remirror/styles": "^1.0.1",
@@ -79,7 +97,7 @@
     "react-dom": "^17.0.2",
     "react-hot-keys": "^2.6.2",
     "react-loading-skeleton": "^2.2.0",
-    "react-markdown": "^6.0.2",
+    "react-markdown": "^6.0.3",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
     "remirror": "^1.0.1",
@@ -94,9 +112,10 @@
     "test": "npm run clean && node scripts/test.js --env=jsdom --updateSnapshot",
     "storybook": "start-storybook -p 6006 -s ./.storybook",
     "build-storybook": "build-storybook -s ./.storybook",
-    "lint": "eslint .",
-    "lint:fix": "eslint --fix --ext .js,.jsx .",
-    "release": "standard-version --git-tag-fallback"
+    "push": "cz",
+    "lint": "eslint . --report-unused-disable-directives",
+    "format": "npm run lint -- --fix",
+    "semantic-release": "semantic-release"
   },
   "jest": {
     "moduleFileExtensions": [
