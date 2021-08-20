@@ -1,3 +1,10 @@
+## [0.24.0](https://github.com/open-sauced/open-sauced/compare/v0.23.0...v0.24.0) (2021-08-20)
+
+
+### Features
+
+* dedupe community health files ([#1130](https://github.com/open-sauced/open-sauced/issues/1130)) ([6ad971d](https://github.com/open-sauced/open-sauced/commit/6ad971d563ecb2fdcd68439225ceda2c388ab9d2)), closes [#1128](https://github.com/open-sauced/open-sauced/issues/1128)
+
 ## [0.23.0](https://github.com/open-sauced/open-sauced/compare/v0.22.0...v0.23.0) (2021-08-20)
 
 
