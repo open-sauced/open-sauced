@@ -1,3 +1,10 @@
+## [0.23.0](https://github.com/open-sauced/open-sauced/compare/v0.22.0...v0.23.0) (2021-08-20)
+
+
+### Features
+
+* added a dropdown menu under avatar ([#1129](https://github.com/open-sauced/open-sauced/issues/1129)) ([fe4df73](https://github.com/open-sauced/open-sauced/commit/fe4df731ede8e914c9f5a0958c9715d732ea0f0f)), closes [#1031](https://github.com/open-sauced/open-sauced/issues/1031)
+
 ## [0.22.0](https://github.com/open-sauced/open-sauced/compare/v0.21.38...v0.22.0) (2021-08-04)
 
 
