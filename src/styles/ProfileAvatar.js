@@ -8,6 +8,7 @@ const ProfileAvatar = styled.img`
   border-radius: 5px;
   margin-right: 10px;
   border: 2px solid white;
+  cursor: pointer;
 `;
 
 export default ProfileAvatar;

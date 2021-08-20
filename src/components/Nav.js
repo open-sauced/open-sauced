@@ -1,10 +1,11 @@
-import React, {useState} from "react";
+import React, {useState, useRef, useEffect} from "react";
 import {logo} from "../logos";
 import {FloatLeftMobileNav, FloatRight} from "../styles/Grid";
 import {SubtleLink} from "../styles/Typography";
 import {AppNav, HomeNav} from "../styles/Header";
 import {SpaceBetween, Logo} from "../styles/Grid";
 import ProfileAvatar from "../styles/ProfileAvatar";
+import DropdownMenu from "./DropdownMenu";
 import AdminStatsBar from "./AdminStatsBar";
 import Hotkeys from "react-hot-keys";
 import {useHistory, Link} from "react-router-dom";
@@ -72,7 +73,7 @@ function LeftSide({isLoggedIn, user, handleLogIn, handleLogOut}) {
         <li>
           {isLoggedIn ? (
             <div>
-              <SubtleLink tabIndex={0} onClick={_logOutRedirect}>Logout</SubtleLink>
+              <SubtleLink className="mobile-link" tabIndex={0} onClick={_logOutRedirect}>Logout</SubtleLink>
             </div>
           ) : (
             <div>
@@ -85,15 +86,50 @@ function LeftSide({isLoggedIn, user, handleLogIn, handleLogOut}) {
   );
 }
 
-function RightSide({user}) {
+function RightSide({user, handleLogOut}) {
+  const [drawer, setDrawerOpen] = useState(false);
+
+  const history = useHistory();
+  const _logOutRedirect = () => {
+    handleLogOut();
+    history.push("/");
+  };
+
+  const dropdownMenuRef = useRef(null);
+  const ProfileAvatarRef = useRef(null);
+
+  const handleClickOutside = (event) => {
+    if (dropdownMenuRef.current && !dropdownMenuRef.current.contains(event.target)) {
+      if (ProfileAvatarRef.current && !ProfileAvatarRef.current.contains(event.target)) {
+        setDrawerOpen(false);
+      }
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("click", handleClickOutside, true);
+    return () => {
+      document.removeEventListener("click", handleClickOutside, true);
+      setDrawerOpen(false);
+    };
+  }, []);
+
   return (
     <FloatRight>
       <SpaceBetween>
         <ThemeButtonGroup />
         {user && (
-          <SubtleLink alt="user login name" className="nav-link" href={`https://github.com/${user.login}`}>
-            <ProfileAvatar alt="avatar" src={`https://github.com/${user.login}.png`} />
-          </SubtleLink>
+          <div className="show-avatar">
+            <ProfileAvatar alt="avatar" src={`https://github.com/${user.login}.png`} title={`${user.login}`}
+              onClick={() => setDrawerOpen(!drawer)} ref={ProfileAvatarRef} />
+            {drawer &&
+            <DropdownMenu
+              forwardRef={dropdownMenuRef}
+              user={user}
+              _logOutRedirect={_logOutRedirect}
+            />
+            }
+          </div>
         )}
       </SpaceBetween>
     </FloatRight>
@@ -121,7 +157,7 @@ function Header({user, handleLogOut, handleLogIn, isAdmin, isLoggedIn}) {
       )}
       <Nav>
         <LeftSide handleLogOut={handleLogOut} handleLogIn={handleLogIn} isLoggedIn={isLoggedIn} user={user} />
-        <RightSide user={user} />
+        <RightSide user={user} handleLogOut={handleLogOut} />
       </Nav>
     </div>
   );

@@ -270,6 +270,42 @@ const OnBoardStyle = styled(Card)`
   }
 `;
 
+const DropdownMenuCard = styled(Card)`
+  position: absolute;
+  box-shadow: 0px 0px 8px rgba(214, 214, 214, 0.78);
+  padding: 0 20px; 
+  width: fit-content;
+  right: 15px;
+  display: flex; 
+  flex-direction: column;
+  z-index: 1;
+ 
+  li {
+    padding: 0px;
+    line-height: 47px;
+    border-bottom: 1px solid rgba(215, 215, 215, 0.17);
+    &:last-child {
+      border-bottom: 0px;
+    }
+  }
+
+  .menu-link{
+    color: ${colors.grey} !important;
+    padding: ${size.tiny} ${size.small} ${size.tiny} ${size.micro};
+    &:hover {
+        color:${colors.lightGrey} !important;
+      }
+  }
+    body.dark & {
+    .menu-link {
+      color: ${colors.offWhite} !important;
+      &:hover {
+        color:${colors.lightGrey} !important;
+      }
+    }
+  }
+`;
+
 export {
   Card,
   ButtonBoard,
@@ -280,4 +316,5 @@ export {
   HintStyle,
   OnBoardStyle,
   RepositoryContext,
+  DropdownMenuCard
 };
