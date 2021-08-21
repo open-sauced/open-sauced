@@ -298,7 +298,7 @@ export const RepoDetailsCard = () => {
   );
 };
 
-export const RecommendedRepoListCard = () => (
+export const RecommendedRepoItemCard = () => (
   <Background style={{height: 600, padding: "10px"}}>
     <Card>
       <FlexHeader>

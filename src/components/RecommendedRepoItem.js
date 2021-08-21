@@ -5,7 +5,7 @@ import {truncate} from "../lib/truncate";
 import Avatar from "../styles/Avatar";
 import api from "../lib/apiGraphQL";
 
-function RecommendedRepoList({goal, goalsId, onGoalAdded}) {
+function RecommendedRepoItem({goal, goalsId, onGoalAdded}) {
   const _handleGoalCreation = async goal => {
     api
       .createGoal(goalsId, goal, null)
@@ -24,16 +24,16 @@ function RecommendedRepoList({goal, goalsId, onGoalAdded}) {
             <Avatar
               small
               alt="avatar"
-              src={`https://avatars.githubusercontent.com/${goal.nameWithOwner.split("/")[0].replace(/\s+/g, "")}`}
+              src={`https://avatars.githubusercontent.com/${goal.full_name.split("/")[0].replace(/\s+/g, "")}`}
             />
             <Flex className="details">
-              <p>{truncate(goal.nameWithOwner, 60)}</p>
+              <p>{truncate(goal.full_name, 60)}</p>
             </Flex>
           </FlexCenter>
         </FloatLeft>
         <FloatRight>
           <FlexCenter>
-            <a onClick={() => _handleGoalCreation(goal.nameWithOwner)} href="#">
+            <a onClick={() => _handleGoalCreation(goal.full_name)} href="#">
               <img alt="add recommended repo" src={plus} className="svg" />
             </a>
           </FlexCenter>
@@ -43,4 +43,4 @@ function RecommendedRepoList({goal, goalsId, onGoalAdded}) {
   );
 }
 
-export default RecommendedRepoList;
+export default RecommendedRepoItem;
