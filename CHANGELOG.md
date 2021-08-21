@@ -1,3 +1,24 @@
+## [0.25.0](https://github.com/open-sauced/open-sauced/compare/v0.24.0...v0.25.0) (2021-08-21)
+
+
+### Features
+
+* limit stars list to only the last 3 unused stars ([#1124](https://github.com/open-sauced/open-sauced/issues/1124)) ([6d35b43](https://github.com/open-sauced/open-sauced/commit/6d35b43cf8f7267f962cb7e558934a58388edbb0))
+
+## [0.24.0](https://github.com/open-sauced/open-sauced/compare/v0.23.0...v0.24.0) (2021-08-20)
+
+
+### Features
+
+* dedupe community health files ([#1130](https://github.com/open-sauced/open-sauced/issues/1130)) ([6ad971d](https://github.com/open-sauced/open-sauced/commit/6ad971d563ecb2fdcd68439225ceda2c388ab9d2)), closes [#1128](https://github.com/open-sauced/open-sauced/issues/1128)
+
+## [0.23.0](https://github.com/open-sauced/open-sauced/compare/v0.22.0...v0.23.0) (2021-08-20)
+
+
+### Features
+
+* added a dropdown menu under avatar ([#1129](https://github.com/open-sauced/open-sauced/issues/1129)) ([fe4df73](https://github.com/open-sauced/open-sauced/commit/fe4df731ede8e914c9f5a0958c9715d732ea0f0f)), closes [#1031](https://github.com/open-sauced/open-sauced/issues/1031)
+
 ## [0.22.0](https://github.com/open-sauced/open-sauced/compare/v0.21.38...v0.22.0) (2021-08-04)
 
 

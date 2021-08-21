@@ -139,6 +139,13 @@ const operationsDoc = `
               text
             }
           }
+          stars: object(expression: "HEAD:stars.json") {
+            id
+            ... on GitHubBlob {
+                id
+                text
+            }
+          }
           issues(
             first: 50
             states: OPEN
@@ -189,7 +196,6 @@ const operationsDoc = `
       }
     }
   }
-
   
   query FetchRepoCountQuery() {
     gitHub {

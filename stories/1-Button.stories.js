@@ -16,7 +16,7 @@ export const primary = () => (
 
 export const PrimaryWithText = () => (
   <div>
-    <h2 style={{fontFamily: "Roboto", color:"grey", fontSize: "1.0rem"}}>Set goals directly on Github</h2>
+    <h2 style={{fontFamily: "Roboto", color: "grey", fontSize: "1.0rem"}}>Set goals directly on Github</h2>
     <Button primary>View Your Data</Button>
   </div>
 );
@@ -34,8 +34,7 @@ export const secondaryWithImageAndText = () => (
 
 export const addTo = () => (
   <div>
-    {/* eslint-disable-next-line no-undef */}
-    <a onClick={() => _handleGoalCreation(goal.nameWithOwner)} href="#">
+    <a onClick={action("goal creation simulated")} href="#">
       <img alt="pointing right icon" src={plus} />
     </a>
   </div>
