@@ -196,50 +196,12 @@ const operationsDoc = `
       }
     }
   }
-
   
   query FetchRepoCountQuery() {
     gitHub {
       search(query: "open-sauced-goals", type: REPOSITORY) {
         repositoryCount
       }
-    }
-  }
-
-  query FetchStars() {
-    gitHub {
-      viewer {
-        repository(name: "open-sauced-goals") {
-          id
-          stars: object(expression: "HEAD:stars.json") {
-            id
-            ... on GitHubBlob {
-                id
-                text
-            }
-          }
-          issues(
-            first: 10
-            states: OPEN
-            orderBy: { direction: DESC, field: CREATED_AT }
-          ) {
-            totalCount
-            nodes {
-              id
-              full_name: title
-              body
-              number
-              labels(first: 3) {
-              nodes {
-                  color
-                  name
-                  id
-              }
-            }
-          }
-        }
-      }
-    }
     }
   }
 
