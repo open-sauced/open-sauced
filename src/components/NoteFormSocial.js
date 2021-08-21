@@ -7,13 +7,12 @@ import {PencilIcon} from "@primer/octicons-react";
 import ReactMarkdown from "react-markdown";
 import api from "../lib/apiGraphQL";
 import {AllStyledComponent} from "@remirror/styles/emotion";
-import {SuggestExtension} from "@remirror/core";
-import {BoldExtension, BulletListExtension, HeadingExtension, ItalicExtension, TableExtension, MarkdownExtension, EmojiExtension} from "remirror/extensions";
+import {BoldExtension, CodeExtension, BulletListExtension, HeadingExtension, ItalicExtension, TableExtension, MarkdownExtension, EmojiExtension} from "remirror/extensions";
 import {EditorComponent, ThemeProvider, Remirror, useRemirror, useCommands, useEmoji} from "@remirror/react";
 import {EmojiPopupComponent} from "@remirror/react-components";
-import emojiData from "svgmoji/emoji";
+import emojiData from "svgmoji/emoji-github";
 const extensions = () => [
-  new SuggestExtension(),
+  new CodeExtension(),
   new BulletListExtension(),
   new HeadingExtension(),
   new BoldExtension(),
@@ -37,14 +36,14 @@ const MyEditor = () => {
 const Menu = () => {
   // Access the commands and the activity status of the editor.
   const commands = useCommands();
+  const startNewNote = () => {
+    commands.insertMarkdown("### Notes for Repo\n- fork the repo\n\n- follow everybody on twitter\n-troll, troll, troll<Cursor>");
+  };
   return (
     <div>
-      <button
-        onClick={() => {commands.insertMarkdown("### Notes for Repo\n- fork the repo\n\n- follow everybody on twitter\n-troll, troll, troll<Cursor>");}}
-        style={{fontWeight: "bold"}}
-      >
+      <Button onClick={startNewNote}>
         New
-      </button>
+      </Button>
     </div>
   );
 };
@@ -137,6 +136,7 @@ function NoteForm({goalId, repoName, note}) {
           ""
         )}
       </FlexCenter>
+      <img style={{display:"none"}} src="https://cdn.jsdelivr.net/npm/@svgmoji/noto@3.2.0/sprites/all.svg" />
     </Card>
   );
 }

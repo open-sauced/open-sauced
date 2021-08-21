@@ -69,7 +69,7 @@ const Card = styled.div`
   body.dark & {
     background-color: ${colors.darkestGrey};
     color: ${colors.lightestGrey};
-    h1 {
+    h1,h2,h3,h4,h5,h6 {
       color: ${colors.lightestGrey} !important;
     }
     a {
