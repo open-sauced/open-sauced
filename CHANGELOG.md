@@ -1,3 +1,10 @@
+## [0.25.0](https://github.com/open-sauced/open-sauced/compare/v0.24.0...v0.25.0) (2021-08-21)
+
+
+### Features
+
+* limit stars list to only the last 3 unused stars ([#1124](https://github.com/open-sauced/open-sauced/issues/1124)) ([6d35b43](https://github.com/open-sauced/open-sauced/commit/6d35b43cf8f7267f962cb7e558934a58388edbb0))
+
 ## [0.24.0](https://github.com/open-sauced/open-sauced/compare/v0.23.0...v0.24.0) (2021-08-20)
 
 
