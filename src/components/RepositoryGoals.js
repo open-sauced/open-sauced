@@ -28,13 +28,13 @@ function RepositoryGoals({user}) {
     setGoalsId(id);
   };
 
-  const onGoalAdded = goal => {
+  const onGoalAdded = (goal) => {
     const newNode = {
       id: goal.id,
       title: goal.title,
     };
 
-    const updatedRepos = repos => {
+    const updatedRepos = (repos) => {
       const newRepos = {
         id: repos.id,
         issues: {
@@ -63,9 +63,8 @@ function RepositoryGoals({user}) {
                   {" "}
                   <h1>Dashboard</h1>
                   <p>
-                    Open Sauced is a project to track the contributions you would like to work on. Add a repository you
-                    are interested contributing to using the Repository's owner and name, also known as the
-                    "nameWithOwner" format.
+                    Open Sauced is a project to track the contributions you would like to work on. Add a repository you are interested contributing to using the
+                    Repository's owner and name, also known as the "nameWithOwner" format.
                   </p>
                   <small>
                     <em>
@@ -79,13 +78,12 @@ function RepositoryGoals({user}) {
             </RepositoryContext>
 
             <FlexColumn style={{marginLeft: 16, flex: 1}}>
-              <Card>
-                <h3 style={{fontSize: fontSize.default}}>Repo Recommendations</h3>
-                {viewerStars &&
-                  stars.map(star => (
-                    <RecommendedRepoItem key={star.full_name} goal={star} onGoalAdded={onGoalAdded} goalsId={goalsId} />
-                  ))}
-              </Card>
+              {viewerStars && (
+                <Card>
+                  <h3 style={{fontSize: fontSize.default}}>Repo Recommendations</h3>
+                  {viewerStars && stars.map((star) => <RecommendedRepoItem key={star.full_name} goal={star} onGoalAdded={onGoalAdded} goalsId={goalsId} />)}
+                </Card>
+              )}
             </FlexColumn>
           </Flex>
 
