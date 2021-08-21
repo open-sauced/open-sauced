@@ -34,7 +34,7 @@ export const secondaryWithImageAndText = () => (
 
 export const addTo = () => (
   <div>
-    <a onClick={() => console("goal creation simulated")} href="#">
+    <a onClick={action("goal creation simulated")} href="#">
       <img alt="pointing right icon" src={plus} />
     </a>
   </div>
