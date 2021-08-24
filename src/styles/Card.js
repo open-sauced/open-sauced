@@ -276,10 +276,13 @@ const DropdownMenuCard = styled(Card)`
   padding: 0 20px; 
   width: fit-content;
   right: 15px;
-  display: flex; 
-  flex-direction: column;
   z-index: 1;
- 
+  ul {
+     display: flex; 
+     flex-direction: column;
+     padding:0;
+     margin: 0;
+  }
   li {
     padding: 0px;
     line-height: 47px;
