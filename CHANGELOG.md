@@ -1,3 +1,10 @@
+### [0.26.1](https://github.com/open-sauced/open-sauced/compare/v0.26.0...v0.26.1) (2021-08-25)
+
+
+### Bug Fixes
+
+* contributing guide link fixed ([#1137](https://github.com/open-sauced/open-sauced/issues/1137)) ([5dfcea3](https://github.com/open-sauced/open-sauced/commit/5dfcea3a8b4b084e182a8c175376cd19a9d9e9e3))
+
 ## [0.26.0](https://github.com/open-sauced/open-sauced/compare/v0.25.0...v0.26.0) (2021-08-24)
 
 
