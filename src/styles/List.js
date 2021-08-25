@@ -60,7 +60,20 @@ const Container = styled.ul`
       border: 1px solid ${colors.darkGrey};
     }
   }
-
+  .gitIcons {
+    .gitGreen {
+       fill: ${colors.gitGreen} !important;
+    }
+    .gitRed {
+      fill: ${colors.gitRed} !important;
+   }
+   .gitPurple {
+    fill: ${colors.gitPurple} !important;
+   }
+   .gitGrey {
+    fill: ${colors.gitGrey} !important;
+   }
+  }
   .issueHelper {
     color: grey;
     margin-left: 3px;

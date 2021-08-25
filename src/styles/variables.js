@@ -17,7 +17,11 @@ const colors = {
   green: "#00c7b7",
   darkGreen: "#03b1a3",
   red: "#fb6d77",
-  darkRed: "#fa3946"
+  darkRed: "#fa3946",
+  gitGreen: "#3fb94f",
+  gitRed:"#eb4f47",
+  gitPurple:"#7e59c0",
+  gitGrey:"#8b949e",
 };
 
 const margin = {

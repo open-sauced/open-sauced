@@ -102,6 +102,7 @@ function Issues({repoName, owner}) {
                       participants={issue.node.participants}
                       comments={issue.node.comments}
                       milestone={issue.node.milestone}
+                      status={issue.node.state}
                     />
                   </a>
                 </li>
