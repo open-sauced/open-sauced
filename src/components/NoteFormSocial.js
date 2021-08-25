@@ -7,7 +7,14 @@ import {PencilIcon} from "@primer/octicons-react";
 import ReactMarkdown from "react-markdown";
 import api from "../lib/apiGraphQL";
 import {AllStyledComponent} from "@remirror/styles/emotion";
-import {BoldExtension, CodeExtension, BulletListExtension, HeadingExtension, ItalicExtension, TableExtension, MarkdownExtension, EmojiExtension} from "remirror/extensions";
+import {BoldExtension,
+  CodeExtension,
+  BulletListExtension,
+  HeadingExtension,
+  ItalicExtension,
+  TableExtension,
+  MarkdownExtension,
+  EmojiExtension} from "remirror/extensions";
 import {EditorComponent, ThemeProvider, Remirror, useRemirror, useCommands, useEmoji} from "@remirror/react";
 import {EmojiPopupComponent} from "@remirror/react-components";
 import emojiData from "svgmoji/emoji-github";
@@ -27,7 +34,7 @@ const extensions = () => [
     plainText:true
   }),
 ];
-const MyEditor = () => {
+const EmojiEditor = () => {
   useEmoji();
   return (
     <EditorComponent />
@@ -64,7 +71,7 @@ const Editor = (props) => {
       <Remirror manager={manager} state={state} onChange={_onChange}>
         <EmojiPopupComponent />
         <Menu />
-        <MyEditor />
+        <EmojiEditor />
       </Remirror>
     </ThemeProvider>
   </AllStyledComponent>;
@@ -74,17 +81,19 @@ function NoteForm({goalId, repoName, note}) {
   const [previouslySavedValue, setPreviouslySavedValue] = useState(note);
   const [input, setInput] = useState(note);
   const [editing, setEditing] = useState(false);
-
+  const [editorValue, setEditorValue] = useState(note);
   useEffect(() => {
     setInput(note);
   }, [note]);
 
   const _handleNoteUpdate = () => {
+    console.log("checking editor value", editorValue);
     api
-      .updateGoal(goalId, repoName, "OPEN", input)
+      .updateGoal(goalId, repoName, "OPEN", editorValue)
       .then(() => {
         _handleToggleEditing();
-        setPreviouslySavedValue(input);
+        setInput(editorValue);
+        setPreviouslySavedValue(editorValue);
       })
       .catch(err => console.log(err));
   };
@@ -96,11 +105,8 @@ function NoteForm({goalId, repoName, note}) {
   const _handleCancelEditing = () => {
     setEditing(false);
     setInput(previouslySavedValue);
+    setEditorValue(previouslySavedValue);
   };
-
-  /*const _handleNotesChange = e => {
-    setInput(e.target.value);
-  }; */
 
   return (
     <Card>
@@ -112,7 +118,7 @@ function NoteForm({goalId, repoName, note}) {
         <div className={"remirror-theme"}>
           <Editor input={input} onChange={(parameter) => {
             const md = parameter.helpers.getMarkdown();
-            setInput(md);
+            setEditorValue(md);
           }}/>
         </div>
       )}
