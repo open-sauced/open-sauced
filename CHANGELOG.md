@@ -1,3 +1,10 @@
+## [0.26.0](https://github.com/open-sauced/open-sauced/compare/v0.25.0...v0.26.0) (2021-08-24)
+
+
+### Features
+
+* add tests for dropdown menu ([#1135](https://github.com/open-sauced/open-sauced/issues/1135)) ([79bfc0c](https://github.com/open-sauced/open-sauced/commit/79bfc0c5eb9d05c69b521e2f93eccda8a14d38e0))
+
 ## [0.25.0](https://github.com/open-sauced/open-sauced/compare/v0.24.0...v0.25.0) (2021-08-21)
 
 
