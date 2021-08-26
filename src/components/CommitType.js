@@ -37,7 +37,7 @@ function CommitType({status, isDraft, mergeable, merged}) {
       );
     default:
       return (
-        <IssueOpenedIcon verticalAlign="middle" className="gitPurple" />
+        ""
       );
   }
 }
