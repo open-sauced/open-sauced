@@ -2,16 +2,16 @@ import React from "react";
 import {FloatRight, FloatLeft, FlexColumn, FlexHeader, FlexCenter} from "../styles/Grid";
 import {chevronRight} from "../icons";
 import dayjs from "dayjs";
+import CommitType from "../components/CommitType";
 import relativeTime from "dayjs/plugin/relativeTime";
-import {IssueOpenedIcon, IssueClosedIcon, GitPullRequestDraftIcon} from "@primer/octicons-react";
-import {GitPullRequestIcon, GitPullRequestClosedIcon, GitMergeIcon, CommentIcon, MilestoneIcon} from "@primer/octicons-react";
-
+import {CommentIcon, MilestoneIcon} from "@primer/octicons-react";
 import contrast from "contrast";
 import {fontSize, size} from "../styles/variables";
 
 dayjs.extend(relativeTime);
 
-function IssueListItem({title, labels, author, opened, type, participants, comments, milestone, status, mergeable, isDraft, merged}) {
+function IssueListItem({title, labels, author, opened, type,
+  participants, comments, milestone, status, mergeable, isDraft, merged}) {
   const participantsDiffCount = 3;
   const participantsShowDiff = participants && participants.totalCount - participantsDiffCount;
   return (
@@ -19,46 +19,7 @@ function IssueListItem({title, labels, author, opened, type, participants, comme
       <FloatLeft>
         <FlexCenter>
           <span style={{marginRight: 10}} className="gitIcons">
-            {(() => {
-              switch (status) { // Check the status variable for OPEN/CLOSED/MERGED ISSUES
-                case "OPEN":
-                {
-                  if (isDraft) { //check wether if its a draft
-                    return (
-                      <GitPullRequestDraftIcon className="gitGrey" />
-                    );
-                  }
-                  if (mergeable === "MERGEABLE") {//check if its a pull request
-                    return (
-                      <GitPullRequestIcon verticalAlign="middle" className="gitGreen" />
-                    );
-                  }
-                  return (
-                    <IssueOpenedIcon verticalAlign="middle" className="gitGreen"/>
-                  );
-                }
-                case "CLOSED": // check for closed PR or Closed issue
-                {
-                  if (mergeable === "MERGEABLE" && merged === false) {
-                    return (
-                      <GitPullRequestClosedIcon verticalAlign="middle" className="gitRed"/>
-                    );
-                  }
-                  return (
-                    <IssueClosedIcon verticalAlign="middle" className="gitRed" />
-                  );
-                }
-                case "MERGED":
-                  return (
-                    <GitMergeIcon verticalAlign="middle" className="gitPurple" />
-                  );
-                default:
-                  return (
-                    <div>You are a User.</div>
-                  );
-              }
-
-            })()}
+            <CommitType status={status}  isDraft={isDraft}  mergeable={mergeable} merged={merged} />
           </span>
           <FlexColumn className="details">
             <p style={{fontSize: fontSize.default}}>
