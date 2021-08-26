@@ -35,6 +35,10 @@ function CommitType({status, isDraft, mergeable, merged}) {
       return (
         <GitMergeIcon verticalAlign="middle" className="gitPurple" />
       );
+    default:
+      return (
+        <IssueOpenedIcon verticalAlign="middle" className="gitPurple" />
+      );
   }
 }
 export default CommitType;
