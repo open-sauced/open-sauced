@@ -2,23 +2,24 @@ import React from "react";
 import {FloatRight, FloatLeft, FlexColumn, FlexHeader, FlexCenter} from "../styles/Grid";
 import {chevronRight} from "../icons";
 import dayjs from "dayjs";
+import CommitType from "../components/CommitType";
 import relativeTime from "dayjs/plugin/relativeTime";
-import {IssueOpenedIcon, CommentIcon, MilestoneIcon} from "@primer/octicons-react";
+import {CommentIcon, MilestoneIcon} from "@primer/octicons-react";
 import contrast from "contrast";
 import {fontSize, size} from "../styles/variables";
 
 dayjs.extend(relativeTime);
 
-function IssueListItem({title, labels, author, opened, type, participants, comments, milestone}) {
+function IssueListItem({title, labels, author, opened, type,
+  participants, comments, milestone, status, mergeable, isDraft, merged}) {
   const participantsDiffCount = 3;
   const participantsShowDiff = participants && participants.totalCount - participantsDiffCount;
-
   return (
     <FlexHeader>
       <FloatLeft>
         <FlexCenter>
-          <span style={{marginRight: 10}}>
-            <IssueOpenedIcon verticalAlign="middle" />
+          <span style={{marginRight: 10}} className="gitIcons">
+            <CommitType status={status}  isDraft={isDraft}  mergeable={mergeable} merged={merged} />
           </span>
           <FlexColumn className="details">
             <p style={{fontSize: fontSize.default}}>
