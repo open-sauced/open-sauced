@@ -1,3 +1,10 @@
+## [0.27.0](https://github.com/open-sauced/open-sauced/compare/v0.26.1...v0.27.0) (2021-08-27)
+
+
+### Features
+
+* enhance contributions rendering ([#1139](https://github.com/open-sauced/open-sauced/issues/1139)) ([0cc646a](https://github.com/open-sauced/open-sauced/commit/0cc646a8e24d65156f8b233a02a123cbc43499c1))
+
 ### [0.26.1](https://github.com/open-sauced/open-sauced/compare/v0.26.0...v0.26.1) (2021-08-25)
 
 
