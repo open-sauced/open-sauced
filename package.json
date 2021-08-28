@@ -13,8 +13,21 @@
     "url": "git+ssh://git@github.com/open-sauced/open-sauced.git"
   },
   "engines": {
-    "node": ">=16",
+    "node": ">=14",
     "npm": ">=7"
+  },
+  "scripts": {
+    "preinstall": "npx @open-sauced/check-engines",
+    "prestart": "npx @open-sauced/check-engines",
+    "start": "node scripts/start.js",
+    "build": "node scripts/build.js",
+    "clean": "rimraf src/tests/__snapshots__/",
+    "test": "npm run clean && node scripts/test.js --env=jsdom --updateSnapshot",
+    "storybook": "start-storybook -p 6006 -s ./.storybook",
+    "build-storybook": "build-storybook -s ./.storybook",
+    "push": "cz",
+    "lint": "eslint . --report-unused-disable-directives",
+    "format": "npm run lint -- --fix"
   },
   "devDependencies": {
     "@babel/core": "^7.15.0",
@@ -23,6 +36,7 @@
     "@babel/plugin-transform-runtime": "^7.15.0",
     "@babel/register": "^7.15.3",
     "@babel/runtime": "^7.15.3",
+    "@open-sauced/check-engines": "^1.0.0",
     "@open-sauced/semantic-release-conventional-config": "^1.2.0",
     "@storybook/addon-essentials": "^6.3.7",
     "@storybook/addon-links": "^6.3.7",
@@ -97,18 +111,6 @@
     "react-router-dom": "^5.2.0",
     "styled-components": "^5.3.0",
     "swr": "^0.5.6"
-  },
-  "scripts": {
-    "start": "node scripts/start.js",
-    "build": "node scripts/build.js",
-    "clean": "rimraf src/tests/__snapshots__/",
-    "test": "npm run clean && node scripts/test.js --env=jsdom --updateSnapshot",
-    "storybook": "start-storybook -p 6006 -s ./.storybook",
-    "build-storybook": "build-storybook -s ./.storybook",
-    "push": "cz",
-    "lint": "eslint . --report-unused-disable-directives",
-    "format": "npm run lint -- --fix",
-    "semantic-release": "semantic-release"
   },
   "jest": {
     "moduleFileExtensions": [

@@ -31,7 +31,7 @@
 
 Open Sauced provides structured onboarding for new contributors to open source. This structure provides a way to track your next contributions by leveraging a unique dashboard built on top of the [GitHub GraphQL API](https://docs.github.com/en/free-pro-team@latest/graphql).
 
-[![open-sauced-screencap](/src/images/homepage.png)
+[![open-sauced-screencap](./src/images/homepage.png)
 ](https://opensauced.pizza)
 
 ## 🤝 Contributing
@@ -42,9 +42,7 @@ We encourage you to contribute to Open Sauced! Please check out the [Contributin
 
 ### 📖 Prerequisites
 
-- [Node.js](https://nodejs.org/en/): we recommend using [nvm](https://github.com/nvm-sh/nvm#installing-and-updating) to install the Node version.
-- [NPM](https://npmjs.com/): please refer to their [installation guide](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm).
-+ `terser-webpack-plugin` minimum supported Node.js version is 10.13
+In order to run the project from a container we need `node>=14`, `npm>=7` and `docker>=20` installed on our development machines.
 
 ### 🖥️ Local development
 
