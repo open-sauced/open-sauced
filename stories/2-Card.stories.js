@@ -16,6 +16,7 @@ import List from "../src/styles/List";
 import {PencilIcon} from "@primer/octicons-react";
 import RepoListItem from "../src/components/RepoListItem";
 import IssuesListItem from "../src/components/IssueListItem";
+import RecommendedRepoItem from "../src/components/RecommendedRepoItem";
 import DetailInfo from "../src/components/DetailInfo";
 import Illustration from "../src/styles/Illustration";
 import {doneChecking} from "../src/illustrations";
@@ -301,48 +302,8 @@ export const RepoDetailsCard = () => {
 export const RecommendedRepoItemCard = () => (
   <Background style={{height: 600, padding: "10px"}}>
     <Card>
-      <FlexHeader>
-        <FloatLeft>
-          <FlexCenter>
-            <Avatar
-              small
-              alt="avatar"
-              src={npm}
-            />
-            <Flex className="details">
-              <p>npm/cli</p>
-            </Flex>
-          </FlexCenter>
-        </FloatLeft>
-        <FloatRight>
-          <FlexCenter>
-            <a href="#">
-              <img alt="add recommended repo" src={plus} className="svg" />
-            </a>
-          </FlexCenter>
-        </FloatRight>
-      </FlexHeader>
-      <FlexHeader>
-        <FloatLeft>
-          <FlexCenter>
-            <Avatar
-              small
-              alt="avatar"
-              src={npm}
-            />
-            <Flex className="details">
-              <p>npm/cli</p>
-            </Flex>
-          </FlexCenter>
-        </FloatLeft>
-        <FloatRight>
-          <FlexCenter>
-            <a href="#">
-              <img alt="add recommended repo" src={plus} className="svg" />
-            </a>
-          </FlexCenter>
-        </FloatRight>
-      </FlexHeader>
+      <RecommendedRepoItem key={goal.full_name} goal={goal} onGoalAdded={() => console.log(`Goal Clicked`)} goalsId={null} />
+      <RecommendedRepoItem key={goal.full_name} goal={goal} onGoalAdded={() => console.log(`Goal Clicked`)} goalsId={null} />
     </Card>
   </Background>
 );
