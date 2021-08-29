@@ -20,16 +20,18 @@ function RecommendedRepoItem({goal, goalsId, onGoalAdded}) {
     <div>
       <FlexHeader>
         <FloatLeft>
-          <FlexCenter>
-            <Avatar
-              small
-              alt="avatar"
-              src={`https://avatars.githubusercontent.com/${goal.full_name.split("/")[0].replace(/\s+/g, "")}`}
-            />
-            <Flex className="details">
-              <p>{truncate(goal.full_name, 60)}</p>
-            </Flex>
-          </FlexCenter>
+          <a href={`https://github.com/${goal.full_name}`} rel="noreferrer" target="_blank">
+            <FlexCenter>
+              <Avatar
+                small
+                alt="avatar"
+                src={`https://avatars.githubusercontent.com/${goal.full_name.split("/")[0].replace(/\s+/g, "")}`}
+              />
+              <Flex className="details">
+                <p>{truncate(goal.full_name, 60)}</p>
+              </Flex>
+            </FlexCenter>
+          </a>
         </FloatLeft>
         <FloatRight>
           <FlexCenter>
