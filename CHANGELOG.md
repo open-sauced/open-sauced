@@ -1,3 +1,10 @@
+## [0.28.0](https://github.com/open-sauced/open-sauced/compare/v0.27.0...v0.28.0) (2021-08-29)
+
+
+### Features
+
+* link repo recommendations to their repositories ([#1143](https://github.com/open-sauced/open-sauced/issues/1143)) ([59b67f5](https://github.com/open-sauced/open-sauced/commit/59b67f56d0321bafe803b35a0e252e68749e8c5b)), closes [#1142](https://github.com/open-sauced/open-sauced/issues/1142)
+
 ## [0.27.0](https://github.com/open-sauced/open-sauced/compare/v0.26.1...v0.27.0) (2021-08-27)
 
 
