@@ -68,7 +68,7 @@ const Editor = (props) => {
   };
   return <AllStyledComponent>
     <ThemeProvider>
-      <Remirror manager={manager} state={state} onChange={_onChange}>
+      <Remirror manager={manager} state={state} onChange={_onChange} >
         <EmojiPopupComponent />
         <Menu />
         <EmojiEditor />
