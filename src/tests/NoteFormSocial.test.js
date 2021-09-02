@@ -1,7 +1,6 @@
 import React from "react";
 import "@testing-library/jest-dom/extend-expect";
-import {render, cleanup, screen} from "@testing-library/react";
-import userEvent from "@testing-library/user-event";
+import {render, cleanup} from "@testing-library/react";
 import NoteFormSocial from "../components/NoteFormSocial";
 import {axe, toHaveNoViolations} from "jest-axe";
 expect.extend(toHaveNoViolations);
