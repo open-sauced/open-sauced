@@ -53,6 +53,10 @@ function Contributions({repoName, owner, viewer}) {
                       participants={issue.participants}
                       comments={issue.comments}
                       milestone={issue.milestone}
+                      status={issue.state}
+                      mergeable={issue.mergeable}
+                      isDraft={issue.isDraft}
+                      merged={issue.merged}
                     />
                   </a>
                 </li>

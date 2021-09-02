@@ -1,3 +1,24 @@
+## [0.28.0](https://github.com/open-sauced/open-sauced/compare/v0.27.0...v0.28.0) (2021-08-29)
+
+
+### Features
+
+* link repo recommendations to their repositories ([#1143](https://github.com/open-sauced/open-sauced/issues/1143)) ([59b67f5](https://github.com/open-sauced/open-sauced/commit/59b67f56d0321bafe803b35a0e252e68749e8c5b)), closes [#1142](https://github.com/open-sauced/open-sauced/issues/1142)
+
+## [0.27.0](https://github.com/open-sauced/open-sauced/compare/v0.26.1...v0.27.0) (2021-08-27)
+
+
+### Features
+
+* enhance contributions rendering ([#1139](https://github.com/open-sauced/open-sauced/issues/1139)) ([0cc646a](https://github.com/open-sauced/open-sauced/commit/0cc646a8e24d65156f8b233a02a123cbc43499c1))
+
+### [0.26.1](https://github.com/open-sauced/open-sauced/compare/v0.26.0...v0.26.1) (2021-08-25)
+
+
+### Bug Fixes
+
+* contributing guide link fixed ([#1137](https://github.com/open-sauced/open-sauced/issues/1137)) ([5dfcea3](https://github.com/open-sauced/open-sauced/commit/5dfcea3a8b4b084e182a8c175376cd19a9d9e9e3))
+
 ## [0.26.0](https://github.com/open-sauced/open-sauced/compare/v0.25.0...v0.26.0) (2021-08-24)
 
 
