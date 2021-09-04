@@ -7,14 +7,14 @@ import {PencilIcon} from "@primer/octicons-react";
 import ReactMarkdown from "react-markdown";
 import api from "../lib/apiGraphQL";
 import {AllStyledComponent} from "@remirror/styles/emotion";
-import {BoldExtension,
-  CodeExtension,
-  BulletListExtension,
-  HeadingExtension,
-  ItalicExtension,
-  TableExtension,
-  MarkdownExtension,
-  EmojiExtension} from "remirror/extensions";
+import {CodeExtension} from "@remirror/extension-code";
+import {BulletListExtension} from "@remirror/extension-list";
+import {HeadingExtension} from "@remirror/extension-heading";
+import {BoldExtension} from "@remirror/extension-bold";
+import {ItalicExtension} from "@remirror/extension-italic";
+import {TableExtension} from "@remirror/extension-react-tables";
+import {MarkdownExtension} from "@remirror/extension-markdown";
+import {EmojiExtension} from "@remirror/extension-emoji";
 import {EditorComponent, ThemeProvider, Remirror, useRemirror, useCommands, useEmoji} from "@remirror/react";
 import {EmojiPopupComponent} from "@remirror/react-components";
 import emojiData from "svgmoji/emoji-github";
