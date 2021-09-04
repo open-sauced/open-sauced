@@ -89,6 +89,10 @@ This project uses the sw-precache to kickstart an offline cache. The offline cac
 
 This project supports "dark mode" styling, and by default it will follow the color preference on your device. It also allows for overriding this using buttons at the top right of the screen, which will persist the preference to local storage on your device. More info about color preference web API's can be found here: [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme)
 
+### 📝 Markdown Support
+
+This project leverages [Remirror](https://remirror.io/) for a delightful experience in documenting your Open Source goals. The editor supports markdown features including heading levels, bulleted lists, text formatting, code snippets, and emojis!
+
 ## 🍕 Community
 
 Got Questions? Join the conversation in our [Discord](https://discord.gg/U2peSNf23P).  
