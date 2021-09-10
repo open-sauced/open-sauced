@@ -1,3 +1,10 @@
+## [0.29.0](https://github.com/open-sauced/open-sauced/compare/v0.28.0...v0.29.0) (2021-09-10)
+
+
+### Features
+
+* remirror for note editing ([#1105](https://github.com/open-sauced/open-sauced/issues/1105)) ([12ef558](https://github.com/open-sauced/open-sauced/commit/12ef5582529e092ff5f1026a629b494ca7e20e41))
+
 ## [0.28.0](https://github.com/open-sauced/open-sauced/compare/v0.27.0...v0.28.0) (2021-08-29)
 
 
