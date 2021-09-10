@@ -49,7 +49,7 @@ const Menu = () => {
   return (
     <div>
       <Button onClick={startNewNote}>
-        New
+        Basic Template
       </Button>
     </div>
   );
@@ -87,7 +87,6 @@ function NoteForm({goalId, repoName, note}) {
   }, [note]);
 
   const _handleNoteUpdate = () => {
-    console.log("checking editor value", editorValue);
     api
       .updateGoal(goalId, repoName, "OPEN", editorValue)
       .then(() => {
