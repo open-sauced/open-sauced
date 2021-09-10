@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react";
-import Form from "../components/NoteForm";
+import Form from "../components/NoteFormSocial";
 import DangerZone from "../components/DangerZone";
 import Card from "../components/Card";
 import Issues from "../components/Issues";
