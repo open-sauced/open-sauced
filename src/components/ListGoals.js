@@ -26,7 +26,7 @@ function merge(goals, additionalData) {
 }
 
 function ListGoals({goals, data}) {
-  const goalsWithData = merge(goals.nodes, data);
+  const goalsWithData = merge(goals.nodes, data||[]);
   const [listGoals, setGoals] = useState(goalsWithData);
   const [searchTerm, setSearchTerm] = useState("");
 
