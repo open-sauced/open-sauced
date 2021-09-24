@@ -1,3 +1,10 @@
+### [0.29.1](https://github.com/open-sauced/open-sauced/compare/v0.29.0...v0.29.1) (2021-09-24)
+
+
+### Code Refactoring
+
+* remove lodash dep ([#1156](https://github.com/open-sauced/open-sauced/issues/1156)) ([d2fca47](https://github.com/open-sauced/open-sauced/commit/d2fca4784c4de388990c45abf0e7004fe6485591)), closes [#1157](https://github.com/open-sauced/open-sauced/issues/1157)
+
 ## [0.29.0](https://github.com/open-sauced/open-sauced/compare/v0.28.0...v0.29.0) (2021-09-10)
 
 
