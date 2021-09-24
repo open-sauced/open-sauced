@@ -5,15 +5,28 @@ import {Select} from "../styles/Select";
 import RepoListItem from "../components/RepoListItem";
 import Card from "../components/Card";
 import List from "../styles/List";
-import {merge} from "lodash";
-import sortBy from "lodash/sortBy";
+//import {merge} from "lodash";
+//import sortBy from "lodash/sortBy";
 import Search from "../styles/Search";
 import {EmptyPlaceholder} from "../styles/EmptyPlaceholder";
 import {SearchIcon} from "@primer/octicons-react";
 import {fontSize} from "../styles/variables";
+function sortBy(data, field) {
+  data.sort(function(a, b) {
+    if (!a[field] || !b[field]) return 0;
+    return a[field] < b[field] ? -1 : (b[field] < b[field] ? 1 : 0);
+  });
+  return data;
+}
+function merge(goals, additionalData) {
+  return goals.map(item => {
+    const toAdd = additionalData.find(d => d["full_name"] === item["full_name"]) || {};
+    return {...item, ...toAdd};
+  });
+}
 
 function ListGoals({goals, data}) {
-  const goalsWithData = merge(goals.nodes, data);
+  const goalsWithData = merge(goals.nodes, data || []);
   const [listGoals, setGoals] = useState(goalsWithData);
   const [searchTerm, setSearchTerm] = useState("");
 
