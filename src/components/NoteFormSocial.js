@@ -1,20 +1,20 @@
-import React, { useEffect, useState } from "react";
+import React, {useEffect, useState} from "react";
 import Button from "../styles/Button";
-import { RenderedNote } from "../styles/TextArea";
+import {RenderedNote} from "../styles/TextArea";
 import Card from "./Card";
-import { FlexCenter } from "../styles/Grid";
-import { PencilIcon } from "@primer/octicons-react";
+import {FlexCenter} from "../styles/Grid";
+import {PencilIcon} from "@primer/octicons-react";
 import ReactMarkdown from "react-markdown";
 import api from "../lib/apiGraphQL";
-import { AllStyledComponent } from "@remirror/styles/emotion";
-import { CodeExtension } from "@remirror/extension-code";
-import { BulletListExtension } from "@remirror/extension-list";
-import { HeadingExtension } from "@remirror/extension-heading";
-import { BoldExtension } from "@remirror/extension-bold";
-import { ItalicExtension } from "@remirror/extension-italic";
-import { TableExtension } from "@remirror/extension-react-tables";
-import { MarkdownExtension } from "@remirror/extension-markdown";
-import { EmojiExtension } from "@remirror/extension-emoji";
+import {AllStyledComponent} from "@remirror/styles/emotion";
+import {CodeExtension} from "@remirror/extension-code";
+import {BulletListExtension} from "@remirror/extension-list";
+import {HeadingExtension} from "@remirror/extension-heading";
+import {BoldExtension} from "@remirror/extension-bold";
+import {ItalicExtension} from "@remirror/extension-italic";
+import {TableExtension} from "@remirror/extension-react-tables";
+import {MarkdownExtension} from "@remirror/extension-markdown";
+import {EmojiExtension} from "@remirror/extension-emoji";
 import {
   EditorComponent,
   ThemeProvider,
@@ -23,9 +23,9 @@ import {
   useCommands,
   useEmoji,
 } from "@remirror/react";
-import { EmojiPopupComponent } from "@remirror/react-components";
+import {EmojiPopupComponent} from "@remirror/react-components";
 import emojiData from "svgmoji/emoji-github";
-import { SubtleLink } from "../styles/Typography";
+import {SubtleLink} from "../styles/Typography";
 const extensions = () => [
   new CodeExtension(),
   new BulletListExtension(),
@@ -64,7 +64,7 @@ const Menu = () => {
 };
 
 const Editor = (props) => {
-  const { state, setState, manager } = useRemirror({
+  const {state, setState, manager} = useRemirror({
     extensions,
     selection: "end",
     stringHandler: "markdown",
@@ -87,7 +87,7 @@ const Editor = (props) => {
   );
 };
 
-function NoteForm({ goalId, repoName, note }) {
+function NoteForm({goalId, repoName, note}) {
   const [previouslySavedValue, setPreviouslySavedValue] = useState(note);
   const [input, setInput] = useState(note);
   const [editing, setEditing] = useState(false);
@@ -155,7 +155,7 @@ function NoteForm({ goalId, repoName, note }) {
         )}
       </FlexCenter>
       <img
-        style={{ display: "none" }}
+        style={{display: "none"}}
         src="https://cdn.jsdelivr.net/npm/@svgmoji/noto@3.2.0/sprites/all.svg"
       />
     </Card>
