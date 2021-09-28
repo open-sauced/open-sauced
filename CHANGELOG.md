@@ -1,3 +1,10 @@
+## [0.30.0](https://github.com/open-sauced/open-sauced/compare/v0.29.1...v0.30.0) (2021-09-28)
+
+
+### Features
+
+* change note form basic template to a link ([#1163](https://github.com/open-sauced/open-sauced/issues/1163)) ([2687c4e](https://github.com/open-sauced/open-sauced/commit/2687c4eab80b2e9d70d7582332ca700f894ddc9b))
+
 ### [0.29.1](https://github.com/open-sauced/open-sauced/compare/v0.29.0...v0.29.1) (2021-09-24)
 
 
