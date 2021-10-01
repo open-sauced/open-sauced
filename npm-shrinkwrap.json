@@ -15,7 +15,7 @@
         "@remirror/extension-code": "^1.0.3",
         "@remirror/extension-heading": "^1.0.3",
         "@remirror/extension-italic": "^1.0.3",
-        "@remirror/extension-list": "^1.0.10",
+        "@remirror/extension-list": "^1.0.13",
         "@remirror/extension-markdown": "^1.0.3",
         "@remirror/extension-tables": "^1.0.4",
         "@remirror/react": "^1.0.8",
@@ -3958,9 +3958,9 @@
       "integrity": "sha512-77EbyPPpMz+FRFRuAFlWMtmgUWGe9UOG2Z25NqCwiIjRhOf5iKGuzSe5P2w1laq+FkRy4p+PCuVkJSGkzTEKVw=="
     },
     "node_modules/@remirror/core": {
-      "version": "1.1.0",
-      "resolved": "https://registry.npmjs.org/@remirror/core/-/core-1.1.0.tgz",
-      "integrity": "sha512-zi0VLe4ZjC6tt2gVkbhy2Ej8zyv/5gh2eyti13c7ANFyRvicHlpTYGfykQG+qsEiVlAGOtGELwqXrJA0juFt+w==",
+      "version": "1.1.2",
+      "resolved": "https://registry.npmjs.org/@remirror/core/-/core-1.1.2.tgz",
+      "integrity": "sha512-glRlp7YQ4IqoYFz4B2ga4ngaBrqPd4EXVS0x1sUdKOI0svFXb5YjtZwjzibhRqSOP0kaBl1Equc8WN9cTczphA==",
       "dependencies": {
         "@babel/runtime": "^7.13.10",
         "@linaria/core": "3.0.0-beta.4",
@@ -4122,12 +4122,12 @@
       }
     },
     "node_modules/@remirror/extension-events": {
-      "version": "1.0.3",
-      "resolved": "https://registry.npmjs.org/@remirror/extension-events/-/extension-events-1.0.3.tgz",
-      "integrity": "sha512-CGKtLSjNLrwFZ4Wh9eWWwJylx7yOgeyyqaCDIVSYRQmzHvuWZ1EgPrUr4hwF/OShgucyxtxlRl54G3AGFlvF4Q==",
+      "version": "1.0.5",
+      "resolved": "https://registry.npmjs.org/@remirror/extension-events/-/extension-events-1.0.5.tgz",
+      "integrity": "sha512-Qi4l0u6A+IVMbaArmsaTe000OlKhv59hpGhuGZU+q5+OKkoeQRz+IE9sYFELJ0bIo4fsFUnMdSVL8wZt1TvFtg==",
       "dependencies": {
         "@babel/runtime": "^7.13.10",
-        "@remirror/core": "^1.1.0",
+        "@remirror/core": "^1.1.2",
         "@remirror/messages": "^1.0.2"
       },
       "peerDependencies": {
@@ -4187,13 +4187,13 @@
       }
     },
     "node_modules/@remirror/extension-list": {
-      "version": "1.0.10",
-      "resolved": "https://registry.npmjs.org/@remirror/extension-list/-/extension-list-1.0.10.tgz",
-      "integrity": "sha512-ljjZ/aJhB2HsESG9SboaLikD3YfFv//gd5Fg0tMEEWTZ6kyGRk3Za/vOtT7+GnMLqutWPP1kbrhOuoVYbq8dfA==",
+      "version": "1.0.13",
+      "resolved": "https://registry.npmjs.org/@remirror/extension-list/-/extension-list-1.0.13.tgz",
+      "integrity": "sha512-oBUdAvZgmnwOlw2zCjr2iZdHNr8jhTZU35IBm1tBeGyEVkn7HQU7nDIlExKjEcXt8gbTBnVM4hNbYqdDa/jYFg==",
       "dependencies": {
         "@babel/runtime": "^7.13.10",
-        "@remirror/core": "^1.1.0",
-        "@remirror/extension-events": "^1.0.3",
+        "@remirror/core": "^1.1.2",
+        "@remirror/extension-events": "^1.0.5",
         "@remirror/messages": "^1.0.2",
         "@remirror/theme": "^1.1.2"
       },
@@ -44462,9 +44462,9 @@
       }
     },
     "@remirror/core": {
-      "version": "1.1.0",
-      "resolved": "https://registry.npmjs.org/@remirror/core/-/core-1.1.0.tgz",
-      "integrity": "sha512-zi0VLe4ZjC6tt2gVkbhy2Ej8zyv/5gh2eyti13c7ANFyRvicHlpTYGfykQG+qsEiVlAGOtGELwqXrJA0juFt+w==",
+      "version": "1.1.2",
+      "resolved": "https://registry.npmjs.org/@remirror/core/-/core-1.1.2.tgz",
+      "integrity": "sha512-glRlp7YQ4IqoYFz4B2ga4ngaBrqPd4EXVS0x1sUdKOI0svFXb5YjtZwjzibhRqSOP0kaBl1Equc8WN9cTczphA==",
       "requires": {
         "@babel/runtime": "^7.13.10",
         "@linaria/core": "3.0.0-beta.4",
@@ -44587,12 +44587,12 @@
       }
     },
     "@remirror/extension-events": {
-      "version": "1.0.3",
-      "resolved": "https://registry.npmjs.org/@remirror/extension-events/-/extension-events-1.0.3.tgz",
-      "integrity": "sha512-CGKtLSjNLrwFZ4Wh9eWWwJylx7yOgeyyqaCDIVSYRQmzHvuWZ1EgPrUr4hwF/OShgucyxtxlRl54G3AGFlvF4Q==",
+      "version": "1.0.5",
+      "resolved": "https://registry.npmjs.org/@remirror/extension-events/-/extension-events-1.0.5.tgz",
+      "integrity": "sha512-Qi4l0u6A+IVMbaArmsaTe000OlKhv59hpGhuGZU+q5+OKkoeQRz+IE9sYFELJ0bIo4fsFUnMdSVL8wZt1TvFtg==",
       "requires": {
         "@babel/runtime": "^7.13.10",
-        "@remirror/core": "^1.1.0",
+        "@remirror/core": "^1.1.2",
         "@remirror/messages": "^1.0.2"
       }
     },
@@ -44637,13 +44637,13 @@
       }
     },
     "@remirror/extension-list": {
-      "version": "1.0.10",
-      "resolved": "https://registry.npmjs.org/@remirror/extension-list/-/extension-list-1.0.10.tgz",
-      "integrity": "sha512-ljjZ/aJhB2HsESG9SboaLikD3YfFv//gd5Fg0tMEEWTZ6kyGRk3Za/vOtT7+GnMLqutWPP1kbrhOuoVYbq8dfA==",
+      "version": "1.0.13",
+      "resolved": "https://registry.npmjs.org/@remirror/extension-list/-/extension-list-1.0.13.tgz",
+      "integrity": "sha512-oBUdAvZgmnwOlw2zCjr2iZdHNr8jhTZU35IBm1tBeGyEVkn7HQU7nDIlExKjEcXt8gbTBnVM4hNbYqdDa/jYFg==",
       "requires": {
         "@babel/runtime": "^7.13.10",
-        "@remirror/core": "^1.1.0",
-        "@remirror/extension-events": "^1.0.3",
+        "@remirror/core": "^1.1.2",
+        "@remirror/extension-events": "^1.0.5",
         "@remirror/messages": "^1.0.2",
         "@remirror/theme": "^1.1.2"
       }
