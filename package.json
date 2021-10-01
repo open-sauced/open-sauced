@@ -74,7 +74,7 @@
     "url-loader": "4.1.1",
     "webpack": "^4.41.5",
     "webpack-cli": "^4.8.0",
-    "webpack-dev-server": "^3.11.2",
+    "webpack-dev-server": "^4.3.0",
     "webpack-manifest-plugin": "^2.2.0",
     "whatwg-fetch": "^3.6.2"
   },
