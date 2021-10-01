@@ -28,7 +28,7 @@
         "onegraph-auth": "^4.0.2",
         "react": "^17.0.2",
         "react-dom": "^17.0.2",
-        "react-hot-keys": "^2.6.2",
+        "react-hot-keys": "^2.7.1",
         "react-loading-skeleton": "^2.2.0",
         "react-markdown": "^6.0.3",
         "react-router": "^5.2.0",
@@ -32405,12 +32405,17 @@
       }
     },
     "node_modules/react-hot-keys": {
-      "version": "2.6.2",
-      "resolved": "https://registry.npmjs.org/react-hot-keys/-/react-hot-keys-2.6.2.tgz",
-      "integrity": "sha512-BMyIrQqQg5H7VWPW0OlJe+MTVZ68t37kkGF2ELvQqgCBPEMbvi6jhb7V4gKYkUV/BetqNnLTrUC4LUMW6myr1Q==",
+      "version": "2.7.1",
+      "resolved": "https://registry.npmjs.org/react-hot-keys/-/react-hot-keys-2.7.1.tgz",
+      "integrity": "sha512-h2LfJGs450z58/DvKuzal1LetoEGjXUbcxJyKFvWOJPy+IRpQsyxZv7FYDAJ7W0my3ySI3sVB3h5xcgvMdxS1g==",
       "dependencies": {
         "hotkeys-js": "^3.8.1",
         "prop-types": "^15.7.2"
+      },
+      "peerDependencies": {
+        "@babel/runtime": ">=7.10.0",
+        "react": ">=16.9.0",
+        "react-dom": ">=16.9.0"
       }
     },
     "node_modules/react-inspector": {
@@ -67078,9 +67083,9 @@
       }
     },
     "react-hot-keys": {
-      "version": "2.6.2",
-      "resolved": "https://registry.npmjs.org/react-hot-keys/-/react-hot-keys-2.6.2.tgz",
-      "integrity": "sha512-BMyIrQqQg5H7VWPW0OlJe+MTVZ68t37kkGF2ELvQqgCBPEMbvi6jhb7V4gKYkUV/BetqNnLTrUC4LUMW6myr1Q==",
+      "version": "2.7.1",
+      "resolved": "https://registry.npmjs.org/react-hot-keys/-/react-hot-keys-2.7.1.tgz",
+      "integrity": "sha512-h2LfJGs450z58/DvKuzal1LetoEGjXUbcxJyKFvWOJPy+IRpQsyxZv7FYDAJ7W0my3ySI3sVB3h5xcgvMdxS1g==",
       "requires": {
         "hotkeys-js": "^3.8.1",
         "prop-types": "^15.7.2"
