@@ -39,7 +39,7 @@
     "babel-preset-react-app": "^10.0.0",
     "case-sensitive-paths-webpack-plugin": "^2.4.0",
     "commitizen": "^4.2.4",
-    "conventional-changelog-conventionalcommits": "^4.6.0",
+    "conventional-changelog-conventionalcommits": "^4.6.1",
     "css-loader": "^5.2.7",
     "cz-conventional-changelog": "^3.3.0",
     "dotenv": "^10.0.0",
