@@ -6,6 +6,7 @@ on:
       - opened
       - edited
       - synchronize
+      - reopened
 
 jobs:
   semantics:
@@ -14,6 +15,13 @@ jobs:
       - uses: amannn/action-semantic-pull-request@v3.4.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  compliance-checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: mtfoley/pr-compliance-action@v0.0.2
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
 
   welcome:
     runs-on: ubuntu-latest
