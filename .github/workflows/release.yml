@@ -60,7 +60,7 @@ jobs:
         id: diagram
         uses: githubocto/repo-visualizer@0.7.1
         with:
-          excluded_paths: ".github, .netlify, .storybook, npm-shrinkwap.json,"
+          excluded_paths: "node_modules,build,.storybook,.netlify,npm-shrinkwap.json,npm-shrinkwrap.json"
           output_file: "public/diagram.svg"
           should_push: false
           artifact_name: "diagram"
