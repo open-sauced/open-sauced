@@ -22,7 +22,7 @@
         "@remirror/styles": "^1.1.2",
         "contrast": "^1.0.1",
         "dayjs": "^1.10.6",
-        "graphql": "^15.5.1",
+        "graphql": "^15.6.0",
         "humanize-duration": "^3.27.0",
         "onegraph-apollo-client": "^3.1.2",
         "onegraph-auth": "^4.0.2",
@@ -19060,9 +19060,9 @@
       "dev": true
     },
     "node_modules/graphql": {
-      "version": "15.5.1",
-      "resolved": "https://registry.npmjs.org/graphql/-/graphql-15.5.1.tgz",
-      "integrity": "sha512-FeTRX67T3LoE3LWAxxOlW2K3Bz+rMYAC18rRguK4wgXaTZMiJwSUwDmPFo3UadAKbzirKIg5Qy+sNJXbpPRnQw==",
+      "version": "15.6.0",
+      "resolved": "https://registry.npmjs.org/graphql/-/graphql-15.6.0.tgz",
+      "integrity": "sha512-WJR872Zlc9hckiEPhXgyUftXH48jp2EjO5tgBBOyNMRJZ9fviL2mJBD6CAysk6N5S0r9BTs09Qk39nnJBkvOXQ==",
       "engines": {
         "node": ">= 10.x"
       }
@@ -56526,9 +56526,9 @@
       "dev": true
     },
     "graphql": {
-      "version": "15.5.1",
-      "resolved": "https://registry.npmjs.org/graphql/-/graphql-15.5.1.tgz",
-      "integrity": "sha512-FeTRX67T3LoE3LWAxxOlW2K3Bz+rMYAC18rRguK4wgXaTZMiJwSUwDmPFo3UadAKbzirKIg5Qy+sNJXbpPRnQw=="
+      "version": "15.6.0",
+      "resolved": "https://registry.npmjs.org/graphql/-/graphql-15.6.0.tgz",
+      "integrity": "sha512-WJR872Zlc9hckiEPhXgyUftXH48jp2EjO5tgBBOyNMRJZ9fviL2mJBD6CAysk6N5S0r9BTs09Qk39nnJBkvOXQ=="
     },
     "graphql-tag": {
       "version": "2.12.4",
