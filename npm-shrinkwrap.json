@@ -21,7 +21,7 @@
         "@remirror/react": "^1.0.8",
         "@remirror/styles": "^1.1.2",
         "contrast": "^1.0.1",
-        "dayjs": "^1.10.6",
+        "dayjs": "^1.10.7",
         "graphql": "^15.5.1",
         "humanize-duration": "^3.27.0",
         "onegraph-apollo-client": "^3.1.2",
@@ -14831,9 +14831,9 @@
       }
     },
     "node_modules/dayjs": {
-      "version": "1.10.6",
-      "resolved": "https://registry.npmjs.org/dayjs/-/dayjs-1.10.6.tgz",
-      "integrity": "sha512-AztC/IOW4L1Q41A86phW5Thhcrco3xuAA+YX/BLpLWWjRcTj5TOt/QImBLmCKlrF7u7k47arTnOyL6GnbG8Hvw=="
+      "version": "1.10.7",
+      "resolved": "https://registry.npmjs.org/dayjs/-/dayjs-1.10.7.tgz",
+      "integrity": "sha512-P6twpd70BcPK34K26uJ1KT3wlhpuOAPoMwJzpsIWUxHZ7wpmbdZL/hQqBDfz7hGurYSa5PhzdhDHtt319hL3ig=="
     },
     "node_modules/debug": {
       "version": "4.2.0",
@@ -53064,9 +53064,9 @@
       "dev": true
     },
     "dayjs": {
-      "version": "1.10.6",
-      "resolved": "https://registry.npmjs.org/dayjs/-/dayjs-1.10.6.tgz",
-      "integrity": "sha512-AztC/IOW4L1Q41A86phW5Thhcrco3xuAA+YX/BLpLWWjRcTj5TOt/QImBLmCKlrF7u7k47arTnOyL6GnbG8Hvw=="
+      "version": "1.10.7",
+      "resolved": "https://registry.npmjs.org/dayjs/-/dayjs-1.10.7.tgz",
+      "integrity": "sha512-P6twpd70BcPK34K26uJ1KT3wlhpuOAPoMwJzpsIWUxHZ7wpmbdZL/hQqBDfz7hGurYSa5PhzdhDHtt319hL3ig=="
     },
     "debug": {
       "version": "4.2.0",
