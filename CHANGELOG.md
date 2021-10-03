@@ -1,3 +1,10 @@
+## [0.31.0](https://github.com/open-sauced/open-sauced/compare/v0.30.0...v0.31.0) (2021-10-03)
+
+
+### Build System
+
+* reactivate dependabot with a sensible configuration ([#1177](https://github.com/open-sauced/open-sauced/issues/1177)) ([bfc2732](https://github.com/open-sauced/open-sauced/commit/bfc2732900f883d228fc4cf5700db227b3507ef4))
+
 ## [0.30.0](https://github.com/open-sauced/open-sauced/compare/v0.29.1...v0.30.0) (2021-09-28)
 
 
