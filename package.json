@@ -25,7 +25,7 @@
     "@babel/runtime": "^7.15.3",
     "@open-sauced/semantic-release-conventional-config": "^1.2.0",
     "@storybook/addon-essentials": "^6.3.7",
-    "@storybook/addon-links": "^6.3.7",
+    "@storybook/addon-links": "^6.3.9",
     "@storybook/addon-storysource": "^6.3.7",
     "@storybook/api": "^6.3.7",
     "@storybook/react": "^6.3.7",
