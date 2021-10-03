@@ -66,7 +66,7 @@ jobs:
           artifact_name: "diagram"
 
       - name: "log output"
-        run: echo ${{ steps.diagram.outputs.svg }
+        run: echo ${{ steps.diagram.outputs.svg }}
 
       - name: "🚀 static app"
         run: npm run build
