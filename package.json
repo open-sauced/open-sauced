@@ -68,7 +68,7 @@
     "react-scripts": "^4.0.3",
     "react-test-renderer": "^17.0.2",
     "rimraf": "^3.0.2",
-    "semantic-release": "^17.4.5",
+    "semantic-release": "^18.0.0",
     "storybook-dark-mode": "^1.0.8",
     "style-loader": "^2.0.0",
     "url-loader": "4.1.1",
