@@ -56,6 +56,18 @@ jobs:
       - name: "📦 install dependencies"
         run: npm ci
 
+      - name: "📊 repository visualizer"
+        id: diagram
+        uses: githubocto/repo-visualizer@0.7.1
+        with:
+          excluded_paths: ".github, .netlify, .storybook, npm-shrinkwap.json,"
+          output_file: "public/diagram.svg"
+          should_push: false
+          artifact_name: "diagram"
+
+      - name: "log output"
+        run: echo ${{ steps.diagram.outputs.svg }
+
       - name: "🚀 static app"
         run: npm run build
 
@@ -157,7 +169,7 @@ jobs:
           GIT_COMMITTER_EMAIL: ${{ secrets.GIT_COMMITTER_EMAIL }}
         run: |
           cp -R /tmp/build ./build
-          npx semantic-release
+          npx semantic-release --dry-run
           echo "::set-output name=version::$(cat package.json | jq -r '.version')"
 
   cleanup:
