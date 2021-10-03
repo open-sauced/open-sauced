@@ -9,7 +9,7 @@
       "version": "0.30.0",
       "license": "MIT",
       "dependencies": {
-        "@apollo/client": "^3.4.8",
+        "@apollo/client": "^3.4.15",
         "@primer/octicons-react": "^15.0.1",
         "@remirror/extension-bold": "^1.0.3",
         "@remirror/extension-code": "^1.0.3",
@@ -104,9 +104,9 @@
       }
     },
     "node_modules/@apollo/client": {
-      "version": "3.4.8",
-      "resolved": "https://registry.npmjs.org/@apollo/client/-/client-3.4.8.tgz",
-      "integrity": "sha512-/cNqTSwc2Dw8q6FDDjdd30+yvhP7rI0Fvl3Hbro0lTtFuhzkevfNyQaI2jAiOrjU6Jc0RbanxULaNrX7UmvjSQ==",
+      "version": "3.4.15",
+      "resolved": "https://registry.npmjs.org/@apollo/client/-/client-3.4.15.tgz",
+      "integrity": "sha512-CnlT9i7TgHagkKQNvti81A9KcbIMqgpUPGJJL6bg5spTsB2R/5J6E7qiPcMvXuuXwR2xe4FmE4Ey4HizStb8Hg==",
       "dependencies": {
         "@graphql-typed-document-node/core": "^3.0.0",
         "@wry/context": "^0.6.0",
@@ -119,7 +119,7 @@
         "symbol-observable": "^4.0.0",
         "ts-invariant": "^0.9.0",
         "tslib": "^2.3.0",
-        "zen-observable-ts": "^1.1.0"
+        "zen-observable-ts": "~1.1.0"
       },
       "peerDependencies": {
         "graphql": "^14.0.0 || ^15.0.0",
@@ -41349,9 +41349,9 @@
   },
   "dependencies": {
     "@apollo/client": {
-      "version": "3.4.8",
-      "resolved": "https://registry.npmjs.org/@apollo/client/-/client-3.4.8.tgz",
-      "integrity": "sha512-/cNqTSwc2Dw8q6FDDjdd30+yvhP7rI0Fvl3Hbro0lTtFuhzkevfNyQaI2jAiOrjU6Jc0RbanxULaNrX7UmvjSQ==",
+      "version": "3.4.15",
+      "resolved": "https://registry.npmjs.org/@apollo/client/-/client-3.4.15.tgz",
+      "integrity": "sha512-CnlT9i7TgHagkKQNvti81A9KcbIMqgpUPGJJL6bg5spTsB2R/5J6E7qiPcMvXuuXwR2xe4FmE4Ey4HizStb8Hg==",
       "requires": {
         "@graphql-typed-document-node/core": "^3.0.0",
         "@wry/context": "^0.6.0",
@@ -41364,7 +41364,7 @@
         "symbol-observable": "^4.0.0",
         "ts-invariant": "^0.9.0",
         "tslib": "^2.3.0",
-        "zen-observable-ts": "^1.1.0"
+        "zen-observable-ts": "~1.1.0"
       },
       "dependencies": {
         "@wry/context": {
