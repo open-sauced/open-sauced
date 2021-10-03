@@ -3,8 +3,17 @@ updates:
 - package-ecosystem: npm
   directory: "/"
   schedule:
-    interval: monthly
-  open-pull-requests-limit: 10
+    interval: weekly
+    day: "thursday"
+    time: "14:00"
+  assignees:
+    - "@open-sauced/maintainers"
+  reviewers:
+    - "@open-sauced/maintainers"
+  ignore:
+    - dependency-name: "*"
+      update-types: ["version-update:semver-major"]
+  open-pull-requests-limit: 15
   labels:
   - chore
   - dependencies
