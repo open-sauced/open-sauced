@@ -60,13 +60,10 @@ jobs:
         id: diagram
         uses: githubocto/repo-visualizer@0.7.1
         with:
-          excluded_paths: "node_modules,build,.storybook,.netlify,npm-shrinkwap.json,npm-shrinkwrap.json"
+          excluded_paths: "node_modules,build,.storybook,.netlify,.github,npm-shrinkwap.json"
           output_file: "public/diagram.svg"
           should_push: false
           artifact_name: "diagram"
-
-      - name: "log output"
-        run: echo ${{ steps.diagram.outputs.svg }}
 
       - name: "🚀 static app"
         run: npm run build
