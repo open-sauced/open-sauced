@@ -153,6 +153,9 @@ export const NewRepoCard = () => (
 
 export const NoteCard = () => (
   <Card>
+    <div>
+      <SubtleLink href="#" className="menu-link">OpenSaucedUser</SubtleLink>
+    </div>
     <TextArea
       style={{minHeight: 170}}
       className="utility-input boxed-input text-box light-shadow"
