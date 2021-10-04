@@ -154,10 +154,10 @@ export const NewRepoCard = () => (
 export const NoteCard = () => (
   <Card>
     <div>
-      <SubtleLink href="#" className="menu-link">OpenSaucedUser</SubtleLink>
+      <SubtleLink href="#" rel="noreferrer">Basic Template</SubtleLink>
     </div>
     <TextArea
-      style={{minHeight: 170}}
+      style={{minHeight: 170, marginTop: "16px"}}
       className="utility-input boxed-input text-box light-shadow"
       value={""}
       type="text"
