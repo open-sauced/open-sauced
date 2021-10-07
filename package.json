@@ -85,7 +85,7 @@
     "@remirror/extension-code": "^1.0.6",
     "@remirror/extension-heading": "^1.0.6",
     "@remirror/extension-italic": "^1.0.6",
-    "@remirror/extension-list": "^1.0.14",
+    "@remirror/extension-list": "^1.1.0",
     "@remirror/extension-markdown": "^1.0.6",
     "@remirror/extension-tables": "^1.0.7",
     "@remirror/react": "^1.0.11",
