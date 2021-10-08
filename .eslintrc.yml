@@ -1,6 +1,7 @@
 env:
   browser: true
   jest: true
+  es6: true
 
 parser: babel-eslint
 
@@ -132,7 +133,8 @@ globals:
   afterEach: true
   require: true
   process: true
-  ENV: true
+  # env: 
+  #   es6: true
   module: true
   Promise: true
   SyntheticEvent: true

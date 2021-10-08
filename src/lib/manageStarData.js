@@ -1,8 +1,11 @@
 // remove duplicates from data based on existing stars
 function filterForUniqueStars(data, stars) {
-  return stars.filter((repo) => {
-    return data.find((repoData) => repoData.full_name === repo.full_name) === undefined;
-  });
+  const dataSet = new Set(data.map(item => item.full_name));
+  const starSet = new Set(stars.map(item => item.full_name));
+  return [
+    ...data.filter(item => !starSet.has(item.full_name)),
+    ...stars.filter(item => !dataSet.has(item.full_name))
+  ];
 }
 
 // only return starts not represent in the data.json
