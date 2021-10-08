@@ -1,3 +1,10 @@
+## [0.32.0](https://github.com/open-sauced/open-sauced/compare/v0.31.0...v0.32.0) (2021-10-08)
+
+
+### Features
+
+* additional pr compliance checks ([#1178](https://github.com/open-sauced/open-sauced/issues/1178)) ([c8a2a39](https://github.com/open-sauced/open-sauced/commit/c8a2a3941d7174354cd4e0822ffc3a9e0c68ec5d))
+
 ## [0.31.0](https://github.com/open-sauced/open-sauced/compare/v0.30.0...v0.31.0) (2021-10-03)
 
 
