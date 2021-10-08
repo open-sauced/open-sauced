@@ -133,8 +133,7 @@ globals:
   afterEach: true
   require: true
   process: true
-  # env: 
-  #   es6: true
+  ENV: true
   module: true
   Promise: true
   SyntheticEvent: true
