@@ -6,6 +6,9 @@ on:
       - opened
       - edited
       - synchronize
+      
+permissions:
+  pull-requests: write
 
 jobs:
   semantics:
