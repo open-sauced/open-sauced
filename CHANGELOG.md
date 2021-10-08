@@ -1,3 +1,24 @@
+## [0.31.0](https://github.com/open-sauced/open-sauced/compare/v0.30.0...v0.31.0) (2021-10-03)
+
+
+### Build System
+
+* reactivate dependabot with a sensible configuration ([#1177](https://github.com/open-sauced/open-sauced/issues/1177)) ([bfc2732](https://github.com/open-sauced/open-sauced/commit/bfc2732900f883d228fc4cf5700db227b3507ef4))
+
+## [0.30.0](https://github.com/open-sauced/open-sauced/compare/v0.29.1...v0.30.0) (2021-09-28)
+
+
+### Features
+
+* change note form basic template to a link ([#1163](https://github.com/open-sauced/open-sauced/issues/1163)) ([2687c4e](https://github.com/open-sauced/open-sauced/commit/2687c4eab80b2e9d70d7582332ca700f894ddc9b))
+
+### [0.29.1](https://github.com/open-sauced/open-sauced/compare/v0.29.0...v0.29.1) (2021-09-24)
+
+
+### Code Refactoring
+
+* remove lodash dep ([#1156](https://github.com/open-sauced/open-sauced/issues/1156)) ([d2fca47](https://github.com/open-sauced/open-sauced/commit/d2fca4784c4de388990c45abf0e7004fe6485591)), closes [#1157](https://github.com/open-sauced/open-sauced/issues/1157)
+
 ## [0.29.0](https://github.com/open-sauced/open-sauced/compare/v0.28.0...v0.29.0) (2021-09-10)
 
 
