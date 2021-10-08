@@ -1,3 +1,45 @@
+## [0.32.0](https://github.com/open-sauced/open-sauced/compare/v0.31.0...v0.32.0) (2021-10-08)
+
+
+### Features
+
+* additional pr compliance checks ([#1178](https://github.com/open-sauced/open-sauced/issues/1178)) ([c8a2a39](https://github.com/open-sauced/open-sauced/commit/c8a2a3941d7174354cd4e0822ffc3a9e0c68ec5d))
+
+## [0.31.0](https://github.com/open-sauced/open-sauced/compare/v0.30.0...v0.31.0) (2021-10-03)
+
+
+### Build System
+
+* reactivate dependabot with a sensible configuration ([#1177](https://github.com/open-sauced/open-sauced/issues/1177)) ([bfc2732](https://github.com/open-sauced/open-sauced/commit/bfc2732900f883d228fc4cf5700db227b3507ef4))
+
+## [0.30.0](https://github.com/open-sauced/open-sauced/compare/v0.29.1...v0.30.0) (2021-09-28)
+
+
+### Features
+
+* change note form basic template to a link ([#1163](https://github.com/open-sauced/open-sauced/issues/1163)) ([2687c4e](https://github.com/open-sauced/open-sauced/commit/2687c4eab80b2e9d70d7582332ca700f894ddc9b))
+
+### [0.29.1](https://github.com/open-sauced/open-sauced/compare/v0.29.0...v0.29.1) (2021-09-24)
+
+
+### Code Refactoring
+
+* remove lodash dep ([#1156](https://github.com/open-sauced/open-sauced/issues/1156)) ([d2fca47](https://github.com/open-sauced/open-sauced/commit/d2fca4784c4de388990c45abf0e7004fe6485591)), closes [#1157](https://github.com/open-sauced/open-sauced/issues/1157)
+
+## [0.29.0](https://github.com/open-sauced/open-sauced/compare/v0.28.0...v0.29.0) (2021-09-10)
+
+
+### Features
+
+* remirror for note editing ([#1105](https://github.com/open-sauced/open-sauced/issues/1105)) ([12ef558](https://github.com/open-sauced/open-sauced/commit/12ef5582529e092ff5f1026a629b494ca7e20e41))
+
+## [0.28.0](https://github.com/open-sauced/open-sauced/compare/v0.27.0...v0.28.0) (2021-08-29)
+
+
+### Features
+
+* link repo recommendations to their repositories ([#1143](https://github.com/open-sauced/open-sauced/issues/1143)) ([59b67f5](https://github.com/open-sauced/open-sauced/commit/59b67f56d0321bafe803b35a0e252e68749e8c5b)), closes [#1142](https://github.com/open-sauced/open-sauced/issues/1142)
+
 ## [0.27.0](https://github.com/open-sauced/open-sauced/compare/v0.26.1...v0.27.0) (2021-08-27)
 
 

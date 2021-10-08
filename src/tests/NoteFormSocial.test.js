@@ -1,22 +1,15 @@
 import React from "react";
 import "@testing-library/jest-dom/extend-expect";
 import {render, cleanup} from "@testing-library/react";
-import ListGoals from "../components/ListGoals";
-import {BrowserRouter} from "react-router-dom";
-import {data} from "./mocks";
+import NoteFormSocial from "../components/NoteFormSocial";
 import {axe, toHaveNoViolations} from "jest-axe";
 expect.extend(toHaveNoViolations);
 
-const {goals} = data;
-
 test("container component should have no violations", async() => {
-  const {container} = render(
-    <BrowserRouter>
-      <ListGoals goals={goals} data={[]} />
-    </BrowserRouter>,
-  );
+  const {container} = render(<NoteFormSocial />);
   const results = await axe(container);
   expect(results).toHaveNoViolations();
 
   cleanup();
 });
+

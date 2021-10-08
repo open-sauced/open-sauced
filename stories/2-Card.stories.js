@@ -4,23 +4,21 @@ import Button, {InputButton} from "../src/styles/Button";
 import {AccentLink, MicroFont, SubtleLink} from "../src/styles/Typography";
 import {PrimaryWithText} from "./1-Button.stories";
 import {CardPadding, CardHeader, ContextStyle, HintStyle, DropdownMenuCard} from "../src/styles/Card";
-import Avatar from "../src/styles/Avatar";
 import Input from "../src/styles/Input";
 import {Container} from "../src/styles/ListItem";
 import Search from "../src/styles/Search";
 import {Select} from "../src/styles/Select";
 import Background from "../src/styles/Background";
 import TextArea from "../src/styles/TextArea";
-import {Flex, FloatLeft, FloatRight, FlexHeader, FlexCenter, FlexColumn, IssuesColumn, SpaceBetween} from "../src/styles/Grid";
+import {Flex, FlexHeader, FlexCenter, FlexColumn, IssuesColumn, SpaceBetween} from "../src/styles/Grid";
 import List from "../src/styles/List";
 import {PencilIcon} from "@primer/octicons-react";
 import RepoListItem from "../src/components/RepoListItem";
 import IssuesListItem from "../src/components/IssueListItem";
+import RecommendedRepoItem from "../src/components/RecommendedRepoItem";
 import DetailInfo from "../src/components/DetailInfo";
 import Illustration from "../src/styles/Illustration";
 import {doneChecking} from "../src/illustrations";
-import {plus} from "../src/icons";
-import {npm} from "../src/images";
 
 export default {
   title: "Cards",
@@ -301,48 +299,8 @@ export const RepoDetailsCard = () => {
 export const RecommendedRepoItemCard = () => (
   <Background style={{height: 600, padding: "10px"}}>
     <Card>
-      <FlexHeader>
-        <FloatLeft>
-          <FlexCenter>
-            <Avatar
-              small
-              alt="avatar"
-              src={npm}
-            />
-            <Flex className="details">
-              <p>npm/cli</p>
-            </Flex>
-          </FlexCenter>
-        </FloatLeft>
-        <FloatRight>
-          <FlexCenter>
-            <a href="#">
-              <img alt="add recommended repo" src={plus} className="svg" />
-            </a>
-          </FlexCenter>
-        </FloatRight>
-      </FlexHeader>
-      <FlexHeader>
-        <FloatLeft>
-          <FlexCenter>
-            <Avatar
-              small
-              alt="avatar"
-              src={npm}
-            />
-            <Flex className="details">
-              <p>npm/cli</p>
-            </Flex>
-          </FlexCenter>
-        </FloatLeft>
-        <FloatRight>
-          <FlexCenter>
-            <a href="#">
-              <img alt="add recommended repo" src={plus} className="svg" />
-            </a>
-          </FlexCenter>
-        </FloatRight>
-      </FlexHeader>
+      <RecommendedRepoItem key={goal.full_name} goal={goal} onGoalAdded={() => console.log("Goal 1 Added")} goalsId={null} />
+      <RecommendedRepoItem key={goal.full_name} goal={goal} onGoalAdded={() => console.log("Goal 2 Added")} goalsId={null} />
     </Card>
   </Background>
 );
