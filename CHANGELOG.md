@@ -1,3 +1,10 @@
+## [0.34.0](https://github.com/open-sauced/open-sauced/compare/v0.33.1...v0.34.0) (2021-10-10)
+
+
+### Features
+
+* implement @open-sauced/check-engines and update docs ([#1141](https://github.com/open-sauced/open-sauced/issues/1141)) ([7944367](https://github.com/open-sauced/open-sauced/commit/79443678ca2d93c5f78212d595b3a9c442f60e47)), closes [#1140](https://github.com/open-sauced/open-sauced/issues/1140)
+
 ### [0.33.1](https://github.com/open-sauced/open-sauced/compare/v0.33.0...v0.33.1) (2021-10-10)
 
 
