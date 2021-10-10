@@ -1,3 +1,17 @@
+### [0.33.1](https://github.com/open-sauced/open-sauced/compare/v0.33.0...v0.33.1) (2021-10-10)
+
+
+### Performance Improvements
+
+* improve set checker performance ([#1215](https://github.com/open-sauced/open-sauced/issues/1215)) ([3e7b854](https://github.com/open-sauced/open-sauced/commit/3e7b8545830cf8210f610f573f6b3322d45c5425)), closes [#1138](https://github.com/open-sauced/open-sauced/issues/1138)
+
+## [0.33.0](https://github.com/open-sauced/open-sauced/compare/v0.32.0...v0.33.0) (2021-10-08)
+
+
+### Build System
+
+* **npm:** update latest dependencies ([#1217](https://github.com/open-sauced/open-sauced/issues/1217)) ([fff9ef7](https://github.com/open-sauced/open-sauced/commit/fff9ef7689be29047dac520a2122b5a37c465aff))
+
 ## [0.32.0](https://github.com/open-sauced/open-sauced/compare/v0.31.0...v0.32.0) (2021-10-08)
 
 
