@@ -1,8 +1,9 @@
 import React from "react";
 import {action} from "@storybook/addon-actions";
+import {PencilIcon} from "@primer/octicons-react";
+
 import Button from "../src/styles/Button";
 import {plus} from "../src/icons";
-import {PencilIcon} from "@primer/octicons-react";
 
 export default {
   title: "Button",
