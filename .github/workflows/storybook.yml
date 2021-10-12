@@ -1,21 +1,32 @@
-on: 
+on:
   push:
     branches:
      - main
     paths: ["stories/**", "src/components/**"]
-    
+
 name: Publish stories if changed
-    
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout
-      uses: actions/checkout@master
-    - name: Build Storybook
-      run: |
-        npm install
-        npm run build-storybook
+    - name: "☁️ checkout repository"
+      uses: actions/checkout@v2
+
+    - name: "🔧 setup node"
+      uses: actions/setup-node@v2.1.5
+      with:
+        node-version: 16
+
+    - name: "🔧 install npm@7"
+      run: npm i -g npm@7
+
+    - name: "📦 install dependencies"
+      run: npm ci
+
+    - name: "📦 build Storybook"
+      run:  npm run build-storybook
+
     - name: Build and deploy to storybook-static branch
       uses: JamesIves/github-pages-deploy-action@3.4.8
       with:
