@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import {Link} from "react-router-dom";
 import {Container} from "../styles/ListItem";
 import {Select} from "../styles/Select";
@@ -29,7 +29,9 @@ function ListGoals({goals, data}) {
   const goalsWithData = merge(goals.nodes, data || []);
   const [listGoals, setGoals] = useState(goalsWithData);
   const [searchTerm, setSearchTerm] = useState("");
-
+  useEffect(() => {
+    setGoals(merge(goals.nodes, data));
+  }, [goals, data]);
   const handleSort = (sortType) => {
     switch (sortType) {
       case "a_z":
