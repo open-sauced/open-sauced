@@ -1,3 +1,10 @@
+### [0.34.3](https://github.com/open-sauced/open-sauced/compare/v0.34.2...v0.34.3) (2021-10-12)
+
+
+### Bug Fixes
+
+* force deploy to storybook withut manual workflow ([#1223](https://github.com/open-sauced/open-sauced/issues/1223)) ([139372f](https://github.com/open-sauced/open-sauced/commit/139372f985f85f7595b937ecc84a194108151280))
+
 ### [0.34.2](https://github.com/open-sauced/open-sauced/compare/v0.34.1...v0.34.2) (2021-10-12)
 
 
