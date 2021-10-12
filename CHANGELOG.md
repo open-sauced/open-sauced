@@ -1,3 +1,10 @@
+### [0.34.1](https://github.com/open-sauced/open-sauced/compare/v0.34.0...v0.34.1) (2021-10-12)
+
+
+### Bug Fixes
+
+* no add response ([#1220](https://github.com/open-sauced/open-sauced/issues/1220)) ([102cae9](https://github.com/open-sauced/open-sauced/commit/102cae967ebf320ea70e1bbb444d54376fa54a21)), closes [#832](https://github.com/open-sauced/open-sauced/issues/832) [#986](https://github.com/open-sauced/open-sauced/issues/986)
+
 ## [0.34.0](https://github.com/open-sauced/open-sauced/compare/v0.33.1...v0.34.0) (2021-10-10)
 
 
