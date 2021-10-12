@@ -1,3 +1,10 @@
+### [0.34.2](https://github.com/open-sauced/open-sauced/compare/v0.34.1...v0.34.2) (2021-10-12)
+
+
+### Bug Fixes
+
+* correct static storybook build ([#1222](https://github.com/open-sauced/open-sauced/issues/1222)) ([c68faca](https://github.com/open-sauced/open-sauced/commit/c68facad5f09dd987a6bd51acfa62cbf994518c3)), closes [#1221](https://github.com/open-sauced/open-sauced/issues/1221)
+
 ### [0.34.1](https://github.com/open-sauced/open-sauced/compare/v0.34.0...v0.34.1) (2021-10-12)
 
 
