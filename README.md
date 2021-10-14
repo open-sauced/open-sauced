@@ -100,7 +100,7 @@ Find Open Sauced videos and release overviews on our [YouTube Channel](https://w
 
 ## Repository Visualization 
 
-[Visualization of this repo](public/diagram.svg)
+[Visualization of this repository](public/diagram.svg)
 
 ## ⚖️ LICENSE
 
