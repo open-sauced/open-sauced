@@ -22,13 +22,13 @@ jobs:
   pr-compliance-checks:
     runs-on: ubuntu-latest
     steps:
-      - uses: mtfoley/pr-compliance-action@v0.0.2
+      - uses: mtfoley/pr-compliance-action@v0.0.3
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           protected-branch: main
           body-auto-close: false
           protected-branch-auto-close: false
-          watch-files: >
+          watch-files: |
             package.json
             npm-shrinkwrap.json
           body-comment: >
