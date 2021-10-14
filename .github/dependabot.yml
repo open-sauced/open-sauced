@@ -13,6 +13,7 @@ updates:
   ignore:
     - dependency-name: "*"
       update-types: ["version-update:semver-major"]
+    - dependency-name: "@storybook/*"
   open-pull-requests-limit: 15
   labels:
   - chore
