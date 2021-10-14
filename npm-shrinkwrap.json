@@ -51,7 +51,7 @@
         "@storybook/addon-storysource": "^6.3.10",
         "@storybook/api": "^6.3.10",
         "@storybook/react": "^6.3.10",
-        "@testing-library/dom": "^8.7.2",
+        "@testing-library/dom": "^8.9.1",
         "@testing-library/jest-dom": "^5.14.1",
         "@testing-library/react": "^12.1.2",
         "@testing-library/user-event": "^13.3.0",
@@ -8187,9 +8187,9 @@
       }
     },
     "node_modules/@testing-library/dom": {
-      "version": "8.7.2",
-      "resolved": "https://registry.npmjs.org/@testing-library/dom/-/dom-8.7.2.tgz",
-      "integrity": "sha512-2zN0Zv9dMnaMAd4c/1E1ZChu4QrICyvWtkUvHFQBPhS1oG3VYGcM7SLGLYdda7187ILRXzIUOvOsbXQm4EASjA==",
+      "version": "8.9.1",
+      "resolved": "https://registry.npmjs.org/@testing-library/dom/-/dom-8.9.1.tgz",
+      "integrity": "sha512-jXM+FKo5BZA/2WtcsoTGuDs810J3ewQ2yq59Gxd2heux5jr8lo2DnTAl3JWVwAlg2/DcWSYqKY5pi9v0g8hvhw==",
       "dev": true,
       "dependencies": {
         "@babel/code-frame": "^7.10.4",
@@ -47419,9 +47419,9 @@
       }
     },
     "@testing-library/dom": {
-      "version": "8.7.2",
-      "resolved": "https://registry.npmjs.org/@testing-library/dom/-/dom-8.7.2.tgz",
-      "integrity": "sha512-2zN0Zv9dMnaMAd4c/1E1ZChu4QrICyvWtkUvHFQBPhS1oG3VYGcM7SLGLYdda7187ILRXzIUOvOsbXQm4EASjA==",
+      "version": "8.9.1",
+      "resolved": "https://registry.npmjs.org/@testing-library/dom/-/dom-8.9.1.tgz",
+      "integrity": "sha512-jXM+FKo5BZA/2WtcsoTGuDs810J3ewQ2yq59Gxd2heux5jr8lo2DnTAl3JWVwAlg2/DcWSYqKY5pi9v0g8hvhw==",
       "dev": true,
       "requires": {
         "@babel/code-frame": "^7.10.4",
