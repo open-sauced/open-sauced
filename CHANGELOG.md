@@ -1,3 +1,10 @@
+## [0.35.0](https://github.com/open-sauced/open-sauced/compare/v0.34.5...v0.35.0) (2021-10-14)
+
+
+### Build System
+
+* update dependabot ignored dependencies ([#1239](https://github.com/open-sauced/open-sauced/issues/1239)) ([cba098e](https://github.com/open-sauced/open-sauced/commit/cba098e3194993b4b105cbf9f7d6777083a6068f))
+
 ### [0.34.5](https://github.com/open-sauced/open-sauced/compare/v0.34.4...v0.34.5) (2021-10-14)
 
 
