@@ -1,3 +1,10 @@
+### [0.34.4](https://github.com/open-sauced/open-sauced/compare/v0.34.3...v0.34.4) (2021-10-14)
+
+
+### Bug Fixes
+
+* update compliance workflows ([#1237](https://github.com/open-sauced/open-sauced/issues/1237)) ([8657c6b](https://github.com/open-sauced/open-sauced/commit/8657c6b7416ea6c8f35be3cc49b91db75d0c0d69)), closes [#1234](https://github.com/open-sauced/open-sauced/issues/1234)
+
 ### [0.34.3](https://github.com/open-sauced/open-sauced/compare/v0.34.2...v0.34.3) (2021-10-12)
 
 
