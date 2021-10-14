@@ -55,7 +55,16 @@ jobs:
 
       - name: "📦 install dependencies"
         run: npm ci
-
+         
+      - name: "📊 repository visualizer"
+        id: diagram
+        uses: githubocto/repo-visualizer@0.7.1
+        with:
+          excluded_paths: "node_modules,build,.storybook,.netlify,.github,npm-shrinkwap.json"
+          output_file: "public/diagram.svg"
+          should_push: false
+          artifact_name: "diagram"
+       
       - name: "🚀 static app"
         run: npm run build
 
