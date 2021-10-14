@@ -1,3 +1,10 @@
+### [0.34.5](https://github.com/open-sauced/open-sauced/compare/v0.34.4...v0.34.5) (2021-10-14)
+
+
+### Bug Fixes
+
+* add storybook to dependabot ignore list ([#1236](https://github.com/open-sauced/open-sauced/issues/1236)) ([c95e161](https://github.com/open-sauced/open-sauced/commit/c95e16126b5b4fdaf2feb0f22a0313e83e0a5b05)), closes [#1235](https://github.com/open-sauced/open-sauced/issues/1235)
+
 ### [0.34.4](https://github.com/open-sauced/open-sauced/compare/v0.34.3...v0.34.4) (2021-10-14)
 
 
