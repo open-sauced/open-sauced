@@ -39,7 +39,7 @@
     "@babel/runtime": "^7.15.4",
     "@open-sauced/check-engines": "^1.0.0",
     "@open-sauced/semantic-release-conventional-config": "^1.4.0",
-    "@storybook/addon-essentials": "^6.3.10",
+    "@storybook/addon-essentials": "^6.3.12",
     "@storybook/addon-links": "^6.3.10",
     "@storybook/addon-storysource": "^6.3.10",
     "@storybook/api": "^6.3.10",
