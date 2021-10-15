@@ -1,3 +1,11 @@
+## [0.36.0](https://github.com/open-sauced/open-sauced/compare/v0.35.0...v0.36.0) (2021-10-15)
+
+
+### Features
+
+* add repository visualizer ([#1158](https://github.com/open-sauced/open-sauced/issues/1158)) ([6f5e8de](https://github.com/open-sauced/open-sauced/commit/6f5e8de82d72e0ec9517eb210c185de8f72086e7)), closes [#1127](https://github.com/open-sauced/open-sauced/issues/1127)
+* pr-compliance-action ignore team members ([#1241](https://github.com/open-sauced/open-sauced/issues/1241)) ([7fd1725](https://github.com/open-sauced/open-sauced/commit/7fd17254925ae48ec5c513ed1d87e9b009bf07be)), closes [#1240](https://github.com/open-sauced/open-sauced/issues/1240)
+
 ## [0.35.0](https://github.com/open-sauced/open-sauced/compare/v0.34.5...v0.35.0) (2021-10-14)
 
 
