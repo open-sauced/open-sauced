@@ -15,7 +15,7 @@ import {fontSize} from "../styles/variables";
 function sortBy(data, field) {
   data.sort(function(a, b) {
     if (!a[field] || !b[field]) return 0;
-    return a[field] < b[field] ? -1 : 1;
+    return a[field] < b[field] ? -1 : (b[field] < a[field] ? 1 : 0);
   });
   return data;
 }
