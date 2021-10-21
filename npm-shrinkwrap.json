@@ -13,7 +13,7 @@
         "@apollo/client": "^3.4.16",
         "@primer/octicons-react": "^16.0.0",
         "@remirror/extension-bold": "^1.0.6",
-        "@remirror/extension-code": "^1.0.7",
+        "@remirror/extension-code": "^1.0.8",
         "@remirror/extension-heading": "^1.0.7",
         "@remirror/extension-italic": "^1.0.6",
         "@remirror/extension-list": "^1.2.0",
@@ -4088,12 +4088,12 @@
       }
     },
     "node_modules/@remirror/extension-code": {
-      "version": "1.0.7",
-      "resolved": "https://registry.npmjs.org/@remirror/extension-code/-/extension-code-1.0.7.tgz",
-      "integrity": "sha512-mIW40E2z1u6tX97jVk1YFyGlEqewlR4ioKip1eUUuQ4M3NtFPZ7NKyf/Bf196D4nbzarf6QTSXPdyvkBo87JjQ==",
+      "version": "1.0.8",
+      "resolved": "https://registry.npmjs.org/@remirror/extension-code/-/extension-code-1.0.8.tgz",
+      "integrity": "sha512-iuvEadUxzcNAvtpzWNqkhgjrWDjS/Zld6GDTRuZFduE4ZWh52Yr35QBHdYvYUo51eLtjc4fi1KA7AEb5cN7D2g==",
       "dependencies": {
         "@babel/runtime": "^7.13.10",
-        "@remirror/core": "^1.1.3",
+        "@remirror/core": "^1.2.0",
         "@remirror/messages": "^1.0.3"
       },
       "peerDependencies": {
@@ -44557,12 +44557,12 @@
       }
     },
     "@remirror/extension-code": {
-      "version": "1.0.7",
-      "resolved": "https://registry.npmjs.org/@remirror/extension-code/-/extension-code-1.0.7.tgz",
-      "integrity": "sha512-mIW40E2z1u6tX97jVk1YFyGlEqewlR4ioKip1eUUuQ4M3NtFPZ7NKyf/Bf196D4nbzarf6QTSXPdyvkBo87JjQ==",
+      "version": "1.0.8",
+      "resolved": "https://registry.npmjs.org/@remirror/extension-code/-/extension-code-1.0.8.tgz",
+      "integrity": "sha512-iuvEadUxzcNAvtpzWNqkhgjrWDjS/Zld6GDTRuZFduE4ZWh52Yr35QBHdYvYUo51eLtjc4fi1KA7AEb5cN7D2g==",
       "requires": {
         "@babel/runtime": "^7.13.10",
-        "@remirror/core": "^1.1.3",
+        "@remirror/core": "^1.2.0",
         "@remirror/messages": "^1.0.3"
       }
     },
