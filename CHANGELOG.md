@@ -1,3 +1,10 @@
+### [0.36.1](https://github.com/open-sauced/open-sauced/compare/v0.36.0...v0.36.1) (2021-10-21)
+
+
+### Bug Fixes
+
+* correct sorting in ListGoals component ([#1245](https://github.com/open-sauced/open-sauced/issues/1245)) ([1ec989d](https://github.com/open-sauced/open-sauced/commit/1ec989dd4d1dc875da8ecc680ad0768c1cbec797)), closes [#1244](https://github.com/open-sauced/open-sauced/issues/1244)
+
 ## [0.36.0](https://github.com/open-sauced/open-sauced/compare/v0.35.0...v0.36.0) (2021-10-15)
 
 
