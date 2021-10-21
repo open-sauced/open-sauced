@@ -57,7 +57,7 @@
         "@testing-library/user-event": "^13.3.0",
         "@wojtekmaj/enzyme-adapter-react-17": "^0.6.5",
         "babel-jest": "^27.2.5",
-        "babel-loader": "^8.2.2",
+        "babel-loader": "^8.2.3",
         "babel-preset-react-app": "^10.0.0",
         "case-sensitive-paths-webpack-plugin": "^2.4.0",
         "commitizen": "^4.2.4",
@@ -10517,9 +10517,9 @@
       }
     },
     "node_modules/babel-loader": {
-      "version": "8.2.2",
-      "resolved": "https://registry.npmjs.org/babel-loader/-/babel-loader-8.2.2.tgz",
-      "integrity": "sha512-JvTd0/D889PQBtUXJ2PXaKU/pjZDMtHA9V2ecm+eNRmmBCMR09a+fmpGTNwnJtFmFl5Ei7Vy47LjBb+L0wQ99g==",
+      "version": "8.2.3",
+      "resolved": "https://registry.npmjs.org/babel-loader/-/babel-loader-8.2.3.tgz",
+      "integrity": "sha512-n4Zeta8NC3QAsuyiizu0GkmRcQ6clkV9WFUnUf1iXP//IeSKbWjofW3UHyZVwlOB4y039YQKefawyTn64Zwbuw==",
       "dev": true,
       "dependencies": {
         "find-cache-dir": "^3.3.1",
@@ -10529,6 +10529,10 @@
       },
       "engines": {
         "node": ">= 8.9"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0",
+        "webpack": ">=2"
       }
     },
     "node_modules/babel-loader/node_modules/make-dir": {
@@ -49446,9 +49450,9 @@
       }
     },
     "babel-loader": {
-      "version": "8.2.2",
-      "resolved": "https://registry.npmjs.org/babel-loader/-/babel-loader-8.2.2.tgz",
-      "integrity": "sha512-JvTd0/D889PQBtUXJ2PXaKU/pjZDMtHA9V2ecm+eNRmmBCMR09a+fmpGTNwnJtFmFl5Ei7Vy47LjBb+L0wQ99g==",
+      "version": "8.2.3",
+      "resolved": "https://registry.npmjs.org/babel-loader/-/babel-loader-8.2.3.tgz",
+      "integrity": "sha512-n4Zeta8NC3QAsuyiizu0GkmRcQ6clkV9WFUnUf1iXP//IeSKbWjofW3UHyZVwlOB4y039YQKefawyTn64Zwbuw==",
       "dev": true,
       "requires": {
         "find-cache-dir": "^3.3.1",
