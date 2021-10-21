@@ -11,13 +11,15 @@ import Search from "../styles/Search";
 import {EmptyPlaceholder} from "../styles/EmptyPlaceholder";
 import {SearchIcon} from "@primer/octicons-react";
 import {fontSize} from "../styles/variables";
+
 function sortBy(data, field) {
   data.sort(function(a, b) {
     if (!a[field] || !b[field]) return 0;
-    return a[field] < b[field] ? -1 : (b[field] < b[field] ? 1 : 0);
+    return a[field] < b[field] ? -1 : (b[field] < a[field] ? 1 : 0);
   });
   return data;
 }
+
 function merge(goals, additionalData) {
   return goals.map(item => {
     const toAdd = additionalData.find(d => d["full_name"] === item["full_name"]) || {};
