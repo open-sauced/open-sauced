@@ -51,7 +51,7 @@
         "@storybook/addon-storysource": "^6.3.12",
         "@storybook/api": "^6.3.12",
         "@storybook/react": "^6.3.12",
-        "@testing-library/dom": "^8.9.1",
+        "@testing-library/dom": "^8.10.1",
         "@testing-library/jest-dom": "^5.14.1",
         "@testing-library/react": "^12.1.2",
         "@testing-library/user-event": "^13.3.0",
@@ -8187,22 +8187,31 @@
       }
     },
     "node_modules/@testing-library/dom": {
-      "version": "8.9.1",
-      "resolved": "https://registry.npmjs.org/@testing-library/dom/-/dom-8.9.1.tgz",
-      "integrity": "sha512-jXM+FKo5BZA/2WtcsoTGuDs810J3ewQ2yq59Gxd2heux5jr8lo2DnTAl3JWVwAlg2/DcWSYqKY5pi9v0g8hvhw==",
+      "version": "8.10.1",
+      "resolved": "https://registry.npmjs.org/@testing-library/dom/-/dom-8.10.1.tgz",
+      "integrity": "sha512-rab7vpf1uGig5efWwsCOn9j4/doy+W3VBoUyzX7C4y77u0wAckwc7R8nyH6e2rw0rRzKJR+gWPiAg8zhiFbxWQ==",
       "dev": true,
       "dependencies": {
         "@babel/code-frame": "^7.10.4",
         "@babel/runtime": "^7.12.5",
         "@types/aria-query": "^4.2.0",
-        "aria-query": "^4.2.2",
+        "aria-query": "^5.0.0",
         "chalk": "^4.1.0",
-        "dom-accessibility-api": "^0.5.6",
+        "dom-accessibility-api": "^0.5.9",
         "lz-string": "^1.4.4",
         "pretty-format": "^27.0.2"
       },
       "engines": {
         "node": ">=12"
+      }
+    },
+    "node_modules/@testing-library/dom/node_modules/aria-query": {
+      "version": "5.0.0",
+      "resolved": "https://registry.npmjs.org/aria-query/-/aria-query-5.0.0.tgz",
+      "integrity": "sha512-V+SM7AbUwJ+EBnB8+DXs0hPZHO0W6pqBcc0dW90OwtVG02PswOu/teuARoLQjdDOH+t9pJgGnW5/Qmouf3gPJg==",
+      "dev": true,
+      "engines": {
+        "node": ">=6.0"
       }
     },
     "node_modules/@testing-library/jest-dom": {
@@ -15434,9 +15443,9 @@
       }
     },
     "node_modules/dom-accessibility-api": {
-      "version": "0.5.6",
-      "resolved": "https://registry.npmjs.org/dom-accessibility-api/-/dom-accessibility-api-0.5.6.tgz",
-      "integrity": "sha512-DplGLZd8L1lN64jlT27N9TVSESFR5STaEJvX+thCby7fuCHonfPpAlodYc3vuUYbDuDec5w8AMP7oCM5TWFsqw==",
+      "version": "0.5.9",
+      "resolved": "https://registry.npmjs.org/dom-accessibility-api/-/dom-accessibility-api-0.5.9.tgz",
+      "integrity": "sha512-+KPF4o71fl6NrdnqIrJc6m44NA+Rhf1h7In2MRznejSQasWkjqmHOBUlk+pXJ77cVOSYyZeNHFwn/sjotB6+Sw==",
       "dev": true
     },
     "node_modules/dom-converter": {
@@ -47419,19 +47428,27 @@
       }
     },
     "@testing-library/dom": {
-      "version": "8.9.1",
-      "resolved": "https://registry.npmjs.org/@testing-library/dom/-/dom-8.9.1.tgz",
-      "integrity": "sha512-jXM+FKo5BZA/2WtcsoTGuDs810J3ewQ2yq59Gxd2heux5jr8lo2DnTAl3JWVwAlg2/DcWSYqKY5pi9v0g8hvhw==",
+      "version": "8.10.1",
+      "resolved": "https://registry.npmjs.org/@testing-library/dom/-/dom-8.10.1.tgz",
+      "integrity": "sha512-rab7vpf1uGig5efWwsCOn9j4/doy+W3VBoUyzX7C4y77u0wAckwc7R8nyH6e2rw0rRzKJR+gWPiAg8zhiFbxWQ==",
       "dev": true,
       "requires": {
         "@babel/code-frame": "^7.10.4",
         "@babel/runtime": "^7.12.5",
         "@types/aria-query": "^4.2.0",
-        "aria-query": "^4.2.2",
+        "aria-query": "^5.0.0",
         "chalk": "^4.1.0",
-        "dom-accessibility-api": "^0.5.6",
+        "dom-accessibility-api": "^0.5.9",
         "lz-string": "^1.4.4",
         "pretty-format": "^27.0.2"
+      },
+      "dependencies": {
+        "aria-query": {
+          "version": "5.0.0",
+          "resolved": "https://registry.npmjs.org/aria-query/-/aria-query-5.0.0.tgz",
+          "integrity": "sha512-V+SM7AbUwJ+EBnB8+DXs0hPZHO0W6pqBcc0dW90OwtVG02PswOu/teuARoLQjdDOH+t9pJgGnW5/Qmouf3gPJg==",
+          "dev": true
+        }
       }
     },
     "@testing-library/jest-dom": {
@@ -53522,9 +53539,9 @@
       }
     },
     "dom-accessibility-api": {
-      "version": "0.5.6",
-      "resolved": "https://registry.npmjs.org/dom-accessibility-api/-/dom-accessibility-api-0.5.6.tgz",
-      "integrity": "sha512-DplGLZd8L1lN64jlT27N9TVSESFR5STaEJvX+thCby7fuCHonfPpAlodYc3vuUYbDuDec5w8AMP7oCM5TWFsqw==",
+      "version": "0.5.9",
+      "resolved": "https://registry.npmjs.org/dom-accessibility-api/-/dom-accessibility-api-0.5.9.tgz",
+      "integrity": "sha512-+KPF4o71fl6NrdnqIrJc6m44NA+Rhf1h7In2MRznejSQasWkjqmHOBUlk+pXJ77cVOSYyZeNHFwn/sjotB6+Sw==",
       "dev": true
     },
     "dom-converter": {
