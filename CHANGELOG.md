@@ -1,3 +1,10 @@
+### [0.36.2](https://github.com/open-sauced/open-sauced/compare/v0.36.1...v0.36.2) (2021-10-21)
+
+
+### Bug Fixes
+
+* correct duplicate data coming from open-sauced-goals ([#1247](https://github.com/open-sauced/open-sauced/issues/1247)) ([d825768](https://github.com/open-sauced/open-sauced/commit/d825768504dbc2445859d284259784a33c7a3aec)), closes [#1246](https://github.com/open-sauced/open-sauced/issues/1246)
+
 ### [0.36.1](https://github.com/open-sauced/open-sauced/compare/v0.36.0...v0.36.1) (2021-10-21)
 
 
