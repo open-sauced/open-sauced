@@ -100,7 +100,7 @@
     "@remirror/extension-code": "^1.0.8",
     "@remirror/extension-heading": "^1.0.7",
     "@remirror/extension-italic": "^1.0.7",
-    "@remirror/extension-list": "^1.2.0",
+    "@remirror/extension-list": "^1.2.1",
     "@remirror/extension-markdown": "^1.0.7",
     "@remirror/extension-tables": "^1.0.7",
     "@remirror/react": "^1.0.12",
