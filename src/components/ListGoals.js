@@ -88,7 +88,7 @@ function ListGoals({goals, data}) {
       <Card fitted>
         <List>
           {goalsWithData &&
-            filteredSearch.map((goal, index) => (
+            filteredSearch.map(goal => (
               <li key={goal.full_name + goal.number}>
                 <Link
                   to={{
