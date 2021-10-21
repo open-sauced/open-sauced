@@ -5,8 +5,6 @@ import {Select} from "../styles/Select";
 import RepoListItem from "../components/RepoListItem";
 import Card from "../components/Card";
 import List from "../styles/List";
-//import {merge} from "lodash";
-//import sortBy from "lodash/sortBy";
 import Search from "../styles/Search";
 import {EmptyPlaceholder} from "../styles/EmptyPlaceholder";
 import {SearchIcon} from "@primer/octicons-react";
@@ -28,19 +26,27 @@ function merge(goals, additionalData) {
 }
 
 function ListGoals({goals, data}) {
-  const goalsWithData = merge(goals.nodes, data || []);
+  const goalsWithData = merge(goals.nodes, data || []).map((e) => ({
+    ...e,
+    full_name_lc: e.full_name.toLowerCase()
+  }));
+
   const [listGoals, setGoals] = useState(goalsWithData);
   const [searchTerm, setSearchTerm] = useState("");
   useEffect(() => {
-    setGoals(merge(goals.nodes, data));
+    const goalsWithData = merge(goals.nodes, data || []).map((e) => ({
+      ...e,
+      full_name_lc: e.full_name.toLowerCase()
+    }));
+    setGoals(goalsWithData);
   }, [goals, data]);
   const handleSort = (sortType) => {
     switch (sortType) {
       case "a_z":
-        setGoals(sortBy(goalsWithData, "full_name"));
+        setGoals(sortBy(goalsWithData, "full_name_lc"));
         break;
       case "z_a":
-        setGoals(sortBy(goalsWithData, "full_name").reverse());
+        setGoals(sortBy(goalsWithData, "full_name_lc").reverse());
         break;
       case "most_stars":
         setGoals(sortBy(goalsWithData, "stargazers_count").reverse());
@@ -54,7 +60,7 @@ function ListGoals({goals, data}) {
   };
 
   const filteredSearch = listGoals.filter((goals) =>
-    goals.full_name.toLowerCase().includes(searchTerm.toLowerCase())
+    goals.full_name_lc.includes(searchTerm.toLowerCase())
   );
 
   return (
@@ -82,8 +88,8 @@ function ListGoals({goals, data}) {
       <Card fitted>
         <List>
           {goalsWithData &&
-            filteredSearch.map((goal) => (
-              <li key={goal.full_name}>
+            filteredSearch.map(goal => (
+              <li key={goal.full_name + goal.number}>
                 <Link
                   to={{
                     pathname: `/repos/${goal.full_name.replace(/\s+/g, "")}/${

@@ -48,7 +48,13 @@ function RepositoryGoals({user}) {
     dispatch({type: "UPDATE", payload: updatedRepos});
   };
 
-  const data = repository && repository.data && repository.data.text && JSON.parse(repository.data.text);
+  const
+    keys = ["full_name", "stargazers_count"],
+    data = repository && repository.data && repository.data.text && JSON.parse(repository.data.text).filter(
+      (s => o =>
+        (k => !s.has(k) && s.add(k))(keys.map(k => o[k]).join("|"))
+      )(new Set())
+    );
   const viewerStars = repository && repository.stars && repository.stars.text && JSON.parse(repository.stars.text);
 
   const stars = remainingStars(data, viewerStars);
