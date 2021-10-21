@@ -95,7 +95,7 @@
         "style-loader": "^2.0.0",
         "url-loader": "4.1.1",
         "webpack": "^4.41.5",
-        "webpack-cli": "^4.9.0",
+        "webpack-cli": "^4.9.1",
         "webpack-dev-server": "^3.11.2",
         "webpack-manifest-plugin": "^2.2.0",
         "whatwg-fetch": "^3.6.2"
@@ -39521,9 +39521,9 @@
       }
     },
     "node_modules/webpack-cli": {
-      "version": "4.9.0",
-      "resolved": "https://registry.npmjs.org/webpack-cli/-/webpack-cli-4.9.0.tgz",
-      "integrity": "sha512-n/jZZBMzVEl4PYIBs+auy2WI0WTQ74EnJDiyD98O2JZY6IVIHJNitkYp/uTXOviIOMfgzrNvC9foKv/8o8KSZw==",
+      "version": "4.9.1",
+      "resolved": "https://registry.npmjs.org/webpack-cli/-/webpack-cli-4.9.1.tgz",
+      "integrity": "sha512-JYRFVuyFpzDxMDB+v/nanUdQYcZtqFPGzmlW4s+UkPMFhSpfRNmf1z4AwYcHJVdvEFAM7FFCQdNTpsBYhDLusQ==",
       "dev": true,
       "dependencies": {
         "@discoveryjs/json-ext": "^0.5.0",
@@ -39537,7 +39537,6 @@
         "import-local": "^3.0.2",
         "interpret": "^2.2.0",
         "rechoir": "^0.7.0",
-        "v8-compile-cache": "^2.2.0",
         "webpack-merge": "^5.7.3"
       },
       "bin": {
@@ -39626,12 +39625,6 @@
       "engines": {
         "node": ">= 0.10"
       }
-    },
-    "node_modules/webpack-cli/node_modules/v8-compile-cache": {
-      "version": "2.2.0",
-      "resolved": "https://registry.npmjs.org/v8-compile-cache/-/v8-compile-cache-2.2.0.tgz",
-      "integrity": "sha512-gTpR5XQNKFwOd4clxfnhaqvfqMpqEwr4tOtCyz4MtYZX2JYhfr1JvBFKdS+7K/9rfpZR3VLX+YWBbKoxCgS43Q==",
-      "dev": true
     },
     "node_modules/webpack-dev-middleware": {
       "version": "3.7.3",
@@ -73018,9 +73011,9 @@
       }
     },
     "webpack-cli": {
-      "version": "4.9.0",
-      "resolved": "https://registry.npmjs.org/webpack-cli/-/webpack-cli-4.9.0.tgz",
-      "integrity": "sha512-n/jZZBMzVEl4PYIBs+auy2WI0WTQ74EnJDiyD98O2JZY6IVIHJNitkYp/uTXOviIOMfgzrNvC9foKv/8o8KSZw==",
+      "version": "4.9.1",
+      "resolved": "https://registry.npmjs.org/webpack-cli/-/webpack-cli-4.9.1.tgz",
+      "integrity": "sha512-JYRFVuyFpzDxMDB+v/nanUdQYcZtqFPGzmlW4s+UkPMFhSpfRNmf1z4AwYcHJVdvEFAM7FFCQdNTpsBYhDLusQ==",
       "dev": true,
       "requires": {
         "@discoveryjs/json-ext": "^0.5.0",
@@ -73034,7 +73027,6 @@
         "import-local": "^3.0.2",
         "interpret": "^2.2.0",
         "rechoir": "^0.7.0",
-        "v8-compile-cache": "^2.2.0",
         "webpack-merge": "^5.7.3"
       },
       "dependencies": {
@@ -73081,12 +73073,6 @@
           "requires": {
             "resolve": "^1.9.0"
           }
-        },
-        "v8-compile-cache": {
-          "version": "2.2.0",
-          "resolved": "https://registry.npmjs.org/v8-compile-cache/-/v8-compile-cache-2.2.0.tgz",
-          "integrity": "sha512-gTpR5XQNKFwOd4clxfnhaqvfqMpqEwr4tOtCyz4MtYZX2JYhfr1JvBFKdS+7K/9rfpZR3VLX+YWBbKoxCgS43Q==",
-          "dev": true
         }
       }
     },
