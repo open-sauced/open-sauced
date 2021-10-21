@@ -55,7 +55,7 @@
         "@testing-library/jest-dom": "^5.14.1",
         "@testing-library/react": "^12.1.2",
         "@testing-library/user-event": "^13.3.0",
-        "@wojtekmaj/enzyme-adapter-react-17": "^0.6.3",
+        "@wojtekmaj/enzyme-adapter-react-17": "^0.6.5",
         "babel-jest": "^27.2.5",
         "babel-loader": "^8.2.2",
         "babel-preset-react-app": "^10.0.0",
@@ -9491,9 +9491,9 @@
       }
     },
     "node_modules/@wojtekmaj/enzyme-adapter-react-17": {
-      "version": "0.6.3",
-      "resolved": "https://registry.npmjs.org/@wojtekmaj/enzyme-adapter-react-17/-/enzyme-adapter-react-17-0.6.3.tgz",
-      "integrity": "sha512-Kp1ZJxtHkKEnUksaWrcMABNTOgL4wOt8VI6k2xOek2aH9PtZcWRXJNUEgnKrdJrqg5UqIjRslbVF9uUqwQJtFg==",
+      "version": "0.6.5",
+      "resolved": "https://registry.npmjs.org/@wojtekmaj/enzyme-adapter-react-17/-/enzyme-adapter-react-17-0.6.5.tgz",
+      "integrity": "sha512-ChIObUiXXYUiqzXPqOai+p6KF5dlbItpDDYsftUOQiAiygbMDlLeJIjynC6ZrJIa2U2MpRp4YJmtR2GQyIHjgA==",
       "dev": true,
       "dependencies": {
         "@wojtekmaj/enzyme-adapter-utils": "^0.1.1",
@@ -48618,9 +48618,9 @@
       }
     },
     "@wojtekmaj/enzyme-adapter-react-17": {
-      "version": "0.6.3",
-      "resolved": "https://registry.npmjs.org/@wojtekmaj/enzyme-adapter-react-17/-/enzyme-adapter-react-17-0.6.3.tgz",
-      "integrity": "sha512-Kp1ZJxtHkKEnUksaWrcMABNTOgL4wOt8VI6k2xOek2aH9PtZcWRXJNUEgnKrdJrqg5UqIjRslbVF9uUqwQJtFg==",
+      "version": "0.6.5",
+      "resolved": "https://registry.npmjs.org/@wojtekmaj/enzyme-adapter-react-17/-/enzyme-adapter-react-17-0.6.5.tgz",
+      "integrity": "sha512-ChIObUiXXYUiqzXPqOai+p6KF5dlbItpDDYsftUOQiAiygbMDlLeJIjynC6ZrJIa2U2MpRp4YJmtR2GQyIHjgA==",
       "dev": true,
       "requires": {
         "@wojtekmaj/enzyme-adapter-utils": "^0.1.1",
