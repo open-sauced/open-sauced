@@ -22,7 +22,7 @@ jobs:
   pr-compliance-checks:
     runs-on: ubuntu-latest
     steps:
-      - uses: mtfoley/pr-compliance-action@v0.1.1
+      - uses: mtfoley/pr-compliance-action@v0.2.0
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           protected-branch: main
