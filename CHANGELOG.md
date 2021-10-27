@@ -1,3 +1,15 @@
+## [0.37.0](https://github.com/open-sauced/open-sauced/compare/v0.36.2...v0.37.0) (2021-10-27)
+
+
+### Bug Fixes
+
+* fail compliance action on title check ([#1269](https://github.com/open-sauced/open-sauced/issues/1269)) ([6869a5d](https://github.com/open-sauced/open-sauced/commit/6869a5dc4727099a5115d85d69662a0685deb725)), closes [#1266](https://github.com/open-sauced/open-sauced/issues/1266)
+
+
+### Build System
+
+* add dependabot missing minors ([#1265](https://github.com/open-sauced/open-sauced/issues/1265)) ([80af861](https://github.com/open-sauced/open-sauced/commit/80af861b9bb16975fb240bdc4770cbc626d94b5f))
+
 ### [0.36.2](https://github.com/open-sauced/open-sauced/compare/v0.36.1...v0.36.2) (2021-10-21)
 
 
