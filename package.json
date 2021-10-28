@@ -96,7 +96,7 @@
   "dependencies": {
     "@apollo/client": "^3.4.16",
     "@primer/octicons-react": "^16.0.0",
-    "@remirror/extension-bold": "^1.0.7",
+    "@remirror/extension-bold": "^1.0.8",
     "@remirror/extension-code": "^1.0.9",
     "@remirror/extension-heading": "^1.0.7",
     "@remirror/extension-italic": "^1.0.8",

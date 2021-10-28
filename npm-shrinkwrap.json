@@ -12,7 +12,7 @@
       "dependencies": {
         "@apollo/client": "^3.4.16",
         "@primer/octicons-react": "^16.0.0",
-        "@remirror/extension-bold": "^1.0.7",
+        "@remirror/extension-bold": "^1.0.8",
         "@remirror/extension-code": "^1.0.9",
         "@remirror/extension-heading": "^1.0.7",
         "@remirror/extension-italic": "^1.0.8",
@@ -4075,16 +4075,16 @@
       }
     },
     "node_modules/@remirror/extension-bold": {
-      "version": "1.0.7",
-      "resolved": "https://registry.npmjs.org/@remirror/extension-bold/-/extension-bold-1.0.7.tgz",
-      "integrity": "sha512-ndfcxNwYh2w0SdHcv6ctXO5OimMn5oDOB+cnOskAib5Uzsg3ZCRY3l9yhHg1RIsYi9M2D+cZUKFPxmZY3hyMqA==",
+      "version": "1.0.8",
+      "resolved": "https://registry.npmjs.org/@remirror/extension-bold/-/extension-bold-1.0.8.tgz",
+      "integrity": "sha512-NrOcmlS99YrqQEF33PZh8lgDFeocp/FlnJCM4Qc6clH9PR6Omy5Wiq5hWzyHo8PkibB8ExbhbdMztnUIwC51Jw==",
       "dependencies": {
         "@babel/runtime": "^7.13.10",
-        "@remirror/core": "^1.2.0",
-        "@remirror/messages": "^1.0.3"
+        "@remirror/core": "^1.2.1",
+        "@remirror/messages": "^1.0.4"
       },
       "peerDependencies": {
-        "@remirror/pm": "^1.0.3"
+        "@remirror/pm": "^1.0.4"
       }
     },
     "node_modules/@remirror/extension-code": {
@@ -44565,13 +44565,13 @@
       }
     },
     "@remirror/extension-bold": {
-      "version": "1.0.7",
-      "resolved": "https://registry.npmjs.org/@remirror/extension-bold/-/extension-bold-1.0.7.tgz",
-      "integrity": "sha512-ndfcxNwYh2w0SdHcv6ctXO5OimMn5oDOB+cnOskAib5Uzsg3ZCRY3l9yhHg1RIsYi9M2D+cZUKFPxmZY3hyMqA==",
+      "version": "1.0.8",
+      "resolved": "https://registry.npmjs.org/@remirror/extension-bold/-/extension-bold-1.0.8.tgz",
+      "integrity": "sha512-NrOcmlS99YrqQEF33PZh8lgDFeocp/FlnJCM4Qc6clH9PR6Omy5Wiq5hWzyHo8PkibB8ExbhbdMztnUIwC51Jw==",
       "requires": {
         "@babel/runtime": "^7.13.10",
-        "@remirror/core": "^1.2.0",
-        "@remirror/messages": "^1.0.3"
+        "@remirror/core": "^1.2.1",
+        "@remirror/messages": "^1.0.4"
       }
     },
     "@remirror/extension-code": {
