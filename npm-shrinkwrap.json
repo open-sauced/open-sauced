@@ -17,7 +17,7 @@
         "@remirror/extension-heading": "^1.0.7",
         "@remirror/extension-italic": "^1.0.8",
         "@remirror/extension-list": "^1.2.2",
-        "@remirror/extension-markdown": "^1.0.7",
+        "@remirror/extension-markdown": "^1.0.8",
         "@remirror/extension-tables": "^1.0.8",
         "@remirror/react": "^1.0.13",
         "@remirror/styles": "^1.1.2",
@@ -4224,21 +4224,32 @@
       }
     },
     "node_modules/@remirror/extension-markdown": {
-      "version": "1.0.7",
-      "resolved": "https://registry.npmjs.org/@remirror/extension-markdown/-/extension-markdown-1.0.7.tgz",
-      "integrity": "sha512-XHpH2j9s4K/4jx8NbWVVA7J068Xh7bXpOJeY2agj4al55+85tYTE1mRdNrM2clBLIVpn/w8yBw2Aib0qv0EwNA==",
+      "version": "1.0.8",
+      "resolved": "https://registry.npmjs.org/@remirror/extension-markdown/-/extension-markdown-1.0.8.tgz",
+      "integrity": "sha512-yEw7HpbtGhKAeFZjyHkUeF/74I54fgCuEdiNPUNwlbU3bTNm49o64rEY+efVRlJnN7EMDWmkf79y4qS0/WAI4Q==",
       "dependencies": {
         "@babel/runtime": "^7.13.10",
-        "@remirror/core": "^1.2.0",
-        "@remirror/messages": "^1.0.3",
-        "@types/marked": "^2.0.4",
+        "@remirror/core": "^1.2.1",
+        "@remirror/messages": "^1.0.4",
+        "@types/marked": "^3.0.0",
         "@types/turndown": "^5.0.1",
-        "marked": "^2.1.3",
+        "marked": "^3.0.0",
         "turndown": "^7.1.1",
         "turndown-plugin-gfm": "^1.0.2"
       },
       "peerDependencies": {
-        "@remirror/pm": "^1.0.3"
+        "@remirror/pm": "^1.0.4"
+      }
+    },
+    "node_modules/@remirror/extension-markdown/node_modules/marked": {
+      "version": "3.0.8",
+      "resolved": "https://registry.npmjs.org/marked/-/marked-3.0.8.tgz",
+      "integrity": "sha512-0gVrAjo5m0VZSJb4rpL59K1unJAMb/hm8HRXqasD8VeC8m91ytDPMritgFSlKonfdt+rRYYpP/JfLxgIX8yoSw==",
+      "bin": {
+        "marked": "bin/marked"
+      },
+      "engines": {
+        "node": ">= 12"
       }
     },
     "node_modules/@remirror/extension-mention": {
@@ -8687,9 +8698,9 @@
       }
     },
     "node_modules/@types/marked": {
-      "version": "2.0.5",
-      "resolved": "https://registry.npmjs.org/@types/marked/-/marked-2.0.5.tgz",
-      "integrity": "sha512-shRZ7XnYFD/8n8zSjKvFdto1QNSf4tONZIlNEZGrJe8GsOE8DL/hG1Hbl8gZlfLnjS7+f5tZGIaTgfpyW38h4w=="
+      "version": "3.0.2",
+      "resolved": "https://registry.npmjs.org/@types/marked/-/marked-3.0.2.tgz",
+      "integrity": "sha512-mGYI9qFs+i5eYaytWKBbtEMbIkrXGKuhsDpDcj70ogKS2gk1NmgEy9Z3VEKz922Lfms6eITXXqv5idlX7C/irw=="
     },
     "node_modules/@types/mdast": {
       "version": "3.0.3",
@@ -24659,6 +24670,7 @@
       "version": "2.1.3",
       "resolved": "https://registry.npmjs.org/marked/-/marked-2.1.3.tgz",
       "integrity": "sha512-/Q+7MGzaETqifOMWYEA7HVMaZb4XbcRfaOzcSsHZEith83KGlvaSG33u0SKu89Mj5h+T8V2hM+8O45Qc5XTgwA==",
+      "dev": true,
       "bin": {
         "marked": "bin/marked"
       },
@@ -44668,18 +44680,25 @@
       }
     },
     "@remirror/extension-markdown": {
-      "version": "1.0.7",
-      "resolved": "https://registry.npmjs.org/@remirror/extension-markdown/-/extension-markdown-1.0.7.tgz",
-      "integrity": "sha512-XHpH2j9s4K/4jx8NbWVVA7J068Xh7bXpOJeY2agj4al55+85tYTE1mRdNrM2clBLIVpn/w8yBw2Aib0qv0EwNA==",
+      "version": "1.0.8",
+      "resolved": "https://registry.npmjs.org/@remirror/extension-markdown/-/extension-markdown-1.0.8.tgz",
+      "integrity": "sha512-yEw7HpbtGhKAeFZjyHkUeF/74I54fgCuEdiNPUNwlbU3bTNm49o64rEY+efVRlJnN7EMDWmkf79y4qS0/WAI4Q==",
       "requires": {
         "@babel/runtime": "^7.13.10",
-        "@remirror/core": "^1.2.0",
-        "@remirror/messages": "^1.0.3",
-        "@types/marked": "^2.0.4",
+        "@remirror/core": "^1.2.1",
+        "@remirror/messages": "^1.0.4",
+        "@types/marked": "^3.0.0",
         "@types/turndown": "^5.0.1",
-        "marked": "^2.1.3",
+        "marked": "^3.0.0",
         "turndown": "^7.1.1",
         "turndown-plugin-gfm": "^1.0.2"
+      },
+      "dependencies": {
+        "marked": {
+          "version": "3.0.8",
+          "resolved": "https://registry.npmjs.org/marked/-/marked-3.0.8.tgz",
+          "integrity": "sha512-0gVrAjo5m0VZSJb4rpL59K1unJAMb/hm8HRXqasD8VeC8m91ytDPMritgFSlKonfdt+rRYYpP/JfLxgIX8yoSw=="
+        }
       }
     },
     "@remirror/extension-mention": {
@@ -47856,9 +47875,9 @@
       }
     },
     "@types/marked": {
-      "version": "2.0.5",
-      "resolved": "https://registry.npmjs.org/@types/marked/-/marked-2.0.5.tgz",
-      "integrity": "sha512-shRZ7XnYFD/8n8zSjKvFdto1QNSf4tONZIlNEZGrJe8GsOE8DL/hG1Hbl8gZlfLnjS7+f5tZGIaTgfpyW38h4w=="
+      "version": "3.0.2",
+      "resolved": "https://registry.npmjs.org/@types/marked/-/marked-3.0.2.tgz",
+      "integrity": "sha512-mGYI9qFs+i5eYaytWKBbtEMbIkrXGKuhsDpDcj70ogKS2gk1NmgEy9Z3VEKz922Lfms6eITXXqv5idlX7C/irw=="
     },
     "@types/mdast": {
       "version": "3.0.3",
@@ -61035,7 +61054,8 @@
     "marked": {
       "version": "2.1.3",
       "resolved": "https://registry.npmjs.org/marked/-/marked-2.1.3.tgz",
-      "integrity": "sha512-/Q+7MGzaETqifOMWYEA7HVMaZb4XbcRfaOzcSsHZEith83KGlvaSG33u0SKu89Mj5h+T8V2hM+8O45Qc5XTgwA=="
+      "integrity": "sha512-/Q+7MGzaETqifOMWYEA7HVMaZb4XbcRfaOzcSsHZEith83KGlvaSG33u0SKu89Mj5h+T8V2hM+8O45Qc5XTgwA==",
+      "dev": true
     },
     "marked-terminal": {
       "version": "4.1.1",
