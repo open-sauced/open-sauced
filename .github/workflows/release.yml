@@ -55,7 +55,7 @@ jobs:
 
       - name: "📦 install dependencies"
         run: npm ci
-         
+
       - name: "📊 repository visualizer"
         id: diagram
         uses: githubocto/repo-visualizer@0.7.1
@@ -64,7 +64,7 @@ jobs:
           output_file: "public/diagram.svg"
           should_push: false
           artifact_name: "diagram"
-       
+
       - name: "🚀 static app"
         run: npm run build
 
@@ -159,14 +159,15 @@ jobs:
         id: release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          REPO_OWNER: ${{ github.repository_owner }}
+          DOCKER_USERNAME: ${{ github.repository_owner }}
+          DOCKER_PASSWORD: ${{ secrets.GITHUB_TOKEN }}
           GIT_AUTHOR_NAME: ${{ github.event.commits[0].author.username }}
           GIT_AUTHOR_EMAIL: ${{ github.event.commits[0].author.email }}
           GIT_COMMITTER_NAME: ${{ secrets.GIT_COMMITTER_NAME }}
           GIT_COMMITTER_EMAIL: ${{ secrets.GIT_COMMITTER_EMAIL }}
         run: |
           cp -R /tmp/build ./build
-          npx semantic-release
+          npm run semantic-release
           echo "::set-output name=version::$(cat package.json | jq -r '.version')"
 
   cleanup:
