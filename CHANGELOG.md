@@ -1,3 +1,10 @@
+### [0.37.1](https://github.com/open-sauced/open-sauced/compare/v0.37.0...v0.37.1) (2021-10-28)
+
+
+### Continuous Integration
+
+* update semantic release configuration ([#1282](https://github.com/open-sauced/open-sauced/issues/1282)) ([7623e44](https://github.com/open-sauced/open-sauced/commit/7623e441e624379d6fa60e2385f908ac8854d67a))
+
 ## [0.37.0](https://github.com/open-sauced/open-sauced/compare/v0.36.2...v0.37.0) (2021-10-27)
 
 
