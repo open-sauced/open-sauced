@@ -7,7 +7,8 @@ on:
       - edited
       - synchronize
       - reopened
-      
+  workflow_call:
+
 permissions:
   pull-requests: write
 
