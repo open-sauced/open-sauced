@@ -1,3 +1,10 @@
+### [0.37.2](https://github.com/open-sauced/open-sauced/compare/v0.37.1...v0.37.2) (2021-11-01)
+
+
+### Continuous Integration
+
+* make compliance workflow re-usable ([#1283](https://github.com/open-sauced/open-sauced/issues/1283)) ([247cf21](https://github.com/open-sauced/open-sauced/commit/247cf21dc01dcac7883757f0cead1835d2800077))
+
 ### [0.37.1](https://github.com/open-sauced/open-sauced/compare/v0.37.0...v0.37.1) (2021-10-28)
 
 
