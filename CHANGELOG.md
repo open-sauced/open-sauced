@@ -1,3 +1,10 @@
+### [0.37.3](https://github.com/open-sauced/open-sauced/compare/v0.37.2...v0.37.3) (2021-11-01)
+
+
+### Continuous Integration
+
+* implement docker buildx cache ([#1284](https://github.com/open-sauced/open-sauced/issues/1284)) ([c3f624c](https://github.com/open-sauced/open-sauced/commit/c3f624c529e250b90504e7ef75edf46a14de00a4))
+
 ### [0.37.2](https://github.com/open-sauced/open-sauced/compare/v0.37.1...v0.37.2) (2021-11-01)
 
 
