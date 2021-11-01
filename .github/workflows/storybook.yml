@@ -18,8 +18,8 @@ jobs:
       with:
         node-version: 16
 
-    - name: "🔧 install npm@7"
-      run: npm i -g npm@7
+    - name: "🔧 install npm@latest"
+      run: npm i -g npm@latest
 
     - name: "📦 install dependencies"
       run: npm ci
