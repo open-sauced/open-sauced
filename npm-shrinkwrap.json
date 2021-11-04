@@ -17,7 +17,7 @@
         "@remirror/extension-heading": "^1.0.9",
         "@remirror/extension-italic": "^1.0.9",
         "@remirror/extension-list": "^1.2.3",
-        "@remirror/extension-markdown": "^1.0.8",
+        "@remirror/extension-markdown": "^1.0.9",
         "@remirror/extension-tables": "^1.0.10",
         "@remirror/react": "^1.0.14",
         "@remirror/styles": "^1.1.2",
@@ -4233,13 +4233,13 @@
       }
     },
     "node_modules/@remirror/extension-markdown": {
-      "version": "1.0.8",
-      "resolved": "https://registry.npmjs.org/@remirror/extension-markdown/-/extension-markdown-1.0.8.tgz",
-      "integrity": "sha512-yEw7HpbtGhKAeFZjyHkUeF/74I54fgCuEdiNPUNwlbU3bTNm49o64rEY+efVRlJnN7EMDWmkf79y4qS0/WAI4Q==",
+      "version": "1.0.9",
+      "resolved": "https://registry.npmjs.org/@remirror/extension-markdown/-/extension-markdown-1.0.9.tgz",
+      "integrity": "sha512-O0lJON/M7EBN46ScnusZL29OX5wXrJppZEXMY7tKAHOyS3dMjt1e3ZEw8Zlz14xOoyMmXRXnVQvwmi0JCUmiTQ==",
       "dependencies": {
         "@babel/runtime": "^7.13.10",
-        "@remirror/core": "^1.2.1",
-        "@remirror/messages": "^1.0.4",
+        "@remirror/core": "^1.2.2",
+        "@remirror/messages": "^1.0.5",
         "@types/marked": "^3.0.0",
         "@types/turndown": "^5.0.1",
         "marked": "^3.0.0",
@@ -4247,7 +4247,7 @@
         "turndown-plugin-gfm": "^1.0.2"
       },
       "peerDependencies": {
-        "@remirror/pm": "^1.0.4"
+        "@remirror/pm": "^1.0.6"
       }
     },
     "node_modules/@remirror/extension-markdown/node_modules/marked": {
@@ -44995,13 +44995,13 @@
       }
     },
     "@remirror/extension-markdown": {
-      "version": "1.0.8",
-      "resolved": "https://registry.npmjs.org/@remirror/extension-markdown/-/extension-markdown-1.0.8.tgz",
-      "integrity": "sha512-yEw7HpbtGhKAeFZjyHkUeF/74I54fgCuEdiNPUNwlbU3bTNm49o64rEY+efVRlJnN7EMDWmkf79y4qS0/WAI4Q==",
+      "version": "1.0.9",
+      "resolved": "https://registry.npmjs.org/@remirror/extension-markdown/-/extension-markdown-1.0.9.tgz",
+      "integrity": "sha512-O0lJON/M7EBN46ScnusZL29OX5wXrJppZEXMY7tKAHOyS3dMjt1e3ZEw8Zlz14xOoyMmXRXnVQvwmi0JCUmiTQ==",
       "requires": {
         "@babel/runtime": "^7.13.10",
-        "@remirror/core": "^1.2.1",
-        "@remirror/messages": "^1.0.4",
+        "@remirror/core": "^1.2.2",
+        "@remirror/messages": "^1.0.5",
         "@types/marked": "^3.0.0",
         "@types/turndown": "^5.0.1",
         "marked": "^3.0.0",
