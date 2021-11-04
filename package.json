@@ -98,7 +98,7 @@
     "@remirror/extension-bold": "^1.0.9",
     "@remirror/extension-code": "^1.0.9",
     "@remirror/extension-heading": "^1.0.9",
-    "@remirror/extension-italic": "^1.0.8",
+    "@remirror/extension-italic": "^1.0.9",
     "@remirror/extension-list": "^1.2.3",
     "@remirror/extension-markdown": "^1.0.8",
     "@remirror/extension-tables": "^1.0.10",
