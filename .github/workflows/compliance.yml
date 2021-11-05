@@ -31,6 +31,7 @@ jobs:
           protected-branch-auto-close: false
           watch-files: |
             package.json
+            package-lock.json
             npm-shrinkwrap.json
           body-comment: >
             ## Issue Reference
@@ -49,11 +50,11 @@ jobs:
             [Contributing Guide](https://docs.opensauced.pizza/contributing/getting-started/). 
             We would suggest that you close this PR and implement your changes as 
             described in our Contributing Guide and open a new pull request.
+
   welcome:
     runs-on: ubuntu-latest
     needs: semantics
     if: github.event.action == 'opened'
-
     steps:
       - uses: actions/first-interaction@v1
         with:
