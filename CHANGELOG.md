@@ -1,3 +1,10 @@
+### [0.37.4](https://github.com/open-sauced/open-sauced/compare/v0.37.3...v0.37.4) (2021-11-05)
+
+
+### Continuous Integration
+
+* improve workflow reusability across repositories ([#1295](https://github.com/open-sauced/open-sauced/issues/1295)) ([802d9af](https://github.com/open-sauced/open-sauced/commit/802d9af8ca268eb288f0d5ee6b9004b46d5ab738))
+
 ### [0.37.3](https://github.com/open-sauced/open-sauced/compare/v0.37.2...v0.37.3) (2021-11-01)
 
 

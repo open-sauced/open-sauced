@@ -1,12 +1,12 @@
 {
   "name": "@open-sauced/open-sauced",
-  "version": "0.37.3",
+  "version": "0.37.4",
   "lockfileVersion": 2,
   "requires": true,
   "packages": {
     "": {
       "name": "@open-sauced/open-sauced",
-      "version": "0.37.3",
+      "version": "0.37.4",
       "hasInstallScript": true,
       "license": "MIT",
       "dependencies": {
