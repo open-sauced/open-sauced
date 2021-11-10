@@ -1,3 +1,10 @@
+## [0.38.0](https://github.com/open-sauced/open-sauced/compare/v0.37.4...v0.38.0) (2021-11-10)
+
+
+### Features
+
+* implement @open-sauced/conventional-commit ([#1297](https://github.com/open-sauced/open-sauced/issues/1297)) ([d109495](https://github.com/open-sauced/open-sauced/commit/d109495d040a1abe44a60e1b837c56acb5b327d3)), closes [#1296](https://github.com/open-sauced/open-sauced/issues/1296)
+
 ### [0.37.4](https://github.com/open-sauced/open-sauced/compare/v0.37.3...v0.37.4) (2021-11-05)
 
 
