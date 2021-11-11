@@ -94,7 +94,7 @@
         "url-loader": "4.1.1",
         "webpack": "^4.41.5",
         "webpack-cli": "^4.9.1",
-        "webpack-dev-server": "^3.11.2",
+        "webpack-dev-server": "^3.11.3",
         "webpack-manifest-plugin": "^2.2.0",
         "whatwg-fetch": "^3.6.2"
       },
@@ -39983,12 +39983,12 @@
       }
     },
     "node_modules/webpack-dev-server": {
-      "version": "3.11.2",
-      "resolved": "https://registry.npmjs.org/webpack-dev-server/-/webpack-dev-server-3.11.2.tgz",
-      "integrity": "sha512-A80BkuHRQfCiNtGBS1EMf2ChTUs0x+B3wGDFmOeT4rmJOHhHTCH2naNxIHhmkr0/UillP4U3yeIyv1pNp+QDLQ==",
+      "version": "3.11.3",
+      "resolved": "https://registry.npmjs.org/webpack-dev-server/-/webpack-dev-server-3.11.3.tgz",
+      "integrity": "sha512-3x31rjbEQWKMNzacUZRE6wXvUFuGpH7vr0lIEbYpMAG9BOxi0928QU1BBswOAP3kg3H1O4hiS+sq4YyAn6ANnA==",
       "dev": true,
       "dependencies": {
-        "ansi-html": "0.0.7",
+        "ansi-html-community": "0.0.8",
         "bonjour": "^3.5.0",
         "chokidar": "^2.1.8",
         "compression": "^1.7.4",
@@ -40027,6 +40027,14 @@
       },
       "engines": {
         "node": ">= 6.11.5"
+      },
+      "peerDependencies": {
+        "webpack": "^4.0.0 || ^5.0.0"
+      },
+      "peerDependenciesMeta": {
+        "webpack-cli": {
+          "optional": true
+        }
       }
     },
     "node_modules/webpack-dev-server/node_modules/ansi-regex": {
@@ -73743,12 +73751,12 @@
       }
     },
     "webpack-dev-server": {
-      "version": "3.11.2",
-      "resolved": "https://registry.npmjs.org/webpack-dev-server/-/webpack-dev-server-3.11.2.tgz",
-      "integrity": "sha512-A80BkuHRQfCiNtGBS1EMf2ChTUs0x+B3wGDFmOeT4rmJOHhHTCH2naNxIHhmkr0/UillP4U3yeIyv1pNp+QDLQ==",
+      "version": "3.11.3",
+      "resolved": "https://registry.npmjs.org/webpack-dev-server/-/webpack-dev-server-3.11.3.tgz",
+      "integrity": "sha512-3x31rjbEQWKMNzacUZRE6wXvUFuGpH7vr0lIEbYpMAG9BOxi0928QU1BBswOAP3kg3H1O4hiS+sq4YyAn6ANnA==",
       "dev": true,
       "requires": {
-        "ansi-html": "0.0.7",
+        "ansi-html-community": "0.0.8",
         "bonjour": "^3.5.0",
         "chokidar": "^2.1.8",
         "compression": "^1.7.4",
