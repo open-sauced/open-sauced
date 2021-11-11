@@ -1,3 +1,10 @@
+## [0.39.0](https://github.com/open-sauced/open-sauced/compare/v0.38.0...v0.39.0) (2021-11-11)
+
+
+### Documentation
+
+* fix README.md contributing guide link ([#1301](https://github.com/open-sauced/open-sauced/issues/1301)) ([273eb28](https://github.com/open-sauced/open-sauced/commit/273eb28275a21aac2b016b979f64664281bfa0ae)), closes [#1298](https://github.com/open-sauced/open-sauced/issues/1298)
+
 ## [0.38.0](https://github.com/open-sauced/open-sauced/compare/v0.37.4...v0.38.0) (2021-11-10)
 
 
