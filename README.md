@@ -36,7 +36,7 @@ Open Sauced provides structured onboarding for new contributors to open source. 
 
 ## 🤝 Contributing
 
-We encourage you to contribute to Open Sauced! Please check out the [Contributing guide](https://docs.opensauced.pizza/contributing/getting-started/) for guidelines about how to proceed.
+We encourage you to contribute to Open Sauced! Please check out the [Contributing guide](https://docs.opensauced.pizza/contributing/introduction-to-contributing/) for guidelines about how to proceed.
 
 <img align="right" src="https://i.ibb.co/CJfW18H/ship.gif" width="200"/>
 
