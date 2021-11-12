@@ -1,3 +1,10 @@
+### [0.39.1](https://github.com/open-sauced/open-sauced/compare/v0.39.0...v0.39.1) (2021-11-12)
+
+
+### Bug Fixes
+
+* update pr-compliance-action ([#1303](https://github.com/open-sauced/open-sauced/issues/1303)) ([ba6c0fe](https://github.com/open-sauced/open-sauced/commit/ba6c0feef5270166478bc2f829db59c60037622d)), closes [#1302](https://github.com/open-sauced/open-sauced/issues/1302)
+
 ## [0.39.0](https://github.com/open-sauced/open-sauced/compare/v0.38.0...v0.39.0) (2021-11-11)
 
 
