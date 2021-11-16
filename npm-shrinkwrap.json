@@ -16,7 +16,7 @@
         "@remirror/extension-code": "^1.0.11",
         "@remirror/extension-heading": "^1.0.10",
         "@remirror/extension-italic": "^1.0.10",
-        "@remirror/extension-list": "^1.2.4",
+        "@remirror/extension-list": "^1.2.5",
         "@remirror/extension-markdown": "^1.0.10",
         "@remirror/extension-tables": "^1.0.11",
         "@remirror/react": "^1.0.15",
@@ -4234,9 +4234,9 @@
       }
     },
     "node_modules/@remirror/extension-list": {
-      "version": "1.2.4",
-      "resolved": "https://registry.npmjs.org/@remirror/extension-list/-/extension-list-1.2.4.tgz",
-      "integrity": "sha512-YBWs9T/9grgH8loHnXglKAYZbiXALr3wBWAOvIpuL7DeUKJGaA26cgXkiiDj+HbgmmdKMCHfKoCcY0/kRm3AMQ==",
+      "version": "1.2.5",
+      "resolved": "https://registry.npmjs.org/@remirror/extension-list/-/extension-list-1.2.5.tgz",
+      "integrity": "sha512-tjKLzjcTkPPO0XtjeLT0QHJaiCpxSGy/3Kbpb5G9elcrr1dDAv9mOG+8dhOfsWt0ihU1vTPYiKvrOY7iggvDcA==",
       "dependencies": {
         "@babel/runtime": "^7.13.10",
         "@remirror/core": "^1.3.0",
@@ -45016,9 +45016,9 @@
       }
     },
     "@remirror/extension-list": {
-      "version": "1.2.4",
-      "resolved": "https://registry.npmjs.org/@remirror/extension-list/-/extension-list-1.2.4.tgz",
-      "integrity": "sha512-YBWs9T/9grgH8loHnXglKAYZbiXALr3wBWAOvIpuL7DeUKJGaA26cgXkiiDj+HbgmmdKMCHfKoCcY0/kRm3AMQ==",
+      "version": "1.2.5",
+      "resolved": "https://registry.npmjs.org/@remirror/extension-list/-/extension-list-1.2.5.tgz",
+      "integrity": "sha512-tjKLzjcTkPPO0XtjeLT0QHJaiCpxSGy/3Kbpb5G9elcrr1dDAv9mOG+8dhOfsWt0ihU1vTPYiKvrOY7iggvDcA==",
       "requires": {
         "@babel/runtime": "^7.13.10",
         "@remirror/core": "^1.3.0",
