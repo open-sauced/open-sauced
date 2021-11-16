@@ -1,3 +1,10 @@
+## [0.40.0](https://github.com/open-sauced/open-sauced/compare/v0.39.1...v0.40.0) (2021-11-16)
+
+
+### Build System
+
+* update dependencies and remove extraneous commitizen config ([#1305](https://github.com/open-sauced/open-sauced/issues/1305)) ([ff0bf51](https://github.com/open-sauced/open-sauced/commit/ff0bf512fcd52d21326c0f28148492c5e8fab076))
+
 ### [0.39.1](https://github.com/open-sauced/open-sauced/compare/v0.39.0...v0.39.1) (2021-11-12)
 
 
