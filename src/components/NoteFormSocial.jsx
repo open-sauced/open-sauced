@@ -24,7 +24,7 @@ import {
   useEmoji,
 } from "@remirror/react";
 import {EmojiPopupComponent} from "@remirror/react-components";
-import emojiData from "svgmoji/emoji-github";
+import emojiData from "svgmoji/emoji-github.json";
 import {SubtleLink} from "../styles/Typography";
 const extensions = () => [
   new CodeExtension(),
