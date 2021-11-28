@@ -29,3 +29,6 @@ wallaby.js
 babel.config.js
 jest.config.js
 svgTransform.js
+
+# snowpack
+.snowpack
