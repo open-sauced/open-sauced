@@ -68,7 +68,7 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.27.1",
     "file-loader": "^6.2.0",
-    "jest": "^27.3.1",
+    "jest": "^27.4.3",
     "jest-axe": "^5.0.1",
     "jest-localstorage-mock": "^2.4.18",
     "json-loader": "^0.5.7",
