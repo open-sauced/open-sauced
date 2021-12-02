@@ -1,3 +1,10 @@
+### [0.40.1](https://github.com/open-sauced/open-sauced/compare/v0.40.0...v0.40.1) (2021-12-02)
+
+
+### Styles
+
+* change IssueClosedIcon from gitRed to gitPurple ([#1326](https://github.com/open-sauced/open-sauced/issues/1326)) ([bace7cc](https://github.com/open-sauced/open-sauced/commit/bace7cc5904695d47b993b5dbdd74e6f7f080ad1)), closes [#1321](https://github.com/open-sauced/open-sauced/issues/1321)
+
 ## [0.40.0](https://github.com/open-sauced/open-sauced/compare/v0.39.1...v0.40.0) (2021-11-16)
 
 
