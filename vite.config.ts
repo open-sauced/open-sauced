@@ -4,7 +4,9 @@ import reactRefresh from '@vitejs/plugin-react-refresh'
 
 export default defineConfig({
   plugins: [reactRefresh()],
+  mode: "development",
   build: {
-    outDir: "build"
+    outDir: "build",
+    minify: false
   }
 })
