@@ -35,7 +35,7 @@
         "react-router": "^5.2.1",
         "react-router-dom": "^5.3.0",
         "styled-components": "^5.3.3",
-        "swr": "^1.0.1"
+        "swr": "^1.1.0"
       },
       "devDependencies": {
         "@babel/core": "^7.16.0",
@@ -14956,14 +14956,6 @@
       "integrity": "sha512-xmHIy4F3scKVwMsQ4WnVaS8bHOx0DmVwRywosKhaILI0ywMDWPtBSku2HNxRvF7jtwDRsoEwYQSfbxj8b7RlJQ==",
       "dev": true,
       "peer": true
-    },
-    "node_modules/dequal": {
-      "version": "2.0.2",
-      "resolved": "https://registry.npmjs.org/dequal/-/dequal-2.0.2.tgz",
-      "integrity": "sha512-q9K8BlJVxK7hQYqa6XISGmBZbtQQWVXSrRrWreHC94rMt1QL/Impruc+7p2CYSYuVIUr+YCt6hjrs1kkdJRTug==",
-      "engines": {
-        "node": ">=6"
-      }
     },
     "node_modules/des.js": {
       "version": "1.0.1",
@@ -37842,14 +37834,11 @@
       }
     },
     "node_modules/swr": {
-      "version": "1.0.1",
-      "resolved": "https://registry.npmjs.org/swr/-/swr-1.0.1.tgz",
-      "integrity": "sha512-EPQAxSjoD4IaM49rpRHK0q+/NzcwoT8c0/Ylu/u3/6mFj/CWnQVjNJ0MV2Iuw/U+EJSd2TX5czdAwKPYZIG0YA==",
-      "dependencies": {
-        "dequal": "2.0.2"
-      },
+      "version": "1.1.0",
+      "resolved": "https://registry.npmjs.org/swr/-/swr-1.1.0.tgz",
+      "integrity": "sha512-MFL3mkl752Uap81nLA1tEu7vQmikPamSziW+6dBidYKAo4oLOlUx/x5GZy4ZCkCwfZe2uedylkz1UMGnatUX4g==",
       "peerDependencies": {
-        "react": "^16.11.0 || ^17.0.0"
+        "react": "^16.11.0 || ^17.0.0 || ^18.0.0"
       }
     },
     "node_modules/symbol-observable": {
@@ -53539,11 +53528,6 @@
       "integrity": "sha512-xmHIy4F3scKVwMsQ4WnVaS8bHOx0DmVwRywosKhaILI0ywMDWPtBSku2HNxRvF7jtwDRsoEwYQSfbxj8b7RlJQ==",
       "dev": true,
       "peer": true
-    },
-    "dequal": {
-      "version": "2.0.2",
-      "resolved": "https://registry.npmjs.org/dequal/-/dequal-2.0.2.tgz",
-      "integrity": "sha512-q9K8BlJVxK7hQYqa6XISGmBZbtQQWVXSrRrWreHC94rMt1QL/Impruc+7p2CYSYuVIUr+YCt6hjrs1kkdJRTug=="
     },
     "des.js": {
       "version": "1.0.1",
@@ -71910,12 +71894,10 @@
       }
     },
     "swr": {
-      "version": "1.0.1",
-      "resolved": "https://registry.npmjs.org/swr/-/swr-1.0.1.tgz",
-      "integrity": "sha512-EPQAxSjoD4IaM49rpRHK0q+/NzcwoT8c0/Ylu/u3/6mFj/CWnQVjNJ0MV2Iuw/U+EJSd2TX5czdAwKPYZIG0YA==",
-      "requires": {
-        "dequal": "2.0.2"
-      }
+      "version": "1.1.0",
+      "resolved": "https://registry.npmjs.org/swr/-/swr-1.1.0.tgz",
+      "integrity": "sha512-MFL3mkl752Uap81nLA1tEu7vQmikPamSziW+6dBidYKAo4oLOlUx/x5GZy4ZCkCwfZe2uedylkz1UMGnatUX4g==",
+      "requires": {}
     },
     "symbol-observable": {
       "version": "1.2.0",
