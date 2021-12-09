@@ -101,7 +101,7 @@
     "@remirror/extension-list": "^1.2.7",
     "@remirror/extension-markdown": "^1.0.12",
     "@remirror/extension-tables": "^1.0.11",
-    "@remirror/react": "^1.0.17",
+    "@remirror/react": "^1.0.18",
     "@remirror/styles": "^1.1.2",
     "contrast": "^1.0.1",
     "dayjs": "^1.10.7",
