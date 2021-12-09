@@ -10,7 +10,7 @@
       "hasInstallScript": true,
       "license": "MIT",
       "dependencies": {
-        "@apollo/client": "^3.5.5",
+        "@apollo/client": "^3.5.6",
         "@primer/octicons-react": "^16.1.1",
         "@remirror/extension-bold": "^1.0.12",
         "@remirror/extension-code": "^1.0.13",
@@ -104,9 +104,9 @@
       }
     },
     "node_modules/@apollo/client": {
-      "version": "3.5.5",
-      "resolved": "https://registry.npmjs.org/@apollo/client/-/client-3.5.5.tgz",
-      "integrity": "sha512-EiQstc8VjeqosS2h21bwY9fhL3MCRRmACtRrRh2KYpp9vkDyx5pUfMnN3swgiBVYw1twdXg9jHmyZa1gZlvlog==",
+      "version": "3.5.6",
+      "resolved": "https://registry.npmjs.org/@apollo/client/-/client-3.5.6.tgz",
+      "integrity": "sha512-XHoouuEJ4L37mtfftcHHO1caCRrKKAofAwqRoq28UQIPMJk+e7n3X9OtRRNXKk/9tmhNkwelSary+EilfPwI7A==",
       "dependencies": {
         "@graphql-typed-document-node/core": "^3.0.0",
         "@wry/context": "^0.6.0",
@@ -117,7 +117,7 @@
         "optimism": "^0.16.1",
         "prop-types": "^15.7.2",
         "symbol-observable": "^4.0.0",
-        "ts-invariant": "^0.9.0",
+        "ts-invariant": "^0.9.4",
         "tslib": "^2.3.0",
         "zen-observable-ts": "^1.2.0"
       },
@@ -38661,9 +38661,9 @@
       "dev": true
     },
     "node_modules/ts-invariant": {
-      "version": "0.9.1",
-      "resolved": "https://registry.npmjs.org/ts-invariant/-/ts-invariant-0.9.1.tgz",
-      "integrity": "sha512-hSeYibh29ULlHkuEfukcoiyTct+s2RzczMLTv4x3NWC/YrBy7x7ps5eYq/b4Y3Sb9/uAlf54+/5CAEMVxPhuQw==",
+      "version": "0.9.4",
+      "resolved": "https://registry.npmjs.org/ts-invariant/-/ts-invariant-0.9.4.tgz",
+      "integrity": "sha512-63jtX/ZSwnUNi/WhXjnK8kz4cHHpYS60AnmA6ixz17l7E12a5puCWFlNpkne5Rl0J8TBPVHpGjsj4fxs8ObVLQ==",
       "dependencies": {
         "tslib": "^2.1.0"
       },
@@ -41733,9 +41733,9 @@
   },
   "dependencies": {
     "@apollo/client": {
-      "version": "3.5.5",
-      "resolved": "https://registry.npmjs.org/@apollo/client/-/client-3.5.5.tgz",
-      "integrity": "sha512-EiQstc8VjeqosS2h21bwY9fhL3MCRRmACtRrRh2KYpp9vkDyx5pUfMnN3swgiBVYw1twdXg9jHmyZa1gZlvlog==",
+      "version": "3.5.6",
+      "resolved": "https://registry.npmjs.org/@apollo/client/-/client-3.5.6.tgz",
+      "integrity": "sha512-XHoouuEJ4L37mtfftcHHO1caCRrKKAofAwqRoq28UQIPMJk+e7n3X9OtRRNXKk/9tmhNkwelSary+EilfPwI7A==",
       "requires": {
         "@graphql-typed-document-node/core": "^3.0.0",
         "@wry/context": "^0.6.0",
@@ -41746,7 +41746,7 @@
         "optimism": "^0.16.1",
         "prop-types": "^15.7.2",
         "symbol-observable": "^4.0.0",
-        "ts-invariant": "^0.9.0",
+        "ts-invariant": "^0.9.4",
         "tslib": "^2.3.0",
         "zen-observable-ts": "^1.2.0"
       },
@@ -72558,9 +72558,9 @@
       "dev": true
     },
     "ts-invariant": {
-      "version": "0.9.1",
-      "resolved": "https://registry.npmjs.org/ts-invariant/-/ts-invariant-0.9.1.tgz",
-      "integrity": "sha512-hSeYibh29ULlHkuEfukcoiyTct+s2RzczMLTv4x3NWC/YrBy7x7ps5eYq/b4Y3Sb9/uAlf54+/5CAEMVxPhuQw==",
+      "version": "0.9.4",
+      "resolved": "https://registry.npmjs.org/ts-invariant/-/ts-invariant-0.9.4.tgz",
+      "integrity": "sha512-63jtX/ZSwnUNi/WhXjnK8kz4cHHpYS60AnmA6ixz17l7E12a5puCWFlNpkne5Rl0J8TBPVHpGjsj4fxs8ObVLQ==",
       "requires": {
         "tslib": "^2.1.0"
       },
