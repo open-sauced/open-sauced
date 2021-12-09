@@ -13,7 +13,7 @@ self.addEventListener("install", function(event) {
 });
 
 self.addEventListener("activate", function(event) {
-  console.log("[Servicework] Activate");
+  console.log("[ServiceWorker] Activate");
   event.waitUntil(
     caches.keys().then(function(keyList) {
       return Promise.all(keyList.filter((key) => {return key !== cacheName;}).map(function(key) {
