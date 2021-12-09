@@ -105,7 +105,7 @@
     "@remirror/styles": "^1.1.2",
     "contrast": "^1.0.1",
     "dayjs": "^1.10.7",
-    "graphql": "^15.7.2",
+    "graphql": "^15.8.0",
     "humanize-duration": "^3.27.1",
     "onegraph-apollo-client": "^3.1.2",
     "onegraph-auth": "^4.0.2",
