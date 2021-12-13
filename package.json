@@ -21,6 +21,7 @@
     "prestart": "npx @open-sauced/check-engines",
     "start": "vite",
     "build": "vite build",
+    "preview": "vite preview --port 3000",
     "clean": "rimraf src/tests/__snapshots__/",
     "test": "npm run clean && node scripts/test.js --env=jsdom --updateSnapshot",
     "storybook": "start-storybook -p 6006 -s ./.storybook",
