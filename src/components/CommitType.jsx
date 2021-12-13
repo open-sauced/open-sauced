@@ -28,7 +28,7 @@ function CommitType({status, isDraft, mergeable, merged}) {
         );
       }
       return (
-        <IssueClosedIcon verticalAlign="middle" className="gitRed" />
+        <IssueClosedIcon verticalAlign="middle" className="gitPurple" />
       );
     }
     case "MERGED":
