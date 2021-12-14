@@ -24,8 +24,8 @@
     "build": "node scripts/build.js",
     "clean": "rimraf src/tests/__snapshots__/",
     "test": "npm run clean && node scripts/test.js --env=jsdom --updateSnapshot",
-    "storybook": "start-storybook -p 6006 -s ./.storybook",
-    "build-storybook": "build-storybook -s ./.storybook",
+    "storybook": "npx start-storybook -p 6006",
+    "build-storybook": "npx build-storybook",
     "lint": "eslint . --report-unused-disable-directives",
     "format": "npm run lint -- --fix"
   },
