@@ -157,9 +157,7 @@ function Repository({user, match}) {
                     </span>
                   ))
                 ) : (
-                  <div>
-                    <Skeleton height={2} width={70} count={4} />
-                  </div>
+                  <Skeleton inline height={2} width={70} count={4} />
                 )}
                 <span className="more">
                   {repository &&
