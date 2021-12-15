@@ -4,6 +4,7 @@ import App from "./containers/App";
 import Config from "./config";
 import {getUserFromJwt} from "./lib/identityActions";
 import "./index.css";
+import "react-loading-skeleton/dist/skeleton.css";
 import registerServiceWorker from "./registerServiceWorker";
 import OneGraphApolloClient from "onegraph-apollo-client";
 import {ApolloProvider, InMemoryCache} from "@apollo/client";

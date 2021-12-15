@@ -108,16 +108,7 @@ body.dark svg.svg {
 body.dark select {
   color: var(--lightestGrey);
 }
-body.dark .react-loading-skeleton{
-  background-color: var(--backgroundGrey);
-  background-image: linear-gradient(
-    90deg,
-    var(--backgroundGrey),
-    var(--grey),
-    var(--backgroundGrey)
-  );
-}
-// important is to manage the emoji sizing, so more appear while searching. 
+/*important is to manage the emoji sizing, so more appear while searching.*/
 .remirror-editor {
   min-height: 250px !important;
 }

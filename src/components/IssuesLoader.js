@@ -13,13 +13,13 @@ function IssuesLoader() {
               <Skeleton height={10} />
             </div>
             <div className="label">
-              <Skeleton height={10} width={100} count={3} />
+              <Skeleton inline height={10} width={100} count={3} />
             </div>
             <div className="meta">
-              <Skeleton height={3} width={100} />
-              <Skeleton height={3} width={5} />
-              <Skeleton height={3} width={20} />
-              <Skeleton height={3} width={3} />
+              <Skeleton inline height={3} width={100} />
+              <Skeleton inline height={3} width={5} />
+              <Skeleton inline height={3} width={20} />
+              <Skeleton inline height={3} width={3} />
             </div>
           </span>
         ))}
