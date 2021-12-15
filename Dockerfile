@@ -6,7 +6,7 @@ COPY package.json ./
 COPY npm-shrinkwrap.json ./
 COPY .npmrc ./
 COPY .babelrc ./
-COPY .eslintrc.yml ./
+COPY .eslintrc.js ./
 
 RUN npm ci
 
