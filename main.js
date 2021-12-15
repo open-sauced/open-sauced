@@ -8,5 +8,8 @@ module.exports = {
     "@storybook/addon-essentials",
     "@storybook/addon-storysource",
     "storybook-dark-mode",
+  ],
+  "staticDirs": [
+    '../.storybook'
   ]
 }
