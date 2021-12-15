@@ -117,7 +117,7 @@ body.dark .react-loading-skeleton{
     var(--backgroundGrey)
   );
 }
-// important is to manage the emoji sizing, so more appear while searching. 
+/*important is to manage the emoji sizing, so more appear while searching.*/
 .remirror-editor {
   min-height: 250px !important;
 }
