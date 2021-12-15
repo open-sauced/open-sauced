@@ -11,7 +11,7 @@
       "license": "MIT",
       "dependencies": {
         "@apollo/client": "^3.5.6",
-        "@primer/octicons-react": "^16.1.1",
+        "@primer/octicons-react": "^16.2.0",
         "@remirror/extension-bold": "^1.0.12",
         "@remirror/extension-code": "^1.0.13",
         "@remirror/extension-heading": "^1.0.12",
@@ -58,7 +58,7 @@
         "@wojtekmaj/enzyme-adapter-react-17": "^0.6.6",
         "babel-jest": "^27.4.2",
         "babel-loader": "^8.2.3",
-        "babel-plugin-named-asset-import": "^0.3.7",
+        "babel-plugin-named-asset-import": "^0.3.8",
         "babel-preset-react-app": "^10.0.0",
         "case-sensitive-paths-webpack-plugin": "^2.4.0",
         "css-loader": "^5.2.7",
@@ -3307,9 +3307,9 @@
       }
     },
     "node_modules/@primer/octicons-react": {
-      "version": "16.1.1",
-      "resolved": "https://registry.npmjs.org/@primer/octicons-react/-/octicons-react-16.1.1.tgz",
-      "integrity": "sha512-xCxQ5z23ol7yDuJs85Lc4ARzyoay+b3zOhAKkEMU7chk0xi2hT2OnRP23QUudNNDPTGozX268RGYLexUa6P4xw==",
+      "version": "16.2.0",
+      "resolved": "https://registry.npmjs.org/@primer/octicons-react/-/octicons-react-16.2.0.tgz",
+      "integrity": "sha512-943t5kkVRt+/hxVnKS27xweUp4lXFxwJaTrsit1C1xBB4kqdjzmYGpU84zwKsNyyV2Ch7may3umKjbI/mFBPPQ==",
       "engines": {
         "node": ">=8"
       },
@@ -9759,9 +9759,9 @@
       }
     },
     "node_modules/babel-plugin-named-asset-import": {
-      "version": "0.3.7",
-      "resolved": "https://registry.npmjs.org/babel-plugin-named-asset-import/-/babel-plugin-named-asset-import-0.3.7.tgz",
-      "integrity": "sha512-squySRkf+6JGnvjoUtDEjSREJEBirnXi9NqP6rjSYsylxQxqBTz+pkmf395i9E2zsvmYUaI40BHo6SqZUdydlw==",
+      "version": "0.3.8",
+      "resolved": "https://registry.npmjs.org/babel-plugin-named-asset-import/-/babel-plugin-named-asset-import-0.3.8.tgz",
+      "integrity": "sha512-WXiAc++qo7XcJ1ZnTYGtLxmBCVbddAml3CEXgWaBzNzLNoxtQ8AiGEFDMOhot9XjTCQbvP5E77Fj9Gk924f00Q==",
       "dev": true,
       "peerDependencies": {
         "@babel/core": "^7.1.0"
@@ -36074,9 +36074,9 @@
       "integrity": "sha512-HnUhk1Sy9IuKrxEMdIRCxpIqPw6BFsbYSEUO9p/hNw5sMld/+3OLMWQP80F8/db9qsv3qUjs7ZR5bS/R+iinXw=="
     },
     "@primer/octicons-react": {
-      "version": "16.1.1",
-      "resolved": "https://registry.npmjs.org/@primer/octicons-react/-/octicons-react-16.1.1.tgz",
-      "integrity": "sha512-xCxQ5z23ol7yDuJs85Lc4ARzyoay+b3zOhAKkEMU7chk0xi2hT2OnRP23QUudNNDPTGozX268RGYLexUa6P4xw==",
+      "version": "16.2.0",
+      "resolved": "https://registry.npmjs.org/@primer/octicons-react/-/octicons-react-16.2.0.tgz",
+      "integrity": "sha512-943t5kkVRt+/hxVnKS27xweUp4lXFxwJaTrsit1C1xBB4kqdjzmYGpU84zwKsNyyV2Ch7may3umKjbI/mFBPPQ==",
       "requires": {}
     },
     "@reach/auto-id": {
@@ -40917,9 +40917,9 @@
       }
     },
     "babel-plugin-named-asset-import": {
-      "version": "0.3.7",
-      "resolved": "https://registry.npmjs.org/babel-plugin-named-asset-import/-/babel-plugin-named-asset-import-0.3.7.tgz",
-      "integrity": "sha512-squySRkf+6JGnvjoUtDEjSREJEBirnXi9NqP6rjSYsylxQxqBTz+pkmf395i9E2zsvmYUaI40BHo6SqZUdydlw==",
+      "version": "0.3.8",
+      "resolved": "https://registry.npmjs.org/babel-plugin-named-asset-import/-/babel-plugin-named-asset-import-0.3.8.tgz",
+      "integrity": "sha512-WXiAc++qo7XcJ1ZnTYGtLxmBCVbddAml3CEXgWaBzNzLNoxtQ8AiGEFDMOhot9XjTCQbvP5E77Fj9Gk924f00Q==",
       "dev": true,
       "requires": {}
     },
