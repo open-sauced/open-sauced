@@ -51,7 +51,7 @@
     "babel-jest": "^27.4.2",
     "babel-loader": "^8.2.3",
     "babel-plugin-named-asset-import": "^0.3.8",
-    "babel-preset-react-app": "^10.0.0",
+    "babel-preset-react-app": "^10.0.1",
     "case-sensitive-paths-webpack-plugin": "^2.4.0",
     "css-loader": "^5.2.7",
     "dotenv": "^10.0.0",
