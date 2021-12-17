@@ -22,7 +22,7 @@ jobs:
       run: npm i -g npm@latest
 
     - name: "📦 install dependencies"
-      run: npm ci
+      uses: bahmutov/npm-install@v1
 
     - name: "📦 build Storybook"
       run:  npm run build-storybook

@@ -1,4 +1,4 @@
-/* eslint-disable */
+ 
 import { getUserFromJwt } from "./identityActions";
 
 const mockedOneGraphAuth = {

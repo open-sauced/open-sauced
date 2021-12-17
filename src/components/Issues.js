@@ -37,7 +37,7 @@ function Issues({repoName, owner}) {
       setTotal(totalCount);
       setLoading(false);
     });
-  }, [issuesFilter]);
+  }, [issuesFilter, owner, repoName]);
   const _toggleIssuesFilter = () => {
     setIssuesFilter(!issuesFilter);
   };

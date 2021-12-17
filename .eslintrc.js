@@ -1,132 +1,15 @@
 process.env.NODE_ENV = "development";
 
 module.exports = {
-  "env": {
-    "browser": true,
-    "jest": true,
-    "es2021": true
-  },
-  "parser": "@babel/eslint-parser",
-  "settings": {
-    "react": {
-      "version": "detect"
-    }
-  },
-  "plugins": [
-    "react",
-    "import",
-    "prettier"
+  "extends": [
+    "react-app"
   ],
-  "parserOptions": {
-    "ecmaFeatures": {
-      "arrowFunctions": true,
-      "binaryLiterals": true,
-      "blockBindings": true,
-      "classes": true,
-      "defaultParams": true,
-      "destructuring": true,
-      "forOf": true,
-      "generators": true,
-      "jsx": true,
-      "modules": true,
-      "objectLiteralShorthandMethods": true,
-      "objectLiteralShorthandProperties": true,
-      "octalLiterals": true,
-      "spread": true,
-      "templateStrings": true
-    },
-    "ecmaVersion": 12,
-    "sourceType": "module"
-  },
-  "rules": {
-    "no-control-regex": 2,
-    "no-debugger": 2,
-    "no-dupe-args": 2,
-    "no-dupe-keys": 2,
-    "no-duplicate-case": 2,
-    "no-empty-character-class": 2,
-    "no-ex-assign": 2,
-    "no-extra-boolean-cast": 2,
-    "no-extra-semi": 2,
-    "no-invalid-regexp": 2,
-    "no-irregular-whitespace": 1,
-    "no-proto": 2,
-    "no-unexpected-multiline": 2,
-    "no-unreachable": 2,
-    "valid-typeof": 2,
-    "no-fallthrough": 2,
-    "no-redeclare": 2,
-    "comma-spacing": 2,
-    "eol-last": 2,
-    "eqeqeq": ["error", "smart"],
-    "indent": [2, 2, {"SwitchCase": 1}],
-    "keyword-spacing": 2,
-    "max-len": [1, 160, 2],
-    "new-parens": 2,
-    "no-mixed-spaces-and-tabs": 2,
-    "no-multiple-empty-lines": [2, {"max": 2}],
-    "no-trailing-spaces": 2,
-    "object-curly-spacing": [2, "never"],
-    "quotes": [2, "double", "avoid-escape"],
-    "semi": 1,
-    "space-before-blocks": [2, "always"],
-    "space-before-function-paren": [2, "never"],
-    "space-in-parens": [2, "never"],
-    "space-infix-ops": 2,
-    "space-unary-ops": 2,
-    "arrow-spacing": [2, {"before": true, "after": true}],
-    "prefer-const": 2,
-    "jsx-quotes": [2, "prefer-double"],
-    "import/no-unresolved": [1, {"commonjs": true, "amd": true}],
-    "import/export": 2,
-    "strict": [2, "global"],
-    "no-undef": 2,
-    "no-unused-vars": [2, {"args": "none"}],
-    "react/forbid-prop-types": 1,
-    "react/jsx-boolean-value": 1,
-    "react/jsx-curly-spacing": 1,
-    "react/jsx-equals-spacing": 1,
-    "react/jsx-handler-names": 1,
-    "react/jsx-indent": [2, 2],
-    "react/jsx-no-duplicate-props": 1,
-    "react/jsx-no-undef": 1,
-    "react/jsx-pascal-case": 1,
-    "react/jsx-sort-prop-types": 0,
-    "react/jsx-uses-react": 1,
-    "react/jsx-uses-vars": 1,
-    "react/no-danger": 1,
-    "react/no-deprecated": 1,
-    "react/no-did-mount-set-state": 0,
-    "react/no-did-update-set-state": 1,
-    "react/no-direct-mutation-state": 1,
-    "react/no-is-mounted": 1,
-    "react/no-multi-comp": 0,
-    "react/no-string-refs": 1,
-    "react/no-unknown-property": 1,
-    "react/react-in-jsx-scope": 1,
-    "import/extensions": 1,
-    "react/self-closing-comp": 1,
-    "react/sort-comp": 1,
-    "react/prefer-stateless-function": 1
-  },
   "ignorePatterns": [
     "build",
-    "docs",
-    "public"
+    "public",
+    "stories"
   ],
-  "globals": {
-    "module": true,
-    "process": true,
-    "global": true
-    // "netlify": true,
-    // "App": true,
-    // "describe": true,
-    // "it": true,
-    // "beforeEach": true,
-    // "afterEach": true,
-    // "require": true,
-    // "ENV": true,
-    // "Promise": true,
-    // "SyntheticEvent": true,
-  }
+  "rules": {
+    "no-restricted-globals": [1]
+  },
 };

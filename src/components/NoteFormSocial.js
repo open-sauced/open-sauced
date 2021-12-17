@@ -24,7 +24,7 @@ import {
   useEmoji,
 } from "@remirror/react";
 import {EmojiPopupComponent} from "@remirror/react-components";
-import emojiData from "svgmoji/emoji-github";
+import emojiData from "svgmoji/emoji-github.json";
 import {SubtleLink} from "../styles/Typography";
 const extensions = () => [
   new CodeExtension(),
@@ -157,6 +157,7 @@ function NoteForm({goalId, repoName, note}) {
       <img
         style={{display: "none"}}
         src="https://cdn.jsdelivr.net/npm/@svgmoji/noto@3.2.0/sprites/all.svg"
+        alt="Social form sprites"
       />
     </Card>
   );

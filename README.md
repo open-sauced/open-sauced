@@ -96,9 +96,10 @@ This project leverages [Remirror](https://remirror.io/) for a delightful experie
 Got Questions? Join the conversation in our [Discord](https://discord.gg/U2peSNf23P).  
 Find Open Sauced videos and release overviews on our [YouTube Channel](https://www.youtube.com/channel/UCklWxKrTti61ZCROE1e5-MQ).
 
-## Repository Visualization 
+## 🎦 Repository Visualization 
 
-[Visualization of this repository](public/diagram.svg)
+[![Visualization of this repository](./public/diagram.svg)
+](./src)
 
 ## ⚖️ LICENSE
 

@@ -35,7 +35,7 @@ function RecommendedRepoItem({goal, goalsId, onGoalAdded}) {
         </FloatLeft>
         <FloatRight>
           <FlexCenter>
-            <a onClick={() => _handleGoalCreation(goal.full_name)} href="#">
+            <a onClick={() => _handleGoalCreation(goal.full_name)} href="#add-recommended-repo">
               <img alt="add recommended repo" src={plus} className="svg" />
             </a>
           </FlexCenter>
