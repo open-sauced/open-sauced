@@ -6,8 +6,20 @@
 </div>
 <br>
 <p align="center">
-  <a href="https://github.com/open-sauced/open-sauced/actions?query=workflow%3A%22Node+CI%22">
-    <img src="https://github.com/open-sauced/open-sauced/workflows/Node%20CI/badge.svg" alt="Node CI">
+  <a href="https://github.com/open-sauced/open-sauced/actions/workflows/codeql-analysis.yml">
+    <img src="https://github.com/open-sauced/open-sauced/actions/workflows/codeql-analysis.yml/badge.svg" alt="CodeQL" style="max-width: 100%;">
+  </a>
+  <a href="https://github.com/open-sauced/open-sauced/actions/workflows/compliance.yml">
+    <img src="https://github.com/open-sauced/open-sauced/actions/workflows/compliance.yml/badge.svg" alt="Compliance" style="max-width: 100%;">
+  </a>
+  <a href="https://github.com/open-sauced/open-sauced/actions/workflows/development.yml">
+    <img src="https://github.com/open-sauced/open-sauced/actions/workflows/development.yml/badge.svg" alt="Development" style="max-width: 100%;">
+  </a>
+  <a href="https://github.com/open-sauced/open-sauced/actions/workflows/release.yml">
+    <img src="https://github.com/open-sauced/open-sauced/actions/workflows/release.yml/badge.svg" alt="Release" style="max-width: 100%;">
+  </a>
+  <a href="https://github.com/open-sauced/open-sauced/actions/workflows/storybook.yml">
+    <img src="https://github.com/open-sauced/open-sauced/actions/workflows/storybook.yml/badge.svg" alt="Publish stories if changed" style="max-width: 100%;">
   </a>
   <a href="https://app.netlify.com/sites/open-sauced/deploys">
     <img src="https://api.netlify.com/api/v1/badges/76a3de8e-270c-4adf-89d5-3a3863da74e6/deploy-status" alt="Netlify Status">
@@ -47,12 +59,14 @@ In order to run the project from a container we need `node>=14`, `npm>=7` and `d
 ### 🖥️ Local development
 
 ```sh
-npm install
+npm ci
 npm start
 ```
 
 ### 🧪 Test
+
 For running the test suite, use the following command. Since the tests run in watch mode by default, some users may encounter errors about too many files being open. In this case, it may be beneficial to [install watchman](https://facebook.github.io/watchman/docs/install.html).
+
 ```sh
 # the tests will run in watch mode by default
 npm test
