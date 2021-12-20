@@ -1,6 +1,6 @@
 import React from "react";
 import "@testing-library/jest-dom/extend-expect";
-import {render, cleanup} from "@testing-library/react";
+import {render, cleanup, screen} from "@testing-library/react";
 import Nav from "../components/Nav";
 import {axe, toHaveNoViolations} from "jest-axe";
 expect.extend(toHaveNoViolations);
@@ -28,13 +28,13 @@ test.skip("container component should have no violations", async() => {
 });
 
 test.skip('renders a "Login" link', () => {
-  const {getByText} = render(<Nav />);
-  const link = getByText("Login");
+  render(<Nav />);
+  const link = screen.getByText("Login");
   expect(link).toHaveAttribute("alt");
 });
 
 test.skip('renders a "Logout" link with user present', () => {
-  const {getByText} = render(<Nav user={{login: "me"}} />);
-  const link = getByText("Logout");
+  render(<Nav user={{login: "me"}} />);
+  const link = screen.getByText("Logout");
   expect(link).toHaveAttribute("alt");
 });

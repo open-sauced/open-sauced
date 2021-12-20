@@ -1,3 +1,34 @@
+# 📦 open-sauced/open-sauced changelog
+
+[![conventional commits](https://img.shields.io/badge/conventional%20commits-1.0.0-yellow.svg)](https://conventionalcommits.org)
+[![semantic versioning](https://img.shields.io/badge/semantic%20versioning-2.0.0-green.svg)](https://semver.org)
+
+> All notable changes to this project will be documented in this file
+
+## [0.41.0](https://github.com/open-sauced/open-sauced/compare/v0.40.2...v0.41.0) (2021-12-20)
+
+
+### 🍕 Features
+
+* update create-react-app base to 5 and correct tooling issues ([#1342](https://github.com/open-sauced/open-sauced/issues/1342)) ([d30044c](https://github.com/open-sauced/open-sauced/commit/d30044c9f4ab81ea0426fe647c3ae819cddfa313))
+
+
+### 🐛 Bug Fixes
+
+* update create-react-app base to 5 and correct tooling issues ([#1344](https://github.com/open-sauced/open-sauced/issues/1344)) ([0fee440](https://github.com/open-sauced/open-sauced/commit/0fee44061eca31f9f1b2bd3dce96f2fcaa68f84e)), closes [#1131](https://github.com/open-sauced/open-sauced/issues/1131) [#1343](https://github.com/open-sauced/open-sauced/issues/1343)
+
+### [0.40.2](https://github.com/open-sauced/open-sauced/compare/v0.40.1...v0.40.2) (2021-12-15)
+
+
+### 🤖 Build System
+
+* update deps and semantic release ([#1333](https://github.com/open-sauced/open-sauced/issues/1333)) ([bf2501d](https://github.com/open-sauced/open-sauced/commit/bf2501d0320c282695b563e02b7394f871557d0d))
+
+
+### 🐛 Bug Fixes
+
+* correct docker build ([#1335](https://github.com/open-sauced/open-sauced/issues/1335)) ([7118070](https://github.com/open-sauced/open-sauced/commit/7118070916fc38f31959758b7e187dfea5f8dfd6)), closes [#1334](https://github.com/open-sauced/open-sauced/issues/1334)
+
 ### [0.40.1](https://github.com/open-sauced/open-sauced/compare/v0.40.0...v0.40.1) (2021-12-02)
 
 

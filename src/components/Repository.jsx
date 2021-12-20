@@ -26,7 +26,7 @@ function Repository({user, match}) {
   } = match;
   const [repository, setRepository] = useState(null);
   const [error, setError] = useState(null);
-  const [note, setNote] = useState(location.note);
+  const [note, setNote] = useState(null);
   const [issueId, setIssueId] = useState();
   const [isForkLoading, setIsForkLoading] = useState(true);
   const [isForked, setIsForked] = useState(false);
@@ -78,7 +78,7 @@ function Repository({user, match}) {
       })
       .catch(e => console.log(e))
       .finally(() => setIsForkLoading(false));
-  }, []);
+  }, [issueNumber, repoName, repoOwner]);
 
   const forkRepository = () => {
     setIsForkLoading(true);
@@ -157,9 +157,7 @@ function Repository({user, match}) {
                     </span>
                   ))
                 ) : (
-                  <div>
-                    <Skeleton height={2} width={70} count={4} />
-                  </div>
+                  <Skeleton inline height={2} width={70} count={4} />
                 )}
                 <span className="more">
                   {repository &&
@@ -197,7 +195,7 @@ function Repository({user, match}) {
                       className="users"
                       key={key}
                       src={user.avatarUrl}
-                      title={`${user.login} • ${user.contributionCount} contributions`}
+                      alt={`${user.login} • ${user.contributionCount} contributions`}
                     />
                   </a>
                 ))}

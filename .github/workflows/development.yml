@@ -1,7 +1,13 @@
-name: "Development"
+name: Development
 
 on:
   pull_request:
+    types:
+      - opened
+      - edited
+      - synchronize
+      - reopened
+  workflow_call:
 
 jobs:
   test:
@@ -16,19 +22,11 @@ jobs:
         with:
           node-version: 16
 
-      - name: "🔧 setup cache"
-        uses: actions/cache@v2
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-pr-${{ hashFiles('**/npm-shrinkwrap.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-pr-
-
       - name: "🔧 install npm@latest"
         run: npm i -g npm@latest
 
       - name: "📦 install dependencies"
-        run: npm ci
+        uses: bahmutov/npm-install@v1
 
       - name: "🔍 run tests"
         run: npm t
@@ -45,19 +43,11 @@ jobs:
         with:
           node-version: 16
 
-      - name: "🔧 setup cache"
-        uses: actions/cache@v2
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-pr-${{ hashFiles('**/npm-shrinkwrap.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-pr-
-
       - name: "🔧 install npm@latest"
         run: npm i -g npm@latest
 
       - name: "📦 install dependencies"
-        run: npm ci
+        uses: bahmutov/npm-install@v1
 
       - name: "🔍 lint code"
         run: npm run lint

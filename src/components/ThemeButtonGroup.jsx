@@ -11,6 +11,7 @@ function ThemeButtonGroup() {
     <FlexCenter style={{marginRight:"0.5rem"}}>
       <a
         style={{margin:"0 .5rem"}}
+        href="#activate-dark-mode"
         disabled={theme === "dark"}
         onClick={(event) => {
           event.preventDefault();
@@ -20,6 +21,7 @@ function ThemeButtonGroup() {
       </a>
       <a
         style={{margin:"0 .5rem"}}
+        href="#activate-system-mode"
         disabled={theme === "system"}
         onClick={(event) => {
           event.preventDefault();
@@ -29,6 +31,7 @@ function ThemeButtonGroup() {
       </a>
       <a
         style={{margin:"0 .5rem"}}
+        href="#activate-light-mode"
         disabled={theme === "light"}
         onClick={(event) => {
           event.preventDefault();

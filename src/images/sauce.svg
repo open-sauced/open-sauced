@@ -1,15 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="707.578" height="1193.665" viewBox="0 0 707.578 1193.665">
-    <defs>
-        <clipPath id="prefix__clip-path">
-            <path id="prefix__Path_167" d="M1212.422 0H1920v1193.665h-707.578z" data-name="Path 167" transform="translate(0 70)" style="fill:#faeace"/>
-        </clipPath>
-    </defs>
-    <g id="prefix__sauce" transform="translate(-1212.422 -70)">
-        <g id="prefix__Mask_Group_11" data-name="Mask Group 11">
-            <g id="prefix__Group_68" data-name="Group 68" transform="translate(0 -92.343)">
-                <path id="prefix__Path_11" d="M759.055-.34s-375.819 25.5-585.216 206.366-232.333 558.63-55.739 734.656 557.139 291.7 687.507 257.251S759.055-.34 759.055-.34z" data-name="Path 11" transform="rotate(7 183.519 10642.062)" style="fill:#ed5332"/>
-                <path id="prefix__Path_12" d="M749.086.645C600.739 19.654 366.42-1.337 288.33 85.74s13.317 117.147-107.93 217.285-151.835 87.021-178 229.686 221.61 410.064 373.008 442.245c351.507 74.715 374.353-21.881 374.353-21.881z" data-name="Path 12" transform="rotate(-12.04 2172.576 -5491.535)" style="fill:#f1755b"/>
-            </g>
-        </g>
-    </g>
-</svg>
+<svg viewBox="0 0 707.578 1193.665" xmlns="http://www.w3.org/2000/svg"><g data-name="Mask Group 11"><g data-name="Group 68"><path d="M759.055-.34s-375.819 25.5-585.216 206.366-232.333 558.63-55.739 734.656 557.139 291.7 687.507 257.251S759.055-.34 759.055-.34z" data-name="Path 11" style="fill:#ed5332" transform="rotate(7 904.45 649.428)"/><path d="M749.086.645C600.739 19.654 366.42-1.337 288.33 85.74s13.317 117.147-107.93 217.285-151.835 87.021-178 229.686 221.61 410.064 373.008 442.245c351.507 74.715 374.353-21.881 374.353-21.881z" data-name="Path 12" style="fill:#f1755b" transform="rotate(-12.04 796.654 175.703)"/></g></g></svg>

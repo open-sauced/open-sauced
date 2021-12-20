@@ -6,8 +6,20 @@
 </div>
 <br>
 <p align="center">
-  <a href="https://github.com/open-sauced/open-sauced/actions?query=workflow%3A%22Node+CI%22">
-    <img src="https://github.com/open-sauced/open-sauced/workflows/Node%20CI/badge.svg" alt="Node CI">
+  <a href="https://github.com/open-sauced/open-sauced/actions/workflows/codeql-analysis.yml">
+    <img src="https://github.com/open-sauced/open-sauced/actions/workflows/codeql-analysis.yml/badge.svg" alt="CodeQL" style="max-width: 100%;">
+  </a>
+  <a href="https://github.com/open-sauced/open-sauced/actions/workflows/compliance.yml">
+    <img src="https://github.com/open-sauced/open-sauced/actions/workflows/compliance.yml/badge.svg" alt="Compliance" style="max-width: 100%;">
+  </a>
+  <a href="https://github.com/open-sauced/open-sauced/actions/workflows/development.yml">
+    <img src="https://github.com/open-sauced/open-sauced/actions/workflows/development.yml/badge.svg" alt="Development" style="max-width: 100%;">
+  </a>
+  <a href="https://github.com/open-sauced/open-sauced/actions/workflows/release.yml">
+    <img src="https://github.com/open-sauced/open-sauced/actions/workflows/release.yml/badge.svg" alt="Release" style="max-width: 100%;">
+  </a>
+  <a href="https://github.com/open-sauced/open-sauced/actions/workflows/storybook.yml">
+    <img src="https://github.com/open-sauced/open-sauced/actions/workflows/storybook.yml/badge.svg" alt="Publish stories if changed" style="max-width: 100%;">
   </a>
   <a href="https://app.netlify.com/sites/open-sauced/deploys">
     <img src="https://api.netlify.com/api/v1/badges/76a3de8e-270c-4adf-89d5-3a3863da74e6/deploy-status" alt="Netlify Status">
@@ -34,26 +46,40 @@ Open Sauced provides structured onboarding for new contributors to open source. 
 [![open-sauced-screencap](./src/images/homepage.png)
 ](https://opensauced.pizza)
 
+## 📖 Prerequisites
+
+In order to run the project from a container we need `node>=14`, `npm>=7` and `docker>=20` installed on our development machines.
+
 ## 🤝 Contributing
 
 We encourage you to contribute to Open Sauced! Please check out the [Contributing guide](https://docs.opensauced.pizza/contributing/introduction-to-contributing/) for guidelines about how to proceed.
 
+We have a commit utility called [@open-sauced/conventional-commit](https://github.com/open-sauced/conventional-commit) that helps you write your commits in a way that is easy to understand and process by others.
+
+It is generally integrated as an `npm` script but you can run it with `npx` as well:
+
+```shell
+# from package.json
+npm run push
+
+# for any other npm based project
+npx -y @open-sauced/conventional-commit
+```
+
 <img align="right" src="https://i.ibb.co/CJfW18H/ship.gif" width="200"/>
 
-### 📖 Prerequisites
-
-In order to run the project from a container we need `node>=14`, `npm>=7` and `docker>=20` installed on our development machines.
-
-### 🖥️ Local development
+## 🖥️ Local development
 
 ```sh
-npm install
+npm ci
 npm start
 ```
 
 ### 🧪 Test
+
 For running the test suite, use the following command. Since the tests run in watch mode by default, some users may encounter errors about too many files being open. In this case, it may be beneficial to [install watchman](https://facebook.github.io/watchman/docs/install.html).
-```sh
+
+```shell
 # the tests will run in watch mode by default
 npm test
 
@@ -61,11 +87,41 @@ npm test
 npm run clean
 ```
 
+You can request a coverage report by running the following command:
+
+```shell
+npm run coverage
+```
+
+### 🚀 Production deployment
+
+A production deployment is a complete build of the project, including the build of the static assets.
+
+```shell
+npm run build
+```
+
+You can analyze the build by running the following command:
+
+```shell
+# to check webpack build performance 
+npm run build:profile
+
+# to check static bundle size
+npm run webpack:analyze
+```
+
+We also have a script for updating the SVG files used in the project, you only need to run this if you add new assets:
+
+```shell
+npm run build:optimize
+```
+
 ### 📙 Storybook
 
 Storybook is being leveraged to mock out visual React components. The latest version of the design system can be found at this [URL](https://sauced-components.netlify.app/).
 
-```sh
+```shell
 npm run storybook
 ```
 
@@ -96,9 +152,10 @@ This project leverages [Remirror](https://remirror.io/) for a delightful experie
 Got Questions? Join the conversation in our [Discord](https://discord.gg/U2peSNf23P).  
 Find Open Sauced videos and release overviews on our [YouTube Channel](https://www.youtube.com/channel/UCklWxKrTti61ZCROE1e5-MQ).
 
-## Repository Visualization 
+## 🎦 Repository Visualization 
 
-[Visualization of this repository](public/diagram.svg)
+[![Visualization of this repository](./public/diagram.svg)
+](./src)
 
 ## ⚖️ LICENSE
 

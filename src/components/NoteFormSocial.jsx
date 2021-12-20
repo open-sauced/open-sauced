@@ -157,6 +157,7 @@ function NoteForm({goalId, repoName, note}) {
       <img
         style={{display: "none"}}
         src="https://cdn.jsdelivr.net/npm/@svgmoji/noto@3.2.0/sprites/all.svg"
+        alt="Social form sprites"
       />
     </Card>
   );
