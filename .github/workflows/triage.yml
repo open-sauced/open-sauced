@@ -1,4 +1,4 @@
-name: "Triage"
+name: Triage
 
 on:
   issue_comment:

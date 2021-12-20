@@ -1,35 +1,39 @@
+name: Publish stories if changed
+
 on:
   push:
     branches:
-     - main
-    paths: ["stories/**", "src/components/**"]
-
-name: Publish stories if changed
+      - main
+    paths:
+      - stories/**
+      - src/components/**
+  workflow_call:
 
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
     steps:
-    - name: "☁️ checkout repository"
-      uses: actions/checkout@v2
+      - name: "☁️ checkout repository"
+        uses: actions/checkout@v2
 
-    - name: "🔧 setup node"
-      uses: actions/setup-node@v2.1.5
-      with:
-        node-version: 16
+      - name: "🔧 setup node"
+        uses: actions/setup-node@v2.1.5
+        with:
+          node-version: 16
 
-    - name: "🔧 install npm@latest"
-      run: npm i -g npm@latest
+      - name: "🔧 install npm@latest"
+        run: npm i -g npm@latest
 
-    - name: "📦 install dependencies"
-      uses: bahmutov/npm-install@v1
+      - name: "📦 install dependencies"
+        uses: bahmutov/npm-install@v1
 
-    - name: "📦 build Storybook"
-      run:  npm run build-storybook
+      - name: "📦 build Storybook"
+        run: npx build-storybook
 
-    - name: Build and deploy to storybook-static branch
-      uses: JamesIves/github-pages-deploy-action@3.4.8
-      with:
-        ACCESS_TOKEN: ${{ secrets.BDOUGIE_TOKEN }}
-        BRANCH: storybook-static
-        FOLDER: storybook-static
+      - name: "🚀 deploy static"
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./storybook-static
+          commit_message: ${{ github.event.head_commit.message }}
+          enable_jekyll: false

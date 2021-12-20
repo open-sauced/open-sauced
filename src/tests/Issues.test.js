@@ -1,7 +1,7 @@
 import React from "react";
 import Issues from "../components/Issues";
 import "@testing-library/jest-dom/extend-expect";
-import {render, cleanup} from "@testing-library/react";
+import {render, cleanup, screen} from "@testing-library/react";
 import {axe, toHaveNoViolations} from "jest-axe";
 
 import {data} from "./mocks";
@@ -16,6 +16,8 @@ test("container component should have no violations", async() => {
 });
 
 test("renders loading when there is no owner", () => {
-  const {container} = render(<Issues />);
-  expect(container.firstChild).toHaveTextContent("...Loading");
+  render(<Issues />);
+
+  const paragraph = screen.getByText(/loading/i);
+  expect(paragraph).toBeInTheDocument();
 });

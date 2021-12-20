@@ -1,6 +1,6 @@
 import React from "react";
 import "@testing-library/jest-dom/extend-expect";
-import {render, cleanup} from "@testing-library/react";
+import {render, cleanup, screen} from "@testing-library/react";
 import Hero from "../components/Hero";
 import {axe, toHaveNoViolations} from "jest-axe";
 import {data} from "./mocks";
@@ -20,11 +20,11 @@ test("container component should have no violations", async() => {
 });
 
 test("renders the pizza svg", () => {
-  const {getByAltText} = render(
+  render(
     <BrowserRouter>
       <Hero user={data.user} />
     </BrowserRouter>,
   );
-  const button = getByAltText("pizza");
+  const button = screen.getByAltText("pizza");
   expect(button).toHaveAttribute("src");
 });
