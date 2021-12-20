@@ -1,6 +1,6 @@
 import React from "react";
 import "@testing-library/jest-dom/extend-expect";
-import {render, cleanup, act} from "@testing-library/react";
+import {render, cleanup} from "@testing-library/react";
 import RepositoryGoals from "../components/RepositoryGoals";
 import AppContext from "../Context";
 
@@ -26,12 +26,13 @@ jest.mock("../lib/apiGraphQL", () => {
 
 // TODO: Skipped until React.Suspense + zeit/swr is testable
 test.skip("renders without crashing", async() => {
-  await act(async() => {
-    render(
-      <AppContext.Provider value={contextValue}>
-        <RepositoryGoals />
-      </AppContext.Provider>,
-    );
-  });
+  const {container} = render(
+    <AppContext.Provider value={contextValue}>
+      <RepositoryGoals />
+    </AppContext.Provider>,
+  );
+
+  expect(container).toBeInTheDocument();
+
   cleanup();
 });
