@@ -40,6 +40,7 @@ function InstallApp({user}) {
       <img
         style={{textAlign: "center", width: "80%"}}
         src="https://user-images.githubusercontent.com/20134767/86527180-4a83c700-be51-11ea-8eaf-660298cf3c66.png"
+        alt="Install and Authorize"
       />
       <small>
         <em>The installation grants access storing note data and tracking open source contributions.</em>

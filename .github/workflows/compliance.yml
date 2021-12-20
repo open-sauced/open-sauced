@@ -14,6 +14,7 @@ permissions:
 
 jobs:
   semantics:
+    name: Semantics
     runs-on: ubuntu-latest
     steps:
       - uses: amannn/action-semantic-pull-request@v3.4.0
@@ -21,6 +22,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   pr-compliance-checks:
+    name: PR Compliance Checks
     runs-on: ubuntu-latest
     steps:
       - uses: mtfoley/pr-compliance-action@v0.2.1
@@ -35,23 +37,24 @@ jobs:
             npm-shrinkwrap.json
           body-comment: >
             ## Issue Reference
-      
-            In order to be considered for merging, the pull request description must refer to a 
-            specific issue number. This is described in our 
-            [Contributing Guide](https://docs.opensauced.pizza/contributing/getting-started/). 
+
+            In order to be considered for merging, the pull request description must refer to a
+            specific issue number. This is described in our
+            [Contributing Guide](https://docs.opensauced.pizza/contributing/getting-started/).
 
             This check is looking for a phrase similar to: "Fixes #XYZ" or "Resolves #XYZ" where XYZ is the issue
             number that this PR is meant to address.
           protected-branch-comment: >
             ## Protected Branch
-      
-            In order to be considered for merging, the pull request changes must 
-            not be implemented on the "%branch%" branch. This is described in our 
-            [Contributing Guide](https://docs.opensauced.pizza/contributing/getting-started/). 
-            We would suggest that you close this PR and implement your changes as 
+
+            In order to be considered for merging, the pull request changes must
+            not be implemented on the "%branch%" branch. This is described in our
+            [Contributing Guide](https://docs.opensauced.pizza/contributing/getting-started/).
+            We would suggest that you close this PR and implement your changes as
             described in our Contributing Guide and open a new pull request.
 
   welcome:
+    name: Welcome
     runs-on: ubuntu-latest
     needs: semantics
     if: github.event.action == 'opened'

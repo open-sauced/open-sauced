@@ -21,7 +21,7 @@ function RepositoryGoals({user}) {
 
   useEffect(() => {
     repository && setGoalsId(repository.id);
-  }, [goalsId]);
+  }, [goalsId, setGoalsId, repository]);
 
   const onRepoCreation = (id, repo) => {
     dispatch({type: "CREATE", payload: repo});

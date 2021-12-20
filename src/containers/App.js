@@ -67,7 +67,7 @@ function App({handleLogIn, handleLogOut, user, isAdmin, isLoggedIn}) {
         if (theme === "system") applyTheme();
       });
     }
-  }, []);
+  });
   const [theme, setTheme] = useState(localStorage.getItem("theme") || "system");
   useEffect(applyTheme, [theme]);
   return (

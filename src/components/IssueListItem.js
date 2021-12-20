@@ -54,7 +54,7 @@ function IssueListItem({title, labels, author, opened, type,
               )}
               <div className="avatar-stack">
                 {participants && participants.nodes.map((user, key) => (
-                  <img className="avatar" key={key} src={user.avatarUrl} title={user.login} />
+                  <img className="avatar" key={key} src={user.avatarUrl} title={user.login} alt={`Avatar for ${user.login}`} />
                 ))}
                 {
                   participants &&

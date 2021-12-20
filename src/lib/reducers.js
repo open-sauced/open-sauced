@@ -24,7 +24,7 @@ export function usePersistentStateReducer(bucket, reducer) {
     action => {
       return setState(reducer(state, action));
     },
-    [reducer, state],
+    [reducer, state, setState],
   );
 
   return [state, dispatch];

@@ -5,9 +5,9 @@ WORKDIR /app
 COPY package.json ./
 COPY npm-shrinkwrap.json ./
 COPY .npmrc ./
-COPY .babelrc ./
-COPY .eslintrc.js ./
+COPY .*.js ./
 
+RUN npm install --global npm@latest
 RUN npm ci
 
 COPY config ./config

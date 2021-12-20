@@ -5,9 +5,11 @@ on:
     types:
       - created
       - edited
+  workflow_call:
 
 jobs:
-  one:
+  take-issue:
+    name: Take issue
     runs-on: ubuntu-latest
     steps:
       - name: take an issue

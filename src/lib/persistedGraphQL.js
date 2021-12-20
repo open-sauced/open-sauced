@@ -25,12 +25,12 @@ function makeFetch(doc_id, requiredVariables = [], operationName = false) {
     if (operationName) body.operationName = operationName;
     // Validate required variables by presence
     if (requiredVariables.length > 0) {
-      if (!variables || variables === undefined) throw "No required variables provided for persisted fetch";
+      if (!variables) throw Error("No required variables provided for persisted fetch");
       const missing = [];
-      for (name of requiredVariables) {
+      for (let name of requiredVariables) {
         if (!variables.hasOwnProperty(name)) missing.push(name);
       }
-      if (missing.length > 0) throw `Missing required variables: ${missing.join(", ")}.`;
+      if (missing.length > 0) throw Error(`Missing required variables: ${missing.join(", ")}.`);
     }
     if (variables) body.variables = variables;
     const options = {

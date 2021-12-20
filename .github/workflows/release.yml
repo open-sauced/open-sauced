@@ -60,19 +60,11 @@ jobs:
         with:
           node-version: 16
 
-      - name: "🔧 setup cache"
-        uses: actions/cache@v2
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/npm-shrinkwrap.json', '**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
-
       - name: "🔧 install npm@latest"
         run: npm i -g npm@latest
 
       - name: "📦 install dependencies"
-        run: npm ci
+        uses: bahmutov/npm-install@v1
 
       - name: "📊 repository visualizer"
         id: diagram
@@ -81,6 +73,7 @@ jobs:
           excluded_paths: "node_modules,build,.storybook,.netlify,.github,npm-shrinkwrap.json"
           output_file: "public/diagram.svg"
           should_push: false
+          root_path: "src/"
           artifact_name: "diagram"
 
       - name: "🚀 static app"
@@ -122,7 +115,13 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: build
-          path: /tmp/build
+          path: build
+
+      - name: "📂 download diagram artifacts"
+        uses: actions/download-artifact@v2
+        with:
+          name: diagram
+          path: .
 
       - name: "🚀 release"
         id: semantic-release
@@ -142,3 +141,4 @@ jobs:
           name: |
             build
             docker
+            diagram

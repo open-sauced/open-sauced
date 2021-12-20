@@ -26,7 +26,7 @@ function Contributions({repoName, owner, viewer}) {
       .catch(e => {
         console.log(e);
       });
-  }, []);
+  }, [owner, repoName, viewer]);
 
   return (
     owner && (

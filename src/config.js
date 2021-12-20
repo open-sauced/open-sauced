@@ -24,4 +24,10 @@ const fetchOneGraph = (operationsDoc, operationName, variables) => {
   ).then(res => res.json());
 };
 
-export default {auth: auth, appId: APP_ID, fetchOneGraph: fetchOneGraph};
+const returnOneGraph = {
+    auth,
+    appId: APP_ID,
+    fetchOneGraph,
+};
+
+export default returnOneGraph;
