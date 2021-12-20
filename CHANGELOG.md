@@ -5,6 +5,18 @@
 
 > All notable changes to this project will be documented in this file
 
+## [0.41.0](https://github.com/open-sauced/open-sauced/compare/v0.40.2...v0.41.0) (2021-12-20)
+
+
+### 🍕 Features
+
+* update create-react-app base to 5 and correct tooling issues ([#1342](https://github.com/open-sauced/open-sauced/issues/1342)) ([d30044c](https://github.com/open-sauced/open-sauced/commit/d30044c9f4ab81ea0426fe647c3ae819cddfa313))
+
+
+### 🐛 Bug Fixes
+
+* update create-react-app base to 5 and correct tooling issues ([#1344](https://github.com/open-sauced/open-sauced/issues/1344)) ([0fee440](https://github.com/open-sauced/open-sauced/commit/0fee44061eca31f9f1b2bd3dce96f2fcaa68f84e)), closes [#1131](https://github.com/open-sauced/open-sauced/issues/1131) [#1343](https://github.com/open-sauced/open-sauced/issues/1343)
+
 ### [0.40.2](https://github.com/open-sauced/open-sauced/compare/v0.40.1...v0.40.2) (2021-12-15)
 
 
