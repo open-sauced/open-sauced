@@ -22,7 +22,7 @@
     "push": "npx @open-sauced/conventional-commit",
     "start": "npx vite",
     "build": "npx vite build",
-    "serve": "npx vite preview",
+    "serve": "npx vite preview --port=3000",
     "build:optimize": "npx svgo src/**/*.svg",
     "test": "node scripts/test.js",
     "coverage": "npm test -- --coverage --watchAll=false",
