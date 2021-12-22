@@ -10,6 +10,7 @@ module.exports = {
     "jest-dom"
   ],
   "ignorePatterns": [
+    "__mocks__",
     "build",
     "public",
     "stories",

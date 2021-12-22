@@ -32,9 +32,9 @@ module.exports = {
   ],
   "testEnvironment": "jsdom",
   "transform": {
-    "^.+\\.(js|jsx|mjs|cjs|ts|tsx)$": "<rootDir>/config/jest/babelTransform.js",
-    "^.+\\.css$": "<rootDir>/config/jest/cssTransform.js",
-    "^(?!.*\\.(js|jsx|mjs|cjs|ts|tsx|css|json)$)": "<rootDir>/config/jest/fileTransform.js"
+    "^.+\\.(js|jsx|mjs|cjs|ts|tsx)$": "<rootDir>/__mocks__/babelTransform.js",
+    "^.+\\.css$": "<rootDir>/__mocks__/cssTransform.js",
+    "^(?!.*\\.(js|jsx|mjs|cjs|ts|tsx|css|json)$)": "<rootDir>/__mocks__/fileTransform.js"
   },
   "transformIgnorePatterns": [
     "[/\\\\]node_modules[/\\\\].+\\.(js|jsx|mjs|cjs|ts|tsx)$",
@@ -44,7 +44,7 @@ module.exports = {
   "moduleNameMapper": {
     "^react-native$": "react-native-web",
     "^.+\\.module\\.(css|sass|scss)$": "identity-obj-proxy",
-    "react-markdown": "<rootDir>/config/jest/reactMarkdownTransform.js"
+    "react-markdown": "<rootDir>/__mocks__/reactMarkdownTransform.js"
   },
   "moduleFileExtensions": [
     "web.js",
