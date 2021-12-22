@@ -1,9 +1,14 @@
+image:
+  file: .gitpod.Dockerfile
+
 tasks:
   - init: npm ci
     command: npm start
+
 ports:
   - port: 3000
-    onOpen: open-browser
+    onOpen: open-preview
+
 github:
   prebuilds:
     # enable for the default branch (defaults to true)
