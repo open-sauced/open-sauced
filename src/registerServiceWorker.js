@@ -29,7 +29,7 @@ export default function register() {
     }
 
     window.addEventListener("load", () => {
-      const swUrl = `${import.meta.env.BASE_URL}/service-worker.js`;
+      const swUrl = `${import.meta.env.BASE_URL}service-worker.js`;
 
       if (!isLocalhost) {
         // Is not local host. Just register service worker
