@@ -2,6 +2,7 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import eslintPlugin from "@nabla/vite-plugin-eslint";
+import ViteLegacy from '@vitejs/plugin-legacy'
 import ViteVisualizer from "rollup-plugin-visualizer";
 
 
@@ -31,6 +32,15 @@ export default defineConfig(({ mode }) => {
   // broken until we figure out how to automate it w/wo workbox
   if (isProd) {
     // build.manifest = true;
+
+    plugins.push(
+      ViteLegacy({
+        targets: [
+          'defaults',
+          'not IE 11'
+        ]
+      })
+    )
   }
 
   if (isReport) {
