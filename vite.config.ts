@@ -32,7 +32,18 @@ export default defineConfig(({command, mode, ...rest }) => {
       // Exclude storybook stories
       exclude: /\.stories\.(t|j)sx?$/,
       // Only .jsx files
-      include: "**/*.jsx"
+      include: "**/*.jsx",
+      babel: {
+        plugins: [
+          [
+            'babel-plugin-styled-components',
+            {
+              displayName: true,
+              fileName: false
+            }
+          ]
+        ]
+      }
     }),
     ViteHtml({
       minify: isBuild,
