@@ -68,6 +68,7 @@
         "jest-axe": "^5.0.1",
         "jest-watch-typeahead": "^1.0.0",
         "react-app-polyfill": "^3.0.0",
+        "rollup-plugin-visualizer": "^5.5.2",
         "storybook-dark-mode": "^1.0.8",
         "vite": "^2.7.5",
         "web-vitals": "^2.1.2"
@@ -31672,6 +31673,36 @@
       },
       "optionalDependencies": {
         "fsevents": "~2.3.2"
+      }
+    },
+    "node_modules/rollup-plugin-visualizer": {
+      "version": "5.5.2",
+      "resolved": "https://registry.npmjs.org/rollup-plugin-visualizer/-/rollup-plugin-visualizer-5.5.2.tgz",
+      "integrity": "sha512-sh+P9KhuWTzeStyRA5yNZpoEFGuj5Ph34JLMa9+muhU8CneFf9L0XE4fmAwAojJLWp//uLUEyytBPSCdZEg5AA==",
+      "dev": true,
+      "dependencies": {
+        "nanoid": "^3.1.22",
+        "open": "^7.4.2",
+        "source-map": "^0.7.3",
+        "yargs": "^16.2.0"
+      },
+      "bin": {
+        "rollup-plugin-visualizer": "dist/bin/cli.js"
+      },
+      "engines": {
+        "node": ">=10.16"
+      },
+      "peerDependencies": {
+        "rollup": "^2.0.0"
+      }
+    },
+    "node_modules/rollup-plugin-visualizer/node_modules/source-map": {
+      "version": "0.7.3",
+      "resolved": "https://registry.npmjs.org/source-map/-/source-map-0.7.3.tgz",
+      "integrity": "sha512-CkCj6giN3S+n9qrYiBTX5gystlENnRW5jZeNLHpe6aue+SrHcG5VYwujhW9s4dY31mEGsxBDrHR6oI69fTXsaQ==",
+      "dev": true,
+      "engines": {
+        "node": ">= 8"
       }
     },
     "node_modules/rope-sequence": {

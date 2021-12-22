@@ -22,8 +22,9 @@
     "push": "npx @open-sauced/conventional-commit",
     "start": "npx vite",
     "build": "npx vite build",
-    "serve": "npx vite preview --port=3000",
+    "serve": "npx vite preview",
     "build:optimize": "npx svgo src/**/*.svg",
+    "build:analyze": "npm run build -- --mode report",
     "test": "npx jest",
     "coverage": "npm test -- --coverage --watchAll=false",
     "storybook": "npx start-storybook -p 6006",
@@ -89,6 +90,7 @@
     "jest-axe": "^5.0.1",
     "jest-watch-typeahead": "^1.0.0",
     "react-app-polyfill": "^3.0.0",
+    "rollup-plugin-visualizer": "^5.5.2",
     "storybook-dark-mode": "^1.0.8",
     "vite": "^2.7.5",
     "web-vitals": "^2.1.2"
