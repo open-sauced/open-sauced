@@ -13,7 +13,7 @@
     "url": "git+ssh://git@github.com/open-sauced/open-sauced.git"
   },
   "engines": {
-    "node": ">=14",
+    "node": ">=14.16.0",
     "npm": ">=7"
   },
   "scripts": {
