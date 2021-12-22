@@ -1,10 +1,12 @@
 // vite.config.ts
-import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react";
-import eslintPlugin from "@nabla/vite-plugin-eslint";
-import ViteLegacy from '@vitejs/plugin-legacy'
-import ViteVisualizer from "rollup-plugin-visualizer";
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+import ViteEslint from '@nabla/vite-plugin-eslint'
 import ViteHtml from 'vite-plugin-html'
+import ViteLegacy from '@vitejs/plugin-legacy'
+import { VitePWA, VitePWAOptions } from 'vite-plugin-pwa'
+import ViteReplace from '@rollup/plugin-replace'
+import ViteVisualizer from 'rollup-plugin-visualizer'
 
 export default defineConfig(({command, mode, ...rest }) => {
   // figure out commands
@@ -27,7 +29,7 @@ export default defineConfig(({command, mode, ...rest }) => {
   };
 
   const plugins = [
-    eslintPlugin(),
+    ViteEslint(),
     react({
       // Exclude storybook stories
       exclude: /\.stories\.(t|j)sx?$/,
@@ -73,6 +75,52 @@ export default defineConfig(({command, mode, ...rest }) => {
       open: true,
       gzipSize: true
     })
+  );
+
+  const pwaOptions: Partial<VitePWAOptions> = {
+    includeAssets: [
+      'favicon.svg',
+      'favicon.ico',
+      'robots.txt',
+      'apple-touch-icon.png'
+    ],
+    manifest: {
+      name: 'Open Sauced',
+      short_name: 'Open Sauced',
+      description: 'Open Sauced',
+      theme_color: '#FFFFFF',
+      icons: [
+        {
+          src: 'android-chrome-192x192.png',
+          sizes: '192x192',
+          type: 'image/png',
+        },
+        {
+          src: 'android-chrome-512x512.png',
+          sizes: '512x512',
+          type: 'image/png',
+        },
+      ],
+    },
+    registerType: 'autoUpdate',
+    strategies: 'generateSW',
+    srcDir: 'src'
+  };
+  const replaceOptions = {
+    preventAssignment: true,
+    __DATE__: new Date().toISOString(),
+  }
+
+  const reload = process.env.RELOAD_SW === 'true'
+
+  if (reload) {
+    // @ts-ignore
+    replaceOptions.__RELOAD_SW__ = 'true'
+  }
+
+  plugins.push(
+    VitePWA(pwaOptions),
+    ViteReplace(replaceOptions),
   );
 
   return {
