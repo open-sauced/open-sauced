@@ -17,8 +17,6 @@
     "npm": ">=7"
   },
   "scripts": {
-    "preinstall": "npx @open-sauced/check-engines",
-    "prestart": "npx @open-sauced/check-engines",
     "push": "npx @open-sauced/conventional-commit",
     "start": "npx vite",
     "build": "npx vite build",
