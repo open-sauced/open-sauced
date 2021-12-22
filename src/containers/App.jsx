@@ -70,6 +70,10 @@ function App({handleLogIn, handleLogOut, user, isAdmin, isLoggedIn}) {
   });
   const [theme, setTheme] = useState(localStorage.getItem("theme") || "system");
   useEffect(applyTheme, [theme]);
+
+  // replaced dyanmicaly
+  const date = '__DATE__'
+
   return (
     <Router>
       <ThemeContext.Provider value={[theme, setTheme]}>
@@ -95,7 +99,7 @@ function App({handleLogIn, handleLogOut, user, isAdmin, isLoggedIn}) {
             )}/>
             <Route component={NoMatch} />
           </Switch>
-          {!user && <Footer />}
+          {!user && <Footer date={date} />}
           {user && <DashboardFooter />}
         </LocaleContext.Provider>
       </ThemeContext.Provider>

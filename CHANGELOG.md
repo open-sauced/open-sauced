@@ -5,6 +5,13 @@
 
 > All notable changes to this project will be documented in this file
 
+### [0.41.1](https://github.com/open-sauced/open-sauced/compare/v0.41.0...v0.41.1) (2021-12-20)
+
+
+### 🤖 Build System
+
+* attempt to unblock releases ([#1345](https://github.com/open-sauced/open-sauced/issues/1345)) ([8dc6ab6](https://github.com/open-sauced/open-sauced/commit/8dc6ab64d58ffec4bd2cf1e1c34668b5ee6d52ee))
+
 ## [0.41.0](https://github.com/open-sauced/open-sauced/compare/v0.40.2...v0.41.0) (2021-12-20)
 
 

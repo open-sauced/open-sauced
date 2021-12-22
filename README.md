@@ -70,8 +70,15 @@ npx -y @open-sauced/conventional-commit
 
 ## 🖥️ Local development
 
-```sh
+To install the application:
+
+```shell
 npm ci
+```
+
+To start a local copy of the app on port `3000`:
+
+```shell
 npm start
 ```
 
@@ -80,11 +87,7 @@ npm start
 For running the test suite, use the following command. Since the tests run in watch mode by default, some users may encounter errors about too many files being open. In this case, it may be beneficial to [install watchman](https://facebook.github.io/watchman/docs/install.html).
 
 ```shell
-# the tests will run in watch mode by default
 npm test
-
-# to clean snapshots
-npm run clean
 ```
 
 You can request a coverage report by running the following command:
@@ -92,6 +95,23 @@ You can request a coverage report by running the following command:
 ```shell
 npm run coverage
 ```
+
+### 🎨 Code linting
+
+To check the code and styles quality, use the following command:
+
+```shell
+npm run lint
+```
+
+This will also display during development, but not break on errors.
+
+To fix the linting errors, use the following command:
+
+```shell
+npm run format
+```
+
 
 ### 🚀 Production deployment
 
@@ -104,11 +124,7 @@ npm run build
 You can analyze the build by running the following command:
 
 ```shell
-# to check webpack build performance 
-npm run build:profile
-
-# to check static bundle size
-npm run webpack:analyze
+npm run build:analyze
 ```
 
 We also have a script for updating the SVG files used in the project, you only need to run this if you add new assets:
