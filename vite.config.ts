@@ -1,9 +1,16 @@
 // vite.config.ts
 import { defineConfig } from 'vite'
-import reactRefresh from '@vitejs/plugin-react-refresh'
+import react from '@vitejs/plugin-react'
 
 export default defineConfig({
-  plugins: [reactRefresh()],
+  plugins: [
+    react({
+      // Exclude storybook stories
+      exclude: /\.stories\.(t|j)sx?$/,
+      // Only .jsx files
+      include: '**/*.jsx',
+    })
+  ],
   // mode: "production",
   build: {
     outDir: "build"
