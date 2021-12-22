@@ -93,7 +93,7 @@
     "react-app-polyfill": "^3.0.0",
     "rollup-plugin-visualizer": "^5.5.2",
     "storybook-dark-mode": "^1.0.8",
-    "vite": "^2.7.5",
+    "vite": "^2.7.6",
     "vite-plugin-html": "^2.1.1",
     "web-vitals": "^2.1.2"
   },
