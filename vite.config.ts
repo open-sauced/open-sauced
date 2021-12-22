@@ -19,6 +19,7 @@ export default defineConfig(({command, mode, ...rest }) => {
 
   // figure out custom build options
   const isLegacy = process.env.VITE_LEGACY || false;
+  const isGitpodBuild = process.env.GITPOD_WORKSPACE_URL || false;
 
   const build = {
     outDir: "build",
@@ -130,7 +131,7 @@ export default defineConfig(({command, mode, ...rest }) => {
     publicDir: "public",
     server: {
       port: 3000,
-      open: true,
+      open: !isGitpodBuild,
     },
     build,
     preview: {
