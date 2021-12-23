@@ -1,6 +1,6 @@
 {
-  "installDependencies": true,
-  "startCommand": "npm start",
+  "installDependencies": false,
+  "startCommand": "turbo install && vite --dev",
   "env": {
     "GITPOD_WORKSPACE_URL": "stackblitz.dev",
   }
