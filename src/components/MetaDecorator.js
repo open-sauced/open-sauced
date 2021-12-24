@@ -4,7 +4,7 @@ import { Helmet, HelmetProvider } from 'react-helmet-async';
 function MetaDecorator({ title, description }) {
     if (!title || !description) {
         title = 'Open Sauced';
-        description = 'The path to your next open-source contribution. Prueba';
+        description = 'The path to your next open-source contribution.';
     }
     return (
         <HelmetProvider>
