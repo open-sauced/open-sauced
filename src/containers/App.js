@@ -13,6 +13,7 @@ import LocaleContext from "../Context";
 import ThemeContext from "../ThemeContext";
 import auth from "../hoc/AuthHOC";
 import {ohno} from "../images";
+import MetaDecorator from "../components/MetaDecorator";
 
 function NoMatch() {
   const history = useHistory();
@@ -72,6 +73,7 @@ function App({handleLogIn, handleLogOut, user, isAdmin, isLoggedIn}) {
   useEffect(applyTheme, [theme]);
   return (
     <Router>
+      <MetaDecorator/>
       <ThemeContext.Provider value={[theme, setTheme]}>
         <Nav
           handleLogIn={handleLogIn}
