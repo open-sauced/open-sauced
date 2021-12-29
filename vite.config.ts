@@ -2,6 +2,7 @@ import { defineConfig } from 'vite'
 import ViteReact from '@vitejs/plugin-react'
 import ViteEslint from '@nabla/vite-plugin-eslint'
 import ViteHtml from 'vite-plugin-html'
+import ViteInspect from 'vite-plugin-inspect'
 import ViteLegacy from '@vitejs/plugin-legacy'
 import { VitePWA, VitePWAOptions } from 'vite-plugin-pwa'
 import ViteReplace from '@rollup/plugin-replace'
@@ -51,9 +52,9 @@ export default defineConfig(({command, mode}: ConfigEnv): UserConfig => {
     }
   };
 
-  config.plugins.push(ViteEslint());
-
   config.plugins.push(
+    ViteEslint(),
+    ViteInspect(),
     ViteReact({
       // fastRefresh: !(isCodeSandboxBuild || process.env.NODE_ENV === 'test'),
       // Exclude storybook stories
@@ -71,10 +72,7 @@ export default defineConfig(({command, mode}: ConfigEnv): UserConfig => {
           ]
         ]
       }
-    })
-  );
-
-  config.plugins.push(
+    }),
     ViteHtml({
       minify: isProd && isBuild,
       inject: {

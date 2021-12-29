@@ -193,6 +193,10 @@ We also have a script for updating the SVG files used in the project, you only n
 npm run build:optimize
 ```
 
+### 🚧 Development debugging
+
+Thanks to [antfu/vite-plugin-inpesct](https://github.com/antfu/vite-plugin-inspect) we can always inspect the bundles in development by navigating to [localhost:3000/__inspect/](http://localhost:3000/__inspect/) in your browser.
+
 ### 📙 Storybook
 
 Storybook is being leveraged to mock out visual React components. The latest version of the design system can be found at this [URL](https://sauced-components.netlify.app/).

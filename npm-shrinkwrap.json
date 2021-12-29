@@ -79,6 +79,7 @@
         "storybook-dark-mode": "^1.0.8",
         "vite": "^2.7.6",
         "vite-plugin-html": "^2.1.1",
+        "vite-plugin-inspect": "^0.3.11",
         "vite-plugin-pwa": "^0.11.12",
         "web-vitals": "^2.1.2"
       },
@@ -4227,6 +4228,12 @@
       "engines": {
         "node": ">= 8"
       }
+    },
+    "node_modules/@polka/url": {
+      "version": "1.0.0-next.21",
+      "resolved": "https://registry.npmjs.org/@polka/url/-/url-1.0.0-next.21.tgz",
+      "integrity": "sha512-a5Sab1C4/icpTZVzZc5Ghpz88yQtGOyNqYXcZgOssB2uuAr+wF/MvN6bgtW32q7HHrvBki+BsZ0OuNv6EV3K9g==",
+      "dev": true
     },
     "node_modules/@popperjs/core": {
       "version": "2.11.0",
@@ -22394,6 +22401,15 @@
         "node": ">=4"
       }
     },
+    "node_modules/mrmime": {
+      "version": "1.0.0",
+      "resolved": "https://registry.npmjs.org/mrmime/-/mrmime-1.0.0.tgz",
+      "integrity": "sha512-a70zx7zFfVO7XpnQ2IX1Myh9yY4UYvfld/dikWRnsXxbyvMcfz+u6UfgNAtH+k2QqtJuzVpv6eLTx1G2+WKZbQ==",
+      "dev": true,
+      "engines": {
+        "node": ">=10"
+      }
+    },
     "node_modules/ms": {
       "version": "2.1.2",
       "resolved": "https://registry.npmjs.org/ms/-/ms-2.1.2.tgz",
@@ -27855,6 +27871,29 @@
       "integrity": "sha512-eVRqCvVlZbuw3GrM63ovNSNAeA1K16kaR/LRY/92w0zxQ5/1YzwblUX652i4Xs9RwAGjW9d9y6X88t8OaAJfWQ==",
       "license": "MIT"
     },
+    "node_modules/sirv": {
+      "version": "1.0.19",
+      "resolved": "https://registry.npmjs.org/sirv/-/sirv-1.0.19.tgz",
+      "integrity": "sha512-JuLThK3TnZG1TAKDwNIqNq6QA2afLOCcm+iE8D1Kj3GA40pSPsxQjjJl0J8X3tsR7T+CP1GavpzLwYkgVLWrZQ==",
+      "dev": true,
+      "dependencies": {
+        "@polka/url": "^1.0.0-next.20",
+        "mrmime": "^1.0.0",
+        "totalist": "^1.0.0"
+      },
+      "engines": {
+        "node": ">= 10"
+      }
+    },
+    "node_modules/sirv/node_modules/totalist": {
+      "version": "1.1.0",
+      "resolved": "https://registry.npmjs.org/totalist/-/totalist-1.1.0.tgz",
+      "integrity": "sha512-gduQwd1rOdDMGxFG1gEvhV88Oirdo2p+KjoYFU7k2g+i7n6AFFbDQ5kMPUsW0pNbfQsB/cwXvT1i4Bue0s9g5g==",
+      "dev": true,
+      "engines": {
+        "node": ">=6"
+      }
+    },
     "node_modules/sisteransi": {
       "version": "1.0.5",
       "resolved": "https://registry.npmjs.org/sisteransi/-/sisteransi-1.0.5.tgz",
@@ -29800,6 +29839,12 @@
         "node": ">=4.2.0"
       }
     },
+    "node_modules/ufo": {
+      "version": "0.7.9",
+      "resolved": "https://registry.npmjs.org/ufo/-/ufo-0.7.9.tgz",
+      "integrity": "sha512-6t9LrLk3FhqTS+GW3IqlITtfRB5JAVr5MMNjpBECfK827W+Vh5Ilw/LhTcHWrt6b3hkeBvcbjx4Ti7QVFzmcww==",
+      "dev": true
+    },
     "node_modules/uglify-js": {
       "version": "3.14.5",
       "resolved": "https://registry.npmjs.org/uglify-js/-/uglify-js-3.14.5.tgz",
@@ -30553,6 +30598,23 @@
       },
       "peerDependencies": {
         "vite": ">=2.0.0"
+      }
+    },
+    "node_modules/vite-plugin-inspect": {
+      "version": "0.3.11",
+      "resolved": "https://registry.npmjs.org/vite-plugin-inspect/-/vite-plugin-inspect-0.3.11.tgz",
+      "integrity": "sha512-YsaV4bhJ++EULZamWVudMsq0VTugR/0slgbSj/A9JI9KmsGsXBCN4zBx0ptd0TkKrRniLbqO7iQqdZaybuLGvQ==",
+      "dev": true,
+      "dependencies": {
+        "debug": "^4.3.2",
+        "sirv": "^1.0.17",
+        "ufo": "^0.7.9"
+      },
+      "funding": {
+        "url": "https://github.com/sponsors/antfu"
+      },
+      "peerDependencies": {
+        "vite": "^2.0.0"
       }
     },
     "node_modules/vite-plugin-pwa": {
