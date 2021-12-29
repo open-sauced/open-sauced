@@ -1,0 +1,22 @@
+{
+  "install": {
+    "include": [
+      "^package\\.json$",
+      "^\\.env$"
+    ],
+    "exclude": []
+  },
+  "restart": {
+    "include": [
+      "^watch\\.json$"
+    ],
+    "exclude": [
+      "^build/",
+      "^public/",
+      "^src/",
+      "^stories/"
+    ]
+  },
+  "throttle": 100,
+  "noSavedEvents": true
+}
