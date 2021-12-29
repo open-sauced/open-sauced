@@ -139,7 +139,7 @@ npm test
 You can request a coverage report by running the following command:
 
 ```shell
-npm run coverage
+npm run test:coverage
 ```
 
 ### 📦 Docker builds
