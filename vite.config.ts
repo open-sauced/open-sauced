@@ -22,6 +22,7 @@ export default defineConfig(({command, mode}: ConfigEnv): UserConfig => {
   const isReport = mode === "report";
 
   // figure out custom build options
+  const isTest = process.env.NODE_ENV === 'test';
   const isLegacy = process.env.VITE_LEGACY || false;
   const isGitpodBuild = process.env.GITPOD_WORKSPACE_URL || false;
   const isReplitBuild = process.env.REPL_SLUG || false;
@@ -104,6 +105,7 @@ export default defineConfig(({command, mode}: ConfigEnv): UserConfig => {
   );
 
   const pwaOptions: Partial<VitePWAOptions> = {
+    disable: isTest,
     includeAssets: [
       'favicon.svg',
       'favicon.ico',
@@ -130,7 +132,8 @@ export default defineConfig(({command, mode}: ConfigEnv): UserConfig => {
     },
     registerType: 'autoUpdate',
     strategies: 'generateSW',
-    srcDir: 'src'
+    srcDir: 'src',
+    injectRegister: 'inline'
   };
   const replaceOptions = {
     preventAssignment: true,
