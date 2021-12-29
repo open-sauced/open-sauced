@@ -1,6 +1,6 @@
 // vite.config.ts
 import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import ViteReact from '@vitejs/plugin-react'
 import ViteEslint from '@nabla/vite-plugin-eslint'
 import ViteHtml from 'vite-plugin-html'
 import ViteLegacy from '@vitejs/plugin-legacy'
@@ -31,7 +31,7 @@ export default defineConfig(({command, mode, ...rest }) => {
 
   const plugins = [
     ViteEslint(),
-    react({
+    ViteReact({
       // Exclude storybook stories
       exclude: /\.stories\.(t|j)sx?$/,
       // Only .jsx files

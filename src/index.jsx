@@ -11,7 +11,7 @@ import {ApolloProvider, InMemoryCache} from "@apollo/client";
 import api from "./lib/apiGraphQL";
 import {getAppVersion} from "./lib/appVersion";
 import {validateToken} from "./lib/validateToken";
-import { registerSW } from 'virtual:pwa-register'
+import { registerSW } from 'virtual:pwa-register';
 
 const apolloClient = new OneGraphApolloClient({
   oneGraphAuth: Config.auth,
