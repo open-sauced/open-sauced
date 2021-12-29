@@ -142,6 +142,21 @@ You can request a coverage report by running the following command:
 npm run coverage
 ```
 
+### 📦 Docker builds
+
+A development preview can also be run from docker:
+
+```shell
+docker build -t open-sauced-dev .
+docker run -p 8080:80 open-sauced-dev
+```
+
+Alternatively you can pull the production container and skip all builds: 
+
+```shell
+docker run -dit -p 8080:80 ghcr.io/open-sauced/open-sauced
+```
+
 ### 🎨 Code linting
 
 To check the code and styles quality, use the following command:

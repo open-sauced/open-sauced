@@ -5,13 +5,14 @@ WORKDIR /app
 COPY package.json ./
 COPY npm-shrinkwrap.json ./
 COPY .npmrc ./
-COPY .*.js ./
 
 RUN npm install --global npm@latest
 RUN npm ci
 
-COPY config ./config
-COPY scripts ./scripts
+COPY .*.js ./
+COPY *config.?js ./
+COPY vite.config.ts ./
+COPY index.html ./
 COPY public ./public
 COPY src ./src
 
