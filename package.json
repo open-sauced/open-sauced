@@ -27,7 +27,8 @@
     "coverage": "npm test -- --coverage --watchAll=false",
     "storybook": "npx start-storybook -p 6006",
     "lint": "npx eslint . --report-unused-disable-directives",
-    "format": "npm run lint -- --fix"
+    "format": "npm run lint -- --fix",
+    "sandbox": "npm run build && npm run serve"
   },
   "dependencies": {
     "@apollo/client": "^3.5.6",

@@ -5,7 +5,7 @@
   "view": "browser",
   "container": {
     "port": 3000,
-    "startScript": "npm run build && npm run serve",
+    "startScript": "sandbox",
     "node": "16"
   }
 }
