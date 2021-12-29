@@ -6,6 +6,7 @@ import ViteInspect from 'vite-plugin-inspect'
 import ViteLegacy from '@vitejs/plugin-legacy'
 import { VitePWA, VitePWAOptions } from 'vite-plugin-pwa'
 import ViteReplace from '@rollup/plugin-replace'
+import ViteTimeReporter from 'vite-plugin-time-reporter'
 import ViteVisualizer from 'rollup-plugin-visualizer'
 import { sync } from 'execa'
 import type { ConfigEnv, UserConfig } from 'vite'
@@ -34,6 +35,7 @@ export default defineConfig(({command, mode}: ConfigEnv): UserConfig => {
     mode,
     plugins: [],
     publicDir: "public",
+    clearScreen: true,
     server: {
       host: true,
       port: 3000,
@@ -53,6 +55,7 @@ export default defineConfig(({command, mode}: ConfigEnv): UserConfig => {
   };
 
   config.plugins.push(
+    ViteTimeReporter(),
     ViteEslint(),
     ViteInspect(),
     ViteReact({

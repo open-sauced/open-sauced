@@ -81,6 +81,7 @@
         "vite-plugin-html": "^2.1.1",
         "vite-plugin-inspect": "^0.3.11",
         "vite-plugin-pwa": "^0.11.12",
+        "vite-plugin-time-reporter": "^1.0.0",
         "web-vitals": "^2.1.2"
       },
       "engines": {
@@ -30637,6 +30638,15 @@
         "vite": "^2.0.0",
         "workbox-build": "^6.4.0",
         "workbox-window": "^6.4.0"
+      }
+    },
+    "node_modules/vite-plugin-time-reporter": {
+      "version": "1.0.0",
+      "resolved": "https://registry.npmjs.org/vite-plugin-time-reporter/-/vite-plugin-time-reporter-1.0.0.tgz",
+      "integrity": "sha512-HXri5P9qGj6Kcos23ljA7kSeTVL3gxHkZocCsDWQmHPNNtT6n8GKO+pq9LD96tPrJxnTSqcOQX8mnIIyVna49w==",
+      "dev": true,
+      "peerDependencies": {
+        "vite": "^2.0.0"
       }
     },
     "node_modules/vite/node_modules/esbuild": {
