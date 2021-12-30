@@ -105,7 +105,7 @@ export default defineConfig(({command, mode}: ConfigEnv): UserConfig => {
   );
 
   const pwaOptions: Partial<VitePWAOptions> = {
-    disable: isTest,
+    disable: !isProd,
     includeAssets: [
       'favicon.svg',
       'favicon.ico',
@@ -131,21 +131,19 @@ export default defineConfig(({command, mode}: ConfigEnv): UserConfig => {
       ],
     },
     registerType: 'autoUpdate',
-    strategies: 'generateSW',
+    strategies: 'injectManifest',
     srcDir: 'src',
-    injectRegister: 'inline'
+    filename: 'claims-sw.ts',
+    injectManifest: {
+      maximumFileSizeToCacheInBytes: 5 * 1024 * 1024
+    }
   };
+
   const replaceOptions = {
     preventAssignment: true,
     __DATE__: new Date().toISOString(),
+    __RELOAD_SW__: true,
   };
-
-  const reload = process.env.RELOAD_SW === 'true';
-
-  if (reload) {
-    // @ts-ignore
-    replaceOptions.__RELOAD_SW__ = 'true'
-  }
 
   config.plugins.push(
     VitePWA(pwaOptions),
