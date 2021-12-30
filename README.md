@@ -187,10 +187,18 @@ You can analyze the build by running the following command:
 npm run build:analyze
 ```
 
-We also have a script for updating the SVG files used in the project, you only need to run this if you add new assets:
+### 🎭 Offline asset optimization
+
+We also have a script for updating `.svg` files used in the project, you only need to run this if you add new assets:
 
 ```shell
-npm run build:optimize
+npm run build:svgo
+```
+
+And one for `.png` and `.jpg` files:
+
+```shell
+npm run build:squoosh
 ```
 
 ### 🚧 Development debugging
