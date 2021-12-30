@@ -1,14 +1,18 @@
-// vite.config.ts
 import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import ViteReact from '@vitejs/plugin-react'
 import ViteEslint from '@nabla/vite-plugin-eslint'
 import ViteHtml from 'vite-plugin-html'
+import ViteInspect from 'vite-plugin-inspect'
 import ViteLegacy from '@vitejs/plugin-legacy'
 import { VitePWA, VitePWAOptions } from 'vite-plugin-pwa'
 import ViteReplace from '@rollup/plugin-replace'
+import ViteTimeReporter from 'vite-plugin-time-reporter'
 import ViteVisualizer from 'rollup-plugin-visualizer'
+import { sync } from 'execa'
+import type { ConfigEnv, UserConfig } from 'vite'
 
-export default defineConfig(({command, mode, ...rest }) => {
+// https://vitejs.dev/config/
+export default defineConfig(({command, mode}: ConfigEnv): UserConfig => {
   // figure out commands
   const isBuild = command === 'build';
 
@@ -18,19 +22,45 @@ export default defineConfig(({command, mode, ...rest }) => {
   const isReport = mode === "report";
 
   // figure out custom build options
+  const isTest = process.env.NODE_ENV === 'test';
   const isLegacy = process.env.VITE_LEGACY || false;
+  const isGitpodBuild = process.env.GITPOD_WORKSPACE_URL || false;
+  const isReplitBuild = process.env.REPL_SLUG || false;
+  const isStackblitzBuild = process.env.STACKBLITZ_ENV || false;
+  const isCodeSandboxBuild = process.env.CODESANDBOX_SSE || false;
+  const isGlitchBuild = process.env.PROJECT_REMIX_CHAIN || false;
+  const isCloudIdeBuild = isGitpodBuild || isReplitBuild || isStackblitzBuild || isCodeSandboxBuild || isGlitchBuild;
 
-  const build = {
-    outDir: "build",
-    assetsDir: "static",
-    sourcemap: !isDev,
-    rollupOptions: {},
-    manifest: false,
+  const config:UserConfig = {
+    base: "/",
+    mode,
+    plugins: [],
+    publicDir: "public",
+    clearScreen: true,
+    server: {
+      host: true,
+      port: 3000,
+      strictPort: true,
+      open: !isCloudIdeBuild,
+    },
+    build: {
+      outDir: "build",
+      assetsDir: "static",
+      sourcemap: !isDev,
+      rollupOptions: {},
+      manifest: false,
+    },
+    preview: {
+      port: 3000,
+    }
   };
 
-  const plugins = [
+  config.plugins.push(
+    ViteTimeReporter(),
     ViteEslint(),
-    react({
+    ViteInspect(),
+    ViteReact({
+      // fastRefresh: !(isCodeSandboxBuild || process.env.NODE_ENV === 'test'),
       // Exclude storybook stories
       exclude: /\.stories\.(t|j)sx?$/,
       // Only .jsx files
@@ -48,28 +78,25 @@ export default defineConfig(({command, mode, ...rest }) => {
       }
     }),
     ViteHtml({
-      minify: isBuild,
+      minify: isProd && isBuild,
       inject: {
         data: {
           title: `Open Sauced v${process.env.npm_package_version}`,
         },
       },
     })
-  ];
+  );
 
-  // broken until we figure out how to automate it w/wo workbox
-  // isProd && (build.manifest = true);
-
-  isBuild && isLegacy && plugins.push(
+  isBuild && isLegacy && config.plugins.push(
     ViteLegacy({
       targets: [
         'defaults',
         'not IE 11'
       ]
     })
-  )
+  );
 
-  isReport && plugins.push(
+  isReport && config.plugins.push(
     ViteVisualizer({
       filename: "./build/bundle.html",
       open: true,
@@ -78,6 +105,7 @@ export default defineConfig(({command, mode, ...rest }) => {
   );
 
   const pwaOptions: Partial<VitePWAOptions> = {
+    disable: isTest,
     includeAssets: [
       'favicon.svg',
       'favicon.ico',
@@ -104,37 +132,52 @@ export default defineConfig(({command, mode, ...rest }) => {
     },
     registerType: 'autoUpdate',
     strategies: 'generateSW',
-    srcDir: 'src'
+    srcDir: 'src',
+    injectRegister: 'inline'
   };
   const replaceOptions = {
     preventAssignment: true,
     __DATE__: new Date().toISOString(),
-  }
+  };
 
-  const reload = process.env.RELOAD_SW === 'true'
+  const reload = process.env.RELOAD_SW === 'true';
 
   if (reload) {
     // @ts-ignore
     replaceOptions.__RELOAD_SW__ = 'true'
   }
 
-  plugins.push(
+  config.plugins.push(
     VitePWA(pwaOptions),
     ViteReplace(replaceOptions),
   );
 
-  return {
-    base: "/",
-    mode,
-    plugins,
-    publicDir: "public",
-    server: {
-      port: 3000,
-      open: true,
-    },
-    build,
-    preview: {
-      port: 3000,
-    },
-  };
+  // cloud container shared and specific build options
+  isCloudIdeBuild && (config.server.hmr = {
+    port: 443,
+  });
+
+  if (isGitpodBuild) {
+    config.base = process.env.WORKSPACE_URL;
+  }
+
+  if (isReplitBuild) {
+    config.base = `https://${process.env.REPL_SLUG}-${process.env.REPL_OWNER}.repl.co`;
+  }
+
+  if (isStackblitzBuild) {
+    const { stdout } = sync("hostname");
+    config.base = `https://${stdout}--${config.server.port}.local.webcontainer.io/`;
+  }
+
+  if (isGlitchBuild) {
+    config.base = `https://${process.env.PROJECT_DOMAIN}.glitch.me/`;
+  }
+
+  if (isCodeSandboxBuild) {
+    const [type, sandbox, id] = process.env.HOSTNAME.split('-');
+    config.base = `https://${id}.${type}.code${sandbox}.io/`;
+  }
+
+  return config;
 });
