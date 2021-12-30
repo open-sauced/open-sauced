@@ -25,10 +25,8 @@ jobs:
     name: PR Compliance Checks
     runs-on: ubuntu-latest
     steps:
-      - uses: mtfoley/pr-compliance-action@v0.2.1
+      - uses: mtfoley/pr-compliance-action@v0.5.0
         with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-          protected-branch: main
           body-auto-close: false
           protected-branch-auto-close: false
           watch-files: |
