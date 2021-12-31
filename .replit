@@ -1,0 +1,25 @@
+language = "nix"
+run = "npm ci && npm start"
+
+[packager]
+language = "nodejs-npm"
+
+  [packager.features]
+  packageSearch = true
+  guessImports = false
+
+[unitTest]
+language = "nodejs"
+
+[languages.javascript]
+pattern = "**/*.js"
+syntax = "javascript"
+
+  [languages.javascript.languageServer]
+  start = [ "typescript-language-server", "--stdio" ]
+
+[nix]
+channel = "stable-21_11"
+
+[env]
+XDG_CONFIG_HOME = "/home/runner/.config"

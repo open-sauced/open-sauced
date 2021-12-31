@@ -5,13 +5,13 @@ import Config from "./config";
 import {getUserFromJwt} from "./lib/identityActions";
 import "./index.css";
 import "react-loading-skeleton/dist/skeleton.css";
-import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
 import OneGraphApolloClient from "onegraph-apollo-client";
 import {ApolloProvider, InMemoryCache} from "@apollo/client";
 import api from "./lib/apiGraphQL";
 import {getAppVersion} from "./lib/appVersion";
 import {validateToken} from "./lib/validateToken";
+import { registerSW } from 'virtual:pwa-register';
 
 const apolloClient = new OneGraphApolloClient({
   oneGraphAuth: Config.auth,
@@ -24,6 +24,22 @@ function Index() {
   const [isAdmin, setIsAdmin] = useState(null);
 
   useEffect(() => {
+    registerSW({
+      immediate: true,
+      onNeedRefresh: () => {
+        console.log('SW needs refresh');
+      },
+      onOfflineReady: () => {
+        console.log('SW is ready to handle offline requests.');
+      },
+      onRegistered: () => {
+        console.log('SW registered');
+      },
+      onRegisterError: (e) => {
+        console.log('SW registration failed', e);
+      }
+    });
+
     console.log(`%c
  ██████╗ ██████╗ ███████╗███╗   ██╗    ███████╗ █████╗ ██╗   ██╗ ██████╗███████╗██████╗
 ██╔═══██╗██╔══██╗██╔════╝████╗  ██║    ██╔════╝██╔══██╗██║   ██║██╔════╝██╔════╝██╔══██╗
@@ -117,13 +133,8 @@ ReactDOM.render(
   <React.StrictMode>
     <Index />
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById( "root")
 );
-
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://cra.link/PWA
-serviceWorkerRegistration.register();
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
