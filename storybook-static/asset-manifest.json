@@ -1,0 +1,39 @@
+{
+  "files": {
+    "main.js": "/main.3ec35f4d7ffc1e42ec87.bundle.js",
+    "main.js.map": "/main.3ec35f4d7ffc1e42ec87.bundle.js.map",
+    "runtime~main.js": "/runtime~main.3ec35f4d7ffc1e42ec87.bundle.js",
+    "runtime~main.js.map": "/runtime~main.3ec35f4d7ffc1e42ec87.bundle.js.map",
+    "vendors~main.js": "/vendors~main.3ec35f4d7ffc1e42ec87.bundle.js",
+    "vendors~main.js.map": "/vendors~main.3ec35f4d7ffc1e42ec87.bundle.js.map",
+    "iframe.html": "/iframe.html",
+    "precache-manifest.bd02fa0ff114b4ad5f14d7887f8accd1.js": "/precache-manifest.bd02fa0ff114b4ad5f14d7887f8accd1.js",
+    "service-worker.js": "/service-worker.js",
+    "static/media/alert-circle.svg": "/static/media/alert-circle.0289b2ff.svg",
+    "static/media/alert-triangle.svg": "/static/media/alert-triangle.45178fde.svg",
+    "static/media/anchor.svg": "/static/media/anchor.9c4762fc.svg",
+    "static/media/anchorWithBorder.svg": "/static/media/anchorWithBorder.0bbb217d.svg",
+    "static/media/chevron-down.svg": "/static/media/chevron-down.702d31f9.svg",
+    "static/media/chevron-left.svg": "/static/media/chevron-left.bbb6477a.svg",
+    "static/media/chevron-right.svg": "/static/media/chevron-right.d1971982.svg",
+    "static/media/chevron-up.svg": "/static/media/chevron-up.138990f3.svg",
+    "static/media/copy.svg": "/static/media/copy.da462cf4.svg",
+    "static/media/edit.svg": "/static/media/edit.87fcc6ef.svg",
+    "static/media/face.png": "/static/media/face.ecab4cbd.png",
+    "static/media/github.svg": "/static/media/github.54c7f6c6.svg",
+    "static/media/home.svg": "/static/media/home.acb4667f.svg",
+    "static/media/log-in.svg": "/static/media/log-in.162a7e98.svg",
+    "static/media/log-out.svg": "/static/media/log-out.f95e301e.svg",
+    "static/media/monitor.svg": "/static/media/monitor.5b69d0b2.svg",
+    "static/media/one.png": "/static/media/one.c55690b9.png",
+    "static/media/plus.svg": "/static/media/plus.ee30e704.svg",
+    "static/media/sauced.svg": "/static/media/sauced.b72147b5.svg",
+    "static/media/save.svg": "/static/media/save.44e36bfe.svg",
+    "static/media/star.svg": "/static/media/star.6f0022f9.svg"
+  },
+  "entrypoints": [
+    "runtime~main.3ec35f4d7ffc1e42ec87.bundle.js",
+    "vendors~main.3ec35f4d7ffc1e42ec87.bundle.js",
+    "main.3ec35f4d7ffc1e42ec87.bundle.js"
+  ]
+}
