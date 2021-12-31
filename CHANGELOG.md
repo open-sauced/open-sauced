@@ -5,6 +5,13 @@
 
 > All notable changes to this project will be documented in this file
 
+## [0.42.0](https://github.com/open-sauced/open-sauced/compare/v0.41.1...v0.42.0) (2021-12-31)
+
+
+### 🍕 Features
+
+* implement vite package bundler and fix previous webpack config ([#1322](https://github.com/open-sauced/open-sauced/issues/1322)) ([eb1bb90](https://github.com/open-sauced/open-sauced/commit/eb1bb9030cbc0bba6d883d5ed933e99f5488ea14)), closes [#1346](https://github.com/open-sauced/open-sauced/issues/1346)
+
 ### [0.41.1](https://github.com/open-sauced/open-sauced/compare/v0.41.0...v0.41.1) (2021-12-20)
 
 
