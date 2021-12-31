@@ -60,7 +60,7 @@ export default defineConfig(({command, mode}: ConfigEnv): UserConfig => {
     ViteEslint(),
     ViteInspect(),
     ViteReact({
-      // fastRefresh: !(isCodeSandboxBuild || process.env.NODE_ENV === 'test'),
+      fastRefresh: !isTest,
       // Exclude storybook stories
       exclude: /\.stories\.(t|j)sx?$/,
       // Only .jsx files
