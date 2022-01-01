@@ -5,6 +5,13 @@
 
 > All notable changes to this project will be documented in this file
 
+### [0.42.1](https://github.com/open-sauced/open-sauced/compare/v0.42.0...v0.42.1) (2022-01-01)
+
+
+### 🐛 Bug Fixes
+
+* undo aggressive svg optimisations ([#1353](https://github.com/open-sauced/open-sauced/issues/1353)) ([a89cdb5](https://github.com/open-sauced/open-sauced/commit/a89cdb5e801c156284a47cd0cabf02344d2b8c40))
+
 ## [0.42.0](https://github.com/open-sauced/open-sauced/compare/v0.41.1...v0.42.0) (2021-12-31)
 
 
