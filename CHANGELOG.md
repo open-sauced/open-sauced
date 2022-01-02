@@ -5,6 +5,13 @@
 
 > All notable changes to this project will be documented in this file
 
+### [0.42.2](https://github.com/open-sauced/open-sauced/compare/v0.42.1...v0.42.2) (2022-01-02)
+
+
+### ⏩ Reverts
+
+* rollback to using global style in storybook ([#1354](https://github.com/open-sauced/open-sauced/issues/1354)) ([b1522c8](https://github.com/open-sauced/open-sauced/commit/b1522c8b7ad146fbe84e58cd9f2ac0455f76976b)), closes [#1155](https://github.com/open-sauced/open-sauced/issues/1155)
+
 ### [0.42.1](https://github.com/open-sauced/open-sauced/compare/v0.42.0...v0.42.1) (2022-01-01)
 
 
