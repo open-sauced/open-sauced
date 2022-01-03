@@ -5,6 +5,13 @@
 
 > All notable changes to this project will be documented in this file
 
+### [0.42.3](https://github.com/open-sauced/open-sauced/compare/v0.42.2...v0.42.3) (2022-01-03)
+
+
+### 🤖 Build System
+
+* update non-breaking dependencies ([#1355](https://github.com/open-sauced/open-sauced/issues/1355)) ([fc58ce4](https://github.com/open-sauced/open-sauced/commit/fc58ce478fcfb96d0d67c02d01a440a696173e28))
+
 ### [0.42.2](https://github.com/open-sauced/open-sauced/compare/v0.42.1...v0.42.2) (2022-01-02)
 
 
