@@ -12,6 +12,8 @@ import api from "./lib/apiGraphQL";
 import {getAppVersion} from "./lib/appVersion";
 import {validateToken} from "./lib/validateToken";
 import { registerSW } from 'virtual:pwa-register';
+import toast, { Toaster } from 'react-hot-toast';
+
 
 const apolloClient = new OneGraphApolloClient({
   oneGraphAuth: Config.auth,
@@ -34,6 +36,7 @@ function Index() {
       },
       onRegistered: () => {
         console.log('SW registered');
+        toast('Here is your toast.');
       },
       onRegisterError: (e) => {
         console.log('SW registration failed', e);
@@ -124,6 +127,7 @@ function Index() {
           handleLogIn={() => _handleLogIn()}
           handleLogOut={() => _handleLogOut()}
         />
+        <Toaster/>
       </ApolloProvider>
     </div>
   );
