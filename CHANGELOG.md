@@ -5,6 +5,13 @@
 
 > All notable changes to this project will be documented in this file
 
+### [0.42.6](https://github.com/open-sauced/open-sauced/compare/v0.42.5...v0.42.6) (2022-01-20)
+
+
+### 🐛 Bug Fixes
+
+* correct dependabot README Badge not loading ([#1366](https://github.com/open-sauced/open-sauced/issues/1366)) ([9b1b3c6](https://github.com/open-sauced/open-sauced/commit/9b1b3c67b6c7470af56138edbf48ddb0280ea366)), closes [#1365](https://github.com/open-sauced/open-sauced/issues/1365)
+
 ### [0.42.5](https://github.com/open-sauced/open-sauced/compare/v0.42.4...v0.42.5) (2022-01-20)
 
 
