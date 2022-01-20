@@ -156,7 +156,7 @@ export default defineConfig(({command, mode}: ConfigEnv): UserConfig => {
   });
 
   if (isGitpodBuild) {
-    config.base = process.env.WORKSPACE_URL;
+    config.base = process.env.GITPOD_WORKSPACE_URL;
   }
 
   if (isReplitBuild) {
