@@ -5,6 +5,13 @@
 
 > All notable changes to this project will be documented in this file
 
+### [0.42.5](https://github.com/open-sauced/open-sauced/compare/v0.42.4...v0.42.5) (2022-01-20)
+
+
+### 🐛 Bug Fixes
+
+* correct gitpod variables and development workflows ([#1362](https://github.com/open-sauced/open-sauced/issues/1362)) ([cd4a27e](https://github.com/open-sauced/open-sauced/commit/cd4a27e9acc67609aeff2b05ba1bc66df9d08153))
+
 ### [0.42.4](https://github.com/open-sauced/open-sauced/compare/v0.42.3...v0.42.4) (2022-01-10)
 
 
