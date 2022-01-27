@@ -80,7 +80,7 @@
         "react-app-polyfill": "^3.0.0",
         "rollup-plugin-visualizer": "^5.5.4",
         "storybook-dark-mode": "^1.0.8",
-        "vite": "^2.7.10",
+        "vite": "^2.7.13",
         "vite-plugin-html": "^2.1.2",
         "vite-plugin-inspect": "^0.3.12",
         "vite-plugin-pwa": "^0.11.12",
@@ -30443,9 +30443,9 @@
       }
     },
     "node_modules/vite": {
-      "version": "2.7.10",
-      "resolved": "https://registry.npmjs.org/vite/-/vite-2.7.10.tgz",
-      "integrity": "sha512-KEY96ntXUid1/xJihJbgmLZx7QSC2D4Tui0FdS0Old5OokYzFclcofhtxtjDdGOk/fFpPbHv9yw88+rB93Tb8w==",
+      "version": "2.7.13",
+      "resolved": "https://registry.npmjs.org/vite/-/vite-2.7.13.tgz",
+      "integrity": "sha512-Mq8et7f3aK0SgSxjDNfOAimZGW9XryfHRa/uV0jseQSilg+KhYDSoNb9h1rknOy6SuMkvNDLKCYAYYUMCE+IgQ==",
       "dev": true,
       "dependencies": {
         "esbuild": "^0.13.12",
@@ -55322,9 +55322,9 @@
       }
     },
     "vite": {
-      "version": "2.7.10",
-      "resolved": "https://registry.npmjs.org/vite/-/vite-2.7.10.tgz",
-      "integrity": "sha512-KEY96ntXUid1/xJihJbgmLZx7QSC2D4Tui0FdS0Old5OokYzFclcofhtxtjDdGOk/fFpPbHv9yw88+rB93Tb8w==",
+      "version": "2.7.13",
+      "resolved": "https://registry.npmjs.org/vite/-/vite-2.7.13.tgz",
+      "integrity": "sha512-Mq8et7f3aK0SgSxjDNfOAimZGW9XryfHRa/uV0jseQSilg+KhYDSoNb9h1rknOy6SuMkvNDLKCYAYYUMCE+IgQ==",
       "dev": true,
       "requires": {
         "esbuild": "^0.13.12",
