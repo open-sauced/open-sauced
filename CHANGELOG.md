@@ -5,6 +5,13 @@
 
 > All notable changes to this project will be documented in this file
 
+### [0.42.7](https://github.com/open-sauced/open-sauced/compare/v0.42.6...v0.42.7) (2022-01-27)
+
+
+### 🤖 Build System
+
+* update depedencies vs dependabot ([#1387](https://github.com/open-sauced/open-sauced/issues/1387)) ([9f4e2fb](https://github.com/open-sauced/open-sauced/commit/9f4e2fb49135acb98c2c9774aa41ea7067e9883e))
+
 ### [0.42.6](https://github.com/open-sauced/open-sauced/compare/v0.42.5...v0.42.6) (2022-01-20)
 
 
