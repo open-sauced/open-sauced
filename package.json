@@ -44,7 +44,7 @@
     "@remirror/extension-emoji": "^1.0.14",
     "@remirror/extension-heading": "^1.0.13",
     "@remirror/extension-italic": "^1.0.13",
-    "@remirror/extension-list": "^1.2.10",
+    "@remirror/extension-list": "^1.2.13",
     "@remirror/extension-markdown": "^1.0.13",
     "@remirror/extension-react-tables": "^1.0.20",
     "@remirror/pm": "^1.0.10",
