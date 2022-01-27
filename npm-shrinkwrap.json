@@ -85,7 +85,7 @@
         "vite-plugin-inspect": "^0.3.12",
         "vite-plugin-pwa": "^0.11.12",
         "vite-plugin-time-reporter": "^1.0.0",
-        "web-vitals": "^2.1.2"
+        "web-vitals": "^2.1.4"
       },
       "engines": {
         "node": ">=14.16.0",
@@ -31297,9 +31297,9 @@
       }
     },
     "node_modules/web-vitals": {
-      "version": "2.1.2",
-      "resolved": "https://registry.npmjs.org/web-vitals/-/web-vitals-2.1.2.tgz",
-      "integrity": "sha512-nZnEH8dj+vJFqCRYdvYv0a59iLXsb8jJkt+xvXfwgnkyPdsSLtKNlYmtTDiHmTNGXeSXtpjTTUcNvFtrAk6VMQ==",
+      "version": "2.1.4",
+      "resolved": "https://registry.npmjs.org/web-vitals/-/web-vitals-2.1.4.tgz",
+      "integrity": "sha512-sVWcwhU5mX6crfI5Vd2dC4qchyTqxV8URinzt25XqVh+bHEPGH4C3NPrNionCP7Obx59wrYEbNlw4Z8sjALzZg==",
       "dev": true
     },
     "node_modules/webidl-conversions": {
@@ -55942,9 +55942,9 @@
       "dev": true
     },
     "web-vitals": {
-      "version": "2.1.2",
-      "resolved": "https://registry.npmjs.org/web-vitals/-/web-vitals-2.1.2.tgz",
-      "integrity": "sha512-nZnEH8dj+vJFqCRYdvYv0a59iLXsb8jJkt+xvXfwgnkyPdsSLtKNlYmtTDiHmTNGXeSXtpjTTUcNvFtrAk6VMQ==",
+      "version": "2.1.4",
+      "resolved": "https://registry.npmjs.org/web-vitals/-/web-vitals-2.1.4.tgz",
+      "integrity": "sha512-sVWcwhU5mX6crfI5Vd2dC4qchyTqxV8URinzt25XqVh+bHEPGH4C3NPrNionCP7Obx59wrYEbNlw4Z8sjALzZg==",
       "dev": true
     },
     "webidl-conversions": {
