@@ -38,7 +38,7 @@
     "@apollo/client": "^3.5.6",
     "@emotion/react": "^11.7.1",
     "@emotion/styled": "^11.6.0",
-    "@primer/octicons-react": "^16.2.0",
+    "@primer/octicons-react": "^16.3.0",
     "@remirror/extension-bold": "^1.0.13",
     "@remirror/extension-code": "^1.0.14",
     "@remirror/extension-emoji": "^1.0.14",
