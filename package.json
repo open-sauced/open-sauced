@@ -99,7 +99,7 @@
     "jest-watch-typeahead": "^1.0.0",
     "node-notifier": "^10.0.0",
     "p-limit": "^4.0.0",
-    "postcss": "^8.4.5",
+    "postcss": "^8.4.6",
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-import": "^14.0.2",
     "postcss-normalize": "^10.0.1",
