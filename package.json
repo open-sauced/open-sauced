@@ -103,7 +103,7 @@
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-import": "^14.0.2",
     "postcss-normalize": "^10.0.1",
-    "postcss-preset-env": "^7.2.3",
+    "postcss-preset-env": "^7.3.1",
     "react-app-polyfill": "^3.0.0",
     "rollup-plugin-visualizer": "^5.5.4",
     "storybook-dark-mode": "^1.0.8",
