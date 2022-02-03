@@ -97,7 +97,7 @@
     "jest": "^27.4.7",
     "jest-axe": "^5.0.1",
     "jest-watch-typeahead": "^1.0.0",
-    "node-notifier": "^10.0.0",
+    "node-notifier": "^10.0.1",
     "p-limit": "^4.0.0",
     "postcss": "^8.4.5",
     "postcss-flexbugs-fixes": "^5.0.2",
