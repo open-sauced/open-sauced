@@ -80,7 +80,12 @@ jobs:
           output_file: "public/diagram.svg"
           should_push: false
           root_path: "src/"
-          artifact_name: "diagram"
+
+      - name: "📊 visualiser artifacts"
+        uses: actions/upload-artifact@v2
+        with:
+          name: diagram
+          path: public/diagram.svg
 
       - name: "🚀 static app"
         run: npm run build
@@ -107,6 +112,11 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: "♻️ clean up artifact paths"
+        run: |
+          rm -rf public/diagram.svg
+          rm -rf supabase/diagrams/
+
       - name: "📂 download docker artifacts"
         uses: actions/download-artifact@v2
         with:
@@ -128,11 +138,11 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: diagram
-          path: .
+          path: public/
 
       - name: "🚀 release"
         id: semantic-release
-        uses: open-sauced/semantic-release-conventional-config@v3
+        uses: open-sauced/release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
