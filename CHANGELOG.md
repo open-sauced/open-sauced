@@ -5,6 +5,13 @@
 
 > All notable changes to this project will be documented in this file
 
+### [0.42.8](https://github.com/open-sauced/open-sauced/compare/v0.42.7...v0.42.8) (2022-02-04)
+
+
+### 🐛 Bug Fixes
+
+* correct dependabot update spam behaviour ([#1397](https://github.com/open-sauced/open-sauced/issues/1397)) ([0600ab3](https://github.com/open-sauced/open-sauced/commit/0600ab34ee4bf65a84c2a8b8eb3d723fc4079527)), closes [#1388](https://github.com/open-sauced/open-sauced/issues/1388)
+
 ### [0.42.7](https://github.com/open-sauced/open-sauced/compare/v0.42.6...v0.42.7) (2022-01-27)
 
 
