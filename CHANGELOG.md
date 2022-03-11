@@ -5,6 +5,13 @@
 
 > All notable changes to this project will be documented in this file
 
+### [0.42.9](https://github.com/open-sauced/open-sauced/compare/v0.42.8...v0.42.9) (2022-03-11)
+
+
+### 🐛 Bug Fixes
+
+* correct missing svgo binary and update deps ([#1399](https://github.com/open-sauced/open-sauced/issues/1399)) ([50804aa](https://github.com/open-sauced/open-sauced/commit/50804aa574872122a12fb281e31fa9af28ed6ae1))
+
 ### [0.42.8](https://github.com/open-sauced/open-sauced/compare/v0.42.7...v0.42.8) (2022-02-04)
 
 
