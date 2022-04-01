@@ -5,6 +5,13 @@
 
 > All notable changes to this project will be documented in this file
 
+## [0.43.0](https://github.com/open-sauced/open-sauced/compare/v0.42.9...v0.43.0) (2022-04-01)
+
+
+### 🍕 Features
+
+* remove notes box and peer dependencies ([#1406](https://github.com/open-sauced/open-sauced/issues/1406)) ([657c83b](https://github.com/open-sauced/open-sauced/commit/657c83bd38e8dac4d52577f5da7786519d38831f)), closes [#1401](https://github.com/open-sauced/open-sauced/issues/1401)
+
 ### [0.42.9](https://github.com/open-sauced/open-sauced/compare/v0.42.8...v0.42.9) (2022-03-11)
 
 
