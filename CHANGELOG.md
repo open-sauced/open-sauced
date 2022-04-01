@@ -5,6 +5,13 @@
 
 > All notable changes to this project will be documented in this file
 
+## [0.44.0](https://github.com/open-sauced/open-sauced/compare/v0.43.0...v0.44.0) (2022-04-01)
+
+
+### 🍕 Features
+
+* 1405 last try ([#1410](https://github.com/open-sauced/open-sauced/issues/1410)) ([9893abc](https://github.com/open-sauced/open-sauced/commit/9893abcb2cbf5ea79bfff0ef93c59872edd2811c)), closes [#1405](https://github.com/open-sauced/open-sauced/issues/1405)
+
 ## [0.43.0](https://github.com/open-sauced/open-sauced/compare/v0.42.9...v0.43.0) (2022-04-01)
 
 
