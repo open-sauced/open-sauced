@@ -18,6 +18,7 @@ function RepositoryGoals({user}) {
   const [state, dispatch] = usePersistentStateReducer("goalsState", goalsReducer);
 
   const {repository, error} = goalsReducer(state, {type: "GET"});
+  console.log(error)
 
   useEffect(() => {
     repository && setGoalsId(repository.id);
@@ -58,6 +59,7 @@ function RepositoryGoals({user}) {
   const viewerStars = repository && repository.stars && repository.stars.text && JSON.parse(repository.stars.text);
 
   const stars = remainingStars(data, viewerStars);
+  console.log(repository)
   return (
     <section>
       {repository && repository.issues ? (
@@ -108,7 +110,7 @@ function RepositoryGoals({user}) {
           </Card>
         </React.Fragment>
       ) : (
-        <CreateGoals installNeeded={!!error} user={(user && user) || ""} onRepoCreation={onRepoCreation} />
+        <CreateGoals installNeeded={!!repository && !!error} user={(user && user) || ""} onRepoCreation={onRepoCreation} />
       )}
     </section>
   );
