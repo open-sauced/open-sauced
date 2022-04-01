@@ -10,8 +10,6 @@ module.exports = {
       },
     },
 
-    'removeViewBox',
-    'removeDimensions',
     'removeRasterImages',
 
     {

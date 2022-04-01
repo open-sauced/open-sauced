@@ -5,6 +5,69 @@
 
 > All notable changes to this project will be documented in this file
 
+### [0.42.9](https://github.com/open-sauced/open-sauced/compare/v0.42.8...v0.42.9) (2022-03-11)
+
+
+### 🐛 Bug Fixes
+
+* correct missing svgo binary and update deps ([#1399](https://github.com/open-sauced/open-sauced/issues/1399)) ([50804aa](https://github.com/open-sauced/open-sauced/commit/50804aa574872122a12fb281e31fa9af28ed6ae1))
+
+### [0.42.8](https://github.com/open-sauced/open-sauced/compare/v0.42.7...v0.42.8) (2022-02-04)
+
+
+### 🐛 Bug Fixes
+
+* correct dependabot update spam behaviour ([#1397](https://github.com/open-sauced/open-sauced/issues/1397)) ([0600ab3](https://github.com/open-sauced/open-sauced/commit/0600ab34ee4bf65a84c2a8b8eb3d723fc4079527)), closes [#1388](https://github.com/open-sauced/open-sauced/issues/1388)
+
+### [0.42.7](https://github.com/open-sauced/open-sauced/compare/v0.42.6...v0.42.7) (2022-01-27)
+
+
+### 🤖 Build System
+
+* update depedencies vs dependabot ([#1387](https://github.com/open-sauced/open-sauced/issues/1387)) ([9f4e2fb](https://github.com/open-sauced/open-sauced/commit/9f4e2fb49135acb98c2c9774aa41ea7067e9883e))
+
+### [0.42.6](https://github.com/open-sauced/open-sauced/compare/v0.42.5...v0.42.6) (2022-01-20)
+
+
+### 🐛 Bug Fixes
+
+* correct dependabot README Badge not loading ([#1366](https://github.com/open-sauced/open-sauced/issues/1366)) ([9b1b3c6](https://github.com/open-sauced/open-sauced/commit/9b1b3c67b6c7470af56138edbf48ddb0280ea366)), closes [#1365](https://github.com/open-sauced/open-sauced/issues/1365)
+
+### [0.42.5](https://github.com/open-sauced/open-sauced/compare/v0.42.4...v0.42.5) (2022-01-20)
+
+
+### 🐛 Bug Fixes
+
+* correct gitpod variables and development workflows ([#1362](https://github.com/open-sauced/open-sauced/issues/1362)) ([cd4a27e](https://github.com/open-sauced/open-sauced/commit/cd4a27e9acc67609aeff2b05ba1bc66df9d08153))
+
+### [0.42.4](https://github.com/open-sauced/open-sauced/compare/v0.42.3...v0.42.4) (2022-01-10)
+
+
+### 🐛 Bug Fixes
+
+* update content related to take action ([#1357](https://github.com/open-sauced/open-sauced/issues/1357)) ([3c68a1e](https://github.com/open-sauced/open-sauced/commit/3c68a1ee8d66d32aee98158018540237b25d290b))
+
+### [0.42.3](https://github.com/open-sauced/open-sauced/compare/v0.42.2...v0.42.3) (2022-01-03)
+
+
+### 🤖 Build System
+
+* update non-breaking dependencies ([#1355](https://github.com/open-sauced/open-sauced/issues/1355)) ([fc58ce4](https://github.com/open-sauced/open-sauced/commit/fc58ce478fcfb96d0d67c02d01a440a696173e28))
+
+### [0.42.2](https://github.com/open-sauced/open-sauced/compare/v0.42.1...v0.42.2) (2022-01-02)
+
+
+### ⏩ Reverts
+
+* rollback to using global style in storybook ([#1354](https://github.com/open-sauced/open-sauced/issues/1354)) ([b1522c8](https://github.com/open-sauced/open-sauced/commit/b1522c8b7ad146fbe84e58cd9f2ac0455f76976b)), closes [#1155](https://github.com/open-sauced/open-sauced/issues/1155)
+
+### [0.42.1](https://github.com/open-sauced/open-sauced/compare/v0.42.0...v0.42.1) (2022-01-01)
+
+
+### 🐛 Bug Fixes
+
+* undo aggressive svg optimisations ([#1353](https://github.com/open-sauced/open-sauced/issues/1353)) ([a89cdb5](https://github.com/open-sauced/open-sauced/commit/a89cdb5e801c156284a47cd0cabf02344d2b8c40))
+
 ## [0.42.0](https://github.com/open-sauced/open-sauced/compare/v0.41.1...v0.42.0) (2021-12-31)
 
 
