@@ -21,9 +21,9 @@ test("app login integration", () => {
   );
   // verify page content for expected route
   // often you'd use a data-testid or role query, but this is also possible
-  expect(container.innerHTML).toContain("Join Discord");
+  expect(container.innerHTML).toContain("Login with GitHub");
 
-  const button = screen.getByRole("button", {name: "Login"});
+  const button = screen.getByRole("button", {name: "Login with GitHub"});
 
   fireEvent.click(button);
 
@@ -33,5 +33,4 @@ test("app login integration", () => {
     </Router>,
   );
 
-  expect(container.innerHTML).toContain("Contributor issue tracking and triaging");
 });
