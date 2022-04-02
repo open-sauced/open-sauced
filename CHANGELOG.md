@@ -5,6 +5,13 @@
 
 > All notable changes to this project will be documented in this file
 
+### [0.44.3](https://github.com/open-sauced/open-sauced/compare/v0.44.2...v0.44.3) (2022-04-02)
+
+
+### 🐛 Bug Fixes
+
+* correct repository dashboard misalignment ([#1414](https://github.com/open-sauced/open-sauced/issues/1414)) ([1954704](https://github.com/open-sauced/open-sauced/commit/19547049617231fc7aec95da14c84b9d53fd910b)), closes [#1400](https://github.com/open-sauced/open-sauced/issues/1400)
+
 ### [0.44.2](https://github.com/open-sauced/open-sauced/compare/v0.44.1...v0.44.2) (2022-04-02)
 
 
