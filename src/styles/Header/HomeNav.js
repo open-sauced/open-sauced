@@ -22,12 +22,20 @@ const Container = styled.nav`
   }
 
   li {
-    font-size: ${size.tiny}
     margin-right: ${size.tiny};
   }
 
   a {
+    font-size: ${fontSize.default};
+    line-height: ${fontSize.default};
     vertical-align: middle;
+    &:hover {
+      color: ${colors.accent} !important;
+    }
+
+    svg {
+      vertical-align: bottom;
+    }
   }
 
   span {

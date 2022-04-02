@@ -1,4 +1,5 @@
 import React, {useState, useRef, useEffect} from "react";
+import {FaRssSquare, FaBook, FaGithubSquare} from "react-icons/fa";
 import {logo} from "../logos";
 import {FloatLeftMobileNav, FloatRight} from "../styles/Grid";
 import {SubtleLink} from "../styles/Typography";
@@ -29,7 +30,7 @@ function LeftSide({isLoggedIn, user, handleLogIn, handleLogOut}) {
             href="https://docs.opensauced.pizza/"
             className="nav-link"
             rel="noreferrer">
-            Docs
+            <FaBook/> Docs
           </SubtleLink>
         </li>
         <li>
@@ -38,25 +39,7 @@ function LeftSide({isLoggedIn, user, handleLogIn, handleLogOut}) {
             className="nav-link"
             target="_blank"
             rel="noreferrer">
-            Blog
-          </SubtleLink>
-        </li>
-        <li>
-          <SubtleLink
-            href="https://github.com/open-sauced/open-sauced"
-            className="nav-link"
-            target="_blank"
-            rel="noreferrer">
-            GitHub
-          </SubtleLink>
-        </li>
-        <li>
-          <SubtleLink
-            className="nav-link"
-            target="_blank"
-            rel="noreferrer"
-            href="https://discord.gg/U2peSNf23P">
-            Discord
+            <FaRssSquare/> Blog
           </SubtleLink>
         </li>
         {isLoggedIn && (
@@ -66,7 +49,7 @@ function LeftSide({isLoggedIn, user, handleLogIn, handleLogOut}) {
               target="_blank"
               rel="noreferrer"
               href="https://github.com/open-sauced/open-sauced/issues/new/choose">
-              Issue
+              <FaGithubSquare/> Report a bug
             </SubtleLink>
           </li>
         )}

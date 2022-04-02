@@ -96,8 +96,8 @@ function App({handleLogIn, handleLogOut, user, isAdmin, isLoggedIn}) {
             )}/>
             <Route component={NoMatch} />
           </Switch>
-          {!user && <Footer />}
           {user && <DashboardFooter />}
+          <Footer />
         </LocaleContext.Provider>
       </ThemeContext.Provider>
     </Router>
