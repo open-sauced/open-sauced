@@ -1,11 +1,11 @@
 import React from "react";
 import "@testing-library/jest-dom/extend-expect";
-import {render, cleanup} from "@testing-library/react";
-import Hero from "../components/Hero";
+import {render, cleanup, screen} from "@testing-library/react";
+import Hero from "../components/LoginHero";
 import {axe, toHaveNoViolations} from "jest-axe";
-expect.extend(toHaveNoViolations);
 import {data} from "./mocks";
 import {BrowserRouter} from "react-router-dom";
+expect.extend(toHaveNoViolations);
 
 test("container component should have no violations", async() => {
   const {container} = render(
@@ -17,14 +17,4 @@ test("container component should have no violations", async() => {
   expect(results).toHaveNoViolations();
 
   cleanup();
-});
-
-test("renders the pizza svg", () => {
-  const {getByAltText} = render(
-    <BrowserRouter>
-      <Hero user={data.user} />
-    </BrowserRouter>,
-  );
-  const button = getByAltText("pizza");
-  expect(button).toHaveAttribute("src");
 });

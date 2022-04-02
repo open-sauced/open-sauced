@@ -1,0 +1,37 @@
+image:
+  file: .gitpod.Dockerfile
+
+github:
+  prebuilds:
+    master: true
+    branches: true
+    pullRequests: true
+    pullRequestsFromForks: true
+    addCheck: false
+    addComment: false
+    addBadge: true
+
+ports:
+  - port: 3000
+    onOpen: open-preview
+
+tasks:
+  - name: Install dependencies
+    init: npm ci
+    command: gp sync-done build
+  - name: Run vite dev
+    init: gp sync-await build
+    command: npm start
+    openMode: tab-after
+  - name: Run jest tests
+    init: gp sync-await build
+    command: npm t
+    openMode: tab-after
+
+vscode:
+  extensions:
+    - dbaeumer.vscode-eslint
+    - mikestead.dotenv
+    - eg2.vscode-npm-script
+    - editorconfig.editorconfig
+    - christian-kohler.npm-intellisense

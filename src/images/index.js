@@ -1,4 +1,5 @@
 import face from "./face.png";
+import npm from "./npm.png";
 import bdougie from "./bdougie.jpg";
 import sauce from "./sauce.svg";
 import sauced from "./sauced.svg";
@@ -11,6 +12,6 @@ import ohno from "./404.svg";
 import remirror from "./remirror.svg";
 import UseShoppingCart from "./UseShoppingCart.png";
 
-export {gucci, ohno, bdougie, face, graphql, sauce, sauced, pizza, sauceFull, remirror,
+export {gucci, ohno, bdougie, face, npm, graphql, sauce, sauced, pizza, sauceFull, remirror,
   gitTrends, UseShoppingCart
 };

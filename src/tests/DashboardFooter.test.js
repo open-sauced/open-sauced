@@ -1,6 +1,6 @@
 import React from "react";
 import "@testing-library/jest-dom/extend-expect";
-import {render, cleanup} from "@testing-library/react";
+import {render, cleanup, screen} from "@testing-library/react";
 import DashboardFooter from "../components/DashboardFooter";
 import {axe, toHaveNoViolations} from "jest-axe";
 expect.extend(toHaveNoViolations);
@@ -15,7 +15,7 @@ test("container component should have no violations", async() => {
 });
 
 test("renders the logo", () => {
-  const {getByAltText} = render(<DashboardFooter />);
-  const button = getByAltText("sauced logo");
+  render(<DashboardFooter />);
+  const button = screen.getByAltText("sauced logo");
   expect(button).toHaveAttribute("src");
 });

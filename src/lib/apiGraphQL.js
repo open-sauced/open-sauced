@@ -112,6 +112,21 @@ const operationsDoc = `
     }
   }
 
+  query FetchGoal($number: Int!) {
+    gitHub {
+      viewer {
+        repository(name: "open-sauced-goals") {
+          issue(number: $number) {
+            id
+            body
+            title
+            number
+          }
+        }
+      }
+    }
+  }
+
   query FetchGoals() {
     gitHub {
       viewer {
@@ -122,6 +137,13 @@ const operationsDoc = `
             ... on GitHubBlob {
               id
               text
+            }
+          }
+          stars: object(expression: "HEAD:stars.json") {
+            id
+            ... on GitHubBlob {
+                id
+                text
             }
           }
           issues(
@@ -174,7 +196,6 @@ const operationsDoc = `
       }
     }
   }
-
   
   query FetchRepoCountQuery() {
     gitHub {
@@ -310,6 +331,10 @@ function fetchIssuesAfterQuery(owner, repo, cursor) {
   return fetchOneGraph(operationsDoc, "IssuesAfterQuery", {owner: owner, repo: repo, cursor: cursor});
 }
 
+function fetchGoalQuery(issueNumber) {
+  return fetchOneGraph(operationsDoc, "FetchGoal", {number: issueNumber});
+}
+
 function fetchGoalsQuery() {
   return fetchOneGraph(operationsDoc, "FetchGoals");
 }
@@ -362,6 +387,7 @@ const api = {
 
     return issueFetcher({owner, repo, cursor});
   },
+  fetchGoalQuery,
   fetchGoalsQuery,
   fetchMemberStatus,
   fetchRateLimit,

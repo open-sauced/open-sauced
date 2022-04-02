@@ -77,6 +77,10 @@ p {
   color: var(--lightGrey);
 }
 
+#sort{
+  width: 80px;
+}
+
 .form-control {
   padding: 10px;
 }
@@ -104,13 +108,21 @@ body.dark svg.svg {
 body.dark select {
   color: var(--lightestGrey);
 }
-body.dark .react-loading-skeleton{
-  background-color: var(--backgroundGrey);
-  background-image: linear-gradient(
-    90deg,
-    var(--backgroundGrey),
-    var(--grey),
-    var(--backgroundGrey)
-  );
+/*important is to manage the emoji sizing, so more appear while searching.*/
+.remirror-editor {
+  min-height: 250px !important;
 }
-
+.remirror-floating-popover {
+  background: white;
+  outline: 0.25pt solid var(--lightestGrey);
+}
+.remirror-emoji-popup-highlight {
+  background: var(--lighterGrey);
+}
+body.dark .remirror-floating-popover {
+  background: var(--backgroundGrey);
+  outline: 0.25pt solid var(--lighterGrey);
+}
+body.dark .remirror-emoji-popup-highlight {
+  background: var(--lightGrey);
+}

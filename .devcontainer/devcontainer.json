@@ -1,0 +1,45 @@
+{
+  "name": "Node.js & TypeScript",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "args": {
+      "VARIANT": "16-bullseye"
+    }
+  },
+  "settings": {
+    "terminal.integrated.profiles.linux": {
+      "zsh": {
+        "path": "/usr/bin/zsh",
+        "overrideName": true
+      }
+    },
+    "files.eol": "\n",
+    "files.insertFinalNewline": true,
+    "editor.formatOnSave": false,
+    "prettier-eslint.eslintIntegration": false
+  },
+  "extensions": [
+    "dbaeumer.vscode-eslint",
+    "mikestead.dotenv",
+    "github.codespaces",
+    "eg2.vscode-npm-script",
+    "editorconfig.editorconfig",
+    "christian-kohler.npm-intellisense"
+  ],
+  "runArgs": [
+    "--env-file",
+    ".devcontainer/.env"
+  ],
+  "portsAttributes": {
+		"3000": {
+			"label": "Vite dev server",
+			"onAutoForward": "notify"
+		}
+	},
+  "postCreateCommand": "npm ci && npm start",
+  "features": {
+    "git": "os-provided",
+    "github-cli": "latest",
+    "powershell": "latest"
+  }
+}
