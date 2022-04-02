@@ -1,5 +1,5 @@
 import React from "react";
-import HeroFoo from "../src/components/Hero";
+import HeroFoo from "../src/components/LoginHero";
 import {BrowserRouter} from "react-router-dom";
 
 export default {

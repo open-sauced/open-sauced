@@ -88,7 +88,6 @@ function CreateGoals({installNeeded, user, onRepoCreation}) {
     });
   };
 
-  console.log(installReady)
   return (
     <React.Fragment>
       <ContextStyle>
