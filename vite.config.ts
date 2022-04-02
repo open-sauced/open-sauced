@@ -82,6 +82,7 @@ export default defineConfig(({command, mode}: ConfigEnv): UserConfig => {
       inject: {
         data: {
           title: `Open Sauced v${process.env.npm_package_version}`,
+          date: new Date().toISOString(),
         },
       },
     })
@@ -141,7 +142,6 @@ export default defineConfig(({command, mode}: ConfigEnv): UserConfig => {
 
   const replaceOptions = {
     preventAssignment: true,
-    __DATE__: new Date().toISOString(),
     __RELOAD_SW__: true,
   };
 
