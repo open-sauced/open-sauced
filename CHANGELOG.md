@@ -5,6 +5,13 @@
 
 > All notable changes to this project will be documented in this file
 
+### [0.44.1](https://github.com/open-sauced/open-sauced/compare/v0.44.0...v0.44.1) (2022-04-02)
+
+
+### 🐛 Bug Fixes
+
+* **onboarding-broke:** new user onboarding was broken, sort of ([#1412](https://github.com/open-sauced/open-sauced/issues/1412)) ([52eb2b5](https://github.com/open-sauced/open-sauced/commit/52eb2b54312d006dca92de8cd397567bb11b763d))
+
 ## [0.44.0](https://github.com/open-sauced/open-sauced/compare/v0.43.0...v0.44.0) (2022-04-01)
 
 
