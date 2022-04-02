@@ -10,7 +10,6 @@ function RecommendedRepoItem({goal, goalsId, onGoalAdded}) {
     api
       .createGoal(goalsId, goal, null)
       .then(response => {
-        console.log(response);
         onGoalAdded(response.data.gitHub.createIssue.issue);
       })
       .catch(e => console.error(e));
