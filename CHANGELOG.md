@@ -5,6 +5,13 @@
 
 > All notable changes to this project will be documented in this file
 
+### [0.44.2](https://github.com/open-sauced/open-sauced/compare/v0.44.1...v0.44.2) (2022-04-02)
+
+
+### 🐛 Bug Fixes
+
+* **storybook:** correct hero component name change and some stray console logs ([#1413](https://github.com/open-sauced/open-sauced/issues/1413)) ([180aa08](https://github.com/open-sauced/open-sauced/commit/180aa087b5dbca2a40178c5efb2b608e74391862))
+
 ### [0.44.1](https://github.com/open-sauced/open-sauced/compare/v0.44.0...v0.44.1) (2022-04-02)
 
 
