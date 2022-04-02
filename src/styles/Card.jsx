@@ -203,7 +203,7 @@ const ContextStyle = styled(Card)`
 `;
 
 const RepositoryContext = styled(ContextStyle)`
-  margin-right: ${size.small}
+  margin-right: ${size.small};
   flex: 2;
   
   .loading {
