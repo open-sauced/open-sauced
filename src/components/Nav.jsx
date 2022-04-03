@@ -1,6 +1,8 @@
 import React, {useState, useRef, useEffect} from "react";
+import {FaGithubSquare} from "react-icons/fa";
 import {logo} from "../logos";
 import {FloatLeftMobileNav, FloatRight} from "../styles/Grid";
+import {SubtleLink} from "../styles/Typography";
 import {AppNav, HomeNav} from "../styles/Header";
 import {SpaceBetween, Logo} from "../styles/Grid";
 import ProfileAvatar from "../styles/ProfileAvatar";
@@ -9,13 +11,45 @@ import AdminStatsBar from "./AdminStatsBar";
 import Hotkeys from "react-hot-keys";
 import {useHistory, Link} from "react-router-dom";
 import ThemeButtonGroup from "./ThemeButtonGroup";
+import { HiOutlineLogin, HiOutlineLogout } from "react-icons/all";
 
-function LeftSide() {
+function LeftSide({isLoggedIn, user, handleLogIn, handleLogOut}) {
+  const history = useHistory();
+  const _logOutRedirect = () => {
+    handleLogOut();
+    history.push("/");
+  };
+
   return (
     <FloatLeftMobileNav>
       <Link to="/" style={{verticalAlign: "middle", display: "inline-block"}}>
         <Logo alt="open sauced" src={logo} />
       </Link>
+      <ul>
+        {isLoggedIn && (
+          <li>
+            <SubtleLink
+              className="nav-link"
+              target="_blank"
+              rel="noreferrer"
+              href="https://github.com/open-sauced/open-sauced/issues/new/choose">
+              <FaGithubSquare/> Report a bug
+            </SubtleLink>
+          </li>
+        )}
+        <li>
+          <SubtleLink
+            className="nav-link"
+            onClick={isLoggedIn ? _logOutRedirect : handleLogIn}
+            >
+            {isLoggedIn ?
+              <><HiOutlineLogout/> Logout</>
+            :
+              <><HiOutlineLogin/> Login</>
+            }
+          </SubtleLink>
+        </li>
+      </ul>
     </FloatLeftMobileNav>
   );
 }
