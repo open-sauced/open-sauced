@@ -1,7 +1,6 @@
 import React, {useEffect, useMemo, useState} from "react";
 import Dashboard from "../containers/Dashboard";
 import Footer from "../components/Footer";
-import DashboardFooter from "../components/DashboardFooter";
 import Nav from "../components/Nav";
 import Repository from "../components/Repository";
 import {BrowserRouter as Router, Route, Redirect, Switch, useHistory} from "react-router-dom";
@@ -96,7 +95,6 @@ function App({handleLogIn, handleLogOut, user, isAdmin, isLoggedIn}) {
             )}/>
             <Route component={NoMatch} />
           </Switch>
-          {user && <DashboardFooter />}
           <Footer />
         </LocaleContext.Provider>
       </ThemeContext.Provider>
