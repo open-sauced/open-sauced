@@ -14,13 +14,8 @@ test("container component should have no violations", async() => {
 });
 
 test('renders a "OneGraph" link', () => {
-  render(<Footer />);
-  const link = screen.getByText("OneGraph");
-  expect(link).toHaveAttribute("href");
-});
+  const { container } = render(<Footer />);
 
-test('renders a "Netlify" link', () => {
-  render(<Footer />);
-  const link = screen.getByText("Netlify");
-  expect(link).toHaveAttribute("href");
+  const links = container.querySelectorAll('li.p-2 a');
+  expect(links.length).toBe(5);
 });

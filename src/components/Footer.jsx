@@ -7,27 +7,37 @@ function Footer() {
     <Container>
       <ul className="flex sm:flex-row text-xl font-righteous text-accent font-bold justify-center items-center cursor-pointer">
         <li className="p-2 sm:mr-5">
-          <a target="_blank" href="https://github.com/open-sauced/hot" rel="noreferrer">
+          <a href="https://github.com/open-sauced/hot"
+            target="_blank" rel="noreferrer"
+            aria-label="Visit Open Sauced GitHub Organisation">
             <FaGithub className="text-offWhite hover:text-accent" />
           </a>
         </li>
         <li className="p-2 sm:mr-5">
-          <a target="_blank" href="https://twitter.com/saucedopen" rel="noreferrer">
+          <a href="https://twitter.com/saucedopen"
+             target="_blank" rel="noreferrer"
+             aria-label="Visit Open Sauced GitHub Organisation">
             <FaTwitter className="text-offWhite hover:text-accent" />
           </a>
         </li>
         <li className="p-2 sm:mr-5">
-          <a target="_blank" href="https://discord.com/invite/U2peSNf23P" rel="noreferrer">
+          <a href="https://discord.com/invite/U2peSNf23P"
+             target="_blank" rel="noreferrer"
+             aria-label="Visit Open Sauced GitHub Organisation">
             <FaDiscord className="text-offWhite hover:text-accent" />
           </a>
         </li>
         <li className="p-2 sm:mr-5">
-          <a target="_blank" href="https://www.youtube.com/opensauced" rel="noreferrer">
+          <a href="https://www.youtube.com/opensauced"
+             target="_blank" rel="noreferrer"
+             aria-label="Visit Open Sauced GitHub Organisation">
             <FaYoutube className="text-offWhite hover:text-accent" />
           </a>
         </li>
         <li className="p-2 sm:mr-5">
-          <a target="_blank" href="https://www.dev.to/opensauced" rel="noreferrer">
+          <a href="https://www.dev.to/opensauced"
+             target="_blank" rel="noreferrer"
+             aria-label="Visit Open Sauced GitHub Organisation">
             <FaDev className="text-offWhite hover:text-accent" />
           </a>
         </li>
