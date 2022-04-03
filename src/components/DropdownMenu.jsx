@@ -30,6 +30,17 @@ function DropdownMenu({forwardRef, user, _logOutRedirect}) {
           </SubtleLink>
         </li>
         <li>
+          <SubtleLink
+            tabIndex={0}
+            className="menu-link"
+            href={`https://docs.opensauced.pizza/`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Docs
+          </SubtleLink>
+        </li>
+        <li>
           <SubtleLink tabIndex={0} className="menu-link" onClick={_logOutRedirect}>Logout</SubtleLink>
         </li>
       </ul>
