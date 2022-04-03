@@ -14,8 +14,8 @@ test("container component should have no violations", async() => {
 });
 
 test('renders a "OneGraph" link', () => {
-  const { container } = render(<Footer />);
-
-  const links = container.querySelectorAll('li.p-2 a');
+  render(<Footer />);
+  const links = screen.getAllByRole('link');
+  // const links = container.querySelectorAll('li.p-2 a');
   expect(links.length).toBe(5);
 });
