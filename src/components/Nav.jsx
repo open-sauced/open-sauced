@@ -11,7 +11,7 @@ import AdminStatsBar from "./AdminStatsBar";
 import Hotkeys from "react-hot-keys";
 import {useHistory, Link} from "react-router-dom";
 import ThemeButtonGroup from "./ThemeButtonGroup";
-import { HiOutlineLogin, HiOutlineLogout } from "react-icons/all";
+import { HiOutlineLogin, HiOutlineLogout } from "react-icons/hi";
 
 function LeftSide({isLoggedIn, user, handleLogIn, handleLogOut}) {
   const history = useHistory();
@@ -32,6 +32,7 @@ function LeftSide({isLoggedIn, user, handleLogIn, handleLogOut}) {
               className="nav-link"
               target="_blank"
               rel="noreferrer"
+              tabIndex={0}
               href="https://github.com/open-sauced/open-sauced/issues/new/choose">
               <FaGithubSquare/> Report a bug
             </SubtleLink>
@@ -41,6 +42,7 @@ function LeftSide({isLoggedIn, user, handleLogIn, handleLogOut}) {
           <SubtleLink
             className="nav-link"
             onClick={isLoggedIn ? _logOutRedirect : handleLogIn}
+            tabIndex={0}
             >
             {isLoggedIn ?
               <><HiOutlineLogout/> Logout</>
