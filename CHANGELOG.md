@@ -5,6 +5,13 @@
 
 > All notable changes to this project will be documented in this file
 
+## [0.45.0](https://github.com/open-sauced/open-sauced/compare/v0.44.3...v0.45.0) (2022-04-04)
+
+
+### 🍕 Features
+
+* adjust footer with hot open sauced template ([#1415](https://github.com/open-sauced/open-sauced/issues/1415)) ([fc4464e](https://github.com/open-sauced/open-sauced/commit/fc4464ec9da69f46e4e51f75129f70929225ba67)), closes [#1408](https://github.com/open-sauced/open-sauced/issues/1408)
+
 ### [0.44.3](https://github.com/open-sauced/open-sauced/compare/v0.44.2...v0.44.3) (2022-04-02)
 
 
