@@ -1,7 +1,6 @@
 import React, {useEffect, useMemo, useState} from "react";
 import Dashboard from "../containers/Dashboard";
 import Footer from "../components/Footer";
-import DashboardFooter from "../components/DashboardFooter";
 import Nav from "../components/Nav";
 import Repository from "../components/Repository";
 import {BrowserRouter as Router, Route, Redirect, Switch, useHistory} from "react-router-dom";
@@ -71,9 +70,6 @@ function App({handleLogIn, handleLogOut, user, isAdmin, isLoggedIn}) {
   const [theme, setTheme] = useState(localStorage.getItem("theme") || "system");
   useEffect(applyTheme, [theme]);
 
-  // replaced dyanmicaly
-  const date = '__DATE__'
-
   return (
     <Router>
       <ThemeContext.Provider value={[theme, setTheme]}>
@@ -99,8 +95,7 @@ function App({handleLogIn, handleLogOut, user, isAdmin, isLoggedIn}) {
             )}/>
             <Route component={NoMatch} />
           </Switch>
-          {!user && <Footer date={date} />}
-          {user && <DashboardFooter />}
+          <Footer />
         </LocaleContext.Provider>
       </ThemeContext.Provider>
     </Router>

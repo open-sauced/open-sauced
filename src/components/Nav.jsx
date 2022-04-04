@@ -1,4 +1,5 @@
 import React, {useState, useRef, useEffect} from "react";
+import {FaGithubSquare} from "react-icons/fa";
 import {logo} from "../logos";
 import {FloatLeftMobileNav, FloatRight} from "../styles/Grid";
 import {SubtleLink} from "../styles/Typography";
@@ -10,6 +11,7 @@ import AdminStatsBar from "./AdminStatsBar";
 import Hotkeys from "react-hot-keys";
 import {useHistory, Link} from "react-router-dom";
 import ThemeButtonGroup from "./ThemeButtonGroup";
+import { HiOutlineLogin, HiOutlineLogout } from "react-icons/hi";
 
 function LeftSide({isLoggedIn, user, handleLogIn, handleLogOut}) {
   const history = useHistory();
@@ -24,62 +26,30 @@ function LeftSide({isLoggedIn, user, handleLogIn, handleLogOut}) {
         <Logo alt="open sauced" src={logo} />
       </Link>
       <ul>
-        <li>
-          <SubtleLink
-            href="https://docs.opensauced.pizza/"
-            className="nav-link"
-            rel="noreferrer">
-            Docs
-          </SubtleLink>
-        </li>
-        <li>
-          <SubtleLink
-            href="https://dev.to/opensauced"
-            className="nav-link"
-            target="_blank"
-            rel="noreferrer">
-            Blog
-          </SubtleLink>
-        </li>
-        <li>
-          <SubtleLink
-            href="https://github.com/open-sauced/open-sauced"
-            className="nav-link"
-            target="_blank"
-            rel="noreferrer">
-            GitHub
-          </SubtleLink>
-        </li>
-        <li>
-          <SubtleLink
-            className="nav-link"
-            target="_blank"
-            rel="noreferrer"
-            href="https://discord.gg/U2peSNf23P">
-            Discord
-          </SubtleLink>
-        </li>
         {isLoggedIn && (
           <li>
             <SubtleLink
               className="nav-link"
               target="_blank"
               rel="noreferrer"
+              tabIndex={0}
               href="https://github.com/open-sauced/open-sauced/issues/new/choose">
-              Issue
+              <FaGithubSquare/> Report a bug
             </SubtleLink>
           </li>
         )}
         <li>
-          {isLoggedIn ? (
-            <div>
-              <SubtleLink className="mobile-link" tabIndex={0} onClick={_logOutRedirect}>Logout</SubtleLink>
-            </div>
-          ) : (
-            <div>
-              <SubtleLink tabIndex={0} onClick={handleLogIn}>Login</SubtleLink>
-            </div>
-          )}
+          <SubtleLink
+            className="nav-link"
+            onClick={isLoggedIn ? _logOutRedirect : handleLogIn}
+            tabIndex={0}
+            >
+            {isLoggedIn ?
+              <><HiOutlineLogout/> Logout</>
+            :
+              <><HiOutlineLogin/> Login</>
+            }
+          </SubtleLink>
         </li>
       </ul>
     </FloatLeftMobileNav>
