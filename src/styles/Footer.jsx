@@ -23,8 +23,15 @@ export const Container = styled.footer`
   }
 
   a {
-    color: ${colors.offWhite};
+    color: ${colors.saucyRed};
     text-decoration: none;
+    &:hover {
+      color: ${colors.grey};
+    }
+  }
+
+  body.dark & a {
+    color: ${colors.offWhite};
     &:hover {
       color: ${colors.accent};
     }
