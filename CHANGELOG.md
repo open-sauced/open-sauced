@@ -5,6 +5,13 @@
 
 > All notable changes to this project will be documented in this file
 
+### [0.45.1](https://github.com/open-sauced/open-sauced/compare/v0.45.0...v0.45.1) (2022-04-05)
+
+
+### 🐛 Bug Fixes
+
+* make footer visible in light mode ([#1416](https://github.com/open-sauced/open-sauced/issues/1416)) ([d2786e8](https://github.com/open-sauced/open-sauced/commit/d2786e8a585a5b0643a5cb5fbe04183c7ac5797e))
+
 ## [0.45.0](https://github.com/open-sauced/open-sauced/compare/v0.44.3...v0.45.0) (2022-04-04)
 
 
