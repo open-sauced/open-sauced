@@ -39,6 +39,8 @@
     "@emotion/react": "^11.8.2",
     "@emotion/styled": "^11.8.1",
     "@primer/octicons-react": "^17.0.0",
+    "@radix-ui/react-switch": "^0.1.5",
+    "@stitches/react": "^1.2.7",
     "contrast": "^1.0.1",
     "dayjs": "^1.11.0",
     "graphql": "^16.3.0",
