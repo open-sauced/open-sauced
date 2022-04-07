@@ -1,6 +1,7 @@
 import React from "react";
 import Background from "../src/styles/Background";
 import Avatar from "../src/styles/Avatar";
+import { Switch, SwitchThumb } from "../src/styles/RadixSwitch";
 import {face} from "../src/images";
 import darkMode from "../src/images/darkMode.svg";
 import lightMode from "../src/images/lightMode.svg";
@@ -16,6 +17,16 @@ export default {
 export const ProfileAvatar = () => (
   <Background style={{height: 1024, padding: "10px"}}>
     <Avatar style={{width: "40px"}} src={face} alt="profile pic" />
+  </Background>
+);
+
+export const ThemeSwitch = () => (
+  <Background style={{height: 1024, padding: "10px"}}>
+    <Switch
+      style={{margin:"0 1rem"}}
+      id="s1">
+      <SwitchThumb />
+    </Switch>
   </Background>
 );
 
