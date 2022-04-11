@@ -12,6 +12,7 @@ import LocaleContext from "../Context";
 import ThemeContext from "../ThemeContext";
 import auth from "../hoc/AuthHOC";
 import {ohno} from "../images";
+import systemIsDark from "../lib/systemIsDark";
 
 function NoMatch() {
   const history = useHistory();
@@ -44,9 +45,9 @@ function App({handleLogIn, handleLogOut, user, isAdmin, isLoggedIn}) {
     }),
     [goalsId],
   );
-  const systemIsDark = () => {
+/*   const systemIsDark = () => {
     return window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
-  };
+  }; */
   const applyTheme = () => {
     if (theme === "system") {
       localStorage.removeItem("theme");

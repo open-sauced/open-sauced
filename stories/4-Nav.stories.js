@@ -3,6 +3,7 @@ import {logo} from "../src/logos";
 import {FloatLeft, FloatRight} from "../src/styles/Grid";
 import {SubtleLink} from "../src/styles/Typography";
 import {AppNav, HomeNav} from "../src/styles/Header";
+import { Switch, SwitchThumb } from "../src/styles/RadixSwitch";
 import {SpaceBetween} from "../src/styles/Grid";
 import darkMode from "../src/images/darkMode.svg";
 import lightMode from "../src/images/lightMode.svg";
@@ -38,18 +39,11 @@ export const HomePage = () => (
       </FloatLeft>
 
       <FloatRight>
-        <a
-          style={{margin:"0 .5rem"}}>
-          <img src={darkMode} alt="dark mode" style={{padding:"0.25rem", borderRadius:"15%"}}/>
-        </a>
-        <a
-          style={{margin:"0 .5rem"}}>
-          <img src={themeAuto} alt="theme auto" style={{padding:"0.25rem", borderRadius:"15%"}}/>
-        </a>
-        <a
-          style={{margin:"0 .5rem"}}>
-          <img src={lightMode} alt="light mode" style={{padding:"0.25rem", borderRadius:"15%"}} />
-        </a>
+      <Switch
+        style={{margin:"0 1rem"}}
+        id="s1">
+        <SwitchThumb />
+      </Switch>
       </FloatRight>
     </HomeNav>
   </Fragment>
@@ -85,18 +79,11 @@ export const App = () => (
 
       <FloatRight>
         <SpaceBetween>
-          <a
-            style={{margin:"0 .5rem"}}>
-            <img src={darkMode} alt="dark mode" style={{padding:"0.25rem", borderRadius:"15%"}}/>
-          </a>
-          <a
-            style={{margin:"0 .5rem"}}>
-            <img src={themeAuto} alt="theme auto" style={{padding:"0.25rem", borderRadius:"15%"}}/>
-          </a>
-          <a
-            style={{margin:"0 .5rem"}}>
-            <img src={lightMode} alt="light mode" style={{padding:"0.25rem", borderRadius:"15%"}} />
-          </a>
+          <Switch
+            style={{margin:"0 1rem"}}
+            id="s1">
+            <SwitchThumb />
+          </Switch>
           <Avatar src={face} alt="profile pic" />
         </SpaceBetween>
       </FloatRight>

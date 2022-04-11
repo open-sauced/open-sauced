@@ -10,7 +10,7 @@ import DropdownMenu from "./DropdownMenu";
 import AdminStatsBar from "./AdminStatsBar";
 import Hotkeys from "react-hot-keys";
 import {useHistory, Link} from "react-router-dom";
-import ThemeButtonGroup from "./ThemeButtonGroup";
+import ThemeSwitch from "./ThemeSwitch";
 import { HiOutlineLogin, HiOutlineLogout } from "react-icons/hi";
 
 function LeftSide({isLoggedIn, user, handleLogIn, handleLogOut}) {
@@ -87,7 +87,7 @@ function RightSide({user, handleLogOut}) {
   return (
     <FloatRight>
       <SpaceBetween>
-        <ThemeButtonGroup />
+        <ThemeSwitch />
         {user && (
           <div className="show-avatar">
             <ProfileAvatar alt="avatar" src={`https://github.com/${user.login}.png`} title={`${user.login}`}
