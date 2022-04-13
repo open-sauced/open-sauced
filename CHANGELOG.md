@@ -5,6 +5,13 @@
 
 > All notable changes to this project will be documented in this file
 
+### [0.46.1](https://github.com/open-sauced/open-sauced/compare/v0.46.0...v0.46.1) (2022-04-13)
+
+
+### 🐛 Bug Fixes
+
+* Removed the Contributions component. ([#1421](https://github.com/open-sauced/open-sauced/issues/1421)) ([35fb426](https://github.com/open-sauced/open-sauced/commit/35fb4266d566b533e3a29e5c6b3600b5443f4d1e))
+
 ## [0.46.0](https://github.com/open-sauced/open-sauced/compare/v0.45.1...v0.46.0) (2022-04-11)
 
 
