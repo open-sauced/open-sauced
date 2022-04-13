@@ -5,6 +5,13 @@
 
 > All notable changes to this project will be documented in this file
 
+## [0.46.0](https://github.com/open-sauced/open-sauced/compare/v0.45.1...v0.46.0) (2022-04-11)
+
+
+### 🍕 Features
+
+* Removed theme buttons and replaced them with radix switch ([#1417](https://github.com/open-sauced/open-sauced/issues/1417)) ([0805da7](https://github.com/open-sauced/open-sauced/commit/0805da7c7ee7ea99bf956b7900f11abab1d10fe4))
+
 ### [0.45.1](https://github.com/open-sauced/open-sauced/compare/v0.45.0...v0.45.1) (2022-04-05)
 
 
