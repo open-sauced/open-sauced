@@ -5,6 +5,13 @@
 
 > All notable changes to this project will be documented in this file
 
+## [0.47.0](https://github.com/open-sauced/open-sauced/compare/v0.46.1...v0.47.0) (2022-04-15)
+
+
+### 🍕 Features
+
+* added social cards ([#1423](https://github.com/open-sauced/open-sauced/issues/1423)) ([1d2dbde](https://github.com/open-sauced/open-sauced/commit/1d2dbdedb5427e06f7fc467485017cff5620ef30))
+
 ### [0.46.1](https://github.com/open-sauced/open-sauced/compare/v0.46.0...v0.46.1) (2022-04-13)
 
 
