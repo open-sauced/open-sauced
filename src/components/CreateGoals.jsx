@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import Button from "../styles/Button";
 import Illustration from "../styles/Illustration";
 import {ContextStyle} from "../styles/Card";
-import {FlexColumn, SpaceBetweenTop} from "../styles/Grid";
+import {SpaceBetweenTop, SpaceBetween} from "../styles/Grid";
 import api from "../lib/apiGraphQL";
 import {goalsReducer} from "../lib/reducers";
 import {devProductive} from "../illustrations";
@@ -10,7 +10,7 @@ import Cards from "./Card";
 
 function CreateApp() {
   return (
-    <React.Fragment>
+    <div style={{ maxWidth: "40%" }}>
       <h1>Create your goals workspace</h1>
       <p>
         Open Sauced is a tool to help track your open source contributions. You can get started by creating a goal
@@ -20,7 +20,7 @@ function CreateApp() {
       <small>
         <em>You own all your data saved while saucin.</em>
       </small>
-    </React.Fragment>
+    </div>
   );
 }
 
@@ -67,30 +67,35 @@ function CreateGoals({installNeeded, user, onRepoCreation}) {
     <React.Fragment>
       <ContextStyle>
         <SpaceBetweenTop>
-          <FlexColumn>
-            <CreateApp _handleRepoCreation={_handleRepoCreation} user={user} installReady={installReady}/>
-          </FlexColumn>
-          <FlexColumn>
-            <Illustration alt="productive developer image" src={devProductive} />
-          </FlexColumn>
+          <SpaceBetween>
+              <CreateApp />
+              <Illustration alt="productive developer image" src={devProductive} />
+          </SpaceBetween>
         </SpaceBetweenTop>
         <Cards>
-          <h1>1</h1>
-          <Button primary onClick={_handleRepoCreation} disabled={installReady}>
-            Sync Repos
-          </Button>
+          <SpaceBetween>
+            <h1>1 Let's sync Open Sauced with your GitHub Repos</h1>
+            <Button primary minWidth={175} onClick={_handleRepoCreation} disabled={installReady}>
+              Sync Repos
+            </Button>
+          </SpaceBetween>
         </Cards>
         <Cards>
-          <h1>2</h1>
-          <a
-            rel="noreferrer"
-            target="_blank"
-            href={`https://github.com/apps/open-sauced/installations/new/permissions?target_id=${user && user.id}`}>
-            <Button primary disabled={!installReady}>Create database</Button>
-          </a>
+          <SpaceBetween>
+            <h1>2 Now let's create the Open Sauced database on GitHub</h1>
+            <a
+              rel="noreferrer"
+              target="_blank"
+              href={`https://github.com/apps/open-sauced/installations/new/permissions?target_id=${user && user.id}`}>
+              <Button primary minWidth={175} disabled={!installReady}>Create database</Button>
+            </a>
+          </SpaceBetween>
         </Cards>
         <Cards>
-          <h1>3</h1>
+          <SpaceBetween>
+            <h1>3 And finally, it's time to follow some repos</h1>
+              <Button primary minWidth={175} disabled={true}>Add Repos</Button>
+          </SpaceBetween>
         </Cards>
       </ContextStyle>
     </React.Fragment>
