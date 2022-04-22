@@ -11,7 +11,7 @@ function Hero({ handleLogIn }) {
         <Card>
           <FlexColumnCenter>
             <h1>Open Sauced Dashboard</h1>
-            <p>Logisn with Gitasdg open source projects.</p>
+            <p>Logasdisn with Gitasdg open source projects.</p>
             <br />
             <FlexCenter>
               <MarketingButton alt="pizza" primary onClick={handleLogIn}>
