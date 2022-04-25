@@ -7,10 +7,11 @@ import api from "../lib/apiGraphQL";
 import {goalsReducer} from "../lib/reducers";
 import {devProductive} from "../illustrations";
 import Cards from "./Card";
+import { CreateGoalsContainer } from "../styles/Container";
 
 function CreateApp() {
   return (
-    <div style={{ maxWidth: "40%" }}>
+    <CreateGoalsContainer>
       <h1>Create your goals workspace</h1>
       <p>
         Open Sauced is a tool to help track your open source contributions. You can get started by creating a goal
@@ -20,7 +21,7 @@ function CreateApp() {
       <small>
         <em>You own all your data saved while saucin.</em>
       </small>
-    </div>
+    </CreateGoalsContainer>
   );
 }
 
@@ -72,7 +73,7 @@ function CreateGoals({installNeeded, user, onRepoCreation}) {
               <Illustration alt="productive developer image" src={devProductive} />
           </SpaceBetween>
         </SpaceBetweenTop>
-        <Cards>
+        <Cards disabled={installReady}>
           <SpaceBetween>
             <h1>1 Let's sync Open Sauced with your GitHub Repos</h1>
             <Button primary minWidth={175} onClick={_handleRepoCreation} disabled={installReady}>
@@ -80,7 +81,7 @@ function CreateGoals({installNeeded, user, onRepoCreation}) {
             </Button>
           </SpaceBetween>
         </Cards>
-        <Cards>
+        <Cards disabled={!installReady}>
           <SpaceBetween>
             <h1>2 Now let's create the Open Sauced database on GitHub</h1>
             <a
@@ -91,7 +92,7 @@ function CreateGoals({installNeeded, user, onRepoCreation}) {
             </a>
           </SpaceBetween>
         </Cards>
-        <Cards>
+        <Cards disabled={true}>
           <SpaceBetween>
             <h1>3 And finally, it's time to follow some repos</h1>
               <Button primary minWidth={175} disabled={true}>Add Repos</Button>

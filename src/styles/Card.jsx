@@ -86,6 +86,10 @@ const FittedCard = styled(Card)`
   padding: 0;
 `;
 
+const DisabledCard = styled(Card)`
+  opacity: 0.5
+`;
+
 const ButtonBoard = styled.div`
   flex: 1;
   padding: ${size.tiny} ${margin.gutter};
@@ -315,6 +319,7 @@ export {
   CardPadding,
   CardHeader,
   FittedCard,
+  DisabledCard,
   ContextStyle,
   HintStyle,
   OnBoardStyle,
