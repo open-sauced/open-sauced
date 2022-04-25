@@ -13,7 +13,4 @@ export const Container = styled.div`
   `};
 `;
 
-export const CreateGoalsContainer = styled.div`
-  max-width: 40%;
-`
 export default Container;

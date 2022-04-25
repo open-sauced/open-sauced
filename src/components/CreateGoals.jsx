@@ -7,7 +7,21 @@ import api from "../lib/apiGraphQL";
 import {goalsReducer} from "../lib/reducers";
 import {devProductive} from "../illustrations";
 import Cards from "./Card";
-import { CreateGoalsContainer } from "../styles/Container";
+import styled from "styled-components";
+
+const CreateGoalsContainer = styled.div`
+  max-width: 40%;
+`;
+
+const OnBoardingText = styled.div`
+  h1 {
+    width: auto;
+    padding-right: 20px;
+  };
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+`
 
 function CreateApp() {
   return (
@@ -75,7 +89,10 @@ function CreateGoals({installNeeded, user, onRepoCreation}) {
         </SpaceBetweenTop>
         <Cards disabled={installReady}>
           <SpaceBetween>
-            <h1>1 Let's sync Open Sauced with your GitHub Repos</h1>
+            <OnBoardingText>
+              <h1>1</h1>
+              <p>Let's sync Open Sauced with your GitHub Repos</p>
+            </OnBoardingText>
             <Button primary minWidth={175} onClick={_handleRepoCreation} disabled={installReady}>
               Sync Repos
             </Button>
@@ -83,7 +100,10 @@ function CreateGoals({installNeeded, user, onRepoCreation}) {
         </Cards>
         <Cards disabled={!installReady}>
           <SpaceBetween>
-            <h1>2 Now let's create the Open Sauced database on GitHub</h1>
+            <OnBoardingText>
+              <h1>2</h1>
+              <p>Now let's create the Open Sauced database on GitHub</p>
+            </OnBoardingText>
             <a
               rel="noreferrer"
               target="_blank"
@@ -94,7 +114,10 @@ function CreateGoals({installNeeded, user, onRepoCreation}) {
         </Cards>
         <Cards disabled={true}>
           <SpaceBetween>
-            <h1>3 And finally, it's time to follow some repos</h1>
+            <OnBoardingText>
+              <h1>3</h1>
+              <p>And finally, it's time to follow some repos</p>
+            </OnBoardingText>
               <Button primary minWidth={175} disabled={true}>Add Repos</Button>
           </SpaceBetween>
         </Cards>
