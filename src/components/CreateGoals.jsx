@@ -7,21 +7,7 @@ import api from "../lib/apiGraphQL";
 import {goalsReducer} from "../lib/reducers";
 import {devProductive} from "../illustrations";
 import Cards from "./Card";
-import styled from "styled-components";
-
-const CreateGoalsContainer = styled.div`
-  max-width: 40%;
-`;
-
-const OnBoardingText = styled.div`
-  h1 {
-    width: auto;
-    padding-right: 20px;
-  };
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-`
+import {CreateGoalsContainer, OnBoardingText} from "../styles/Container"
 
 function CreateApp() {
   return (
