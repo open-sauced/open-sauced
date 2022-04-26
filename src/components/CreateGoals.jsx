@@ -11,17 +11,20 @@ import {CreateGoalsContainer, OnBoardingText} from "../styles/Container"
 
 function CreateApp() {
   return (
-    <CreateGoalsContainer>
-      <h1>Create your goals workspace</h1>
-      <p>
-        Open Sauced is a tool to help track your open source contributions. You can get started by creating a goal
-        workspace below.
-      </p>
-      <p>A public repository named "open-sauced-goals" will be created on your GitHub account to store data about your goals.</p>
-      <small>
-        <em>You own all your data saved while saucin.</em>
-      </small>
-    </CreateGoalsContainer>
+    <>
+      <CreateGoalsContainer>
+        <h1>Create your goals workspace</h1>
+        <p>
+          Open Sauced is a tool to help track your open source contributions. You can get started by creating a goal
+          workspace below.
+        </p>
+        <p>A public repository named "open-sauced-goals" will be created on your GitHub account to store data about your goals.</p>
+        <small>
+          <em>You own all your data saved while saucin.</em>
+        </small>
+      </CreateGoalsContainer>
+      <Illustration className="productive-developer" alt="productive developer image" src={devProductive} />
+    </>
   );
 }
 
@@ -70,7 +73,6 @@ function CreateGoals({installNeeded, user, onRepoCreation}) {
         <SpaceBetweenTop>
           <SpaceBetween>
               <CreateApp />
-              <Illustration alt="productive developer image" src={devProductive} />
           </SpaceBetween>
         </SpaceBetweenTop>
         <Cards disabled={installReady}>
@@ -79,7 +81,7 @@ function CreateGoals({installNeeded, user, onRepoCreation}) {
               <h1>1</h1>
               <p>Let's sync Open Sauced with your GitHub Repos</p>
             </OnBoardingText>
-            <Button primary minWidth={175} onClick={_handleRepoCreation} disabled={installReady}>
+            <Button primary minWidth={175} maxWidth={175} onClick={_handleRepoCreation} disabled={installReady}>
               Sync Repos
             </Button>
           </SpaceBetween>
@@ -94,11 +96,11 @@ function CreateGoals({installNeeded, user, onRepoCreation}) {
               rel="noreferrer"
               target="_blank"
               href={`https://github.com/apps/open-sauced/installations/new/permissions?target_id=${user && user.id}`}>
-              <Button primary minWidth={175} disabled={!installReady}>Create database</Button>
+              <Button primary minWidth={175} maxWidth={175} disabled={!installReady}>Create database</Button>
             </a>
           </SpaceBetween>
         </Cards>
-        <Cards disabled={true}>
+        {/* <Cards disabled={true}>
           <SpaceBetween>
             <OnBoardingText>
               <h1>3</h1>
@@ -106,7 +108,7 @@ function CreateGoals({installNeeded, user, onRepoCreation}) {
             </OnBoardingText>
               <Button primary minWidth={175} disabled={true}>Add Repos</Button>
           </SpaceBetween>
-        </Cards>
+        </Cards> */}
       </ContextStyle>
     </React.Fragment>
   );

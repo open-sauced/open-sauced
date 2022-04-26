@@ -14,9 +14,12 @@ export const Container = styled.div`
 `;
 
 export const CreateGoalsContainer = styled.div`
-  max-width: 40%;
-`;
+  max-width: 60%;
 
+  ${MEDIA.TABLET`
+    max-width: 100%;
+  `};
+`;
 export const OnBoardingText = styled.div`
   h1 {
     width: auto;
