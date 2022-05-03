@@ -97,7 +97,7 @@ function CreateGoals({installNeeded, user, onRepoCreation}) {
                 <TooltipTrigger>
                   <p>test</p>
                 </TooltipTrigger>
-                <TooltipContainer>
+                <TooltipContainer side="top" sideOffset={5}>
                   <p>testing</p>
                   <TooltipArrowComponent />
                 </TooltipContainer>
