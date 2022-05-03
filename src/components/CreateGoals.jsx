@@ -8,6 +8,8 @@ import {goalsReducer} from "../lib/reducers";
 import {devProductive} from "../illustrations";
 import Cards from "./Card";
 import {CreateGoalsContainer, OnBoardingText} from "../styles/Container"
+import {Tooltip, TooltipTrigger} from "@radix-ui/react-tooltip";
+import {TooltipContainer, TooltipArrowComponent} from "../styles/Tooltip";
 
 function CreateApp() {
   return (
@@ -91,6 +93,15 @@ function CreateGoals({installNeeded, user, onRepoCreation}) {
             <OnBoardingText>
               <h1>2</h1>
               <p>Now let's create the Open Sauced database on GitHub</p>
+              <Tooltip delayDuration={200}>
+                <TooltipTrigger>
+                  <p>test</p>
+                </TooltipTrigger>
+                <TooltipContainer>
+                  <p>testing</p>
+                  <TooltipArrowComponent />
+                </TooltipContainer>
+              </Tooltip>
             </OnBoardingText>
             <a
               rel="noreferrer"
