@@ -13,7 +13,6 @@ const TooltipContainer = styled(TooltipContent)`
     border-radius: 4px;
     padding: 15px;
     font-size: 15px;
-    line-height: 1px;
     animation-duration: 400ms;
     animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
     animation-fill-mode: forwards;

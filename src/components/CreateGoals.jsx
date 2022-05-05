@@ -6,6 +6,7 @@ import {SpaceBetweenTop, SpaceBetween} from "../styles/Grid";
 import api from "../lib/apiGraphQL";
 import {goalsReducer} from "../lib/reducers";
 import {devProductive} from "../illustrations";
+import {appInstall} from "../images";
 import Cards from "./Card";
 import {CreateGoalsContainer, OnBoardingText} from "../styles/Container"
 import {Tooltip, TooltipTrigger} from "@radix-ui/react-tooltip";
@@ -98,7 +99,7 @@ function CreateGoals({installNeeded, user, onRepoCreation}) {
                   <p>test</p>
                 </TooltipTrigger>
                 <TooltipContainer side="top" sideOffset={5}>
-                  <p>testing</p>
+                  <img className="app-install" alt="app install guide" src={appInstall} />
                   <TooltipArrowComponent />
                 </TooltipContainer>
               </Tooltip>
