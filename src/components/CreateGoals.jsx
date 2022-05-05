@@ -112,7 +112,10 @@ function CreateGoals({installNeeded, user, onRepoCreation}) {
             </a>
           </SpaceBetween>
         </Cards>
-        {/* <Cards disabled={true}>
+        {/* TODO: This is the beginning of the implementation to solve issue #1428 in open-sauced
+            https://github.com/open-sauced/open-sauced/issues/1428
+        
+        <Cards disabled={true}>
           <SpaceBetween>
             <OnBoardingText>
               <h1>3</h1>
