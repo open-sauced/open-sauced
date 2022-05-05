@@ -100,7 +100,9 @@ function CreateGoals({installNeeded, user, onRepoCreation}) {
             </a>
           </SpaceBetween>
         </Cards>
-        {/* <Cards disabled={true}>
+        {/* TODO: issue #1428
+        
+        <Cards disabled={true}>
           <SpaceBetween>
             <OnBoardingText>
               <h1>3</h1>
