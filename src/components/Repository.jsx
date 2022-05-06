@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from "react";
-import DangerZone from "../components/DangerZone";
 import Card from "../components/Card";
 import Issues from "../components/Issues";
 import DetailInfo from "../components/DetailInfo";
@@ -20,14 +19,13 @@ import {fontSize} from "../styles/variables";
 
 function Repository({user, match}) {
   const {
-    params: {repoName, repoOwner, id: issueNumber},
+    params: {repoName, repoOwner},
   } = match;
   const [repository, setRepository] = useState(null);
   const [error, setError] = useState(null);
-  const [note, setNote] = useState(null);
-  const [issueId, setIssueId] = useState();
   const [isForkLoading, setIsForkLoading] = useState(true);
   const [isForked, setIsForked] = useState(false);
+  const [showFork, setShowFork] = useState(false);
   const languagesShown = 3;
   const contributorsShown = 5;
 
@@ -54,17 +52,6 @@ function Repository({user, match}) {
       });
 
     api
-      .fetchGoalQuery(parseInt(issueNumber))
-      .then(res => {
-        const {issue} = res.data.gitHub.viewer.repository;
-        setNote(issue.body);
-        setIssueId(issue.id);
-      })
-      .catch(e => {
-        console.log(e);
-      });
-
-    api
       .persistedForkFetch({repoName, repoOwner}, "FetchUserForkCount")
       .then(({data, errors}) => {
         if (errors && errors.length > 0) {
@@ -76,7 +63,7 @@ function Repository({user, match}) {
       })
       .catch(e => console.log(e))
       .finally(() => setIsForkLoading(false));
-  }, [issueNumber, repoName, repoOwner]);
+  }, [repoName, repoOwner]);
 
   const forkRepository = () => {
     setIsForkLoading(true);
@@ -96,8 +83,9 @@ function Repository({user, match}) {
       .catch(e => console.log(e))
       .finally(() => setIsForkLoading(false));
   };
-
-  const showFork = repository && user && repoOwner !== user && user.login ? true : isForkLoading;
+  useEffect(()=>{
+    setShowFork(repository && user && repoOwner !== user && user.login ? true : isForkLoading);
+  },[user, repository, repoOwner, isForkLoading])
 
   const {
     url,
@@ -174,7 +162,7 @@ function Repository({user, match}) {
               <a rel="noreferrer" target="_blank" href={`https://codetriage.com/${nameWithOwner}`}>
                 <Button primary>Set up CodeTriage</Button>
               </a>
-              {showFork && isForked ? (
+              {showFork && (isForked ? (
                 <a rel="noreferrer" target="_blank" href={`https://github.com/${user.login}/${repoName}`}>
                   <Button disabled={isForkLoading} data-test="go-to-fork-button">
                     View fork
@@ -184,7 +172,7 @@ function Repository({user, match}) {
                 <Button disabled={isForkLoading} onClick={forkRepository}>
                   <RepoForkedIcon verticalAlign="middle" /> Fork
                 </Button>
-              )}
+              ))}
               <h3 style={{fontSize: fontSize.default}}>Contributors</h3>
               <div className="contributors">
                 {contributors.slice(0, contributorsShown).map((user, key) => (
@@ -244,7 +232,6 @@ function Repository({user, match}) {
               <DetailInfo text={`${humanizeNumber(stargazers.totalCount)} stars`} icon="StarIcon" />
               {licenseInfo && <DetailInfo text={`${licenseInfo.name}`} icon="LawIcon" />}
             </Card>
-            {owner && <DangerZone note={note} goalId={issueId} repoName={nameWithOwner} />}
           </FormColumn>
         ) : (
           !error && <Spinner />

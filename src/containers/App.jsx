@@ -85,15 +85,19 @@ function App({handleLogIn, handleLogOut, user, isAdmin, isLoggedIn}) {
 
           <Switch>
             <Route exact path="/" component={guard(Dashboard)} />
-            <Route path="/repos/:repoOwner/:repoName/:id" component={guard(Repository)} />
+            <Route path="/repos/:repoOwner/:repoName" render={({match})=>{
+              return <Repository user={user} match={match} />
+            }}></Route>
             <Route path="/callback" component={guard(Dashboard)} />
-            <Route exact path="/logout" render={() => (
-              isLoggedIn ? (
-                handleLogOut()
-              ) : (
-                <Redirect to="/" />
-              )
-            )}/>
+            <Route exact path="/logout" render={() => {
+              return (
+                isLoggedIn ? (
+                  handleLogOut()
+                ) : (
+                  <Redirect to="/" />
+                )
+              );
+            }}/>
             <Route component={NoMatch} />
           </Switch>
           <Footer />
