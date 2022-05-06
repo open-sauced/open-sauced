@@ -2,7 +2,6 @@ import React, {useState, useEffect} from "react";
 import DangerZone from "../components/DangerZone";
 import Card from "../components/Card";
 import Issues from "../components/Issues";
-import Contributions from "../components/Contributions";
 import DetailInfo from "../components/DetailInfo";
 import api from "../lib/apiGraphQL";
 import RepositoryAvatar from "../styles/RepositoryAvatar";

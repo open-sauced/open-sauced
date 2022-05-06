@@ -19,7 +19,8 @@ const Button = styled.button`
   font-size: ${fontSize.default};
   font-weight: 600;
   min-height: 35px;
-  min-width: 68px;
+  min-width: ${props => props.minWidth ? `${props.minWidth}px` : "68px"};
+  ${props => props.maxWidth && `max-width: ${props.maxWidth}px`};
   margin-bottom: ${size.tiny};
   margin-right: ${size.micro};
   outline: none;

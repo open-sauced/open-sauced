@@ -45,6 +45,9 @@ const SpaceBetween = styled.div`
   -webkit-justify-content: space-between;
 
   ${MEDIA.TABLET`
+    .productive-developer {
+      display: none;
+    }
     flex-direction: column;
   `};
 `;

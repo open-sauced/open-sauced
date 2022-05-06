@@ -2,50 +2,29 @@ import React, {useState} from "react";
 import Button from "../styles/Button";
 import Illustration from "../styles/Illustration";
 import {ContextStyle} from "../styles/Card";
-import {FlexColumn, SpaceBetweenTop} from "../styles/Grid";
+import {SpaceBetweenTop, SpaceBetween} from "../styles/Grid";
 import api from "../lib/apiGraphQL";
 import {goalsReducer} from "../lib/reducers";
 import {devProductive} from "../illustrations";
+import Cards from "./Card";
+import {CreateGoalsContainer, OnBoardingText} from "../styles/Container"
 
 function CreateApp() {
   return (
-    <React.Fragment>
-      <h1>Create your goals workspace</h1>
-      <p>
-        Open Sauced is a tool to help track your open source contributions. You can get started by creating a goal
-        workspace below.
-      </p>
-      <p>A public repository named "open-sauced-goals" will be created on your GitHub account to store data about your goals.</p>
-      <small>
-        <em>You own all your data saved while saucin.</em>
-      </small>
-    </React.Fragment>
-  );
-}
-
-function InstallApp({user}) {
-  const repoUrl = `https://github.com/${user.login}/open-sauced-goals`;
-  return (
-    <React.Fragment>
-      <h1>Install the GitHub App</h1>
-      <p>
-        GitHub Apps are the officially recommended way to integrate with GitHub because they offer much more granular
-        permissions to access data.
-      </p>
-      <p>
-        The Open Sauced App needs to be installed on your newly
-        created <a href={repoUrl} target="_blank" rel="noreferrer">open-sauced-goals</a> public
-        repository.
-      </p>
-      <img
-        style={{textAlign: "center", width: "80%"}}
-        src="https://user-images.githubusercontent.com/20134767/86527180-4a83c700-be51-11ea-8eaf-660298cf3c66.png"
-        alt="Install and Authorize"
-      />
-      <small>
-        <em>The installation grants access storing note data and tracking open source contributions.</em>
-      </small>
-    </React.Fragment>
+    <>
+      <CreateGoalsContainer>
+        <h1>Create your goals workspace</h1>
+        <p>
+          Open Sauced is a tool to help track your open source contributions. You can get started by creating a goal
+          workspace below.
+        </p>
+        <p>A public repository named "open-sauced-goals" will be created on your GitHub account to store data about your goals.</p>
+        <small>
+          <em>You own all your data saved while saucin.</em>
+        </small>
+      </CreateGoalsContainer>
+      <Illustration className="productive-developer" alt="productive developer image" src={devProductive} />
+    </>
   );
 }
 
@@ -92,23 +71,47 @@ function CreateGoals({installNeeded, user, onRepoCreation}) {
     <React.Fragment>
       <ContextStyle>
         <SpaceBetweenTop>
-          <FlexColumn>{installReady ? <InstallApp user={user} /> : <CreateApp />}</FlexColumn>
-          <Illustration alt="productive developer image" src={devProductive} />
+          <SpaceBetween>
+              <CreateApp />
+          </SpaceBetween>
         </SpaceBetweenTop>
+        <Cards disabled={installReady}>
+          <SpaceBetween>
+            <OnBoardingText>
+              <h1>1</h1>
+              <p>Let's sync Open Sauced with your GitHub Repos</p>
+            </OnBoardingText>
+            <Button primary minWidth={175} maxWidth={175} onClick={_handleRepoCreation} disabled={installReady}>
+              Sync Repos
+            </Button>
+          </SpaceBetween>
+        </Cards>
+        <Cards disabled={!installReady}>
+          <SpaceBetween>
+            <OnBoardingText>
+              <h1>2</h1>
+              <p>Now let's create the Open Sauced database on GitHub</p>
+            </OnBoardingText>
+            <a
+              rel="noreferrer"
+              target="_blank"
+              href={`https://github.com/apps/open-sauced/installations/new/permissions?target_id=${user && user.id}`}>
+              <Button primary minWidth={175} maxWidth={175} disabled={!installReady}>Create database</Button>
+            </a>
+          </SpaceBetween>
+        </Cards>
+        {/* TODO: issue #1428
+        
+        <Cards disabled={true}>
+          <SpaceBetween>
+            <OnBoardingText>
+              <h1>3</h1>
+              <p>And finally, it's time to follow some repos</p>
+            </OnBoardingText>
+              <Button primary minWidth={175} disabled={true}>Add Repos</Button>
+          </SpaceBetween>
+        </Cards> */}
       </ContextStyle>
-      <br style={{marginTop: 8}} />
-      {installReady ? (
-        <a
-          rel="noreferrer"
-          target="_blank"
-          href={`https://github.com/apps/open-sauced/installations/new/permissions?target_id=${user.id}`}>
-          <Button primary>Finish initializing {user.login}/open-sauced-goals</Button>
-        </a>
-      ) : (
-        <Button primary onClick={_handleRepoCreation}>
-          Create your goal workspace
-        </Button>
-      )}
     </React.Fragment>
   );
 }
