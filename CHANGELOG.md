@@ -5,6 +5,13 @@
 
 > All notable changes to this project will be documented in this file
 
+## [0.48.0](https://github.com/open-sauced/open-sauced/compare/v0.47.0...v0.48.0) (2022-05-06)
+
+
+### 🍕 Features
+
+* Redesigning the Onboarding experience ([#1425](https://github.com/open-sauced/open-sauced/issues/1425)) ([afbbbf6](https://github.com/open-sauced/open-sauced/commit/afbbbf62fa1e06f8168551bbdaaf49ad3b56778b))
+
 ## [0.47.0](https://github.com/open-sauced/open-sauced/compare/v0.46.1...v0.47.0) (2022-04-15)
 
 
