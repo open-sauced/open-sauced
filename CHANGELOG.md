@@ -5,6 +5,13 @@
 
 > All notable changes to this project will be documented in this file
 
+## [0.49.0](https://github.com/open-sauced/open-sauced/compare/v0.48.0...v0.49.0) (2022-05-09)
+
+
+### 🍕 Features
+
+* no issue id in url ([#1435](https://github.com/open-sauced/open-sauced/issues/1435)) ([b88760f](https://github.com/open-sauced/open-sauced/commit/b88760fed8ce96dd8d1ac04b3e184fa434ba5200))
+
 ## [0.48.0](https://github.com/open-sauced/open-sauced/compare/v0.47.0...v0.48.0) (2022-05-06)
 
 
