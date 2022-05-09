@@ -89,12 +89,10 @@ function ListGoals({goals, data}) {
         <List>
           {goalsWithData &&
             filteredSearch.map(goal => (
-              <li key={goal.full_name + goal.number}>
+              <li key={goal.full_name}>
                 <Link
                   to={{
-                    pathname: `/repos/${goal.full_name.replace(/\s+/g, "")}/${
-                      goal.number
-                    }/`,
+                    pathname: `/repos/${goal.full_name.replace(/\s+/g, "")}/`,
                   }}
                 >
                   <RepoListItem goal={goal} stars={goal.stargazers_count} />
