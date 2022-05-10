@@ -12,6 +12,7 @@ import api from "./lib/apiGraphQL";
 import {getAppVersion} from "./lib/appVersion";
 import {validateToken} from "./lib/validateToken";
 import { registerSW } from 'virtual:pwa-register';
+import posthog from "posthog-js";
 
 const apolloClient = new OneGraphApolloClient({
   oneGraphAuth: Config.auth,
@@ -24,6 +25,8 @@ function Index() {
   const [isAdmin, setIsAdmin] = useState(null);
 
   useEffect(() => {
+    posthog.init('phc_QFGGi71ugzUOXTLUTwMHVTlaHhDBolEC3XNVHNFHKmz', { api_host: 'https://app.posthog.com' });
+    
     registerSW({
       immediate: true,
       onNeedRefresh: () => {
@@ -76,6 +79,9 @@ function Index() {
 
   const _handleLogIn = () => {
     const auth = Config.auth;
+
+    posthog.capture('User Login', { userLogin: 'true' });
+
     auth
       .login("github")
       .then(() => {
