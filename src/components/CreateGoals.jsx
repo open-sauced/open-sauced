@@ -8,7 +8,7 @@ import {goalsReducer} from "../lib/reducers";
 import {devProductive} from "../illustrations";
 import Cards from "./Card";
 import {CreateGoalsContainer, OnBoardingText} from "../styles/Container";
-import posthog from "posthog-js";
+import {capturePostHogAnayltics} from "../lib/analytics";
 
 function CreateApp() {
   return (
@@ -32,7 +32,7 @@ function CreateApp() {
 function CreateGoals({installNeeded, user, onRepoCreation}) {
   const [installReady, setInstallReady] = useState(installNeeded);
   const _handleRepoCreation = () => {
-    posthog.capture('Onboarding Flow', { repoCreationBtn: 'clicked' });
+    capturePostHogAnayltics('Onboarding Flow', 'repoCreationBtn', 'clicked');
     
     api.fetchOwnerId(user.login).then(ownerRes => {
       const {
@@ -103,7 +103,7 @@ function CreateGoals({installNeeded, user, onRepoCreation}) {
                 primary minWidth={175}
                 maxWidth={175}
                 disabled={!installReady}
-                onClick={() => posthog.capture('Onboarding Flow', { databaseCreationBtn: 'clicked' })}>
+                onClick={() => capturePostHogAnayltics('Onboarding Flow', 'databaseCreationbtn', 'clicked')}>
                   Create database
                 </Button>
             </a>
