@@ -1,7 +1,7 @@
 import posthog from "posthog-js";
 
 function initiatePostHog () {
-    posthog.init('phc_QFGGi71ugzUOXTLUTwMHVTlaHhDBolEC3XNVHNFHKmz', { api_host: 'https://app.posthog.com' });
+    posthog.init(process.env.POSTHOG_ID, { api_host: 'https://app.posthog.com' });
     return;
 }
 
@@ -22,4 +22,4 @@ function capturePostHogAnayltics ( analyticsTitle, analyticsProperty, analyticsV
 export {
     initiatePostHog,
     capturePostHogAnayltics
-}
+};
