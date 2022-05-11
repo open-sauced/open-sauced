@@ -5,6 +5,13 @@
 
 > All notable changes to this project will be documented in this file
 
+## [0.50.0](https://github.com/open-sauced/open-sauced/compare/v0.49.0...v0.50.0) (2022-05-11)
+
+
+### 🍕 Features
+
+* Install PostHog and implement data capture on various buttons ([#1437](https://github.com/open-sauced/open-sauced/issues/1437)) ([9a78906](https://github.com/open-sauced/open-sauced/commit/9a78906302df8b62d3a213127f0e7a1fba7024e2))
+
 ## [0.49.0](https://github.com/open-sauced/open-sauced/compare/v0.48.0...v0.49.0) (2022-05-09)
 
 
