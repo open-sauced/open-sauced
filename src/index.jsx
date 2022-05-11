@@ -12,6 +12,7 @@ import api from "./lib/apiGraphQL";
 import {getAppVersion} from "./lib/appVersion";
 import {validateToken} from "./lib/validateToken";
 import { registerSW } from 'virtual:pwa-register';
+import { initiatePostHog, capturePostHogAnayltics } from "./lib/analytics";
 
 const apolloClient = new OneGraphApolloClient({
   oneGraphAuth: Config.auth,
@@ -24,6 +25,8 @@ function Index() {
   const [isAdmin, setIsAdmin] = useState(null);
 
   useEffect(() => {
+    initiatePostHog();
+    
     registerSW({
       immediate: true,
       onNeedRefresh: () => {
@@ -76,6 +79,9 @@ function Index() {
 
   const _handleLogIn = () => {
     const auth = Config.auth;
+
+    capturePostHogAnayltics('User Login', 'userLogin', 'true');
+
     auth
       .login("github")
       .then(() => {

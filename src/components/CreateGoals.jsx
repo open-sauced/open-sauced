@@ -7,7 +7,8 @@ import api from "../lib/apiGraphQL";
 import {goalsReducer} from "../lib/reducers";
 import {devProductive} from "../illustrations";
 import Cards from "./Card";
-import {CreateGoalsContainer, OnBoardingText} from "../styles/Container"
+import {CreateGoalsContainer, OnBoardingText} from "../styles/Container";
+import {capturePostHogAnayltics} from "../lib/analytics";
 
 function CreateApp() {
   return (
@@ -31,6 +32,8 @@ function CreateApp() {
 function CreateGoals({installNeeded, user, onRepoCreation}) {
   const [installReady, setInstallReady] = useState(installNeeded);
   const _handleRepoCreation = () => {
+    capturePostHogAnayltics('Onboarding Flow', 'repoCreationBtn', 'clicked');
+    
     api.fetchOwnerId(user.login).then(ownerRes => {
       const {
         data: {
@@ -96,7 +99,13 @@ function CreateGoals({installNeeded, user, onRepoCreation}) {
               rel="noreferrer"
               target="_blank"
               href={`https://github.com/apps/open-sauced/installations/new/permissions?target_id=${user && user.id}`}>
-              <Button primary minWidth={175} maxWidth={175} disabled={!installReady}>Create database</Button>
+              <Button
+                primary minWidth={175}
+                maxWidth={175}
+                disabled={!installReady}
+                onClick={() => capturePostHogAnayltics('Onboarding Flow', 'databaseCreationbtn', 'clicked')}>
+                  Create database
+                </Button>
             </a>
           </SpaceBetween>
         </Cards>
