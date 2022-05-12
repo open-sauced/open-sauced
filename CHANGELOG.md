@@ -5,6 +5,13 @@
 
 > All notable changes to this project will be documented in this file
 
+### [0.50.1](https://github.com/open-sauced/open-sauced/compare/v0.50.0...v0.50.1) (2022-05-12)
+
+
+### 🐛 Bug Fixes
+
+* storybook deploys ([#1439](https://github.com/open-sauced/open-sauced/issues/1439)) ([660622c](https://github.com/open-sauced/open-sauced/commit/660622c304ce759989907eb1297b893ee12ee770))
+
 ## [0.50.0](https://github.com/open-sauced/open-sauced/compare/v0.49.0...v0.50.0) (2022-05-11)
 
 
