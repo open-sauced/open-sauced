@@ -1,7 +1,7 @@
 import posthog from "posthog-js";
 
 function initiatePostHog () {
-    posthog.init(process.env.POSTHOG_ID, { api_host: 'https://app.posthog.com' });
+    posthog.init(import.meta.env.POSTHOG_ID, { api_host: 'https://app.posthog.com' });
     return;
 }
 
