@@ -25,8 +25,8 @@ function Index() {
   const [isAdmin, setIsAdmin] = useState(null);
 
   useEffect(() => {
-    initiatePostHog();
-    
+    !!!import.meta.env.DEV && initiatePostHog();
+
     registerSW({
       immediate: true,
       onNeedRefresh: () => {
