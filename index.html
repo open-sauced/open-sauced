@@ -15,17 +15,14 @@
     <meta property="dcterms:modified" content="<%= date %>" />
 
     <!-- For facebook, linkedin etc -->
-    <meta property="og:title" content="Open Sauced" />
+    <meta property="og:title" content="<%= title %>" />
     <meta property="og:url" content="https://app.opensauced.pizza" />
     <meta property="og:type" content="article" />
     <meta
       property="og:description"
       content="Open Sauced provides structured onboarding for new contributors to open source. This structure provides a way to track your next contributions by leveraging a unique dashboard built on top of the GitHub GraphQL API."
     />
-    <meta
-      property="og:image"
-      content="https://repository-images.githubusercontent.com/71359796/179eca00-061e-11eb-9b57-856a179db1a1"
-    />
+    <meta property="og:image" content="/social-card.png" />
 
     <!-- for twitter -->
     <meta property="twitter:title" content="Open Sauced" />
@@ -36,15 +33,11 @@
       property="twitter:description"
       content="Open Sauced is a platform to gain insights on open source contributors and their contributions."
     />
-    <meta
-      property="twitter:image"
-      content="https://repository-images.githubusercontent.com/71359796/179eca00-061e-11eb-9b57-856a179db1a1"
-    />
+    <meta property="twitter:image" content="/social-card.png" />
 
     <meta name="theme-color" content="#FFFFFF" />
-
-    <meta property="dcterms:modified" content="<%= date %>" />
   </head>
+
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
