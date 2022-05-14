@@ -1,4 +1,4 @@
-import { defineConfig } from 'vite'
+import { defineConfig, loadEnv } from 'vite'
 import ViteReact from '@vitejs/plugin-react'
 import ViteEslint from '@nabla/vite-plugin-eslint'
 import { createHtmlPlugin } from 'vite-plugin-html'
@@ -31,6 +31,9 @@ export default defineConfig(({command, mode}: ConfigEnv): UserConfig => {
   const isGlitchBuild = process.env.PROJECT_REMIX_CHAIN || false;
   const isCloudIdeBuild = isGitpodBuild || isReplitBuild || isStackblitzBuild || isCodeSandboxBuild || isGlitchBuild;
 
+  // load local env file
+  const env = loadEnv(mode, process.cwd(), '');
+
   const config:UserConfig = {
     base: "/",
     mode,
@@ -52,7 +55,10 @@ export default defineConfig(({command, mode}: ConfigEnv): UserConfig => {
     },
     preview: {
       port: 3000,
-    }
+    },
+    define: {
+      "process.env.VITE_POSTHOG_ID": `"${env.VITE_POSTHOG_ID}"`
+    },
   };
 
   config.plugins.push(
