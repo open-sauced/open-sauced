@@ -21,5 +21,5 @@ const capturePostHogAnalytics = (analyticsTitle, analyticsProperty, analyticsVal
 
 export {
   initiatePostHog,
-  capturePostHogAnayltics
+  capturePostHogAnalytics
 };
