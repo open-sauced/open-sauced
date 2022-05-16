@@ -5,6 +5,13 @@
 
 > All notable changes to this project will be documented in this file
 
+## [0.51.0](https://github.com/open-sauced/open-sauced/compare/v0.50.2...v0.51.0) (2022-05-16)
+
+
+### 🍕 Features
+
+* Onboarding tooltip ([#1443](https://github.com/open-sauced/open-sauced/issues/1443)) ([0611845](https://github.com/open-sauced/open-sauced/commit/0611845c7cc954ea6a62b8008b21430603a99da8)), closes [#1428](https://github.com/open-sauced/open-sauced/issues/1428)
+
 ### [0.50.2](https://github.com/open-sauced/open-sauced/compare/v0.50.1...v0.50.2) (2022-05-16)
 
 
