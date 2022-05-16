@@ -5,6 +5,41 @@
 
 > All notable changes to this project will be documented in this file
 
+### [0.50.2](https://github.com/open-sauced/open-sauced/compare/v0.50.1...v0.50.2) (2022-05-16)
+
+
+### 🐛 Bug Fixes
+
+* correct posthog implementation ([#1442](https://github.com/open-sauced/open-sauced/issues/1442)) ([db7a5db](https://github.com/open-sauced/open-sauced/commit/db7a5db60645065a48f8a3276799e1752e491117)), closes [#1440](https://github.com/open-sauced/open-sauced/issues/1440)
+
+### [0.50.1](https://github.com/open-sauced/open-sauced/compare/v0.50.0...v0.50.1) (2022-05-12)
+
+
+### 🐛 Bug Fixes
+
+* storybook deploys ([#1439](https://github.com/open-sauced/open-sauced/issues/1439)) ([660622c](https://github.com/open-sauced/open-sauced/commit/660622c304ce759989907eb1297b893ee12ee770))
+
+## [0.50.0](https://github.com/open-sauced/open-sauced/compare/v0.49.0...v0.50.0) (2022-05-11)
+
+
+### 🍕 Features
+
+* Install PostHog and implement data capture on various buttons ([#1437](https://github.com/open-sauced/open-sauced/issues/1437)) ([9a78906](https://github.com/open-sauced/open-sauced/commit/9a78906302df8b62d3a213127f0e7a1fba7024e2))
+
+## [0.49.0](https://github.com/open-sauced/open-sauced/compare/v0.48.0...v0.49.0) (2022-05-09)
+
+
+### 🍕 Features
+
+* no issue id in url ([#1435](https://github.com/open-sauced/open-sauced/issues/1435)) ([b88760f](https://github.com/open-sauced/open-sauced/commit/b88760fed8ce96dd8d1ac04b3e184fa434ba5200))
+
+## [0.48.0](https://github.com/open-sauced/open-sauced/compare/v0.47.0...v0.48.0) (2022-05-06)
+
+
+### 🍕 Features
+
+* Redesigning the Onboarding experience ([#1425](https://github.com/open-sauced/open-sauced/issues/1425)) ([afbbbf6](https://github.com/open-sauced/open-sauced/commit/afbbbf62fa1e06f8168551bbdaaf49ad3b56778b))
+
 ## [0.47.0](https://github.com/open-sauced/open-sauced/compare/v0.46.1...v0.47.0) (2022-04-15)
 
 

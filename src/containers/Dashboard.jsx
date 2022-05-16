@@ -8,7 +8,7 @@ function Repositories({user, match}) {
   return (
     <Suspense fallback={<Spinner />}>
       <Route exact path={match.url} render={(props) => <RepositoryGoals user={user} {...props} />} />
-      <Route path={"/repos/:repoOwner/:repoName/:id"} render={(props) => <Repository user={user} {...props} />} />
+      <Route path={"/repos/:repoOwner/:repoName"} render={(props) => <Repository user={user} {...props} />} />
     </Suspense>
   );
 }

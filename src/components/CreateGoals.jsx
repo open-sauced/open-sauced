@@ -11,6 +11,7 @@ import Cards from "./Card";
 import {CreateGoalsContainer, OnBoardingText} from "../styles/Container"
 import {Tooltip, TooltipTrigger} from "@radix-ui/react-tooltip";
 import {TooltipContainer, TooltipArrowComponent} from "../styles/Tooltip";
+import {capturePostHogAnalytics} from "../lib/analytics";
 import {help} from "../icons";
 
 function CreateApp() {
@@ -35,6 +36,8 @@ function CreateApp() {
 function CreateGoals({installNeeded, user, onRepoCreation}) {
   const [installReady, setInstallReady] = useState(installNeeded);
   const _handleRepoCreation = () => {
+    capturePostHogAnalytics('Onboarding Flow', 'repoCreationBtn', 'clicked');
+
     api.fetchOwnerId(user.login).then(ownerRes => {
       const {
         data: {
@@ -112,7 +115,13 @@ function CreateGoals({installNeeded, user, onRepoCreation}) {
               rel="noreferrer"
               target="_blank"
               href={`https://github.com/apps/open-sauced/installations/new/permissions?target_id=${user && user.id}`}>
-              <Button primary minWidth={175} maxWidth={175} disabled={!installReady}>Create database</Button>
+              <Button
+                primary minWidth={175}
+                maxWidth={175}
+                disabled={!installReady}
+                onClick={() => capturePostHogAnalytics('Onboarding Flow', 'databaseCreationbtn', 'clicked')}>
+                Create database
+              </Button>
             </a>
           </SpaceBetween>
         </Cards>
