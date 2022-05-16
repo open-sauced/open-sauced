@@ -5,6 +5,13 @@
 
 > All notable changes to this project will be documented in this file
 
+### [0.50.2](https://github.com/open-sauced/open-sauced/compare/v0.50.1...v0.50.2) (2022-05-16)
+
+
+### 🐛 Bug Fixes
+
+* correct posthog implementation ([#1442](https://github.com/open-sauced/open-sauced/issues/1442)) ([db7a5db](https://github.com/open-sauced/open-sauced/commit/db7a5db60645065a48f8a3276799e1752e491117)), closes [#1440](https://github.com/open-sauced/open-sauced/issues/1440)
+
 ### [0.50.1](https://github.com/open-sauced/open-sauced/compare/v0.50.0...v0.50.1) (2022-05-12)
 
 
