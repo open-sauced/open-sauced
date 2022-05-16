@@ -2,7 +2,7 @@
 /// <reference types="vite-plugin-pwa/client" />
 
 interface ImportMetaEnv {
-  readonly VITE_APP_TITLE: string
+  readonly VITE_POSTHOG_API_KEY: string
 }
 
 interface ImportMeta {

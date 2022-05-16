@@ -16,12 +16,12 @@ const config = {
   ],
   "testMatch": [
     '<rootDir>/src/**/*.{spec,test}.{js,jsx,ts,tsx}',
-    '<rootDir>/src/**/__tests__/**/*.{js,jsx,ts,tsx}'
+    '<rootDir>/src/**/tests/*.{js,jsx,ts,tsx}'
   ],
   "transform": {
-    '^.+\\.[jt]sx?$': '<rootDir>/.jest/jsxTransform.js',
-    '^.+\\.css$': '<rootDir>/.jest/cssTransform.js',
-    '^(?!.*\\.(js|jsx|mjs|cjs|ts|tsx|css|json)$)': '<rootDir>/.jest/fileTransform.js',
+    '^.+\\.[jt]sx?$': 'esbuild-jest',
+    '^.+\\.css$': '<rootDir>/.jest/cssTransform.cjs',
+    '^(?!.*\\.(js|jsx|mjs|cjs|ts|tsx|css|json)$)': '<rootDir>/.jest/fileTransform.cjs',
   },
   "transformIgnorePatterns": [
     '[/\\\\]node_modules[/\\\\].+\\.(js|jsx|mjs|cjs|ts|tsx)$',
@@ -30,7 +30,6 @@ const config = {
   "moduleFileExtensions": ['js', 'mjs', 'jsx', 'ts', 'tsx', 'json'],
   "moduleNameMapper": {
     '^.+\\.module\\.(css|sass|scss)$': 'identity-obj-proxy',
-    'react-markdown': "<rootDir>/.jest/reactMarkdownTransform.js"
   },
   "watchPlugins": [
     'jest-watch-typeahead/filename',

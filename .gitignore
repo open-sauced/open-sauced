@@ -274,3 +274,5 @@ Temporary Items
 ### Project specific
 build
 **/__snapshots__
+.env*
+!.env

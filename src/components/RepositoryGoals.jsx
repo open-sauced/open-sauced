@@ -18,7 +18,6 @@ function RepositoryGoals({user}) {
   const [state, dispatch] = usePersistentStateReducer("goalsState", goalsReducer);
 
   const {repository, error} = goalsReducer(state, {type: "GET"});
-  console.log(error)
 
   useEffect(() => {
     repository && setGoalsId(repository.id);
