@@ -19,6 +19,10 @@ const TooltipContainer = styled(TooltipContent)`
     &[data-state="delayed-open"] {
         &[data-side="top"] { animation-name: ${TooltipAnimation}; }
     }
+    p {
+        padding-top: 10px;
+        text-align: center;
+    }
 `;
 
 const TooltipArrowComponent = styled(TooltipArrow)`

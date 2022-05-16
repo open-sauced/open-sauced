@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import Button from "../styles/Button";
+import Button, {IconButton} from "../styles/Button";
 import Illustration from "../styles/Illustration";
 import {ContextStyle} from "../styles/Card";
 import {SpaceBetweenTop, SpaceBetween} from "../styles/Grid";
@@ -11,6 +11,7 @@ import Cards from "./Card";
 import {CreateGoalsContainer, OnBoardingText} from "../styles/Container"
 import {Tooltip, TooltipTrigger} from "@radix-ui/react-tooltip";
 import {TooltipContainer, TooltipArrowComponent} from "../styles/Tooltip";
+import {help} from "../icons";
 
 function CreateApp() {
   return (
@@ -95,10 +96,13 @@ function CreateGoals({installNeeded, user, onRepoCreation}) {
               <h1>2</h1>
               <p>Now let's create the Open Sauced database on GitHub</p>
               <Tooltip delayDuration={200}>
-                <TooltipTrigger>
-                  <p>test</p>
+                <TooltipTrigger asChild>
+                  <IconButton>
+                    <img className="svg" alt="tool-tip" src={help} />
+                  </IconButton>
                 </TooltipTrigger>
                 <TooltipContainer side="top" sideOffset={5}>
+                  <p>Please change these settings in the new window/tab</p>
                   <img className="app-install" alt="app install guide" src={appInstall} />
                   <TooltipArrowComponent />
                 </TooltipContainer>
