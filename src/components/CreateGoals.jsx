@@ -8,7 +8,7 @@ import {goalsReducer} from "../lib/reducers";
 import {devProductive} from "../illustrations";
 import Cards from "./Card";
 import {CreateGoalsContainer, OnBoardingText} from "../styles/Container";
-import {capturePostHogAnayltics} from "../lib/analytics";
+import {capturePostHogAnalytics} from "../lib/analytics";
 
 function CreateApp() {
   return (
@@ -32,8 +32,8 @@ function CreateApp() {
 function CreateGoals({installNeeded, user, onRepoCreation}) {
   const [installReady, setInstallReady] = useState(installNeeded);
   const _handleRepoCreation = () => {
-    capturePostHogAnayltics('Onboarding Flow', 'repoCreationBtn', 'clicked');
-    
+    capturePostHogAnalytics('Onboarding Flow', 'repoCreationBtn', 'clicked');
+
     api.fetchOwnerId(user.login).then(ownerRes => {
       const {
         data: {
@@ -103,14 +103,14 @@ function CreateGoals({installNeeded, user, onRepoCreation}) {
                 primary minWidth={175}
                 maxWidth={175}
                 disabled={!installReady}
-                onClick={() => capturePostHogAnayltics('Onboarding Flow', 'databaseCreationbtn', 'clicked')}>
+                onClick={() => capturePostHogAnalytics('Onboarding Flow', 'databaseCreationbtn', 'clicked')}>
                   Create database
                 </Button>
             </a>
           </SpaceBetween>
         </Cards>
         {/* TODO: issue #1428
-        
+
         <Cards disabled={true}>
           <SpaceBetween>
             <OnBoardingText>
