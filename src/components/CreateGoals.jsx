@@ -8,7 +8,7 @@ import {goalsReducer} from "../lib/reducers";
 import {devProductive} from "../illustrations";
 import {appInstall} from "../images";
 import Cards from "./Card";
-import {CreateGoalsContainer, OnBoardingText} from "../styles/Container"
+import {CreateGoalsContainer, OnBoardingText} from "../styles/Container";
 import {Tooltip, TooltipTrigger} from "@radix-ui/react-tooltip";
 import {TooltipContainer, TooltipArrowComponent} from "../styles/Tooltip";
 import {capturePostHogAnalytics} from "../lib/analytics";

@@ -1,11 +1,15 @@
 import React, {useState} from "react";
-import Button from "../src/styles/Button";
+import Button, {IconButton} from "../src/styles/Button";
 import Illustration from "../src/styles/Illustration";
 import {ContextStyle} from "../src/styles/Card";
 import {SpaceBetweenTop, SpaceBetween} from "../src/styles/Grid";
 import {devProductive} from "../src/illustrations";
 import Cards from "../src/components/Card";
-import {CreateGoalsContainer, OnBoardingText} from "../src/styles/Container"
+import {CreateGoalsContainer, OnBoardingText} from "../src/styles/Container";
+import {Tooltip, TooltipTrigger} from "@radix-ui/react-tooltip";
+import {TooltipContainer, TooltipArrowComponent} from "../src/styles/Tooltip";
+import {help} from "../src/icons";
+import {appInstall} from "../src/images";
 
 export default {
     title: "Onboardring"
@@ -60,6 +64,18 @@ function CreateApp() {
             <OnBoardingText>
               <h1>2</h1>
               <p>Now let's create the Open Sauced database on GitHub</p>
+              <Tooltip delayDuration={200}>
+                <TooltipTrigger asChild>
+                  <IconButton>
+                    <img className="svg" alt="tool-tip" src={help} />
+                  </IconButton>
+                </TooltipTrigger>
+                <TooltipContainer side="top" sideOffset={5}>
+                  <p>Please change these settings in the new window/tab</p>
+                  <img className="app-install" alt="app install guide" src={appInstall} />
+                  <TooltipArrowComponent />
+                </TooltipContainer>
+              </Tooltip>
             </OnBoardingText>
             <a
               rel="noreferrer"
