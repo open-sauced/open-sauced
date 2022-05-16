@@ -1,14 +1,18 @@
 import React, {useState} from "react";
-import Button from "../styles/Button";
+import Button, {IconButton} from "../styles/Button";
 import Illustration from "../styles/Illustration";
 import {ContextStyle} from "../styles/Card";
 import {SpaceBetweenTop, SpaceBetween} from "../styles/Grid";
 import api from "../lib/apiGraphQL";
 import {goalsReducer} from "../lib/reducers";
 import {devProductive} from "../illustrations";
+import {appInstall} from "../images";
 import Cards from "./Card";
 import {CreateGoalsContainer, OnBoardingText} from "../styles/Container";
+import {Tooltip, TooltipTrigger} from "@radix-ui/react-tooltip";
+import {TooltipContainer, TooltipArrowComponent} from "../styles/Tooltip";
 import {capturePostHogAnalytics} from "../lib/analytics";
+import {help} from "../icons";
 
 function CreateApp() {
   return (
@@ -94,6 +98,18 @@ function CreateGoals({installNeeded, user, onRepoCreation}) {
             <OnBoardingText>
               <h1>2</h1>
               <p>Now let's create the Open Sauced database on GitHub</p>
+              <Tooltip delayDuration={200}>
+                <TooltipTrigger asChild>
+                  <IconButton>
+                    <img className="svg" alt="tool-tip" src={help} />
+                  </IconButton>
+                </TooltipTrigger>
+                <TooltipContainer side="top" sideOffset={5}>
+                  <p>Please change these settings in the new window/tab</p>
+                  <img className="app-install" alt="app install guide" src={appInstall} />
+                  <TooltipArrowComponent />
+                </TooltipContainer>
+              </Tooltip>
             </OnBoardingText>
             <a
               rel="noreferrer"
@@ -104,13 +120,14 @@ function CreateGoals({installNeeded, user, onRepoCreation}) {
                 maxWidth={175}
                 disabled={!installReady}
                 onClick={() => capturePostHogAnalytics('Onboarding Flow', 'databaseCreationbtn', 'clicked')}>
-                  Create database
-                </Button>
+                Create database
+              </Button>
             </a>
           </SpaceBetween>
         </Cards>
-        {/* TODO: issue #1428
-
+        {/* TODO: This is the beginning of the implementation to solve issue #1428 in open-sauced
+            https://github.com/open-sauced/open-sauced/issues/1428
+        
         <Cards disabled={true}>
           <SpaceBetween>
             <OnBoardingText>

@@ -11,7 +11,8 @@ import gitTrends from "./gitTrends.svg";
 import ohno from "./404.svg";
 import remirror from "./remirror.svg";
 import UseShoppingCart from "./UseShoppingCart.png";
+import appInstall from "./appInstall.png";
 
 export {gucci, ohno, bdougie, face, npm, graphql, sauce, sauced, pizza, sauceFull, remirror,
-  gitTrends, UseShoppingCart
+  gitTrends, UseShoppingCart, appInstall
 };
