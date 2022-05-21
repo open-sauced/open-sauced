@@ -99,7 +99,7 @@ function CreateGoals({installNeeded, user, onRepoCreation}) {
               <h1>2</h1>
               <p>Now let's create the Open Sauced database on GitHub</p>
               <Tooltip delayDuration={200}>
-                <TooltipTrigger asChild>
+                <TooltipTrigger asChild disabled={!installReady}>
                   <IconButton>
                     <img className="svg" alt="tool-tip" src={help} />
                   </IconButton>
@@ -126,7 +126,7 @@ function CreateGoals({installNeeded, user, onRepoCreation}) {
           </SpaceBetween>
         </Cards>
         
-        <Cards disabled={true}>
+        <Cards>
           <SpaceBetween>
             <OnBoardingText>
               <h1>3</h1>
