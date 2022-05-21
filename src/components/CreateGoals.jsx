@@ -12,7 +12,15 @@ import {CreateGoalsContainer, OnBoardingText} from "../styles/Container";
 import {Tooltip, TooltipTrigger} from "@radix-ui/react-tooltip";
 import {TooltipContainer, TooltipArrowComponent} from "../styles/Tooltip";
 import {capturePostHogAnalytics} from "../lib/analytics";
+import RepositoryAvatar from "../styles/RepositoryAvatar";
+import {diary} from "../illustrations";
 import {help} from "../icons";
+
+const repoInfo = {
+  repoOwner: "npm",
+  repoName: "cli",
+  repoDescription: "the package manager for JavaScript"
+};
 
 function CreateApp() {
   return (
@@ -132,8 +140,29 @@ function CreateGoals({installNeeded, user, onRepoCreation}) {
               <h1>3</h1>
               <p>And finally, it's time to follow some repos</p>
             </OnBoardingText>
-              <Button primary minWidth={175} disabled={true}>Add Repos</Button>
           </SpaceBetween>
+          <SpaceBetweenTop>
+            <div>
+              <a style={{textDecoration: "none"}} href={`https://github.com/${repoInfo.repoOwner}/${repoInfo.repoName}`} rel="noreferrer" target="_blank">
+                <h1>
+                  <RepositoryAvatar alt="avatar" src={`https://avatars.githubusercontent.com/${repoInfo.repoOwner}`} />
+                  npm/cli
+                </h1>
+              </a>
+                <p>{repoInfo.repoDescription}</p>
+              <small>
+                <em>
+                  <a href="https://opensource.guide/how-to-contribute/" rel="noreferrer" target="_blank">
+                    Learn how to contribute to open source projects
+                  </a>
+                </em>
+              </small>
+              <div style={{ paddingTop: 30 }}>
+                <Button primary minWidth={175} disabled={true}>Add Repo</Button>
+              </div>
+            </div>
+            <Illustration src={diary} />
+          </SpaceBetweenTop>
         </Cards>
       </ContextStyle>
     </React.Fragment>
