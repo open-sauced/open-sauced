@@ -125,8 +125,6 @@ function CreateGoals({installNeeded, user, onRepoCreation}) {
             </a>
           </SpaceBetween>
         </Cards>
-        {/* TODO: This is the beginning of the implementation to solve issue #1428 in open-sauced
-            https://github.com/open-sauced/open-sauced/issues/1428
         
         <Cards disabled={true}>
           <SpaceBetween>
@@ -136,7 +134,7 @@ function CreateGoals({installNeeded, user, onRepoCreation}) {
             </OnBoardingText>
               <Button primary minWidth={175} disabled={true}>Add Repos</Button>
           </SpaceBetween>
-        </Cards> */}
+        </Cards>
       </ContextStyle>
     </React.Fragment>
   );
