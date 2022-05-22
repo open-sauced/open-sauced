@@ -8,6 +8,7 @@ import { VitePWA, VitePWAOptions } from 'vite-plugin-pwa'
 import ViteReplace from '@rollup/plugin-replace'
 import ViteTimeReporter from 'vite-plugin-time-reporter'
 import ViteVisualizer from 'rollup-plugin-visualizer'
+import VitePluginSSR from 'vite-plugin-ssr/plugin'
 import { sync } from 'execa'
 import type { ConfigEnv, UserConfig } from 'vite'
 
@@ -149,6 +150,10 @@ export default defineConfig(({command, mode}: ConfigEnv): UserConfig => {
     VitePWA(pwaOptions),
     ViteReplace(replaceOptions),
   );
+
+  config.plugins.push(
+    VitePluginSSR()
+  )
 
   // cloud container shared and specific build options
   isCloudIdeBuild && (config.server.hmr = {
