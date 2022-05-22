@@ -42,6 +42,7 @@ function CreateApp() {
 }
 
 function CreateGoals({installNeeded, user, onRepoCreation}) {
+  const [selectedRepo, setSelectedRepo] = useState(2);
   const [installReady, setInstallReady] = useState(installNeeded);
   const _handleRepoCreation = () => {
     capturePostHogAnalytics('Onboarding Flow', 'repoCreationBtn', 'clicked');
@@ -141,27 +142,34 @@ function CreateGoals({installNeeded, user, onRepoCreation}) {
               <p>And finally, it's time to follow some repos</p>
             </OnBoardingText>
           </SpaceBetween>
+          <SpaceBetween>
+            <h3 onClick={() => setSelectedRepo(1)}>
+              Test Link
+            </h3>
+          </SpaceBetween>
           <SpaceBetweenTop>
-            <div>
-              <a style={{textDecoration: "none"}} href={`https://github.com/${repoInfo.repoOwner}/${repoInfo.repoName}`} rel="noreferrer" target="_blank">
-                <h1>
-                  <RepositoryAvatar alt="avatar" src={`https://avatars.githubusercontent.com/${repoInfo.repoOwner}`} />
-                  npm/cli
-                </h1>
-              </a>
-                <p>{repoInfo.repoDescription}</p>
-              <small>
-                <em>
-                  <a href="https://opensource.guide/how-to-contribute/" rel="noreferrer" target="_blank">
-                    Learn how to contribute to open source projects
-                  </a>
-                </em>
-              </small>
-              <div style={{ paddingTop: 30 }}>
-                <Button primary minWidth={175} disabled={true}>Add Repo</Button>
+            {(selectedRepo === 1 ?
+              <div>
+                <a style={{textDecoration: "none"}} href={`https://github.com/${repoInfo.repoOwner}/${repoInfo.repoName}`} rel="noreferrer" target="_blank">
+                  <h1>
+                    <RepositoryAvatar alt="avatar" src={`https://avatars.githubusercontent.com/${repoInfo.repoOwner}`} />
+                    npm/cli
+                  </h1>
+                </a>
+                  <p>{repoInfo.repoDescription}</p>
+                <small>
+                  <em>
+                    <a href="https://opensource.guide/how-to-contribute/" rel="noreferrer" target="_blank">
+                      Learn how to contribute to open source projects
+                    </a>
+                  </em>
+                </small>
+                <div style={{ paddingTop: 30 }}>
+                  <Button primary minWidth={175} disabled={true}>Add Repo</Button>
+                </div>
               </div>
-            </div>
-            <Illustration src={diary} />
+            : null )}
+            <Illustration alt="productive developer image" src={diary} />
           </SpaceBetweenTop>
         </Cards>
       </ContextStyle>
