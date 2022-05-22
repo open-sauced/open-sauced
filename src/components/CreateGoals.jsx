@@ -15,12 +15,20 @@ import {capturePostHogAnalytics} from "../lib/analytics";
 import RepositoryAvatar from "../styles/RepositoryAvatar";
 import {diary} from "../illustrations";
 import {help} from "../icons";
+import { CreateGoalsRepoNav } from "../styles/Header";
 
-const repoInfo = {
-  repoOwner: "npm",
-  repoName: "cli",
-  repoDescription: "the package manager for JavaScript"
-};
+const repoInfo = [
+  {
+    repoOwner: "npm",
+    repoName: "cli",
+    repoDescription: "the package manager for JavaScript"
+  },
+  {
+    repoOwner: "williamfiset",
+    repoName: "algorithms",
+    repoDescription: "No description"
+  }
+];
 
 function CreateApp() {
   return (
@@ -42,7 +50,7 @@ function CreateApp() {
 }
 
 function CreateGoals({installNeeded, user, onRepoCreation}) {
-  const [selectedRepo, setSelectedRepo] = useState(2);
+  const [selectedRepo, setSelectedRepo] = useState(1);
   const [installReady, setInstallReady] = useState(installNeeded);
   const _handleRepoCreation = () => {
     capturePostHogAnalytics('Onboarding Flow', 'repoCreationBtn', 'clicked');
@@ -142,33 +150,33 @@ function CreateGoals({installNeeded, user, onRepoCreation}) {
               <p>And finally, it's time to follow some repos</p>
             </OnBoardingText>
           </SpaceBetween>
-          <SpaceBetween>
-            <h3 onClick={() => setSelectedRepo(1)}>
-              Test Link
-            </h3>
-          </SpaceBetween>
+          <CreateGoalsRepoNav>
+            {repoInfo.map((repo, index) => 
+              <h3 onClick={() => setSelectedRepo(index)}>
+                {repo.repoName}
+              </h3>
+            )}
+          </CreateGoalsRepoNav>
           <SpaceBetweenTop>
-            {(selectedRepo === 1 ?
-              <div>
-                <a style={{textDecoration: "none"}} href={`https://github.com/${repoInfo.repoOwner}/${repoInfo.repoName}`} rel="noreferrer" target="_blank">
-                  <h1>
-                    <RepositoryAvatar alt="avatar" src={`https://avatars.githubusercontent.com/${repoInfo.repoOwner}`} />
-                    npm/cli
-                  </h1>
-                </a>
-                  <p>{repoInfo.repoDescription}</p>
-                <small>
-                  <em>
-                    <a href="https://opensource.guide/how-to-contribute/" rel="noreferrer" target="_blank">
-                      Learn how to contribute to open source projects
-                    </a>
-                  </em>
-                </small>
-                <div style={{ paddingTop: 30 }}>
-                  <Button primary minWidth={175} disabled={true}>Add Repo</Button>
-                </div>
+            <div>
+              <a style={{textDecoration: "none"}} href={`https://github.com/${repoInfo[selectedRepo].repoOwner}/${repoInfo[selectedRepo].repoName}`} rel="noreferrer" target="_blank">
+                <h1>
+                  <RepositoryAvatar alt="avatar" src={`https://avatars.githubusercontent.com/${repoInfo[selectedRepo].repoOwner}`} />
+                  {`${repoInfo[selectedRepo].repoOwner} / ${repoInfo[selectedRepo].repoName}`}
+                </h1>
+              </a>
+                <p>{repoInfo[selectedRepo].repoDescription}</p>
+              <small>
+                <em>
+                  <a href="https://opensource.guide/how-to-contribute/" rel="noreferrer" target="_blank">
+                    Learn how to contribute to open source projects
+                  </a>
+                </em>
+              </small>
+              <div style={{ paddingTop: 30 }}>
+                <Button primary minWidth={175} disabled={true}>Add Repo</Button>
               </div>
-            : null )}
+            </div>
             <Illustration alt="productive developer image" src={diary} />
           </SpaceBetweenTop>
         </Cards>
