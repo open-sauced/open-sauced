@@ -150,35 +150,40 @@ function CreateGoals({installNeeded, databaseCreated, user, onRepoCreation}) {
               <p>And finally, it's time to follow some repos</p>
             </OnBoardingText>
           </SpaceBetween>
-          <CreateGoalsRepoNav>
-            {repoInfo.map((repo, index) => 
-              <h3 key={index} onClick={() => setSelectedRepo(index)}>
-                {repo.repoName}
-              </h3>
-            )}
-          </CreateGoalsRepoNav>
-          <SpaceBetweenTop>
-            <div>
-              <a style={{textDecoration: "none"}} href={`https://github.com/${repoInfo[selectedRepo].repoOwner}/${repoInfo[selectedRepo].repoName}`} rel="noreferrer" target="_blank">
-                <h1>
-                  <RepositoryAvatar alt="avatar" src={`https://avatars.githubusercontent.com/${repoInfo[selectedRepo].repoOwner}`} />
-                  {`${repoInfo[selectedRepo].repoOwner} / ${repoInfo[selectedRepo].repoName}`}
-                </h1>
-              </a>
-                <p>{repoInfo[selectedRepo].repoDescription}</p>
-              <small>
-                <em>
-                  <a href="https://opensource.guide/how-to-contribute/" rel="noreferrer" target="_blank">
-                    Learn how to contribute to open source projects
+          {databaseCreated && (
+            <>
+              <CreateGoalsRepoNav>
+                {
+                  repoInfo.map((repo, index) => 
+                    <h3 key={index} onClick={() => setSelectedRepo(index)}>
+                      {repo.repoName}
+                    </h3>
+                )}
+              </CreateGoalsRepoNav>
+              <SpaceBetweenTop>
+                <div>
+                  <a style={{textDecoration: "none"}} href={`https://github.com/${repoInfo[selectedRepo].repoOwner}/${repoInfo[selectedRepo].repoName}`} rel="noreferrer" target="_blank">
+                    <h1>
+                      <RepositoryAvatar alt="avatar" src={`https://avatars.githubusercontent.com/${repoInfo[selectedRepo].repoOwner}`} />
+                      {`${repoInfo[selectedRepo].repoOwner} / ${repoInfo[selectedRepo].repoName}`}
+                    </h1>
                   </a>
-                </em>
-              </small>
-              <div style={{ paddingTop: 30 }}>
-                <Button primary minWidth={175} disabled={true}>Add Repo</Button>
-              </div>
-            </div>
-            <Illustration alt="productive developer image" src={diary} />
-          </SpaceBetweenTop>
+                    <p>{repoInfo[selectedRepo].repoDescription}</p>
+                  <small>
+                    <em>
+                      <a href="https://opensource.guide/how-to-contribute/" rel="noreferrer" target="_blank">
+                        Learn how to contribute to open source projects
+                      </a>
+                    </em>
+                  </small>
+                  <div style={{ paddingTop: 30 }}>
+                    <Button primary minWidth={175} disabled={true}>Add Repo</Button>
+                  </div>
+                </div>
+                <Illustration alt="productive developer image" src={diary} />
+              </SpaceBetweenTop>
+            </>
+          )}
         </Cards>
       </ContextStyle>
     </React.Fragment>
