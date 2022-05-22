@@ -46,6 +46,16 @@ const Button = styled.button`
   }
 `;
 
+export const IconButton = styled.button` 
+  all: unset;
+  margin-left: 15px;
+  img {
+    height: 20px;
+    width: 20px;
+    padding-bottom: 7px;
+  }
+`;
+
 export const InputButton = styled(Button)`
   font-size: ${fontSize.default};
   padding: 0;

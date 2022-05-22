@@ -14,7 +14,7 @@ describe("Test: repoStatusCode()", () => {
   });
 
   test("bdougie/open-sauced should return 200", async() => {
-    const repoUrl = "bdougie/open-sauced";
+    const repoUrl = "open-sauced/open-sauced";
     const result = await repoStatusCode(repoUrl);
     expect(result).toBe(200);
   });

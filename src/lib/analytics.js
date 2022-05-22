@@ -1,25 +1,25 @@
 import posthog from "posthog-js";
 
-function initiatePostHog () {
-    posthog.init(process.env.POSTHOG_ID, { api_host: 'https://app.posthog.com' });
-    return;
-}
+const initiatePostHog = () =>
+  posthog.init(import.meta.env.VITE_POSTHOG_API_KEY, { api_host: "https://app.posthog.com" });
 
-function capturePostHogAnayltics ( analyticsTitle, analyticsProperty, analyticsValue) {
-    const propertyIsMissingOrIncorrectType = !(typeof analyticsTitle === "string" &&
-                                               typeof analyticsProperty == "string" &&
-                                               analyticsValue);
-    if(propertyIsMissingOrIncorrectType) throw new Error("Property is missing or is incorrect type.");
+const capturePostHogAnalytics = (analyticsTitle, analyticsProperty, analyticsValue) => {
+  const propertyIsMissingOrIncorrectType = !(typeof analyticsTitle === "string" &&
+    typeof analyticsProperty == "string" &&
+    analyticsValue);
 
-    const analyticsObject = {};
-    analyticsObject[analyticsProperty] = analyticsValue;
+  if (propertyIsMissingOrIncorrectType) {
+    throw new Error("Property is missing or is incorrect type.");
+  }
 
-    posthog.capture(analyticsTitle, analyticsObject);
+  const analyticsObject = {
+    [analyticsProperty]: analyticsValue
+  };
 
-    return;
-}
+  return posthog.capture(analyticsTitle, analyticsObject);
+};
 
 export {
-    initiatePostHog,
-    capturePostHogAnayltics
+  initiatePostHog,
+  capturePostHogAnalytics
 };

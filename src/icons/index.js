@@ -23,6 +23,7 @@ import issue from "./alert-circle.svg";
 import watch from "./watch.svg";
 import search from "./search.svg";
 import searchDark from "./searchDark.svg";
+import help from "./help.svg";
 
 export {
   anchor,
@@ -50,4 +51,5 @@ export {
   watch,
   search,
   searchDark,
+  help
 };
