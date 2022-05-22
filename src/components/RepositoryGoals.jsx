@@ -61,7 +61,7 @@ function RepositoryGoals({user}) {
 
   return (
     <section>
-      {repository && repository.issues ? (
+      {repository && repository.issues.totalCount > 0 ? (
         <React.Fragment>
           <Flex>
             <RepositoryContext>
