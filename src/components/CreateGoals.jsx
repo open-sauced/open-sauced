@@ -49,7 +49,7 @@ function CreateApp() {
   );
 }
 
-function CreateGoals({installNeeded, user, onRepoCreation}) {
+function CreateGoals({installNeeded, databaseCreated, user, onRepoCreation}) {
   const [selectedRepo, setSelectedRepo] = useState(1);
   const [installReady, setInstallReady] = useState(installNeeded);
   const _handleRepoCreation = () => {
@@ -99,24 +99,24 @@ function CreateGoals({installNeeded, user, onRepoCreation}) {
               <CreateApp />
           </SpaceBetween>
         </SpaceBetweenTop>
-        <Cards disabled={installReady}>
+        <Cards disabled={installReady || databaseCreated}>
           <SpaceBetween>
             <OnBoardingText>
               <h1>1</h1>
               <p>Let's sync Open Sauced with your GitHub Repos</p>
             </OnBoardingText>
-            <Button primary minWidth={175} maxWidth={175} onClick={_handleRepoCreation} disabled={installReady}>
+            <Button primary minWidth={175} maxWidth={175} onClick={_handleRepoCreation} disabled={installReady || databaseCreated}>
               Sync Repos
             </Button>
           </SpaceBetween>
         </Cards>
-        <Cards disabled={!installReady}>
+        <Cards disabled={!installReady || databaseCreated}>
           <SpaceBetween>
             <OnBoardingText>
               <h1>2</h1>
               <p>Now let's create the Open Sauced database on GitHub</p>
               <Tooltip delayDuration={200}>
-                <TooltipTrigger asChild disabled={!installReady}>
+                <TooltipTrigger asChild disabled={!installReady || databaseCreated}>
                   <IconButton>
                     <img className="svg" alt="tool-tip" src={help} />
                   </IconButton>
@@ -143,7 +143,7 @@ function CreateGoals({installNeeded, user, onRepoCreation}) {
           </SpaceBetween>
         </Cards>
         
-        <Cards>
+        <Cards disabled={!databaseCreated}>
           <SpaceBetween>
             <OnBoardingText>
               <h1>3</h1>
@@ -152,7 +152,7 @@ function CreateGoals({installNeeded, user, onRepoCreation}) {
           </SpaceBetween>
           <CreateGoalsRepoNav>
             {repoInfo.map((repo, index) => 
-              <h3 onClick={() => setSelectedRepo(index)}>
+              <h3 key={index} onClick={() => setSelectedRepo(index)}>
                 {repo.repoName}
               </h3>
             )}
