@@ -109,7 +109,7 @@ function RepositoryGoals({user}) {
           </Card>
         </React.Fragment>
       ) : (
-        <CreateGoals installNeeded={!!repository && !!error} databaseCreated={!!(repository && repository.issues)} user={(user && user) || ""} onRepoCreation={onRepoCreation} />
+        <CreateGoals installNeeded={!!repository && !!error} databaseCreated={!!(repository && repository.issues)} goalsId={goalsId} onGoalAdded={onGoalAdded} user={(user && user) || ""} onRepoCreation={onRepoCreation} />
       )}
     </section>
   );

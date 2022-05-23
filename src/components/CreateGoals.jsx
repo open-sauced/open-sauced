@@ -49,7 +49,7 @@ function CreateApp() {
   );
 }
 
-function CreateGoals({installNeeded, databaseCreated, user, onRepoCreation}) {
+function CreateGoals({installNeeded, databaseCreated, goalsId, onGoalAdded, user, onRepoCreation}) {
   const [selectedRepo, setSelectedRepo] = useState(1);
   const [installReady, setInstallReady] = useState(installNeeded);
   const _handleRepoCreation = () => {
@@ -89,6 +89,15 @@ function CreateGoals({installNeeded, databaseCreated, user, onRepoCreation}) {
         })
         .catch(err => console.log(err));
     });
+  };
+
+  const _handleGoalCreation = async( repoUrl ) => {
+    api
+      .createGoal(goalsId, repoUrl, null)
+      .then(response => {
+        onGoalAdded(response.data.gitHub.createIssue.issue);
+      })
+      .catch(e => console.error(e));
   };
 
   return (
@@ -177,7 +186,7 @@ function CreateGoals({installNeeded, databaseCreated, user, onRepoCreation}) {
                     </em>
                   </small>
                   <div style={{ paddingTop: 30 }}>
-                    <Button primary minWidth={175} disabled={true}>Add Repo</Button>
+                    <Button primary minWidth={175} onClick={() => _handleGoalCreation(`${repoInfo[selectedRepo].repoOwner}/${repoInfo[selectedRepo].repoName}`)}>Add Repo</Button>
                   </div>
                 </div>
                 <Illustration alt="productive developer image" src={diary} />
