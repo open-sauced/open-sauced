@@ -19,15 +19,20 @@ import { CreateGoalsRepoNav } from "../styles/Header";
 
 const repoInfo = [
   {
+    repoOwner: "open-sauced",
+    repoName: "open-sauced",
+    repoDescription: "This is a project to identify your next open source contribution."
+  },
+  {
     repoOwner: "npm",
     repoName: "cli",
     repoDescription: "the package manager for JavaScript"
   },
   {
-    repoOwner: "williamfiset",
-    repoName: "algorithms",
-    repoDescription: "No description"
-  }
+    repoOwner: "tailwindlabs",
+    repoName: "tailwindcss",
+    repoDescription: "A utility-first CSS framework for rapid UI development."
+  },
 ];
 
 function CreateApp() {
@@ -50,7 +55,7 @@ function CreateApp() {
 }
 
 function CreateGoals({installNeeded, databaseCreated, goalsId, onGoalAdded, user, onRepoCreation}) {
-  const [selectedRepo, setSelectedRepo] = useState(1);
+  const [selectedRepo, setSelectedRepo] = useState(0);
   const [repoAdded, setRepoAdded] = useState(false);
   const [installReady, setInstallReady] = useState(installNeeded);
   const _handleRepoCreation = () => {
@@ -169,9 +174,9 @@ function CreateGoals({installNeeded, databaseCreated, goalsId, onGoalAdded, user
               <CreateGoalsRepoNav>
                 {
                   repoInfo.map((repo, index) => 
-                    <h3 key={index} onClick={() => setSelectedRepo(index)}>
+                    <Button key={`repoNav${index + 1}`} onClick={() => setSelectedRepo(index)}>
                       {repo.repoName}
-                    </h3>
+                    </Button>
                 )}
               </CreateGoalsRepoNav>
               <SpaceBetweenTop>
