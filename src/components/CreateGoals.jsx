@@ -51,6 +51,7 @@ function CreateApp() {
 
 function CreateGoals({installNeeded, databaseCreated, goalsId, onGoalAdded, user, onRepoCreation}) {
   const [selectedRepo, setSelectedRepo] = useState(1);
+  const [repoAdded, setRepoAdded] = useState(false);
   const [installReady, setInstallReady] = useState(installNeeded);
   const _handleRepoCreation = () => {
     capturePostHogAnalytics('Onboarding Flow', 'repoCreationBtn', 'clicked');
@@ -92,12 +93,16 @@ function CreateGoals({installNeeded, databaseCreated, goalsId, onGoalAdded, user
   };
 
   const _handleGoalCreation = async( repoUrl ) => {
+    setRepoAdded(true);
     api
       .createGoal(goalsId, repoUrl, null)
       .then(response => {
         onGoalAdded(response.data.gitHub.createIssue.issue);
       })
-      .catch(e => console.error(e));
+      .catch(e => {
+        setRepoAdded(false);
+        console.error(e)
+      });
   };
 
   return (
@@ -152,7 +157,7 @@ function CreateGoals({installNeeded, databaseCreated, goalsId, onGoalAdded, user
           </SpaceBetween>
         </Cards>
         
-        <Cards disabled={!databaseCreated}>
+        <Cards disabled={!databaseCreated || repoAdded}>
           <SpaceBetween>
             <OnBoardingText>
               <h1>3</h1>
@@ -186,7 +191,7 @@ function CreateGoals({installNeeded, databaseCreated, goalsId, onGoalAdded, user
                     </em>
                   </small>
                   <div style={{ paddingTop: 30 }}>
-                    <Button primary minWidth={175} onClick={() => _handleGoalCreation(`${repoInfo[selectedRepo].repoOwner}/${repoInfo[selectedRepo].repoName}`)}>Add Repo</Button>
+                    <Button primary minWidth={175} disabled={repoAdded} onClick={() => _handleGoalCreation(`${repoInfo[selectedRepo].repoOwner}/${repoInfo[selectedRepo].repoName}`)}>{repoAdded ? "Repo added" : "Add Repo"}</Button>
                   </div>
                 </div>
                 <Illustration alt="productive developer image" src={diary} />
