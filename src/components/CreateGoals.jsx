@@ -175,7 +175,7 @@ function CreateGoals({installNeeded, databaseCreated, goalsId, onGoalAdded, user
                 {
                   repoInfo.map((repo, index) => 
                     <Button key={`repoNav${index + 1}`} onClick={() => setSelectedRepo(index)}>
-                      {repo.repoName}
+                    {`${repo.repoOwner} / ${repo.repoName}`}
                     </Button>
                 )}
               </CreateGoalsRepoNav>
@@ -199,7 +199,7 @@ function CreateGoals({installNeeded, databaseCreated, goalsId, onGoalAdded, user
                     <Button primary minWidth={175} disabled={repoAdded} onClick={() => _handleGoalCreation(`${repoInfo[selectedRepo].repoOwner}/${repoInfo[selectedRepo].repoName}`)}>{repoAdded ? "Repo added" : "Add Repo"}</Button>
                   </div>
                 </div>
-                <Illustration alt="productive developer image" src={diary} />
+                <Illustration className="productive-developer" alt="Done checking add repo" src={diary} />
               </SpaceBetweenTop>
             </>
           )}

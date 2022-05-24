@@ -6,8 +6,7 @@ const Container = styled.nav`
     flex-direction: row;
     
     ${MEDIA.TABLET`
-        flex-direction: column;
-        align-items: center;
+        display: block;
         padding-bottom: 10px;
     `};
 

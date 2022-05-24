@@ -123,7 +123,7 @@ function CreateApp() {
                 {
                   repoInfo.map((repo, index) => 
                     <Button key={`repoNav${index + 1}`} onClick={() => setSelectedRepo(index)}>
-                      {repo.repoName}
+                      {`${repo.repoOwner}/${repo.repoName}`}
                     </Button>
                 )}
               </CreateGoalsRepoNav>
@@ -147,7 +147,7 @@ function CreateApp() {
                     <Button primary minWidth={175} >Add Repo"</Button>
                   </div>
                 </div>
-                <Illustration alt="productive developer image" src={diary} />
+                <Illustration className="productive-developer" alt="productive developer image" src={diary} />
               </SpaceBetweenTop>
             </>
           )}
