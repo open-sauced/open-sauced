@@ -33,7 +33,8 @@
     "storybook": "npx start-storybook -p 6006",
     "lint": "npx eslint . --report-unused-disable-directives",
     "format": "npm run lint -- --fix",
-    "sandbox": "npm run build && npm run serve"
+    "sandbox": "npm run build && npm run serve",
+    "prerender": "npx vite build && npx vite build --ssr && npx vite-plugin-ssr prerender --outDir build/"
   },
   "dependencies": {
     "@apollo/client": "^3.6.2",

@@ -1,7 +1,13 @@
 import React from 'react'
 import ReactDOMServer from 'react-dom/server'
 //import { StaticRouter } from "react-router-dom";
+import "../index.css";
+import "react-loading-skeleton/dist/skeleton.css";
+
+
 import { escapeInject, dangerouslySkipEscape } from 'vite-plugin-ssr'
+import { ServerStyleSheet, StyleSheetManager } from 'styled-components';
+
 
 export { render }
 
@@ -9,11 +15,14 @@ export { render }
 export const passToClient = ['pageProps', 'urlPathname', 'routeParams']
 
 async function render(pageContext) {
+  const sheet = new ServerStyleSheet();
   console.log('calling _default server render')
   const { Page, pageProps, routeParams } = pageContext
   const pageHtml = ReactDOMServer.renderToString(
-    <Page {...pageProps} {...routeParams} />
+    <StyleSheetManager sheet={sheet.instance}><Page {...pageProps} {...routeParams} /></StyleSheetManager>
   )
+
+  const styleTags = sheet.getStyleTags()
 
   // See https://vite-plugin-ssr.com/head
   const { documentProps } = pageContext
@@ -27,6 +36,7 @@ async function render(pageContext) {
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="description" content="${desc}" />
+        ${dangerouslySkipEscape(styleTags)}
         <title>${title}</title>
       </head>
       <body>

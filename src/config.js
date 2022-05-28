@@ -2,13 +2,14 @@ import OneGraphAuth from "onegraph-auth";
 
 const APP_ID = "bc178799-292e-49df-8016-223abf5a07cb";
 
-const auth = new OneGraphAuth({
+const auth = (typeof window !== 'undefined') ? new OneGraphAuth({
   appId: APP_ID
-});
+})
+: null;
 
 // This setup is only needed once per application
 const fetchOneGraph = (operationsDoc, operationName, variables) => {
-  return fetch(
+  return (typeof window !== 'undefined') ? fetch(
     "https://serve.onegraph.com/dynamic?app_id=" + APP_ID,
     {
       method: "POST",
@@ -21,7 +22,8 @@ const fetchOneGraph = (operationsDoc, operationName, variables) => {
         operationName: operationName
       })
     }
-  ).then(res => res.json());
+  ).then(res => res.json())
+  : null;
 };
 
 const returnOneGraph = {

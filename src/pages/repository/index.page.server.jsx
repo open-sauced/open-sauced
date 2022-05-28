@@ -23,24 +23,38 @@ const mockData = {
     },
     "error": null
 }
-export async function onBeforeRender(pageContext) {
-    // const supabase = createClient(
-    //     "https://lkkownkrbkmblczeoyqb.supabase.co",
-    //     "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJvbGUiOiJhbm9uIiwiaWF0IjoxNjQyNDU2MTc0LCJleHAiOjE5NTgwMzIxNzR9.c6nlkT05GnNacQ6OYuGcjBsILmGsSDwEEtN2zZVXFgY");
 
-    // const {routeParams} = pageContext;
-    // const {owner, name} = routeParams;
-    // const {data: repository, error} = await supabase
-    // .from('repos')
-    // .select('*')
-    // .eq('full_name', `${owner}/${name}`)
-    // .limit(1)
-    // .single()
+export async function prerender() {
+    const supabase = createClient(
+        "https://lkkownkrbkmblczeoyqb.supabase.co",
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJvbGUiOiJhbm9uIiwiaWF0IjoxNjQyNDU2MTc0LCJleHAiOjE5NTgwMzIxNzR9.c6nlkT05GnNacQ6OYuGcjBsILmGsSDwEEtN2zZVXFgY");
+
+    const {data: repositories, error} = await supabase
+    .from('repos')
+    .select('full_name')
+
+    const urls = repositories.map(({full_name}) => `/repos/${full_name}`)
+    return urls
+}
+
+export async function onBeforeRender(pageContext) {
+    const supabase = createClient(
+        "https://lkkownkrbkmblczeoyqb.supabase.co",
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJvbGUiOiJhbm9uIiwiaWF0IjoxNjQyNDU2MTc0LCJleHAiOjE5NTgwMzIxNzR9.c6nlkT05GnNacQ6OYuGcjBsILmGsSDwEEtN2zZVXFgY");
+
+    const {routeParams} = pageContext;
+    const {owner, name} = routeParams;
+    const {data: repository, error} = await supabase
+    .from('repos')
+    .select('*')
+    .eq('full_name', `${owner}/${name}`)
+    .limit(1)
+    .single()
 
     
     return {
         pageContext:{
-            pageProps: {repository: mockData.repository, error: mockData.error},
+            pageProps: {repository, error: error},
         }
     }
 }

@@ -17,11 +17,11 @@ import Button from "../styles/Button";
 import {RepoForkedIcon} from "@primer/octicons-react";
 import {fontSize} from "../styles/variables";
 
-function Repository({user, match}) {
+function Repository({user, match, ssrRepository}) {
   const {
     params: {repoName, repoOwner},
   } = match;
-  const [repository, setRepository] = useState(null);
+  const [repository, setRepository] = useState(ssrRepository);
   const [error, setError] = useState(null);
   const [isForkLoading, setIsForkLoading] = useState(true);
   const [isForked, setIsForked] = useState(false);
@@ -100,9 +100,12 @@ function Repository({user, match}) {
     hasIssuesEnabled,
     contributors_oneGraph,
     licenseInfo,
+
+    //ssr properties
+    stars,
   } = repository || {};
-  const totalLangDiff = repository && repository.languages.totalCount - languagesShown;
-  const contributors = repository && contributors_oneGraph.nodes.filter(user => !user.login.includes("[bot]"));
+  const totalLangDiff = repository && repository.languages && repository.languages.totalCount - languagesShown;
+  const contributors = repository && contributors_oneGraph && contributors_oneGraph.nodes.filter(user => !user.login.includes("[bot]"));
   return (
     <section>
       {error && <ErrorMessage>{error}</ErrorMessage>}
@@ -133,7 +136,7 @@ function Repository({user, match}) {
                 </em>
               </small>
               <div className="languages">
-                {repository ? (
+                {repository && repository.languages ? (
                   repository.languages.nodes.map((language, key) => (
                     <span key={key}>
                       <span className="dot" style={{color: language.color}}>
@@ -146,7 +149,7 @@ function Repository({user, match}) {
                   <Skeleton inline height={2} width={70} count={4} />
                 )}
                 <span className="more">
-                  {repository &&
+                  {repository && repository.languages &&
                     repository.languages.totalCount > languagesShown &&
                     `+${totalLangDiff} language${totalLangDiff !== 1 ? "s" : ""}`}
                 </span>
@@ -175,7 +178,7 @@ function Repository({user, match}) {
               ))}
               <h3 style={{fontSize: fontSize.default}}>Contributors</h3>
               <div className="contributors">
-                {contributors.slice(0, contributorsShown).map((user, key) => (
+                {contributors && contributors.slice(0, contributorsShown).map((user, key) => (
                   <a href={`https://github.com/${user.login}`} rel="noreferrer" target="_blank" key={key}>
                     <img
                       className="users"
@@ -185,7 +188,7 @@ function Repository({user, match}) {
                     />
                   </a>
                 ))}
-                {contributors.length > contributorsShown && (
+                {contributors && contributors.length > contributorsShown && (
                   <span className="more">
                     <a href={`${url}/graphs/contributors`} rel="noreferrer" target="_blank">
                       more...
@@ -220,16 +223,16 @@ function Repository({user, match}) {
         {repository ? (
           <FormColumn>
             <Card>
-              {hasIssuesEnabled ? (
-                <DetailInfo text={`${humanizeNumber(issues.totalCount)} issues`} icon="IssueOpenedIcon" />
+              {hasIssuesEnabled || issues > -1 ? (
+                <DetailInfo text={`${humanizeNumber((issues.totalCount) ? issues.totalCount : issues)} issues`} icon="IssueOpenedIcon" />
               ) : (
                 <DetailInfo
                   text={`${humanizeNumber(pullRequests.totalCount)} pull requests`}
                   icon="GitPullRequestIcon"
                 />
               )}
-              <DetailInfo text={`${humanizeNumber(forks.totalCount)} forks`} icon="RepoForkedIcon" />
-              <DetailInfo text={`${humanizeNumber(stargazers.totalCount)} stars`} icon="StarIcon" />
+              {forks && forks.totalCount ? <DetailInfo text={`${humanizeNumber(forks.totalCount)} forks`} icon="RepoForkedIcon" /> : null}
+              <DetailInfo text={`${humanizeNumber((stargazers && stargazers.totalCount) ? stargazers.totalCount : stars)} stars`} icon="StarIcon" />
               {licenseInfo && <DetailInfo text={`${licenseInfo.name}`} icon="LawIcon" />}
             </Card>
           </FormColumn>

@@ -1,1 +1,1 @@
-export default '/repository/:owner/:name';
+export default '/repos/:owner/:name';
