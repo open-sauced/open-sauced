@@ -61,7 +61,7 @@ function RepositoryGoals({user}) {
 
   return (
     <section>
-      {repository && repository.issues ? (
+      {repository && repository.issues.totalCount > 0 ? (
         <React.Fragment>
           <Flex>
             <RepositoryContext>
@@ -109,7 +109,7 @@ function RepositoryGoals({user}) {
           </Card>
         </React.Fragment>
       ) : (
-        <CreateGoals installNeeded={!!repository && !!error} user={(user && user) || ""} onRepoCreation={onRepoCreation} />
+        <CreateGoals installNeeded={!!repository && !!error} databaseCreated={!!(repository && repository.issues)} goalsId={goalsId} onGoalAdded={onGoalAdded} user={(user && user) || ""} onRepoCreation={onRepoCreation} />
       )}
     </section>
   );

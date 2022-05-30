@@ -12,7 +12,28 @@ import {CreateGoalsContainer, OnBoardingText} from "../styles/Container";
 import {Tooltip, TooltipTrigger} from "@radix-ui/react-tooltip";
 import {TooltipContainer, TooltipArrowComponent} from "../styles/Tooltip";
 import {capturePostHogAnalytics} from "../lib/analytics";
+import RepositoryAvatar from "../styles/RepositoryAvatar";
+import {diary} from "../illustrations";
 import {help} from "../icons";
+import { CreateGoalsRepoNav } from "../styles/Header";
+
+const repoInfo = [
+  {
+    repoOwner: "open-sauced",
+    repoName: "open-sauced",
+    repoDescription: "This is a project to identify your next open source contribution."
+  },
+  {
+    repoOwner: "npm",
+    repoName: "cli",
+    repoDescription: "the package manager for JavaScript"
+  },
+  {
+    repoOwner: "tailwindlabs",
+    repoName: "tailwindcss",
+    repoDescription: "A utility-first CSS framework for rapid UI development."
+  },
+];
 
 function CreateApp() {
   return (
@@ -33,7 +54,9 @@ function CreateApp() {
   );
 }
 
-function CreateGoals({installNeeded, user, onRepoCreation}) {
+function CreateGoals({installNeeded, databaseCreated, goalsId, onGoalAdded, user, onRepoCreation}) {
+  const [selectedRepo, setSelectedRepo] = useState(0);
+  const [repoAdded, setRepoAdded] = useState(false);
   const [installReady, setInstallReady] = useState(installNeeded);
   const _handleRepoCreation = () => {
     capturePostHogAnalytics('Onboarding Flow', 'repoCreationBtn', 'clicked');
@@ -74,6 +97,19 @@ function CreateGoals({installNeeded, user, onRepoCreation}) {
     });
   };
 
+  const _handleGoalCreation = async( repoUrl ) => {
+    setRepoAdded(true);
+    api
+      .createGoal(goalsId, repoUrl, null)
+      .then(response => {
+        onGoalAdded(response.data.gitHub.createIssue.issue);
+      })
+      .catch(e => {
+        setRepoAdded(false);
+        console.error(e)
+      });
+  };
+
   return (
     <React.Fragment>
       <ContextStyle>
@@ -82,24 +118,24 @@ function CreateGoals({installNeeded, user, onRepoCreation}) {
               <CreateApp />
           </SpaceBetween>
         </SpaceBetweenTop>
-        <Cards disabled={installReady}>
+        <Cards disabled={installReady || databaseCreated}>
           <SpaceBetween>
             <OnBoardingText>
               <h1>1</h1>
               <p>Let's sync Open Sauced with your GitHub Repos</p>
             </OnBoardingText>
-            <Button primary minWidth={175} maxWidth={175} onClick={_handleRepoCreation} disabled={installReady}>
+            <Button primary minWidth={175} maxWidth={175} onClick={_handleRepoCreation} disabled={installReady || databaseCreated}>
               Sync Repos
             </Button>
           </SpaceBetween>
         </Cards>
-        <Cards disabled={!installReady}>
+        <Cards disabled={!installReady || databaseCreated}>
           <SpaceBetween>
             <OnBoardingText>
               <h1>2</h1>
               <p>Now let's create the Open Sauced database on GitHub</p>
               <Tooltip delayDuration={200}>
-                <TooltipTrigger asChild>
+                <TooltipTrigger asChild disabled={!installReady || databaseCreated}>
                   <IconButton>
                     <img className="svg" alt="tool-tip" src={help} />
                   </IconButton>
@@ -125,18 +161,49 @@ function CreateGoals({installNeeded, user, onRepoCreation}) {
             </a>
           </SpaceBetween>
         </Cards>
-        {/* TODO: This is the beginning of the implementation to solve issue #1428 in open-sauced
-            https://github.com/open-sauced/open-sauced/issues/1428
         
-        <Cards disabled={true}>
+        <Cards disabled={!databaseCreated || repoAdded}>
           <SpaceBetween>
             <OnBoardingText>
               <h1>3</h1>
               <p>And finally, it's time to follow some repos</p>
             </OnBoardingText>
-              <Button primary minWidth={175} disabled={true}>Add Repos</Button>
           </SpaceBetween>
-        </Cards> */}
+          {databaseCreated && (
+            <>
+              <CreateGoalsRepoNav>
+                {
+                  repoInfo.map((repo, index) => 
+                    <Button key={`repoNav${index + 1}`} onClick={() => setSelectedRepo(index)}>
+                    {`${repo.repoOwner} / ${repo.repoName}`}
+                    </Button>
+                )}
+              </CreateGoalsRepoNav>
+              <SpaceBetweenTop>
+                <div>
+                  <a style={{textDecoration: "none"}} href={`https://github.com/${repoInfo[selectedRepo].repoOwner}/${repoInfo[selectedRepo].repoName}`} rel="noreferrer" target="_blank">
+                    <h1>
+                      <RepositoryAvatar alt="avatar" src={`https://avatars.githubusercontent.com/${repoInfo[selectedRepo].repoOwner}`} />
+                      {`${repoInfo[selectedRepo].repoOwner} / ${repoInfo[selectedRepo].repoName}`}
+                    </h1>
+                  </a>
+                    <p>{repoInfo[selectedRepo].repoDescription}</p>
+                  <small>
+                    <em>
+                      <a href="https://opensource.guide/how-to-contribute/" rel="noreferrer" target="_blank">
+                        Learn how to contribute to open source projects
+                      </a>
+                    </em>
+                  </small>
+                  <div style={{ paddingTop: 30 }}>
+                    <Button primary minWidth={175} disabled={repoAdded} onClick={() => _handleGoalCreation(`${repoInfo[selectedRepo].repoOwner}/${repoInfo[selectedRepo].repoName}`)}>{repoAdded ? "Repo added" : "Add Repo"}</Button>
+                  </div>
+                </div>
+                <Illustration className="productive-developer" alt="Done checking add repo" src={diary} />
+              </SpaceBetweenTop>
+            </>
+          )}
+        </Cards>
       </ContextStyle>
     </React.Fragment>
   );

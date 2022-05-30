@@ -5,6 +5,13 @@
 
 > All notable changes to this project will be documented in this file
 
+## [0.52.0](https://github.com/open-sauced/open-sauced/compare/v0.51.0...v0.52.0) (2022-05-24)
+
+
+### 🍕 Features
+
+* Adds Repo suggestions to the onboarding flow ([#1444](https://github.com/open-sauced/open-sauced/issues/1444)) ([507e047](https://github.com/open-sauced/open-sauced/commit/507e047ff14108cf3e39c2ba6ffeddf63e82c26f))
+
 ## [0.51.0](https://github.com/open-sauced/open-sauced/compare/v0.50.2...v0.51.0) (2022-05-16)
 
 

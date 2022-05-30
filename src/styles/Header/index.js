@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import Heading from "./Heading";
 import HomeNav from "./HomeNav";
+import CreateGoalsRepoNav from "./CreateGoalsRepoNav";
 import AdminNav from "./AdminNav";
 import SimpleHeader from "./SimpleHeader";
 import SubHeading from "./SubHeading";
@@ -24,6 +25,7 @@ export {
   SubHeading,
   HomeNav,
   SimpleHeader,
+  CreateGoalsRepoNav,
   PizzaPosition,
   Wrapper,
 };
