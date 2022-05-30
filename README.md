@@ -128,6 +128,12 @@ To start a local copy of the app on port `3000`:
 npm start
 ```
 
+To start a local server on port `3000` for testing SSR repository pages run the following command:
+
+```shell
+npm run dev:ssr
+```
+
 ### 🧪 Test
 
 For running the test suite, use the following command. Since the tests run in watch mode by default, some users may encounter errors about too many files being open. In this case, it may be beneficial to [install watchman](https://facebook.github.io/watchman/docs/install.html).
@@ -185,6 +191,12 @@ You can analyze the build by running the following command:
 
 ```shell
 npm run build:analyze
+```
+
+To prerender the repository pages run the following command:
+
+```shell
+npm run prerender
 ```
 
 ### 🎭 Offline asset optimization
