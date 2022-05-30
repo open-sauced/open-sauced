@@ -14,7 +14,7 @@ async function startServer() {
 
   let viteDevServer
   if (isProduction) {
-    app.use(express.static(`${root}/dist/client`))
+    app.use(express.static(`${root}/build/client`))
   } else {
     const vite = require('vite')
     viteDevServer = await vite.createServer({

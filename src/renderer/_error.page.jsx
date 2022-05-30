@@ -1,7 +1,3 @@
-import React from 'react'
-
-export { Page }
-
 function Page({ is404, errorInfo }) {
   if (is404) {
     return (
@@ -20,3 +16,5 @@ function Page({ is404, errorInfo }) {
     )
   }
 }
+
+export { Page }

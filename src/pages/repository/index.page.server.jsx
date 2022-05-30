@@ -1,5 +1,9 @@
 import {createClient} from '@supabase/supabase-js'
 
+const supabase = createClient(
+    import.meta.env.VITE_SUPABASE_URL, 
+    import.meta.env.VITE_SUPABASE_ANON_KEY
+);
 
 const mockData = {
     "repository": {
@@ -25,10 +29,6 @@ const mockData = {
 }
 
 export async function prerender() {
-    const supabase = createClient(
-        "https://lkkownkrbkmblczeoyqb.supabase.co",
-        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJvbGUiOiJhbm9uIiwiaWF0IjoxNjQyNDU2MTc0LCJleHAiOjE5NTgwMzIxNzR9.c6nlkT05GnNacQ6OYuGcjBsILmGsSDwEEtN2zZVXFgY");
-
     const {data: repositories, error} = await supabase
     .from('repos')
     .select('full_name')
@@ -38,26 +38,20 @@ export async function prerender() {
 }
 
 export async function onBeforeRender(pageContext) {
-    const supabase = createClient(
-        "https://lkkownkrbkmblczeoyqb.supabase.co",
-        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJvbGUiOiJhbm9uIiwiaWF0IjoxNjQyNDU2MTc0LCJleHAiOjE5NTgwMzIxNzR9.c6nlkT05GnNacQ6OYuGcjBsILmGsSDwEEtN2zZVXFgY");
-
     const {routeParams} = pageContext;
     const {owner, name} = routeParams;
     const {data: repository, error} = await supabase
-    .from('repos')
-    .select('*')
-    .eq('full_name', `${owner}/${name}`)
-    .limit(1)
-    .single()
+        .from('repos')
+        .select('*')
+        .eq('full_name', `${owner}/${name}`)
+        .limit(1)
+        .single()
 
-    
     return {
         pageContext:{
             pageProps: {repository, error: error},
+            documentProps: {title: `Open Sauced: ${repository.full_name}`},
         }
     }
 }
-
-//export const passToClient = ['data']
 
