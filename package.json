@@ -19,7 +19,7 @@
   "scripts": {
     "push": "npx @open-sauced/conventional-commit",
     "start": "npx vite",
-    "dev": "node ./server",
+    "dev:ssr": "node ./server",
     "build": "npx vite build",
     "serve": "npx vite preview",
     "build:debug": "npm run build -- --debug",
