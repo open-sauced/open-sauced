@@ -2,7 +2,7 @@ export function isValidRepoUrl(url) {
   url = url.trim();
   url = url.substr(0, 1) === "/" ? url.substr(1) : url;
 
-  const isRelativeUrl = !(url.substr(0, 4) === "http" || url.includes(".com") || url.includes("www."));
+  const isRelativeUrl = !(url.substr(0,7) === 'http://' || url.substr(0,8) === 'https://');
   if (isRelativeUrl) {
     return relativeUrlValidator(url);
   }
