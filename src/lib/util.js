@@ -1,5 +1,5 @@
 export function isValidRepoUrl(url) {
-  url = url.trim();
+  url = url.toLowerCase().trim();
   url = url.substr(0, 1) === "/" ? url.substr(1) : url;
 
   const isRelativeUrl = !(url.substr(0,7) === 'http://' || url.substr(0,8) === 'https://' || url.substr(0,4) === 'www.');
