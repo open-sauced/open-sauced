@@ -5,6 +5,13 @@
 
 > All notable changes to this project will be documented in this file
 
+### [0.52.1](https://github.com/open-sauced/open-sauced/compare/v0.52.0...v0.52.1) (2022-06-25)
+
+
+### 🐛 Bug Fixes
+
+* able to add repo name with "."(dot) in it issue[#1451](https://github.com/open-sauced/open-sauced/issues/1451) ([#1453](https://github.com/open-sauced/open-sauced/issues/1453)) ([fcca807](https://github.com/open-sauced/open-sauced/commit/fcca807a44d961dbbe3a66efe0006654486e743a))
+
 ## [0.52.0](https://github.com/open-sauced/open-sauced/compare/v0.51.0...v0.52.0) (2022-05-24)
 
 
