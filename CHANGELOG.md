@@ -5,6 +5,13 @@
 
 > All notable changes to this project will be documented in this file
 
+## [0.53.0](https://github.com/open-sauced/open-sauced/compare/v0.52.1...v0.53.0) (2022-07-01)
+
+
+### 🍕 Features
+
+* **social-card:** update the image ([#1455](https://github.com/open-sauced/open-sauced/issues/1455)) ([7e2dacd](https://github.com/open-sauced/open-sauced/commit/7e2dacdde2fea20fc54c5e03593bc60f3fba68ea))
+
 ### [0.52.1](https://github.com/open-sauced/open-sauced/compare/v0.52.0...v0.52.1) (2022-06-25)
 
 
