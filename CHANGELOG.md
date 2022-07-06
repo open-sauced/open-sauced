@@ -5,6 +5,13 @@
 
 > All notable changes to this project will be documented in this file
 
+### [0.53.1](https://github.com/open-sauced/open-sauced/compare/v0.53.0...v0.53.1) (2022-07-06)
+
+
+### 🔁 Continuous Integration
+
+* **codeql:** updated the CodeQL version ([#1456](https://github.com/open-sauced/open-sauced/issues/1456)) ([421496d](https://github.com/open-sauced/open-sauced/commit/421496d94555b8c7a3ded12faa7159b4349c5477))
+
 ## [0.53.0](https://github.com/open-sauced/open-sauced/compare/v0.52.1...v0.53.0) (2022-07-01)
 
 
