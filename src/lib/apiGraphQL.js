@@ -2,6 +2,7 @@ import Config from "../config";
 // TODO: Write docs on how persisted queries work
 import {
   persistedForkFetch,
+  persistedForkCreate,
   persistedIssuesFetch,
   persistedInteractionsFetch,
   persistedGoalFetch,
@@ -304,7 +305,18 @@ const operationsDoc = `
       }
     }
   }
-
+  query FetchUserFork(
+    $repoName: String!
+    $repoOwner: String!
+  ) {
+    gitHub {
+      repository(name: $repoName, owner: $repoOwner) {
+        id
+        isFork
+        nameWithOwner
+      }
+    }
+  }
   mutation ForkRepository(
     $repoName: String!
     $repoOwner: String!
@@ -376,6 +388,10 @@ function fetchUserForkCount(repoName, repoOwner) {
   return fetchOneGraph(operationsDoc, "FetchUserForkCount", {repoName, repoOwner});
 }
 
+function fetchUserFork(repoName, repoOwner) {
+  return fetchOneGraph(operationsDoc, "FetchUserFork", {repoName, repoOwner})
+}
+
 function forkRepository(repoName, repoOwner) {
   return fetchOneGraph(operationsDoc, "ForkRepository", {repoName, repoOwner});
 }
@@ -397,6 +413,7 @@ const api = {
   updateGoal,
   persistedRepoDataFetch,
   persistedForkFetch,
+  persistedForkCreate,
   persistedGoalFetch,
   persistedInteractionsFetch,
   persistedIssuesFetch,
@@ -414,6 +431,7 @@ const api = {
   },
   persistedViewerStars,
   fetchUserForkCount,
+  fetchUserFork,
   forkRepository,
 };
 

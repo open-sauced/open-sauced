@@ -50,27 +50,28 @@ function Repository({user, match}) {
       .catch(e => {
         console.log(e);
       });
-
-    api
-      .persistedForkFetch({repoName, repoOwner}, "FetchUserForkCount")
+    if(user && user.login){
+      api
+      .fetchUserFork(repoName, user.login)
       .then(({data, errors}) => {
         if (errors && errors.length > 0) {
-          setError(`"${errors[0].message}"`);
+          setIsForked(false);
           return;
         }
-
-        setIsForked(!!data.gitHub.repository.forks.totalCount);
+        setIsForked(!!data.gitHub.repository.isFork);
       })
       .catch(e => console.log(e))
       .finally(() => setIsForkLoading(false));
-  }, [repoName, repoOwner]);
+    } 
+  }, [repoName, repoOwner, user]);
 
   const forkRepository = () => {
     setIsForkLoading(true);
 
     api
-      .persistedForkFetch({repoName, repoOwner}, "ForkRepository")
+      .persistedForkCreate({repoName, repoOwner}, "ForkRepository")
       .then(res => {
+        console.log(res);
         const {errors} = res;
 
         if (errors && errors.length > 0) {
