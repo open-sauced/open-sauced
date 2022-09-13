@@ -10,6 +10,7 @@ import {ErrorMessage} from "../styles/Typography";
 
 function AddRepoForm({goalsId, onGoalAdded, goals}) {
   const urlRef = useRef(null);
+  const submitBtnRef = useRef(null);
   const [error, setError] = useState(null);
 
   const _handleGoalCreation = async(event) => {
@@ -21,8 +22,8 @@ function AddRepoForm({goalsId, onGoalAdded, goals}) {
     }
 
     const [isValid, repoUrl] = isValidRepoUrl(urlRef.current.value.replace(/\s+/g, ""));
-    const statusCode = await repoStatusCode(repoUrl);
-    const goalExists = goals.nodes.find(goal => goal.full_name === repoUrl);
+    const [statusCode, newFullName] = await repoStatusCode(repoUrl);
+    const goalExists = goals.nodes.find(goal => goal.full_name.toLowerCase() === repoUrl);
 
     if (!isValid) {
       urlRef.current.focus();
@@ -43,10 +44,12 @@ function AddRepoForm({goalsId, onGoalAdded, goals}) {
     }
 
     if (statusCode === 301) {
+      urlRef.current.value = newFullName;
       urlRef.current.focus();
-      setError("Repository has been moved to another location!");
+      setError(`Repository has been renamed to ${newFullName} and we have changed the input below.`);
       return;
     }
+    submitBtnRef.current.disabled = true;
     api
       .createGoal(goalsId, repoUrl, null)
       .then(response => {
@@ -55,7 +58,10 @@ function AddRepoForm({goalsId, onGoalAdded, goals}) {
         urlRef.current.focus();
         setError(null);
       })
-      .catch(e => console.error(e));
+      .catch(e => console.error(e))
+      .finally(() => {
+        submitBtnRef.current.disabled = false;
+      });
   };
 
   return (
@@ -64,7 +70,7 @@ function AddRepoForm({goalsId, onGoalAdded, goals}) {
         {error && <ErrorMessage>{error}</ErrorMessage>}
         <Flex>
           <Input aria-label="repo name with owner" type="text" ref={urlRef} placeholder="owner/repo" />
-          <InputButton type="submit" primary>
+          <InputButton type="submit" ref={submitBtnRef} primary>
             Add
           </InputButton>
         </Flex>
