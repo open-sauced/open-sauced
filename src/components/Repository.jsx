@@ -69,7 +69,7 @@ function Repository({user, match}) {
     setIsForkLoading(true);
 
     api
-      .persistedForkCreate({repoName, repoOwner}, "ForkRepository")
+      .forkRepository(repoName, repoOwner)
       .then(res => {
         console.log(res);
         const {errors} = res;

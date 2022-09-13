@@ -45,7 +45,6 @@ function makeFetch(doc_id, requiredVariables = [], operationName = false) {
 }
 
 const persistedForkFetch = makeFetch(doc_id0, ["repoName", "repoOwner"], "FetchUserForkCount");
-const persistedForkCreate = makeFetch(doc_id0, ["repoName", "repoOwner"], "ForkRepository");
 const persistedRepoDataFetch = makeFetch(doc_id1, ["repo", "owner"]);
 const persistedGoalFetch = makeFetch(doc_id2, ["number"]);
 const persistedInteractionsFetch = makeFetch(doc_id3, ["query"]);
@@ -71,7 +70,6 @@ async function persistedViewerStars(user) {
 
 export {
   persistedForkFetch,
-  persistedForkCreate,
   persistedDeploymentFetch,
   persistedIssuesFetch,
   persistedIssuesAfterFetch,

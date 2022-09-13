@@ -2,7 +2,6 @@ import Config from "../config";
 // TODO: Write docs on how persisted queries work
 import {
   persistedForkFetch,
-  persistedForkCreate,
   persistedIssuesFetch,
   persistedInteractionsFetch,
   persistedGoalFetch,
@@ -317,18 +316,11 @@ const operationsDoc = `
       }
     }
   }
-  mutation ForkRepository(
-    $repoName: String!
-    $repoOwner: String!
-  ) {
+  mutation ForkRepository($path: String!) {
     gitHub {
-      createFork_oneGraph(
-        input: { repoName: $repoName, repoOwner: $repoOwner }
-      ) {
-        clientMutationId
-        repository {
-          id
-          url
+      makeRestCall {
+        post(path: $path, accept: "application/vnd.github+json") {
+          jsonBody
         }
       }
     }
@@ -393,7 +385,7 @@ function fetchUserFork(repoName, repoOwner) {
 }
 
 function forkRepository(repoName, repoOwner) {
-  return fetchOneGraph(operationsDoc, "ForkRepository", {repoName, repoOwner});
+  return fetchOneGraph(operationsDoc, "ForkRepository", {path: `/repos/${repoOwner}/${repoName}/forks`});
 }
 
 const api = {
@@ -413,7 +405,6 @@ const api = {
   updateGoal,
   persistedRepoDataFetch,
   persistedForkFetch,
-  persistedForkCreate,
   persistedGoalFetch,
   persistedInteractionsFetch,
   persistedIssuesFetch,
