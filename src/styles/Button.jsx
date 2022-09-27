@@ -42,6 +42,8 @@ const Button = styled.button`
   }
 
   &:disabled {
+    background: ${colors.lighterGrey};
+    color: ${colors.darkestGrey};
     cursor: not-allowed;
   }
 `;
