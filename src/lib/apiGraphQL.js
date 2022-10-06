@@ -377,7 +377,7 @@ function fetchUserForkCount(repoName, repoOwner) {
 }
 
 function forkRepository(repoName, repoOwner) {
-  return fetchOneGraph(operationsDoc, "ForkRepository", {repoName, repoOwner});
+  return fetchOneGraph(operationsDoc, "ForkRepository", repoName, repoOwner);
 }
 
 const api = {
