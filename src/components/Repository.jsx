@@ -69,7 +69,7 @@ function Repository({user, match}) {
     setIsForkLoading(true);
 
     api
-      .persistedForkFetch({repoName, repoOwner}, "ForkRepository")
+      .forkRepository({repoName, repoOwner}, "ForkRepository")
       .then(res => {
         const {errors} = res;
 
@@ -169,9 +169,11 @@ function Repository({user, match}) {
                   </Button>
                 </a>
               ) : (
-                <Button disabled={isForkLoading} onClick={forkRepository}>
-                  <RepoForkedIcon verticalAlign="middle" /> Fork
-                </Button>
+                <a rel="noreferrer" target="_blank" href={`https://github.com/${repoOwner}/${repoName}/fork`}>
+                  <Button disabled={isForkLoading}>
+                    <RepoForkedIcon verticalAlign="middle" /> Fork
+                  </Button>
+                </a>
               ))}
               <h3 style={{fontSize: fontSize.default}}>Contributors</h3>
               <div className="contributors">
