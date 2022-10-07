@@ -5,6 +5,13 @@
 
 > All notable changes to this project will be documented in this file
 
+### [0.53.3](https://github.com/open-sauced/open-sauced/compare/v0.53.2...v0.53.3) (2022-10-07)
+
+
+### 🐛 Bug Fixes
+
+* switch forking function with github link template ([#1465](https://github.com/open-sauced/open-sauced/issues/1465)) ([a73df9e](https://github.com/open-sauced/open-sauced/commit/a73df9e512dc9a916f497f00bc71991068a706a3)), closes [#1461](https://github.com/open-sauced/open-sauced/issues/1461)
+
 ### [0.53.2](https://github.com/open-sauced/open-sauced/compare/v0.53.1...v0.53.2) (2022-09-27)
 
 
