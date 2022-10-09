@@ -38,7 +38,7 @@ jobs:
 
             In order to be considered for merging, the pull request description must refer to a
             specific issue number. This is described in our
-            [Contributing Guide](https://docs.opensauced.pizza/contributing/getting-started/).
+            [Contributing Guide](https://docs.opensauced.pizza/contributing/introduction-to-contributing/).
 
             This check is looking for a phrase similar to: "Fixes #XYZ" or "Resolves #XYZ" where XYZ is the issue
             number that this PR is meant to address.
@@ -47,7 +47,7 @@ jobs:
 
             In order to be considered for merging, the pull request changes must
             not be implemented on the "%branch%" branch. This is described in our
-            [Contributing Guide](https://docs.opensauced.pizza/contributing/getting-started/).
+            [Contributing Guide](https://docs.opensauced.pizza/contributing/introduction-to-contributing/).
             We would suggest that you close this PR and implement your changes as
             described in our Contributing Guide and open a new pull request.
 
