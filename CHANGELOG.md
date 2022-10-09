@@ -5,6 +5,13 @@
 
 > All notable changes to this project will be documented in this file
 
+### [0.53.4](https://github.com/open-sauced/open-sauced/compare/v0.53.3...v0.53.4) (2022-10-09)
+
+
+### 🐛 Bug Fixes
+
+* correct broken contributing links in readme ([78b26ee](https://github.com/open-sauced/open-sauced/commit/78b26eea1a817578c77e4fc121b57cfc1db2b750)), closes [#1466](https://github.com/open-sauced/open-sauced/issues/1466)
+
 ### [0.53.3](https://github.com/open-sauced/open-sauced/compare/v0.53.2...v0.53.3) (2022-10-07)
 
 
