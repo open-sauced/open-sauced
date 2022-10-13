@@ -5,8 +5,12 @@ import {truncate} from "../lib/truncate";
 import Avatar from "../styles/Avatar";
 import api from "../lib/apiGraphQL";
 
-function RecommendedRepoItem({goal, goalsId, onGoalAdded}) {
+function RecommendedRepoItem({goal, goalsId, onGoalAdded, validateGoalToAdd}) {
   const _handleGoalCreation = async goal => {
+    if(!validateGoalToAdd(goal)) {
+      return;
+    }
+
     api
       .createGoal(goalsId, goal, null)
       .then(response => {
