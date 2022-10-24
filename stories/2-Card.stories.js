@@ -299,8 +299,8 @@ export const RepoDetailsCard = () => {
 export const RecommendedRepoItemCard = () => (
   <Background style={{height: 600, padding: "10px"}}>
     <Card>
-      <RecommendedRepoItem key={goal.full_name} goal={goal} onGoalAdded={() => console.log("Goal 1 Added")} goalsId={null} />
-      <RecommendedRepoItem key={goal.full_name} goal={goal} onGoalAdded={() => console.log("Goal 2 Added")} goalsId={null} />
+      <RecommendedRepoItem key={goal.full_name} goal={goal} validateGoalToAdd={() => true} onGoalAdded={() => console.log("Goal 1 Added")} goalsId={null} />
+      <RecommendedRepoItem key={goal.full_name} goal={goal} validateGoalToAdd={() => true} onGoalAdded={() => console.log("Goal 2 Added")} goalsId={null} />
     </Card>
   </Background>
 );

@@ -26,7 +26,7 @@ function merge(goals, additionalData) {
 }
 
 function ListGoals({goals, data}) {
-  const goalsWithData = merge(goals.nodes, data || []).map((e) => ({
+  const goalsWithData = merge(goals.nodes, data || []).filter((value, index, self) => self.findIndex( goal => goal.full_name === value.full_name) === index).map((e) => ({
     ...e,
     full_name_lc: e.full_name.toLowerCase()
   }));
@@ -34,7 +34,7 @@ function ListGoals({goals, data}) {
   const [listGoals, setGoals] = useState(goalsWithData);
   const [searchTerm, setSearchTerm] = useState("");
   useEffect(() => {
-    const goalsWithData = merge(goals.nodes, data || []).map((e) => ({
+    const goalsWithData = merge(goals.nodes, data || []).filter((value, index, self) => self.findIndex( goal => goal.full_name === value.full_name) === index).map((e) => ({
       ...e,
       full_name_lc: e.full_name.toLowerCase()
     }));
