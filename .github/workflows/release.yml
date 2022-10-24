@@ -15,6 +15,7 @@ jobs:
   docker:
     name: Build container
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
       - name: "☁️ checkout repository"
         uses: actions/checkout@v2
@@ -57,6 +58,7 @@ jobs:
   build:
     name: Build application
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
       - name: "☁️ checkout repository"
         uses: actions/checkout@v2
@@ -106,6 +108,7 @@ jobs:
       - docker
       - build
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
       - name: "☁️ checkout repository"
         uses: actions/checkout@v2
@@ -151,6 +154,7 @@ jobs:
     needs:
       - release
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
       - name: "♻️ remove build artifacts"
         uses: geekyeggo/delete-artifact@v1
