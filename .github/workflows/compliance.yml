@@ -16,6 +16,7 @@ jobs:
   semantics:
     name: Semantics
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
       - uses: amannn/action-semantic-pull-request@v3.4.0
         env:
@@ -24,6 +25,7 @@ jobs:
   pr-compliance-checks:
     name: PR Compliance Checks
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
       - uses: mtfoley/pr-compliance-action@v0.5.0
         with:
@@ -54,6 +56,7 @@ jobs:
   welcome:
     name: Welcome
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     needs: semantics
     if: github.event.action == 'opened'
     steps:
