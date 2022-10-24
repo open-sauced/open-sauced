@@ -5,6 +5,13 @@
 
 > All notable changes to this project will be documented in this file
 
+## [0.54.0](https://github.com/open-sauced/open-sauced/compare/v0.53.5...v0.54.0) (2022-10-24)
+
+
+### 🍕 Features
+
+* add artifact maintenance and global jobs timeout ([#1470](https://github.com/open-sauced/open-sauced/issues/1470)) ([03520e4](https://github.com/open-sauced/open-sauced/commit/03520e4d0fa6923f210088253528ae10960fe55f)), closes [#1469](https://github.com/open-sauced/open-sauced/issues/1469)
+
 ### [0.53.5](https://github.com/open-sauced/open-sauced/compare/v0.53.4...v0.53.5) (2022-10-24)
 
 
