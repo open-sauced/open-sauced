@@ -5,6 +5,13 @@
 
 > All notable changes to this project will be documented in this file
 
+### [0.53.5](https://github.com/open-sauced/open-sauced/compare/v0.53.4...v0.53.5) (2022-10-24)
+
+
+### 🐛 Bug Fixes
+
+* correct duplicate repositories added to dashboard ([#1468](https://github.com/open-sauced/open-sauced/issues/1468)) ([a3bd798](https://github.com/open-sauced/open-sauced/commit/a3bd798a41ffc1adcf33994a238afd46676f2cf8)), closes [#1459](https://github.com/open-sauced/open-sauced/issues/1459) [#1219](https://github.com/open-sauced/open-sauced/issues/1219)
+
 ### [0.53.4](https://github.com/open-sauced/open-sauced/compare/v0.53.3...v0.53.4) (2022-10-09)
 
 
