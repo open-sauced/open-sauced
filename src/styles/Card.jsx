@@ -93,7 +93,7 @@ const DisabledCard = styled(Card)`
 const ButtonBoard = styled.div`
   flex: 1;
   padding: ${size.tiny} ${margin.gutter};
-  
+
   p {
     line-height: ${size.small};
   }
@@ -208,8 +208,9 @@ const ContextStyle = styled(Card)`
 
 const RepositoryContext = styled(ContextStyle)`
   margin-right: ${size.small};
+  margin-top: 0;
   flex: 2;
-  
+
   .loading {
     .description {
       margin-top: 16px;
@@ -277,12 +278,12 @@ const OnBoardStyle = styled(Card)`
 const DropdownMenuCard = styled(Card)`
   position: absolute;
   box-shadow: 0px 0px 8px rgba(214, 214, 214, 0.78);
-  padding: 0 20px; 
+  padding: 0 20px;
   width: fit-content;
   right: 15px;
   z-index: 1;
   ul {
-     display: flex; 
+     display: flex;
      flex-direction: column;
      padding:0;
      margin: 0;

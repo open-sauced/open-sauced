@@ -88,7 +88,7 @@ function RepositoryGoals({user}) {
               </SpaceBetweenTop>
             </RepositoryContext>
 
-            <FlexColumn style={{marginLeft: 16, flex: 1}}>
+            <FlexColumn style={{flex: 1}}>
               {viewerStars && (
                 <Card>
                   <h3 style={{fontSize: fontSize.default}}>Repo Recommendations</h3>
