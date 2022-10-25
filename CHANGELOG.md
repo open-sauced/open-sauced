@@ -5,6 +5,13 @@
 
 > All notable changes to this project will be documented in this file
 
+### [0.54.2](https://github.com/open-sauced/open-sauced/compare/v0.54.1...v0.54.2) (2022-10-25)
+
+
+### 🐛 Bug Fixes
+
+* weird spacing on the dashboard and repo screen ([#1471](https://github.com/open-sauced/open-sauced/issues/1471)) ([90dc0fe](https://github.com/open-sauced/open-sauced/commit/90dc0fe60fb22140474758a836bc9af13638b4a3)), closes [#1422](https://github.com/open-sauced/open-sauced/issues/1422)
+
 ### [0.54.1](https://github.com/open-sauced/open-sauced/compare/v0.54.0...v0.54.1) (2022-10-25)
 
 
