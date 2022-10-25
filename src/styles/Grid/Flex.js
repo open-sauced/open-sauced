@@ -24,6 +24,10 @@ const FlexColumnCenter = styled(FlexCenter)`
 const FlexColumn = styled.div`
   display: flex;
   flex-direction: column;
+
+  .fpyAse {
+    margin-top: 0;
+  }
 `;
 
 const FlexStart = styled(FlexCenter)`
