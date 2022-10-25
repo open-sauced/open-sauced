@@ -5,6 +5,13 @@
 
 > All notable changes to this project will be documented in this file
 
+### [0.54.1](https://github.com/open-sauced/open-sauced/compare/v0.54.0...v0.54.1) (2022-10-25)
+
+
+### 🔁 Continuous Integration
+
+* make maintenance callable in forks ([685e385](https://github.com/open-sauced/open-sauced/commit/685e385fb397d91f99ffe949f01f11268d3a5b39))
+
 ## [0.54.0](https://github.com/open-sauced/open-sauced/compare/v0.53.5...v0.54.0) (2022-10-24)
 
 
