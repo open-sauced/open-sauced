@@ -5,6 +5,13 @@
 
 > All notable changes to this project will be documented in this file
 
+## [0.55.0](https://github.com/open-sauced/open-sauced/compare/v0.54.2...v0.55.0) (2022-11-21)
+
+
+### 🍕 Features
+
+* enable vite for bundling Storybook ([#1473](https://github.com/open-sauced/open-sauced/issues/1473)) ([7135fe3](https://github.com/open-sauced/open-sauced/commit/7135fe321593523eed47f80a645e3a95804e42e0)), closes [#1429](https://github.com/open-sauced/open-sauced/issues/1429)
+
 ### [0.54.2](https://github.com/open-sauced/open-sauced/compare/v0.54.1...v0.54.2) (2022-10-25)
 
 
