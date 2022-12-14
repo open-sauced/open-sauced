@@ -203,7 +203,7 @@ npm run build:squoosh
 
 ### 🚧 Development debugging
 
-Thanks to [antfu/vite-plugin-inpesct](https://github.com/antfu/vite-plugin-inspect) we can always inspect the bundles in development by navigating to [localhost:3000/__inspect/](http://localhost:3000/__inspect/) in your browser.
+Thanks to [antfu/vite-plugin-inspect](https://github.com/antfu/vite-plugin-inspect) we can always inspect the bundles in development by navigating to [localhost:3000/__inspect/](http://localhost:3000/__inspect/) in your browser.
 
 ### 📙 Storybook
 
