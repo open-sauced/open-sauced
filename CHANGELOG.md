@@ -5,6 +5,13 @@
 
 > All notable changes to this project will be documented in this file
 
+## [0.56.0](https://github.com/open-sauced/open-sauced/compare/v0.55.0...v0.56.0) (2022-12-14)
+
+
+### 📝 Documentation
+
+* fix repository typo ([#1475](https://github.com/open-sauced/open-sauced/issues/1475)) ([9696718](https://github.com/open-sauced/open-sauced/commit/96967186722dbae2d592cbcb8e59779c593392af))
+
 ## [0.55.0](https://github.com/open-sauced/open-sauced/compare/v0.54.2...v0.55.0) (2022-11-21)
 
 
