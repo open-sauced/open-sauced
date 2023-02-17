@@ -30,7 +30,7 @@ function Footer() {
         <li className="p-2 sm:mr-5">
           <a href="https://www.youtube.com/opensauced"
              target="_blank" rel="noreferrer"
-             aria-label="Visit Open Sauced GitHub Organisation">
+             aria-label="Visit Open Sauced GitHub Organisation in Youtube">
             <FaYoutube className="text-offWhite hover:text-accent" />
           </a>
         </li>
