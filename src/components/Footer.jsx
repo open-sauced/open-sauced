@@ -16,7 +16,7 @@ function Footer() {
         <li className="p-2 sm:mr-5">
           <a href="https://twitter.com/saucedopen"
              target="_blank" rel="noreferrer"
-             aria-label="Visit Open Sauced GitHub Organisation">
+             aria-label="Visit Open Sauced GitHub Organisation on Twitter">
             <FaTwitter className="text-offWhite hover:text-accent" />
           </a>
         </li>
