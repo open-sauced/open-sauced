@@ -41,7 +41,7 @@ function DropdownMenu({forwardRef, user, _logOutRedirect}) {
           </SubtleLink>
         </li>
         <li>
-          <SubtleLink tabIndex={0} className="menu-link" onClick={_logOutRedirect}>Logout</SubtleLink>
+          <SubtleLink tabIndex={0} className="menu-link" onClick={_logOutRedirect}>Logout here</SubtleLink>
         </li>
       </ul>
     </DropdownMenuCard>
