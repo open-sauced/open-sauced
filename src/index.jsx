@@ -30,7 +30,7 @@ function Index() {
     registerSW({
       immediate: true,
       onNeedRefresh: () => {
-        console.log('SW needs refresh');
+        console.log('SW needs refresh!');
       },
       onOfflineReady: () => {
         console.log('SW is ready to handle offline requests.');
