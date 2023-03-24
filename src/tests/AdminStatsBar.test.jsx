@@ -1,4 +1,3 @@
-import React from "react";
 import AdminStatsBar from "../components/AdminStatsBar";
 import "@testing-library/jest-dom/extend-expect";
 import {render, cleanup} from "@testing-library/react";
