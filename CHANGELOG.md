@@ -5,6 +5,13 @@
 
 > All notable changes to this project will be documented in this file
 
+### [0.56.1](https://github.com/open-sauced/open-sauced/compare/v0.56.0...v0.56.1) (2023-03-24)
+
+
+### 🐛 Bug Fixes
+
+* adds token to make triage work ([3a546df](https://github.com/open-sauced/open-sauced/commit/3a546dfb1cadfe98e8fb97986d9fdd0a67234d47))
+
 ## [0.56.0](https://github.com/open-sauced/open-sauced/compare/v0.55.0...v0.56.0) (2022-12-14)
 
 
