@@ -1,4 +1,3 @@
-import React from "react";
 import Card from "../src/components/Card";
 import Footer from "../src/components/Footer";
 import DashboardFooter from "../src/styles/Footer";

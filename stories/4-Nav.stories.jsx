@@ -1,13 +1,10 @@
-import React, {Fragment} from "react";
+import { Fragment } from "react";
 import {logo} from "../src/logos";
 import {FloatLeft, FloatRight} from "../src/styles/Grid";
 import {SubtleLink} from "../src/styles/Typography";
 import {AppNav, HomeNav} from "../src/styles/Header";
 import { Switch, SwitchThumb } from "../src/styles/RadixSwitch";
 import {SpaceBetween} from "../src/styles/Grid";
-import darkMode from "../src/images/darkMode.svg";
-import lightMode from "../src/images/lightMode.svg";
-import themeAuto from "../src/images/themeAuto.svg";
 import Avatar from "../src/styles/Avatar";
 import {face} from "../src/images";
 

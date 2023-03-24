@@ -1,4 +1,3 @@
-import React from "react";
 import Background from "../src/styles/Background";
 import Avatar from "../src/styles/Avatar";
 import { Switch, SwitchThumb } from "../src/styles/RadixSwitch";
