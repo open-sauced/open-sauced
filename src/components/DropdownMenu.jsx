@@ -1,4 +1,3 @@
-import React from "react";
 import {SubtleLink} from "../styles/Typography";
 import {DropdownMenuCard} from "../styles/Card";
 import {getAppVersion} from "../lib/appVersion";

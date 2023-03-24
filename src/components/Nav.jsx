@@ -1,4 +1,4 @@
-import React, {useState, useRef, useEffect} from "react";
+import { useState, useRef, useEffect } from "react";
 import {FaGithubSquare} from "react-icons/fa";
 import {logo} from "../logos";
 import {FloatLeftMobileNav, FloatRight} from "../styles/Grid";

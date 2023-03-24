@@ -1,4 +1,3 @@
-import React from "react";
 import {FloatRight, FloatLeft, FlexColumn, FlexHeader, FlexCenter} from "../styles/Grid";
 import {chevronRight} from "../icons";
 import dayjs from "dayjs";

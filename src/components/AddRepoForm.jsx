@@ -1,8 +1,7 @@
-import React, {useRef, useState} from "react";
+import { useRef, useState } from "react";
 import {InputButton} from "../styles/Button";
 import Input from "../styles/Input";
 import {CardPadding} from "../styles/Card";
-import {Flex} from "../styles/Grid";
 import api from "../lib/apiGraphQL";
 import {isValidRepoUrl} from "../lib/util";
 import {repoStatusCode} from "../lib/repoStatusCode";

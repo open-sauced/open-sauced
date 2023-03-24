@@ -1,4 +1,3 @@
-import React from "react";
 import {CardPadding} from "../styles/Card";
 import Loader from "../styles/Loader";
 import Skeleton from "react-loading-skeleton";

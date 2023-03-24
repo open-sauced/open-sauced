@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import { useState, useEffect } from "react";
 import {FlexHeader, FlexCenter} from "../styles/Grid";
 import {EmptyPlaceholder} from "../styles/EmptyPlaceholder";
 import api from "../lib/apiGraphQL";

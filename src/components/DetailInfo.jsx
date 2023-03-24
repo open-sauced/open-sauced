@@ -1,4 +1,3 @@
-import React from "react";
 import {FlexCenter} from "../styles/Grid";
 import {IssueOpenedIcon, GitPullRequestIcon, RepoForkedIcon, StarIcon, LawIcon} from "@primer/octicons-react";
 import {fontSize} from "../styles/variables";

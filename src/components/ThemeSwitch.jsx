@@ -1,4 +1,4 @@
-import React, {useContext, useState} from "react";
+import { useContext, useState } from "react";
 import ThemeContext from "../ThemeContext";
 import {FlexCenter} from "../styles/Grid";
 import { Switch, SwitchThumb } from "../styles/RadixSwitch";

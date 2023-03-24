@@ -1,4 +1,3 @@
-import React from "react";
 import {GitPullRequestDraftIcon, GitPullRequestIcon, IssueOpenedIcon,
   IssueClosedIcon, GitPullRequestClosedIcon, GitMergeIcon} from "@primer/octicons-react";
 

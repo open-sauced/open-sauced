@@ -1,11 +1,10 @@
-import React, {useState, useEffect} from "react";
+import { useState, useEffect } from "react";
 import api from "../lib/apiGraphQL";
 import Card from "./Card";
 import List from "../styles/List";
 import IssuesListItem from "../components/IssueListItem";
 import {CardPadding} from "../styles/Card";
 import {AccentLink, MicroFont} from "../styles/Typography";
-import IssuesLoader from "./IssuesLoader";
 
 function Contributions({repoName, owner, viewer}) {
   const [issues, setIssues] = useState(null);

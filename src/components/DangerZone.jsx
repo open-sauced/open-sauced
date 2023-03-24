@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import { useState } from "react";
 import {Redirect} from "react-router";
 import Button from "../styles/Button";
 import Card from "./Card";

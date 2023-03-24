@@ -1,4 +1,3 @@
-import React from "react";
 import {FlexStart, FloatRight, FloatLeft, FlexColumn, FlexHeader, FlexCenter} from "../styles/Grid";
 import {StarIcon} from "@primer/octicons-react";
 import Avatar from "../styles/Avatar";

@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import { useState, useEffect } from "react";
 import Card from "../components/Card";
 import Issues from "../components/Issues";
 import DetailInfo from "../components/DetailInfo";

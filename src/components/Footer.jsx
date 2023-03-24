@@ -1,4 +1,3 @@
-import React from "react";
 import {FaGithub, FaTwitter, FaDiscord, FaYoutube, FaDev} from 'react-icons/fa';
 import {Container} from "../styles/Footer";
 
