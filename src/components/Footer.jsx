@@ -37,7 +37,7 @@ function Footer() {
         <li className="p-2 sm:mr-5">
           <a href="https://www.dev.to/opensauced"
              target="_blank" rel="noreferrer"
-             aria-label="Visit Open Sauced GitHub Organisation">
+             aria-label="Visit Open Sauced GitHub Organisation :)">
             <FaDev className="text-offWhite hover:text-accent" />
           </a>
         </li>
