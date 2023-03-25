@@ -1,3 +1,4 @@
+import React from "react";
 import Issues from "../components/Issues";
 import "@testing-library/jest-dom/extend-expect";
 import {render, cleanup, screen} from "@testing-library/react";

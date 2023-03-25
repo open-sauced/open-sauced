@@ -1,3 +1,4 @@
+import React from "react";
 import Contributions from "../components/Contributions";
 import "@testing-library/jest-dom/extend-expect";
 import {render, cleanup} from "@testing-library/react";

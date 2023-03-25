@@ -1,3 +1,4 @@
+import React from "react";
 import App from "../containers/App";
 import {data} from "./mocks";
 import {Router} from "react-router-dom";
