@@ -5,6 +5,13 @@
 
 > All notable changes to this project will be documented in this file
 
+## [0.57.0](https://github.com/open-sauced/open-sauced/compare/v0.56.1...v0.57.0) (2023-05-24)
+
+
+### 🍕 Features
+
+* Archive this repo ([#1493](https://github.com/open-sauced/open-sauced/issues/1493)) ([dea5aa3](https://github.com/open-sauced/open-sauced/commit/dea5aa3f9af586d5cb29f38cd6d9eeda38c478d8))
+
 ### [0.56.1](https://github.com/open-sauced/open-sauced/compare/v0.56.0...v0.56.1) (2023-03-24)
 
 
